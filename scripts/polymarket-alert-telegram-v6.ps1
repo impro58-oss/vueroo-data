@@ -1,4 +1,4 @@
-# Polymarket Telegram Alert - V6 WITH MOBILE HTML LINK
+# Polymarket Telegram Alert - V6 WITH MOBILE HTML LINK (FIXED)
 # Shows bet recommendation and mobile-friendly HTML link
 
 param(
@@ -76,9 +76,9 @@ if ($Content -match "NO HOT BETS") {
         }
     }
     
-    # Add mobile-friendly HTML link
+    # Add mobile-friendly HTML link (no emoji to avoid encoding issues)
     $Message += "---`n"
-    $Message += "📱 View ALL $Count opportunities (mobile-friendly):`n"
+    $Message += "View ALL $Count opportunities (mobile-friendly):`n"
     $Message += "$HtmlUrl`n`n"
     $Message += "Tap link to view full list with filters"
 }

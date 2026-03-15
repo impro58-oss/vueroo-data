@@ -43,7 +43,9 @@ Write-Host "Loaded $($CurrentData.Count) markets from $($LatestJson.Name)"
 # Load historical data
 $History = @{}
 if (Test-Path $HistoryFile) {
-    $History = Get-Content $HistoryFile -Raw | ConvertFrom-Json -AsHashtable
+    $HistoryJson = Get-Content $HistoryFile -Raw | ConvertFrom-Json
+    # Convert PSCustomObject to Hashtable
+    $HistoryJson.PSObject.Properties | ForEach-Object { $History[$_.Name] = $_.Value }
     Write-Host "Loaded history for $($History.Count) markets"
 } else {
     Write-Host "No history file - creating new"
