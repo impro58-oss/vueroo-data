@@ -8,8 +8,8 @@ Write-Host "=== POLYMARKET HOURLY SCAN ==="
 Write-Host "Time: $Timestamp"
 Write-Host ""
 
-# Run the improved scanner
-$AlertFile = & "$WorkingDir\polymarket-hourly-scanner-v2.ps1"
+# Run the improved scanner (v3 with JSON-LD parsing)
+$AlertFile = & "$WorkingDir\polymarket-hourly-scanner-v3.ps1"
 
 if ($AlertFile -and (Test-Path $AlertFile)) {
     Write-Host ""
