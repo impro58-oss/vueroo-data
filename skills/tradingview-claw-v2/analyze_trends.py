@@ -144,14 +144,14 @@ def generate_trend_report():
     print("=== TOP MOVERS (7 Days) ===")
     movers = sorted(all_analysis, key=lambda x: abs(x['price_change']), reverse=True)[:5]
     for m in movers:
-        direction = "📈" if m['price_change'] > 0 else "📉"
+        direction = "UP" if m['price_change'] > 0 else "DOWN"
         print(f"{direction} {m['symbol']}: {m['price_change']:+.2f}% ({m['signals']['LONG']}L/{m['signals']['SHORT']}S/{m['signals']['HOLD']}H)")
     
     print("\n=== HIGH CONFIDENCE SIGNALS ===")
     high_conf = [a for a in all_analysis if a['avg_confidence'] >= 0.45]
     if high_conf:
         for h in sorted(high_conf, key=lambda x: x['avg_confidence'], reverse=True)[:5]:
-            print(f"🔥 {h['symbol']}: {h['avg_confidence']:.0%} avg confidence, {h['dominant_signal']} dominant")
+            print(f"HOT {h['symbol']}: {h['avg_confidence']:.0%} avg confidence, {h['dominant_signal']} dominant")
     else:
         print("No high-confidence signals in last 7 days")
     
@@ -159,8 +159,8 @@ def generate_trend_report():
     opportunities = [a for a in all_analysis if a['latest_signal'] in ['LONG', 'SHORT'] and a['latest_confidence'] >= 0.45]
     if opportunities:
         for o in sorted(opportunities, key=lambda x: x['latest_confidence'], reverse=True):
-            emoji = "🟢" if o['latest_signal'] == 'LONG' else "🔴"
-            print(f"{emoji} {o['symbol']}: {o['latest_signal']} @ {o['latest_confidence']:.0%} confidence")
+            signal_type = "LONG" if o['latest_signal'] == 'LONG' else "SHORT"
+            print(f"{signal_type} {o['symbol']}: {o['latest_signal']} @ {o['latest_confidence']:.0%} confidence")
     else:
         print("No active opportunities")
     
