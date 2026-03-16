@@ -96,6 +96,7 @@ Every agent MUST write to `memory/YYYY-MM-DD.md` using this format:
 |------------|------|--------|-------------|-----------------|
 | neurovascular-upstream-director | MedTech Strategy | Active | 2026-03-15 14:46 | memory/2026-03-15.md |
 | stockward-bd-director | Business Development | Active | 2026-03-15 16:42 | memory/YYYY-MM-DD.md |
+| opportunity-scout | Opportunity Research | Active | 2026-03-15 18:11 | memory/YYYY-MM-DD.md |
 | [pending] | LUXBRIDGE Research | Pending | - | - |
 
 ---

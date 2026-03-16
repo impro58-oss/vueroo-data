@@ -1,7 +1,7 @@
 ﻿{
-    "markets_with_movement":  1,
-    "timestamp":  "2026-03-15 17:00:23",
-    "scan_file":  "markets-2026-03-15-1700.json",
+    "markets_with_movement":  6,
+    "timestamp":  "2026-03-16 09:45:50",
+    "scan_file":  "markets-2026-03-16-0945.json",
     "top_opportunities":  {
 
                           },
@@ -9,17 +9,82 @@
     "threshold":  5,
     "movements":  [
                       {
-                          "Market":  "Liverpool FC vs. Tottenham Hotspur FC",
-                          "Category":  "sports",
-                          "Url":  "https://polymarket.com/event/epl-liv-tot-2026-03-15",
-                          "PreviousOdds":  74,
-                          "CurrentOdds":  85,
-                          "Movement":  11,
-                          "MovementPercent":  11,
+                          "Market":  "Robinhood (HOOD) Up or Down on March 16?",
+                          "Category":  "trending",
+                          "Url":  "https://polymarket.com/event/hood-up-or-down-on-march-16-2026",
+                          "PreviousOdds":  51,
+                          "CurrentOdds":  73,
+                          "Movement":  22,
+                          "MovementPercent":  22,
                           "Direction":  "UP",
                           "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-15 16:00:24",
-                          "CurrentTime":  "2026-03-15 17:00:23"
+                          "PreviousTime":  "2026-03-16 00:00:23",
+                          "CurrentTime":  "2026-03-16 09:45:50"
+                      },
+                      {
+                          "Market":  "Iran leadership change by...?",
+                          "Category":  "politics",
+                          "Url":  "https://polymarket.com/event/iran-leadership-change-by",
+                          "PreviousOdds":  21,
+                          "CurrentOdds":  15,
+                          "Movement":  -6,
+                          "MovementPercent":  6,
+                          "Direction":  "DOWN",
+                          "Confidence":  "LOW",
+                          "PreviousTime":  "2026-03-16 00:00:23",
+                          "CurrentTime":  "2026-03-16 09:45:50"
+                      },
+                      {
+                          "Market":  "Slovenian Parliamentary Election Winner",
+                          "Category":  "politics",
+                          "Url":  "https://polymarket.com/event/slovenian-parliamentary-election-winner-791",
+                          "PreviousOdds":  83,
+                          "CurrentOdds":  89,
+                          "Movement":  6,
+                          "MovementPercent":  6,
+                          "Direction":  "UP",
+                          "Confidence":  "LOW",
+                          "PreviousTime":  "2026-03-16 00:00:23",
+                          "CurrentTime":  "2026-03-16 09:45:50"
+                      },
+                      {
+                          "Market":  "Will Apple (AAPL) close above ___ end of March?",
+                          "Category":  "finance",
+                          "Url":  "https://polymarket.com/event/aapl-above-in-march-2026",
+                          "PreviousOdds":  86,
+                          "CurrentOdds":  91,
+                          "Movement":  5,
+                          "MovementPercent":  5,
+                          "Direction":  "UP",
+                          "Confidence":  "LOW",
+                          "PreviousTime":  "2026-03-16 00:00:23",
+                          "CurrentTime":  "2026-03-16 09:45:50"
+                      },
+                      {
+                          "Market":  "Will Google (GOOGL) finish week of March 16 above___?",
+                          "Category":  "finance",
+                          "Url":  "https://polymarket.com/event/googl-above-on-march-20-2026",
+                          "PreviousOdds":  94,
+                          "CurrentOdds":  99,
+                          "Movement":  5,
+                          "MovementPercent":  5,
+                          "Direction":  "UP",
+                          "Confidence":  "LOW",
+                          "PreviousTime":  "2026-03-16 00:00:23",
+                          "CurrentTime":  "2026-03-16 09:45:50"
+                      },
+                      {
+                          "Market":  "Will Tesla (TSLA) finish week of March 16 above___?",
+                          "Category":  "finance",
+                          "Url":  "https://polymarket.com/event/tsla-above-on-march-20-2026",
+                          "PreviousOdds":  86,
+                          "CurrentOdds":  91,
+                          "Movement":  5,
+                          "MovementPercent":  5,
+                          "Direction":  "UP",
+                          "Confidence":  "LOW",
+                          "PreviousTime":  "2026-03-16 00:00:23",
+                          "CurrentTime":  "2026-03-16 09:45:50"
                       }
                   ],
     "smart_money_alerts":  0

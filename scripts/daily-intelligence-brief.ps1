@@ -67,6 +67,66 @@ $Report += "- Gateway: $(if ((Test-NetConnection -ComputerName 127.0.0.1 -Port 1
 $Report += "- Last commit: $(git -C $WorkingDir log -1 --format='%h %s' 2>$null)"
 $Report += ""
 
+# Polymarket Portfolio Check
+$Report += "POLYMARKET PORTFOLIO:"
+$WalletAddress = "0x2d8c75c3fcbbFe50f92c2eDb00ab7dcF89578071"
+$DataApiBase = "https://data-api.polymarket.com"
+
+$PortfolioUrgent = $false
+$PortfolioChanges = @()
+
+$PositionsUrl = "$DataApiBase/positions?user=$WalletAddress"
+try {
+    $Positions = Invoke-RestMethod -Uri $PositionsUrl -Method GET -ContentType "application/json" -TimeoutSec 30
+    
+    if ($Positions -and $Positions.Count -gt 0) {
+        $TotalPnL = 0
+        $UrgentCount = 0
+        $HoldingStrong = @()
+        
+        foreach ($Pos in $Positions) {
+            $PnL = $Pos.cashPnl
+            $PercentPnL = $Pos.percentPnl
+            $TotalPnL += $PnL
+            
+            # Check for urgent conditions
+            if ($PercentPnL -lt -80 -and $Pos.curPrice -gt 0) {
+                $UrgentCount++
+                $PortfolioUrgent = $true
+            } elseif ($PercentPnL -gt 100) {
+                $HoldingStrong += "$($Pos.title): +$([math]::Round($PercentPnL))%"
+            }
+        }
+        
+        if ($PortfolioUrgent) {
+            $Report += "STATUS: [ACTION NEEDED]"
+            $Report += "- $UrgentCount position(s) need attention"
+            $DeadPositions = $Positions | Where-Object { $_.percentPnl -lt -90 }
+            foreach ($Dead in $DeadPositions) {
+                $Report += "  • $($Dead.title): $([math]::Round($Dead.percentPnl))% (consider exit)"
+            }
+        } else {
+            $Report += "STATUS: [NO CHANGE]"
+            $Report += "- All positions within normal range"
+        }
+        
+        $Report += "- Total P&L: $([math]::Round($TotalPnL, 2)) USDC"
+        $Report += "- Active positions: $($Positions.Count)"
+        
+        if ($HoldingStrong.Count -gt 0) {
+            $Report += "- Holding strong:"
+            $HoldingStrong | Select-Object -First 3 | ForEach-Object { $Report += "  • $_" }
+        }
+    } else {
+        $Report += "STATUS: [NO POSITIONS]"
+        $Report += "- No active positions found"
+    }
+} catch {
+    $Report += "STATUS: [ERROR]"
+    $Report += "- Could not fetch portfolio data"
+}
+$Report += ""
+
 # Notion Control Room Update
 $Report += "NOTION CONTROL ROOM:"
 $Report += "- Visual Dashboard: https://notion.so/3230491758dd819c90e4fce960777521"
