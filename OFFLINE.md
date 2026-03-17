@@ -1,5 +1,5 @@
-# OFFLINE.md - Emergency Context for Local Model
-# Read this first if running on Llama 3 (local) without internet
+# OFFLINE.md - Emergency Context for Model
+# Read this 
 
 ## QUICK WHO'S WHO
 
