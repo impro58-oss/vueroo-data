@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Library - OpenClaw Docs</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 1.1em; }
+        .nav {
+            background: white;
+            padding: 15px 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 30px;
+            font-weight: 500;
+        }
+        .nav a:hover { text-decoration: underline; }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .skill-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .skill-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .skill-icon {
+            font-size: 2.5em;
+            margin-right: 20px;
+        }
+        .skill-title h2 {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        .skill-title .status {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        .status-ready { background: #d4edda; color: #155724; }
+        .status-new { background: #fff3cd; color: #856404; }
+        .status-beta { background: #cce5ff; color: #004085; }
+        .skill-content h3 {
+            color: #333;
+            margin: 20px 0 10px 0;
+            font-size: 1.1em;
+        }
+        .skill-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .code-block {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px 20px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #667eea;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: transform 0.3s;
+        }
+        .back-to-top:hover {
+            transform: translateY(-3px);
+        }
+        .toc {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .toc h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .toc ul {
+            list-style: none;
+        }
+        .toc li {
+            padding: 8px 0;
+        }
+        .toc a {
+            color: #333;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🛠️ Skills Library</h1>
+        <p>Complete documentation for all OpenClaw skills</p>
+    </div>
+    
+    <div class="nav">
+        <a href="index.html">← Back to Hub</a>
+        <a href="#healthcheck">Health Check</a>
+        <a href="#backup">Backup</a>
+        <a href="#web-research">Web Research</a>
+        <a href="#pdf-tools">PDF Tools</a>
+        <a href="#cron">Cron</a>
+    </div>
+    
+    <div class="container">
+        <div class="toc">
+            <h3>📑 Table of Contents</h3>
+            <ul>
+                <li><a href="#healthcheck">🔧 Health Check</a> - System monitoring</li>
+                <li><a href="#backup">💾 Backup</a> - Automated backups</li>
+                <li><a href="#web-research">🔍 Web Research</a> - Automated research</li>
+                <li><a href="#pdf-tools">📄 PDF Tools</a> - Document extraction</li>
+                <li><a href="#cron">⏰ Advanced Cron</a> - Job scheduling</li>
+                <li><a href="#notion">📝 Notion</a> - Database integration</li>
+                <li><a href="#crypto">💰 Crypto Intelligence</a> - Trading system</li>
+            </ul>
+        </div>
+        
+        <!-- Health Check -->
+        <div id="healthcheck" class="skill-card">
+            <div class="skill-header">
+                <div class="skill-icon">🔧</div>
+                <div class="skill-title">
+                    <h2>Health Check</h2>
+                    <span class="status status-new">NEW</span>
+                </div>
+            </div>
+            <div class="skill-content">
+                <p>Monitor system health, temperature, disk space, and OpenClaw status. Proactive alerting for issues.</p>
+                
+                <h3>Features</h3>
+                <ul class="feature-list">
+                    <li>Gateway status monitoring</li>
+                    <li>CPU, memory, disk usage tracking</li>
+                    <li>Temperature monitoring</li>
+                    <li>Process health checks</li>
+                    <li>Telegram alerts on critical issues</li>
+                </ul>
+                
+                <h3>Usage</h3>
+                <div class="code-block">
+# Run full system health check
+& "C:\Users\impro\.openclaw\workspace\skills\healthcheck\healthcheck.ps1" -Command "run"
+
+# Check specific component
+& "...\healthcheck.ps1" -Command "check" -Component "gateway"
+                </div>
+                
+                <h3>Scheduled</h3>
+                <p>✅ Runs automatically every 30 minutes via cron job.</p>
+            </div>
+        </div>
+        
+        <!-- Backup -->
+        <div id="backup" class="skill-card">
+            <div class="skill-header">
+                <div class="skill-icon">💾</div>
+                <div class="skill-title">
+                    <h2>Backup</h2>
+                    <span class="status status-new">NEW</span>
+                </div>
+            </div>
+            <div class="skill-content">
+                <p>Automated workspace backup with git commits, file snapshots, and cloud sync.</p>
+                
+                <h3>Features</h3>
+                <ul class="feature-list">
+                    <li>Git auto-commit</li>
+                    <li>ZIP archives of critical directories</li>
+                    <li>Cloud sync ready</li>
+                    <li>30-day retention</li>
+                    <li>Integrity verification</li>
+                </ul>
+                
+                <h3>Usage</h3>
+                <div class="code-block">
+# Run backup now
+& "C:\Users\impro\.openclaw\workspace\skills\backup\backup.ps1" -Command "run"
+
+# Check backup status
+& "...\backup.ps1" -Command "status"
+
+# Backup specific directory
+& "...\backup.ps1" -Command "dir" -Directory "memory"
+                </div>
+            </div>
+        </div>
+        
+        <!-- Web Research -->
+        <div id="web-research" class="skill-card">
+            <div class="skill-header">
+                <div class="skill-icon">🔍</div>
+                <div class="skill-title">
+                    <h2>Web Research</h2>
+                    <span class="status status-new">NEW</span>
+                </div>
+            </div>
+            <div class="skill-content">
+                <p>Automated web scraping and research for opportunities, news, and market data.</p>
+                
+                <h3>Features</h3>
+                <ul class="feature-list">
+                    <li>Job board scraping</li>
+                    <li>News aggregation</li>
+                    <li>Competitor analysis</li>
+                    <li>Change detection</li>
+                    <li>Notion export</li>
+                </ul>
+                
+                <h3>Usage</h3>
+                <div class="code-block">
+# Research specific topic
+web-research query "AI income opportunities 2026"
+
+# Monitor website for changes
+web-research monitor https://example.com/jobs --interval 1h
+
+# Scrape job boards
+web-research jobs --source indeed --query "remote AI"
+                </div>
+            </div>
+        </div>
+        
+        <!-- PDF Tools -->
+        <div id="pdf-tools" class="skill-card">
+            <div class="skill-header">
+                <div class="skill-icon">📄</div>
+                <div class="skill-title">
+                    <h2>PDF Tools</h2>
+                    <span class="status status-new">NEW</span>
+                </div>
+            </div>
+            <div class="skill-content">
+                <p>Extract text, tables, and data from PDF documents. Process medical papers, research, and reports.</p>
+                
+                <h3>Features</h3>
+                <ul class="feature-list">
+                    <li>Text extraction</li>
+                    <li>Table parsing to CSV</li>
+                    <li>Batch processing</li>
+                    <li>OCR support (with Tesseract)</li>
+                    <li>Medical paper optimization</li>
+                </ul>
+                
+                <h3>Usage</h3>
+                <div class="code-block">
+# Extract text from PDF
+pdf-tools extract document.pdf --output text.txt
+
+# Extract tables to CSV
+pdf-tools tables document.pdf --output tables.csv
+
+# Extract specific pages
+pdf-tools extract document.pdf --pages 1-5 --output summary.txt
+                </div>
+            </div>
+        </div>
+        
+        <!-- Advanced Cron -->
+        <div id="cron" class="skill-card">
+            <div class="skill-header">
+                <div class="skill-icon">⏰</div>
+                <div class="skill-title">
+                    <h2>Advanced Cron</h2>
+                    <span class="status status-new">NEW</span>
+                </div>
+            </div>
+            <div class="skill-content">
+                <p>Enhanced scheduling with retry logic, dependencies, error handling, and monitoring.</p>
+                
+                <h3>Features</h3>
+                <ul class="feature-list">
+                    <li>Retry logic (3 attempts)</li>
+                    <li>Job dependencies</li>
+                    <li>Error handling</li>
+                    <li>Notifications</li>
+                    <li>Health dashboard</li>
+                </ul>
+                
+                <h3>Usage</h3>
+                <div class="code-block">
+# Create advanced cron job
+cron-advanced add --name "Crypto Scan" --command "python scan.py" --schedule "0 */4 * * *" --retry 3
+
+# Add job with dependencies
+cron-advanced add --name "Report" --command "generate.py" --after "Crypto Scan"
+
+# Monitor job status
+cron-advanced status
+                </div>
+            </div>
+        </div>
+        
+        <!-- Notion -->
+        <div id="notion" class="skill-card">
+            <div class="skill-header">
+                <div class="skill-icon">📝</div>
+                <div class="skill-title">
+                    <h2>Notion Integration</h2>
+                    <span class="status status-ready">READY</span>
+                </div>
+            </div>
+            <div class="skill-content">
+                <p>Create and manage pages, databases, and blocks in Notion.</p>
+                
+                <h3>Features</h3>
+                <ul class="feature-list">
+                    <li>Create pages and databases</li>
+                    <li>Query databases</li>
+                    <li>Update page properties</li>
+                    <li>Add blocks to pages</li>
+                    <li>Search pages and databases</li>
+                </ul>
+                
+                <h3>Usage</h3>
+                <div class="code-block">
+# Create page in database
+curl -X POST "https://api.notion.com/v1/pages" \
+  -H "Authorization: Bearer $NOTION_KEY" \
+  -H "Notion-Version: 2022-06-28" \
+  -d '{
+    "parent": {"database_id": "xxx"},
+    "properties": {
+      "Name": {"title": [{"text": {"content": "New Task"}}]}
+    }
+  }'
+                </div>
+            </div>
+        </div>
+        
+        <!-- Crypto Intelligence -->
+        <div id="crypto" class="skill-card">
+            <div class="skill-header">
+                <div class="skill-icon">💰</div>
+                <div class="skill-title">
+                    <h2>Crypto Intelligence (TrojanLogic4H)</h2>
+                    <span class="status status-ready">READY</span>
+                </div>
+            </div>
+            <div class="skill-content">
+                <p>Automated cryptocurrency analysis using CS RSI MTF + RtoM Channels strategy.</p>
+                
+                <h3>Features</h3>
+                <ul class="feature-list">
+                    <li>Top 50 crypto scan every 4 hours</li>
+                    <li>Multi-source data (Binance, CoinGecko)</li>
+                    <li>Signal classification (FUTURES/HOLD/MONITOR)</li>
+                    <li>Notion database logging</li>
+                    <li>Visual dashboard</li>
+                </ul>
+                
+                <h3>Usage</h3>
+                <div class="code-block">
+# Run manual scan
+python skills/tradingview-claw-v2/analyze_top_50.py
+
+# View dashboard
+https://www.notion.so/3230491758dd819c90e4fce960777521
+                </div>
+                
+                <h3>Scheduled</h3>
+                <p>✅ Runs automatically every 4 hours.</p>
+            </div>
+        </div>
+    </div>
+    
+    <a href="#" class="back-to-top">↑</a>
+</body>
+</html>

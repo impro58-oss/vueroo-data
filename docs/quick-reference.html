@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Reference - OpenClaw Docs</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            line-height: 1.6;
+            padding: 40px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            font-size: 3em;
+            color: #00d9ff;
+            text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+        }
+        .header p {
+            color: #888;
+            font-size: 1.2em;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .card {
+            background: #16213e;
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid #0f3460;
+        }
+        .card h2 {
+            color: #e94560;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            border-bottom: 2px solid #e94560;
+            padding-bottom: 10px;
+        }
+        .command {
+            background: #0f3460;
+            padding: 10px 15px;
+            margin: 8px 0;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .command code {
+            color: #00d9ff;
+        }
+        .command span {
+            color: #888;
+            font-size: 0.85em;
+        }
+        .emergency {
+            background: #e94560;
+            border: 2px solid #ff6b6b;
+        }
+        .emergency h2 {
+            color: white;
+            border-color: white;
+        }
+        .nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .nav a {
+            color: #00d9ff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1em;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>⚡ Quick Reference</h1>
+        <p>Cheat sheet for common tasks and emergency procedures</p>
+    </div>
+    
+    <div class="nav">
+        <a href="index.html">← Back to Hub</a>
+        <a href="slash-commands-reference.html">Full Commands →</a>
+    </div>
+    
+    <div class="grid">
+        <!-- Most Used -->
+        <div class="card">
+            <h2>🚀 Most Used Commands</h2>
+            <div class="command"><code>/sync me up</code><span>Resume session</span></div>
+            <div class="command"><code>/health</code><span>System check</span></div>
+            <div class="command"><code>/backup</code><span>Run backup</span></div>
+            <div class="command"><code>/crypto scan</code><span>Run analysis</span></div>
+            <div class="command"><code>/research [topic]</code><span>Web research</span></div>
+            <div class="command"><code>/notion sync</code><span>Sync to Notion</span></div>
+        </div>
+        
+        <!-- Emergency -->
+        <div class="card emergency">
+            <h2>🚨 Emergency Commands</h2>
+            <div class="command"><code>/status</code><span>Check system</span></div>
+            <div class="command"><code>/health gateway</code><span>Check gateway</span></div>
+            <div class="command"><code>/backup status</code><span>Check backups</span></div>
+            <div class="command"><code>openclaw gateway start</code><span>Start gateway</span></div>
+            <div class="command"><code>openclaw gateway stop</code><span>Stop gateway</span></div>
+            <div class="command"><code>/reset</code><span>Clear context</span></div>
+        </div>
+        
+        <!-- Agent Workflow -->
+        <div class="card">
+            <h2>🤖 Agent Workflow</h2>
+            <div class="command"><code>/persona scout</code><span>Income research</span></div>
+            <div class="command"><code>/persona stockward</code><span>Partnerships</span></div>
+            <div class="command"><code>/persona medtech</code><span>Medtech research</span></div>
+            <div class="command"><code>/persona crypto</code><span>Trading signals</span></div>
+            <div class="command"><code>[Do work]</code><span>Execute task</span></div>
+            <div class="command"><code>/sync me up</code><span>Save context</span></div>
+        </div>
+        
+        <!-- Crypto -->
+        <div class="card">
+            <h2>💰 Crypto Commands</h2>
+            <div class="command"><code>/crypto scan</code><span>Run TrojanLogic4H</span></div>
+            <div class="command"><code>/crypto status</code><span>Check status</span></div>
+            <div class="command"><code>/polymarket status</code><span>Check bets</span></div>
+            <div class="command"><code>/income search [query]</code><span>Find opportunities</span></div>
+        </div>
+        
+        <!-- System -->
+        <div class="card">
+            <h2>🔧 System Commands</h2>
+            <div class="command"><code>/health</code><span>Full check</span></div>
+            <div class="command"><code>/health gateway</code><span>Gateway only</span></div>
+            <div class="command"><code>/health disk</code><span>Disk space</span></div>
+            <div class="command"><code>/backup</code><span>Run backup</span></div>
+            <div class="command"><code>/backup status</code><span>View status</span></div>
+        </div>
+        
+        <!-- Research -->
+        <div class="card">
+            <h2>🔍 Research Commands</h2>
+            <div class="command"><code>/research [topic]</code><span>Web research</span></div>
+            <div class="command"><code>/pdf extract [file]</code><span>Extract text</span></div>
+            <div class="command"><code>/pdf tables [file]</code><span>Extract tables</span></div>
+            <div class="command"><code>/neurovascular search</code><span>Medtech research</span></div>
+        </div>
+        
+        <!-- Notion -->
+        <div class="card">
+            <h2>📝 Notion Commands</h2>
+            <div class="command"><code>/notion sync</code><span>Sync databases</span></div>
+            <div class="command"><code>/notion task [name]</code><span>Create task</span></div>
+            <div class="command"><code>/notion project [name]</code><span>Create project</span></div>
+            <div class="command"><code>/control-room</code><span>Show dashboard</span></div>
+        </div>
+        
+        <!-- Automation -->
+        <div class="card">
+            <h2>⏰ Automation</h2>
+            <div class="command"><code>/cron add [name]</code><span>Add job</span></div>
+            <div class="command"><code>/cron list</code><span>List jobs</span></div>
+            <div class="command"><code>/schedule backup daily</code><span>Daily backup</span></div>
+            <div class="command"><code>/schedule health 30m</code><span>Every 30 min</span></div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>OpenClaw Quick Reference | Bookmark this page for offline access</p>
+    </div>
+</body>
+</html>

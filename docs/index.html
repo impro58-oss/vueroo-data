@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw Documentation Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+        }
+        
+        .card-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .card-meta {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+            color: #999;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            opacity: 0.8;
+        }
+        
+        .search-box {
+            background: white;
+            border-radius: 50px;
+            padding: 15px 30px;
+            margin: 30px auto;
+            max-width: 500px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .search-box input {
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 1.1em;
+            color: #333;
+        }
+        
+        .search-box input::placeholder {
+            color: #999;
+        }
+        
+        .status-bar {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #2ecc71;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .last-updated {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🦞 OpenClaw Docs</h1>
+            <p class="subtitle">Complete Reference Guide for Roo's Workspace</p>
+        </header>
+        
+        <div class="last-updated">
+            Last Updated: March 17, 2026 | Works Offline ✓
+        </div>
+        
+        <div class="status-bar">
+            <div class="status-item">
+                <div class="status-dot"></div>
+                <span>Gateway: Online</span>
+            </div>
+            <div class="status-item">
+                <span>📚 60+ Commands</span>
+            </div>
+            <div class="status-item">
+                <span>🛠️ 5 New Skills</span>
+            </div>
+            <div class="status-item">
+                <span>🤖 3 Active Agents</span>
+            </div>
+        </div>
+        
+        <div class="grid">
+            <a href="slash-commands-reference.html" class="card">
+                <div class="card-icon">🎯</div>
+                <h2>Slash Commands</h2>
+                <p>Complete reference of 60+ commands organized by category. Core, Agent, Crypto, System, Research, and more.</p>
+                <div class="card-meta">60+ commands • 12 categories</div>
+            </a>
+            
+            <a href="skills-reference.html" class="card">
+                <div class="card-icon">🛠️</div>
+                <h2>Skills Library</h2>
+                <p>All available skills with usage examples. Health Check, Backup, Web Research, PDF Tools, Cron, and more.</p>
+                <div class="card-meta">10+ skills • Usage guides</div>
+            </a>
+            
+            <a href="agent-guide.html" class="card">
+                <div class="card-icon">🤖</div>
+                <h2>Agent Guide</h2>
+                <p>How to use agent personas effectively. Scout, Stockward, Medtech, Crypto workflows and templates.</p>
+                <div class="card-meta">4 personas • gstack workflow</div>
+            </a>
+            
+            <a href="system-setup.html" class="card">
+                <div class="card-icon">⚙️</div>
+                <h2>System Setup</h2>
+                <p>Configuration guides for OpenClaw, Notion, Telegram, and automation. Troubleshooting common issues.</p>
+                <div class="card-meta">Setup guides • Troubleshooting</div>
+            </a>
+            
+            <a href="crypto-intelligence.html" class="card">
+                <div class="card-icon">💰</div>
+                <h2>Crypto Intelligence</h2>
+                <p>TrojanLogic4H system documentation. Strategy, signals, classification, and historical analysis.</p>
+                <div class="card-meta">TrojanLogic4H • Top 50 scan</div>
+            </a>
+            
+            <a href="quick-reference.html" class="card">
+                <div class="card-icon">⚡</div>
+                <h2>Quick Reference</h2>
+                <p>Most used commands, emergency procedures, and daily workflows. Cheat sheet for common tasks.</p>
+                <div class="card-meta">Cheat sheet • Emergency guide</div>
+            </a>
+        </div>
+        
+        <footer>
+            <p>OpenClaw Workspace Documentation | Built for Roo</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">This documentation works offline. Bookmark this page.</p>
+        </footer>
+    </div>
+</body>
+</html>
