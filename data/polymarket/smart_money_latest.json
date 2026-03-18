@@ -1,75 +1,52 @@
 ﻿{
-    "markets_with_movement":  4,
-    "timestamp":  "2026-03-17 15:00:22",
-    "scan_file":  "markets-2026-03-17-1500.json",
+    "markets_with_movement":  3,
+    "timestamp":  "2026-03-18 06:00:17",
+    "scan_file":  "markets-2026-03-18-0600.json",
     "top_opportunities":  {
-                              "Market":  "What will the average monthly Ethereum gas price hit before 2027?",
-                              "Category":  "crypto",
-                              "Url":  "https://polymarket.com/event/what-will-the-average-monthly-ethereum-gas-price-hit-before-2027",
-                              "PreviousOdds":  29,
-                              "CurrentOdds":  41,
-                              "Movement":  12,
-                              "MovementPercent":  12,
-                              "Direction":  "UP",
-                              "Confidence":  "HIGH",
-                              "PreviousTime":  "2026-03-17 14:06:36",
-                              "CurrentTime":  "2026-03-17 15:00:22"
+
                           },
-    "total_markets":  80,
+    "total_markets":  20,
     "threshold":  5,
     "movements":  [
                       {
-                          "Market":  "Robinhood (HOOD) Up or Down on March 17?",
+                          "Market":  "Robinhood launches prediction market through MIAXdx by March 31?",
                           "Category":  "trending",
-                          "Url":  "https://polymarket.com/event/hood-up-or-down-on-march-17-2026",
-                          "PreviousOdds":  73,
-                          "CurrentOdds":  89,
-                          "Movement":  16,
-                          "MovementPercent":  16,
-                          "Direction":  "UP",
-                          "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-17 14:06:36",
-                          "CurrentTime":  "2026-03-17 15:00:22"
-                      },
-                      {
-                          "Market":  "Highest temperature in Taipei on March 16?",
-                          "Category":  "trending",
-                          "Url":  "https://polymarket.com/event/highest-temperature-in-taipei-on-march-16-2026",
-                          "PreviousOdds":  8,
-                          "CurrentOdds":  2,
+                          "Url":  "https://polymarket.com/event/robinhood-launches-prediction-market-through-miaxdx-by-march-31",
+                          "PreviousOdds":  12,
+                          "CurrentOdds":  6,
                           "Movement":  -6,
                           "MovementPercent":  6,
                           "Direction":  "DOWN",
                           "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-17 14:06:36",
-                          "CurrentTime":  "2026-03-17 15:00:22"
+                          "PreviousTime":  "2026-03-18 05:00:53",
+                          "CurrentTime":  "2026-03-18 06:00:17"
                       },
                       {
-                          "Market":  "How high will inflation get in 2026?",
+                          "Market":  "USD/KRW Up or Down on March 17?",
                           "Category":  "trending",
-                          "Url":  "https://polymarket.com/event/how-high-will-inflation-get-in-2026",
-                          "PreviousOdds":  40,
-                          "CurrentOdds":  35,
-                          "Movement":  -5,
+                          "Url":  "https://polymarket.com/event/usd-krw-up-or-down-on-march-17-2026",
+                          "PreviousOdds":  51,
+                          "CurrentOdds":  56,
+                          "Movement":  5,
                           "MovementPercent":  5,
-                          "Direction":  "DOWN",
+                          "Direction":  "UP",
                           "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-17 14:06:36",
-                          "CurrentTime":  "2026-03-17 15:00:22"
+                          "PreviousTime":  "2026-03-18 05:00:53",
+                          "CurrentTime":  "2026-03-18 06:00:17"
                       },
                       {
-                          "Market":  "What will the average monthly Ethereum gas price hit before 2027?",
-                          "Category":  "crypto",
-                          "Url":  "https://polymarket.com/event/what-will-the-average-monthly-ethereum-gas-price-hit-before-2027",
-                          "PreviousOdds":  29,
-                          "CurrentOdds":  41,
-                          "Movement":  12,
-                          "MovementPercent":  12,
+                          "Market":  "GBP/USD Up or Down on March 17?",
+                          "Category":  "trending",
+                          "Url":  "https://polymarket.com/event/gbp-usd-up-or-down-on-march-17-2026",
+                          "PreviousOdds":  60,
+                          "CurrentOdds":  65,
+                          "Movement":  5,
+                          "MovementPercent":  5,
                           "Direction":  "UP",
-                          "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-17 14:06:36",
-                          "CurrentTime":  "2026-03-17 15:00:22"
+                          "Confidence":  "LOW",
+                          "PreviousTime":  "2026-03-18 05:00:53",
+                          "CurrentTime":  "2026-03-18 06:00:17"
                       }
                   ],
-    "smart_money_alerts":  1
+    "smart_money_alerts":  0
 }
