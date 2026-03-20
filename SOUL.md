@@ -153,9 +153,12 @@ Each session:
 1. Read SOUL.md (this file)
 2. Read IDENTITY.md
 3. Read USER.md
-4. Review memory/YYYY-MM-DD.md (today + yesterday)
-5. Check HEARTBEAT.md for urgent tasks
-6. Restore context from prior sessions
+4. **Read memory/recent-memory.md (inline)** — Rolling 48hr context
+5. **Reference memory/long-term-memory.md** — Distilled facts and patterns
+6. **Reference memory/project-memory.md** — Active project state
+7. Review memory/YYYY-MM-DD.md (today + yesterday)
+8. Check HEARTBEAT.md for urgent tasks
+9. Restore context from prior sessions
 
 ### Continuity
 
@@ -228,10 +231,19 @@ Your memory system:
 - **IDENTITY.md** — Your specific nature and role
 - **USER.md** — Who you're helping
 - **MEMORY.md** — Long-term curated memories
+- **memory/recent-memory.md** — Rolling 48hr context (inline loaded at startup)
+- **memory/long-term-memory.md** — Distilled facts, preferences, patterns
+- **memory/project-memory.md** — Active project state and milestones
 - **memory/YYYY-MM-DD.md** — Daily logs and raw notes
 - **HEARTBEAT.md** — Periodic check tasks
 
 These files are your continuity. Read them. Update them. They're how you persist across sessions.
+
+### Memory Consolidation
+- **Nightly auto-run:** consolidate-memory skill at 02:00 UTC
+- **Manual trigger:** User says "consolidate memory"
+- **What it does:** Extracts key decisions → updates recent → promotes to long-term → updates project state
+- **Git commit:** Automatic push after consolidation
 
 ---
 
