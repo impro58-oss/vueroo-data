@@ -1,0 +1,349 @@
+{
+  "metadata": {
+    "project": "Global Stroke Intelligence Model",
+    "version": "1.0",
+    "lastUpdated": "2026-03-18",
+    "dataQuality": {
+      "journal": "Verified from peer-reviewed sources",
+      "extrapolated": "Projected based on trends",
+      "estimated": "Modeled where data unavailable"
+    }
+  },
+  "global": {
+    "2024": {
+      "annualStrokes": {
+        "value": 12200000,
+        "unit": "cases/year",
+        "source": "Feigin et al., 2025 - WSO Global Stroke Statistics",
+        "quality": "journal",
+        "breakdown": {
+          "ischemic": 87,
+          "hemorrhagic": 13
+        }
+      },
+      "strokeDeaths": {
+        "value": 6500000,
+        "unit": "deaths/year",
+        "source": "Feigin et al., 2025",
+        "quality": "journal"
+      },
+      "prevalence": {
+        "value": 101000000,
+        "unit": "living stroke survivors",
+        "source": "Feigin et al., 2025",
+        "quality": "journal"
+      },
+      "lvoPrevalence": {
+        "value": 38,
+        "unit": "percent of ischemic strokes",
+        "source": "Rennert et al., 2019",
+        "quality": "journal"
+      },
+      "mevoPrevalence": {
+        "value": 25,
+        "unit": "percent of ischemic strokes",
+        "source": "Meyer et al., 2022",
+        "quality": "journal"
+      },
+      "treatmentAccess": {
+        "ivTpa": {
+          "global": 15,
+          "highIncome": 25,
+          "lowIncome": 3,
+          "unit": "percent",
+          "source": "MT-GLASS Consortium, 2023",
+          "quality": "journal"
+        },
+        "mechanicalThrombectomy": {
+          "global": 12,
+          "highIncome": 22,
+          "lowIncome": 1,
+          "unit": "percent of eligible patients",
+          "source": "MT-GLASS Consortium, 2023",
+          "quality": "journal"
+        }
+      }
+    },
+    "2030": {
+      "projectedStrokes": {
+        "value": 15100000,
+        "unit": "cases/year",
+        "quality": "extrapolated",
+        "methodology": "Aging population + risk factor trends",
+        "cagr": 3.6
+      },
+      "projectedDeaths": {
+        "value": 7200000,
+        "unit": "deaths/year",
+        "quality": "extrapolated"
+      },
+      "projectedPrevalence": {
+        "value": 125000000,
+        "unit": "living stroke survivors",
+        "quality": "extrapolated"
+      }
+    },
+    "trends": {
+      "incidenceGrowth": {
+        "rate": 15,
+        "period": "2019-2024",
+        "drivers": ["Aging population", "Urbanization", "Risk factor prevalence"]
+      },
+      "mortalityDecline": {
+        "rate": -8,
+        "period": "2019-2024",
+        "drivers": ["Improved acute care", "thrombectomy expansion", "IV tPA access"]
+      }
+    }
+  },
+  "regions": {
+    "china": {
+      "name": "China",
+      "flag": "🇨🇳",
+      "population": 1412000000,
+      "2024": {
+        "annualStrokes": {
+          "value": 3300000,
+          "source": "Zhao et al., 2022 - China Stroke Statistics 2019",
+          "quality": "journal"
+        },
+        "strokeDeaths": {
+          "value": 1500000,
+          "source": "Zhao et al., 2022",
+          "quality": "journal"
+        },
+        "prevalence": {
+          "value": 17800000,
+          "source": "Zhao et al., 2022",
+          "quality": "journal"
+        },
+        "ageAdjustedIncidence": {
+          "value": 276.7,
+          "unit": "per 100,000",
+          "source": "Pu et al., 2023",
+          "quality": "journal"
+        },
+        "treatmentAccess": {
+          "ivTpa": 25,
+          "mt": 8,
+          "unit": "percent"
+        }
+      },
+      "2030": {
+        "projectedStrokes": {
+          "value": 4200000,
+          "quality": "extrapolated",
+          "drivers": ["Aging population", "Rising hypertension prevalence"]
+        }
+      },
+      "keyInsights": [
+        "Highest absolute stroke burden globally",
+        "Rural-urban disparity in treatment access",
+        "Government stroke prevention initiative launched 2020"
+      ]
+    },
+    "eu": {
+      "name": "European Union",
+      "flag": "🇪🇺",
+      "population": 447000000,
+      "2024": {
+        "annualStrokes": {
+          "value": 1100000,
+          "source": "SAFE - Burden of Stroke in Europe 2017",
+          "quality": "journal"
+        },
+        "strokeDeaths": {
+          "value": 450000,
+          "source": "SAFE",
+          "quality": "journal"
+        },
+        "prevalence": {
+          "value": 9000000,
+          "source": "SAFE",
+          "quality": "journal"
+        },
+        "treatmentAccess": {
+          "ivTpa": 35,
+          "mt": 18,
+          "unit": "percent",
+          "variance": "High variation between member states (5-45% for MT)"
+        }
+      },
+      "2030": {
+        "projectedStrokes": {
+          "value": 1350000,
+          "quality": "extrapolated"
+        }
+      },
+      "policy": {
+        "euStrokePlan": {
+          "period": "2018-2030",
+          "goals": [
+            "Reduce stroke incidence by 30%",
+            "Achieve 90% access to stroke units",
+            "Standardize thrombectomy access"
+          ],
+          "source": "EU Stroke Action Plan 2018-2030",
+          "quality": "journal"
+        }
+      }
+    },
+    "usa": {
+      "name": "United States",
+      "flag": "🇺🇸",
+      "population": 335000000,
+      "2024": {
+        "annualStrokes": {
+          "value": 795000,
+          "source": "AHA Heart Disease and Stroke Statistics 2024",
+          "quality": "journal"
+        },
+        "strokeDeaths": {
+          "value": 160000,
+          "source": "AHA 2024",
+          "quality": "journal"
+        },
+        "prevalence": {
+          "value": 4500000,
+          "source": "AHA 2024",
+          "quality": "journal"
+        },
+        "treatmentAccess": {
+          "ivTpa": 40,
+          "mt": 25,
+          "unit": "percent"
+        }
+      },
+      "2030": {
+        "projectedStrokes": {
+          "value": 920000,
+          "quality": "extrapolated"
+        }
+      }
+    },
+    "japan": {
+      "name": "Japan",
+      "flag": "🇯🇵",
+      "population": 125000000,
+      "2024": {
+        "annualStrokes": {
+          "value": 280000,
+          "source": "Japan Stroke Society Annual Report",
+          "quality": "journal"
+        },
+        "strokeDeaths": {
+          "value": 110000,
+          "quality": "journal"
+        },
+        "prevalence": {
+          "value": 2200000,
+          "quality": "journal"
+        },
+        "treatmentAccess": {
+          "ivTpa": 45,
+          "mt": 20,
+          "unit": "percent"
+        }
+      },
+      "2030": {
+        "projectedStrokes": {
+          "value": 310000,
+          "quality": "extrapolated",
+          "note": "Declining population may offset aging effects"
+        }
+      }
+    },
+    "germany": {
+      "name": "Germany",
+      "flag": "🇩🇪",
+      "population": 84000000,
+      "2024": {
+        "annualStrokes": {
+          "value": 195000,
+          "source": "German Stroke Society Registry",
+          "quality": "journal"
+        },
+        "strokeDeaths": {
+          "value": 65000,
+          "quality": "journal"
+        },
+        "treatmentAccess": {
+          "ivTpa": 50,
+          "mt": 30,
+          "unit": "percent",
+          "note": "Among highest in Europe"
+        }
+      },
+      "2030": {
+        "projectedStrokes": {
+          "value": 230000,
+          "quality": "extrapolated"
+        }
+      }
+    }
+  },
+  "treatmentTechnologies": {
+    "mechanicalThrombectomy": {
+      "indications": ["LVO", "MeVO", "ICAD-related occlusion"],
+      "globalAccess": {
+        "2024": 12,
+        "2030": 25,
+        "unit": "percent",
+        "quality": "extrapolated"
+      },
+      "devices": {
+        "stentRetrievers": {
+          "marketShare": 60,
+          "efficacy": "TICI 2b/3: 75-85%"
+        },
+        "aspiration": {
+          "marketShare": 35,
+          "efficacy": "TICI 2b/3: 70-80%"
+        },
+        "combined": {
+          "marketShare": 5,
+          "efficacy": "TICI 2b/3: 80-88%"
+        }
+      }
+    },
+    "ivThrombolysis": {
+      "agents": ["Alteplase", "Tenecteplase"],
+      "timeWindow": "4.5 hours",
+      "efficacy": "mRS 0-1 at 90 days: 35-40%"
+    }
+  },
+  "sources": [
+    {
+      "id": "feigin-2025",
+      "title": "World Stroke Organization Global Stroke Statistics 2025",
+      "authors": "Feigin et al.",
+      "year": 2025,
+      "type": "journal",
+      "path": "World Stroke/feigin-et-al-2025-world-stroke-organization-gl..."
+    },
+    {
+      "id": "zhao-2022",
+      "title": "China Stroke Statistics 2019",
+      "authors": "Zhao et al.",
+      "year": 2022,
+      "type": "journal",
+      "path": "2- China/REF_2022 Zhao - China Stroke Statistics 2019.pdf"
+    },
+    {
+      "id": "safe-2017",
+      "title": "Burden of Stroke in Europe",
+      "authors": "Wafa et al.",
+      "year": 2017,
+      "type": "journal",
+      "path": "2- EU/REF_Wafa - Burden of Stroke - Europe - 2017 - 2047.pdf"
+    },
+    {
+      "id": "mt-glass-2023",
+      "title": "Global Access to Mechanical Thrombectomy",
+      "authors": "MT-GLASS Consortium",
+      "year": 2023,
+      "type": "journal",
+      "path": "AIS/REF_asif-2023-MT-global-access-for-stroke-(mt-glass)..."
+    }
+  ]
+}

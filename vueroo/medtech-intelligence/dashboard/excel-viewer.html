@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedTech Excel Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-blue-400 mb-2">MedTech Excel Data Viewer</h1>
+            <p class="text-slate-400">View extracted epidemiological data from Excel files</p>
+        </header>
+
+        <div class="bg-slate-800 rounded-lg p-6 mb-6">
+            <button onclick="loadData()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition mr-4">
+                Load Data
+            </button>
+            <button onclick="loadMasterData()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium transition">
+                Load Master Data
+            </button>
+            <div id="status" class="mt-3 text-sm"></div>
+        </div>
+
+        <div id="dashboard" class="hidden">
+            <!-- File Selector -->
+            <div class="bg-slate-800 rounded-lg p-6 mb-6">
+                <label class="block text-slate-400 mb-2">Select File/Section</label>
+                <select id="fileSelector" onchange="showData()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2">
+                    <option value="">-- Select a file --</option>
+                </select>
+            </div>
+
+            <!-- Sheet Selector (for multi-sheet files) -->
+            <div id="sheetSelectorContainer" class="bg-slate-800 rounded-lg p-6 mb-6 hidden">
+                <label class="block text-slate-400 mb-2">Select Sheet</label>
+                <select id="sheetSelector" onchange="showSheetData()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2">
+                </select>
+            </div>
+
+            <!-- Data Display -->
+            <div id="dataDisplay" class="space-y-6">
+                <!-- Stats -->
+                <div id="statsContainer" class="grid grid-cols-1 md:grid-cols-4 gap-4"></div>
+                <!-- Table -->
+                <div id="tableContainer" class="bg-slate-800 rounded-lg overflow-hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentData = null;
+        let currentFile = null;
+
+        async function loadData() {
+            const statusEl = document.getElementById('status');
+            statusEl.innerHTML = '<span class="text-yellow-400">Loading Excel data...</span>';
+            
+            try {
+                const response = await fetch('data/epidemiological-data.json');
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                
+                currentData = await response.json();
+                currentFile = 'epidemiological';
+                
+                populateFileSelector(currentData);
+                document.getElementById('dashboard').classList.remove('hidden');
+                statusEl.innerHTML = '<span class="text-green-400">✓ Loaded epidemiological-data.json</span>';
+                
+            } catch (error) {
+                statusEl.innerHTML = `<span class="text-red-400">✗ Error: ${error.message}</span>`;
+            }
+        }
+
+        async function loadMasterData() {
+            const statusEl = document.getElementById('status');
+            statusEl.innerHTML = '<span class="text-yellow-400">Loading master data...</span>';
+            
+            try {
+                const response = await fetch('data/master-data.json');
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                
+                currentData = await response.json();
+                currentFile = 'master';
+                
+                populateMasterSelector(currentData);
+                document.getElementById('dashboard').classList.remove('hidden');
+                statusEl.innerHTML = '<span class="text-green-400">✓ Loaded master-data.json</span>';
+                
+            } catch (error) {
+                statusEl.innerHTML = `<span class="text-red-400">✗ Error: ${error.message}</span>`;
+            }
+        }
+
+        function populateFileSelector(data) {
+            const selector = document.getElementById('fileSelector');
+            selector.innerHTML = '<option value="">-- Select a section --</option>';
+            
+            Object.keys(data).forEach(key => {
+                const option = document.createElement('option');
+                option.value = key;
+                option.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+                selector.appendChild(option);
+            });
+        }
+
+        function populateMasterSelector(data) {
+            const selector = document.getElementById('fileSelector');
+            selector.innerHTML = '<option value="">-- Select a section --</option>';
+            
+            const sections = ['global', 'regions', 'epidemiologicalModels'];
+            sections.forEach(section => {
+                if (data[section]) {
+                    const option = document.createElement('option');
+                    option.value = section;
+                    option.textContent = section.charAt(0).toUpperCase() + section.slice(1);
+                    selector.appendChild(option);
+                }
+            });
+        }
+
+        function showData() {
+            const selected = document.getElementById('fileSelector').value;
+            if (!selected) {
+                document.getElementById('dataDisplay').innerHTML = '';
+                document.getElementById('sheetSelectorContainer').classList.add('hidden');
+                return;
+            }
+
+            const data = currentData[selected];
+            
+            if (Array.isArray(data)) {
+                // Direct array data
+                document.getElementById('sheetSelectorContainer').classList.add('hidden');
+                renderTable(data, selected);
+            } else if (typeof data === 'object' && data !== null) {
+                // Multi-sheet file
+                const sheets = Object.keys(data);
+                if (sheets.length > 0 && Array.isArray(data[sheets[0]])) {
+                    // It's a sheet collection
+                    populateSheetSelector(data);
+                    document.getElementById('sheetSelectorContainer').classList.remove('hidden');
+                    // Auto-select first sheet
+                    document.getElementById('sheetSelector').value = sheets[0];
+                    showSheetData();
+                } else {
+                    // Nested object
+                    document.getElementById('sheetSelectorContainer').classList.add('hidden');
+                    renderNestedObject(data, selected);
+                }
+            }
+        }
+
+        function populateSheetSelector(sheets) {
+            const selector = document.getElementById('sheetSelector');
+            selector.innerHTML = '';
+            
+            Object.keys(sheets).forEach(sheetName => {
+                const option = document.createElement('option');
+                option.value = sheetName;
+                option.textContent = sheetName;
+                selector.appendChild(option);
+            });
+        }
+
+        function showSheetData() {
+            const selectedSection = document.getElementById('fileSelector').value;
+            const selectedSheet = document.getElementById('sheetSelector').value;
+            
+            if (!selectedSection || !selectedSheet) return;
+            
+            const data = currentData[selectedSection][selectedSheet];
+            if (Array.isArray(data)) {
+                renderTable(data, `${selectedSection} → ${selectedSheet}`);
+            }
+        }
+
+        function renderTable(rows, title) {
+            const container = document.getElementById('tableContainer');
+            const statsContainer = document.getElementById('statsContainer');
+            
+            // Calculate stats
+            const totalRows = rows.length;
+            const nonEmptyRows = rows.filter(r => Object.values(r).some(v => v !== null && v !== undefined && v !== '')).length;
+            const columns = totalRows > 0 ? Object.keys(rows[0]).length : 0;
+            
+            statsContainer.innerHTML = `
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <div class="text-slate-400 text-sm">Total Rows</div>
+                    <div class="text-2xl font-bold text-blue-400">${totalRows}</div>
+                </div>
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <div class="text-slate-400 text-sm">Data Rows</div>
+                    <div class="text-2xl font-bold text-green-400">${nonEmptyRows}</div>
+                </div>
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <div class="text-slate-400 text-sm">Columns</div>
+                    <div class="text-2xl font-bold text-purple-400">${columns}</div>
+                </div>
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <div class="text-slate-400 text-sm">Source</div>
+                    <div class="text-lg font-bold text-yellow-400 truncate">${title}</div>
+                </div>
+            `;
+            
+            if (totalRows === 0) {
+                container.innerHTML = '<div class="p-6 text-slate-400">No data in this sheet</div>';
+                return;
+            }
+            
+            // Filter out rows that are completely empty
+            const cleanRows = rows.filter(row => 
+                Object.values(row).some(v => v !== null && v !== undefined && v !== '' && !String(v).includes('Unnamed'))
+            );
+            
+            if (cleanRows.length === 0) {
+                container.innerHTML = '<div class="p-6 text-slate-400">No meaningful data (mostly empty rows)</div>';
+                return;
+            }
+            
+            // Get columns from first non-empty row
+            const cols = Object.keys(cleanRows[0]);
+            
+            let html = '<div class="overflow-x-auto"><table class="w-full text-left"><thead class="bg-slate-700"><tr>';
+            
+            cols.forEach(col => {
+                html += `<th class="px-4 py-3 text-slate-300 text-xs">${col}</th>`;
+            });
+            html += '</tr></thead><tbody>';
+            
+            // Show first 50 rows
+            cleanRows.slice(0, 50).forEach(row => {
+                html += '<tr class="border-t border-slate-700 hover:bg-slate-750">';
+                cols.forEach(col => {
+                    const val = row[col];
+                    let display = '-';
+                    if (val !== null && val !== undefined) {
+                        if (typeof val === 'number') {
+                            display = val.toLocaleString();
+                        } else {
+                            display = String(val).substring(0, 100);
+                        }
+                    }
+                    html += `<td class="px-4 py-2 text-sm ${typeof val === 'number' ? 'text-green-400 font-mono' : 'text-slate-300'}">${display}</td>`;
+                });
+                html += '</tr>';
+            });
+            
+            if (cleanRows.length > 50) {
+                html += `<tr><td colspan="${cols.length}" class="px-4 py-2 text-center text-slate-500 italic">... and ${cleanRows.length - 50} more rows ...</td></tr>`;
+            }
+            
+            html += '</tbody></table></div>';
+            container.innerHTML = html;
+        }
+
+        function renderNestedObject(obj, title) {
+            const container = document.getElementById('tableContainer');
+            const statsContainer = document.getElementById('statsContainer');
+            
+            statsContainer.innerHTML = `
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <div class="text-slate-400 text-sm">Type</div>
+                    <div class="text-2xl font-bold text-blue-400">Nested Object</div>
+                </div>
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <div class="text-slate-400 text-sm">Keys</div>
+                    <div class="text-2xl font-bold text-green-400">${Object.keys(obj).length}</div>
+                </div>
+            `;
+            
+            let html = '<div class="p-6">';
+            html += `<h3 class="text-lg font-semibold text-blue-300 mb-4">${title}</h3>`;
+            html += '<div class="space-y-2">';
+            
+            Object.entries(obj).forEach(([key, val]) => {
+                html += `<div class="bg-slate-700 p-3 rounded flex justify-between items-center">`;
+                html += `<span class="font-medium text-slate-200">${key}</span>`;
+                if (Array.isArray(val)) {
+                    html += `<span class="text-green-400 text-sm">Array (${val.length} items)</span>`;
+                } else if (typeof val === 'object' && val !== null) {
+                    html += `<span class="text-yellow-400 text-sm">Object</span>`;
+                } else {
+                    html += `<span class="text-slate-400 text-sm">${String(val).substring(0, 50)}</span>`;
+                }
+                html += '</div>';
+            });
+            
+            html += '</div></div>';
+            container.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

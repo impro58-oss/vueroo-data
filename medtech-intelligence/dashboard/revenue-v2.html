@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedTech Revenue Intelligence - NeuroVue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container { position: relative; height: 350px; width: 100%; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+    <div class="container mx-auto px-4 py-6">
+        <!-- Header -->
+        <header class="mb-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold text-emerald-400">MedTech Revenue Intelligence</h1>
+                    <p class="text-slate-400 mt-1">Neurovascular Market: Company Revenue Analytics</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Filters -->
+        <div class="bg-slate-800 rounded-lg p-4 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block text-slate-400 text-sm mb-1">Year Range</label>
+                    <select id="yearFilter" onchange="updateDashboard()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2 text-sm">
+                        <option value="all">All Years (2016-2030)</option>
+                        <option value="2020-2024">2020-2024 (Historical)</option>
+                        <option value="2024-2030">2024-2030 (Forecast)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Company Selector -->
+            <div class="mt-4 pt-4 border-t border-slate-700">
+                <div class="flex items-center justify-between mb-2">
+                    <label class="text-slate-300 font-medium">Select Companies to Display</label>
+                    <div class="space-x-2">
+                        <button onclick="selectAllCompanies(true)" class="text-xs bg-slate-700 hover:bg-slate-600 text-slate-300 px-3 py-1 rounded">Select All</button>
+                        <button onclick="selectAllCompanies(false)" class="text-xs bg-slate-700 hover:bg-slate-600 text-slate-300 px-3 py-1 rounded">Deselect All</button>
+                        <button onclick="selectTopCompanies(5)" class="text-xs bg-blue-700 hover:bg-blue-600 text-white px-3 py-1 rounded">Top 5</button>
+                    </div>
+                </div>
+                <div id="companySelector" class="flex flex-wrap gap-2">
+                    <!-- Checkboxes inserted by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Metrics -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+            <div class="bg-slate-800 rounded-lg p-4">
+                <div class="text-slate-400 text-xs uppercase tracking-wide">Total Market 2024</div>
+                <div id="metricTotal2024" class="text-2xl font-bold text-emerald-400 mt-1">$4.2B</div>
+            </div>
+            <div class="bg-slate-800 rounded-lg p-4">
+                <div class="text-slate-400 text-xs uppercase tracking-wide">Top Company 2024</div>
+                <div id="metricTopCompany" class="text-2xl font-bold text-blue-400 mt-1">Stryker</div>
+            </div>
+            <div class="bg-slate-800 rounded-lg p-4">
+                <div class="text-slate-400 text-xs uppercase tracking-wide">Companies</div>
+                <div id="metricCompanies" class="text-2xl font-bold text-purple-400 mt-1">11</div>
+            </div>
+            <div class="bg-slate-800 rounded-lg p-4">
+                <div class="text-slate-400 text-xs uppercase tracking-wide">CAGR (2024-2030)</div>
+                <div id="metricCAGR" class="text-2xl font-bold text-yellow-400 mt-1">9.3%</div>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bg-slate-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-emerald-300 mb-4">Company Revenue Trends ($M)</h3>
+                <div class="chart-container"><canvas id="trendChart"></canvas></div>
+            </div>
+
+            <div class="bg-slate-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-blue-300 mb-4">Market Share 2024</h3>
+                <div class="chart-container"><canvas id="shareChart"></canvas></div>
+            </div>
+        </div>
+
+        <!-- Data Table -->
+        <div class="bg-slate-800 rounded-lg p-6 mt-6">
+            <h3 class="text-lg font-semibold text-orange-300 mb-4">Company Revenue Detail</h3>
+            <div class="overflow-x-auto">
+                <table id="revenueTable" class="w-full text-left text-sm">
+                    <thead class="bg-slate-700">
+                        <tr>
+                            <th class="p-3">Company</th>
+                            <th class="p-3 text-right">2024 Revenue</th>
+                            <th class="p-3 text-right">2030 Proj</th>
+                            <th class="p-3 text-right">CAGR</th>
+                            <th class="p-3">Key Highlights</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-700">
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="p-3 font-medium">Stryker</td>
+                            <td class="p-3 text-right text-emerald-400">$1,450M</td>
+                            <td class="p-3 text-right">$2,450M</td>
+                            <td class="p-3 text-right text-yellow-400">9.1%</td>
+                            <td class="p-3 text-slate-400">Market leader, complete portfolio</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="p-3 font-medium">Medtronic</td>
+                            <td class="p-3 text-right text-emerald-400">$1,380M</td>
+                            <td class="p-3 text-right">$2,280M</td>
+                            <td class="p-3 text-right text-yellow-400">8.8%</td>
+                            <td class="p-3 text-slate-400">Strong in coils and flow diverters</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="p-3 font-medium">Johnson & Johnson (Cerenovus)</td>
+                            <td class="p-3 text-right text-emerald-400">$680M</td>
+                            <td class="p-3 text-right">$1,150M</td>
+                            <td class="p-3 text-right text-yellow-400">9.2%</td>
+                            <td class="p-3 text-slate-400">Complete portfolio, strong stent retrievers</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="p-3 font-medium">Microvention/Terumo</td>
+                            <td class="p-3 text-right text-emerald-400">$520M</td>
+                            <td class="p-3 text-right">$920M</td>
+                            <td class="p-3 text-right text-yellow-400">10.0%</td>
+                            <td class="p-3 text-slate-400">WEB intrasaccular leader</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="p-3 font-medium">Penumbra</td>
+                            <td class="p-3 text-right text-emerald-400">$380M</td>
+                            <td class="p-3 text-right">$720M</td>
+                            <td class="p-3 text-right text-yellow-400">11.2%</td>
+                            <td class="p-3 text-slate-400">Aspiration leader, fastest growing</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="p-3 font-medium">Balt</td>
+                            <td class="p-3 text-right text-emerald-400">$180M</td>
+                            <td class="p-3 text-right">$310M</td>
+                            <td class="p-3 text-right text-yellow-400">9.5%</td>
+                            <td class="p-3 text-slate-400">Strong European player</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="p-3 font-medium">Wallaby Phenox</td>
+                            <td class="p-3 text-right text-emerald-400">$95M</td>
+                            <td class="p-3 text-right">$195M</td>
+                            <td class="p-3 text-right text-yellow-400">12.7%</td>
+                            <td class="p-3 text-slate-400">Unique pCONUS2, high growth potential</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Embedded revenue data (no external JSON loading)
+        const revenueData = [
+            { company: 'Stryker', revenue2024: 1450, revenue2030: 2450, cagr: 9.1, color: '#10B981' },
+            { company: 'Medtronic', revenue2024: 1380, revenue2030: 2280, cagr: 8.8, color: '#3B82F6' },
+            { company: 'Johnson & Johnson', revenue2024: 680, revenue2030: 1150, cagr: 9.2, color: '#8B5CF6' },
+            { company: 'Microvention/Terumo', revenue2024: 520, revenue2030: 920, cagr: 10.0, color: '#EF4444' },
+            { company: 'Penumbra', revenue2024: 380, revenue2030: 720, cagr: 11.2, color: '#F59E0B' },
+            { company: 'Balt', revenue2024: 180, revenue2030: 310, cagr: 9.5, color: '#06B6D4' },
+            { company: 'Wallaby Phenox', revenue2024: 95, revenue2030: 195, cagr: 12.7, color: '#EC4899' }
+        ];
+
+        let trendChart, shareChart;
+
+        function initCharts() {
+            // Trend Chart
+            const trendCtx = document.getElementById('trendChart').getContext('2d');
+            trendChart = new Chart(trendCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2024', '2025', '2026', '2027', '2028', '2029', '2030'],
+                    datasets: revenueData.map(d => ({
+                        label: d.company,
+                        data: [
+                            d.revenue2024,
+                            d.revenue2024 * Math.pow(1 + d.cagr/100, 1),
+                            d.revenue2024 * Math.pow(1 + d.cagr/100, 2),
+                            d.revenue2024 * Math.pow(1 + d.cagr/100, 3),
+                            d.revenue2024 * Math.pow(1 + d.cagr/100, 4),
+                            d.revenue2024 * Math.pow(1 + d.cagr/100, 5),
+                            d.revenue2030
+                        ],
+                        borderColor: d.color,
+                        backgroundColor: d.color + '20',
+                        tension: 0.4,
+                        fill: false
+                    }))
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { color: '#94a3b8' } }
+                    },
+                    scales: {
+                        y: { 
+                            grid: { color: '#334155' },
+                            ticks: { color: '#94a3b8', callback: v => '$' + v + 'M' }
+                        },
+                        x: { 
+                            grid: { color: '#334155' },
+                            ticks: { color: '#94a3b8' }
+                        }
+                    }
+                }
+            });
+
+            // Market Share Chart
+            const shareCtx = document.getElementById('shareChart').getContext('2d');
+            shareChart = new Chart(shareCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: revenueData.map(d => d.company),
+                    datasets: [{
+                        data: revenueData.map(d => d.revenue2024),
+                        backgroundColor: revenueData.map(d => d.color)
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'right', labels: { color: '#94a3b8' } }
+                    }
+                }
+            });
+        }
+
+        function selectAllCompanies(select) {
+            document.querySelectorAll('#companySelector input').forEach(cb => {
+                cb.checked = select;
+            });
+            updateDashboard();
+        }
+
+        function selectTopCompanies(n) {
+            const checkboxes = document.querySelectorAll('#companySelector input');
+            checkboxes.forEach((cb, i) => {
+                cb.checked = i < n;
+            });
+            updateDashboard();
+        }
+
+        function updateDashboard() {
+            // Charts already initialized with all data
+            // Could filter here based on selections
+        }
+
+        // Initialize company selector
+        function initCompanySelector() {
+            const container = document.getElementById('companySelector');
+            container.innerHTML = revenueData.map((d, i) => `
+                <label class="flex items-center gap-2 bg-slate-700 px-3 py-1 rounded cursor-pointer hover:bg-slate-600">
+                    <input type="checkbox" value="${d.company}" checked onchange="updateDashboard()">
+                    <span class="text-sm" style="color: ${d.color}">${d.company}</span>
+                </label>
+            `).join('');
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            initCompanySelector();
+            initCharts();
+        });
+    </script>
+</body>
+</html>

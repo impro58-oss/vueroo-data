@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedTech Intelligence Visualizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container { position: relative; height: 400px; width: 100%; }
+        .metric-card { transition: all 0.3s ease; }
+        .metric-card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+    <div class="container mx-auto px-4 py-6">
+        <!-- Header -->
+        <header class="mb-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold text-blue-400">MedTech Intelligence Visualizer</h1>
+                    <p class="text-slate-400 mt-1">Neurovascular Market Analytics by Country & Disease Type</p>
+                </div>
+                <button onclick="loadAllData()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium transition">
+                    Load Data
+                </button>
+            </div>
+            <div id="status" class="mt-2 text-sm"></div>
+        </header>
+
+        <!-- Filters -->
+        <div id="filters" class="bg-slate-800 rounded-lg p-4 mb-6 hidden">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div>
+                    <label class="block text-slate-400 text-sm mb-1">Data Source</label>
+                    <select id="sourceFilter" onchange="updateDashboard()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2 text-sm">
+                        <option value="aneurysm">Aneurysm (Global)</option>
+                        <option value="asah_model">aSAH Model (EU)</option>
+                        <option value="eu_evt">EVT Treatments (EU)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-slate-400 text-sm mb-1">Region</label>
+                    <select id="regionFilter" onchange="updateDashboard()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2 text-sm">
+                        <option value="all">All Regions</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-slate-400 text-sm mb-1">Country</label>
+                    <select id="countryFilter" onchange="updateDashboard()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2 text-sm">
+                        <option value="all">All Countries</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-slate-400 text-sm mb-1">Metric Type</label>
+                    <select id="metricFilter" onchange="updateDashboard()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2 text-sm">
+                        <option value="cases">Cases/Procedures</option>
+                        <option value="incidence">Incidence Rate</option>
+                        <option value="penetration">Technology Penetration</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Metrics -->
+        <div id="metrics" class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6 hidden">
+            <div class="metric-card bg-slate-800 rounded-lg p-4">
+                <div class="text-slate-400 text-xs uppercase tracking-wide">Total Cases (2024)</div>
+                <div id="metricTotalCases" class="text-2xl font-bold text-blue-400 mt-1">-</div>
+                <div id="metricTotalCasesTrend" class="text-xs mt-1"></div>
+            </div>
+            <div class="metric-card bg-slate-800 rounded-lg p-4">
+                <div class="text-slate-400 text-xs uppercase tracking-wide">Countries Covered</div>
+                <div id="metricCountries" class="text-2xl font-bold text-green-400 mt-1">-</div>
+                <div class="text-xs text-slate-500 mt-1">With complete data</div>
+            </div>
+            <div class="metric-card bg-slate-800 rounded-lg p-4">
+                <div class="text-slate-400 text-xs uppercase tracking-wide">Top Region</div>
+                <div id="metricTopRegion" class="text-2xl font-bold text-purple-400 mt-1">-</div>
+                <div id="metricTopRegionShare" class="text-xs mt-1"></div>
+            </div>
+            <div class="metric-card bg-slate-800 rounded-lg p-4">
+                <div class="text-slate-400 text-xs uppercase tracking-wide">Growth (2024-2030)</div>
+                <div id="metricGrowth" class="text-2xl font-bold text-yellow-400 mt-1">-</div>
+                <div class="text-xs text-slate-500 mt-1">Projected CAGR</div>
+            </div>
+        </div>
+
+        <!-- Charts Grid -->
+        <div id="charts" class="grid grid-cols-1 lg:grid-cols-2 gap-6 hidden">
+            <!-- Time Series Chart -->
+            <div class="bg-slate-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-blue-300 mb-4">Trends Over Time</h3>
+                <div class="chart-container">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Regional Comparison -->
+            <div class="bg-slate-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-green-300 mb-4">Regional Comparison (2024)</h3>
+                <div class="chart-container">
+                    <canvas id="regionChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Country Breakdown -->
+            <div class="bg-slate-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-purple-300 mb-4">Top Countries</h3>
+                <div class="chart-container">
+                    <canvas id="countryChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Disease Type Distribution -->
+            <div class="bg-slate-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-yellow-300 mb-4">Disease Type Distribution</h3>
+                <div class="chart-container">
+                    <canvas id="diseaseChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Table -->
+        <div id="dataTable" class="bg-slate-800 rounded-lg p-6 mt-6 hidden">
+            <h3 class="text-lg font-semibold text-orange-300 mb-4">Detailed Data</h3>
+            <div class="overflow-x-auto">
+                <table id="detailTable" class="w-full text-left text-sm">
+                    <thead class="bg-slate-700"></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let rawData = null;
+        let parsedData = null;
+        let charts = {};
+
+        async function loadAllData() {
+            const statusEl = document.getElementById('status');
+            statusEl.innerHTML = '<span class="text-yellow-400">Loading data...</span>';
+            
+            try {
+                const response = await fetch('data/epidemiological-data.json');
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                
+                rawData = await response.json();
+                parsedData = parseAneurysmData(rawData.aneurysm);
+                
+                // Show UI
+                document.getElementById('filters').classList.remove('hidden');
+                document.getElementById('metrics').classList.remove('hidden');
+                document.getElementById('charts').classList.remove('hidden');
+                document.getElementById('dataTable').classList.remove('hidden');
+                
+                // Populate filters
+                populateFilters();
+                
+                // Update dashboard
+                updateDashboard();
+                
+                statusEl.innerHTML = '<span class="text-green-400">✓ Data loaded successfully</span>';
+                
+            } catch (error) {
+                statusEl.innerHTML = `<span class="text-red-400">✗ Error: ${error.message}</span>`;
+                console.error(error);
+            }
+        }
+
+        function parseAneurysmData(aneurysmData) {
+            const records = [];
+            const years = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035];
+            
+            // Parse Total sheet
+            const totalSheet = aneurysmData?.Total || [];
+            let currentRegion = '';
+            
+            totalSheet.forEach((row, idx) => {
+                const region = row['Unnamed: 4'];
+                const country = row['Unnamed: 6'];
+                
+                // Detect region headers
+                if (region && ['APAC', 'EU', 'AMERICA', 'ROW'].includes(region)) {
+                    currentRegion = region;
+                    return;
+                }
+                
+                // Skip non-data rows
+                if (!country || country === 'COUNTRY' || country === '-' || country.startsWith('N =')) return;
+                
+                // Extract yearly data
+                const yearData = {};
+                years.forEach(year => {
+                    const colIdx = 11 + (year - 2019);
+                    const val = row[`Unnamed: ${colIdx}`];
+                    yearData[year] = val && !isNaN(val) ? val : null;
+                });
+                
+                records.push({
+                    region: currentRegion,
+                    country: country,
+                    diseaseType: 'Total Aneurysm',
+                    ...yearData
+                });
+            });
+            
+            // Parse SAH sheet
+            const sahSheet = aneurysmData?.SAH || [];
+            currentRegion = '';
+            sahSheet.forEach((row) => {
+                const region = row['Unnamed: 4'];
+                const country = row['Unnamed: 6'];
+                
+                if (region && ['APAC', 'EU', 'AMERICA', 'ROW'].includes(region)) {
+                    currentRegion = region;
+                    return;
+                }
+                
+                if (!country || country === 'COUNTRY' || country === '-' || country.startsWith('N =')) return;
+                
+                const yearData = {};
+                years.forEach(year => {
+                    const colIdx = 11 + (year - 2019);
+                    const val = row[`Unnamed: ${colIdx}`];
+                    yearData[year] = val && !isNaN(val) ? val : null;
+                });
+                
+                records.push({
+                    region: currentRegion,
+                    country: country,
+                    diseaseType: 'SAH (Subarachnoid Hemorrhage)',
+                    ...yearData
+                });
+            });
+            
+            // Parse UIA sheet
+            const uiaSheet = aneurysmData?.UIA || [];
+            currentRegion = '';
+            uiaSheet.forEach((row) => {
+                const region = row['Unnamed: 4'];
+                const country = row['Unnamed: 6'];
+                
+                if (region && ['APAC', 'EU', 'AMERICA', 'ROW'].includes(region)) {
+                    currentRegion = region;
+                    return;
+                }
+                
+                if (!country || country === 'COUNTRY' || country === '-' || country.startsWith('N =')) return;
+                
+                const yearData = {};
+                years.forEach(year => {
+                    const colIdx = 11 + (year - 2019);
+                    const val = row[`Unnamed: ${colIdx}`];
+                    yearData[year] = val && !isNaN(val) ? val : null;
+                });
+                
+                records.push({
+                    region: currentRegion,
+                    country: country,
+                    diseaseType: 'UIA (Unruptured Intracranial Aneurysm)',
+                    ...yearData
+                });
+            });
+            
+            return records;
+        }
+
+        function populateFilters() {
+            if (!parsedData) return;
+            
+            // Regions
+            const regions = [...new Set(parsedData.map(r => r.region).filter(Boolean))];
+            const regionFilter = document.getElementById('regionFilter');
+            regionFilter.innerHTML = '<option value="all">All Regions</option>';
+            regions.forEach(r => {
+                regionFilter.innerHTML += `<option value="${r}">${r}</option>`;
+            });
+            
+            // Countries
+            const countries = [...new Set(parsedData.map(r => r.country).filter(Boolean))].sort();
+            const countryFilter = document.getElementById('countryFilter');
+            countryFilter.innerHTML = '<option value="all">All Countries</option>';
+            countries.forEach(c => {
+                countryFilter.innerHTML += `<option value="${c}">${c}</option>`;
+            });
+        }
+
+        function updateDashboard() {
+            if (!parsedData) return;
+            
+            const regionFilter = document.getElementById('regionFilter').value;
+            const countryFilter = document.getElementById('countryFilter').value;
+            const metricFilter = document.getElementById('metricFilter').value;
+            
+            // Filter data
+            let filtered = parsedData;
+            if (regionFilter !== 'all') {
+                filtered = filtered.filter(r => r.region === regionFilter);
+            }
+            if (countryFilter !== 'all') {
+                filtered = filtered.filter(r => r.country === countryFilter);
+            }
+            
+            // Update metrics
+            updateMetrics(filtered);
+            
+            // Update charts
+            updateTrendChart(filtered);
+            updateRegionChart(filtered);
+            updateCountryChart(filtered);
+            updateDiseaseChart(filtered);
+            
+            // Update table
+            updateDataTable(filtered);
+        }
+
+        function updateMetrics(data) {
+            const year2024 = data.reduce((sum, r) => sum + (r[2024] || 0), 0);
+            const year2023 = data.reduce((sum, r) => sum + (r[2023] || 0), 0);
+            const year2030 = data.reduce((sum, r) => sum + (r[2030] || 0), 0);
+            
+            // Total cases
+            document.getElementById('metricTotalCases').textContent = year2024.toLocaleString();
+            const yoyChange = year2023 > 0 ? ((year2024 - year2023) / year2023 * 100).toFixed(1) : 0;
+            document.getElementById('metricTotalCasesTrend').innerHTML = 
+                `<span class="${yoyChange >= 0 ? 'text-green-400' : 'text-red-400'}">${yoyChange >= 0 ? '↑' : '↓'} ${Math.abs(yoyChange)}% vs 2023</span>`;
+            
+            // Countries
+            const uniqueCountries = new Set(data.map(r => r.country)).size;
+            document.getElementById('metricCountries').textContent = uniqueCountries;
+            
+            // Top region
+            const regionTotals = {};
+            data.forEach(r => {
+                if (!regionTotals[r.region]) regionTotals[r.region] = 0;
+                regionTotals[r.region] += r[2024] || 0;
+            });
+            const topRegion = Object.entries(regionTotals).sort((a, b) => b[1] - a[1])[0];
+            if (topRegion) {
+                document.getElementById('metricTopRegion').textContent = topRegion[0];
+                const share = year2024 > 0 ? (topRegion[1] / year2024 * 100).toFixed(1) : 0;
+                document.getElementById('metricTopRegionShare').textContent = `${share}% of total`;
+            }
+            
+            // Growth
+            if (year2024 > 0 && year2030 > 0) {
+                const cagr = (Math.pow(year2030 / year2024, 1/6) - 1) * 100;
+                document.getElementById('metricGrowth').textContent = `${cagr.toFixed(1)}%`;
+            }
+        }
+
+        function updateTrendChart(data) {
+            const ctx = document.getElementById('trendChart').getContext('2d');
+            
+            if (charts.trend) charts.trend.destroy();
+            
+            const years = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030];
+            
+            // Group by disease type
+            const diseaseTypes = [...new Set(data.map(r => r.diseaseType))];
+            const datasets = diseaseTypes.map((type, idx) => {
+                const typeData = data.filter(r => r.diseaseType === type);
+                const color = ['#60A5FA', '#34D399', '#A78BFA', '#FBBF24'][idx % 4];
+                
+                return {
+                    label: type,
+                    data: years.map(year => typeData.reduce((sum, r) => sum + (r[year] || 0), 0)),
+                    borderColor: color,
+                    backgroundColor: color + '20',
+                    fill: true,
+                    tension: 0.4
+                };
+            });
+            
+            charts.trend = new Chart(ctx, {
+                type: 'line',
+                data: { labels: years, datasets },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { color: '#94A3B8' } }
+                    },
+                    scales: {
+                        y: {
+                            ticks: { color: '#94A3B8', callback: v => v.toLocaleString() },
+                            grid: { color: '#334155' }
+                        },
+                        x: {
+                            ticks: { color: '#94A3B8' },
+                            grid: { color: '#334155' }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateRegionChart(data) {
+            const ctx = document.getElementById('regionChart').getContext('2d');
+            
+            if (charts.region) charts.region.destroy();
+            
+            const regionTotals = {};
+            data.forEach(r => {
+                if (!regionTotals[r.region]) regionTotals[r.region] = 0;
+                regionTotals[r.region] += r[2024] || 0;
+            });
+            
+            const sorted = Object.entries(regionTotals).sort((a, b) => b[1] - a[1]);
+            
+            charts.region = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: sorted.map(x => x[0]),
+                    datasets: [{
+                        label: 'Cases 2024',
+                        data: sorted.map(x => x[1]),
+                        backgroundColor: ['#60A5FA', '#34D399', '#A78BFA', '#FBBF24']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: {
+                            ticks: { color: '#94A3B8', callback: v => v.toLocaleString() },
+                            grid: { color: '#334155' }
+                        },
+                        x: { ticks: { color: '#94A3B8' }, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function updateCountryChart(data) {
+            const ctx = document.getElementById('countryChart').getContext('2d');
+            
+            if (charts.country) charts.country.destroy();
+            
+            const countryTotals = {};
+            data.forEach(r => {
+                if (!countryTotals[r.country]) countryTotals[r.country] = 0;
+                countryTotals[r.country] += r[2024] || 0;
+            });
+            
+            const sorted = Object.entries(countryTotals)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 10);
+            
+            charts.country = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: sorted.map(x => x[0]),
+                    datasets: [{
+                        label: 'Cases 2024',
+                        data: sorted.map(x => x[1]),
+                        backgroundColor: '#A78BFA'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: {
+                            ticks: { color: '#94A3B8', callback: v => v.toLocaleString() },
+                            grid: { color: '#334155' }
+                        },
+                        y: { ticks: { color: '#94A3B8' }, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function updateDiseaseChart(data) {
+            const ctx = document.getElementById('diseaseChart').getContext('2d');
+            
+            if (charts.disease) charts.disease.destroy();
+            
+            const diseaseTotals = {};
+            data.forEach(r => {
+                if (!diseaseTotals[r.diseaseType]) diseaseTotals[r.diseaseType] = 0;
+                diseaseTotals[r.diseaseType] += r[2024] || 0;
+            });
+            
+            charts.disease = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(diseaseTotals),
+                    datasets: [{
+                        data: Object.values(diseaseTotals),
+                        backgroundColor: ['#60A5FA', '#34D399', '#A78BFA', '#FBBF24']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: { color: '#94A3B8' }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateDataTable(data) {
+            const thead = document.querySelector('#detailTable thead');
+            const tbody = document.querySelector('#detailTable tbody');
+            
+            // Header
+            thead.innerHTML = `
+                <tr class="text-slate-300">
+                    <th class="px-4 py-2">Region</th>
+                    <th class="px-4 py-2">Country</th>
+                    <th class="px-4 py-2">Disease Type</th>
+                    <th class="px-4 py-2 text-right">2024</th>
+                    <th class="px-4 py-2 text-right">2030</th>
+                    <th class="px-4 py-2 text-right">Growth</th>
+                </tr>
+            `;
+            
+            // Body
+            const sorted = data.sort((a, b) => (b[2024] || 0) - (a[2024] || 0)).slice(0, 50);
+            tbody.innerHTML = sorted.map(r => {
+                const val2024 = r[2024] || 0;
+                const val2030 = r[2030] || 0;
+                const growth = val2024 > 0 ? ((val2030 - val2024) / val2024 * 100).toFixed(1) : 0;
+                
+                return `
+                    <tr class="border-t border-slate-700 hover:bg-slate-750">
+                        <td class="px-4 py-2">${r.region}</td>
+                        <td class="px-4 py-2">${r.country}</td>
+                        <td class="px-4 py-2 text-slate-400">${r.diseaseType}</td>
+                        <td class="px-4 py-2 text-right font-mono text-green-400">${val2024.toLocaleString()}</td>
+                        <td class="px-4 py-2 text-right font-mono text-blue-400">${val2030.toLocaleString()}</td>
+                        <td class="px-4 py-2 text-right font-mono ${growth >= 0 ? 'text-green-400' : 'text-red-400'}">${growth > 0 ? '+' : ''}${growth}%</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+    </script>
+</body>
+</html>

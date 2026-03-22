@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competitive Intelligence Dashboard - Neurovascular</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .company-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .company-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .company-card.selected {
+            border-color: #3B82F6;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+        }
+        .product-badge {
+            transition: all 0.2s;
+        }
+        .product-badge:hover {
+            transform: scale(1.05);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .gap-highlight {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.2));
+            border-left: 3px solid #EF4444;
+        }
+        .strength-highlight {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.2));
+            border-left: 3px solid #10B981;
+        }
+        .filter-btn.active {
+            background: #3B82F6;
+            color: white;
+        }
+        .comparison-row:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+        .modal-backdrop {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+    <!-- Header -->
+    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-brain text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-white">Competitive Intelligence</h1>
+                        <p class="text-xs text-slate-400">Neurovascular Market Landscape</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="showComparisonMode()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-sm font-medium transition">
+                        <i class="fas fa-columns mr-2"></i>Compare
+                    </button>
+                    <button onclick="exportData()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-sm font-medium transition">
+                        <i class="fas fa-download mr-2"></i>Export
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 py-6">
+        <!-- Filters -->
+        <div class="bg-slate-900 rounded-xl p-4 mb-6 border border-slate-800">
+            <div class="flex flex-wrap items-center gap-3">
+                <span class="text-sm text-slate-400 mr-2">Filter by:</span>
+                <button class="filter-btn active px-3 py-1.5 rounded-full text-sm font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition" data-filter="all">All Companies</button>
+                <button class="filter-btn px-3 py-1.5 rounded-full text-sm font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition" data-filter="threat">High Threat</button>
+                <button class="filter-btn px-3 py-1.5 rounded-full text-sm font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition" data-filter="complete">Complete Portfolio</button>
+                <button class="filter-btn px-3 py-1.5 rounded-full text-sm font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition" data-filter="gaps">Has Major Gaps</button>
+                <div class="flex-1"></div>
+                <div class="relative">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"></i>
+                    <input type="text" id="searchInput" placeholder="Search companies or products..." 
+                           class="pl-10 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm focus:outline-none focus:border-blue-500 w-64">
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Company Cards -->
+            <div class="lg:col-span-2">
+                <div id="companyGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Companies will be rendered here -->
+                </div>
+            </div>
+
+            <!-- Sidebar: Insights & Wallaby -->
+            <div class="space-y-6">
+                <!-- Wallaby Status Card -->
+                <div class="bg-gradient-to-br from-blue-900/50 to-slate-900 rounded-xl p-6 border border-blue-800/50">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white">Wallaby Position</h3>
+                            <span class="text-xs text-blue-400">Your Company</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-slate-400">Portfolio Coverage</span>
+                            <span class="text-sm font-mono text-green-400">7/10 Categories</span>
+                        </div>
+                        <div class="w-full bg-slate-800 rounded-full h-2">
+                            <div class="bg-green-500 h-2 rounded-full" style="width: 70%"></div>
+                        </div>
+                        
+                        <div class="mt-4 space-y-2">
+                            <div class="flex items-center gap-2 text-sm">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-slate-300">Unique bifurcation device (pCONUS2)</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-slate-300">Strong coil portfolio (Avenir)</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-slate-300">Growing flow diverter line (p64)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 pt-4 border-t border-slate-800">
+                            <p class="text-sm font-medium text-red-400 mb-2">Critical Gaps:</p>
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-2 text-sm gap-highlight px-3 py-2 rounded-lg">
+                                    <i class="fas fa-times-circle text-red-500"></i>
+                                    <span class="text-slate-300">No intrasaccular device</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-sm gap-highlight px-3 py-2 rounded-lg">
+                                    <i class="fas fa-times-circle text-red-500"></i>
+                                    <span class="text-slate-300">Limited radial access</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-sm gap-highlight px-3 py-2 rounded-lg">
+                                    <i class="fas fa-times-circle text-red-500"></i>
+                                    <span class="text-slate-300">No aspiration pump</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Insights -->
+                <div class="bg-slate-900 rounded-xl p-6 border border-slate-800">
+                    <h3 class="font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="fas fa-lightbulb text-yellow-500"></i>
+                        Strategic Insights
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="p-3 bg-slate-800/50 rounded-lg border-l-2 border-yellow-500">
+                            <p class="text-sm text-slate-300">
+                                <span class="font-semibold text-yellow-400">Intrasaccular Gap:</span> 
+                                WEB, Artisse, and Contour dominate this fast-growing segment. Major opportunity for Wallaby.
+                            </p>
+                        </div>
+                        <div class="p-3 bg-slate-800/50 rounded-lg border-l-2 border-blue-500">
+                            <p class="text-sm text-slate-300">
+                                <span class="font-semibold text-blue-400">Radial Trend:</span> 
+                                Competitors investing heavily in radial-first approaches (RIST, FUBUKI, BMX81).
+                            </p>
+                        </div>
+                        <div class="p-3 bg-slate-800/50 rounded-lg border-l-2 border-green-500">
+                            <p class="text-sm text-slate-300">
+                                <span class="font-semibold text-green-400">Aspiration Leader:</span> 
+                                Penumbra ENGINE sets the standard. Wallaby needs dedicated pump strategy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="bg-slate-900 rounded-xl p-6 border border-slate-800">
+                    <h3 class="font-bold text-white mb-4">Market Overview</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center p-3 bg-slate-800 rounded-lg">
+                            <div class="text-2xl font-bold text-blue-400">12</div>
+                            <div class="text-xs text-slate-400">Competitors</div>
+                        </div>
+                        <div class="text-center p-3 bg-slate-800 rounded-lg">
+                            <div class="text-2xl font-bold text-green-400">4</div>
+                            <div class="text-xs text-slate-400">Full Portfolio</div>
+                        </div>
+                        <div class="text-center p-3 bg-slate-800 rounded-lg">
+                            <div class="text-2xl font-bold text-yellow-400">3</div>
+                            <div class="text-xs text-slate-400">Major Threats</div>
+                        </div>
+                        <div class="text-center p-3 bg-slate-800 rounded-lg">
+                            <div class="text-2xl font-bold text-red-400">5</div>
+                            <div class="text-xs text-slate-400">Wallaby Gaps</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Matrix (Hidden by default) -->
+        <div id="comparisonView" class="hidden mt-8">
+            <div class="bg-slate-900 rounded-xl p-6 border border-slate-800">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-white text-lg">Portfolio Comparison Matrix</h3>
+                    <button onclick="hideComparison()" class="text-slate-400 hover:text-white">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-slate-700">
+                                <th class="text-left py-3 px-2 text-slate-400 font-medium">Company</th>
+                                <th class="text-center py-3 px-2 text-slate-400 font-medium">Coils</th>
+                                <th class="text-center py-3 px-2 text-slate-400 font-medium">Flow Div.</th>
+                                <th class="text-center py-3 px-2 text-slate-400 font-medium">Stents</th>
+                                <th class="text-center py-3 px-2 text-slate-400 font-medium">Aspiration</th>
+                                <th class="text-center py-3 px-2 text-slate-400 font-medium">Intrasacc.</th>
+                                <th class="text-center py-3 px-2 text-slate-400 font-medium">Retrievers</th>
+                                <th class="text-center py-3 px-2 text-slate-400 font-medium">Balloons</th>
+                                <th class="text-center py-3 px-2 text-slate-400 font-medium">Radial</th>
+                                <th class="text-center py-3 px-2 text-slate-400 font-medium">Pump</th>
+                            </tr>
+                        </thead>
+                        <tbody id="comparisonTable">
+                            <!-- Rendered via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Company Detail Modal -->
+    <div id="companyModal" class="fixed inset-0 modal-backdrop hidden z-50 overflow-y-auto">
+        <div class="min-h-screen px-4 py-8 flex items-center justify-center">
+            <div class="bg-slate-900 rounded-2xl max-w-4xl w-full border border-slate-700 shadow-2xl">
+                <div id="modalContent">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Competitive Intelligence Data
+        const competitors = [
+            {
+                id: 'medtronic',
+                name: 'Medtronic',
+                hq: 'USA',
+                threat: 'high',
+                website: 'https://www.medtronic.com/en-us/l/e/neurovascular.html',
+                logo: 'M',
+                color: 'blue',
+                products: {
+                    coils: ['Axium', 'Axium Prime', 'Nexus'],
+                    flowDiverters: ['Pipeline Shield', 'Pipeline Flex', 'Pipeline Vantage'],
+                    stents: ['Enterpris'],
+                    aspiration: ['React 68/71', 'Riptide'],
+                    intrasaccular: ['Artisse', 'Barrel'],
+                    retrievers: ['Solitaire AB', 'Solitaire X'],
+                    balloons: ['Cello', 'HyperForm'],
+                    radial: ['RIST .079'],
+                    pump: false
+                },
+                gaps: [],
+                strengths: ['Market leader', 'Complete portfolio', 'Strong clinical data'],
+                notes: 'Benchmark competitor. Strong in all categories.'
+            },
+            {
+                id: 'stryker',
+                name: 'Stryker',
+                hq: 'USA',
+                threat: 'high',
+                website: 'https://www.stryker.com/us/en/portfolios/neurotechnology-spine/neurovascular.html',
+                logo: 'S',
+                color: 'green',
+                products: {
+                    coils: ['Target 360', 'Target 3D', 'Tetra'],
+                    flowDiverters: ['Surpass Streamline', 'Surpass Evolve'],
+                    stents: ['Neuroform Atlas', 'Wingspan'],
+                    aspiration: ['AXS Catalyst', 'AXS Broadway'],
+                    intrasaccular: ['Contour', 'Neqstent', 'Trenza'],
+                    retrievers: ['Trevo NXT', 'Trevo XP'],
+                    balloons: ['FlowGate2', 'Gateway'],
+                    radial: ['AXS Infinity'],
+                    pump: ['AXS Universal']
+                },
+                gaps: [],
+                strengths: ['Strong coils', 'Complete portfolio', 'Growing flow diverter share'],
+                notes: 'Major threat across all segments. Strong in stent retrievers.'
+            },
+            {
+                id: 'microvention',
+                name: 'Microvention / Terumo',
+                hq: 'Japan',
+                threat: 'high',
+                website: 'https://www.terumoneuro.com/emea',
+                logo: 'MV',
+                color: 'red',
+                products: {
+                    coils: ['HydroCoil', 'HyperSoft', 'Cosmos'],
+                    flowDiverters: ['FRED', 'FRED Jr.', 'FRED X'],
+                    stents: ['LVIS', 'LVIS Jr.'],
+                    aspiration: ['SOFIA Plus', 'SOFIA Flow'],
+                    intrasaccular: ['WEB System'],
+                    retrievers: ['ERIC'],
+                    balloons: ['Scepter C', 'Scepter XC'],
+                    radial: ['FUBUKI'],
+                    pump: false
+                },
+                gaps: ['No dedicated pump'],
+                strengths: ['WEB intrasaccular leader', 'Complete portfolio', 'Strong in Asia'],
+                notes: 'WEB is dominant intrasaccular device. Major Wallaby threat.'
+            },
+            {
+                id: 'penumbra',
+                name: 'Penumbra',
+                hq: 'USA',
+                threat: 'high',
+                website: 'https://www.penumbrainc.com/neuro/',
+                logo: 'P',
+                color: 'purple',
+                products: {
+                    coils: ['SMART COIL'],
+                    flowDiverters: [],
+                    stents: [],
+                    aspiration: ['ACE', 'MAX', 'RED', 'JET'],
+                    intrasaccular: [],
+                    retrievers: ['D Revascularization'],
+                    balloons: [],
+                    radial: ['BMX 81'],
+                    pump: ['Penumbra ENGINE']
+                },
+                gaps: ['No flow diverters', 'No stents', 'Limited coils', 'No intrasaccular'],
+                strengths: ['Aspiration leader', 'ENGINE pump standard', 'Strong MT position'],
+                notes: 'Dominates aspiration + pump market. No flow diverters = opportunity.'
+            },
+            {
+                id: 'cerenovus',
+                name: 'Cerenovus (J&J)',
+                hq: 'USA',
+                threat: 'medium',
+                website: 'https://www.jnjmedtech.com/en-US/companies/cerenovus',
+                logo: 'CJ',
+                color: 'indigo',
+                products: {
+                    coils: ['CEREPAK', 'GALAXY G3'],
+                    flowDiverters: ['BRAVO'],
+                    stents: ['ENTERPRISE 2'],
+                    aspiration: ['EMBOVAC'],
+                    intrasaccular: [],
+                    retrievers: ['EMBOTRAP II', 'EMBOTRAP III'],
+                    balloons: ['EMBOGUARD'],
+                    radial: [],
+                    pump: false
+                },
+                gaps: ['No intrasaccular', 'No dedicated pump', 'Limited radial'],
+                strengths: ['Complete except gaps', 'Strong stent retrievers', 'J&J backing'],
+                notes: 'Complete portfolio except intrasaccular. Strong brand.'
+            },
+            {
+                id: 'balt',
+                name: 'Balt',
+                hq: 'France',
+                threat: 'medium',
+                website: 'https://baltgroup.com/products/',
+                logo: 'B',
+                color: 'cyan',
+                products: {
+                    coils: ['Optima', 'OptiMAX', 'Prestige Plus'],
+                    flowDiverters: ['Silk Vista'],
+                    stents: ['LEO+'],
+                    aspiration: ['Raptor'],
+                    intrasaccular: [],
+                    retrievers: ['Catchview'],
+                    balloons: ['Eclipse 2L'],
+                    radial: [],
+                    pump: false
+                },
+                gaps: ['No intrasaccular', 'No pump', 'Limited radial'],
+                strengths: ['Strong coils', 'Silk Vista flow diverter', 'French innovation'],
+                notes: 'Strong European player. Good coil portfolio.'
+            },
+            {
+                id: 'acandis',
+                name: 'Acandis',
+                hq: 'Germany',
+                threat: 'medium',
+                website: 'https://www.acandis.com/en/product-portfolio/',
+                logo: 'A',
+                color: 'orange',
+                products: {
+                    coils: [],
+                    flowDiverters: ['DERIVO', 'DERIVO 2', 'DERIVO 2heal'],
+                    stents: ['ACCERO', 'ACCLINO', 'CREDO'],
+                    aspiration: [],
+                    intrasaccular: [],
+                    retrievers: ['APERIO'],
+                    balloons: ['NeuroSpeed'],
+                    radial: ['NeuroSlider'],
+                    pump: false
+                },
+                gaps: ['No coils', 'No aspiration', 'No intrasaccular', 'No pump'],
+                strengths: ['Strong German engineering', 'CREDO stenosis stent', 'Radial microcatheters'],
+                notes: 'Niche player. Strong stents but missing major categories.'
+            },
+            {
+                id: 'imperative',
+                name: 'Imperative Care',
+                hq: 'USA',
+                threat: 'low',
+                website: 'https://imperativecare.com/stroke/',
+                logo: 'IC',
+                color: 'pink',
+                products: {
+                    coils: [],
+                    flowDiverters: [],
+                    stents: [],
+                    aspiration: ['Zoom 35', 'Zoom 71', 'Zoom 88', 'Zoom RDL'],
+                    intrasaccular: [],
+                    retrievers: [],
+                    balloons: [],
+                    radial: ['Zoom RDL'],
+                    pump: false
+                },
+                gaps: ['No coils', 'No stents', 'No flow diverters', 'No intrasaccular', 'No balloons'],
+                strengths: ['Aspiration focus', 'Radial access', 'Pure-play MT'],
+                notes: 'Aspiration-only strategy. Limited threat to Wallaby.'
+            },
+            {
+                id: 'rapid',
+                name: 'Rapid Medical',
+                hq: 'Israel',
+                threat: 'low',
+                website: 'https://www.rapid-medical.com/',
+                logo: 'RM',
+                color: 'teal',
+                products: {
+                    coils: [],
+                    flowDiverters: [],
+                    stents: [],
+                    aspiration: [],
+                    intrasaccular: [],
+                    retrievers: ['TIGERTRIEVER'],
+                    balloons: [],
+                    radial: [],
+                    pump: false
+                },
+                gaps: ['No coils', 'No stents', 'No flow diverters', 'No aspiration', 'No balloons', 'No intrasaccular'],
+                strengths: ['TIGERTRIEVER innovation', 'Drivewire technology', 'Israeli agility'],
+                notes: 'Niche retriever player. No broader portfolio.'
+            },
+            {
+                id: 'qapel',
+                name: 'Qapel',
+                hq: 'Unknown',
+                threat: 'low',
+                website: 'https://qapelmedical.com/',
+                logo: 'Q',
+                color: 'gray',
+                products: {
+                    coils: [],
+                    flowDiverters: [],
+                    stents: [],
+                    aspiration: [],
+                    intrasaccular: [],
+                    retrievers: [],
+                    balloons: [],
+                    radial: [],
+                    pump: false
+                },
+                gaps: ['Limited public info'],
+                strengths: ['Emerging player'],
+                notes: 'Limited intelligence available. Monitor for developments.'
+            },
+            {
+                id: 'wallaby',
+                name: 'Wallaby Phenox',
+                hq: 'Germany',
+                threat: 'self',
+                website: 'https://www.wallabyphenox.com/',
+                logo: 'W',
+                color: 'emerald',
+                products: {
+                    coils: ['Avenir UNO', 'Avenir Complex', 'Avenir Soft'],
+                    flowDiverters: ['p64 MW', 'p64 HPC', 'p47 MW'],
+                    stents: ['pCONUS2', 'pEGASUS'],
+                    aspiration: ['Esperance', 'ASP pHLO'],
+                    intrasaccular: [],
+                    retrievers: ['pRESET', 'pRELAX'],
+                    balloons: ['pARAGON', 'pITA'],
+                    radial: [],
+                    pump: false
+                },
+                gaps: ['No intrasaccular', 'Limited radial', 'No pump', 'No stenosis stents'],
+                strengths: ['pCONUS2 unique', 'Strong coils', 'Growing flow diverters', 'Esperance aspiration'],
+                notes: 'Your position. Unique pCONUS2. Biggest gap = intrasaccular.'
+            }
+        ];
+
+        // Render Company Cards
+        function renderCompanies(filter = 'all', search = '') {
+            const grid = document.getElementById('companyGrid');
+            let filtered = competitors.filter(c => c.id !== 'wallaby');
+            
+            // Apply filter
+            if (filter === 'threat') {
+                filtered = filtered.filter(c => c.threat === 'high');
+            } else if (filter === 'complete') {
+                filtered = filtered.filter(c => c.gaps.length === 0);
+            } else if (filter === 'gaps') {
+                filtered = filtered.filter(c => c.gaps.length > 0);
+            }
+            
+            // Apply search
+            if (search) {
+                const s = search.toLowerCase();
+                filtered = filtered.filter(c => 
+                    c.name.toLowerCase().includes(s) ||
+                    c.products.coils.some(p => p.toLowerCase().includes(s)) ||
+                    c.products.flowDiverters.some(p => p.toLowerCase().includes(s)) ||
+                    c.gaps.some(g => g.toLowerCase().includes(s))
+                );
+            }
+            
+            grid.innerHTML = filtered.map(company => `
+                <div class="company-card bg-slate-900 rounded-xl p-5 border border-slate-800" onclick="openCompanyDetail('${company.id}')">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-${company.color}-600 rounded-xl flex items-center justify-center text-white font-bold text-lg">
+                                ${company.logo}
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white">${company.name}</h3>
+                                <div class="flex items-center gap-2 text-xs text-slate-400">
+                                    <i class="fas fa-map-marker-alt"></i> ${company.hq}
+                                    ${company.threat === 'high' ? '<span class="text-red-400 ml-2"><i class="fas fa-exclamation-triangle"></i> High Threat</span>' : ''}
+                                </div>
+                            </div>
+                        </div>
+                        <a href="${company.website}" target="_blank" onclick="event.stopPropagation()" class="text-slate-500 hover:text-blue-400 transition">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            ${renderProductBadges(company.products)}
+                        </div>
+                    </div>
+                    
+                    ${company.gaps.length > 0 ? `
+                        <div class="mb-3">
+                            <span class="text-xs text-slate-400">Key Gaps:</span>
+                            <div class="flex flex-wrap gap-1 mt-1">
+                                ${company.gaps.slice(0, 2).map(gap => `
+                                    <span class="text-xs px-2 py-1 bg-red-900/30 text-red-300 rounded border border-red-800/50">${gap}</span>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : '<div class="mb-3"><span class="text-xs px-2 py-1 bg-green-900/30 text-green-300 rounded border border-green-800/50"><i class="fas fa-check mr-1"></i>Complete Portfolio</span></div>'}
+                    
+                    <div class="pt-3 border-t border-slate-800">
+                        <p class="text-xs text-slate-400 line-clamp-2">${company.notes}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderProductBadges(products) {
+            const badges = [];
+            const categories = [
+                { key: 'coils', label: 'Coils', color: 'blue' },
+                { key: 'flowDiverters', label: 'Flow Div', color: 'purple' },
+                { key: 'stents', label: 'Stents', color: 'green' },
+                { key: 'aspiration', label: 'Aspiration', color: 'orange' },
+                { key: 'intrasaccular', label: 'Intrasacc', color: 'pink' },
+                { key: 'retrievers', label: 'Retrievers', color: 'red' },
+                { key: 'balloons', label: 'Balloons', color: 'cyan' },
+                { key: 'pump', label: 'Pump', color: 'yellow' }
+            ];
+            
+            categories.forEach(cat => {
+                if (products[cat.key] && products[cat.key].length > 0) {
+                    badges.push(`<span class="product-badge text-xs px-2 py-1 bg-${cat.color}-900/30 text-${cat.color}-300 rounded border border-${cat.color}-800/50">${cat.label}</span>`);
+                }
+            });
+            
+            return badges.join('');
+        }
+
+        // Open Company Detail Modal
+        function openCompanyDetail(companyId) {
+            const company = competitors.find(c => c.id === companyId);
+            if (!company) return;
+            
+            const modal = document.getElementById('companyModal');
+            const content = document.getElementById('modalContent');
+            
+            content.innerHTML = `
+                <div class="p-6">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 bg-${company.color}-600 rounded-xl flex items-center justify-center text-white font-bold text-2xl">
+                                ${company.logo}
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-white">${company.name}</h2>
+                                <div class="flex items-center gap-3 text-sm text-slate-400 mt-1">
+                                    <span><i class="fas fa-map-marker-alt mr-1"></i>${company.hq}</span>
+                                    <span class="px-2 py-0.5 rounded ${company.threat === 'high' ? 'bg-red-900/50 text-red-400' : company.threat === 'medium' ? 'bg-yellow-900/50 text-yellow-400' : 'bg-slate-800 text-slate-400'}">${company.threat === 'self' ? 'Your Company' : company.threat + ' threat'}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="closeModal()" class="text-slate-400 hover:text-white p-2">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">Product Portfolio</h3>
+                            <div class="space-y-3">
+                                ${renderProductCategory('Coils', company.products.coils, 'blue')}
+                                ${renderProductCategory('Flow Diverters', company.products.flowDiverters, 'purple')}
+                                ${renderProductCategory('Stents', company.products.stents, 'green')}
+                                ${renderProductCategory('Aspiration', company.products.aspiration, 'orange')}
+                                ${renderProductCategory('Intrasaccular', company.products.intrasaccular, 'pink')}
+                                ${renderProductCategory('Stent Retrievers', company.products.retrievers, 'red')}
+                                ${renderProductCategory('Balloons', company.products.balloons, 'cyan')}
+                                ${renderProductCategory('Pump', company.products.pump, 'yellow')}
+                                ${renderProductCategory('Radial Access', company.products.radial, 'indigo')}
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-slate-800/50 rounded-lg p-4">
+                                <h3 class="text-sm font-semibold text-green-400 mb-2"><i class="fas fa-check-circle mr-2"></i>Strengths</h3>
+                                <ul class="space-y-2">
+                                    ${company.strengths.map(s => `<li class="text-sm text-slate-300"><i class="fas fa-angle-right text-green-500 mr-2"></i>${s}</li>`).join('')}
+                                </ul>
+                            </div>
+                            
+                            ${company.gaps.length > 0 ? `
+                                <div class="bg-slate-800/50 rounded-lg p-4 border-l-2 border-red-500">
+                                    <h3 class="text-sm font-semibold text-red-400 mb-2"><i class="fas fa-times-circle mr-2"></i>Gaps vs Wallaby Opportunity</h3>
+                                    <ul class="space-y-2">
+                                        ${company.gaps.map(g => `<li class="text-sm text-slate-300"><i class="fas fa-minus text-red-500 mr-2"></i>${g}</li>`).join('')}
+                                    </ul>
+                                </div>
+                            ` : ''}
+                            
+                            <div class="bg-slate-800/50 rounded-lg p-4">
+                                <h3 class="text-sm font-semibold text-blue-400 mb-2"><i class="fas fa-sticky-note mr-2"></i>Notes</h3>
+                                <p class="text-sm text-slate-300">${company.notes}</p>
+                            </div>
+                            
+                            <a href="${company.website}" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition">
+                                <i class="fas fa-external-link-alt"></i>
+                                Visit Official Website
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function renderProductCategory(name, products, color) {
+            if (!products || products.length === 0) {
+                return `
+                    <div class="flex items-center justify-between py-2 border-b border-slate-800">
+                        <span class="text-sm text-slate-500">${name}</span>
+                        <span class="text-xs px-2 py-1 bg-slate-800 text-slate-500 rounded">None</span>
+                    </div>
+                `;
+            }
+            return `
+                <div class="py-2 border-b border-slate-800">
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="text-sm text-slate-300">${name}</span>
+                        <span class="text-xs text-${color}-400">${products.length} products</span>
+                    </div>
+                    <div class="flex flex-wrap gap-1">
+                        ${products.map(p => `<span class="text-xs px-2 py-1 bg-${color}-900/30 text-${color}-300 rounded">${p}</span>`).join('')}
+                </div>
+                </div>
+            `;
+        }
+
+        function closeModal() {
+            document.getElementById('companyModal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Comparison Matrix
+        function showComparisonMode() {
+            const view = document.getElementById('comparisonView');
+            const table = document.getElementById('comparisonTable');
+            
+            const allCompanies = [...competitors.filter(c => c.id !== 'wallaby'), competitors.find(c => c.id === 'wallaby')];
+            
+            table.innerHTML = allCompanies.map(company => `
+                <tr class="comparison-row border-b border-slate-800 ${company.id === 'wallaby' ? 'bg-blue-900/20' : ''}">
+                    <td class="py-3 px-2">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 bg-${company.color}-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">${company.logo}</div>
+                            <span class="font-medium ${company.id === 'wallaby' ? 'text-blue-400' : 'text-white'}">${company.name}</span>
+                        </div>
+                    </td>
+                    <td class="text-center py-3 px-2">${renderCheck(company.products.coils)}</td>
+                    <td class="text-center py-3 px-2">${renderCheck(company.products.flowDiverters)}</td>
+                    <td class="text-center py-3 px-2">${renderCheck(company.products.stents)}</td>
+                    <td class="text-center py-3 px-2">${renderCheck(company.products.aspiration)}</td>
+                    <td class="text-center py-3 px-2">${renderCheck(company.products.intrasaccular)}</td>
+                    <td class="text-center py-3 px-2">${renderCheck(company.products.retrievers)}</td>
+                    <td class="text-center py-3 px-2">${renderCheck(company.products.balloons)}</td>
+                    <td class="text-center py-3 px-2">${renderCheck(company.products.radial)}</td>
+                    <td class="text-center py-3 px-2">${renderCheck(company.products.pump)}</td>
+                </tr>
+            `).join('');
+            
+            view.classList.remove('hidden');
+            view.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function renderCheck(products) {
+            if (products && products.length > 0) {
+                return '<i class="fas fa-check text-green-500"></i>';
+            }
+            return '<span class="text-slate-700">-</span>';
+        }
+
+        function hideComparison() {
+            document.getElementById('comparisonView').classList.add('hidden');
+        }
+
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderCompanies(btn.dataset.filter, document.getElementById('searchInput').value);
+            });
+        });
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const activeFilter = document.querySelector('.filter-btn.active');
+            renderCompanies(activeFilter.dataset.filter, e.target.value);
+        });
+
+        // Export functionality
+        function exportData() {
+            const data = JSON.stringify(competitors, null, 2);
+            const blob = new Blob([data], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'competitive-intelligence.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Close modal on backdrop click
+        document.getElementById('companyModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) closeModal();
+        });
+
+        // Initial render
+        renderCompanies();
+    </script>
+</body>
+</html>

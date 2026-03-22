@@ -1,5 +1,5 @@
 #!/usr/bin/env pwsh
-# Health Check Implementation
+# Health Check Implementation - With Ollama Auto-Restart
 # Usage: .\healthcheck.ps1 [command]
 
 param(
@@ -7,29 +7,161 @@ param(
     [string]$Command = "run",
     
     [Parameter(Mandatory=$false)]
-    [string]$Component = "all"
+    [string]$Component = "all",
+    
+    [Parameter(Mandatory=$false)]
+    [switch]$AutoFix = $true
 )
 
 $LogFile = "$env:TEMP\healthcheck.log"
 $ConfigPath = "$env:USERPROFILE\.openclaw\skills\healthcheck\config.json"
+$MaxLogSize = 10MB  # Rotate logs when they get too big
 
 function Write-Log {
     param($Message, $Level = "INFO")
     $Timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    "$Timestamp [$Level] $Message" | Tee-Object -FilePath $LogFile -Append | Write-Output
+    $LogLine = "$Timestamp [$Level] $Message"
+    # Write to file
+    Add-Content -Path $LogFile -Value $LogLine -ErrorAction SilentlyContinue
+    # Also write to console
+    Write-Host $LogLine
+}
+
+function Rotate-Log {
+    if (Test-Path $LogFile) {
+        $LogSize = (Get-Item $LogFile).Length
+        if ($LogSize -gt $MaxLogSize) {
+            Move-Item $LogFile "$LogFile.old" -Force -ErrorAction SilentlyContinue
+            Write-Log "Log rotated (was $([math]::Round($LogSize/1MB,2)) MB)" "INFO"
+        }
+    }
+}
+
+function Test-Ollama {
+    # Quick test if Ollama is responsive
+    try {
+        $Response = Invoke-RestMethod -Uri "http://localhost:11434/api/version" -Method GET -TimeoutSec 5 -ErrorAction Stop
+        return $true
+    } catch {
+        return $false
+    }
+}
+
+function Restart-Ollama {
+    Write-Log "Attempting to restart Ollama..." "WARN"
+    
+    # Kill any existing ollama processes
+    $OllamaProcs = Get-Process "ollama" -ErrorAction SilentlyContinue
+    if ($OllamaProcs) {
+        Write-Log "Found $($OllamaProcs.Count) ollama process(es), stopping..." "INFO"
+        $OllamaProcs | Stop-Process -Force -ErrorAction SilentlyContinue
+        Start-Sleep -Seconds 2
+    }
+    
+    # Also check for ollama.exe specifically
+    $OllamaExe = Get-Process | Where-Object { $_.ProcessName -like "*ollama*" } -ErrorAction SilentlyContinue
+    if ($OllamaExe) {
+        $OllamaExe | Stop-Process -Force -ErrorAction SilentlyContinue
+        Start-Sleep -Seconds 1
+    }
+    
+    # Start Ollama fresh
+    try {
+        # Find ollama executable
+        $OllamaPath = "${env:LOCALAPPDATA}\Programs\Ollama\ollama.exe"
+        if (-not (Test-Path $OllamaPath)) {
+            $OllamaPath = "${env:USERPROFILE}\AppData\Local\Programs\Ollama\ollama.exe"
+        }
+        
+        if (Test-Path $OllamaPath) {
+            # Start ollama serve in background
+            $StartInfo = New-Object System.Diagnostics.ProcessStartInfo
+            $StartInfo.FileName = $OllamaPath
+            $StartInfo.Arguments = "serve"
+            $StartInfo.UseShellExecute = $true
+            $StartInfo.CreateNoWindow = $true
+            $StartInfo.WindowStyle = "Hidden"
+            
+            [System.Diagnostics.Process]::Start($StartInfo) | Out-Null
+            Write-Log "Ollama serve started" "SUCCESS"
+            
+            # Wait for it to be ready
+            $Retries = 0
+            $MaxRetries = 30
+            while ($Retries -lt $MaxRetries) {
+                Start-Sleep -Seconds 2
+                if (Test-Ollama) {
+                    Write-Log "Ollama is now responsive" "SUCCESS"
+                    return $true
+                }
+                $Retries++
+                if ($Retries % 10 -eq 0) {
+                    Write-Log "Waiting for Ollama... ($Retries/$MaxRetries)" "INFO"
+                }
+            }
+            Write-Log "Ollama failed to become responsive after restart" "ERROR"
+            return $false
+        } else {
+            Write-Log "Ollama executable not found at $OllamaPath" "ERROR"
+            return $false
+        }
+    } catch {
+        Write-Log "Failed to restart Ollama: $_" "ERROR"
+        return $false
+    }
+}
+
+function Check-Ollama {
+    Write-Log "Checking Ollama..."
+    
+    # First check if process exists
+    $OllamaProc = Get-Process "ollama" -ErrorAction SilentlyContinue
+    if (-not $OllamaProc) {
+        Write-Log "Ollama process not found" "ERROR"
+        if ($AutoFix) {
+            return Restart-Ollama
+        }
+        return $false
+    }
+    
+    # Test if it's actually responding
+    if (Test-Ollama) {
+        Write-Log "✅ Ollama: Running and responsive (PID $($OllamaProc.Id))" "SUCCESS"
+        return $true
+    } else {
+        Write-Log "❌ Ollama: Process exists but not responding (stuck)" "ERROR"
+        if ($AutoFix) {
+            return Restart-Ollama
+        }
+        return $false
+    }
 }
 
 function Check-Gateway {
     Write-Log "Checking OpenClaw gateway..."
     
     # Check if port 18789 is listening
-    $PortCheck = Get-NetTCPConnection -LocalPort 18789 -ErrorAction SilentlyContinue | Where-Object { $_.State -eq "Listen" }
+    $PortCheck = Get-NetTCPConnection -LocalPort 18001 -ErrorAction SilentlyContinue | Where-Object { $_.State -eq "Listen" }
     
     if ($PortCheck) {
-        Write-Log "✅ Gateway: Running on port 18789" "SUCCESS"
+        Write-Log "✅ Gateway: Running on port 18001" "SUCCESS"
         return $true
     } else {
         Write-Log "❌ Gateway: Not running" "ERROR"
+        if ($AutoFix) {
+            Write-Log "Attempting to restart gateway..." "WARN"
+            try {
+                Start-Process "openclaw" -ArgumentList "gateway start" -WindowStyle Hidden
+                Start-Sleep -Seconds 5
+                $PortCheck = Get-NetTCPConnection -LocalPort 18001 -ErrorAction SilentlyContinue | Where-Object { $_.State -eq "Listen" }
+                if ($PortCheck) {
+                    Write-Log "Gateway restarted successfully" "SUCCESS"
+                    return $true
+                }
+            } catch {
+                Write-Log "Failed to restart gateway: $_" "ERROR"
+            }
+        }
         return $false
     }
 }
@@ -37,7 +169,7 @@ function Check-Gateway {
 function Check-Disk {
     Write-Log "Checking disk space..."
     
-    $Disks = Get-WmiObject -Class Win32_LogicalDisk | Where-Object { $_.DriveType -eq 3 }
+    $Disks = Get-CimInstance -ClassName Win32_LogicalDisk | Where-Object { $_.DriveType -eq 3 }
     $Issues = @()
     
     foreach ($Disk in $Disks) {
@@ -56,13 +188,13 @@ function Check-Disk {
         }
     }
     
-    return $Issues
+    return @($Issues)
 }
 
 function Check-Memory {
     Write-Log "Checking memory..."
     
-    $Memory = Get-WmiObject -Class Win32_OperatingSystem
+    $Memory = Get-CimInstance -ClassName Win32_OperatingSystem
     $TotalGB = [math]::Round($Memory.TotalVisibleMemorySize / 1MB, 2)
     $FreeGB = [math]::Round($Memory.FreePhysicalMemory / 1MB, 2)
     $UsedPercent = [math]::Round((($Memory.TotalVisibleMemorySize - $Memory.FreePhysicalMemory) / $Memory.TotalVisibleMemorySize) * 100, 1)
@@ -82,8 +214,13 @@ function Check-Memory {
 function Check-CPU {
     Write-Log "Checking CPU..."
     
-    $CPU = Get-WmiObject -Class Win32_Processor | Select-Object -First 1
-    $Load = $CPU.LoadPercentage
+    # Get average over 3 seconds
+    $Samples = @()
+    for ($i = 0; $i -lt 3; $i++) {
+        $Samples += (Get-CimInstance -ClassName Win32_Processor | Select-Object -First 1).LoadPercentage
+        Start-Sleep -Milliseconds 500
+    }
+    $Load = [math]::Round(($Samples | Measure-Object -Average).Average, 1)
     
     if ($Load -gt 90) {
         Write-Log "❌ CPU: ${Load}% load (CRITICAL)" "ERROR"
@@ -97,40 +234,51 @@ function Check-CPU {
     }
 }
 
-function Send-Alert {
-    param($Message)
-    
-    # Could integrate with Telegram here
-    Write-Log "ALERT: $Message" "ALERT"
-}
-
 # Main execution
-Write-Log "=== Health Check Started ==="
+Rotate-Log
+Write-Log "=== Health Check Started (AutoFix: $AutoFix) ==="
 
-$Issues = @()
+$AllIssues = @()
 $GatewayOK = $true
+$OllamaOK = $true
 
 switch ($Component) {
+    "ollama" { $OllamaOK = Check-Ollama }
     "gateway" { $GatewayOK = Check-Gateway }
-    "disk" { $Issues = Check-Disk }
-    "memory" { $Issues = Check-Memory }
-    "cpu" { $Issues = Check-CPU }
+    "disk" { $AllIssues = Check-Disk }
+    "memory" { $AllIssues = Check-Memory }
+    "cpu" { $AllIssues = Check-CPU }
     "all" {
+        $OllamaOK = Check-Ollama
         $GatewayOK = Check-Gateway
-        $Issues = Check-Disk
-        $Issues += Check-Memory
-        $Issues += Check-CPU
+        $DiskIssues = Check-Disk
+        $MemoryIssues = Check-Memory
+        $CPUIssues = Check-CPU
+        
+        # Combine all issues
+        $AllIssues = @()
+        if ($DiskIssues) { $AllIssues += $DiskIssues }
+        if ($MemoryIssues) { $AllIssues += $MemoryIssues }
+        if ($CPUIssues) { $AllIssues += $CPUIssues }
     }
 }
 
+$IssueCount = $AllIssues.Count
+$Status = "HEALTHY"
+$ExitCode = 0
+
+if (-not $OllamaOK) {
+    $Status = "CRITICAL (Ollama)"
+    $ExitCode = 2
+} elseif (-not $GatewayOK) {
+    $Status = "WARNING (Gateway)"
+    $ExitCode = 1
+} elseif ($IssueCount -gt 0) {
+    $Status = "WARNING ($IssueCount issues)"
+    $ExitCode = 1
+}
+
+Write-Log "Status: $Status"
 Write-Log "=== Health Check Complete ==="
 
-$IssueCount = if ($Issues) { $Issues.Count } else { 0 }
-
-if ($IssueCount -gt 0 -or -not $GatewayOK) {
-    Write-Log "Status: UNHEALTHY ($IssueCount issues found)" "ERROR"
-    exit 1
-} else {
-    Write-Log "Status: HEALTHY" "SUCCESS"
-    exit 0
-}
+exit $ExitCode

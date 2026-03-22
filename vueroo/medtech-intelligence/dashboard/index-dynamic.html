@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Stroke Intelligence Dashboard - Dynamic</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #eaeaea;
+            min-height: 100vh;
+        }
+        .header {
+            background: rgba(0,0,0,0.3);
+            padding: 20px 40px;
+            border-bottom: 2px solid #e94560;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            font-size: 2em;
+            color: #e94560;
+        }
+        .header p {
+            color: #a0a0a0;
+            margin-top: 5px;
+        }
+        .refresh-btn {
+            background: rgba(233,69,96,0.2);
+            border: 1px solid #e94560;
+            color: #e94560;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .refresh-btn:hover {
+            background: #e94560;
+            color: white;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+        .sidebar {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 20px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+        .sidebar h3 {
+            color: #e94560;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .region-list {
+            list-style: none;
+        }
+        .region-list li {
+            padding: 10px 15px;
+            margin: 5px 0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-left: 3px solid transparent;
+        }
+        .region-list li:hover, .region-list li.active {
+            background: rgba(233,69,96,0.2);
+            border-left-color: #e94560;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .card h3 {
+            color: #e94560;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .metric:last-child { border-bottom: none; }
+        .metric-label { color: #a0a0a0; }
+        .metric-value { 
+            font-size: 1.3em; 
+            font-weight: bold;
+            color: #fff;
+        }
+        .metric-value.projected { color: #f39c12; }
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            margin-left: 10px;
+        }
+        .tag-journal { background: #27ae60; color: white; }
+        .tag-extrapolated { background: #e74c3c; color: white; }
+        .tag-excel { background: #3498db; color: white; }
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .stat-box {
+            background: linear-gradient(135deg, rgba(233,69,96,0.3), rgba(233,69,96,0.1));
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(233,69,96,0.3);
+        }
+        .stat-box h4 {
+            font-size: 0.9em;
+            color: #a0a0a0;
+            margin-bottom: 10px;
+        }
+        .stat-box .number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #fff;
+        }
+        .loading {
+            text-align: center;
+            padding: 60px;
+            color: #888;
+        }
+        .spinner {
+            border: 3px solid rgba(255,255,255,0.1);
+            border-top-color: #e94560;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .data-source {
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 6px;
+            font-size: 0.85em;
+            color: #888;
+        }
+        .last-updated {
+            color: #888;
+            font-size: 0.9em;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        th {
+            color: #e94560;
+            font-weight: 600;
+        }
+        td {
+            color: #a0a0a0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1>🧠 Global Stroke Intelligence Dashboard</h1>
+            <p>Dynamic JSON-driven • Last updated: <span id="lastUpdated" class="last-updated">Loading...</span></p>
+        </div>
+        <button class="refresh-btn" onclick="loadData()">🔄 Refresh Data</button>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <h3>🌍 Regions</h3>
+            <ul class="region-list" id="regionList">
+                <li class="active" onclick="showRegion('global')">📊 Global Overview</li>
+                <li onclick="showRegion('china')">🇨🇳 China</li>
+                <li onclick="showRegion('eu')">🇪🇺 European Union</li>
+                <li onclick="showRegion('usa')">🇺🇸 United States</li>
+                <li onclick="showRegion('japan')">🇯🇵 Japan</li>
+                <li onclick="showRegion('germany')">🇩🇪 Germany</li>
+                <li onclick="showRegion('india')">🇮🇳 India</li>
+                <li onclick="showRegion('brazil')">🇧🇷 Brazil</li>
+                <li onclick="showRegion('africa')">🌍 Africa</li>
+                <li onclick="showRegion('seasia')">🌏 Southeast Asia</li>
+            </ul>
+            
+            <h3 style="margin-top: 30px;">📈 Data Sources</h3>
+            <div style="font-size: 0.85em; color: #888;">
+                <span class="tag tag-journal">Journal</span> Peer-reviewed<br><br>
+                <span class="tag tag-excel">Excel</span> Epidemiological models<br><br>
+                <span class="tag tag-extrapolated">Model</span> Projections
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div id="content">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading stroke intelligence data...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let masterData = null;
+        let currentRegion = 'global';
+
+        // Load data from JSON file
+        async function loadData() {
+            const content = document.getElementById('content');
+            content.innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading stroke intelligence data...</p>
+                </div>
+            `;
+
+            try {
+                const response = await fetch('data/master-data.json?v=' + Date.now());
+                if (!response.ok) throw new Error('Failed to load data');
+                
+                masterData = await response.json();
+                
+                // Update last updated timestamp
+                document.getElementById('lastUpdated').textContent = 
+                    masterData.lastUpdated || new Date().toLocaleString();
+                
+                // Show current region
+                showRegion(currentRegion);
+                
+            } catch (error) {
+                console.error('Error loading data:', error);
+                content.innerHTML = `
+                    <div class="card">
+                        <h3>⚠️ Error Loading Data</h3>
+                        <p>Could not load data from JSON file. Make sure the data files are in the correct location.</p>
+                        <p style="color: #888; margin-top: 10px;">Error: ${error.message}</p>
+                        <button class="refresh-btn" onclick="loadData()" style="margin-top: 20px;">Try Again</button>
+                    </div>
+                `;
+            }
+        }
+
+        function showRegion(region) {
+            currentRegion = region;
+            
+            // Update active state in sidebar
+            document.querySelectorAll('.region-list li').forEach(li => li.classList.remove('active'));
+            const regionItems = document.querySelectorAll('.region-list li');
+            for (let item of regionItems) {
+                if (item.textContent.toLowerCase().includes(region) || 
+                    (region === 'global' && item.textContent.includes('Global'))) {
+                    item.classList.add('active');
+                }
+            }
+            
+            const content = document.getElementById('content');
+            
+            if (!masterData) {
+                content.innerHTML = '<div class="loading"><p>Data not loaded yet...</p></div>';
+                return;
+            }
+
+            if (region === 'global') {
+                renderGlobal(content);
+            } else {
+                renderRegion(content, region);
+            }
+        }
+
+        function renderGlobal(container) {
+            const global = masterData.global || {};
+            const regions = masterData.regions || {};
+            
+            let html = `
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <h4>Global Annual Strokes</h4>
+                        <div class="number">${global['2024']?.annualStrokes || '12.2M'}</div>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Stroke Deaths</h4>
+                        <div class="number">${global['2024']?.strokeDeaths || '6.5M'}</div>
+                    </div>
+                    <div class="stat-box">
+                        <h4>2030 Projection</h4>
+                        <div class="number" style="color: #f39c12;">${global['2030']?.projectedStrokes || '15.1M'}</div>
+                    </div>
+                    <div class="stat-box">
+                        <h4>MT Access (Global)</h4>
+                        <div class="number">${global['2024']?.mtAccess || '12%'}</div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <h3>📊 Regional Overview</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Region</th>
+                                        <th>Annual Strokes</th>
+                                        <th>Key Metric</th>
+                                        <th>2030 Trend</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+            `;
+
+            Object.entries(regions).forEach(([key, region]) => {
+                const yearData = region['2024'] || region['2020'] || region['2021'] || region['2017'] || {};
+                const flag = region.flag || '';
+                const name = region.name || key;
+                
+                html += `
+                    <tr>
+                        <td>${flag} ${name}</td>
+                        <td>${yearData.annualStrokes || yearData.annualStrokes || 'N/A'}</td>
+                        <td>${yearData.mtRate || yearData.mtAccess || yearData.mtRate || 'N/A'}</td>
+                        <td>${region['2030']?.projectedStrokes || region['2030']?.trend || 'N/A'}</td>
+                    </tr>
+                `;
+            });
+
+            html += `
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="data-source">
+                            <span class="tag tag-journal">Journal</span>
+                            Multiple peer-reviewed sources (see individual regions)
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>🎯 Treatment Gaps</h3>
+                        <div class="metric">
+                            <span class="metric-label">IV tPA Access (High Income)</span>
+                            <span class="metric-value">25%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">IV tPA Access (Low Income)</span>
+                            <span class="metric-value">3%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">MT Access (High Income)</span>
+                            <span class="metric-value">22%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">MT Access (Low Income)</span>
+                            <span class="metric-value">1%</span>
+                        </div>
+                        <div class="data-source">
+                            <span class="tag tag-journal">Journal</span>
+                            MT-GLASS Consortium, 2023
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            container.innerHTML = html;
+        }
+
+        function renderRegion(container, regionKey) {
+            const region = masterData.regions?.[regionKey];
+            
+            if (!region) {
+                container.innerHTML = `
+                    <div class="card">
+                        <h3>No Data Available</h3>
+                        <p>No data found for this region in the current dataset.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const yearData = region['2024'] || region['2020'] || region['2021'] || region['2017'] || {};
+            const flag = region.flag || '';
+            
+            let html = `
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <h4>Region</h4>
+                        <div class="number" style="font-size: 1.5em;">${flag} ${region.name}</div>
+                    </div>
+            `;
+
+            if (yearData.annualStrokes) {
+                html += `
+                    <div class="stat-box">
+                        <h4>Annual Strokes</h4>
+                        <div class="number">${yearData.annualStrokes}</div>
+                    </div>
+                `;
+            }
+
+            if (yearData.strokeDeaths) {
+                html += `
+                    <div class="stat-box">
+                        <h4>Stroke Deaths</h4>
+                        <div class="number">${yearData.strokeDeaths}</div>
+                    </div>
+                `;
+            }
+
+            if (yearData.mtRate || yearData.mtAccess) {
+                html += `
+                    <div class="stat-box">
+                        <h4>MT Rate</h4>
+                        <div class="number">${yearData.mtRate || yearData.mtAccess}</div>
+                    </div>
+                `;
+            }
+
+            html += `</div><div class="dashboard-grid">`;
+
+            // Key metrics card
+            html += `
+                <div class="card">
+                    <h3>${flag} ${region.name} - Key Metrics</h3>
+            `;
+
+            Object.entries(yearData).forEach(([key, value]) => {
+                if (key !== 'source' && key !== 'quality' && typeof value === 'string') {
+                    html += `
+                        <div class="metric">
+                            <span class="metric-label">${key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}</span>
+                            <span class="metric-value">${value}</span>
+                        </div>
+                    `;
+                }
+            });
+
+            // Risk factors
+            if (region.riskFactors) {
+                html += `<h4 style="margin-top: 20px; color: #888;">Risk Factors</h4>`;
+                Object.entries(region.riskFactors).forEach(([key, value]) => {
+                    html += `
+                        <div class="metric">
+                            <span class="metric-label">${key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}</span>
+                            <span class="metric-value">${value}</span>
+                        </div>
+                    `;
+                });
+            }
+
+            // 2030 projections
+            if (region['2030']) {
+                html += `<h4 style="margin-top: 20px; color: #f39c12;">2030 Projections</h4>`;
+                Object.entries(region['2030']).forEach(([key, value]) => {
+                    if (key !== 'trend' && key !== 'drivers') {
+                        html += `
+                            <div class="metric">
+                                <span class="metric-label">${key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}</span>
+                                <span class="metric-value projected">${value}</span>
+                            </div>
+                        `;
+                    }
+                });
+            }
+
+            // Policy
+            if (region.policy) {
+                html += `<h4 style="margin-top: 20px; color: #888;">Policy: ${region.policy.euStrokePlan || ''}</h4>`;
+                if (region.policy.targets) {
+                    html += `<ul style="color: #a0a0a0; margin-left: 20px; margin-top: 10px;">`;
+                    region.policy.targets.forEach(target => {
+                        html += `<li>${target}</li>`;
+                    });
+                    html += `</ul>`;
+                }
+            }
+
+            html += `
+                    <div class="data-source">
+                        <span class="tag tag-${region.quality || 'journal'}">${region.quality || 'Journal'}</span>
+                        Source: ${region.source || 'Not specified'}
+                    </div>
+                </div>
+            `;
+
+            html += `</div>`;
+            container.innerHTML = html;
+        }
+
+        // Initialize
+        loadData();
+    </script>
+</body>
+</html>

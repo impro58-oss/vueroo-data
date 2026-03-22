@@ -31,12 +31,13 @@ if ($Content -match "NO HOT BETS") {
     $Lines = $Content -split "`r?`n" | Where-Object { $_.Trim() -ne "" }
     
     if ($Lines[1] -match "Found (\d+) opportunities") {
-        $Count = $Matches[1]
-        $Message += "Found $Count opportunities (showing top 5)`n`n"
+        $TotalCount = $Matches[1]
+        $Message += "Found $TotalCount opportunities (showing top 5, excluding entertainment & sports)`n`n"
     }
     
-    # Parse bets
+    # Parse bets - EXCLUDE entertainment and sports
     $BetCount = 0
+    $SkippedCount = 0
     for ($i = 0; $i -lt $Lines.Count; $i++) {
         $Line = $Lines[$i]
         
@@ -44,6 +45,14 @@ if ($Content -match "NO HOT BETS") {
         if ($Line -match '^\[([A-Z]+)\]\s+(.+)$') {
             $Category = $Matches[1]
             $Name = $Matches[2]
+            
+            # Skip entertainment and sports categories
+            if ($Category -eq "ENTERTAINMENT" -or $Category -eq "SPORTS") {
+                $SkippedCount++
+                # Skip the next lines (outcome, odds, link) for this bet
+                $i += 3
+                continue
+            }
             
             # Clean special characters
             $Name = $Name -replace '[^\x00-\x7F]', ''

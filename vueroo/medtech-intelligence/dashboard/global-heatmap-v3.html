@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Neurovascular Heat Map v3 - NeuroVue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        .continent-path {
+            fill: #1e293b;
+            stroke: #475569;
+            stroke-width: 1.5;
+            transition: all 0.3s ease;
+        }
+        .continent-path:hover {
+            fill: #334155;
+        }
+        
+        .heat-spot {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .heat-spot:hover {
+            transform: scale(1.3);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+        
+        .tooltip {
+            position: absolute;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 12px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 1000;
+            min-width: 200px;
+        }
+        .tooltip.visible {
+            opacity: 1;
+        }
+        
+        .region-card {
+            transition: all 0.3s ease;
+        }
+        .region-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+    
+    <!-- Header -->
+    <header class="bg-slate-900 border-b border-slate-800 p-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-globe-americas text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-white">Global Neurovascular Heat Map</h1>
+                        <p class="text-sm text-slate-400">Version 3.0 | Real-time stroke and aneurysm burden visualization</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="text-right">
+                        <div class="text-xs text-slate-400">Total Annual Cases</div>
+                        <div class="text-2xl font-bold text-emerald-400">12.2M</div>
+                    </div>
+                    <a href="index.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-sm font-medium transition">
+                        <i class="fas fa-arrow-left mr-2"></i>Back to Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto p-6">
+        
+        <!-- Stats Bar -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <div class="bg-slate-900 rounded-xl p-4 border border-slate-800">
+                <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Global Stroke</div>
+                <div class="text-2xl font-bold text-blue-400">12.2M</div>
+                <div class="text-xs text-slate-500 mt-1">cases/year</div>
+            </div>
+            <div class="bg-slate-900 rounded-xl p-4 border border-slate-800">
+                <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">EVT Procedures</div>
+                <div class="text-2xl font-bold text-emerald-400">2.8M</div>
+                <div class="text-xs text-slate-500 mt-1">annually</div>
+            </div>
+            <div class="bg-slate-900 rounded-xl p-4 border border-slate-800">
+                <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Aneurysm Cases</div>
+                <div class="text-2xl font-bold text-purple-400">500K</div>
+                <div class="text-xs text-slate-500 mt-1">global/year</div>
+            </div>
+            <div class="bg-slate-900 rounded-xl p-4 border border-slate-800">
+                <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">2030 Projection</div>
+                <div class="text-2xl font-bold text-yellow-400">15.1M</div>
+                <div class="text-xs text-slate-500 mt-1">+23% growth</div>
+            </div>
+        </div>
+
+        <!-- Main Map Container -->
+        <div class="bg-slate-900 rounded-xl border border-slate-800 overflow-hidden mb-6">
+            <div class="p-4 border-b border-slate-800 flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <span class="text-sm font-medium text-slate-300">Severity Level:</span>
+                    <div class="flex items-center gap-3">
+                        <div class="flex items-center gap-1">
+                            <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                            <span class="text-xs text-slate-400">High (>500K)</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                            <span class="text-xs text-slate-400">Medium (100-500K)</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                            <span class="text-xs text-slate-400">Low (<100K)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-xs text-slate-500">Hover dots for details</div>
+            </div>
+            
+            <div class="relative bg-slate-950">
+                <svg viewBox="0 0 1000 500" class="w-full h-auto">
+                    <!-- Ocean background -->
+                    <rect width="1000" height="500" fill="#0f172a"/>
+                    
+                    <!-- NORTH AMERICA - Based on reference image style -->
+                    <g id="north-america">
+                        <!-- Canada - wide top, narrowing down -->
+                        <path class="continent-path" d="M60,30 L120,25 L180,22 L240,25 L300,35 L350,50 L380,75 L390,100 L385,120 L360,130 L320,135 L270,138 L220,140 L170,138 L120,135 L80,128 L50,115 L35,90 L38,60 L48,40 Z" />
+                        
+                        <!-- Alaska - northwest extension -->
+                        <path class="continent-path" d="M15,35 L45,28 L70,35 L80,55 L72,72 L50,78 L25,72 L10,55 L8,42 Z" />
+                        
+                        <!-- USA - distinct shape with east/west coasts -->
+                        <path class="continent-path" d="M40,125 L90,128 L140,130 L190,132 L240,135 L290,140 L335,150 L365,170 L380,195 L385,225 L380,255 L370,280 L355,300 L335,310 L310,315 L280,318 L250,320 L220,320 L190,318 L160,312 L135,300 L115,280 L100,255 L90,225 L85,195 L82,165 L85,140 Z" />
+                        
+                        <!-- Mexico - tapering south -->
+                        <path class="continent-path" d="M95,305 L135,302 L175,300 L210,305 L235,320 L245,345 L240,370 L230,390 L215,405 L195,412 L175,410 L155,400 L140,382 L128,360 L120,338 L115,320 Z" />
+                        
+                        <!-- Central America - narrow isthmus -->
+                        <path class="continent-path" d="M235,410 L255,408 L270,415 L278,430 L275,445 L265,455 L250,458 L238,450 L232,435 L230,420 Z" />
+                    </g>
+                    
+                    <!-- SOUTH AMERICA - elongated, tapering to point -->
+                    <g id="south-america">
+                        <path class="continent-path" d="M285,330 L325,325 L360,335 L390,360 L415,395 L430,435 L438,480 L440,525 L432,565 L415,598 L390,620 L360,630 L325,632 L295,625 L270,605 L255,575 L248,540 L245,500 L248,460 L258,420 L270,385 L280,355 Z" />
+                    </g>
+                    
+                    
+                    <!-- EUROPE - based on reference with UK and Scandinavia -->
+                    <g id="europe">
+                        <!-- Mainland Europe -->
+                        <path class="continent-path" d="M460,85 L500,78 L540,82 L575,92 L600,108 L620,130 L630,155 L632,180 L628,200 L615,215 L595,222 L570,225 L545,226 L520,225 L495,220 L475,210 L462,195 L455,175 L453,152 L455,128 L460,105 Z" />
+                        
+                        <!-- UK - island shape -->
+                        <path class="continent-path" d="M425,100 L450,92 L465,102 L470,122 L465,140 L450,150 L432,148 L420,135 L418,118 Z" />
+                        
+                        <!-- Ireland -->
+                        <path class="continent-path" d="M410,118 L425,118 L432,130 L428,145 L415,148 L405,138 Z" />
+                        
+                        <!-- Scandinavia - long peninsula north -->
+                        <path class="continent-path" d="M495,55 L530,42 L565,35 L595,42 L615,58 L625,80 L622,100 L608,110 L588,112 L568,108 L550,100 L530,90 L512,78 L500,68 Z" />
+                        
+                        <!-- Iceland -->
+                        <path class="continent-path" d="M395,60 L420,55 L435,68 L430,88 L415,95 L400,90 L392,75 Z" />
+                    </g>
+                    
+                    
+                    <!-- AFRICA - classic shape with east horn -->
+                    <g id="africa">
+                        <path class="continent-path" d="M465,200 L510,192 L555,198 L595,218 L625,248 L645,288 L655,332 L658,378 L652,422 L638,462 L615,495 L585,520 L550,535 L512,540 L475,538 L445,522 L425,492 L415,452 L412,408 L415,362 L425,318 L440,275 L455,235 Z" />
+                        
+                        <!-- Madagascar - island off east coast -->
+                        <path class="continent-path" d="M665,435 L685,430 L698,445 L702,468 L695,488 L680,498 L662,492 L655,472 L658,450 Z" />
+                    </g>
+                    
+                    
+                    <!-- ASIA - spanning wide with distinct regions -->
+                    <g id="asia">
+                        <!-- Russia/Siberia - wide northern expanse -->
+                        <path class="continent-path" d="M555,45 L620,32 L690,25 L765,28 L835,42 L895,65 L935,95 L952,130 L955,165 L948,195 L928,218 L898,232 L862,240 L822,245 L780,248 L738,250 L698,252 L662,258 L630,268 L605,275 L588,272 L578,258 L572,240 L568,220 L565,198 L562,175 L560,150 L558,125 L556,100 L555,75 Z" />
+                        
+                        <!-- China - large central mass -->
+                        <path class="continent-path" d="M695,175 L740,168 L785,172 L825,188 L855,212 L872,242 L878,272 L872,295 L855,312 L830,322 L800,328 L770,330 L742,328 L718,320 L700,305 L692,285 L690,262 L692,238 L698,212 L705,190 Z" />
+                        
+                        <!-- India - triangular subcontinent -->
+                        <path class="continent-path" d="M700,310 L735,302 L765,310 L788,332 L805,360 L815,390 L818,418 L810,440 L792,455 L770,462 L745,462 L722,455 L705,440 L695,420 L690,398 L690,375 L692,350 L698,328 Z" />
+                        
+                        <!-- Southeast Asia - extending south -->
+                        <path class="continent-path" d="M780,325 L810,318 L835,330 L852,352 L862,375 L865,395 L858,410 L842,420 L822,425 L805,422 L792,410 L785,395 L782,378 L785,360 L790,342 Z" />
+                        
+                        <!-- Japan - island chain -->
+                        <path class="continent-path" d="M860,180 L885,172 L905,185 L915,208 L918,232 L912,252 L900,265 L885,270 L872,262 L865,245 L865,225 L868,202 Z" />
+                        
+                        <!-- Korea - peninsula -->
+                        <path class="continent-path" d="M845,215 L865,208 L878,220 L882,240 L878,255 L865,262 L852,255 L845,238 Z" />
+                        
+                        <!-- Middle East - west of India -->
+                        <path class="continent-path" d="M600,215 L645,208 L685,220 L712,248 L730,280 L738,310 L732,332 L712,345 L688,350 L662,345 L640,332 L625,312 L615,288 L610,262 L608,238 Z" />
+                        
+                        <!-- Indonesia/SE Asia islands -->
+                        <path class="continent-path" d="M800,400 L830,395 L855,405 L868,425 L872,445 L862,460 L842,468 L820,468 L802,458 L792,440 L790,420 Z" />
+                    </g>
+                    
+                    
+                    <!-- AUSTRALIA - compact, rounded shape -->
+                    <g id="australia">
+                        <path class="continent-path" d="M795,400 L850,392 L900,398 L938,418 L962,448 L968,482 L960,512 L940,535 L910,548 L875,552 L840,550 L808,540 L782,520 L765,492 L758,460 L762,428 L775,408 Z" />
+                        
+                        <!-- New Zealand - two islands southeast -->
+                        <path class="continent-path" d="M975,495 L995,488 L1010,502 L1015,525 L1008,545 L992,555 L975,550 L965,532 L968,510 Z" />
+                        
+                        <!-- Papua New Guinea - north of Australia -->
+                        <path class="continent-path" d="M895,375 L925,368 L948,380 L955,402 L945,420 L922,428 L900,422 L890,405 Z" />
+                    </g>
+                    
+                    
+                    <!-- HEAT SPOTS - Aligned with actual country positions -->
+                    
+                    <!-- USA - High -->
+                    <circle class="heat-spot" cx="230" cy="225" r="17" fill="#ef4444" opacity="0.85" data-country="USA" />
+                    
+                    <!-- China - High -->
+                    <circle class="heat-spot" cx="785" cy="245" r="27" fill="#ef4444" opacity="0.9" data-country="China" />
+                    
+                    <!-- India - High -->
+                    <circle class="heat-spot" cx="755" cy="390" r="21" fill="#ef4444" opacity="0.85" data-country="India" />
+                    
+                    <!-- Japan - Medium -->
+                    <circle class="heat-spot" cx="890" cy="225" r="13" fill="#f59e0b" opacity="0.8" data-country="Japan" />
+                    
+                    
+                    <!-- Germany - Medium -->
+                    <circle class="heat-spot" cx="550" cy="155" r="11" fill="#f59e0b" opacity="0.8" data-country="Germany" />
+                    
+                    
+                    <!-- France - Medium -->
+                    <circle class="heat-spot" cx="520" cy="170" r="9" fill="#f59e0b" opacity="0.75" data-country="France" />
+                    
+                    
+                    <!-- UK - Medium -->
+                    <circle class="heat-spot" cx="450" cy="125" r="8" fill="#f59e0b" opacity="0.75" data-country="UK" />
+                    
+                    
+                    <!-- Italy - Medium -->
+                    <circle class="heat-spot" cx="555" cy="190" r="8" fill="#f59e0b" opacity="0.75" data-country="Italy" />
+                    
+                    
+                    <!-- Spain - Medium -->
+                    <circle class="heat-spot" cx="505" cy="195" r="8" fill="#f59e0b" opacity="0.75" data-country="Spain" />
+                    
+                    
+                    <!-- Brazil - Medium -->
+                    <circle class="heat-spot" cx="350" cy="480" r="14" fill="#f59e0b" opacity="0.8" data-country="Brazil" />
+                    
+                    
+                    <!-- South Korea - Medium -->
+                    <circle class="heat-spot" cx="870" cy="235" r="8" fill="#f59e0b" opacity="0.75" data-country="SouthKorea" />
+                    
+                    
+                    <!-- Australia - Low -->
+                    <circle class="heat-spot" cx="885" cy="475" r="8" fill="#10b981" opacity="0.7" data-country="Australia" />
+                    
+                    
+                    <!-- Canada - Low -->
+                    <circle class="heat-spot" cx="200" cy="80" r="8" fill="#10b981" opacity="0.7" data-country="Canada" />
+                </svg>
+                
+                <!-- Tooltip -->
+                <div id="tooltip" class="tooltip"></div>
+            </div>
+        </div>
+
+        <!-- Regional Breakdown Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            
+            <!-- North America -->
+            <div class="region-card bg-slate-900 rounded-xl p-5 border border-slate-800 cursor-pointer" onclick="showRegionDetail('na')">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="font-semibold text-white">North America</h3>
+                    <span class="text-xs px-2 py-1 bg-red-900/50 text-red-400 rounded">High</span>
+                </div>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Stroke Cases</span>
+                        <span class="font-mono text-white">857K</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">EVT Rate</span>
+                        <span class="font-mono text-emerald-400">25.1%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Europe -->
+            <div class="region-card bg-slate-900 rounded-xl p-5 border border-slate-800 cursor-pointer" onclick="showRegionDetail('eu')">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="font-semibold text-white">Europe</h3>
+                    <span class="text-xs px-2 py-1 bg-yellow-900/50 text-yellow-400 rounded">Medium</span>
+                </div>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Stroke Cases</span>
+                        <span class="font-mono text-white">1.14M</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">EVT Rate</span>
+                        <span class="font-mono text-emerald-400">24.1%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Asia Pacific -->
+            <div class="region-card bg-slate-900 rounded-xl p-5 border border-slate-800 cursor-pointer" onclick="showRegionDetail('apac')">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="font-semibold text-white">Asia Pacific</h3>
+                    <span class="text-xs px-2 py-1 bg-red-900/50 text-red-400 rounded">High</span>
+                </div>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Stroke Cases</span>
+                        <span class="font-mono text-white">4.43M</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">EVT Rate</span>
+                        <span class="font-mono text-emerald-400">14.4%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Latin America -->
+            <div class="region-card bg-slate-900 rounded-xl p-5 border border-slate-800 cursor-pointer" onclick="showRegionDetail('latam')">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="font-semibold text-white">Latin America</h3>
+                    <span class="text-xs px-2 py-1 bg-yellow-900/50 text-yellow-400 rounded">Medium</span>
+                </div>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Stroke Cases</span>
+                        <span class="font-mono text-white">400K</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">EVT Rate</span>
+                        <span class="font-mono text-emerald-400">20.0%</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const countryData = {
+            USA: { name: 'United States', stroke: 795000, evt: 200000, aneurysm: 30000, rate: '25.2%' },
+            China: { name: 'China', stroke: 2500000, evt: 400000, aneurysm: 180000, rate: '16.0%' },
+            India: { name: 'India', stroke: 1400000, evt: 150000, aneurysm: 65000, rate: '10.7%' },
+            Japan: { name: 'Japan', stroke: 320000, evt: 80000, aneurysm: 45000, rate: '25.0%' },
+            Germany: { name: 'Germany', stroke: 270000, evt: 65000, aneurysm: 8500, rate: '24.1%' },
+            France: { name: 'France', stroke: 140000, evt: 35000, aneurysm: 5500, rate: '25.0%' },
+            UK: { name: 'United Kingdom', stroke: 100000, evt: 25000, aneurysm: 5000, rate: '25.0%' },
+            Italy: { name: 'Italy', stroke: 120000, evt: 28000, aneurysm: 4200, rate: '23.3%' },
+            Spain: { name: 'Spain', stroke: 110000, evt: 26000, aneurysm: 3800, rate: '23.6%' },
+            Brazil: { name: 'Brazil', stroke: 180000, evt: 35000, aneurysm: 8500, rate: '19.4%' },
+            SouthKorea: { name: 'South Korea', stroke: 110000, evt: 27500, aneurysm: 12000, rate: '25.0%' },
+            Australia: { name: 'Australia', stroke: 56000, evt: 14000, aneurysm: 2500, rate: '25.0%' },
+            Canada: { name: 'Canada', stroke: 62000, evt: 15500, aneurysm: 2400, rate: '25.0%' }
+        };
+
+        const tooltip = document.getElementById('tooltip');
+        const heatSpots = document.querySelectorAll('.heat-spot');
+
+        heatSpots.forEach(spot => {
+            spot.addEventListener('mouseenter', (e) => {
+                const country = e.target.dataset.country;
+                const data = countryData[country];
+                if (data) {
+                    tooltip.innerHTML = `
+                        <div class="font-semibold text-white mb-2">${data.name}</div>
+                        <div class="space-y-1 text-sm">
+                            <div class="flex justify-between"><span class="text-slate-400">Stroke:</span> <span class="text-white">${data.stroke.toLocaleString()}</span></div>
+                            <div class="flex justify-between"><span class="text-slate-400">EVT:</span> <span class="text-emerald-400">${data.evt.toLocaleString()}</span></div>
+                            <div class="flex justify-between"><span class="text-slate-400">Aneurysm:</span> <span class="text-white">${data.aneurysm.toLocaleString()}</span></div>
+                            <div class="flex justify-between"><span class="text-slate-400">EVT Rate:</span> <span class="text-blue-400">${data.rate}</span></div>
+                        </div>
+                    `;
+                    tooltip.classList.add('visible');
+                }
+            });
+
+            spot.addEventListener('mousemove', (e) => {
+                const rect = e.target.closest('.relative').getBoundingClientRect();
+                tooltip.style.left = (e.clientX - rect.left + 10) + 'px';
+                tooltip.style.top = (e.clientY - rect.top - 10) + 'px';
+            });
+
+            spot.addEventListener('mouseleave', () => {
+                tooltip.classList.remove('visible');
+            });
+        });
+
+        function showRegionDetail(region) {
+            window.parent.location.href = 'index.html#epidemiology';
+        }
+    </script>
+</body>
+</html>

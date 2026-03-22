@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXBRIDGE - Sign In</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            height: 100vh;
+            display: flex;
+            background: #0a0a0a;
+        }
+
+        /* Full-bleed image on the left/dark side */
+        .image-section {
+            flex: 1;
+            background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1920');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        /* Optional: subtle gradient overlay to push focus right */
+        .image-section::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 40%;
+            background: linear-gradient(to right, transparent, rgba(0,0,0,0.3));
+        }
+
+        /* Solid card section on the right */
+        .login-section {
+            width: 420px;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 48px;
+            box-shadow: -20px 0 60px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: #0a0a0a;
+            margin-bottom: 8px;
+        }
+
+        .logo span {
+            font-weight: 600;
+            color: #2563eb;
+        }
+
+        .tagline {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 48px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            font-size: 12px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #0a0a0a;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 16px;
+            background: #0a0a0a;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 16px;
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+        }
+
+        .footer-links {
+            margin-top: 32px;
+            text-align: center;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: #666;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        .footer-links a:hover {
+            color: #0a0a0a;
+        }
+
+        /* Mobile: Stack vertically */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            
+            .image-section {
+                height: 35vh;
+            }
+            
+            .login-section {
+                width: 100%;
+                flex: 1;
+                padding: 40px 32px;
+                box-shadow: 0 -20px 60px rgba(0,0,0,0.3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="image-section"></div>
+    
+    <div class="login-section">
+        <div class="logo">VUER<span>OO</span></div>
+        <div class="tagline">Intelligence Platform</div>
+        
+        <form>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="you@example.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="••••••••">
+            </div>
+            
+            <button type="submit" class="btn-primary">Sign In</button>
+        </form>
+        
+        <div class="footer-links">
+            <a href="#">Forgot password?</a>
+            <a href="#">Create account</a>
+        </div>
+    </div>
+</body>
+</html>

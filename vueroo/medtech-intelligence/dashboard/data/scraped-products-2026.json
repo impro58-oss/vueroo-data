@@ -1,0 +1,185 @@
+{
+  "scrape_date": "2026-03-19T02:00:14.978605",
+  "companies": [
+    {
+      "company": "Medtronic",
+      "products": [
+        {
+          "category": "Coils",
+          "name": "Axium Prime",
+          "indication": "Hemorrhagic",
+          "description": "Detachable coil system for aneurysm embolization",
+          "source_url": "https://www.medtronic.com/us-en/healthcare-professionals/products/neurological/neurovascular.html",
+          "scraped_at": "2026-03-19T02:00:15.439267"
+        },
+        {
+          "category": "Flow Diverter",
+          "name": "Pipeline Flex",
+          "indication": "Hemorrhagic",
+          "description": "Flow diversion for large/giant aneurysms",
+          "source_url": "https://www.medtronic.com/us-en/healthcare-professionals/products/neurological/neurovascular.html",
+          "scraped_at": "2026-03-19T02:00:15.439267"
+        },
+        {
+          "category": "Stent Retriever",
+          "name": "Solitaire",
+          "indication": "Ischemic",
+          "description": "Clot retrieval device for acute ischemic stroke",
+          "source_url": "https://www.medtronic.com/us-en/healthcare-professionals/products/neurological/neurovascular.html",
+          "scraped_at": "2026-03-19T02:00:15.439267"
+        }
+      ]
+    },
+    {
+      "company": "Stryker",
+      "products": [
+        {
+          "category": "Coils",
+          "name": "Target 360",
+          "indication": "Hemorrhagic",
+          "description": "Complex coil system for aneurysm treatment",
+          "source_url": "https://www.stryker.com/us/en/neurovascular.html",
+          "scraped_at": "2026-03-19T02:00:18.046275"
+        },
+        {
+          "category": "Stent Retriever",
+          "name": "Trevo",
+          "indication": "Ischemic",
+          "description": "Clot retrieval system for stroke",
+          "source_url": "https://www.stryker.com/us/en/neurovascular.html",
+          "scraped_at": "2026-03-19T02:00:18.046275"
+        },
+        {
+          "category": "Stent",
+          "name": "Neuroform Atlas",
+          "indication": "Hemorrhagic",
+          "description": "Intracranial stent for aneurysm neck remodeling",
+          "source_url": "https://www.stryker.com/us/en/neurovascular.html",
+          "scraped_at": "2026-03-19T02:00:18.046275"
+        }
+      ]
+    },
+    {
+      "company": "Penumbra",
+      "products": [
+        {
+          "category": "Aspiration Catheter",
+          "name": "ACE 68",
+          "indication": "Ischemic",
+          "description": "Large bore aspiration catheter for stroke",
+          "sizes": [
+            "6F",
+            "5F"
+          ],
+          "source_url": "https://www.penumbrainc.com/products/",
+          "scraped_at": "2026-03-19T02:00:20.654840"
+        },
+        {
+          "category": "Aspiration Pump",
+          "name": "Penumbra Pump MAX",
+          "indication": "Ischemic",
+          "description": "Aspiration system for clot removal",
+          "source_url": "https://www.penumbrainc.com/products/",
+          "scraped_at": "2026-03-19T02:00:20.654840"
+        },
+        {
+          "category": "Clot Retriever",
+          "name": "3D Revascularization Device",
+          "indication": "Ischemic",
+          "description": "Next-gen clot retrieval technology",
+          "source_url": "https://www.penumbrainc.com/products/",
+          "scraped_at": "2026-03-19T02:00:20.654840"
+        },
+        {
+          "category": "Coils",
+          "name": "Smart Coil",
+          "indication": "Hemorrhagic",
+          "description": "Detachable coil system",
+          "source_url": "https://www.penumbrainc.com/products/",
+          "scraped_at": "2026-03-19T02:00:20.654840"
+        }
+      ]
+    },
+    {
+      "company": "MicroVention",
+      "products": [
+        {
+          "category": "Flow Diverter",
+          "name": "FRED",
+          "indication": "Hemorrhagic",
+          "description": "Flow redirection endoluminal device",
+          "source_url": "https://www.microvention.com/products",
+          "scraped_at": "2026-03-19T02:00:24.765562"
+        },
+        {
+          "category": "Stent",
+          "name": "LVIS Jr",
+          "indication": "Hemorrhagic",
+          "description": "Low-profile braided stent",
+          "sizes": [
+            "2.5mm - 4.5mm"
+          ],
+          "source_url": "https://www.microvention.com/products",
+          "scraped_at": "2026-03-19T02:00:24.765562"
+        },
+        {
+          "category": "Balloon",
+          "name": "Scepter",
+          "indication": "Hemorrhagic",
+          "description": "Dual-lumen balloon catheter",
+          "source_url": "https://www.microvention.com/products",
+          "scraped_at": "2026-03-19T02:00:24.765562"
+        },
+        {
+          "category": "Coils",
+          "name": "Cosmos",
+          "indication": "Hemorrhagic",
+          "description": "Complex coil system",
+          "source_url": "https://www.microvention.com/products",
+          "scraped_at": "2026-03-19T02:00:24.765562"
+        }
+      ]
+    },
+    {
+      "company": "Cerenovus",
+      "products": [
+        {
+          "category": "Coils",
+          "name": "Galaxy G3",
+          "indication": "Hemorrhagic",
+          "description": "G3 detachable coil system",
+          "source_url": "https://www.cerenovus.com/products.html",
+          "scraped_at": "2026-03-19T02:00:27.189016"
+        },
+        {
+          "category": "Stent Retriever",
+          "name": "Embotrap III",
+          "indication": "Ischemic",
+          "description": "Clot retrieval stent",
+          "source_url": "https://www.cerenovus.com/products.html",
+          "scraped_at": "2026-03-19T02:00:27.189016"
+        },
+        {
+          "category": "Stent",
+          "name": "Enterprise 2",
+          "indication": "Hemorrhagic",
+          "description": "Closed-cell stent for aneurysm",
+          "source_url": "https://www.cerenovus.com/products.html",
+          "scraped_at": "2026-03-19T02:00:27.189016"
+        }
+      ]
+    },
+    {
+      "company": "Balt",
+      "products": []
+    },
+    {
+      "company": "Phenox/Wallaby",
+      "products": []
+    }
+  ],
+  "industry_news": {
+    "source": "NeuroNews",
+    "articles": []
+  }
+}

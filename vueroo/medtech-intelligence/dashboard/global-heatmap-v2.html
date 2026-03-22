@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Neurovascular Heat Map - NeuroVue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .continent-card {
+            transition: all 0.3s ease;
+        }
+        .continent-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .heatmap-dot {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        .severity-high { background: radial-gradient(circle, rgba(239,68,68,0.8), rgba(239,68,68,0.3)); }
+        .severity-medium { background: radial-gradient(circle, rgba(245,158,11,0.8), rgba(245,158,11,0.3)); }
+        .severity-low { background: radial-gradient(circle, rgba(16,185,129,0.8), rgba(16,185,129,0.3)); }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+    
+    <div class="max-w-7xl mx-auto px-4 py-6">
+        <!-- Header -->
+        <div class="mb-6">
+            <h1 class="text-2xl font-bold text-white mb-2">Global Neurovascular Burden Map</h1>
+            <p class="text-slate-400">Stroke and aneurysm case distribution by region. Click regions for detailed data.</p>
+        </div>
+
+        <!-- World Map Container -->
+        <div class="bg-slate-900 rounded-xl p-6 border border-slate-800 mb-6">
+            <div class="relative w-full aspect-[16/9] bg-slate-950 rounded-lg overflow-hidden">
+                
+                <!-- World Map SVG - Clean, simplified -->
+                <svg viewBox="0 0 1000 500" class="w-full h-full">
+                    <!-- Ocean background -->
+                    <rect width="1000" height="500" fill="#0f172a"/>
+                    
+                    <!-- Continents - simplified shapes -->
+                    <g fill="#1e293b" stroke="#334155" stroke-width="1">
+                        <!-- North America -->
+                        <path d="M50,80 L250,50 L350,80 L400,150 L380,200 L300,250 L200,280 L150,260 L100,200 L50,150 Z" />
+                        
+                        <!-- South America -->
+                        <path d="M280,300 L380,280 L420,350 L380,450 L320,480 L280,400 Z" />
+                        
+                        <!-- Europe -->
+                        <path d="M420,80 L550,60 L600,80 L580,140 L520,150 L450,140 Z" />
+                        
+                        <!-- Africa -->
+                        <path d="M450,160 L550,150 L600,200 L620,300 L580,380 L520,400 L480,350 L440,250 Z" />
+                        
+                        <!-- Asia -->
+                        <path d="M600,60 L800,50 L900,100 L920,200 L850,280 L750,300 L650,250 L600,180 Z" />
+                        
+                        <!-- Australia -->
+                        <path d="M780,320 L880,310 L920,350 L900,400 L800,410 L760,370 Z" />
+                        
+                        <!-- Greenland -->
+                        <path d="M380,40 L450,30 L480,60 L450,90 L400,80 Z" />
+                    </g>
+                    
+                    <!-- Heat spots - positioned on map -->
+                    <!-- USA -->
+                    <circle cx="200" cy="150" r="15" class="heatmap-dot severity-high" fill="#ef4444" opacity="0.8"/>
+                    <!-- China -->
+                    <circle cx="750" cy="180" r="25" class="heatmap-dot severity-high" fill="#ef4444" opacity="0.9"/>
+                    <!-- Japan -->
+                    <circle cx="830" cy="160" r="12" class="heatmap-dot severity-medium" fill="#f59e0b" opacity="0.8"/>
+                    <!-- Germany -->
+                    <circle cx="520" cy="120" r="10" class="heatmap-dot severity-medium" fill="#f59e0b" opacity="0.8"/>
+                    <!-- France -->
+                    <circle cx="500" cy="135" r="9" class="heatmap-dot severity-medium" fill="#f59e0b" opacity="0.7"/>
+                    <!-- UK -->
+                    <circle cx="485" cy="110" r="8" class="heatmap-dot severity-low" fill="#10b981" opacity="0.7"/>
+                    <!-- Italy -->
+                    <circle cx="520" cy="145" r="8" class="heatmap-dot severity-medium" fill="#f59e0b" opacity="0.7"/>
+                    <!-- Spain -->
+                    <circle cx="490" cy="155" r="7" class="heatmap-dot severity-medium" fill="#f59e0b" opacity="0.7"/>
+                    <!-- Brazil -->
+                    <circle cx="340" cy="350" r="12" class="heatmap-dot severity-medium" fill="#f59e0b" opacity="0.8"/>
+                    <!-- India -->
+                    <circle cx="680" cy="230" r="18" class="heatmap-dot severity-high" fill="#ef4444" opacity="0.8"/>
+                    <!-- Australia -->
+                    <circle cx="840" cy="360" r="8" class="heatmap-dot severity-low" fill="#10b981" opacity="0.7"/>
+                    <!-- South Korea -->
+                    <circle cx="815" cy="200" r="8" class="heatmap-dot severity-medium" fill="#f59e0b" opacity="0.7"/>
+                </svg>
+                
+                <!-- Legend -->
+                <div class="absolute bottom-4 right-4 bg-slate-900/90 p-3 rounded-lg border border-slate-700">
+                    <div class="text-xs font-semibold mb-2 text-slate-400">Case Volume</div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <span class="text-xs text-slate-300">High (>500K)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <span class="text-xs text-slate-300">Medium (100-500K)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <span class="text-xs text-slate-300">Low (<100K)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Regional Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            
+            <!-- North America -->
+            <div class="continent-card bg-slate-900 rounded-lg p-4 border border-slate-800 cursor-pointer" onclick="showRegion('na')">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="font-semibold text-white">North America</h3>
+                    <span class="text-xs px-2 py-1 bg-red-900/50 text-red-400 rounded">High</span>
+                </div>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Cases/Year</span>
+                        <span class="font-mono text-white">795,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">EVT</span>
+                        <span class="font-mono text-emerald-400">200,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Aneurysm</span>
+                        <span class="font-mono text-white">30,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Europe -->
+            <div class="continent-card bg-slate-900 rounded-lg p-4 border border-slate-800 cursor-pointer" onclick="showRegion('eu')">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="font-semibold text-white">Europe</h3>
+                    <span class="text-xs px-2 py-1 bg-yellow-900/50 text-yellow-400 rounded">Medium</span>
+                </div>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Cases/Year</span>
+                        <span class="font-mono text-white">1,100,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">EVT</span>
+                        <span class="font-mono text-emerald-400">275,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Aneurysm</span>
+                        <span class="font-mono text-white">45,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Asia Pacific -->
+            <div class="continent-card bg-slate-900 rounded-lg p-4 border border-slate-800 cursor-pointer" onclick="showRegion('apac')">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="font-semibold text-white">Asia Pacific</h3>
+                    <span class="text-xs px-2 py-1 bg-red-900/50 text-red-400 rounded">High</span>
+                </div>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Cases/Year</span>
+                        <span class="font-mono text-white">4,500,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">EVT</span>
+                        <span class="font-mono text-emerald-400">650,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Aneurysm</span>
+                        <span class="font-mono text-white">300,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Latin America -->
+            <div class="continent-card bg-slate-900 rounded-lg p-4 border border-slate-800 cursor-pointer" onclick="showRegion('latam')">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="font-semibold text-white">Latin America</h3>
+                    <span class="text-xs px-2 py-1 bg-yellow-900/50 text-yellow-400 rounded">Medium</span>
+                </div>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Cases/Year</span>
+                        <span class="font-mono text-white">400,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">EVT</span>
+                        <span class="font-mono text-emerald-400">80,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Aneurysm</span>
+                        <span class="font-mono text-white">18,000</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Country Detail Panel -->
+        <div id="countryDetail" class="hidden mt-6 bg-slate-900 rounded-xl p-6 border border-slate-800">
+            <div class="flex items-center justify-between mb-4">
+                <h2 id="detailTitle" class="text-xl font-bold text-white">Country Details</h2>
+                <button onclick="closeDetail()" class="text-slate-400 hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div id="detailContent" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const regionData = {
+            na: [
+                { name: 'United States', cases: 795000, evt: 200000, aneurysm: 30000, growth: '+2.1%' },
+                { name: 'Canada', cases: 62000, evt: 15500, aneurysm: 2400, growth: '+1.8%' }
+            ],
+            eu: [
+                { name: 'Germany', cases: 270000, evt: 65000, aneurysm: 8500, growth: '+1.5%' },
+                { name: 'France', cases: 140000, evt: 35000, aneurysm: 5500, growth: '+1.2%' },
+                { name: 'UK', cases: 100000, evt: 25000, aneurysm: 5000, growth: '+1.0%' },
+                { name: 'Italy', cases: 120000, evt: 28000, aneurysm: 4200, growth: '+1.3%' },
+                { name: 'Spain', cases: 110000, evt: 26000, aneurysm: 3800, growth: '+1.4%' }
+            ],
+            apac: [
+                { name: 'China', cases: 2500000, evt: 400000, aneurysm: 180000, growth: '+5.2%' },
+                { name: 'Japan', cases: 320000, evt: 80000, aneurysm: 45000, growth: '+2.8%' },
+                { name: 'South Korea', cases: 110000, evt: 27500, aneurysm: 12000, growth: '+3.1%' },
+                { name: 'India', cases: 1400000, evt: 150000, aneurysm: 65000, growth: '+4.5%' }
+            ],
+            latam: [
+                { name: 'Brazil', cases: 180000, evt: 35000, aneurysm: 8500, growth: '+3.2%' },
+                { name: 'Mexico', cases: 95000, evt: 19000, aneurysm: 4200, growth: '+2.9%' },
+                { name: 'Argentina', cases: 45000, evt: 9000, aneurysm: 1800, growth: '+2.1%' },
+                { name: 'Colombia', cases: 38000, evt: 7600, aneurysm: 1500, growth: '+2.4%' }
+            ]
+        };
+
+        function showRegion(region) {
+            const data = regionData[region];
+            if (!data) return;
+            
+            const titles = { na: 'North America', eu: 'Europe', apac: 'Asia Pacific', latam: 'Latin America' };
+            document.getElementById('detailTitle').textContent = titles[region] + ' - Country Breakdown';
+            
+            document.getElementById('detailContent').innerHTML = data.map(country => `
+                <div class="bg-slate-800 rounded-lg p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-semibold text-white">${country.name}</h4>
+                        <span class="text-xs text-emerald-400">${country.growth}</span>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-slate-400">Annual Cases</span>
+                            <span class="font-mono text-white">${country.cases.toLocaleString()}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-400">EVT Procedures</span>
+                            <span class="font-mono text-emerald-400">${country.evt.toLocaleString()}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-400">Aneurysm</span>
+                            <span class="font-mono text-white">${country.aneurysm.toLocaleString()}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-400">EVT Rate</span>
+                            <span class="font-mono text-blue-400">${((country.evt/country.cases)*100).toFixed(1)}%</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            document.getElementById('countryDetail').classList.remove('hidden');
+        }
+
+        function closeDetail() {
+            document.getElementById('countryDetail').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

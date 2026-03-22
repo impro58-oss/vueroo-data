@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Pro - NeuroVue Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gap-row { background: rgba(239, 68, 68, 0.1); }
+        .gap-text { color: #fca5a5; }
+        .filter-active { background: #3B82F6; color: white; }
+        .product-card { transition: all 0.2s; }
+        .product-card:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+    <div class="container mx-auto px-4 py-6">
+        
+        <!-- Header -->
+        <header class="mb-6 flex items-center justify-between">
+            <div>
+                <h1 class="text-3xl font-bold text-blue-400">Portfolio Pro</h1>
+                <p class="text-slate-400 mt-1">Dynamic Product Intelligence Matrix</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-sm text-slate-500" id="lastUpdated"></span>
+                <button onclick="window.location.href='index.html'" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-sm">
+                    <i class="fas fa-arrow-left mr-2"></i>Back to Dashboard
+                </button>
+            </div>
+        </header>
+
+        <!-- Stats Row -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+            <div class="bg-slate-900 rounded-xl p-4 border border-slate-800">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-th-large text-blue-400"></i>
+                    </div>
+                    <span class="text-sm text-slate-400">Categories</span>
+                </div>
+                <div class="text-2xl font-bold" id="totalCategories">0</div>
+            </div>
+            <div class="bg-slate-900 rounded-xl p-4 border border-slate-800">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-check-circle text-emerald-400"></i>
+                    </div>
+                    <span class="text-sm text-slate-400">Wallaby Coverage</span>
+                </div>
+                <div class="text-2xl font-bold" id="wallabyCoverage">0</div>
+            </div>
+            <div class="bg-slate-900 rounded-xl p-4 border border-slate-800">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-exclamation-triangle text-red-400"></i>
+                    </div>
+                    <span class="text-sm text-slate-400">Critical Gaps</span>
+                </div>
+                <div class="text-2xl font-bold text-red-400" id="criticalGaps">0</div>
+            </div>
+            <div class="bg-slate-900 rounded-xl p-4 border border-slate-800">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-building text-purple-400"></i>
+                    </div>
+                    <span class="text-sm text-slate-400">Competitors Tracked</span>
+                </div>
+                <div class="text-2xl font-bold">6</div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="bg-slate-900 rounded-xl p-6 border border-slate-800 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block text-slate-400 text-sm mb-2">View Mode</label>
+                    <select id="viewMode" onchange="applyFilters()" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white">
+                        <option value="all">All Categories</option>
+                        <option value="wallaby">Wallaby Products Only</option>
+                        <option value="gaps">Coverage Gaps</option>
+                        <option value="competitor">Competitor Comparison</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-slate-400 text-sm mb-2">Product Category</label>
+                    <select id="categoryFilter" onchange="applyFilters()" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white">
+                        <option value="all">All Categories</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-slate-400 text-sm mb-2">Market Segment</label>
+                    <select id="segmentFilter" onchange="applyFilters()" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white">
+                        <option value="all">All Segments</option>
+                        <option value="hemorrhagic">Hemorrhagic</option>
+                        <option value="ais">Ischemic Stroke</option>
+                        <option value="atherosclerosis">Atherosclerosis</option>
+                        <option value="access">Access & Delivery</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Quick Filters -->
+            <div class="flex flex-wrap gap-2 mt-4">
+                <button onclick="setQuickFilter('gaps')" class="px-3 py-1 bg-red-500/20 hover:bg-red-500/30 text-red-300 rounded-full text-sm border border-red-500/30">
+                    <i class="fas fa-exclamation-circle mr-1"></i>Show Gaps Only
+                </button>
+                <button onclick="setQuickFilter('wallaby')" class="px-3 py-1 bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 rounded-full text-sm border border-emerald-500/30">
+                    <i class="fas fa-check-circle mr-1"></i>Wallaby Coverage
+                </button>
+                <button onclick="setQuickFilter('all')" class="px-3 py-1 bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-full text-sm">
+                    <i class="fas fa-undo mr-1"></i>Reset Filters
+                </button>
+                <button onclick="exportData()" class="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-sm ml-auto">
+                    <i class="fas fa-download mr-1"></i>Export
+                </button>
+            </div>
+        </div>
+
+        <!-- Results Count -->
+        <div class="flex items-center justify-between mb-4">
+            <div class="text-sm text-slate-400">
+                Showing <span id="showingCount" class="font-bold text-white">0</span> of <span id="totalCount" class="font-bold text-white">0</span> categories
+            </div>
+            <div class="flex items-center gap-4 text-xs text-slate-500">
+                <span class="flex items-center gap-1"><i class="fas fa-check-circle text-emerald-400"></i> Available</span>
+                <span class="flex items-center gap-1"><i class="fas fa-times-circle text-red-400"></i> Gap</span>
+                <span class="flex items-center gap-1"><i class="fas fa-circle text-amber-400"></i> Limited</span>
+            </div>
+        </div>
+
+        <!-- Product Matrix Table -->
+        <div class="bg-slate-900 rounded-xl border border-slate-800 overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-800">
+                        <tr>
+                            <th class="p-4 font-semibold text-slate-300">Category</th>
+                            <th class="p-4 font-semibold text-slate-300">Segment</th>
+                            <th class="p-4 font-semibold text-blue-400">Wallaby Phenox</th>
+                            <th class="p-4 font-semibold text-slate-300">Medtronic</th>
+                            <th class="p-4 font-semibold text-slate-300">Stryker</th>
+                            <th class="p-4 font-semibold text-slate-300">Microvention</th>
+                            <th class="p-4 font-semibold text-slate-300">Penumbra</th>
+                            <th class="p-4 font-semibold text-slate-300">Cerenovus</th>
+                        </tr>
+                    </thead>
+                    <tbody id="matrixBody" class="divide-y divide-slate-800">
+                        <!-- Dynamically populated -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="mt-6 bg-slate-900 rounded-xl p-4 border border-slate-800">
+            <h3 class="text-sm font-semibold text-slate-400 mb-3">Matrix Legend</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                    <span class="text-slate-400">Full Product Available</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+                    <span class="text-slate-400">Limited/Indirect</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                    <span class="text-slate-400">Critical Gap</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-slate-600"></span>
+                    <span class="text-slate-400">Not Available</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Portfolio Data - Embedded for file:// compatibility
+        const portfolioDB = {
+            categories: [
+                { id: "coils", name: "Coils", segment: "hemorrhagic", wallaby: { present: true, products: "Avenir, PICO" }, competitors: { medtronic: "Axium, Axium MicroFX", stryker: "Target XXL, Target 360", microvention: "Cosmos, Hypersoft", penumbra: "PC400, POD400", cerenovus: "GALAXY G3, DELTAFILL" }},
+                { id: "fd", name: "Flow Diverters", segment: "hemorrhagic", wallaby: { present: true, products: "p64 (MW)(HPC)" }, competitors: { medtronic: "Pipeline Flex, Vantage", stryker: "Surpass Evolve", microvention: "FRED (X)", penumbra: "—", cerenovus: "BRAVO" }},
+                { id: "minifd", name: "Mini Flow Diverters", segment: "hemorrhagic", wallaby: { present: true, products: "p48 MW (HPC)" }, competitors: { medtronic: "Pipeline Shield", stryker: "Surpass Evolve", microvention: "FRED jr", penumbra: "—", cerenovus: "—" }},
+                { id: "stents_lasercut", name: "Stents - Lasercut", segment: "hemorrhagic", wallaby: { present: true, products: "pEGASUS" }, competitors: { medtronic: "Solitaire AB", stryker: "Neuroform Atlas", microvention: "—", penumbra: "—", cerenovus: "Enterprise 2" }},
+                { id: "stents_bif", name: "Stents - Bifurcation", segment: "hemorrhagic", wallaby: { present: true, products: "pCONUS" }, competitors: { medtronic: "—", stryker: "—", microvention: "—", penumbra: "—", cerenovus: "Pulserider" }},
+                { id: "thrombectomy_lvo", name: "Thrombectomy LVO", segment: "ais", wallaby: { present: true, products: "pRESET" }, competitors: { medtronic: "Solitaire X", stryker: "Trevo, Trevo 2", microvention: "Eric", penumbra: "3D Revasc", cerenovus: "Embotrap" }},
+                { id: "thrombectomy_mevo", name: "Thrombectomy MeVO", segment: "ais", wallaby: { present: true, products: "pRESET LT" }, competitors: { medtronic: "3MM Solitaire X", stryker: "Trevo XP", microvention: "Eric", penumbra: "—", cerenovus: "Embotrap" }},
+                { id: "aspiration", name: "Aspiration Catheters", segment: "ais", wallaby: { present: true, products: "pHLO, Esperance" }, competitors: { medtronic: "React, ARC", stryker: "AXS Catalyst, Vecta", microvention: "Sofia Plus", penumbra: "MAX, ACE, Jet7", cerenovus: "Embovac, Cereglide" }},
+                { id: "bgc", name: "Balloon Guide Catheters", segment: "ais", wallaby: { present: true, products: "Paragon BGC" }, competitors: { medtronic: "Cello", stryker: "Flowgate 2", microvention: "Bobby", penumbra: "—", cerenovus: "Emboguard" }},
+                { id: "catheter_017", name: "0.017\" Microcatheters", segment: "access", wallaby: { present: true, products: "pNOVUS 17" }, competitors: { medtronic: "Echelon, Phenom", stryker: "Excelsior SL10", microvention: "Headway 17", penumbra: "—", cerenovus: "Prowler" }},
+                { id: "catheter_021", name: "0.021\" Microcatheters", segment: "access", wallaby: { present: true, products: "pNOVUS 21" }, competitors: { medtronic: "Phenom, Rebar", stryker: "Trevo Pro 18", microvention: "Headway 21", penumbra: "—", cerenovus: "Prowler" }},
+                { id: "guidewire_014", name: "0.014\" Guidewires", segment: "access", wallaby: { present: true, products: "pORTAL" }, competitors: { medtronic: "Avigo, Mirage", stryker: "Synchro 2", microvention: "Traxess", penumbra: "—", cerenovus: "Neuroscout" }},
+                { id: "dac", name: "DAC", segment: "access", wallaby: { present: true, products: "pHLO DAC" }, competitors: { medtronic: "Navien", stryker: "AXS Catalyst DAC", microvention: "SOFIA EX", penumbra: "Neuron", cerenovus: "—" }},
+                { id: "neurosheath", name: "Neurosheath", segment: "access", wallaby: { present: true, products: "Pilote" }, competitors: { medtronic: "—", stryker: "AXS Infinity", microvention: "Destination", penumbra: "Neuron MAX", cerenovus: "Cerebase" }},
+                { id: "pta_balloon", name: "PTA Balloon", segment: "atherosclerosis", wallaby: { present: true, products: "pITA" }, competitors: { medtronic: "Submarine Rapido", stryker: "—", microvention: "Metacross", penumbra: "—", cerenovus: "—" }},
+                { id: "vasospasm", name: "Vasospasm Treatment", segment: "atherosclerosis", wallaby: { present: true, products: "pRELAX" }, competitors: { medtronic: "Solitaire", stryker: "Trevo", microvention: "—", penumbra: "—", cerenovus: "—" }},
+                { id: "icad", name: "ICAD Stent", segment: "atherosclerosis", wallaby: { present: true, products: "pEGASUS" }, competitors: { medtronic: "—", stryker: "Wingspan", microvention: "—", penumbra: "—", cerenovus: "—" }},
+                { id: "small_profile", name: "Small Profile Aspiration", segment: "ais", wallaby: { present: true, products: "3F+" }, competitors: { medtronic: "ARC Mini", stryker: "—", microvention: "—", penumbra: "3MAX, RED 43", cerenovus: "—" }},
+                { id: "intrasaccular", name: "Intrasaccular Devices", segment: "hemorrhagic", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "Artisse", stryker: "Contour", microvention: "WEB", penumbra: "—", cerenovus: "—" }},
+                { id: "remodelling", name: "Remodelling Balloons", segment: "hemorrhagic", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "HyperForm, HyperGlide", stryker: "Transform", microvention: "Scepter", penumbra: "—", cerenovus: "Ascent" }},
+                { id: "stents_braided", name: "Stents - Braided", segment: "hemorrhagic", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "—", stryker: "—", microvention: "LVIS (Jr)", penumbra: "—", cerenovus: "—" }},
+                { id: "largebore", name: "Large Bore Catheters", segment: "ais", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "—", stryker: "AXS Vecta 74", microvention: "—", penumbra: "—", cerenovus: "—" }},
+                { id: "aspiration_pump", name: "Aspiration Pump", segment: "ais", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "Riptide", stryker: "AXS Universal", microvention: "Gomco", penumbra: "Engine (Artemis)", cerenovus: "Nouvag" }},
+                { id: "liquid_embolic", name: "Liquid Embolic", segment: "hemorrhagic", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "Onyx", stryker: "—", microvention: "PHIL", penumbra: "—", cerenovus: "Truefill" }},
+                { id: "detachable_tip", name: "Detachable Tip Microcatheters", segment: "access", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "Apollo", stryker: "—", microvention: "—", penumbra: "—", cerenovus: "—" }},
+                { id: "onyx_compatible", name: "Onyx Compatible Microcatheters", segment: "access", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "Apollo, Marathon", stryker: "—", microvention: "—", penumbra: "—", cerenovus: "—" }},
+                { id: "carotid", name: "Carotid Stent", segment: "atherosclerosis", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "Protégé RX", stryker: "—", microvention: "Casper, Roadsaver", penumbra: "—", cerenovus: "—" }},
+                { id: "embolic_protection", name: "Embolic Protection", segment: "atherosclerosis", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "Spider FX", stryker: "—", microvention: "Empro", penumbra: "—", cerenovus: "—" }},
+                { id: "catheter_027", name: "0.027\" Microcatheters", segment: "access", wallaby: { present: false, products: "(pNOVUS 27)", gap: false, limited: true }, competitors: { medtronic: "Marksman", stryker: "Excelsior XT-27", microvention: "Headway 27", penumbra: "Lantern, Velocity", cerenovus: "Prowler" }}
+            ],
+            
+            segments: {
+                hemorrhagic: "Hemorrhagic Treatment",
+                ais: "Ischemic Stroke",
+                atherosclerosis: "Atherosclerosis",
+                access: "Access & Delivery"
+            }
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            populateCategoryDropdown();
+            updateStats();
+            renderMatrix();
+            document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
+        });
+
+        function populateCategoryDropdown() {
+            const select = document.getElementById('categoryFilter');
+            portfolioDB.categories.forEach(cat => {
+                const option = document.createElement('option');
+                option.value = cat.id;
+                option.textContent = cat.name;
+                select.appendChild(option);
+            });
+        }
+
+        function updateStats() {
+            const total = portfolioDB.categories.length;
+            const wallaby = portfolioDB.categories.filter(c => c.wallaby.present).length;
+            const gaps = portfolioDB.categories.filter(c => c.wallaby.gap).length;
+            
+            document.getElementById('totalCategories').textContent = total;
+            document.getElementById('wallabyCoverage').textContent = wallaby;
+            document.getElementById('criticalGaps').textContent = gaps;
+            document.getElementById('totalCount').textContent = total;
+        }
+
+        function renderMatrix() {
+            const tbody = document.getElementById('matrixBody');
+            const viewMode = document.getElementById('viewMode').value;
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            const segmentFilter = document.getElementById('segmentFilter').value;
+            
+            let filtered = portfolioDB.categories;
+            
+            // Apply filters
+            if (viewMode === 'gaps') {
+                filtered = filtered.filter(c => c.wallaby.gap);
+            } else if (viewMode === 'wallaby') {
+                filtered = filtered.filter(c => c.wallaby.present);
+            } else if (viewMode === 'competitor') {
+                filtered = filtered.filter(c => !c.wallaby.gap);
+            }
+            
+            if (categoryFilter !== 'all') {
+                filtered = filtered.filter(c => c.id === categoryFilter);
+            }
+            
+            if (segmentFilter !== 'all') {
+                filtered = filtered.filter(c => c.segment === segmentFilter);
+            }
+            
+            document.getElementById('showingCount').textContent = filtered.length;
+            
+            tbody.innerHTML = filtered.map(cat => {
+                const isGap = cat.wallaby.gap;
+                const isLimited = cat.wallaby.limited;
+                const rowClass = isGap ? 'gap-row' : '';
+                
+                return `
+                    <tr class="${rowClass} hover:bg-slate-800/50">
+                        <td class="p-4">
+                            <div class="font-medium ${isGap ? 'text-red-300' : 'text-white'}">${cat.name}</div>
+                        </td>
+                        <td class="p-4">
+                            <span class="text-xs px-2 py-1 rounded bg-slate-700 text-slate-300">${portfolioDB.segments[cat.segment]}</span>
+                        </td>
+                        <td class="p-4">
+                            ${isGap 
+                                ? '<div class="flex items-center gap-2"><i class="fas fa-times-circle text-red-400"></i><span class="text-red-300 font-semibold">GAP</span></div>' 
+                                : `<div class="flex items-center gap-2">
+                                    <i class="fas ${isLimited ? 'fa-exclamation-circle text-amber-400' : 'fa-check-circle text-emerald-400'}"></i>
+                                    <span class="text-slate-200">${cat.wallaby.products}</span>
+                                   </div>`
+                            }
+                        </td>
+                        <td class="p-4 text-sm">${renderCompetitorCell(cat.competitors.medtronic)}</td>
+                        <td class="p-4 text-sm">${renderCompetitorCell(cat.competitors.stryker)}</td>
+                        <td class="p-4 text-sm">${renderCompetitorCell(cat.competitors.microvention)}</td>
+                        <td class="p-4 text-sm">${renderCompetitorCell(cat.competitors.penumbra)}</td>
+                        <td class="p-4 text-sm">${renderCompetitorCell(cat.competitors.cerenovus)}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function renderCompetitorCell(product) {
+            if (!product || product === "—") {
+                return '<span class="text-slate-600">—</span>';
+            }
+            return `<span class="text-slate-300">${product}</span>`;
+        }
+
+        function applyFilters() {
+            renderMatrix();
+        }
+
+        function setQuickFilter(mode) {
+            document.getElementById('viewMode').value = mode;
+            document.getElementById('categoryFilter').value = 'all';
+            document.getElementById('segmentFilter').value = 'all';
+            renderMatrix();
+        }
+
+        function exportData() {
+            const data = portfolioDB.categories.map(cat => ({
+                Category: cat.name,
+                Segment: portfolioDB.segments[cat.segment],
+                Wallaby: cat.wallaby.present ? cat.wallaby.products : 'GAP',
+                Medtronic: cat.competitors.medtronic,
+                Stryker: cat.competitors.stryker,
+                Microvention: cat.competitors.microvention,
+                Penumbra: cat.competitors.penumbra,
+                Cerenovus: cat.competitors.cerenovus
+            }));
+            
+            const csv = convertToCSV(data);
+            downloadCSV(csv, 'portfolio-matrix-' + new Date().toISOString().split('T')[0] + '.csv');
+        }
+
+        function convertToCSV(data) {
+            const headers = Object.keys(data[0]);
+            const rows = data.map(obj => headers.map(header => `"${obj[header]}"`).join(','));
+            return [headers.join(','), ...rows].join('\n');
+        }
+
+        function downloadCSV(csv, filename) {
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

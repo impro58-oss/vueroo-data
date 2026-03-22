@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Portfolio Intelligence - NeuroVue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container { position: relative; height: 350px; width: 100%; }
+        .product-card { transition: all 0.2s; }
+        .product-card:hover { transform: translateY(-2px); }
+        .check-yes { color: #10B981; }
+        .check-no { color: #EF4444; }
+        .check-partial { color: #F59E0B; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+    <div class="container mx-auto px-4 py-6">
+        <!-- Header -->
+        <header class="mb-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold text-blue-400">Product Portfolio Intelligence</h1>
+                    <p class="text-slate-400 mt-1">Competitive Product Mapping & Market Coverage Analysis</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Filters -->
+        <div class="bg-slate-800 rounded-lg p-4 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block text-slate-400 text-sm mb-1">View</label>
+                    <select id="viewFilter" onchange="updateDashboard()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2 text-sm">
+                        <option value="all">All Companies</option>
+                        <option value="wallaby">Wallaby/Phenox Focus</option>
+                        <option value="competitors">Competitors Only</option>
+                        <option value="gaps">Coverage Gaps</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-slate-400 text-sm mb-1">Product Category</label>
+                    <select id="categoryFilter" onchange="updateDashboard()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2 text-sm">
+                        <option value="all">All Categories</option>
+                        <option value="coils">Coils</option>
+                        <option value="flowDiverters">Flow Diverters</option>
+                        <option value="stents">Stents</option>
+                        <option value="aspiration">Aspiration</option>
+                        <option value="intrasaccular">Intrasaccular</option>
+                        <option value="retrievers">Stent Retrievers</option>
+                        <option value="balloons">Balloons</option>
+                        <option value="pump">Aspiration Pump</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Metrics -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+            <div class="bg-slate-800 rounded-lg p-4">
+                <div class="text-slate-400 text-xs uppercase tracking-wide">Total Products</div>
+                <div class="text-2xl font-bold text-blue-400 mt-1">45+</div>
+            </div>
+            <div class="bg-slate-800 rounded-lg p-4">
+                <div class="text-slate-400 text-xs uppercase tracking-wide">Wallaby Coverage</div>
+                <div class="text-2xl font-bold text-emerald-400 mt-1">7/10</div>
+            </div>
+            <div class="bg-slate-800 rounded-lg p-4">
+                <div class="text-slate-400 text-xs uppercase tracking-wide">Top Competitor</div>
+                <div class="text-2xl font-bold text-purple-400 mt-1">Stryker</div>
+            </div>
+            <div class="bg-slate-800 rounded-lg p-4">
+                <div class="text-slate-400 text-xs uppercase tracking-wide">Coverage Gaps</div>
+                <div class="text-2xl font-bold text-yellow-400 mt-1">3</div>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bg-slate-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-blue-300 mb-4">Product Coverage by Company</h3>
+                <div class="chart-container"><canvas id="coverageChart"></canvas></div>
+            </div>
+
+            <div class="bg-slate-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-emerald-300 mb-4">Product Category Distribution</h3>
+                <div class="chart-container"><canvas id="categoryChart"></canvas></div>
+            </div>
+        </div>
+
+        <!-- Product Matrix -->
+        <div class="bg-slate-800 rounded-lg p-6 mt-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-semibold text-orange-300">Product Portfolio Matrix</h3>
+                <div class="flex gap-2 text-xs">
+                    <span class="flex items-center gap-1"><span class="w-3 h-3 bg-emerald-500 rounded"></span> Full</span>
+                    <span class="flex items-center gap-1"><span class="w-3 h-3 bg-amber-500 rounded"></span> Partial</span>
+                    <span class="flex items-center gap-1"><span class="w-3 h-3 bg-red-500 rounded"></span> None</span>
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-slate-700">
+                        <tr>
+                            <th class="p-3">Category</th>
+                            <th class="p-3">Wallaby</th>
+                            <th class="p-3">Medtronic</th>
+                            <th class="p-3">Stryker</th>
+                            <th class="p-3">Microvention</th>
+                            <th class="p-3">Penumbra</th>
+                            <th class="p-3">Cerenovus</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-700">
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="p-3 font-medium">Coils</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> Avenir</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> Axium</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> Target</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> Cosmos</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> SMART</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> GALAXY</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="p-3 font-medium">Flow Diverters</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> p64</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> Pipeline</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> Surpass</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> FRED</td>
+                            <td class="p-3"><span class="text-red-400"><i class="fas fa-times-circle"></i></span> None</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> BRAVO</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="p-3 font-medium">Stents</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> pCONUS2</td>
+                            <td class="p-3"><span class="text-amber-400"><i class="fas fa-check-circle"></i></span> Enterpris</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> Neuroform</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> LVIS</td>
+                            <td class="p-3"><span class="text-red-400"><i class="fas fa-times-circle"></i></span> None</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> Enterprise 2</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="p-3 font-medium">Aspiration</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> Esperance</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> React</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> AXS</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> SOFIA</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> ACE/MAX</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> EMBOVAC</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50 bg-red-900/10">
+                            <td class="p-3 font-medium text-red-300">Intrasaccular</td>
+                            <td class="p-3"><span class="text-red-400"><i class="fas fa-times-circle"></i></span> <span class="text-red-300">GAP</span></td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> Artisse</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> Contour</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> WEB</td>
+                            <td class="p-3"><span class="text-red-400"><i class="fas fa-times-circle"></i></span> None</td>
+                            <td class="p-3"><span class="text-red-400"><i class="fas fa-times-circle"></i></span> None</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="p-3 font-medium">Stent Retrievers</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> pRESET</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> Solitaire</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> Trevo</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> ERIC</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> D Revasc</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> EMBOTRAP</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="p-3 font-medium">Balloons</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> pARAGON</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> Cello</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> FlowGate2</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> Scepter</td>
+                            <td class="p-3"><span class="text-red-400"><i class="fas fa-times-circle"></i></span> None</td>
+                            <td class="p-3"><span class="text-amber-400"><i class="fas fa-check-circle"></i></span> Ascent</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50 bg-red-900/10">
+                            <td class="p-3 font-medium text-red-300">Aspiration Pump</td>
+                            <td class="p-3"><span class="text-red-400"><i class="fas fa-times-circle"></i></span> <span class="text-red-300">GAP</span></td>
+                            <td class="p-3"><span class="text-red-400"><i class="fas fa-times-circle"></i></span> None</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> AXS Universal</td>
+                            <td class="p-3"><span class="text-red-400"><i class="fas fa-times-circle"></i></span> None</td>
+                            <td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle"></i></span> ENGINE</td>
+                            <td class="p-3"><span class="text-red-400"><i class="fas fa-times-circle"></i></span> None</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Embedded portfolio data
+        const portfolioData = {
+            companies: [
+                { name: 'Wallaby', coverage: 7, total: 10, color: '#EC4899' },
+                { name: 'Medtronic', coverage: 8, total: 10, color: '#3B82F6' },
+                { name: 'Stryker', coverage: 10, total: 10, color: '#10B981' },
+                { name: 'Microvention', coverage: 9, total: 10, color: '#EF4444' },
+                { name: 'Penumbra', coverage: 5, total: 10, color: '#F59E0B' },
+                { name: 'Cerenovus', coverage: 8, total: 10, color: '#8B5CF6' }
+            ],
+            categories: [
+                { name: 'Coils', count: 6 },
+                { name: 'Flow Diverters', count: 5 },
+                { name: 'Stents', count: 6 },
+                { name: 'Aspiration', count: 6 },
+                { name: 'Intrasaccular', count: 3 },
+                { name: 'Retrievers', count: 6 },
+                { name: 'Balloons', count: 5 },
+                { name: 'Pumps', count: 2 }
+            ]
+        };
+
+        function initCharts() {
+            // Coverage Chart
+            const coverageCtx = document.getElementById('coverageChart').getContext('2d');
+            new Chart(coverageCtx, {
+                type: 'bar',
+                data: {
+                    labels: portfolioData.companies.map(c => c.name),
+                    datasets: [{
+                        label: 'Categories Covered',
+                        data: portfolioData.companies.map(c => c.coverage),
+                        backgroundColor: portfolioData.companies.map(c => c.color),
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: { 
+                            max: 10,
+                            grid: { color: '#334155' },
+                            ticks: { color: '#94a3b8' }
+                        },
+                        x: { 
+                            grid: { display: false },
+                            ticks: { color: '#94a3b8' }
+                        }
+                    }
+                }
+            });
+
+            // Category Chart
+            const categoryCtx = document.getElementById('categoryChart').getContext('2d');
+            new Chart(categoryCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: portfolioData.categories.map(c => c.name),
+                    datasets: [{
+                        data: portfolioData.categories.map(c => c.count),
+                        backgroundColor: ['#3B82F6', '#8B5CF6', '#10B981', '#F59E0B', '#EF4444', '#EC4899', '#06B6D4', '#84CC16']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'right', labels: { color: '#94a3b8', font: { size: 11 } } }
+                    }
+                }
+            });
+        }
+
+        function updateDashboard() {
+            // Filter logic would go here
+            console.log('Dashboard updated');
+        }
+
+        document.addEventListener('DOMContentLoaded', initCharts);
+    </script>
+</body>
+</html>

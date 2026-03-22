@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedTech Intelligence Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-blue-400 mb-2">MedTech Intelligence Dashboard</h1>
+            <p class="text-slate-400">Neurovascular Stroke Market Analysis</p>
+        </header>
+
+        <!-- File Loader -->
+        <div class="bg-slate-800 rounded-lg p-6 mb-8">
+            <h2 class="text-xl font-semibold mb-4 text-green-400">Load Data</h2>
+            <p class="text-slate-300 mb-4">Place your <code>all_market_data.json</code> file in the same folder as this HTML file, then click Load.</p>
+            <button onclick="loadData()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition">
+                Load Data
+            </button>
+            <div id="status" class="mt-3 text-sm"></div>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div id="dashboard" class="hidden">
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-slate-800 rounded-lg p-6">
+                    <h3 class="text-slate-400 text-sm uppercase tracking-wide">Total Data Points</h3>
+                    <p id="totalPoints" class="text-3xl font-bold text-blue-400 mt-2">-</p>
+                </div>
+                <div class="bg-slate-800 rounded-lg p-6">
+                    <h3 class="text-slate-400 text-sm uppercase tracking-wide">Years Covered</h3>
+                    <p id="yearsRange" class="text-3xl font-bold text-green-400 mt-2">-</p>
+                </div>
+                <div class="bg-slate-800 rounded-lg p-6">
+                    <h3 class="text-slate-400 text-sm uppercase tracking-wide">Data Categories</h3>
+                    <p id="categories" class="text-3xl font-bold text-purple-400 mt-2">-</p>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="bg-slate-800 rounded-lg p-6 mb-8">
+                <h2 class="text-xl font-semibold mb-4 text-yellow-400">Filters</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-slate-400 mb-2">Year</label>
+                        <select id="yearFilter" onchange="updateView()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2">
+                            <option value="all">All Years</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-slate-400 mb-2">Region</label>
+                        <select id="regionFilter" onchange="updateView()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2">
+                            <option value="all">All Regions</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-slate-400 mb-2">Category</label>
+                        <select id="categoryFilter" onchange="updateView()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2">
+                            <option value="all">All Categories</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Tables -->
+            <div id="dataSection" class="space-y-6">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+
+            <!-- Sources -->
+            <div class="bg-slate-800 rounded-lg p-6 mt-8">
+                <h2 class="text-xl font-semibold mb-4 text-orange-400">Data Sources</h2>
+                <ul id="sourcesList" class="space-y-2 text-slate-300 text-sm">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let marketData = null;
+
+        async function loadData() {
+            const statusEl = document.getElementById('status');
+            statusEl.innerHTML = '<span class="text-yellow-400">Loading...</span>';
+            
+            try {
+                const response = await fetch('all_market_data.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                marketData = await response.json();
+                
+                document.getElementById('dashboard').classList.remove('hidden');
+                statusEl.innerHTML = '<span class="text-green-400">✓ Data loaded successfully!</span>';
+                
+                populateFilters();
+                updateStats();
+                updateView();
+                
+            } catch (error) {
+                statusEl.innerHTML = `<span class="text-red-400">✗ Error: ${error.message}</span>`;
+                console.error('Load error:', error);
+            }
+        }
+
+        function populateFilters() {
+            const years = new Set();
+            const regions = new Set();
+            const categories = new Set();
+            
+            marketData.forEach(record => {
+                if (record.year) years.add(record.year);
+                if (record.region) regions.add(record.region);
+                if (record.category) categories.add(record.category);
+            });
+            
+            const yearFilter = document.getElementById('yearFilter');
+            [...years].sort().forEach(year => {
+                yearFilter.innerHTML += `<option value="${year}">${year}</option>`;
+            });
+            
+            const regionFilter = document.getElementById('regionFilter');
+            [...regions].sort().forEach(region => {
+                regionFilter.innerHTML += `<option value="${region}">${region}</option>`;
+            });
+            
+            const categoryFilter = document.getElementById('categoryFilter');
+            [...categories].sort().forEach(category => {
+                categoryFilter.innerHTML += `<option value="${category}">${category}</option>`;
+            });
+        }
+
+        function updateStats() {
+            document.getElementById('totalPoints').textContent = marketData.length;
+            
+            const years = marketData.filter(r => r.year).map(r => r.year);
+            const minYear = Math.min(...years);
+            const maxYear = Math.max(...years);
+            document.getElementById('yearsRange').textContent = `${minYear} - ${maxYear}`;
+            
+            const cats = new Set(marketData.map(r => r.category).filter(Boolean));
+            document.getElementById('categories').textContent = cats.size;
+        }
+
+        function updateView() {
+            const yearFilter = document.getElementById('yearFilter').value;
+            const regionFilter = document.getElementById('regionFilter').value;
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            
+            const filtered = marketData.filter(record => {
+                return (yearFilter === 'all' || record.year == yearFilter) &&
+                       (regionFilter === 'all' || record.region === regionFilter) &&
+                       (categoryFilter === 'all' || record.category === categoryFilter);
+            });
+            
+            renderTables(filtered);
+            renderSources(filtered);
+        }
+
+        function renderTables(data) {
+            const section = document.getElementById('dataSection');
+            section.innerHTML = '';
+            
+            // Group by category
+            const byCategory = {};
+            data.forEach(record => {
+                const cat = record.category || 'Uncategorized';
+                if (!byCategory[cat]) byCategory[cat] = [];
+                byCategory[cat].push(record);
+            });
+            
+            Object.entries(byCategory).forEach(([category, records]) => {
+                const catDiv = document.createElement('div');
+                catDiv.className = 'bg-slate-800 rounded-lg overflow-hidden';
+                
+                // Category header
+                const header = document.createElement('div');
+                header.className = 'bg-slate-700 px-6 py-4';
+                header.innerHTML = `<h3 class="text-lg font-semibold text-blue-300">${category} (${records.length} records)</h3>`;
+                catDiv.appendChild(header);
+                
+                // Table
+                const tableContainer = document.createElement('div');
+                tableContainer.className = 'overflow-x-auto';
+                
+                let tableHTML = '<table class="w-full text-left"><thead class="bg-slate-700"><tr>';
+                tableHTML += '<th class="px-6 py-3 text-slate-300">Year</th>';
+                tableHTML += '<th class="px-6 py-3 text-slate-300">Region</th>';
+                tableHTML += '<th class="px-6 py-3 text-slate-300">Value</th>';
+                tableHTML += '<th class="px-6 py-3 text-slate-300">Unit</th>';
+                tableHTML += '<th class="px-6 py-3 text-slate-300">Source</th>';
+                tableHTML += '</tr></thead><tbody>';
+                
+                records.forEach(record => {
+                    tableHTML += `<tr class="border-t border-slate-700 hover:bg-slate-750">`;
+                    tableHTML += `<td class="px-6 py-3">${record.year || '-'}</td>`;
+                    tableHTML += `<td class="px-6 py-3">${record.region || '-'}</td>`;
+                    tableHTML += `<td class="px-6 py-3 font-mono text-green-400">${record.value !== undefined ? record.value.toLocaleString() : '-'}</td>`;
+                    tableHTML += `<td class="px-6 py-3 text-slate-400">${record.unit || '-'}</td>`;
+                    tableHTML += `<td class="px-6 py-3 text-xs text-slate-500">${record.source_file || '-'}</td>`;
+                    tableHTML += `</tr>`;
+                });
+                
+                tableHTML += '</tbody></table>';
+                tableContainer.innerHTML = tableHTML;
+                catDiv.appendChild(tableContainer);
+                section.appendChild(catDiv);
+            });
+        }
+
+        function renderSources(data) {
+            const sources = new Set();
+            data.forEach(record => {
+                if (record.source_file) sources.add(record.source_file);
+            });
+            
+            const list = document.getElementById('sourcesList');
+            list.innerHTML = [...sources].map(s => `<li class="flex items-center gap-2"><span class="text-green-500">✓</span> ${s}</li>`).join('') || '<li class="text-slate-500">No sources</li>';
+        }
+    </script>
+</body>
+</html>

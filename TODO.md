@@ -38,6 +38,21 @@ Local HTML → Vueroo API → GitHub Private Repo (token hidden)
 
 ## 🟡 MEDIUM PRIORITY
 
+### VPS Connection & Handoff Protocol (Week of 2026-03-24)
+**Status:** Scheduled for next week
+**Goal:** Enable seamless VPS catch-up when Home PC offline
+
+**Tasks:**
+- [ ] Test VPS GitHub sync (pull latest memory/conversations)
+- [ ] Verify VPS can read memory files and continue context
+- [ ] Document handoff commands for user-initiated VPS takeover
+- [ ] Test "sync up" workflow from VPS side
+- [ ] Ensure VPS can operate autonomously when Home PC unavailable
+
+**Use Case:** Travel, PC restart, or Home PC offline → VPS takes over
+
+---
+
 ### TradingView Pine Script Installation
 **Status:** Scripts created, awaiting installation on TradingView
 **Created:** 2026-03-20 10:43

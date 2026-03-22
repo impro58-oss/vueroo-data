@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Revenue Data Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 p-8">
+    <h1 class="text-2xl font-bold text-emerald-400 mb-4">Revenue Data Test</h1>
+    <button onclick="testLoad()" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-lg mb-4">
+        Test Load Data
+    </button>
+    <div id="status" class="mb-4"></div>
+    <pre id="output" class="bg-slate-800 p-4 rounded text-sm overflow-auto" style="max-height: 500px;"></pre>
+
+    <script>
+        async function testLoad() {
+            const status = document.getElementById('status');
+            const output = document.getElementById('output');
+            
+            status.innerHTML = '<span class="text-yellow-400">Loading...</span>';
+            output.textContent = '';
+            
+            try {
+                console.log('Fetching...');
+                const response = await fetch('data/revenue-data.json');
+                console.log('Response:', response);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                console.log('Data:', data);
+                
+                status.innerHTML = '<span class="text-green-400">✓ Loaded successfully!</span>';
+                
+                // Show first level keys
+                let text = 'Top-level keys:\n';
+                Object.keys(data).forEach(key => {
+                    text += `  - ${key}\n`;
+                    if (data[key].sheets) {
+                        text += `    Sheets: ${Object.keys(data[key].sheets).length}\n`;
+                        Object.keys(data[key].sheets).slice(0, 5).forEach(sheet => {
+                            const sheetData = data[key].sheets[sheet];
+                            text += `      - ${sheet}: ${sheetData.length} rows\n`;
+                        });
+                    }
+                });
+                
+                // Show sample from Jie's sheet
+                if (data.revenue_companies_aug?.sheets?.["Jie's"]) {
+                    text += '\n\nSample from Jie\'s sheet (first data row):\n';
+                    const jie = data.revenue_companies_aug.sheets["Jie's"];
+                    if (jie.length > 2) {
+                        text += JSON.stringify(jie[2], null, 2);
+                    }
+                }
+                
+                output.textContent = text;
+                
+            } catch (error) {
+                console.error('Error:', error);
+                status.innerHTML = `<span class="text-red-400">✗ Error: ${error.message}</span>`;
+                output.textContent = error.stack;
+            }
+        }
+    </script>
+</body>
+</html>
