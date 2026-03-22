@@ -1,12 +1,28 @@
 # Recent Memory — Rolling 48hr Context
-**Last Updated:** 2026-03-20 15:58 UTC  
-**Period:** 2026-03-18 15:58 → 2026-03-20 15:58
+**Last Updated:** 2026-03-22 21:05 UTC  
+**Period:** 2026-03-20 21:05 → 2026-03-22 21:05
 
 ---
 
 ## 🕐 Last 48 Hours Summary
 
-### 2026-03-20 — Friday (Today)
+### 2026-03-22 — Sunday (Today)
+**Time:** 20:50 - 21:05
+
+#### CryptoVue Dashboard Fix
+- **Problem:** Dashboard showing 6-day-old data (March 19)
+- **Root Cause:** `data-loader.js` had hardcoded file list
+- **Solution:** Rewrote with dynamic file discovery
+  - Auto-generates filenames for last 14 days
+  - GitHub raw URL fallback
+  - Updated fallback list with March 22 scan
+- **Files Updated:**
+  - `crypto-dashboard/data-loader.js`
+  - `vueroo/crypto-dashboard/data-loader.js`
+- **Commit:** `295d753` — Dynamic crypto data loading
+- **Status:** ✅ Both local and Vueroo portals now current
+
+### 2026-03-20 — Friday
 **Time:** 06:45 - 15:58
 
 #### Morning Session (06:45-10:30)

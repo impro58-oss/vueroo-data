@@ -93,20 +93,31 @@ Trailing Stop: 3% (optional)
 ---
 
 ### Project 3: Vueroo Portal Enhancement
-**Status:** 🟢 Live — Maintenance mode  
+**Status:** 🟢 Live — **Dashboard data loading fixed 2026-03-22**  
 **Priority:** LOW  
 **Owner:** Roo + Lumina  
 **Start Date:** 2026-03-19  
-**Status:** Operational
+**Status:** Operational, data now current
 
 #### Current State
 - ✅ Portal deployed at vueroo.com
 - ✅ Password protection active (`Vueroo2026!`)
-- ✅ CryptoVue integrated
+- ✅ CryptoVue integrated — **Dynamic loading now active**
 - ✅ NeuroVue integrated
 - ✅ SSL certificate active
+- ✅ **Data freshness issue fixed (was showing March 19, now current)**
 - ⏳ Mobile responsiveness improvements pending
 - ⏳ Analytics/logging consideration
+
+#### Recent Fix (2026-03-22)
+- **Issue:** CryptoVue showing 6-day-old data
+- **Solution:** Rewrote `data-loader.js` with dynamic file discovery
+- **Features:**
+  - Auto-generates filenames for last 14 days
+  - GitHub raw URL fallback
+  - Updated fallback list
+- **Files Updated:** Both local and Vueroo versions
+- **Commit:** `295d753`
 
 #### Architecture
 ```
@@ -114,6 +125,7 @@ Framework: Next.js 14 + TypeScript + Tailwind
 Auth: bcrypt + iron-session (httpOnly cookies)
 Hosting: Vercel (auto-deploy from GitHub)
 Domain: vueroo.com (custom)
+Data Loading: Dynamic (local → GitHub → fallback)
 ```
 
 #### Next Actions (Optional)
