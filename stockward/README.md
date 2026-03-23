@@ -6,13 +6,15 @@
 
 ---
 
-## 👥 Quick Contacts
+## 👥 Executive Leadership
 
-| Person | Discord | Role |
-|--------|---------|------|
-| **Roo W** | `@roowoos` | Sector Expert, Product Strategy |
-| **Chris S** | `@mcthor#3370` | Deal Sourcing, Partnerships |
-| **Lumina** | `@Lumina` (bot) | Workspace management, tracking |
+| Role | Name | Discord | Core Expertise |
+|------|------|---------|----------------|
+| **CEO** | Chris S | `@mcthor#3370` | Legal, Software, Seed Funding, M&A |
+| **CIO** | Roo W | `@roowoos` | MedTech, Product Strategy, Venture Networks |
+| **AI Partner** | Lumina | `@Lumina` | Workspace, Research, Tracking |
+
+**Leadership Model:** Chris drives deal execution (CEO). Roo drives investment thesis (CIO). Collaborative on strategy.
 
 ---
 
