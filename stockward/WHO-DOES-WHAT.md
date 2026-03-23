@@ -4,6 +4,8 @@
 ---
 
 ## 👤 Roo W
+**Discord:** `roowoos`  
+**Email:** [Add if desired]
 
 ### Primary Roles
 - **Sector Expert** — Medical technology, digital health, neurovascular
@@ -27,6 +29,8 @@
 ---
 
 ## 👤 Chris S
+**Discord:** `mcthor#3370`  
+**Email:** [Add if desired]
 
 ### Primary Roles
 - **Deal Sourcing** — Pipeline generation, founder relationships
@@ -78,7 +82,7 @@
 
 ### Decision Required
 - Add to `NEXT-DECISIONS.md`
-- Tag: `@roo` or `@chris`
+- Tag on Discord: `@roowoos` (Roo) or `@mcthor#3370` (Chris)
 - Set deadline if time-sensitive
 
 ---

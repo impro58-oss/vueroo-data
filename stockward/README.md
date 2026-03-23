@@ -1,8 +1,18 @@
 # STOCKWARD — Collaborative Workspace
 ## Private Equity Advisory Firm
-**Co-Founders:** Roo W & Chris S  
+**Co-Founders:** Roo W (@roowoos) & Chris S (@mcthor#3370)  
 **Workspace Status:** ACTIVE  
 **Last Updated:** 2026-03-23
+
+---
+
+## 👥 Quick Contacts
+
+| Person | Discord | Role |
+|--------|---------|------|
+| **Roo W** | `@roowoos` | Sector Expert, Product Strategy |
+| **Chris S** | `@mcthor#3370` | Deal Sourcing, Partnerships |
+| **Lumina** | `@Lumina` (bot) | Workspace management, tracking |
 
 ---
 
@@ -48,7 +58,7 @@ stockward/
 
 ### New Idea → `ideas/`
 1. Create: `ideas/YYYY-MM-DD-[idea-name].md`
-2. Tag: `@roo` or `@chris` for review
+2. Tag on Discord: `@roowoos` or `@mcthor#3370` for review
 3. Discuss → Promote to deal OR Archive
 
 ### Active Deal → `deals/`
@@ -58,12 +68,12 @@ stockward/
 
 ### Decision Needed → `NEXT-DECISIONS.md`
 1. Add to queue with context
-2. Tag who needs to decide
+2. Tag on Discord who needs to decide
 3. Record outcome in `decisions/`
 
 ### Task Assigned → `tasks/`
 1. Create: `tasks/YYYY-MM-DD-[task].md`
-2. Assign: `@roo` or `@chris`
+2. Assign on Discord: `@roowoos` or `@mcthor#3370`
 3. Track status: OPEN → IN PROGRESS → DONE
 
 ---
