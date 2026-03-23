@@ -7,9 +7,9 @@
 
 | # | Decision | Context | Needs Input From | Deadline | Status |
 |---|----------|---------|------------------|----------|--------|
-| 1 | Workspace structure approval | New collaborative setup | @chris | 2026-03-24 | 🟡 OPEN |
-| 2 | First sector focus | Which sector to prioritize for sourcing | @both | 2026-03-25 | ⏳ QUEUED |
-| 3 | Notion vs. Markdown | Primary tracking tool | @chris | 2026-03-24 | ⏳ QUEUED |
+| 1 | Workspace structure approval | New collaborative setup | @mcthor#3370 (Chris) | 2026-03-24 | 🟡 OPEN |
+| 2 | First sector focus | Which sector to prioritize for sourcing | @roowoos (Roo) + @mcthor#3370 (Chris) | 2026-03-25 | ⏳ QUEUED |
+| 3 | Notion vs. Markdown | Primary tracking tool | @mcthor#3370 (Chris) | 2026-03-24 | ⏳ QUEUED |
 
 ---
 
@@ -17,8 +17,8 @@
 
 | Date | Decision | Outcome | Decided By |
 |------|----------|---------|------------|
-| 2026-03-23 | Set up dedicated Stockward workspace | ✅ APPROVED | @roo |
-| 2026-03-23 | Use Discord for quick collaboration | ✅ APPROVED | @roo |
+| 2026-03-23 | Set up dedicated Stockward workspace | ✅ APPROVED | @roowoos (Roo) |
+| 2026-03-23 | Use Discord for quick collaboration | ✅ APPROVED | @roowoos (Roo) |
 
 ---
 
@@ -44,7 +44,7 @@ When adding a new decision:
 [What proposer thinks]
 
 **Input needed from:**
-@roo / @chris / @both
+@mcthor#3370 (Chris) / @roowoos (Roo) / @both
 
 **Decision:**
 [To be filled when decided]
