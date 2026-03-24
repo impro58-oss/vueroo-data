@@ -24,6 +24,12 @@
         .heat-cell { aspect-ratio: 1; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: all 0.2s; cursor: pointer; padding: 8px; }
         .heat-cell:hover { transform: scale(1.05); }
         .gradient-text { background: linear-gradient(135deg, #3B82F6, #8B5CF6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .loading-skeleton { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; background: rgba(148, 163, 184, 0.2); }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+        .data-status { transition: all 0.3s ease; }
+        .data-status.loading { color: #FBBF24; }
+        .data-status.live { color: #10B981; }
+        .data-status.error { color: #EF4444; }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen">
@@ -63,10 +69,17 @@
             </nav>
             
             <div class="p-4 border-t border-slate-800">
-                <div class="text-xs text-slate-500">Last Scan</div>
-                <div class="text-sm text-slate-300">March 19, 2026 12:00</div>
-                <div class="text-xs text-slate-500 mt-2">Data Points</div>
-                <div class="text-sm text-emerald-400">26 scans (6 days)</div>
+                <div class="text-xs text-slate-500">Data Status</div>
+                <div id="data-status" class="data-status loading text-sm font-medium">
+                    <i class="fas fa-circle-notch fa-spin mr-1"></i> Loading...
+                </div>
+                <div class="text-xs text-slate-500 mt-2">Last Scan</div>
+                <div id="last-scan" class="text-sm text-slate-300">--</div>
+                <div class="text-xs text-slate-500 mt-2">Scans Tracked</div>
+                <div id="scans-tracked" class="text-sm text-emerald-400">--</div>
+                <button onclick="refreshData()" class="mt-3 w-full py-2 px-3 bg-blue-600 hover:bg-blue-700 rounded text-xs font-medium text-white transition">
+                    <i class="fas fa-sync-alt mr-1"></i> Refresh
+                </button>
             </div>
         </aside>
 
@@ -79,13 +92,13 @@
                     <div class="max-w-7xl">
                         <div class="flex items-center gap-3 mb-4">
                             <span class="px-3 py-1 bg-blue-900/50 text-blue-400 text-xs font-medium rounded-full border border-blue-800">TrojanLogic4H</span>
-                            <span class="px-3 py-1 bg-emerald-900/50 text-emerald-400 text-xs font-medium rounded-full border border-emerald-800">26 Scans</span>
+                            <span id="scan-count-badge" class="px-3 py-1 bg-emerald-900/50 text-emerald-400 text-xs font-medium rounded-full border border-emerald-800">Loading...</span>
                             <a href="https://www.tradingview.com/chart/Tuhn6sKe/" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-amber-900/50 text-amber-400 text-xs font-medium rounded-full border border-amber-800 hover:bg-amber-800/50 transition">
                                 <i class="fas fa-external-link-alt mr-1"></i>My TradingView
                             </a>
                         </div>
                         <h2 class="text-4xl font-bold text-white mb-3">CryptoVue <span class="gradient-text">Intelligence</span></h2>
-                        <p class="text-xl text-slate-400 max-w-3xl">Real-time market pulse with CS RSI MTF + RtoM Channel analysis.</p>
+                        <p class="text-xl text-slate-400 max-w-3xl">Real-time market pulse with CS RSI MTF + RtoM Channel analysis. Auto-updating every 4 hours.</p>
                     </div>
                 </div>
 
@@ -95,89 +108,89 @@
                         <div class="bg-slate-900 rounded-xl p-6 border border-slate-800">
                             <div class="flex items-center justify-between mb-4">
                                 <div>
-                                    <div class="text-slate-400 text-sm mb-1">Active Signals</div>
-                                    <div class="text-3xl font-bold text-emerald-400" id="stat-long">0</div>
-                                    <div class="text-slate-500 text-xs mt-1">LONG setups</div>
+                                    <div class="text-slate-400 text-sm mb-1">Active Longs</div>
+                                    <div id="stat-long" class="text-3xl font-bold text-emerald-400">--</div>
+                                    <div class="text-slate-500 text-xs mt-1">Bullish setups</div>
                                 </div>
-                                <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center">
+                                <div class="w-12 h-12 bg-emerald-900/30 rounded-xl flex items-center justify-center">
                                     <i class="fas fa-arrow-trend-up text-emerald-400 text-xl"></i>
                                 </div>
                             </div>
                         </div>
-
+                        
                         <div class="bg-slate-900 rounded-xl p-6 border border-slate-800">
                             <div class="flex items-center justify-between mb-4">
                                 <div>
-                                    <div class="text-slate-400 text-sm mb-1">Short Signals</div>
-                                    <div class="text-3xl font-bold text-red-400" id="stat-short">6</div>
-                                    <div class="text-slate-500 text-xs mt-1">SHORT setups</div>
+                                    <div class="text-slate-400 text-sm mb-1">Active Shorts</div>
+                                    <div id="stat-short" class="text-3xl font-bold text-red-400">--</div>
+                                    <div class="text-slate-500 text-xs mt-1">Bearish setups</div>
                                 </div>
-                                <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center">
+                                <div class="w-12 h-12 bg-red-900/30 rounded-xl flex items-center justify-center">
                                     <i class="fas fa-arrow-trend-down text-red-400 text-xl"></i>
                                 </div>
                             </div>
                         </div>
-
+                        
                         <div class="bg-slate-900 rounded-xl p-6 border border-slate-800">
                             <div class="flex items-center justify-between mb-4">
                                 <div>
                                     <div class="text-slate-400 text-sm mb-1">High Confidence</div>
-                                    <div class="text-3xl font-bold text-amber-400" id="stat-futures">0</div>
-                                    <div class="text-slate-500 text-xs mt-1">FUTURES ready</div>
+                                    <div id="stat-high" class="text-3xl font-bold text-amber-400">--</div>
+                                    <div class="text-slate-500 text-xs mt-1">≥65% confidence</div>
                                 </div>
-                                <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center">
-                                    <i class="fas fa-star text-amber-400 text-xl"></i>
+                                <div class="w-12 h-12 bg-amber-900/30 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-bullseye text-amber-400 text-xl"></i>
                                 </div>
                             </div>
                         </div>
-
+                        
                         <div class="bg-slate-900 rounded-xl p-6 border border-slate-800">
                             <div class="flex items-center justify-between mb-4">
                                 <div>
                                     <div class="text-slate-400 text-sm mb-1">Compression</div>
-                                    <div class="text-3xl font-bold text-purple-400" id="stat-compression">20</div>
-                                    <div class="text-slate-500 text-xs mt-1">Pre-breakout</div>
+                                    <div id="stat-comp" class="text-3xl font-bold text-purple-400">--</div>
+                                    <div class="text-slate-500 text-xs mt-1">Ready to move</div>
                                 </div>
-                                <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center">
+                                <div class="w-12 h-12 bg-purple-900/30 rounded-xl flex items-center justify-center">
                                     <i class="fas fa-compress text-purple-400 text-xl"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Compression Alert -->
-                    <div class="bg-gradient-to-r from-amber-900/30 to-purple-900/30 border border-amber-700/50 rounded-xl p-4 mb-8">
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-compress-arrows-alt text-amber-400"></i>
-                            </div>
-                            <div class="flex-1">
-                                <div class="font-semibold text-amber-400">20 Coins in Compression</div>
-                                <div class="text-sm text-slate-300">Market building energy. Watch: DOGE, BNB, LINK, ZEC, XRP</div>
-                            </div>
-                            <button onclick="showSection('heatmap')" class="px-4 py-2 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded-lg text-sm transition cursor-pointer">View Heat Map</button>
+                    <!-- Core Holdings -->
+                    <div class="bg-slate-900 rounded-xl border border-slate-800 p-6 mb-8">
+                        <h3 class="text-lg font-semibold text-white mb-6 flex items-center gap-2">
+                            <i class="fas fa-star text-amber-400"></i> Core Holdings
+                            <span class="text-xs text-slate-500 font-normal">BTC, ETH, SOL, XRP, DOGE, BNB, LINK</span>
+                        </h3>
+                        <div id="core-holdings-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="loading-skeleton rounded-xl p-6 h-32"></div>
+                            <div class="loading-skeleton rounded-xl p-6 h-32"></div>
+                            <div class="loading-skeleton rounded-xl p-6 h-32"></div>
+                            <div class="loading-skeleton rounded-xl p-6 h-32"></div>
                         </div>
                     </div>
 
-                    <!-- Table -->
+                    <!-- Market Table -->
                     <div class="bg-slate-900 rounded-xl border border-slate-800 overflow-hidden">
-                        <div class="p-6 border-b border-slate-800">
-                            <h3 class="text-lg font-semibold text-white">All Tracked Coins</h3>
-                            <p class="text-sm text-slate-400">50 top cryptocurrencies by volume</p>
+                        <div class="p-4 border-b border-slate-800 flex items-center justify-between">
+                            <h3 class="text-lg font-semibold text-white">Top 50 Market Overview</h3>
+                            <span id="coins-count" class="text-xs text-slate-500">-- coins tracked</span>
                         </div>
                         <div class="overflow-x-auto">
-                            <table class="w-full text-sm">
-                                <thead class="bg-slate-800">
+                            <table class="w-full">
+                                <thead class="bg-slate-800/50">
                                     <tr>
-                                        <th class="text-left py-3 px-4 text-slate-400 font-medium">Coin</th>
-                                        <th class="text-right py-3 px-4 text-slate-400 font-medium">Price</th>
-                                        <th class="text-center py-3 px-4 text-slate-400 font-medium">Signal</th>
-                                        <th class="text-center py-3 px-4 text-slate-400 font-medium">Confidence</th>
-                                        <th class="text-center py-3 px-4 text-slate-400 font-medium">RSI State</th>
+                                        <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">Asset</th>
+                                        <th class="text-right py-3 px-4 text-xs font-semibold text-slate-400">Price</th>
+                                        <th class="text-center py-3 px-4 text-xs font-semibold text-slate-400">Signal</th>
+                                        <th class="text-center py-3 px-4 text-xs font-semibold text-slate-400">Confidence</th>
+                                        <th class="text-right py-3 px-4 text-xs font-semibold text-slate-400">RSI State</th>
                                     </tr>
                                 </thead>
                                 <tbody id="coins-table" class="divide-y divide-slate-800">
-                                    <!-- Data inserted here -->
+                                    <tr><td colspan="5" class="py-12 text-center text-slate-500">Loading market data...</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -195,13 +208,10 @@
                             </button>
                             <h2 class="text-2xl font-bold text-white">Market Heat Map</h2>
                         </div>
-                        <p class="text-slate-400">Visual overview of all 50 tracked cryptocurrencies</p>
+                        <p class="text-slate-400">Visual snapshot of all tracked assets. Click to open TradingView.</p>
                     </header>
-
-                    <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                        <div id="heat-grid" class="heat-grid">
-                            <!-- Heat map cells -->
-                        </div>
+                    <div id="heat-grid" class="heat-grid">
+                        <div class="loading-skeleton rounded-xl h-24 col-span-full"></div>
                     </div>
                 </div>
             </div>
@@ -216,10 +226,12 @@
                             </button>
                             <h2 class="text-2xl font-bold text-white">Trading Opportunities</h2>
                         </div>
-                        <p class="text-slate-400">Current signals from latest scan</p>
+                        <p class="text-slate-400">Current signals from latest scan. Auto-updating every 4 hours.</p>
                     </header>
                     <div id="opportunities-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <!-- Opportunities -->
+                        <div class="loading-skeleton rounded-xl p-6 h-48"></div>
+                        <div class="loading-skeleton rounded-xl p-6 h-48"></div>
+                        <div class="loading-skeleton rounded-xl p-6 h-48"></div>
                     </div>
                 </div>
             </div>
@@ -237,7 +249,9 @@
                         <p class="text-slate-400">Core holdings: BTC, ETH, SOL, XRP, DOGE, BNB, LINK</p>
                     </header>
                     <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <!-- Portfolio -->
+                        <div class="loading-skeleton rounded-xl p-6 h-56"></div>
+                        <div class="loading-skeleton rounded-xl p-6 h-56"></div>
+                        <div class="loading-skeleton rounded-xl p-6 h-56"></div>
                     </div>
                 </div>
             </div>
@@ -245,82 +259,231 @@
         </main>
     </div>
 
+    <!-- DYNAMIC DATA LOADING -->
+    <script src="data-loader.js"></script>
     <script>
-        // Embedded data from 26 scans
-        const coins = [
-            {symbol:"BTC",price:69931.01,signal:"hold",confidence:0,csrsiState:"bearish_detachment",rtomBias:"bullish",compression:false},
-            {symbol:"ETH",price:2165.67,signal:"hold",confidence:0,csrsiState:"bearish_detachment",rtomBias:"bullish",compression:false},
-            {symbol:"SOL",price:89.57,signal:"hold",confidence:0,csrsiState:"bearish_detachment",rtomBias:"bullish",compression:false},
-            {symbol:"XRP",price:0.5234,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"DOGE",price:0.1789,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"BNB",price:612.45,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"LINK",price:14.85,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"ADA",price:0.7234,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"AVAX",price:35.67,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"DOT",price:7.23,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"USD1",price:0.9998,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"ZEC",price:45.23,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"MATIC",price:0.4321,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"LTC",price:78.45,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"BCH",price:345.67,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"ETC",price:23.45,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"VET",price:0.0345,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"FIL",price:6.78,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"TRX",price:0.2345,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"NEO",price:12.34,signal:"short",confidence:38,csrsiState:"bearish_detachment",rtomBias:"bearish",compression:false},
-            {symbol:"EOS",price:0.89,signal:"short",confidence:35,csrsiState:"bearish_detachment",rtomBias:"bearish",compression:false},
-            {symbol:"S",price:0.0123,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"TON",price:5.67,signal:"short",confidence:42,csrsiState:"bearish_detachment",rtomBias:"bearish",compression:false},
-            {symbol:"KAS",price:0.1234,signal:"short",confidence:28,csrsiState:"bearish_detachment",rtomBias:"bearish",compression:false},
-            {symbol:"RUNE",price:4.56,signal:"short",confidence:31,csrsiState:"bearish_detachment",rtomBias:"bearish",compression:false},
-            {symbol:"TOWNS",price:0.0567,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"BARD",price:0.0789,signal:"short",confidence:38,csrsiState:"bearish_detachment",rtomBias:"bearish",compression:false},
-            {symbol:"ASTER",price:0.0345,signal:"short",confidence:38,csrsiState:"bearish_detachment",rtomBias:"bearish",compression:false},
-            {symbol:"NIGHT",price:0.0457,signal:"short",confidence:38,csrsiState:"bearish_detachment",rtomBias:"bearish",compression:false},
-            {symbol:"PAXG",price:2345.67,signal:"short",confidence:38,csrsiState:"bearish_detachment",rtomBias:"bearish",compression:false},
-            {symbol:"KITE",price:0.0234,signal:"short",confidence:38,csrsiState:"bearish_detachment",rtomBias:"bearish",compression:false},
-            {symbol:"HYPE",price:0.0567,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"COW",price:0.0678,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"VIRTUAL",price:0.089,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"PENGU",price:0.0123,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"AIXBT",price:0.234,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"LAYER",price:1.23,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"MORPHO",price:2.34,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"POL",price:0.456,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"AI16Z",price:0.567,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"LUNA",price:0.678,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"ATOM",price:6.78,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"ALGO",price:0.345,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"FTM",price:0.567,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"NEAR",price:3.45,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
-            {symbol:"ICP",price:9.87,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true}
-        ];
+        // State
+        let coins = [];
+        let latestScan = null;
+        const coreHoldings = ['BTC', 'ETH', 'SOL', 'XRP', 'DOGE', 'BNB', 'LINK'];
 
-        const coreHoldings = ['BTC','ETH','SOL','XRP','DOGE','BNB','LINK'];
+        // Initialize
+        async function init() {
+            await loadData();
+        }
 
-        function showSection(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-            // Show target section
-            document.getElementById(sectionId).classList.add('active');
+        async function loadData() {
+            updateStatus('loading', 'Loading...');
             
-            // Update nav
+            try {
+                const data = await CryptoDataLoader.loadLatestScan();
+                if (data && data.results) {
+                    coins = CryptoDataLoader.processScanData(data);
+                    latestScan = data;
+                    updateDashboard(data);
+                    updateStatus('live', 'Live Data');
+                } else {
+                    throw new Error('No data received');
+                }
+            } catch (error) {
+                console.error('Failed to load data:', error);
+                updateStatus('error', 'Error');
+                showFallbackMessage();
+            }
+        }
+
+        function updateDashboard(data) {
+            const counts = CryptoDataLoader.getSignalCounts(coins);
+            
+            // Update stats
+            document.getElementById('stat-long').textContent = counts.long;
+            document.getElementById('stat-short').textContent = counts.short;
+            document.getElementById('stat-high').textContent = counts.highConfidence;
+            document.getElementById('stat-comp').textContent = counts.compression;
+            
+            // Update sidebar
+            const scanTime = new Date(data.analysis_time);
+            document.getElementById('last-scan').textContent = scanTime.toLocaleString('en-US', {
+                month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit'
+            });
+            document.getElementById('scans-tracked').textContent = '50+ scans tracked';
+            document.getElementById('scan-count-badge').textContent = '50 Assets';
+            document.getElementById('coins-count').textContent = coins.length + ' coins tracked';
+            
+            // Render sections
+            renderTable();
+            renderCoreHoldings();
+            renderHeatMap();
+            renderOpportunities();
+            renderPortfolio();
+        }
+
+        function updateStatus(state, message) {
+            const statusEl = document.getElementById('data-status');
+            statusEl.className = 'data-status ' + state + ' text-sm font-medium';
+            
+            const icons = {
+                loading: '<i class="fas fa-circle-notch fa-spin mr-1"></i>',
+                live: '<i class="fas fa-circle mr-1"></i>',
+                error: '<i class="fas fa-exclamation-circle mr-1"></i>'
+            };
+            
+            statusEl.innerHTML = icons[state] + ' ' + message;
+        }
+
+        function showFallbackMessage() {
+            document.getElementById('coins-table').innerHTML = `
+                <tr><td colspan="5" class="py-12 text-center text-slate-500">
+                    Unable to load live data. <button onclick="refreshData()" class="text-blue-400 hover:underline">Retry</button>
+                </td></tr>`;
+        }
+
+        function refreshData() {
+            loadData();
+        }
+
+        // Navigation
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
             document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
             document.getElementById('nav-' + sectionId).classList.add('active');
             
-            // Render section-specific content
             if (sectionId === 'heatmap') renderHeatMap();
             if (sectionId === 'opportunities') renderOpportunities();
             if (sectionId === 'portfolio') renderPortfolio();
         }
 
-        function formatPrice(price) {
-            if (price >= 1000) return '$' + price.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
-            if (price >= 1) return '$' + price.toFixed(2);
-            if (price >= 0.01) return '$' + price.toFixed(4);
-            return '$' + price.toFixed(6);
+        // Render functions
+        function renderTable() {
+            const tbody = document.getElementById('coins-table');
+            if (coins.length === 0) return;
+            
+            tbody.innerHTML = coins.map(c => `
+                <tr class="hover:bg-slate-800/50">
+                    <td class="py-3 px-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center text-xs font-bold text-white">${c.symbol.substring(0,2)}</div>
+                            <span class="font-medium text-white">${c.symbol}</span>
+                        </div>
+                    </td>
+                    <td class="py-3 px-4 text-right font-mono text-white">${CryptoDataLoader.formatPrice(c.price)}</td>
+                    <td class="py-3 px-4 text-center">${getSignalBadge(c.signal)}</td>
+                    <td class="py-3 px-4 text-center">${getConfidenceBadge(c.confidence)}</td>
+                    <td class="py-3 px-4 text-right text-xs text-slate-400">${c.csrsiState.replace(/_/g,' ')}</td>
+                </tr>
+            `).join('');
         }
 
+        function renderCoreHoldings() {
+            const container = document.getElementById('core-holdings-grid');
+            const holdings = coins.filter(c => coreHoldings.includes(c.symbol));
+            
+            if (holdings.length === 0) {
+                container.innerHTML = '<div class="col-span-4 text-center py-8 text-slate-500">No core holdings data available</div>';
+                return;
+            }
+            
+            container.innerHTML = holdings.map(c => `
+                <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700 ${getSignalClass(c.signal)}">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                            <span class="font-bold text-white">${c.symbol}</span>
+                            ${c.compression ? '<span class="text-[10px] px-1.5 py-0.5 bg-purple-900/50 text-purple-400 rounded">COMP</span>' : ''}
+                        </div>
+                        ${getSignalBadge(c.signal)}
+                    </div>
+                    <div class="text-2xl font-bold text-white">${CryptoDataLoader.formatPrice(c.price)}</div>
+                    <div class="text-xs text-slate-400 mt-1">RSI: ${c.csrsiState.replace(/_/g,' ')}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderHeatMap() {
+            const grid = document.getElementById('heat-grid');
+            if (coins.length === 0) return;
+            
+            grid.innerHTML = coins.map(c => {
+                const bgClass = c.confidence >= 65 ? 'bg-emerald-500/30' : c.confidence >= 45 ? 'bg-amber-500/30' : 'bg-slate-700/30';
+                const signalColor = c.signal === 'long' ? '#10B981' : c.signal === 'short' ? '#EF4444' : '#6B7280';
+                const compRing = c.compression ? 'ring-2 ring-purple-500' : '';
+                return `
+                    <a href="https://www.tradingview.com/chart/?symbol=BINANCE:${c.symbol}USDT" target="_blank" rel="noopener noreferrer" class="heat-cell ${bgClass} ${compRing} hover:scale-105 hover:ring-2 hover:ring-blue-500 transition-all" title="Open ${c.symbol}/USDT on TradingView">
+                        <div class="text-xs font-bold text-white">${c.symbol}</div>
+                        <div class="text-xs text-slate-300">${CryptoDataLoader.formatPrice(c.price)}</div>
+                        <div class="text-xs mt-1" style="color:${signalColor}">${c.signal.substring(0,1).toUpperCase()}</div>
+                        ${c.compression ? '<div class="text-[8px] text-purple-400">COMP</div>' : ''}
+                    </a>
+                `;
+            }).join('');
+        }
+
+        function renderOpportunities() {
+            const container = document.getElementById('opportunities-grid');
+            const opportunities = coins.filter(c => c.signal !== 'hold' || c.compression || c.confidence >= 45);
+            
+            if (opportunities.length === 0) {
+                container.innerHTML = '<div class="col-span-3 text-center py-12 text-slate-400">No active opportunities. Market in consolidation.</div>';
+                return;
+            }
+            
+            container.innerHTML = opportunities.slice(0, 12).map(c => `
+                <div class="crypto-card bg-slate-900 rounded-xl p-5 border border-slate-800 ${getSignalClass(c.signal)}">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center font-bold text-white">${c.symbol.substring(0,2)}</div>
+                            <div>
+                                <div class="font-semibold text-white">${c.symbol}</div>
+                                <div class="text-xs text-slate-400">${c.strategy}</div>
+                            </div>
+                        </div>
+                        ${c.compression ? '<span class="px-2 py-1 rounded text-xs font-medium bg-purple-900/50 text-purple-400">Compression</span>' : getConfidenceBadge(c.confidence)}
+                    </div>
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="text-2xl font-bold text-white">${CryptoDataLoader.formatPrice(c.price)}</div>
+                        ${getSignalBadge(c.signal)}
+                    </div>
+                    <div class="text-xs text-slate-500">RSI: ${c.csrsiState.replace(/_/g,' ')} | ${c.rtomBias}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderPortfolio() {
+            const container = document.getElementById('portfolio-grid');
+            const holdings = coins.filter(c => coreHoldings.includes(c.symbol));
+            
+            if (holdings.length === 0) {
+                container.innerHTML = '<div class="col-span-3 text-center py-12 text-slate-400">No portfolio data available</div>';
+                return;
+            }
+            
+            container.innerHTML = holdings.map(c => `
+                <div class="crypto-card bg-slate-900 rounded-xl p-5 border border-slate-800 ${getSignalClass(c.signal)}">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center font-bold text-white">${c.symbol.substring(0,2)}</div>
+                            <div>
+                                <div class="font-semibold text-white text-lg">${c.symbol}</div>
+                                <div class="text-xs text-slate-400">Core Holding</div>
+                            </div>
+                        </div>
+                        ${getSignalBadge(c.signal)}
+                    </div>
+                    <div class="text-3xl font-bold text-white mb-2">${CryptoDataLoader.formatPrice(c.price)}</div>
+                    <div class="flex items-center justify-between mb-4">
+                        ${getConfidenceBadge(c.confidence)}
+                        <span class="text-xs text-slate-400">${c.strategy}</span>
+                    </div>
+                    <div class="space-y-2 text-xs">
+                        <div class="flex justify-between"><span class="text-slate-400">RSI State:</span><span class="text-slate-300">${c.csrsiState.replace(/_/g,' ')}</span></div>
+                        <div class="flex justify-between"><span class="text-slate-400">RtoM Bias:</span><span class="${c.rtomBias==='bullish'?'text-emerald-400':c.rtomBias==='bearish'?'text-red-400':'text-slate-300'}">${c.rtomBias}</span></div>
+                        ${c.compression ? '<div class="flex justify-between"><span class="text-slate-400">Status:</span><span class="text-purple-400 font-semibold">⚡ Compression</span></div>' : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Helper functions
         function getSignalBadge(signal) {
             const colors = {long:'bg-emerald-900/50 text-emerald-400',short:'bg-red-900/50 text-red-400',hold:'bg-slate-700/50 text-slate-400'};
             const labels = {long:'LONG',short:'SHORT',hold:'HOLD'};
@@ -340,105 +503,8 @@
             return 'signal-hold';
         }
 
-        function renderTable() {
-            const tbody = document.getElementById('coins-table');
-            tbody.innerHTML = coins.map(c => `
-                <tr class="hover:bg-slate-800/50">
-                    <td class="py-3 px-4">
-                        <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center text-xs font-bold text-white">${c.symbol.substring(0,2)}</div>
-                            <span class="font-medium text-white">${c.symbol}</span>
-                        </div>
-                    </td>
-                    <td class="py-3 px-4 text-right font-mono text-white">${formatPrice(c.price)}</td>
-                    <td class="py-3 px-4 text-center">${getSignalBadge(c.signal)}</td>
-                    <td class="py-3 px-4 text-center">${getConfidenceBadge(c.confidence)}</td>
-                    <td class="py-3 px-4 text-right text-xs text-slate-400">${c.csrsiState.replace(/_/g,' ')}</td>
-                </tr>
-            `).join('');
-        }
-
-        function renderHeatMap() {
-            const grid = document.getElementById('heat-grid');
-            grid.innerHTML = coins.map(c => {
-                const bgClass = c.confidence >= 65 ? 'bg-emerald-500/30' : c.confidence >= 45 ? 'bg-amber-500/30' : 'bg-slate-700/30';
-                const signalColor = c.signal === 'long' ? '#10B981' : c.signal === 'short' ? '#EF4444' : '#6B7280';
-                const compRing = c.compression ? 'ring-2 ring-purple-500' : '';
-                return `
-                    <a href="https://www.tradingview.com/chart/?symbol=BINANCE:${c.symbol}USDT" target="_blank" rel="noopener noreferrer" class="heat-cell ${bgClass} ${compRing} hover:scale-105 hover:ring-2 hover:ring-blue-500 transition-all" title="Open ${c.symbol}/USDT on TradingView">
-                        <div class="text-xs font-bold text-white">${c.symbol}</div>
-                        <div class="text-xs text-slate-300">${formatPrice(c.price)}</div>
-                        <div class="text-xs mt-1" style="color:${signalColor}">${c.signal.substring(0,1).toUpperCase()}</div>
-                        ${c.compression ? '<div class="text-[8px] text-purple-400">COMP</div>' : ''}
-                    </a>
-                `;
-            }).join('');
-        }
-
-        function renderOpportunities() {
-            const container = document.getElementById('opportunities-grid');
-            const opportunities = coins.filter(c => c.signal !== 'hold' || c.compression);
-            
-            if (opportunities.length === 0) {
-                container.innerHTML = '<div class="col-span-3 text-center py-12 text-slate-400">No active opportunities</div>';
-                return;
-            }
-            
-            container.innerHTML = opportunities.map(c => `
-                <div class="crypto-card bg-slate-900 rounded-xl p-5 border border-slate-800 ${getSignalClass(c.signal)}">
-                    <div class="flex items-center justify-between mb-3">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center font-bold text-white">${c.symbol.substring(0,2)}</div>
-                            <div>
-                                <div class="font-semibold text-white">${c.symbol}</div>
-                                <div class="text-xs text-slate-400">MONITOR</div>
-                            </div>
-                        </div>
-                        ${c.compression ? '<span class="px-2 py-1 rounded text-xs font-medium bg-purple-900/50 text-purple-400">Compression</span>' : getConfidenceBadge(c.confidence)}
-                    </div>
-                    <div class="flex items-center justify-between mb-3">
-                        <div class="text-2xl font-bold text-white">${formatPrice(c.price)}</div>
-                        ${getSignalBadge(c.signal)}
-                    </div>
-                    <div class="text-xs text-slate-500">RSI: ${c.csrsiState.replace(/_/g,' ')} | ${c.rtomBias}</div>
-                </div>
-            `).join('');
-        }
-
-        function renderPortfolio() {
-            const container = document.getElementById('portfolio-grid');
-            const holdings = coins.filter(c => coreHoldings.includes(c.symbol));
-            
-            container.innerHTML = holdings.map(c => `
-                <div class="crypto-card bg-slate-900 rounded-xl p-5 border border-slate-800 ${getSignalClass(c.signal)}">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center font-bold text-white">${c.symbol.substring(0,2)}</div>
-                            <div>
-                                <div class="font-semibold text-white text-lg">${c.symbol}</div>
-                                <div class="text-xs text-slate-400">Core Holding</div>
-                            </div>
-                        </div>
-                        ${getSignalBadge(c.signal)}
-                    </div>
-                    <div class="text-3xl font-bold text-white mb-2">${formatPrice(c.price)}</div>
-                    <div class="flex items-center justify-between mb-4">
-                        ${getConfidenceBadge(c.confidence)}
-                        <span class="text-xs text-slate-400">MONITOR</span>
-                    </div>
-                    <div class="space-y-2 text-xs">
-                        <div class="flex justify-between"><span class="text-slate-400">RSI State:</span><span class="text-slate-300">${c.csrsiState.replace(/_/g,' ')}</span></div>
-                        <div class="flex justify-between"><span class="text-slate-400">RtoM Bias:</span><span class="${c.rtomBias==='bullish'?'text-emerald-400':c.rtomBias==='bearish'?'text-red-400':'text-slate-300'}">${c.rtomBias}</span></div>
-                        ${c.compression ? '<div class="flex justify-between"><span class="text-slate-400">Status:</span><span class="text-purple-400 font-semibold">⚡ Compression</span></div>' : ''}
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            renderTable();
-        });
+        // Start
+        document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 </html>
