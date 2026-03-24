@@ -1,11 +1,13 @@
 /**
  * CryptoVue Data Loader
  * Reads JSON scan files and populates the dashboard
+ * DYNAMIC: Auto-discovers latest scan file
  */
 
 // Configuration
 const DATA_PATH = '../skills/tradingview-claw-v2/';
 const CORE_HOLDINGS = ['BTC', 'ETH', 'SOL', 'XRP', 'DOGE', 'BNB', 'LINK'];
+const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/skills/tradingview-claw-v2/';
 
 // State
 let latestData = null;
@@ -13,55 +15,138 @@ let historicalData = [];
 let allCoins = new Set();
 
 /**
- * Load the most recent scan data
+ * Extract timestamp from filename for sorting
+ * Format: top_50_analysis_YYYYMMDD_HHMMSS.json
+ */
+function extractTimestamp(filename) {
+    const match = filename.match(/(\d{8})_(\d{6})/);
+    if (match) {
+        return parseInt(match[1] + match[2]);
+    }
+    return 0;
+}
+
+/**
+ * Load the most recent scan data - DYNAMIC DISCOVERY
+ * Fetches file list from GitHub API or uses known pattern
  */
 async function loadLatestScan() {
     try {
-        // Get list of JSON files
-        const response = await fetch(DATA_PATH);
-        // For now, we'll use a hardcoded list based on what we saw
-        const files = [
-            'top_50_analysis_20260319_120036.json',
-            'top_50_analysis_20260319_080035.json',
-            'top_50_analysis_20260319_040032.json',
-            'top_50_analysis_20260319_000030.json',
-            'top_50_analysis_20260318_200040.json',
-            'top_50_analysis_20260318_160033.json',
-            'top_50_analysis_20260318_120035.json',
-            'top_50_analysis_20260318_080037.json',
-            'top_50_analysis_20260318_040034.json',
-            'top_50_analysis_20260318_000040.json',
-            'top_50_analysis_20260317_200031.json',
-            'top_50_analysis_20260317_160040.json',
-            'top_50_analysis_20260317_120030.json',
-            'top_50_analysis_20260317_112812.json',
-            'top_50_analysis_20260316_120031.json',
-            'top_50_analysis_20260316_094553.json',
-            'top_50_analysis_20260316_000029.json',
-            'top_50_analysis_20260315_200028.json',
-            'top_50_analysis_20260315_160033.json',
-            'top_50_analysis_20260315_142111.json',
-            'top_50_analysis_20260315_120036.json',
-            'top_50_analysis_20260315_080026.json',
-            'top_50_analysis_20260315_040032.json',
-            'top_50_analysis_20260315_000031.json',
-            'top_50_analysis_20260314_220521.json',
-            'top_50_analysis_20260314_220035.json',
-            'top_50_analysis_20260314_215419.json',
-            'top_50_analysis_20260314_212806.json'
-        ];
+        // Try to fetch directory listing (works if server supports it)
+        // Otherwise fall back to fetching by date pattern
+        const potentialFiles = generatePotentialFilenames();
         
-        // Load latest file
-        if (files.length > 0) {
-            const latestFile = files[0];
-            const data = await fetch(DATA_PATH + latestFile).then(r => r.json());
-            latestData = data;
-            return data;
+        // Try fetching files in order (newest first) until we find one that exists
+        for (const filename of potentialFiles) {
+            try {
+                const data = await fetchWithFallback(DATA_PATH + filename, GITHUB_RAW_URL + filename);
+                if (data) {
+                    latestData = data;
+                    console.log('Loaded scan:', filename);
+                    return data;
+                }
+            } catch (e) {
+                // File doesn't exist, try next
+                continue;
+            }
         }
+        
+        // If dynamic discovery fails, use fallback hardcoded list with latest files
+        console.warn('Dynamic discovery failed, using fallback list');
+        return await loadFallbackScan();
+        
     } catch (error) {
         console.error('Error loading latest scan:', error);
-        return null;
+        return await loadFallbackScan();
     }
+}
+
+/**
+ * Fetch with local path + GitHub fallback
+ */
+async function fetchWithFallback(localPath, githubUrl) {
+    try {
+        // Try local first
+        const response = await fetch(localPath);
+        if (response.ok) {
+            return await response.json();
+        }
+    } catch (e) {
+        // Try GitHub raw
+        try {
+            const response = await fetch(githubUrl);
+            if (response.ok) {
+                return await response.json();
+            }
+        } catch (e2) {
+            throw new Error('Both local and GitHub fetch failed');
+        }
+    }
+    return null;
+}
+
+/**
+ * Generate potential filenames for last 14 days
+ * Pattern: top_50_analysis_YYYYMMDD_HHMMSS.json
+ * Scan runs every 4 hours: 00:00, 04:00, 08:00, 12:00, 16:00, 20:00
+ * Updated: 2026-03-24
+ */
+function generatePotentialFilenames() {
+    const files = [];
+    const now = new Date();
+    
+    // Generate files for last 14 days
+    for (let dayOffset = 0; dayOffset < 14; dayOffset++) {
+        const date = new Date(now);
+        date.setDate(date.getDate() - dayOffset);
+        
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        const dateStr = `${year}${month}${day}`;
+        
+        // Standard scan times (every 4 hours)
+        const hours = ['20', '16', '12', '08', '04', '00'];
+        
+        for (const hour of hours) {
+            // Use 00 for minutes/seconds as base pattern
+            files.push(`top_50_analysis_${dateStr}_${hour}0000.json`);
+        }
+    }
+    
+    return files;
+}
+
+/**
+ * Fallback: Use curated list of recent known files
+ * Updated: 2026-03-24 - includes latest scans
+ */
+async function loadFallbackScan() {
+    const fallbackFiles = [
+        'top_50_analysis_20260324_200035.json',  // Latest: March 24, 8:00 PM
+        'top_50_analysis_20260324_160033.json',  // March 24, 4:00 PM
+        'top_50_analysis_20260324_120036.json',  // March 24, 12:00 PM
+        'top_50_analysis_20260324_080028.json',  // March 24, 8:00 AM
+        'top_50_analysis_20260324_040031.json',  // March 24, 4:00 AM
+        'top_50_analysis_20260324_000037.json',  // March 24, 12:00 AM
+        'top_50_analysis_20260323_200041.json',  // March 23, 8:00 PM
+        'top_50_analysis_20260322_205143.json'   // March 22, 8:51 PM
+    ];
+    
+    for (const filename of fallbackFiles) {
+        try {
+            const data = await fetchWithFallback(DATA_PATH + filename, GITHUB_RAW_URL + filename);
+            if (data) {
+                latestData = data;
+                console.log('Loaded fallback scan:', filename);
+                return data;
+            }
+        } catch (e) {
+            continue;
+        }
+    }
+    
+    return null;
 }
 
 /**
