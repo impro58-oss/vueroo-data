@@ -1,3 +1,18 @@
+---
+title: "EDUCO AI"
+date: 2026-03-23
+tags: [stockward, deal, edtech, ai-education, research-phase]
+status: active
+domain: stockward
+score: 80/100
+related:
+  - [[SOM Stress-Test]]
+  - [[Index - Stockward]]
+  - [[Market Sizing]]
+backlinks:
+  - "SOM methodology now universal template"
+---
+
 # EDUCO AI — Personalized Learning Operating System
 ## Stockward Research Document
 **Concept:** AI-Delivered Educational Repository with Global Certification Layer
