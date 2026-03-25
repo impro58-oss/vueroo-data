@@ -3,6 +3,44 @@
 
 ---
 
+## 🔒 DATA PRIVACY POLICY
+
+### Critical: Data Storage Locations
+
+| Data Type | Location | Status |
+|-----------|----------|--------|
+| **Source JSON files** | `medtech-intelligence/dashboard/data/` | **PRIVATE - GitHub repo** |
+| **Dashboard code** | `vueroo-portal/public/medtech/` | Public Vercel deployment |
+| **Embeded fallback data** | In HTML files | Public (sanitized) |
+
+### ✅ Allowed
+- ✅ JSON data in **private GitHub repository**
+- ✅ Public Vercel dashboard fetching from **GitHub raw URLs**
+- ✅ Embedded fallback data (non-sensitive summary stats)
+
+### ❌ Forbidden
+- ❌ Uploading raw data files to public hosting (Vercel, public CDNs)
+- ❌ Exposing sensitive company/revenue data in public repositories
+- ❌ Sharing data via unsecured endpoints
+
+### Data Flow Architecture
+```
+Private GitHub Repo (impro58-oss/rooquest1 or vueroo-portal)
+    ↓
+GitHub Raw URL (authenticated/private access)
+    ↓
+Vercel Dashboard (fetches from GitHub)
+    ↓
+Public Web Page
+```
+
+**Note:** All sensitive epidemiology and revenue data is stored ONLY in the private GitHub repository. Vercel deployment only contains:
+- Dashboard UI code
+- Embedded summary statistics (fallback data)
+- No raw sensitive data files
+
+---
+
 ## 🔧 Fix Log
 
 ### Fix #1: CORS Issue on Local File Access
@@ -159,12 +197,14 @@ git push
 
 ## 🐛 Known Issues & Fixes
 
-| Issue | Cause | Fix |
-|-------|-------|-----|
-| Loading spinner forever | CORS on file:// | Use web server or GitHub |
-| Map not interactive | iframe sandbox | `allowfullscreen` attribute |
-| Data shows "--" | JSON parse error | Check console for CORS errors |
-| Heatmap 404 | File path wrong | Verify `src="global-heatmap-v3b.html"` |
+| Issue | Cause | Fix | Date |
+|-------|-------|-----|------|
+| Loading spinner forever | CORS on file:// | Use web server or GitHub | 2026-03-25 |
+| Map not interactive | iframe sandbox | `allowfullscreen` attribute | 2026-03-25 |
+| Data shows "--" | JSON parse error | Check console for CORS errors | 2026-03-25 |
+| Heatmap 404 | File path wrong | Verify `src="global-heatmap-v3b.html"` | 2026-03-25 |
+| **NeuroVueDataLoader is not defined** | Optional chaining (`?.`) not supported in some browsers | Replace `obj?.prop` with `obj && obj.prop` | **2026-03-25** |
+| **data-loader.js 404** | Vercel not serving the file | Embedded all data/functions directly in HTML | **2026-03-25** |
 
 ---
 
@@ -177,10 +217,48 @@ git push
 
 ---
 
+## 🧠 Debugging Framework
+
+See full framework: `DEBUGGING-FRAMEWORK.md`
+
+### Root Cause Analysis
+| Issue | Root Cause | Solution |
+|-------|-----------|----------|
+| data-loader.js 404 | Vercel not serving file | Remove external dependencies |
+| NeuroVueDataLoader undefined | Timing race condition | Define BEFORE DOMContentLoaded |
+| async/await errors | Browser compatibility | Use `.then()` promises |
+| Optional chaining fails | Older JS parsers | Use `obj && obj.prop` |
+
+### Solution Pattern: Zero-Dependency
+**Best for:** Static dashboards requiring high reliability
+
+```html
+<script>
+  // 1. Embed data
+  const DATA = { /* all data */ };
+  
+  // 2. Embed functions
+  const Utils = {
+    format: function(n) { /* ... */ }
+  };
+  
+  // 3. Initialize traditionally
+  document.addEventListener('DOMContentLoaded', function() {
+    init(DATA);
+  });
+</script>
+```
+
+**Pros:** Never fails, instant display, no CORS
+**Cons:** Larger file, requires rebuild for updates
+
+---
+
 ## 📚 References
 
 - CryptoVue data-loader pattern: `~/.openclaw/workspace/crypto-dashboard/data-loader.js`
 - NeuroVue Architecture: `~/.openclaw/workspace/docs/vueroo-portal-architecture.md`
+- **Debugging Framework:** `DEBUGGING-FRAMEWORK.md`
 
 ---
 
@@ -190,6 +268,38 @@ git push
 |------|---------|--------|--------|
 | 2026-03-25 | 1.0 | Initial cheatsheet created | - |
 | 2026-03-25 | 1.1 | Added Vercel deployment details + live URL | `2e62f07` |
+| 2026-03-25 | 1.3 | **Fix:** Remove external script + embed all data/functions | `d5e5a8e` |
+| 2026-03-25 | 1.4 | **Fix:** Portal link updated from `/neuro/` to `/medtech/` | `2b51385` |
+
+---
+
+## 📁 Active Version Consolidation
+
+### Current Structure (Single Source of Truth)
+
+**Active Dashboard:** `/medtech/` (v7)
+- Location: `vueroo-portal/public/medtech/`
+- Portal URL: `https://www.vueroo.com/medtech/`
+- Features: Zero-dependency, embedded data, working
+
+### Deprecated Versions (To Be Removed)
+
+| Version | Location | Status | Notes |
+|---------|----------|--------|-------|
+| neuro/index.html | `public/neuro/` | **DEPRECATED** | Old version, broken |
+| neuro/index-embedded.html | `public/neuro/` | **DEPRECATED** | Attempt v3-4 |
+| neuro/index-dynamic.html | `public/neuro/` | **DEPRECATED** | Attempt v5-6 |
+
+### Files to Delete (Cleanup)
+
+```
+public/neuro/
+├── index.html                 [DELETE - old broken version]
+├── index-embedded.html        [DELETE - superseded]
+├── index-dynamic.html         [DELETE - superseded]
+```
+
+**Reason:** Only `/medtech/` should remain active. Old `/neuro/` versions confuse users and search engines.
 
 ---
 
