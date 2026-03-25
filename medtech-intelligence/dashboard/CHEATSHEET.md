@@ -97,31 +97,20 @@ git commit -m "NeuroVue v2.0: Dynamic data + embedded heatmap"
 git push
 ```
 
-### View Live (GitHub Raw = Text Only!)
-```
-https://raw.githubusercontent.com/impro58-oss/rooquest1/master/medtech-intelligence/dashboard/index.html
-```
-⚠️ **Note:** Raw GitHub URLs show text, not rendered HTML!
+### View Live
 
-### Deploy Options:
+**✅ DEPLOYED TO VERCEL**
+- **Commit:** `2e62f07` in `vueroo-portal` repo
+- **Live URL:** `https://www.vueroo.com/medtech/`
+- **Status:** Deployed at 2026-03-25 14:57 UTC
 
-**Option A: GitHub Pages (Recommended)**
-1. Go to: `https://github.com/impro58-oss/rooquest1/settings/pages`
-2. Source: Deploy from branch → **master** → **/(root)**
-3. Save, wait 1-2 minutes
-4. Access: `https://impro58-oss.github.io/rooquest1/medtech-intelligence/dashboard/`
+### Deployment Details
+| Repo | Branch | Commit | Files Added |
+|------|--------|--------|-------------|
+| `impro58-oss/vueroo-portal` | main | `2e62f07` | 31 files, 374KB |
+| `impro58-oss/rooquest1` | master | `abcfc61` | Submodule update |
 
-**Option B: Vercel (Drag & Drop)**
-1. Go to vercel.com → Add New → Project
-2. Import `impro58-oss/rooquest1`
-3. Root Directory: `medtech-intelligence/dashboard`
-4. Deploy
-
-**Option C: Vercel CLI**
-```bash
-cd medtech-intelligence/dashboard
-npx vercel --yes
-```
+**Vercel Build:** Auto-deployed from `vueroo-portal:main`
 
 ---
 
@@ -195,4 +184,14 @@ npx vercel --yes
 
 ---
 
-*Last Updated: 2026-03-25 by Lumina*
+## 📝 CHEATSHEET Update Log
+
+| Date | Version | Change | Commit |
+|------|---------|--------|--------|
+| 2026-03-25 | 1.0 | Initial cheatsheet created | - |
+| 2026-03-25 | 1.1 | Added Vercel deployment details + live URL | `2e62f07` |
+
+---
+
+*Last Updated: 2026-03-25 14:58 UTC by Lumina*
+*Dashboard Live: https://www.vueroo.com/medtech/*
