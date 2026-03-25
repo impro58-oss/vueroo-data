@@ -144,22 +144,22 @@
       "ticker": "Private",
       "country": "🇩🇪 Germany",
       "website": "https://phenox.info/",
-      "threatLevel": "low",
-      "portfolio": "incomplete",
+      "threatLevel": "medium",
+      "portfolio": "growing",
       "products": {
-        "coils": ["pCONUS"],
-        "flowDiverters": ["p64"],
+        "coils": ["Avenir"],
+        "flowDiverters": ["p64", "p48"],
         "stents": [],
-        "aspiration": [],
+        "aspiration": ["pRESET"],
         "intrasaccular": ["pCONUS2"],
-        "retrievers": [],
-        "balloons": [],
+        "retrievers": ["pREMIUM"],
+        "balloons": ["pNEURO"],
         "radial": [],
         "pump": false
       },
-      "strengths": ["Unique bifurcation device", "pCONUS2 differentiation"],
-      "gaps": ["No thrombectomy", "Limited coils", "Small company"],
-      "notes": "Niche player with unique technology."
+      "strengths": ["pCONUS2 unique bifurcation device", "Growing portfolio", "Strong in Europe", "Innovative pipeline"],
+      "gaps": ["No stent platform", "Limited radial access", "US market presence building", "No aspiration pump"],
+      "notes": "Portfolio expanding with Avenir coils, p64/p48 flow diverters, and pCONUS2 intrasaccular platform. Strong growth trajectory."
     },
     {
       "id": "rapid",
