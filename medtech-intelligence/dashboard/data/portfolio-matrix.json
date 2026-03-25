@@ -11,7 +11,7 @@
       "microvention": { "products": ["HydroCoil", "Cosmos", "V-Trak"], "strength": "high", "coverage": "complete" },
       "jnj": { "products": ["Galaxy", "Galaxy G3"], "strength": "medium", "coverage": "partial" },
       "balt": { "products": ["Complex"], "strength": "low", "coverage": "partial" },
-      "phenox": { "products": ["pCONUS"], "strength": "low", "coverage": "partial" },
+      "phenox": { "products": ["Avenir"], "strength": "medium", "coverage": "partial" },
       "rapid": { "products": [], "strength": "none", "coverage": "none" },
       "acandis": { "products": [], "strength": "none", "coverage": "none" },
       "imperative": { "products": [], "strength": "none", "coverage": "none" }
@@ -27,7 +27,7 @@
       "microvention": { "products": ["FRED", "FRED Jr"], "strength": "medium", "coverage": "partial" },
       "jnj": { "products": [], "strength": "none", "coverage": "none" },
       "balt": { "products": ["Silk"], "strength": "low", "coverage": "partial" },
-      "phenox": { "products": ["p64"], "strength": "low", "coverage": "partial" },
+      "phenox": { "products": ["p64", "p48"], "strength": "medium", "coverage": "partial" },
       "rapid": { "products": [], "strength": "none", "coverage": "none" },
       "acandis": { "products": ["Aperio"], "strength": "low", "coverage": "partial" },
       "imperative": { "products": [], "strength": "none", "coverage": "none" }
@@ -59,7 +59,7 @@
       "microvention": { "products": ["SOFIA Plus"], "strength": "medium", "coverage": "partial" },
       "jnj": { "products": ["Catalys", "Emblok"], "strength": "medium", "coverage": "partial" },
       "balt": { "products": [], "strength": "none", "coverage": "none" },
-      "phenox": { "products": [], "strength": "none", "coverage": "none" },
+      "phenox": { "products": ["pRESET"], "strength": "low", "coverage": "partial" },
       "rapid": { "products": [], "strength": "none", "coverage": "none" },
       "acandis": { "products": [], "strength": "none", "coverage": "none" },
       "imperative": { "products": ["Zoom RDL"], "strength": "low", "coverage": "partial" }
@@ -75,7 +75,7 @@
       "microvention": { "products": ["WEB"], "strength": "high", "coverage": "complete" },
       "jnj": { "products": [], "strength": "none", "coverage": "none" },
       "balt": { "products": [], "strength": "none", "coverage": "none" },
-      "phenox": { "products": ["pCONUS2"], "strength": "medium", "coverage": "partial" },
+      "phenox": { "products": ["pCONUS2"], "strength": "high", "coverage": "complete" },
       "rapid": { "products": [], "strength": "none", "coverage": "none" },
       "acandis": { "products": [], "strength": "none", "coverage": "none" },
       "imperative": { "products": [], "strength": "none", "coverage": "none" }
@@ -91,7 +91,7 @@
       "microvention": { "products": ["Capture"], "strength": "low", "coverage": "partial" },
       "jnj": { "products": ["Cerevasc"], "strength": "low", "coverage": "partial" },
       "balt": { "products": [], "strength": "none", "coverage": "none" },
-      "phenox": { "products": [], "strength": "none", "coverage": "none" },
+      "phenox": { "products": ["pREMIUM"], "strength": "low", "coverage": "partial" },
       "rapid": { "products": ["TIGERTRIEVER"], "strength": "medium", "coverage": "partial" },
       "acandis": { "products": [], "strength": "none", "coverage": "none" },
       "imperative": { "products": [], "strength": "none", "coverage": "none" }
@@ -107,7 +107,7 @@
       "microvention": { "products": ["HyperForm", "HyperGlide"], "strength": "high", "coverage": "complete" },
       "jnj": { "products": [], "strength": "none", "coverage": "none" },
       "balt": { "products": [], "strength": "none", "coverage": "none" },
-      "phenox": { "products": [], "strength": "none", "coverage": "none" },
+      "phenox": { "products": ["pNEURO"], "strength": "low", "coverage": "partial" },
       "rapid": { "products": [], "strength": "none", "coverage": "none" },
       "acandis": { "products": [], "strength": "none", "coverage": "none" },
       "imperative": { "products": [], "strength": "none", "coverage": "none" }
