@@ -24,7 +24,7 @@ def get_top_50():
     usdt_pairs = [d for d in data if d['symbol'].endswith('USDT') and d['symbol'] not in exclude]
     usdt_pairs.sort(key=lambda x: float(x['quoteVolume']), reverse=True)
     
-    return [p['symbol'] for p in usdt_pairs[:50]]
+    return [p['symbol'] for p in usdt_pairs[:200]]
 
 def determine_strategy(symbol, result):
     """Determine if this is a FUTURES trade or HOLD accumulation."""
@@ -57,8 +57,8 @@ def analyze_all():
     print("=== TROJANLOGIC4H: TOP 50 CRYPTO ANALYSIS ===\n")
     print(f"Analysis Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
     
-    TOP_50 = get_top_50()
-    print(f"Analyzing top {len(TOP_50)} symbols by 24h volume...\n")
+    TOP_200 = get_top_50()
+    print(f"Analyzing top {len(TOP_200)} symbols by 24h volume...\n")
     
     feed = MultiSourceFeed()
     engine = TrojanLogic4H()
@@ -67,9 +67,9 @@ def analyze_all():
     futures_opportunities = []
     hold_opportunities = []
     
-    for i, symbol in enumerate(TOP_50, 1):
+    for i, symbol in enumerate(TOP_200, 1):
         try:
-            print(f"[{i}/50] Analyzing {symbol}...", end=" ")
+            print(f"[{i}/200] Analyzing {symbol}...", end=" ")
             df, info = feed.get_data_with_validation(symbol, days_back=60)
             result = engine.analyze(df)
             

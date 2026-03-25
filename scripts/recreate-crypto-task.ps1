@@ -15,7 +15,7 @@ $XmlContent = @"
 <?xml version="1.0" encoding="UTF-16"?>
 <Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
   <RegistrationInfo>
-    <Description>TrojanLogic4H Crypto Scanner - Every 3 hours with wake</Description>
+    <Description>TrojanLogic4H Crypto Scanner - Top 200 every 3 hours with wake</Description>
   </RegistrationInfo>
   <Triggers>
     <CalendarTrigger>
