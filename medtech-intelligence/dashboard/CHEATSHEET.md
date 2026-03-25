@@ -14,31 +14,28 @@
 ---
 
 ### Fix #2: Embedded Global Heatmap
-**Date:** 2026-03-25
-**Problem:** Heatmap only accessible via external link, not embedded
-**Solution:** Added iframe embedding `global-heatmap-v3b.html` in dashboard hero section
-**Code:**
+**Date:** 2026-03-25  
+**Git Commit:** `b13d9c4`  
+**Problem:** Heatmap only accessible via external link, not embedded  
+**Solution:** Added iframe embedding `global-heatmap-v3b.html` in dashboard hero section  
+**Files Modified:** `index.html`
+
+**Code Added:**
 ```html
+<!-- Global Heatmap Iframe -->
 <div class="bg-slate-900 rounded-xl border border-slate-800 overflow-hidden mb-8">
     <div class="p-6 border-b border-slate-800">
         <div class="flex items-center justify-between">
             <div>
                 <h3 class="text-lg font-semibold text-white">Global Neurovascular Heat Map</h3>
-                <p class="text-sm text-slate-400">Interactive geographic visualization</p>
             </div>
-            <a href="global-heatmap-v3b.html" target="_blank" class="px-4 py-2 bg-purple-500/20 hover:bg-purple-500/30 text-purple-400 rounded-lg text-sm transition">
-                Full Screen <i class="fas fa-external-link-alt ml-2"></i>
-            </a>
+            <a href="global-heatmap-v3b.html" target="_blank">Full Screen</a>
         </div>
     </div>
     <div class="relative" style="height: 600px;">
-        <iframe 
-            src="global-heatmap-v3b.html" 
-            class="w-full h-full border-0"
-            title="Global Neurovascular Heat Map"
-            loading="lazy"
-            allowfullscreen
-        ></iframe>
+        <iframe src="global-heatmap-v3b.html" class="w-full h-full border-0"
+            title="Global Neurovascular Heat Map" loading="lazy" allowfullscreen>
+        </iframe>
     </div>
 </div>
 ```
@@ -100,9 +97,30 @@ git commit -m "NeuroVue v2.0: Dynamic data + embedded heatmap"
 git push
 ```
 
-### View Live
+### View Live (GitHub Raw = Text Only!)
 ```
 https://raw.githubusercontent.com/impro58-oss/rooquest1/master/medtech-intelligence/dashboard/index.html
+```
+⚠️ **Note:** Raw GitHub URLs show text, not rendered HTML!
+
+### Deploy Options:
+
+**Option A: GitHub Pages (Recommended)**
+1. Go to: `https://github.com/impro58-oss/rooquest1/settings/pages`
+2. Source: Deploy from branch → **master** → **/(root)**
+3. Save, wait 1-2 minutes
+4. Access: `https://impro58-oss.github.io/rooquest1/medtech-intelligence/dashboard/`
+
+**Option B: Vercel (Drag & Drop)**
+1. Go to vercel.com → Add New → Project
+2. Import `impro58-oss/rooquest1`
+3. Root Directory: `medtech-intelligence/dashboard`
+4. Deploy
+
+**Option C: Vercel CLI**
+```bash
+cd medtech-intelligence/dashboard
+npx vercel --yes
 ```
 
 ---
@@ -163,10 +181,10 @@ https://raw.githubusercontent.com/impro58-oss/rooquest1/master/medtech-intellige
 
 ## 🔄 Version History
 
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0 | 2026-03-XX | Static HTML with embedded data |
-| 2.0 | 2026-03-25 | Dynamic JSON loading + GitHub fallback + embedded heatmap |
+| Version | Date | Changes | Commit |
+|---------|------|---------|--------|
+| 1.0 | 2026-03-XX | Static HTML with embedded data | - |
+| 2.0 | 2026-03-25 | Dynamic JSON loading + GitHub fallback + embedded heatmap | `b13d9c4` |
 
 ---
 
