@@ -1,0 +1,460 @@
+{
+  "metadata": {
+    "project": "NeuroVue Epidemiology Intelligence",
+    "version": "2.0",
+    "lastUpdated": "2026-03-25",
+    "sources": [
+      "World Stroke Organization 2025",
+      "China Stroke Surveillance 2021",
+      "SAFE Burden of Stroke Europe 2017",
+      "German Stroke Registry 2021",
+      "Japan Stroke Data Bank",
+      "AHA Heart Disease Statistics 2024"
+    ],
+    "dataQuality": {
+      "journal": "Verified from peer-reviewed sources",
+      "extrapolated": "Projected based on trends",
+      "estimated": "Modeled where data unavailable",
+      "pending": "Extraction in progress"
+    }
+  },
+  "global": {
+    "summary": {
+      "2024": {
+        "annualStrokes": {
+          "value": 12200000,
+          "unit": "cases/year",
+          "source": "WSO Global Stroke Statistics 2025",
+          "quality": "journal",
+          "display": "12.2 million"
+        },
+        "strokeDeaths": {
+          "value": 6500000,
+          "unit": "deaths/year",
+          "source": "WSO 2025",
+          "quality": "journal",
+          "display": "6.5 million"
+        },
+        "prevalence": {
+          "value": 101000000,
+          "unit": "living survivors",
+          "source": "WSO 2025",
+          "quality": "journal",
+          "display": "101 million"
+        },
+        "breakdown": {
+          "ischemic": 87,
+          "hemorrhagic": 13,
+          "lvo": 38,
+          "mevo": 25,
+          "unit": "percent"
+        }
+      },
+      "2030": {
+        "projectedStrokes": {
+          "value": 15100000,
+          "range": {
+            "low": 13800000,
+            "medium": 15100000,
+            "high": 16500000
+          },
+          "unit": "cases/year",
+          "cagr": 3.6,
+          "quality": "extrapolated"
+        },
+        "projectedDeaths": {
+          "value": 7200000,
+          "unit": "deaths/year",
+          "quality": "extrapolated"
+        },
+        "projectedPrevalence": {
+          "value": 125000000,
+          "unit": "survivors",
+          "quality": "extrapolated"
+        }
+      },
+      "treatmentAccess2024": {
+        "ivThrombolysis": {
+          "global": 15,
+          "highIncome": 25,
+          "lowIncome": 3,
+          "unit": "percent"
+        },
+        "mechanicalThrombectomy": {
+          "global": 12,
+          "highIncome": 22,
+          "lowIncome": 1,
+          "eligibleLVO": "Of eligible patients",
+          "projected2030": 25
+        }
+      }
+    },
+    "detailed": {
+      "dalyLost": {
+        "value": 143000000,
+        "unit": "DALYs/year",
+        "source": "GBD 2019",
+        "quality": "journal"
+      },
+      "treatmentTechnologies": {
+        "stentRetrievers": {
+          "marketShare": 60,
+          "efficacy": "TICI 2b/3: 75-85%"
+        },
+        "directAspiration": {
+          "marketShare": 35,
+          "efficacy": "TICI 2b/3: 70-80%"
+        },
+        "combinedApproach": {
+          "marketShare": 5,
+          "efficacy": "TICI 2b/3: 80-88%"
+        }
+      },
+      "riskFactors": {
+        "hypertension": {
+          "prevalence": 27.5,
+          "controlRate": 25,
+          "attributableRisk": 48,
+          "unit": "percent"
+        },
+        "diabetes": {
+          "global": 9.3,
+          "china": 12.8,
+          "usa": 11.3,
+          "unit": "percent"
+        },
+        "atrialFibrillation": {
+          "chinaPrevalence": 1.8,
+          "chinaCases": 7900000,
+          "unit": "percent (age 45+)"
+        },
+        "obesity": {
+          "china": 16.8,
+          "chinaOverweight": 34.4,
+          "unit": "percent"
+        }
+      }
+    }
+  },
+  "regions": {
+    "china": {
+      "flag": "🇨🇳",
+      "population2024": 1412000000,
+      "summary": {
+        "annualStrokes": {
+          "value": 3300000,
+          "unit": "cases/year",
+          "display": "3.3 million",
+          "source": "China Stroke Statistics 2019-2020",
+          "quality": "journal"
+        },
+        "strokeDeaths": {
+          "value": 1500000,
+          "unit": "deaths/year",
+          "display": "1.5 million"
+        },
+        "prevalence": {
+          "value": 17800000,
+          "unit": "survivors",
+          "display": "17.8 million"
+        },
+        "treatmentAccess": {
+          "ivTpa": 25,
+          "mt": 8,
+          "unit": "percent"
+        },
+        "2030Projection": {
+          "value": 4200000,
+          "drivers": ["Aging population", "Rising hypertension (24.7%)", "Poor control (25.4%)"]
+        }
+      },
+      "detailed": {
+        "2020Data": {
+          "annualStrokes": {
+            "value": 3400000,
+            "source": "Tu et al., 2023",
+            "breakdown": {
+              "ischemic": 81.9,
+              "hemorrhagic": 14.9,
+              "sah": 3.1,
+              "unit": "percent"
+            }
+          },
+          "deaths": {
+            "value": 2300000,
+            "unit": "deaths/year"
+          },
+          "disabilityRate": {
+            "value": 12.5,
+            "unit": "percent (mRS >1)"
+          },
+          "treatment": {
+            "ivTpa": {
+              "patients": 188648,
+              "ichRate": 3.2,
+              "mortality": 8.9,
+              "unit": "percent"
+            },
+            "mechanicalThrombectomy": {
+              "patients": 49845,
+              "ichRate": 7.7,
+              "mortality": 16.5,
+              "unit": "percent"
+            },
+            "bridging": {
+              "patients": 14087,
+              "ichRate": 12.9,
+              "mortality": 16.8,
+              "unit": "percent"
+            }
+          },
+          "economicBurden": {
+            "hospitalizationCost": {
+              "total": 58000000000,
+              "outOfPocket": 19800000000,
+              "unit": "CNY"
+            }
+          }
+        },
+        "keyInsights": [
+          "Highest absolute stroke burden globally",
+          "Only 25.4% hypertension control rate",
+          "120M adults with diabetes (12.8%)",
+          "Urban-rural disparity in treatment",
+          "National stroke prevention initiative 2020"
+        ]
+      }
+    },
+    "eu": {
+      "flag": "🇪🇺",
+      "population2024": 447000000,
+      "summary": {
+        "annualStrokes": {
+          "value": 1100000,
+          "unit": "cases/year",
+          "display": "1.1 million",
+          "source": "SAFE 2017",
+          "quality": "journal"
+        },
+        "strokeDeaths": {
+          "value": 450000,
+          "unit": "deaths/year",
+          "display": "450,000"
+        },
+        "prevalence": {
+          "value": 9000000,
+          "unit": "survivors",
+          "display": "9 million"
+        },
+        "treatmentAccess": {
+          "ivTpa": 35,
+          "mt": 18,
+          "variance": "High variation: 5-45% for MT across states"
+        },
+        "2030Projection": {
+          "value": 1350000,
+          "prevalence": 12000000
+        }
+      },
+      "detailed": {
+        "policy": {
+          "euStrokePlan": {
+            "period": "2018-2030",
+            "goals": [
+              "Reduce stroke incidence by 30%",
+              "Achieve 90% access to stroke units",
+              "Standardize thrombectomy access"
+            ]
+          }
+        },
+        "keyInsights": [
+          "610K strokes/year in EU countries",
+          "170K+ in non-EU European countries",
+          "High MT access variation (5-45%)",
+          "EU Action Plan targets 30% reduction"
+        ]
+      }
+    },
+    "usa": {
+      "flag": "🇺🇸",
+      "population2024": 335000000,
+      "summary": {
+        "annualStrokes": {
+          "value": 795000,
+          "unit": "cases/year",
+          "display": "795,000",
+          "source": "AHA 2024",
+          "quality": "journal"
+        },
+        "strokeDeaths": {
+          "value": 160000,
+          "unit": "deaths/year",
+          "display": "160,000"
+        },
+        "prevalence": {
+          "value": 4500000,
+          "unit": "survivors",
+          "display": "4.5 million"
+        },
+        "treatmentAccess": {
+          "ivTpa": 40,
+          "mt": 25,
+          "unit": "percent"
+        },
+        "2030Projection": {
+          "value": 920000
+        }
+      },
+      "detailed": {
+        "keyInsights": [
+          "5th leading cause of death",
+          "Leading cause of disability",
+          "Treatment access above global average"
+        ]
+      }
+    },
+    "germany": {
+      "flag": "🇩🇪",
+      "population2024": 84000000,
+      "summary": {
+        "annualStrokes": {
+          "value": 195000,
+          "unit": "cases/year",
+          "display": "195,000",
+          "note": "Based on 2021 data (declined 4.5% from 2019 due to COVID)"
+        },
+        "strokeDeaths": {
+          "value": 65000,
+          "unit": "deaths/year",
+          "display": "65,000"
+        },
+        "treatmentAccess": {
+          "ivTpa": 50,
+          "mt": 30,
+          "note": "Among highest in Europe"
+        },
+        "2030Projection": {
+          "value": 230000
+        }
+      },
+      "detailed": {
+        "2021Data": {
+          "annualStrokes": {
+            "value": 216923,
+            "declineFrom2019": 4.5,
+            "source": "Ungerer et al., 2024"
+          },
+          "treatment": {
+            "ivTpa": {
+              "rate": 16.3,
+              "trend": "stable"
+            },
+            "mechanicalThrombectomy": {
+              "rate": 8.4,
+              "changeFrom2019": 1.3,
+              "trend": "increasing"
+            }
+          },
+          "centers": {
+            "mtCenters": 310,
+            "increase": 14.8,
+            "highVolumePercentage": 87.3,
+            "note": "Centers with ≥50 cases/year"
+          },
+          "regionalDisparity": {
+            "poorAccess2021": 5.3,
+            "poorAccess2019": 12.3,
+            "improvement": "significant (p<0.001)"
+          }
+        },
+        "keyInsights": [
+          "MT rates increased 7.1% → 8.4% (2019-2021)",
+          "310 MT centers (87.3% high-volume)",
+          "Regional disparities decreasing significantly",
+          "IVT rates stable at ~16%"
+        ]
+      }
+    },
+    "japan": {
+      "flag": "🇯🇵",
+      "population2024": 125000000,
+      "summary": {
+        "annualStrokes": {
+          "value": 280000,
+          "unit": "cases/year",
+          "display": "280,000"
+        },
+        "strokeDeaths": {
+          "value": 110000,
+          "unit": "deaths/year",
+          "display": "110,000"
+        },
+        "prevalence": {
+          "value": 2200000,
+          "unit": "survivors",
+          "display": "2.2 million"
+        },
+        "treatmentAccess": {
+          "ivTpa": 45,
+          "mt": 20,
+          "unit": "percent"
+        }
+      },
+      "detailed": {
+        "2021Data": {
+          "registry": {
+            "totalCases": 240000,
+            "participatingHospitals": 132,
+            "breakdown": {
+              "ischemicStroke": "~60%",
+              "ich": "~20%",
+              "sah": "~10%",
+              "tia": "~10%"
+            }
+          },
+          "economicBurden": {
+            "medicalCost": 1700000000000,
+            "nursingCost": 1900000000000,
+            "unit": "JPY/year"
+          },
+          "socialImpact": {
+            "nursingCarePercentage": 30,
+            "note": "Percent of all nursing care"
+          }
+        },
+        "keyInsights": [
+          "4th leading cause of death",
+          "Requires 30% of all nursing care",
+          "JSDB: 240K+ cases from 132 hospitals",
+          "Cerebrovascular Disease Control Act 2018",
+          "National Plan October 2020"
+        ]
+      }
+    },
+    "india": {
+      "flag": "🇮🇳",
+      "population2024": 1428000000,
+      "status": "pending_extraction",
+      "note": "Data extraction in progress from epidemiological surveys",
+      "estimatedBurden": "High - needs urgent data collection"
+    },
+    "brazil": {
+      "flag": "🇧🇷",
+      "population2024": 216000000,
+      "status": "pending_extraction",
+      "note": "Brazilian stroke registry data needed"
+    },
+    "africa": {
+      "flag": "🌍",
+      "population2024": 1400000000,
+      "status": "pending_extraction",
+      "note": "Limited data - WHO Africa reports needed"
+    },
+    "seasia": {
+      "flag": "🌏",
+      "population2024": 680000000,
+      "status": "pending_extraction",
+      "note": "ASEAN stroke data compilation needed"
+    }
+  }
+}
