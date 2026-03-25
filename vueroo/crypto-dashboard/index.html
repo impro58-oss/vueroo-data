@@ -66,6 +66,15 @@
                 <button onclick="showSection('portfolio')" id="nav-portfolio" class="nav-item w-full text-left px-4 py-3 flex items-center gap-3 border-none bg-transparent text-slate-200">
                     <i class="fas fa-wallet w-5"></i><span>My Holdings</span>
                 </button>
+                
+                <div class="px-4 mt-4 mb-2">
+                    <button onclick="refreshData()" class="w-full py-2 px-3 bg-blue-600/80 hover:bg-blue-600 rounded-lg text-xs font-medium text-white transition flex items-center justify-center gap-2">
+                        <i class="fas fa-sync-alt"></i> Refresh Data
+                    </button>
+                    <div class="mt-2 text-[10px] text-slate-500 text-center">
+                        Source: crypto_latest.json
+                    </div>
+                </div>
             </nav>
             
             <div class="p-4 border-t border-slate-800">
