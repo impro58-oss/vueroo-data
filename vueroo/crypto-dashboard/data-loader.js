@@ -32,27 +32,21 @@ function extractTimestamp(filename) {
  */
 async function loadLatestScan() {
     try {
-        // Try to fetch directory listing (works if server supports it)
-        // Otherwise fall back to fetching by date pattern
-        const potentialFiles = generatePotentialFilenames();
-        
-        // Try fetching files in order (newest first) until we find one that exists
-        for (const filename of potentialFiles) {
-            try {
-                const data = await fetchWithFallback(DATA_PATH + filename, GITHUB_RAW_URL + filename);
-                if (data) {
-                    latestData = data;
-                    console.log('Loaded scan:', filename);
-                    return data;
-                }
-            } catch (e) {
-                // File doesn't exist, try next
-                continue;
+        // Try crypto_latest.json first - always has the most recent scan
+        const latestJsonUrl = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/data/crypto/crypto_latest.json';
+        try {
+            const response = await fetch(latestJsonUrl);
+            if (response.ok) {
+                const data = await response.json();
+                latestData = data;
+                console.log('Loaded latest scan from crypto_latest.json');
+                return data;
             }
+        } catch (e) {
+            console.log('crypto_latest.json not found, trying fallback...');
         }
         
-        // If dynamic discovery fails, use fallback hardcoded list with latest files
-        console.warn('Dynamic discovery failed, using fallback list');
+        // Try fallback list with exact filenames
         return await loadFallbackScan();
         
     } catch (error) {
