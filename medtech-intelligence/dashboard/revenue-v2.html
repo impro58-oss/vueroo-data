@@ -154,17 +154,104 @@
         </div>
     </div>
 
+    <script src="data-loader.js"></script>
     <script>
-        // Embedded revenue data (no external JSON loading)
-        const revenueData = [
-            { company: 'Stryker', revenue2024: 1450, revenue2030: 2450, cagr: 9.1, color: '#10B981' },
-            { company: 'Medtronic', revenue2024: 1380, revenue2030: 2280, cagr: 8.8, color: '#3B82F6' },
-            { company: 'Johnson & Johnson', revenue2024: 680, revenue2030: 1150, cagr: 9.2, color: '#8B5CF6' },
-            { company: 'Microvention/Terumo', revenue2024: 520, revenue2030: 920, cagr: 10.0, color: '#EF4444' },
-            { company: 'Penumbra', revenue2024: 380, revenue2030: 720, cagr: 11.2, color: '#F59E0B' },
-            { company: 'Balt', revenue2024: 180, revenue2030: 310, cagr: 9.5, color: '#06B6D4' },
-            { company: 'Wallaby Phenox', revenue2024: 95, revenue2030: 195, cagr: 12.7, color: '#EC4899' }
-        ];
+        // Dynamic revenue data loaded from JSON
+        let revenueData = [];
+        
+        // Color mapping for companies
+        const companyColors = {
+            'Stryker': '#10B981',
+            'Medtronic': '#3B82F6',
+            'Johnson & Johnson': '#8B5CF6',
+            'Johnson & Johnson (Cerenovus)': '#8B5CF6',
+            'Microvention/Terumo': '#EF4444',
+            'Microvention': '#EF4444',
+            'Terumo': '#EF4444',
+            'Penumbra': '#F59E0B',
+            'Balt': '#06B6D4',
+            'Wallaby Phenox': '#EC4899',
+            'Phenox': '#EC4899'
+        };
+        
+        // Load data on page load
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const appData = await NeuroVueDataLoader.loadNeuroVueData();
+                
+                if (appData && appData.revenue && appData.revenue.companies) {
+                    // Transform data for charts
+                    revenueData = appData.revenue.companies.map(c => ({
+                        company: c.name || c.company,
+                        revenue2024: c.neurovascular_revenue || c.neurovascularRevenue || c.annual_revenue || c.annualRevenue || 0,
+                        revenue2030: c.revenue_2030 || c.revenue2030 || Math.round((c.neurovascular_revenue || c.neurovascularRevenue || c.annual_revenue || c.annualRevenue || 0) * Math.pow(1 + ((c.neurovascular_growth || c.neurovascularGrowth || 8) / 100), 6)),
+                        cagr: c.neurovascular_growth || c.neurovascularGrowth || c.cagr || 8.5,
+                        color: companyColors[c.name || c.company] || '#3B82F6',
+                        ticker: c.ticker,
+                        headquarters: c.headquarters,
+                        annualRevenue: c.annual_revenue || c.annualRevenue || 0,
+                        revenueGrowth: c.revenue_growth || c.revenueGrowth || 0
+                    })).sort((a, b) => b.revenue2024 - a.revenue2024);
+                    
+                    // Update metrics
+                    updateMetrics();
+                    
+                    // Initialize charts
+                    initCompanySelector();
+                    initCharts();
+                    updateTable();
+                } else {
+                    console.warn('No revenue data loaded, using fallback');
+                    useFallbackData();
+                }
+            } catch (error) {
+                console.error('Error loading revenue data:', error);
+                useFallbackData();
+            }
+        });
+        
+        function useFallbackData() {
+            revenueData = [
+                { company: 'Stryker', revenue2024: 1450, revenue2030: 2450, cagr: 9.1, color: '#10B981', ticker: 'SYK', headquarters: 'USA' },
+                { company: 'Medtronic', revenue2024: 1380, revenue2030: 2280, cagr: 8.8, color: '#3B82F6', ticker: 'MDT', headquarters: 'Ireland' },
+                { company: 'Johnson & Johnson', revenue2024: 680, revenue2030: 1150, cagr: 9.2, color: '#8B5CF6', ticker: 'JNJ', headquarters: 'USA' },
+                { company: 'Microvention/Terumo', revenue2024: 520, revenue2030: 920, cagr: 10.0, color: '#EF4444', ticker: 'TER', headquarters: 'Japan' },
+                { company: 'Penumbra', revenue2024: 380, revenue2030: 720, cagr: 11.2, color: '#F59E0B', ticker: 'PEN', headquarters: 'USA' },
+                { company: 'Balt', revenue2024: 180, revenue2030: 310, cagr: 9.5, color: '#06B6D4', ticker: 'Private', headquarters: 'France' },
+                { company: 'Wallaby Phenox', revenue2024: 95, revenue2030: 195, cagr: 12.7, color: '#EC4899', ticker: 'Private', headquarters: 'Germany' }
+            ];
+            
+            updateMetrics();
+            initCompanySelector();
+            initCharts();
+            updateTable();
+        }
+        
+        function updateMetrics() {
+            const total2024 = revenueData.reduce((sum, c) => sum + c.revenue2024, 0);
+            const topCompany = revenueData[0];
+            const avgCAGR = revenueData.reduce((sum, c) => sum + c.cagr, 0) / revenueData.length;
+            
+            document.getElementById('metricTotal2024').textContent = '$' + (total2024 / 1000).toFixed(1) + 'B';
+            document.getElementById('metricTopCompany').textContent = topCompany.company;
+            document.getElementById('metricCompanies').textContent = revenueData.length;
+            document.getElementById('metricCAGR').textContent = avgCAGR.toFixed(1) + '%';
+        }
+        
+        function updateTable() {
+            const tbody = document.querySelector('#revenueTable tbody');
+            if (!tbody) return;
+            
+            tbody.innerHTML = revenueData.map(c => `
+                <tr class="hover:bg-slate-700/50">
+                    <td class="p-3 font-medium">${c.company}</td>
+                    <td class="p-3 text-right text-emerald-400">$${c.revenue2024.toLocaleString()}M</td>
+                    <td class="p-3 text-right">$${c.revenue2030.toLocaleString()}M</td>
+                    <td class="p-3 text-right text-yellow-400">${c.cagr.toFixed(1)}%</td>
+                    <td class="p-3 text-slate-400">${c.headquarters || ''}</td>
+                </tr>
+            `).join('');
+        }
 
         let trendChart, shareChart;
 
