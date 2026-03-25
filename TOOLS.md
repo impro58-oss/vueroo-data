@@ -37,4 +37,63 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 ---
 
-Add whatever helps you do your job. This is your cheat sheet.
+## NeuroVue Data Sources — KNOWLEDGE BASE
+
+### Primary Data Files (Source of Truth)
+
+| File | Location | Purpose |
+|------|----------|---------|
+| **revenue-summary.json** | `medtech-intelligence/dashboard/data/` | Company revenue, growth rates, market cap |
+| **competitor-intelligence.json** | `medtech-intelligence/dashboard/data/` | Competitor profiles, products, gaps |
+| **portfolio-matrix.json** | `medtech-intelligence/dashboard/data/` | Product portfolio coverage matrix |
+| **product-portfolio-data.json** | `medtech-intelligence/dashboard/data/` | Detailed product listings by category |
+
+### GitHub Repository
+- **Repo:** `impro58-oss/rooquest1`
+- **Branch:** `master`
+- **Data URL:** `https://raw.githubusercontent.com/impro58-oss/rooquest1/master/medtech-intelligence/dashboard/data/`
+
+### Revenue Data Flow
+
+```
+revenue-summary.json
+    ├── neurovascularRevenue: number (in millions USD)
+    ├── annualRevenue: number (total company)
+    ├── revenueGrowth: number (%)
+    ├── neurovascularGrowth: number (%)
+    ├── marketCap: number
+    └── ticker: string
+```
+
+**Used by:**
+- `revenue-v2.html` — Revenue Analysis dashboard
+- `competitive-intelligence.html` — CI cards (via shared loader)
+- `index.html` — Overview metrics
+
+### Data Loading Pattern
+
+All dashboards use `NeuroVueDataLoader`:
+```javascript
+const appData = await NeuroVueDataLoader.loadNeuroVueData();
+// Access: appData.revenue.companies
+// Access: appData.competitors
+// Access: appData.portfolio
+```
+
+### Data Accuracy Rules
+
+| Rule | Action |
+|------|--------|
+| **Verified data exists** | Use exact value from revenue-summary.json |
+| **No verified data** | Use **0.1** as marker (indicates gap) |
+| **Never estimate** | Ask user for source or leave empty |
+| **Always cite source** | Document where numbers came from |
+
+### Cache Considerations
+- GitHub raw files cache for ~5 minutes
+- After pushing updates, wait 5 min before refresh
+- Or add `?t=${Date.now()}` for cache-busting (dev only)
+
+---
+
+*Last updated: 2026-03-25*
