@@ -139,4 +139,51 @@ const appData = await NeuroVueDataLoader.loadNeuroVueData();
 
 ---
 
-*Last updated: 2026-03-25*
+## SESSION LOG — 2026-03-25 (Evening Session)
+
+### NeuroVue Dashboard Updates
+
+**1. Wallaby Phenox Styling**
+- Color changed to `#39FF14` (fluorescent green)
+- Applied to: Portfolio Matrix header + cells, CI cards, Research Hub
+- Empty product indicator: Changed from ❌ to ○ (neutral circle)
+- Commit: `c288410`
+
+**2. NeuroRevenue Field Added**
+- Source: `revenue-summary.json`
+- Values (in $M):
+  - Medtronic: 1380, Stryker: 1450, J&J: 680, Microvention: 520
+  - Penumbra: 380, Balt: 180, Phenox: 95, Rapid: 35, Acandis: 45, Imperative: 65
+- Displayed in CI cards with $ icon
+
+**3. Product Portfolio Manager**
+- Created: `product-portfolio-manager.html`
+- Features: Load JSON, edit cells, add/delete rows, export
+- Added to Research Hub with pink styling
+- Font sizes increased (header 24px, body 15px)
+- JSON loading: Better error handling + debug logging
+
+**4. Epidemiology Data Consolidation**
+- **NEW FILE**: `epidemiology-comprehensive.json`
+- Combines `data.json` (summary) + `stroke-intelligence.json` (detailed)
+- Structure: `global.summary` + `global.detailed` + `regions[].summary` + `regions[].detailed`
+- Pending regions: India, Brazil, Africa, SE Asia (marked as "pending_extraction")
+- Dashboard: Summary/Detailed view toggle
+
+### Key Principles Reinforced
+- **0.1** = marker for unverified data (not estimates)
+- **Never estimate financial data** — use verified sources only
+- **Source files** for NeuroVue:
+  - `epidemiology-comprehensive.json` — Stroke data
+  - `revenue-summary.json` — Company revenue
+  - `competitor-intelligence.json` — Competitor profiles
+  - `portfolio-matrix.json` — Product coverage
+
+### Git Sync Status
+- **rooquest1** (data): ✅ Synced
+- **vueroo-portal** (dashboard): ✅ Synced
+- **Commit**: `31ca869` — "Sync: Backup all changes..."
+
+---
+
+*Last updated: 2026-03-25 22:03 UTC*
