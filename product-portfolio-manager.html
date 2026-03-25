@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Portfolio Manager - NeuroVue</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  :root {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --surface2: #334155;
+    --border: #475569;
+    --accent: #3b82f6;
+    --accent2: #8b5cf6;
+    --green: #10b981;
+    --yellow: #f59e0b;
+    --red: #ef4444;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { 
+    background: var(--bg); 
+    color: var(--text); 
+    font-family: 'Segoe UI', system-ui, sans-serif; 
+    font-size: 14px; 
+    min-height: 100vh; 
+  }
+
+  /* Header */
+  .header { 
+    background: var(--surface); 
+    border-bottom: 1px solid var(--border); 
+    padding: 16px 24px; 
+    display: flex; 
+    align-items: center; 
+    gap: 16px; 
+    position: sticky; 
+    top: 0; 
+    z-index: 100; 
+  }
+  .header h1 { 
+    font-size: 18px; 
+    font-weight: 700; 
+    background: linear-gradient(135deg, var(--accent), var(--accent2)); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+  }
+  .header-subtitle { color: var(--muted); font-size: 12px; }
+  .header-actions { margin-left: auto; display: flex; gap: 8px; }
+
+  /* Tabs */
+  .tabs { 
+    display: flex; 
+    gap: 4px; 
+    background: var(--surface); 
+    border-bottom: 1px solid var(--border); 
+    padding: 0 24px; 
+  }
+  .tab { 
+    padding: 12px 18px; 
+    cursor: pointer; 
+    border-bottom: 2px solid transparent; 
+    color: var(--muted); 
+    font-size: 13px; 
+    font-weight: 500; 
+    transition: all 0.2s; 
+    white-space: nowrap; 
+  }
+  .tab:hover { color: var(--text); }
+  .tab.active { 
+    color: var(--accent); 
+    border-bottom-color: var(--accent); 
+  }
+  .tab-badge { 
+    background: var(--accent); 
+    color: #fff; 
+    border-radius: 10px; 
+    padding: 1px 6px; 
+    font-size: 10px; 
+    margin-left: 4px; 
+  }
+
+  /* Layout */
+  .content { padding: 20px 24px; max-width: 1600px; margin: 0 auto; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* Buttons */
+  .btn { 
+    padding: 8px 16px; 
+    border-radius: 6px; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 13px; 
+    font-weight: 500; 
+    transition: all 0.15s; 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 6px; 
+  }
+  .btn-primary { background: var(--accent); color: white; }
+  .btn-primary:hover { background: #2563eb; }
+  .btn-success { background: var(--green); color: white; }
+  .btn-success:hover { filter: brightness(1.1); }
+  .btn-ghost { 
+    background: var(--surface2); 
+    color: var(--text); 
+    border: 1px solid var(--border); 
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-danger { background: transparent; color: var(--red); border: 1px solid var(--red); }
+  .btn-danger:hover { background: var(--red); color: white; }
+  .btn-sm { padding: 4px 10px; font-size: 12px; }
+
+  /* Cards */
+  .card { 
+    background: var(--surface); 
+    border: 1px solid var(--border); 
+    border-radius: 12px; 
+    padding: 16px; 
+    margin-bottom: 12px; 
+  }
+  .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .card-title { font-weight: 600; font-size: 15px; }
+
+  /* Table */
+  .table-wrap { 
+    overflow-x: auto; 
+    border-radius: 12px; 
+    border: 1px solid var(--border); 
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { 
+    background: var(--surface2); 
+    color: var(--muted); 
+    font-weight: 600; 
+    font-size: 11px; 
+    text-transform: uppercase; 
+    letter-spacing: 0.05em; 
+    padding: 10px 12px; 
+    text-align: left; 
+    white-space: nowrap; 
+    border-bottom: 1px solid var(--border); 
+    position: sticky; 
+    top: 0; 
+  }
+  td { 
+    padding: 10px 12px; 
+    border-bottom: 1px solid var(--border); 
+    vertical-align: top; 
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--surface2); }
+  .cat-header td { 
+    background: linear-gradient(90deg, rgba(59,130,246,0.15), transparent); 
+    font-weight: 700; 
+    color: var(--accent); 
+    font-size: 13px; 
+    border-left: 3px solid var(--accent); 
+  }
+
+  /* Badges */
+  .badge { 
+    display: inline-block; 
+    padding: 2px 8px; 
+    border-radius: 12px; 
+    font-size: 11px; 
+    font-weight: 600; 
+  }
+  .badge-yes { background: rgba(16,185,129,0.15); color: var(--green); }
+  .badge-no { background: rgba(239,68,68,0.15); color: var(--red); }
+  .badge-large { background: rgba(59,130,246,0.15); color: var(--accent); }
+  .badge-medium { background: rgba(245,158,11,0.15); color: var(--yellow); }
+  .badge-small { background: rgba(239,68,68,0.15); color: var(--red); }
+  .badge-high { background: rgba(16,185,129,0.15); color: var(--green); }
+  .badge-low { background: rgba(239,68,68,0.15); color: var(--red); }
+  .badge-action { background: rgba(139,92,246,0.15); color: var(--accent2); }
+
+  /* Editable cell */
+  .editable { 
+    cursor: pointer; 
+    position: relative; 
+    min-height: 20px; 
+  }
+  .editable:hover { 
+    background: rgba(59,130,246,0.08); 
+    border-radius: 4px; 
+  }
+  .editable::after { 
+    content: '✏️'; 
+    position: absolute; 
+    right: 2px; 
+    top: 0; 
+    font-size: 9px; 
+    opacity: 0; 
+    transition: opacity 0.2s; 
+  }
+  .editable:hover::after { opacity: 1; }
+  .edit-input { 
+    width: 100%; 
+    background: var(--bg); 
+    border: 1px solid var(--accent); 
+    border-radius: 4px; 
+    color: var(--text); 
+    padding: 4px 6px; 
+    font-size: 13px; 
+    resize: vertical; 
+    min-height: 32px; 
+  }
+
+  /* Modal */
+  .modal-overlay { 
+    display: none; 
+    position: fixed; 
+    inset: 0; 
+    background: rgba(0,0,0,0.6); 
+    z-index: 200; 
+    align-items: center; 
+    justify-content: center; 
+  }
+  .modal-overlay.open { display: flex; }
+  .modal { 
+    background: var(--surface); 
+    border: 1px solid var(--border); 
+    border-radius: 12px; 
+    padding: 24px; 
+    width: 600px; 
+    max-width: 95vw; 
+    max-height: 90vh; 
+    overflow-y: auto; 
+  }
+  .modal h2 { font-size: 16px; margin-bottom: 16px; }
+  .form-row { margin-bottom: 14px; }
+  .form-label { 
+    display: block; 
+    color: var(--muted); 
+    font-size: 12px; 
+    margin-bottom: 4px; 
+    font-weight: 500; 
+  }
+  .form-input, .form-select, .form-textarea { 
+    width: 100%; 
+    background: var(--bg); 
+    border: 1px solid var(--border); 
+    border-radius: 6px; 
+    color: var(--text); 
+    padding: 8px 10px; 
+    font-size: 13px; 
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { 
+    outline: none; 
+    border-color: var(--accent); 
+  }
+  .form-textarea { resize: vertical; min-height: 80px; }
+  .modal-actions { 
+    display: flex; 
+    gap: 8px; 
+    justify-content: flex-end; 
+    margin-top: 16px; 
+  }
+
+  /* Stats */
+  .stats-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+    gap: 12px; 
+    margin-bottom: 20px; 
+  }
+  .stat-card { 
+    background: var(--surface); 
+    border: 1px solid var(--border); 
+    border-radius: 12px; 
+    padding: 16px; 
+  }
+  .stat-label { 
+    color: var(--muted); 
+    font-size: 11px; 
+    text-transform: uppercase; 
+    letter-spacing: 0.05em; 
+    margin-bottom: 6px; 
+  }
+  .stat-value { font-size: 28px; font-weight: 700; }
+  .stat-sub { color: var(--muted); font-size: 11px; margin-top: 2px; }
+
+  /* Filter bar */
+  .filter-bar { 
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 16px; 
+    flex-wrap: wrap; 
+    align-items: center; 
+  }
+  .filter-bar input, .filter-bar select { 
+    background: var(--surface); 
+    border: 1px solid var(--border); 
+    border-radius: 6px; 
+    color: var(--text); 
+    padding: 7px 12px; 
+    font-size: 13px; 
+  }
+  .filter-bar input:focus, .filter-bar select:focus { 
+    outline: none; 
+    border-color: var(--accent); 
+  }
+
+  /* Product item */
+  .product-item { 
+    background: var(--surface); 
+    border: 1px solid var(--border); 
+    border-radius: 12px; 
+    padding: 14px 16px; 
+    margin-bottom: 8px; 
+    display: flex; 
+    align-items: flex-start; 
+    gap: 12px; 
+  }
+  .product-item:hover { border-color: var(--accent); }
+  .product-content { flex: 1; min-width: 0; }
+  .product-name { font-weight: 600; font-size: 14px; }
+  .product-meta { color: var(--muted); font-size: 12px; margin-top: 3px; }
+  .product-actions { display: flex; gap: 6px; flex-shrink: 0; }
+
+  /* Progress bar */
+  .progress-bar { height: 4px; background: var(--border); border-radius: 2px; margin-top: 6px; }
+  .progress-fill { 
+    height: 100%; 
+    border-radius: 2px; 
+    background: linear-gradient(90deg, var(--accent), var(--accent2)); 
+  }
+
+  /* Empty state */
+  .empty { text-align: center; padding: 40px; color: var(--muted); }
+
+  /* Changed tracking */
+  .changed-row td { background: rgba(245,158,11,0.05) !important; border-left: 3px solid var(--yellow) !important; }
+  .null-cell { color: var(--border); font-style: italic; font-size: 11px; }
+
+  /* File input */
+  .file-input-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  .file-input-wrapper input[type=file] {
+    position: absolute;
+    left: -9999px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>🧬 Product Portfolio Manager</h1>
+    <div class="header-subtitle">Wallaby Phenox · Neurointerventional Competitive Intelligence</div>
+  </div>
+  <div class="header-actions">
+    <div class="file-input-wrapper">
+      <button class="btn btn-ghost" onclick="document.getElementById('file-input').click()">📁 Load JSON</button>
+      <input type="file" id="file-input" accept=".json" onchange="loadJSON(event)">
+    </div>
+    <button class="btn btn-ghost" onclick="showAddRowModal()">+ Add Row</button>
+    <button class="btn btn-success" onclick="exportJSON()">⬇ Export JSON</button>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('overview', this)">📊 Overview</div>
+  <div class="tab" onclick="switchTab('portfolio', this)">🗂 Portfolio Analysis</div>
+  <div class="tab" onclick="switchTab('cn', this)">🇨🇳 CN Brands</div>
+  <div class="tab" onclick="switchTab('pipeline', this)">🚀 Pipeline <span class="tab-badge" id="pipeline-count">0</span></div>
+  <div class="tab" onclick="switchTab('todos', this)">✅ To Dos</div>
+  <div class="tab" onclick="switchTab('questions', this)">❓ Questions</div>
+</div>
+
+<div class="content">
+
+  <!-- OVERVIEW PANEL -->
+  <div id="panel-overview" class="panel active">
+    <div class="stats-grid" id="stats-grid"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="card">
+        <div class="card-header"><div class="card-title">Wallaby Phenox Presence by Category</div></div>
+        <div id="cat-presence-chart"></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-title">Strategic Priority Breakdown</div></div>
+        <div id="strategic-chart"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PORTFOLIO PANEL -->
+  <div id="panel-portfolio" class="panel">
+    <div class="filter-bar">
+      <input type="text" id="search-portfolio" placeholder="🔍 Search products, companies..." oninput="renderPortfolio()" style="width:260px">
+      <select id="filter-cat" onchange="renderPortfolio()">
+        <option value="">All Categories</option>
+      </select>
+      <select id="filter-presence" onchange="renderPortfolio()">
+        <option value="">All Presence</option>
+        <option value="yes">Wallaby Phenox: Present</option>
+        <option value="no">Wallaby Phenox: Absent</option>
+      </select>
+      <select id="filter-importance" onchange="renderPortfolio()">
+        <option value="">All Importance</option>
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+      <span id="row-count" style="color:var(--muted);font-size:12px;margin-left:auto"></span>
+    </div>
+    <div class="table-wrap">
+      <table id="portfolio-table">
+        <thead>
+          <tr>
+            <th style="width:160px">Product Group</th>
+            <th>Wallaby Phenox</th>
+            <th>Medtronic</th>
+            <th>Stryker</th>
+            <th>Microvention/Terumo</th>
+            <th>Cerenovus</th>
+            <th>Balt</th>
+            <th>Penumbra</th>
+            <th>Acandis</th>
+            <th>Other</th>
+            <th>Presence</th>
+            <th>Market Vol</th>
+            <th>Strategic</th>
+            <th>Action</th>
+            <th style="width:60px"></th>
+          </tr>
+        </thead>
+        <tbody id="portfolio-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CN BRANDS PANEL -->
+  <div id="panel-cn" class="panel">
+    <div class="filter-bar">
+      <input type="text" id="search-cn" placeholder="🔍 Search..." oninput="renderCN()" style="width:260px">
+    </div>
+    <div class="table-wrap">
+      <table class="cn-table" id="cn-table">
+        <thead><tr id="cn-header"></tr></thead>
+        <tbody id="cn-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- PIPELINE PANEL -->
+  <div id="panel-pipeline" class="panel">
+    <div style="display:flex;gap:10px;margin-bottom:16px;align-items:center">
+      <button class="btn btn-primary" onclick="showAddPipelineModal()">+ Add Project</button>
+      <span style="color:var(--muted);font-size:12px">Drag to reorder priority</span>
+    </div>
+    <div id="pipeline-list"></div>
+  </div>
+
+  <!-- TODOS PANEL -->
+  <div id="panel-todos" class="panel">
+    <div style="display:flex;gap:10px;margin-bottom:16px">
+      <button class="btn btn-primary" onclick="showAddTodoModal()">+ Add To Do</button>
+    </div>
+    <div id="todos-list"></div>
+  </div>
+
+  <!-- QUESTIONS PANEL -->
+  <div id="panel-questions" class="panel">
+    <div style="display:flex;gap:10px;margin-bottom:16px">
+      <button class="btn btn-primary" onclick="showAddQuestionModal()">+ Add Question</button>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Stroke Type</th>
+            <th>Disease State</th>
+            <th>Treatment</th>
+            <th>Topic</th>
+            <th>Question</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="questions-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-overlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal" id="modal-content"></div>
+</div>
+
+<!-- EDIT CELL MODAL -->
+<div class="modal-overlay" id="edit-overlay" onclick="if(event.target===this)closeEdit()">
+  <div class="modal" id="edit-modal">
+    <h2 id="edit-title">Edit Cell</h2>
+    <div class="form-row">
+      <label class="form-label" id="edit-label">Value</label>
+      <textarea class="form-textarea" id="edit-textarea" rows="5"></textarea>
+    </div>
+    <div style="color:var(--muted);font-size:11px;margin-bottom:12px">Use new lines to separate multiple products.</div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeEdit()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveEdit()">Save</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Initial empty state
+let state = {
+  portfolio: [],
+  cn_brands: [],
+  new_products: [],
+  todos: [],
+  questions: []
+};
+let changedRows = new Set();
+let editTarget = null;
+
+// Load JSON from file
+function loadJSON(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const data = JSON.parse(e.target.result);
+      
+      // Extract data based on structure
+      if (data.portfolio_analysis && data.portfolio_analysis['Tabelle1 (2)']) {
+        state.portfolio = data.portfolio_analysis['Tabelle1 (2)'];
+        state.cn_brands = data.portfolio_analysis['CN local Brands'] || [];
+      }
+      if (data.upstream_marketing) {
+        state.new_products = data.upstream_marketing['new products'] || [];
+        state.todos = data.upstream_marketing['To Dos'] || [];
+        state.questions = data.upstream_marketing['questions'] || [];
+      }
+      
+      // Fill categories
+      fillCategories(state.portfolio);
+      
+      // Reset changes
+      changedRows.clear();
+      
+      // Refresh all views
+      initFilters();
+      renderOverview();
+      renderPortfolio();
+      renderCN();
+      renderPipeline();
+      renderTodos();
+      renderQuestions();
+      
+      alert('✅ JSON loaded successfully!');
+    } catch (err) {
+      alert('❌ Error loading JSON: ' + err.message);
+    }
+  };
+  reader.readAsText(file);
+}
+
+// Fill _category forward
+function fillCategories(portfolio) {
+  let cat = null;
+  portfolio.forEach(row => {
+    if (row['NV Market coverage']) cat = row['NV Market coverage'];
+    row._category = cat;
+  });
+}
+
+// ---- TABS ----
+function switchTab(name, el) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-'+name).classList.add('active');
+  if (name === 'overview') renderOverview();
+  if (name === 'portfolio') renderPortfolio();
+  if (name === 'cn') renderCN();
+  if (name === 'pipeline') renderPipeline();
+  if (name === 'todos') renderTodos();
+  if (name === 'questions') renderQuestions();
+}
+
+// ---- HELPERS ----
+function badge(val, type) {
+  if (!val || val === '-') return '<span class="null-cell">—</span>';
+  const v = String(val).toLowerCase();
+  let cls = 'badge';
+  if (type === 'presence') cls += v === 'yes' ? ' badge-yes' : ' badge-no';
+  else if (type === 'vol') cls += v.includes('large') ? ' badge-large' : v.includes('small') ? ' badge-small' : ' badge-medium';
+  else if (type === 'importance') cls += v === 'high' ? ' badge-high' : v === 'low' ? ' badge-low' : ' badge-medium';
+  else if (type === 'action') cls += ' badge-action';
+  return '<span class="' + cls + '">' + val + '</span>';
+}
+
+function cellDisplay(val) {
+  if (!val || val === '-' || val === 'null') return '<span class="null-cell">—</span>';
+  const lines = String(val).split('\n').filter(l => l.trim());
+  if (lines.length <= 1) return val;
+  return lines.map(l => '<div style="line-height:1.8">' + l + '</div>').join('');
+}
+
+// ---- OVERVIEW ----
+function renderOverview() {
+  const portfolio = state.portfolio;
+  const realRows = portfolio.filter(r => r['Product Group'] && !['not in the market/not available','limited availability (e.g. in clinical trial)/maybe not available anymore','approved and in the market','to be updated, if necessary'].includes(r._category));
+  
+  const presenceYes = realRows.filter(r => r['WallabyPhenox presence'] === 'yes').length;
+  const highImportance = realRows.filter(r => r['strategic importance'] === 'high').length;
+  const pipeline = state.new_products.length;
+  const categories = [...new Set(realRows.map(r => r._category))].filter(Boolean).length;
+
+  document.getElementById('stats-grid').innerHTML = '
+    <div class="stat-card">
+      <div class="stat-label">Product Groups</div>
+      <div class="stat-value" style="color:var(--accent)">' + realRows.length + '</div>
+      <div class="stat-sub">across ' + categories + ' categories</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Wallaby Phenox Present</div>
+      <div class="stat-value" style="color:var(--green)">' + presenceYes + '</div>
+      <div class="stat-sub">' + (realRows.length - presenceYes) + ' gaps identified</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:' + Math.round(presenceYes/realRows.length*100) + '%"></div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">High Strategic Importance</div>
+      <div class="stat-value" style="color:var(--yellow)">' + highImportance + '</div>
+      <div class="stat-sub">product groups</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Pipeline Projects</div>
+      <div class="stat-value" style="color:var(--accent2)">' + pipeline + '</div>
+      <div class="stat-sub">in upstream marketing</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">CN Brand Tracked</div>
+      <div class="stat-value" style="color:var(--muted)">' + state.cn_brands.filter(r=>r['Product Group']).length + '</div>
+      <div class="stat-sub">product groups</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Changed Rows</div>
+      <div class="stat-value" style="color:var(--yellow)">' + changedRows.size + '</div>
+      <div class="stat-sub">since last export</div>
+    </div>
+  ';
+
+  // Category presence chart
+  const catGroups = {};
+  realRows.forEach(r => {
+    const cat = r._category || 'Unknown';
+    if (!catGroups[cat]) catGroups[cat] = {yes:0,no:0};
+    r['WallabyPhenox presence'] === 'yes' ? catGroups[cat].yes++ : catGroups[cat].no++;
+  });
+
+  let chartHTML = '';
+  Object.entries(catGroups).forEach(([cat, counts]) => {
+    const total = counts.yes + counts.no;
+    const pct = Math.round(counts.yes / total * 100);
+    chartHTML += '
+      <div style="margin-bottom:12px">
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:12px;color:var(--text)">' + cat + '</span>
+          <span style="font-size:11px;color:var(--muted)">' + counts.yes + '/' + total + '</span>
+        </div>
+        <div class="progress-bar" style="height:6px">
+          <div class="progress-fill" style="width:' + pct + '%;background:' + (pct>60?'var(--green)':pct>30?'var(--yellow)':'var(--red)') + '"></div>
+        </div>
+      </div>
+    ';
+  });
+  document.getElementById('cat-presence-chart').innerHTML = chartHTML;
+
+  // Strategic chart
+  const stratCount = {high:0,medium:0,low:0,other:0};
+  realRows.forEach(r => {
+    const v = (r['strategic importance']||'').toLowerCase();
+    if (v === 'high') stratCount.high++;
+    else if (v === 'medium') stratCount.medium++;
+    else if (v === 'low') stratCount.low++;
+    else stratCount.other++;
+  });
+  const total = realRows.length;
+  document.getElementById('strategic-chart').innerHTML = [
+    ['High', stratCount.high, 'var(--green)'],
+    ['Medium', stratCount.medium, 'var(--yellow)'],
+    ['Low', stratCount.low, 'var(--red)'],
+  ].map(([label, count, color]) => '
+    <div style="margin-bottom:12px">
+      <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+        <span style="font-size:12px;color:var(--text)">' + label + '</span>
+        <span style="font-size:11px;color:var(--muted)">' + count + ' (' + Math.round(count/total*100) + '%)</span>
+      </div>
+      <div class="progress-bar" style="height:6px">
+        <div style="height:100%;border-radius:2px;background:' + color + ';width:' + Math.round(count/total*100) + '%"></div>
+      </div>
+    </div>
+  ').join('');
+}
+
+// ---- PORTFOLIO TABLE ----
+function getCategories() {
+  const cats = [];
+  state.portfolio.forEach(r => {
+    if (r._category && !cats.includes(r._category)) cats.push(r._category);
+  });
+  return cats;
+}
+
+function initFilters() {
+  const sel = document.getElementById('filter-cat');
+  sel.innerHTML = '<option value="">All Categories</option>';
+  getCategories().forEach(cat => {
+    const o = document.createElement('option');
+    o.value = cat; o.textContent = cat;
+    sel.appendChild(o);
+  });
+}
+
+function renderPortfolio() {
+  const search = document.getElementById('search-portfolio')?.value?.toLowerCase() || '';
+  const filterCat = document.getElementById('filter-cat')?.value || '';
+  const filterPresence = document.getElementById('filter-presence')?.value || '';
+  const filterImportance = document.getElementById('filter-importance')?.value || '';
+  
+  const companies = ['WallabyPhenox','Medtronic','Stryker','Microvention/\nTerumo','Cerenovus','Balt','Penumbra','Acandis','other'];
+  
+  let rows = state.portfolio;
+  let lastCat = null;
+  let html = '';
+  let shown = 0;
+  
+  rows.forEach((row, idx) => {
+    const cat = row._category || '';
+    const pg = row['Product Group'] || '';
+    
+    // Filter
+    if (filterCat && cat !== filterCat) return;
+    if (filterPresence && row['WallabyPhenox presence'] !== filterPresence) return;
+    if (filterImportance && (row['strategic importance']||'').toLowerCase() !== filterImportance) return;
+    if (search) {
+      const haystack = Object.values(row).join(' ').toLowerCase();
+      if (!haystack.includes(search)) return;
+    }
+    
+    shown++;
+    
+    // Category header
+    if (cat !== lastCat) {
+      lastCat = cat;
+      html += '<tr class="cat-header"><td colspan="15" style="padding:10px 12px">' + cat + '</td></tr>';
+    }
+    
+    const isChanged = changedRows.has(idx);
+    html += '<tr id="row-' + idx + '" class="' + (isChanged?'changed-row':'') + '">
+      <td><b>' + (pg || '<span class="null-cell">—</span>') + '</b></td>';
+    
+    companies.forEach(co => {
+      const val = row[co];
+      html += '<td class="editable" onclick="openEdit(' + idx + ', \'' + co.replace(/'/g,"\\'") + '\', \'' + co + '\')">' + cellDisplay(val) + '</td>';
+    });
+    
+    html += '
+      <td>' + badge(row['WallabyPhenox presence'],'presence') + '</td>
+      <td>' + badge(row['market volume'],'vol') + '</td>
+      <td>' + badge(row['strategic importance'],'importance') + '</td>
+      <td>' + badge(row['call to action'],'action') + '</td>
+      <td>
+        <button class="btn btn-ghost btn-sm" onclick="openRowEdit(' + idx + ')" title="Edit row">⚙</button>
+      </td>
+    </tr>';
+  });
+  
+  document.getElementById('portfolio-body').innerHTML = html;
+  document.getElementById('row-count').textContent = shown + ' rows';
+}
+
+// ---- EDIT CELL ----
+function openEdit(idx, field, displayField) {
+  editTarget = {type:'portfolio', idx, field};
+  document.getElementById('edit-title').textContent = 'Edit: ' + displayField;
+  document.getElementById('edit-label').textContent = 'Row ' + (idx+1) + ' · ' + (state.portfolio[idx]['Product Group'] || '') + ' · ' + displayField;
+  document.getElementById('edit-textarea').value = state.portfolio[idx][field] || '';
+  document.getElementById('edit-overlay').classList.add('open');
+}
+
+function closeEdit() {
+  document.getElementById('edit-overlay').classList.remove('open');
+  editTarget = null;
+}
+
+function saveEdit() {
+  if (!editTarget) return;
+  const val = document.getElementById('edit-textarea').value;
+  if (editTarget.type === 'portfolio') {
+    state.portfolio[editTarget.idx][editTarget.field] = val || null;
+    changedRows.add(editTarget.idx);
+    renderPortfolio();
+  }
+  closeEdit();
+}
+
+// ---- FULL ROW EDIT ----
+function openRowEdit(idx) {
+  const row = state.portfolio[idx];
+  const companies = ['WallabyPhenox','Medtronic','Stryker','Microvention/\nTerumo','Cerenovus','Balt','Penumbra','Acandis','other'];
+  const cats = getCategories();
+  
+  let html = '<h2>✏️ Edit Row: ' + (row['Product Group'] || 'Row '+idx) + '</h2>';
+  
+  html += '<div class="form-row"><label class="form-label">Category</label>
+    <select class="form-select" id="re-cat">
+      ' + cats.map(c => '<option value="' + c + '" ' + (row._category===c?'selected':'') + '>' + c + '</option>').join('') + '
+    </select></div>';
+  
+  html += '<div class="form-row"><label class="form-label">Product Group</label>
+    <input class="form-input" id="re-pg" value="' + (row['Product Group']||'') + '"></div>';
+  
+  companies.forEach((co,i) => {
+    const id = 're-co-' + i;
+    html += '<div class="form-row"><label class="form-label">' + co.replace('\n','/') + '</label>
+      <textarea class="form-textarea" id="' + id + '" rows="2">' + (row[co]||'') + '</textarea></div>';
+  });
+  
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  [['WallabyPhenox presence','re-pres',['yes','no']],
+   ['market volume','re-vol',['large','medium','medium - low','small']],
+   ['strategic importance','re-imp',['high','medium','low']],
+   ['call to action','re-cta',['watch','facelift','no','divest','acquire']]].forEach(([label,id,opts]) => {
+    html += '<div class="form-row"><label class="form-label">' + label + '</label>
+      <select class="form-select" id="' + id + '">
+        ' + opts.map(o => '<option value="' + o + '" ' + ((row[label]||'').toLowerCase()===o?'selected':'') + '>' + o + '</option>').join('') + '
+      </select></div>';
+  });
+  html += '</div>';
+  
+  html += '<div class="modal-actions">
+    <button class="btn btn-danger btn-sm" onclick="deleteRow(' + idx + ')">Delete Row</button>
+    <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+    <button class="btn btn-primary" onclick="saveRow(' + idx + ')">Save Row</button>
+  </div>';
+  
+  document.getElementById('modal-content').innerHTML = html;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function saveRow(idx) {
+  const companies = ['WallabyPhenox','Medtronic','Stryker','Microvention/\nTerumo','Cerenovus','Balt','Penumbra','Acandis','other'];
+  const newCat = document.getElementById('re-cat').value;
+  state.portfolio[idx]._category = newCat;
+  state.portfolio[idx]['NV Market coverage'] = state.portfolio[idx]['NV Market coverage'] ? newCat : null;
+  state.portfolio[idx]['Product Group'] = document.getElementById('re-pg').value;
+  companies.forEach((co,i) => {
+    const val = document.getElementById('re-co-' + i).value.trim();
+    state.portfolio[idx][co] = val || null;
+  });
+  state.portfolio[idx]['WallabyPhenox presence'] = document.getElementById('re-pres').value;
+  state.portfolio[idx]['market volume'] = document.getElementById('re-vol').value;
+  state.portfolio[idx]['strategic importance'] = document.getElementById('re-imp').value;
+  state.portfolio[idx]['call to action'] = document.getElementById('re-cta').value;
+  changedRows.add(idx);
+  closeModal();
+  renderPortfolio();
+}
+
+function deleteRow(idx) {
+  if (!confirm('Delete this row?')) return;
+  state.portfolio.splice(idx, 1);
+  changedRows.delete(idx);
+  closeModal();
+  renderPortfolio();
+}
+
+// ---- ADD ROW ----
+function showAddRowModal(idx) {
+  const cats = getCategories();
+  const companies = ['WallabyPhenox','Medtronic','Stryker','Microvention/\nTerumo','Cerenovus','Balt','Penumbra','Acandis','other'];
+  
+  const html = '<h2>➕ Add New Product Group Row</h2>
+    <div class="form-row"><label class="form-label">Category</label>
+      <select class="form-select" id="add-cat">
+        ' + cats.map(c => '<option value="' + c + '">' + c + '</option>').join('') + '
+        <option value="__new__">+ New Category</option>
+      </select></div>
+    <div class="form-row" id="new-cat-row" style="display:none"><label class="form-label">New Category Name</label>
+      <input class="form-input" id="add-new-cat" placeholder="Category name"></div>
+    <div class="form-row"><label class="form-label">Product Group Name</label>
+      <input class="form-input" id="add-pg" placeholder="e.g. Flow Diverters"></div>
+    ' + companies.map((co,i) => '<div class="form-row"><label class="form-label">' + co.replace('\n','/') + '</label>
+      <textarea class="form-textarea" id="add-co-' + i + '" rows="2" placeholder="Products (one per line)"></textarea></div>').join('') + '
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      ' + [['WallabyPhenox presence','add-pres',['yes','no']],['market volume','add-vol',['large','medium','small']],['strategic importance','add-imp',['high','medium','low']],['call to action','add-cta',['watch','facelift','no']]].map(
+    ([label,id,opts]) => '<div class="form-row"><label class="form-label">' + label + '</label>
+      <select class="form-select" id="' + id + '">' + opts.map(o=>'<option>'+o+'</option>').join('') + '</select></div>').join('') + '
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="addRow()">Add Row</button>
+    </div>';
+  
+  document.getElementById('modal-content').innerHTML = html;
+  document.getElementById('modal-overlay').classList.add('open');
+  document.getElementById('add-cat').addEventListener('change', function() {
+    document.getElementById('new-cat-row').style.display = this.value === '__new__' ? 'block' : 'none';
+  });
+}
+
+function addRow() {
+  const companies = ['WallabyPhenox','Medtronic','Stryker','Microvention/\nTerumo','Cerenovus','Balt','Penumbra','Acandis','other'];
+  let cat = document.getElementById('add-cat').value;
+  if (cat === '__new__') cat = document.getElementById('add-new-cat').value.trim();
+  const newRow = {
+    'NV Market coverage': null,
+    'Product Group': document.getElementById('add-pg').value,
+    '_category': cat,
+    'WallabyPhenox presence': document.getElementById('add-pres').value,
+    'market volume': document.getElementById('add-vol').value,
+    'strategic importance': document.getElementById('add-imp').value,
+    'call to action': document.getElementById('add-cta').value,
+  };
+  companies.forEach((co,i) => {
+    newRow[co] = document.getElementById('add-co-' + i).value.trim() || null;
+  });
+  // Insert after last row in the same category
+  let insertAt = state.portfolio.length;
+  for (let i = state.portfolio.length-1; i >= 0; i--) {
+    if (state.portfolio[i]._category === cat) { insertAt = i+1; break; }
+  }
+  state.portfolio.splice(insertAt, 0, newRow);
+  closeModal();
+  renderPortfolio();
+}
+
+// ---- CN BRANDS ----
+function renderCN() {
+  const search = document.getElementById('search-cn')?.value?.toLowerCase() || '';
+  const cnCols = ['NV Market coverage','Product Group','Microport','Heartcare','TJWY','JSSK','ACHEVA','Tonbridge','AccuMedical','SinoMed','Salubris','Kai Medical','Skynor','ZENITH'];
+  
+  document.getElementById('cn-header').innerHTML = cnCols.map(c => '<th>' + c.replace('\n','/') + '</th>').join('') + '<th></th>';
+  
+  let lastCat = null;
+  let html = '';
+  
+  state.cn_brands.forEach((row, idx) => {
+    if (search) {
+      const hay = Object.values(row).join(' ').toLowerCase();
+      if (!hay.includes(search)) return;
+    }
+    const cat = row['NV Market coverage'];
+    if (cat && cat !== lastCat) {
+      lastCat = cat;
+      html += '<tr class="cat-header"><td colspan="' + (cnCols.length+1) + '">' + cat + '</td></tr>';
+    }
+    html += '<tr>';
+    cnCols.forEach(col => {
+      if (col === 'NV Market coverage') { html += '<td></td>'; return; }
+      const val = row[col];
+      html += '<td class="editable" onclick="openCNEdit(' + idx + ',\'' + col.replace(/'/g,"\\'") + '\')">' + cellDisplay(val) + '</td>';
+    });
+    html += '<td><button class="btn btn-ghost btn-sm" onclick="deleteCNRow(' + idx + ')">✕</button></td></tr>';
+  });
+  
+  document.getElementById('cn-body').innerHTML = html;
+}
+
+function openCNEdit(idx, field) {
+  editTarget = {type:'cn', idx, field};
+  document.getElementById('edit-title').textContent = 'Edit: ' + field;
+  document.getElementById('edit-label').textContent = (state.cn_brands[idx]['Product Group'] || '') + ' · ' + field;
+  document.getElementById('edit-textarea').value = state.cn_brands[idx][field] || '';
+  document.getElementById('edit-overlay').classList.add('open');
+}
+
+function deleteCNRow(idx) {
+  if (!confirm('Delete this row?')) return;
+  state.cn_brands.splice(idx, 1);
+  renderCN();
+}
+
+// ---- PIPELINE ----
+function renderPipeline() {
+  const projects = state.new_products;
+  document.getElementById('pipeline-count').textContent = projects.length;
+  
+  let html = '';
+  projects.forEach((p, idx) => {
+    html += '<div class="product-item ' + (p._added?'added':'') + '">
+      <div style="color:var(--muted);font-size:20px;padding-top:2px">💡</div>
+      <div class="product-content">
+        <div class="product-name">' + (p.Project || '—') + '</div>
+        <div class="product-meta">
+          ' + (p.Partner ? '<span style="background:rgba(59,130,246,0.15);color:var(--accent);padding:1px 7px;border-radius:10px;font-size:11px;margin-right:6px">' + p.Partner + '</span>' : '') + '
+          ' + (p.Physician ? '<span style="color:var(--muted);font-size:11px">👤 ' + p.Physician + '</span>' : '') + '
+        </div>
+        ' + (p.Description ? '<div style="color:var(--muted);font-size:12px;margin-top:4px">' + p.Description + '</div>' : '') + '
+        ' + (p.ToDos ? '<div style="color:var(--yellow);font-size:11px;margin-top:4px">→ ' + p.ToDos + '</div>' : '') + '
+        ' + (p.Keywords ? '<div style="margin-top:6px">' + p.Keywords.split(',').map(k=>'<span style="background:var(--surface2);color:var(--muted);padding:1px 6px;border-radius:4px;font-size:10px;margin-right:4px">' + k.trim() + '</span>').join('') + '</div>' : '') + '
+      </div>
+      <div class="product-actions">
+        <button class="btn btn-ghost btn-sm" onclick="editPipeline(' + idx + ')">Edit</button>
+        <button class="btn btn-danger btn-sm" onclick="deletePipeline(' + idx + ')">✕</button>
+      </div>
+    </div>';
+  });
+  
+  if (!html) html = '<div class="empty">No pipeline projects yet. Add one!</div>';
+  document.getElementById('pipeline-list').innerHTML = html;
+}
+
+function showAddPipelineModal(idx) {
+  const isEdit = idx !== undefined;
+  const p = isEdit ? state.new_products[idx] : {};
+  
+  const html = '<h2>' + (isEdit?'Edit':'Add') + ' Pipeline Project</h2>
+    <div class="form-row"><label class="form-label">Project Name</label><input class="form-input" id="pl-proj" value="' + (p.Project||'') + '"></div>
+    <div class="form-row"><label class="form-label">Description</label><textarea class="form-textarea" id="pl-desc">' + (p.Description||'') + '</textarea></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div class="form-row"><label class="form-label">Partner</label><input class="form-input" id="pl-partner" value="' + (p.Partner||'') + '"></div>
+      <div class="form-row"><label class="form-label">Priority</label><select class="form-select" id="pl-prio">
+        <option value="">-</option><option value="1" ' + (p.Priority==1?'selected':'') + '>1 - Urgent</option>
+        <option value="2" ' + (p.Priority==2?'selected':'') + '>2 - High</option><option value="3" ' + (p.Priority==3?'selected':'') + '>3 - Medium</option>
+      </select></div>
+    </div>
+    <div class="form-row"><label class="form-label">Physician(s)</label><input class="form-input" id="pl-phys" value="' + (p.Physician||'') + '"></div>
+    <div class="form-row"><label class="form-label">Keywords</label><input class="form-input" id="pl-kw" value="' + (p.Keywords||'') + '"></div>
+    <div class="form-row"><label class="form-label">To Dos</label><input class="form-input" id="pl-todo" value="' + (p.ToDos||'') + '"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="' + (isEdit?'savePipeline(' + idx + ')':'addPipeline()') + '">Save</button>
+    </div>';
+  
+  document.getElementById('modal-content').innerHTML = html;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function editPipeline(idx) { showAddPipelineModal(idx); }
+
+function addPipeline() {
+  state.new_products.push({
+    Priority: document.getElementById('pl-prio').value || null,
+    Project: document.getElementById('pl-proj').value,
+    Description: document.getElementById('pl-desc').value || null,
+    Partner: document.getElementById('pl-partner').value || null,
+    Physician: document.getElementById('pl-phys').value || null,
+    Keywords: document.getElementById('pl-kw').value || null,
+    ToDos: document.getElementById('pl-todo').value || null,
+    Literature: null,
+    _added: true
+  });
+  closeModal();
+  renderPipeline();
+}
+
+function savePipeline(idx) {
+  state.new_products[idx] = {
+    ...state.new_products[idx],
+    Priority: document.getElementById('pl-prio').value || null,
+    Project: document.getElementById('pl-proj').value,
+    Description: document.getElementById('pl-desc').value || null,
+    Partner: document.getElementById('pl-partner').value || null,
+    Physician: document.getElementById('pl-phys').value || null,
+    Keywords: document.getElementById('pl-kw').value || null,
+    ToDos: document.getElementById('pl-todo').value || null,
+  };
+  closeModal();
+  renderPipeline();
+}
+
+function deletePipeline(idx) {
+  if (!confirm('Remove this project?')) return;
+  state.new_products.splice(idx, 1);
+  renderPipeline();
+}
+
+// ---- TODOS ----
+function renderTodos() {
+  let html = '';
+  state.todos.forEach((t, idx) => {
+    html += '<div class="product-item ' + (t._added?'added':'') + '">
+      <div style="font-size:20px">' + (t.Type?.includes('process')?'⚙️':t.Type?.includes('intel')?'🔍':'📌') + '</div>
+      <div class="product-content">
+        <div class="product-name">' + (t.Description || '—') + '</div>
+        <div style="margin-top:4px">
+          ' + (t.Type?'<span style="background:var(--surface2);color:var(--muted);padding:1px 8px;border-radius:10px;font-size:11px">' + t.Type + '</span>':'') + '
+          ' + (t.Keywords?'<span style="color:var(--muted);font-size:11px;margin-left:8px">' + t.Keywords + '</span>':'') + '
+        </div>
+      </div>
+      <div class="product-actions">
+        <button class="btn btn-ghost btn-sm" onclick="editTodo(' + idx + ')">Edit</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteTodo(' + idx + ')">✕</button>
+      </div>
+    </div>';
+  });
+  if (!html) html = '<div class="empty">No to-dos yet.</div>';
+  document.getElementById('todos-list').innerHTML = html;
+}
+
+function showAddTodoModal(idx) {
+  const isEdit = idx !== undefined;
+  const t = isEdit ? state.todos[idx] : {};
+  const html = '<h2>' + (isEdit?'Edit':'Add') + ' To Do</h2>
+    <div class="form-row"><label class="form-label">Description</label><textarea class="form-textarea" id="td-desc">' + (t.Description||'') + '</textarea></div>
+    <div class="form-row"><label class="form-label">Type</label>
+      <select class="form-select" id="td-type">
+        <option value="process" ' + (t.Type==='process'?'selected':'') + '>process</option>
+        <option value="intel" ' + (t.Type==='intel'?'selected':'') + '>intel</option>
+        <option value="process/budget" ' + (t.Type==='process/budget'?'selected':'') + '>process/budget</option>
+        <option value="other">other</option>
+      </select></div>
+    <div class="form-row"><label class="form-label">Keywords</label><input class="form-input" id="td-kw" value="' + (t.Keywords||'') + '"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="' + (isEdit?'saveTodo(' + idx + ')':'addTodo()') + '">Save</button>
+    </div>';
+  document.getElementById('modal-content').innerHTML = html;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function editTodo(idx) { showAddTodoModal(idx); }
+function addTodo() {
+  state.todos.push({ Priority:null, Project:null, Type: document.getElementById('td-type').value, Description: document.getElementById('td-desc').value, Keywords: document.getElementById('td-kw').value||null, _added:true });
+  closeModal(); renderTodos();
+}
+function saveTodo(idx) {
+  state.todos[idx] = { ...state.todos[idx], Type: document.getElementById('td-type').value, Description: document.getElementById('td-desc').value, Keywords: document.getElementById('td-kw').value||null };
+  closeModal(); renderTodos();
+}
+function deleteTodo(idx) { if(!confirm('Delete?'))return; state.todos.splice(idx,1); renderTodos(); }
+
+// ---- QUESTIONS ----
+function renderQuestions() {
+  const qs = state.questions.filter(q => q['Unnamed: 4']); // skip header row
+  let html = '';
+  qs.forEach((q, idx) => {
+    const realIdx = state.questions.indexOf(q);
+    html += '<tr>
+      <td><span class="badge" style="background:rgba(59,130,246,0.1);color:var(--accent)">' + (q['Upstream Marketing questions']||'—') + '</span></td>
+      <td>' + (q['Unnamed: 1']||'—') + '</td>
+      <td>' + (q['Unnamed: 2']||'—') + '</td>
+      <td>' + (q['Unnamed: 3']||'—') + '</td>
+      <td>' + (q['Unnamed: 4']||'—') + '</td>
+      <td><button class="btn btn-danger btn-sm" onclick="deleteQuestion(' + realIdx + ')">✕</button></td>
+    </tr>';
+  });
+  document.getElementById('questions-body').innerHTML = html;
+}
+
+function showAddQuestionModal() {
+  const html = '<h2>Add Question</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div class="form-row"><label class="form-label">Stroke Type</label><input class="form-input" id="q-type" placeholder="HS, AIS..."></div>
+      <div class="form-row"><label class="form-label">Disease State</label><input class="form-input" id="q-ds" placeholder="Aneurysm Treatment..."></div>
+      <div class="form-row"><label class="form-label">Treatment Approach</label><input class="form-input" id="q-tx" placeholder="Stenting, PTA..."></div>
+      <div class="form-row"><label class="form-label">Topic</label><input class="form-input" id="q-topic"></div>
+    </div>
+    <div class="form-row"><label class="form-label">Question</label><textarea class="form-textarea" id="q-q"></textarea></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="addQuestion()">Add</button>
+    </div>';
+  document.getElementById('modal-content').innerHTML = html;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function addQuestion() {
+  state.questions.push({
+    'Upstream Marketing questions': document.getElementById('q-type').value,
+    'Unnamed: 1': document.getElementById('q-ds').value,
+    'Unnamed: 2': document.getElementById('q-tx').value,
+    'Unnamed: 3': document.getElementById('q-topic').value,
+    'Unnamed: 4': document.getElementById('q-q').value,
+    _added: true
+  });
+  closeModal(); renderQuestions();
+}
+
+function deleteQuestion(idx) { if(!confirm('Delete?'))return; state.questions.splice(idx,1); renderQuestions(); }
+
+// ---- MODAL ----
+function closeModal() { document.getElementById('modal-overlay').classList.remove('open'); }
+
+// ---- EXPORT ----
+function exportJSON() {
+  // Build clean export matching original structure
+  const cleanPortfolio = state.portfolio.map(row => {
+    const clean = {...row};
+    delete clean._category;
+    delete clean._added;
+    return clean;
+  });
+  
+  const exportData = {
+    portfolio_analysis: {
+      "Tabelle1 (2)": cleanPortfolio,
+      "Sheet1": [],
+      "CN local Brands": state.cn_brands.map(r => { const c={...r}; delete c._added; return c; })
+    },
+    root_products: {},
+    upstream_marketing: {
+      "new products": state.new_products.map(p => { const c={...p}; delete c._added; return c; }),
+      "To Dos": state.todos.map(t => { const c={...t}; delete c._added; return c; }),
+      "questions": state.questions.map(q => { const c={...q}; delete c._added; return c; })
+    }
+  };
+  
+  const blob = new Blob([JSON.stringify(exportData, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'product-portfolio-updated.json';
+  a.click();
+  
+  // Reset change tracking
+  changedRows.clear();
+  renderPortfolio();
+  
+  // Flash feedback
+  const btn = event.currentTarget;
+  const orig = btn.textContent;
+  btn.textContent = '✅ Downloaded!';
+  setTimeout(() => btn.textContent = orig, 2000);
+}
+
+// ---- INIT ----
+// Show empty state on load
+initFilters();
+renderOverview();
+renderPortfolio();
+renderCN();
+renderPipeline();
+renderTodos();
+renderQuestions();
+</script>
+</body>
+</html>

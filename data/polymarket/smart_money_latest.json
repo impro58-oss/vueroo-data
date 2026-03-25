@@ -1,49 +1,39 @@
 ﻿{
     "markets_with_movement":  2,
-    "timestamp":  "2026-03-25 19:00:30",
-    "scan_file":  "markets-2026-03-25-1900.json",
+    "timestamp":  "2026-03-25 22:00:27",
+    "scan_file":  "markets-2026-03-25-2200.json",
     "top_opportunities":  {
-                              "Market":  "Google (GOOGL) closes above ___ on March 25?",
-                              "Category":  "finance",
-                              "Url":  "https://polymarket.com/event/googl-close-above-on-march-25-2026",
-                              "PreviousOdds":  70,
-                              "CurrentOdds":  42,
-                              "Movement":  -28,
-                              "MovementPercent":  28,
-                              "Direction":  "DOWN",
-                              "Confidence":  "HIGH",
-                              "PreviousTime":  "2026-03-25 18:00:42",
-                              "CurrentTime":  "2026-03-25 19:00:30"
+
                           },
     "total_markets":  120,
     "threshold":  5,
     "movements":  [
                       {
-                          "Market":  "Miami Open: Elena Rybakina vs Jessica Pegula",
-                          "Category":  "sports",
-                          "Url":  "https://polymarket.com/event/wta-rybakin-pegula-2026-03-25",
-                          "PreviousOdds":  64,
-                          "CurrentOdds":  84,
-                          "Movement":  20,
-                          "MovementPercent":  20,
-                          "Direction":  "UP",
-                          "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-25 18:00:42",
-                          "CurrentTime":  "2026-03-25 19:00:30"
+                          "Market":  "Highest temperature in Taipei on March 27?",
+                          "Category":  "trending",
+                          "Url":  "https://polymarket.com/event/highest-temperature-in-taipei-on-march-27-2026",
+                          "PreviousOdds":  38,
+                          "CurrentOdds":  29,
+                          "Movement":  -9,
+                          "MovementPercent":  9,
+                          "Direction":  "DOWN",
+                          "Confidence":  "MEDIUM",
+                          "PreviousTime":  "2026-03-25 21:00:28",
+                          "CurrentTime":  "2026-03-25 22:00:27"
                       },
                       {
-                          "Market":  "Google (GOOGL) closes above ___ on March 25?",
-                          "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/googl-close-above-on-march-25-2026",
-                          "PreviousOdds":  70,
-                          "CurrentOdds":  42,
-                          "Movement":  -28,
-                          "MovementPercent":  28,
-                          "Direction":  "DOWN",
-                          "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-25 18:00:42",
-                          "CurrentTime":  "2026-03-25 19:00:30"
+                          "Market":  "Will JD Vance talk to Iranian negotiators by...?",
+                          "Category":  "entertainment",
+                          "Url":  "https://polymarket.com/event/will-jd-vance-talk-to-iranian-negotiators-by",
+                          "PreviousOdds":  17,
+                          "CurrentOdds":  22,
+                          "Movement":  5,
+                          "MovementPercent":  5,
+                          "Direction":  "UP",
+                          "Confidence":  "LOW",
+                          "PreviousTime":  "2026-03-25 20:00:41",
+                          "CurrentTime":  "2026-03-25 22:00:27"
                       }
                   ],
-    "smart_money_alerts":  1
+    "smart_money_alerts":  0
 }

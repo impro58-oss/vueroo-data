@@ -1,47 +1,60 @@
 ﻿{
-    "timestamp":  "2026-03-25 19:00:30",
+    "timestamp":  "2026-03-25 21:00:28",
     "all_movements":  [
                           {
-                              "Market":  "Miami Open: Elena Rybakina vs Jessica Pegula",
-                              "Category":  "sports",
-                              "Url":  "https://polymarket.com/event/wta-rybakin-pegula-2026-03-25",
-                              "PreviousOdds":  64,
-                              "CurrentOdds":  84,
-                              "Movement":  20,
-                              "MovementPercent":  20,
-                              "Direction":  "UP",
-                              "Confidence":  "HIGH",
-                              "PreviousTime":  "2026-03-25 18:00:42",
-                              "CurrentTime":  "2026-03-25 19:00:30"
+                              "Market":  "Robinhood (HOOD) Up or Down on March 25?",
+                              "Category":  "trending",
+                              "Url":  "https://polymarket.com/event/hood-up-or-down-on-march-25-2026",
+                              "PreviousOdds":  99,
+                              "CurrentOdds":  94,
+                              "Movement":  -5,
+                              "MovementPercent":  5,
+                              "Direction":  "DOWN",
+                              "Confidence":  "LOW",
+                              "PreviousTime":  "2026-03-25 20:00:41",
+                              "CurrentTime":  "2026-03-25 21:00:28"
                           },
                           {
-                              "Market":  "Google (GOOGL) closes above ___ on March 25?",
+                              "Market":  "Highest temperature in Taipei on March 27?",
+                              "Category":  "trending",
+                              "Url":  "https://polymarket.com/event/highest-temperature-in-taipei-on-march-27-2026",
+                              "PreviousOdds":  27,
+                              "CurrentOdds":  38,
+                              "Movement":  11,
+                              "MovementPercent":  11,
+                              "Direction":  "UP",
+                              "Confidence":  "HIGH",
+                              "PreviousTime":  "2026-03-25 20:00:41",
+                              "CurrentTime":  "2026-03-25 21:00:28"
+                          },
+                          {
+                              "Market":  "Will Amazon (AMZN) close above ___ end of March?",
                               "Category":  "finance",
-                              "Url":  "https://polymarket.com/event/googl-close-above-on-march-25-2026",
-                              "PreviousOdds":  70,
-                              "CurrentOdds":  42,
-                              "Movement":  -28,
-                              "MovementPercent":  28,
+                              "Url":  "https://polymarket.com/event/amzn-above-in-march-2026",
+                              "PreviousOdds":  98,
+                              "CurrentOdds":  84,
+                              "Movement":  -14,
+                              "MovementPercent":  14,
                               "Direction":  "DOWN",
                               "Confidence":  "HIGH",
-                              "PreviousTime":  "2026-03-25 18:00:42",
-                              "CurrentTime":  "2026-03-25 19:00:30"
+                              "PreviousTime":  "2026-03-25 20:00:41",
+                              "CurrentTime":  "2026-03-25 21:00:28"
                           }
                       ],
-    "total_movements":  2,
+    "total_movements":  3,
     "smart_money_alerts":  [
                                {
-                                   "Market":  "Google (GOOGL) closes above ___ on March 25?",
-                                   "Category":  "finance",
-                                   "Url":  "https://polymarket.com/event/googl-close-above-on-march-25-2026",
-                                   "PreviousOdds":  70,
-                                   "CurrentOdds":  42,
-                                   "Movement":  -28,
-                                   "MovementPercent":  28,
-                                   "Direction":  "DOWN",
+                                   "Market":  "Highest temperature in Taipei on March 27?",
+                                   "Category":  "trending",
+                                   "Url":  "https://polymarket.com/event/highest-temperature-in-taipei-on-march-27-2026",
+                                   "PreviousOdds":  27,
+                                   "CurrentOdds":  38,
+                                   "Movement":  11,
+                                   "MovementPercent":  11,
+                                   "Direction":  "UP",
                                    "Confidence":  "HIGH",
-                                   "PreviousTime":  "2026-03-25 18:00:42",
-                                   "CurrentTime":  "2026-03-25 19:00:30"
+                                   "PreviousTime":  "2026-03-25 20:00:41",
+                                   "CurrentTime":  "2026-03-25 21:00:28"
                                }
                            ]
 }

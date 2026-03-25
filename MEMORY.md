@@ -89,6 +89,103 @@ Full spec saved at: `~/.openclaw/workspace/docs/vueroo-portal-architecture.md`
 
 ---
 
+## 🏥 NEUROVUE DASHBOARD - ERROR LOG & FIXES
+**Date:** 2026-03-25
+
+### Architecture Rule: Single Source of Truth (GitHub Only)
+**CRITICAL:** All JSON data must load from `rooquest1` GitHub repo via raw URLs. No embedded static data, no local Vercel files.
+
+### Data Sources (All from GitHub)
+| Data Type | GitHub Path |
+|-----------|-------------|
+| Epidemiology | `medtech-intelligence/dashboard/data/data.json` |
+| Revenue | `medtech-intelligence/dashboard/data/revenue-historical.json` |
+| Competitors | `medtech-intelligence/dashboard/data/competitor-intelligence.json` |
+| Portfolio Matrix | `medtech-intelligence/dashboard/data/portfolio-matrix.json` |
+
+### Common Errors & Fixes
+
+#### Error 1: "Cannot set properties of null (setting 'innerHTML')"
+**Cause:** Removed DOM elements still referenced by old code
+**Fix:** 
+- Check `getElementById()` returns non-null before setting properties
+- Remove obsolete function calls from `DOMContentLoaded`
+- Ensure element IDs match between HTML and JavaScript
+
+#### Error 2: "Revenue data not found" / 404 on JSON files
+**Cause:** Relative paths (`./data`) don't work in production
+**Fix:** 
+- Use absolute paths: `/medtech/data/filename.json`
+- Ensure files are committed to GitHub (private repo blocks raw URLs)
+- Check GitHub Pages settings if using Pages deployment
+
+#### Error 3: Portfolio Matrix shows no data
+**Cause:** JSON structure mismatch between data and code
+**Fix:**
+- Verify data format: `{ companies: [...] }` not flat array
+- Check accessor functions match JSON structure
+- Use `getPMData()` wrapper that validates data exists
+
+#### Error 4: Research Hub links 404
+**Cause:** Relative paths break when deployed
+**Fix:**
+- Change `href="page.html"` to `href="/medtech/page.html"`
+- Verify all linked files exist in `public/medtech/` directory
+- Check Vercel deployment includes all static files
+
+#### Error 5: "Failed to Load Data" - CORS or network
+**Cause:** Mixing GitHub sources (private vs public repos)
+**Fix:**
+- All data must come from `rooquest1` (public) not `vueroo-portal` (private)
+- Use raw GitHub URLs: `https://raw.githubusercontent.com/impro58-oss/rooquest1/master/...`
+- Add `?t=` + Date.now() to bypass cache
+
+#### Error 6: Navigation between sections fails
+**Cause:** Section IDs don't match nav-item onclick handlers
+**Fix:**
+- Ensure `section id="section-xxx"` matches `onclick="showSection('xxx')"`
+- Check `nav-item` ID matches: `nav-xxx`
+- Verify `showSection()` handles missing sections gracefully
+
+### Navigation Pattern (Cross-Page)
+```javascript
+// From standalone page (e.g., global-heatmap.html)
+// Link back to specific NeuroVue section:
+<a href="/medtech/index.html" 
+   onclick="sessionStorage.setItem('navigateToSection', 'revenue');">
+   Go to Revenue</a>
+
+// In index.html initialization:
+if (sessionStorage.getItem('navigateToSection')) {
+    const section = sessionStorage.getItem('navigateToSection');
+    sessionStorage.removeItem('navigateToSection');
+    showSection(section);
+}
+```
+
+### File Structure (Vercel Deployment)
+```
+public/medtech/
+├── index.html (main NeuroVue dashboard)
+├── global-heatmap-v3b.html
+├── competitive-intelligence.html
+├── competition-optic.html
+├── platform-analysis.html
+├── platform-naming.html
+├── due-diligence-template.html
+└── data/ (NO LONGER USED - all data from GitHub)
+    └── revenue-historical.json (moved to rooquest1)
+```
+
+### Key Lessons
+1. **Never embed static data** - always fetch from GitHub JSON
+2. **Use absolute paths** (`/medtech/...`) not relative paths
+3. **Validate data exists** before accessing properties
+4. **Check console errors** - most issues show line numbers
+5. **Hard refresh after deploy** - browser cache causes stale code
+
+---
+
 ## 🤖 AUTONOMOUS THINKING PROTOCOL
 
 **Activated:** March 23, 2026  
