@@ -107,7 +107,7 @@
       "microvention": { "products": ["HyperForm", "HyperGlide"], "strength": "high", "coverage": "complete" },
       "jnj": { "products": [], "strength": "none", "coverage": "none" },
       "balt": { "products": ["Eclipse", "Copernic"], "strength": "low", "coverage": "partial" },
-      "phenox": { "products": ["pNEURO"], "strength": "low", "coverage": "partial" },
+      "phenox": { "products": [], "strength": "none", "coverage": "none" },
       "rapid": { "products": [], "strength": "none", "coverage": "none" },
       "acandis": { "products": [], "strength": "none", "coverage": "none" },
       "imperative": { "products": [], "strength": "none", "coverage": "none" }

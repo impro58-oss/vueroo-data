@@ -153,7 +153,7 @@
         "aspiration": ["pHLO", "Esperance", "pHLO DAC"],
         "intrasaccular": ["pCONUS", "pCONUS2"],
         "retrievers": ["pRESET", "pRESET LT", "pRESET LUX"],
-        "balloons": ["pNEURO"],
+        "balloons": [],
         "radial": [],
         "pump": false,
         "bgc": ["Paragon BGC"],
