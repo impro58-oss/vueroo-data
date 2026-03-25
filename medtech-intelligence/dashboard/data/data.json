@@ -103,7 +103,7 @@
       "population": 1412000000,
       "2024": {
         "annualStrokes": {
-          "value": 3300000,
+          "value": 9999999,
           "source": "Zhao et al., 2022 - China Stroke Statistics 2019",
           "quality": "journal"
         },
