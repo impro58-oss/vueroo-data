@@ -147,19 +147,23 @@
       "threatLevel": "medium",
       "portfolio": "growing",
       "products": {
-        "coils": ["Avenir"],
-        "flowDiverters": ["p64", "p48"],
-        "stents": [],
-        "aspiration": ["pRESET"],
-        "intrasaccular": ["pCONUS2"],
-        "retrievers": ["pREMIUM"],
+        "coils": ["Avenir", "PICO"],
+        "flowDiverters": ["p64", "p48", "p64 MW HPC"],
+        "stents": ["pEGASUS"],
+        "aspiration": ["pHLO", "Esperance", "pHLO DAC"],
+        "intrasaccular": ["pCONUS", "pCONUS2"],
+        "retrievers": ["pRESET", "pRESET LT", "pRESET LUX"],
         "balloons": ["pNEURO"],
         "radial": [],
-        "pump": false
+        "pump": false,
+        "bgc": ["Paragon BGC"],
+        "microcatheters": ["pNOVUS 17", "pNOVUS 21FD"],
+        "neurosheath": ["Pilote NeuroSheath"],
+        "pta": ["pITA"]
       },
-      "strengths": ["pCONUS2 unique bifurcation device", "Growing portfolio", "Strong in Europe", "Innovative pipeline"],
-      "gaps": ["No stent platform", "Limited radial access", "US market presence building", "No aspiration pump"],
-      "notes": "Portfolio expanding with Avenir coils, p64/p48 flow diverters, and pCONUS2 intrasaccular platform. Strong growth trajectory."
+      "strengths": ["pCONUS2 unique bifurcation device", "Complete hemorrhagic portfolio", "Growing AIS portfolio", "HPC coating technology", "Strong in Europe", "Innovative pipeline"],
+      "gaps": ["No stent platform (pEGASUS limited)", "Limited radial access", "No aspiration pump", "US market presence building"],
+      "notes": "Portfolio expanding across hemorrhagic (Avenir coils, p64/p48 FD, pCONUS2), AIS (pRESET SR, pHLO/Esperance aspiration), and access (pNOVUS microcatheters, Pilote sheath). Strong growth trajectory with HPC coating differentiation."
     },
     {
       "id": "rapid",
