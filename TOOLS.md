@@ -43,10 +43,53 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 | File | Location | Purpose |
 |------|----------|---------|
+| **epidemiology-comprehensive.json** | `medtech-intelligence/dashboard/data/` | **NEW** Combined stroke data (summary + detailed) |
 | **revenue-summary.json** | `medtech-intelligence/dashboard/data/` | Company revenue, growth rates, market cap |
 | **competitor-intelligence.json** | `medtech-intelligence/dashboard/data/` | Competitor profiles, products, gaps |
 | **portfolio-matrix.json** | `medtech-intelligence/dashboard/data/` | Product portfolio coverage matrix |
 | **product-portfolio-data.json** | `medtech-intelligence/dashboard/data/` | Detailed product listings by category |
+
+### Epidemiology Data — COMBINED FORMAT
+
+**Structure:**
+```json
+{
+  "global": {
+    "summary": {          // Quick stats for dashboard hero
+      "2024": { annualStrokes, strokeDeaths, prevalence, treatmentAccess },
+      "2030": { projectedStrokes }
+    },
+    "detailed": {       // Deep dive data
+      "dalyLost": 143000000,
+      "treatmentTechnologies": { stentRetrievers, aspiration, combined },
+      "riskFactors": { hypertension, diabetes, af, obesity }
+    }
+  },
+  "regions": {
+    "china": {
+      "flag": "🇨🇳",
+      "population2024": 1412000000,
+      "summary": { "2024": {...}, "2030": {...} },
+      "detailed": {        // Rich data where available
+        "2020Data": { treatment: { ivTpa, mechanicalThrombectomy }, economicBurden },
+        "keyInsights": [...]
+      }
+    },
+    "india": { "status": "pending_extraction" }  // Marker for gaps
+  }
+}
+```
+
+**Display Strategy:**
+| View | Data Source | Use |
+|------|-------------|-----|
+| **Summary** | `global.summary` + `regions.*.summary` | Dashboard hero, quick stats |
+| **Detailed** | `global.detailed` + `regions.*.detailed` | Deep dive, treatment outcomes, economics |
+| **Pending regions** | `status: "pending_extraction"` | Flagged as "Data extraction in progress" |
+
+**Used by:**
+- `index.html` Epidemiology section — Summary/Detailed toggle
+- `global-heatmap-v3b.html` — Global stroke burden visualization
 
 ### GitHub Repository
 - **Repo:** `impro58-oss/rooquest1`
