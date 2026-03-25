@@ -1,0 +1,116 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-03-25",
+  "companies": [
+    {
+      "id": "stryker",
+      "name": "Stryker",
+      "ticker": "SYK",
+      "country": "USA",
+      "annualRevenue": 20500000000,
+      "neurovascularRevenue": 1450000000,
+      "revenueGrowth": 8.5,
+      "neurovascularGrowth": 9.1,
+      "marketCap": 85000000000
+    },
+    {
+      "id": "medtronic",
+      "name": "Medtronic",
+      "ticker": "MDT",
+      "country": "Ireland",
+      "annualRevenue": 32300000000,
+      "neurovascularRevenue": 1380000000,
+      "revenueGrowth": 3.2,
+      "neurovascularGrowth": 8.8,
+      "marketCap": 120000000000
+    },
+    {
+      "id": "jnj",
+      "name": "Johnson & Johnson",
+      "ticker": "JNJ",
+      "country": "USA",
+      "annualRevenue": 95000000000,
+      "neurovascularRevenue": 680000000,
+      "revenueGrowth": 6.8,
+      "neurovascularGrowth": 9.2,
+      "marketCap": 380000000000
+    },
+    {
+      "id": "microvention",
+      "name": "Microvention/Terumo",
+      "ticker": "TER",
+      "country": "Japan",
+      "annualRevenue": 6200000000,
+      "neurovascularRevenue": 520000000,
+      "revenueGrowth": 12.1,
+      "neurovascularGrowth": 10.0,
+      "marketCap": 45000000000
+    },
+    {
+      "id": "penumbra",
+      "name": "Penumbra",
+      "ticker": "PEN",
+      "country": "USA",
+      "annualRevenue": 1180000000,
+      "neurovascularRevenue": 380000000,
+      "revenueGrowth": 24.8,
+      "neurovascularGrowth": 11.2,
+      "marketCap": 5200000000
+    },
+    {
+      "id": "balt",
+      "name": "Balt",
+      "ticker": "Private",
+      "country": "France",
+      "annualRevenue": 180000000,
+      "neurovascularRevenue": 180000000,
+      "revenueGrowth": 15.3,
+      "neurovascularGrowth": 9.5,
+      "marketCap": 0
+    },
+    {
+      "id": "phenox",
+      "name": "Wallaby Phenox",
+      "ticker": "Private",
+      "country": "Germany",
+      "annualRevenue": 95000000,
+      "neurovascularRevenue": 95000000,
+      "revenueGrowth": 35.2,
+      "neurovascularGrowth": 12.7,
+      "marketCap": 0
+    },
+    {
+      "id": "acandis",
+      "name": "Acandis",
+      "ticker": "Private",
+      "country": "Germany",
+      "annualRevenue": 45000000,
+      "neurovascularRevenue": 45000000,
+      "revenueGrowth": 12.0,
+      "neurovascularGrowth": 8.5,
+      "marketCap": 0
+    },
+    {
+      "id": "rapid",
+      "name": "Rapid Medical",
+      "ticker": "Private",
+      "country": "Israel",
+      "annualRevenue": 35000000,
+      "neurovascularRevenue": 35000000,
+      "revenueGrowth": 45.0,
+      "neurovascularGrowth": 15.0,
+      "marketCap": 0
+    },
+    {
+      "id": "imperative",
+      "name": "Imperative Care",
+      "ticker": "Private",
+      "country": "USA",
+      "annualRevenue": 65000000,
+      "neurovascularRevenue": 65000000,
+      "revenueGrowth": 60.0,
+      "neurovascularGrowth": 18.0,
+      "marketCap": 0
+    }
+  ]
+}
