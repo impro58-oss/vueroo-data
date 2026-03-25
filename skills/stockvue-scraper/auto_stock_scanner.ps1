@@ -18,10 +18,10 @@ function Write-Log {
 
 Write-Log "=== Starting StockVue Scan ==="
 
-# Run scraper
-Write-Log "Scraping Yahoo Finance markets..."
+# Run scraper (v2 with Playwright)
+Write-Log "Scraping Yahoo Finance markets (Playwright v2)..."
 try {
-    $Output = & $PythonPath yahoo_finance_scraper.py 2>&1
+    $Output = & $PythonPath yahoo_finance_scraper_v2.py 2>&1
     $Output | ForEach-Object { Write-Log $_ }
     
     # Commit to GitHub
