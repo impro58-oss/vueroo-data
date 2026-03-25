@@ -1,7 +1,7 @@
 ﻿{
-    "scan_time":  "2026-03-25 19:00:30",
+    "scan_time":  "2026-03-25 17:00:33",
     "total_opportunities":  31,
-    "timestamp":  "2026-03-25-1900",
+    "timestamp":  "2026-03-25-1700",
     "hot_bets":  [
                      {
                          "Odds":  "50%",
@@ -85,31 +85,22 @@
                          "OddsNum":  51
                      },
                      {
-                         "Odds":  "52%",
+                         "Odds":  "53%",
                          "Category":  "TRENDING",
                          "EdgeType":  "CLOSE_CALL",
                          "Url":  "https://polymarket.com/event/hood-up-or-down-on-march-26-2026",
                          "Name":  "Robinhood (HOOD) Up or Down on March 26?",
                          "Outcome":  "Check market for outcomes",
-                         "OddsNum":  52
-                     },
-                     {
-                         "Odds":  "53%",
-                         "Category":  "ENTERTAINMENT",
-                         "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/what-will-bitcoin-outperform-in-april",
-                         "Name":  "What will Bitcoin outperform in April?",
-                         "Outcome":  "Specific date/time outcome",
                          "OddsNum":  53
                      },
                      {
-                         "Odds":  "55%",
-                         "Category":  "FINANCE",
+                         "Odds":  "56%",
+                         "Category":  "SPORTS",
                          "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/googl-above-in-march-2026",
-                         "Name":  "Will Google (GOOGL) close above ___ end of March?",
-                         "Outcome":  "YES: Google (GOOGL) close above ___ end of March",
-                         "OddsNum":  55
+                         "Url":  "https://polymarket.com/event/nba-okc-bos-2026-03-25",
+                         "Name":  "Thunder vs. Celtics",
+                         "Outcome":  "Likely: Celtics wins or specific outcome",
+                         "OddsNum":  56
                      },
                      {
                          "Odds":  "56%",
@@ -122,11 +113,20 @@
                      },
                      {
                          "Odds":  "56%",
-                         "Category":  "SPORTS",
+                         "Category":  "ENTERTAINMENT",
                          "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/nba-okc-bos-2026-03-25",
-                         "Name":  "Thunder vs. Celtics",
-                         "Outcome":  "Likely: Celtics wins or specific outcome",
+                         "Url":  "https://polymarket.com/event/what-will-bitcoin-outperform-in-april",
+                         "Name":  "What will Bitcoin outperform in April?",
+                         "Outcome":  "Specific date/time outcome",
+                         "OddsNum":  56
+                     },
+                     {
+                         "Odds":  "56%",
+                         "Category":  "FINANCE",
+                         "EdgeType":  "CLOSE_CALL",
+                         "Url":  "https://polymarket.com/event/googl-above-in-march-2026",
+                         "Name":  "Will Google (GOOGL) close above ___ end of March?",
+                         "Outcome":  "YES: Google (GOOGL) close above ___ end of March",
                          "OddsNum":  56
                      },
                      {
@@ -148,22 +148,13 @@
                          "OddsNum":  43
                      },
                      {
-                         "Odds":  "42%",
-                         "Category":  "FINANCE",
-                         "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/googl-close-above-on-march-25-2026",
-                         "Name":  "Google (GOOGL) closes above ___ on March 25?",
-                         "Outcome":  "Check market for outcomes",
-                         "OddsNum":  42
-                     },
-                     {
-                         "Odds":  "59%",
+                         "Odds":  "58%",
                          "Category":  "SPORTS",
                          "EdgeType":  "CLOSE_CALL",
                          "Url":  "https://polymarket.com/event/nba-atl-det-2026-03-25",
                          "Name":  "Hawks vs. Pistons",
                          "Outcome":  "Likely: Pistons wins or specific outcome",
-                         "OddsNum":  59
+                         "OddsNum":  58
                      },
                      {
                          "Odds":  "40%",
@@ -229,6 +220,15 @@
                          "OddsNum":  69
                      },
                      {
+                         "Odds":  "71%",
+                         "Category":  "FINANCE",
+                         "EdgeType":  "FAVORITE",
+                         "Url":  "https://polymarket.com/event/googl-close-above-on-march-25-2026",
+                         "Name":  "Google (GOOGL) closes above ___ on March 25?",
+                         "Outcome":  "Check market for outcomes",
+                         "OddsNum":  71
+                     },
+                     {
                          "Odds":  "27%",
                          "Category":  "TRENDING",
                          "EdgeType":  "UNDERDOG",
@@ -238,13 +238,13 @@
                          "OddsNum":  27
                      },
                      {
-                         "Odds":  "24%",
+                         "Odds":  "23%",
                          "Category":  "CRYPTO",
                          "EdgeType":  "UNDERDOG",
                          "Url":  "https://polymarket.com/event/top-performing-crypto-for-the-week-of-march-23",
                          "Name":  "Top performing crypto for the week of March 23?",
                          "Outcome":  "Check market for outcomes",
-                         "OddsNum":  24
+                         "OddsNum":  23
                      },
                      {
                          "Odds":  "23%",
@@ -256,22 +256,13 @@
                          "OddsNum":  23
                      },
                      {
-                         "Odds":  "23%",
-                         "Category":  "FINANCE",
-                         "EdgeType":  "UNDERDOG",
-                         "Url":  "https://polymarket.com/event/googl-week-march-27-2026",
-                         "Name":  "Google (GOOGL) closes week of Mar 23 at ___?",
-                         "Outcome":  "Check market for outcomes",
-                         "OddsNum":  23
-                     },
-                     {
-                         "Odds":  "21%",
+                         "Odds":  "22%",
                          "Category":  "ENTERTAINMENT",
                          "EdgeType":  "UNDERDOG",
                          "Url":  "https://polymarket.com/event/play-quarterly-earnings-nongaap-eps-03-31-2026-0pt46",
                          "Name":  "Will Dave and Buster\u0027s Entertainment (PLAY) beat quarterly earnings?",
                          "Outcome":  "YES: Dave and Buster\u0027s Entertainment (PLAY) beat quarterly earnings",
-                         "OddsNum":  21
+                         "OddsNum":  22
                      },
                      {
                          "Odds":  "20%",
@@ -280,6 +271,15 @@
                          "Url":  "https://polymarket.com/event/will-monero-hit-1000-in-2026",
                          "Name":  "Will Monero hit $1000 in 2026?",
                          "Outcome":  "YES: Monero hit $1000 in 2026",
+                         "OddsNum":  20
+                     },
+                     {
+                         "Odds":  "20%",
+                         "Category":  "ENTERTAINMENT",
+                         "EdgeType":  "UNDERDOG",
+                         "Url":  "https://polymarket.com/event/will-jd-vance-talk-to-iranian-negotiators-by",
+                         "Name":  "Will JD Vance talk to Iranian negotiators by...?",
+                         "Outcome":  "YES: JD Vance talk to Iranian negotiators by...",
                          "OddsNum":  20
                      }
                  ]

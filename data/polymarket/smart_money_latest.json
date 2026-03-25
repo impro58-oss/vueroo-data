@@ -1,14 +1,49 @@
 ﻿{
-    "markets_with_movement":  0,
-    "timestamp":  "2026-03-25 08:00:23",
-    "scan_file":  "markets-2026-03-25-0800.json",
+    "markets_with_movement":  2,
+    "timestamp":  "2026-03-25 19:00:30",
+    "scan_file":  "markets-2026-03-25-1900.json",
     "top_opportunities":  {
-
+                              "Market":  "Google (GOOGL) closes above ___ on March 25?",
+                              "Category":  "finance",
+                              "Url":  "https://polymarket.com/event/googl-close-above-on-march-25-2026",
+                              "PreviousOdds":  70,
+                              "CurrentOdds":  42,
+                              "Movement":  -28,
+                              "MovementPercent":  28,
+                              "Direction":  "DOWN",
+                              "Confidence":  "HIGH",
+                              "PreviousTime":  "2026-03-25 18:00:42",
+                              "CurrentTime":  "2026-03-25 19:00:30"
                           },
     "total_markets":  120,
     "threshold":  5,
     "movements":  [
-
+                      {
+                          "Market":  "Miami Open: Elena Rybakina vs Jessica Pegula",
+                          "Category":  "sports",
+                          "Url":  "https://polymarket.com/event/wta-rybakin-pegula-2026-03-25",
+                          "PreviousOdds":  64,
+                          "CurrentOdds":  84,
+                          "Movement":  20,
+                          "MovementPercent":  20,
+                          "Direction":  "UP",
+                          "Confidence":  "HIGH",
+                          "PreviousTime":  "2026-03-25 18:00:42",
+                          "CurrentTime":  "2026-03-25 19:00:30"
+                      },
+                      {
+                          "Market":  "Google (GOOGL) closes above ___ on March 25?",
+                          "Category":  "finance",
+                          "Url":  "https://polymarket.com/event/googl-close-above-on-march-25-2026",
+                          "PreviousOdds":  70,
+                          "CurrentOdds":  42,
+                          "Movement":  -28,
+                          "MovementPercent":  28,
+                          "Direction":  "DOWN",
+                          "Confidence":  "HIGH",
+                          "PreviousTime":  "2026-03-25 18:00:42",
+                          "CurrentTime":  "2026-03-25 19:00:30"
+                      }
                   ],
-    "smart_money_alerts":  0
+    "smart_money_alerts":  1
 }

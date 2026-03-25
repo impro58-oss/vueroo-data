@@ -205,6 +205,8 @@ git push
 | Heatmap 404 | File path wrong | Verify `src="global-heatmap-v3b.html"` | 2026-03-25 |
 | **NeuroVueDataLoader is not defined** | Optional chaining (`?.`) not supported in some browsers | Replace `obj?.prop` with `obj && obj.prop` | **2026-03-25** |
 | **data-loader.js 404** | Vercel not serving the file | Embedded all data/functions directly in HTML | **2026-03-25** |
+| **JSON changes not appearing** | GitHub raw file CDN caching (5 min) | Wait for cache expiration OR use `?t=Date.now()` cache-buster | **2026-03-25** |
+| **JSON changes not appearing** | GitHub raw file CDN caching (5 min) | Wait for cache expiration OR use `?t=Date.now()` cache-buster | **2026-03-25** |
 
 ---
 
@@ -303,5 +305,24 @@ public/neuro/
 
 ---
 
-*Last Updated: 2026-03-25 14:58 UTC by Lumina*
+### Fix #6: JavaScript Syntax Error - Duplicate Code Block
+**Date:** 2026-03-25 18:35
+**Problem:** Console error: `Uncaught SyntaxError: Unexpected token '}'` at line 552
+**Root Cause:** Earlier edit left duplicate code block when modifying the `loadNeuroVueData` function — old lines weren't fully replaced
+**Solution:** Removed duplicate `revenue: FALLBACK_REVENUE, portfolio: null` block
+**Code:**
+```javascript
+// REMOVED duplicate:
+                            revenue: FALLBACK_REVENUE,
+                            portfolio: null
+                        };
+                    });
+            },
+// Kept only one instance of this block
+```
+**Prevention:** Always verify edits with full context search (Ctrl+F) for duplicate function definitions
+
+---
+
+*Last Updated: 2026-03-25 18:58 UTC by Lumina*
 *Dashboard Live: https://www.vueroo.com/medtech/*
