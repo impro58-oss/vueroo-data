@@ -1,0 +1,183 @@
+// This Pine Script™ code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © TrojanLogic4H Strategy for TradingView
+// CS RSI MTF + RtoM Channels
+// Timeframe: 4H recommended
+
+//@version=5
+indicator("TrojanLogic4H - CS RSI MTF + RtoM Channels", overlay=true, max_lines_count=500, max_boxes_count=500)
+
+// ═════════════════════════════════════════════════════════════════════════════
+// INPUTS
+// ═════════════════════════════════════════════════════════════════════════════
+
+// RSI Settings
+rsiLength = input.int(14, title="RSI Length", minval=1, maxval=50)
+rsiSmoothing = input.int(1, title="RSI Smoothing", minval=1, maxval=10)
+rsiOverbought = input.int(70, title="RSI Overbought Level", minval=50, maxval=90)
+rsiOversold = input.int(30, title="RSI Oversold Level", minval=10, maxval=50)
+
+// Multi-Timeframe Settings
+mtfTimeframe = input.timeframe("240", title="Higher Timeframe (4H)")
+useMTF = input.bool(true, title="Use Multi-Timeframe RSI")
+
+// RtoM Channel Settings
+channelLength = input.int(20, title="Channel Lookback Length", minval=10, maxval=100)
+channelDeviation = input.float(2.0, title="Channel Standard Deviation", minval=0.5, maxval=4.0, step=0.1)
+showChannelFill = input.bool(true, title="Show Channel Fill")
+
+// Signal Thresholds
+longThreshold = input.int(65, title="Long Signal Threshold", minval=50, maxval=90)
+shortThreshold = input.int(35, title="Short Signal Threshold", minval=10, maxval=50)
+considerationThreshold = input.int(45, title="Consideration Threshold", minval=30, maxval=60)
+
+// Visual Settings
+showSignals = input.bool(true, title="Show Buy/Sell Signals")
+showRSI = input.bool(false, title="Show RSI in Separate Panel")
+colorSignals = input.bool(true, title="Color-Coded Signals")
+
+// ═════════════════════════════════════════════════════════════════════════════
+// RSI CALCULATIONS (CS RSI - Custom Smoothed)
+// ═════════════════════════════════════════════════════════════════════════════
+
+// Standard RSI
+rsiValue = ta.rsi(close, rsiLength)
+
+// Smoothed RSI (CS RSI)
+csRsi = ta.sma(rsiValue, rsiSmoothing)
+
+// Multi-Timeframe RSI
+mtfRsi = request.security(syminfo.tickerid, mtfTimeframe, ta.rsi(close, rsiLength), lookahead=barmerge.lookahead_on)
+mtfCsRsi = request.security(syminfo.tickerid, mtfTimeframe, ta.sma(ta.rsi(close, rsiLength), rsiSmoothing), lookahead=barmerge.lookahead_on)
+
+// Combined RSI Signal (Primary timeframe weighted 60%, MTF weighted 40%)
+combinedRsi = useMTF ? (csRsi * 0.6 + mtfCsRsi * 0.4) : csRsi
+
+// ═════════════════════════════════════════════════════════════════════════════
+// RtoM CHANNELS (Regression to Mean)
+// ═════════════════════════════════════════════════════════════════════════════
+
+// Linear Regression
+lrSlope = ta.linreg(close, channelLength, 0) - ta.linreg(close, channelLength, channelLength - 1)
+lrIntercept = ta.linreg(close, channelLength, 0) - lrSlope * (channelLength - 1)
+
+// Calculate standard deviation
+stdDev = ta.stdev(close, channelLength) * channelDeviation
+
+// Channel bands
+upperChannel = lrIntercept + stdDev
+lowerChannel = lrIntercept - stdDev
+middleChannel = lrIntercept
+
+// ═════════════════════════════════════════════════════════════════════════════
+// SIGNAL GENERATION
+// ═════════════════════════════════════════════════════════════════════════════
+
+// Long Conditions
+longConditionRsi = combinedRsi > longThreshold and combinedRsi[1] <= longThreshold
+longConditionChannel = close < lowerChannel and close > lowerChannel[1]
+longCondition = longConditionRsi and close < middleChannel
+
+// Short Conditions
+shortConditionRsi = combinedRsi < shortThreshold and combinedRsi[1] >= shortThreshold
+shortConditionChannel = close > upperChannel and close < upperChannel[1]
+shortCondition = shortConditionRsi and close > middleChannel
+
+// Consideration Zone (45-65 RSI)
+inConsiderationZone = combinedRsi > considerationThreshold and combinedRsi < longThreshold
+
+// ═════════════════════════════════════════════════════════════════════════════
+// PLOTTING
+// ═════════════════════════════════════════════════════════════════════════════
+
+// RtoM Channels
+upperLine = plot(upperChannel, title="Upper Channel", color=color.new(color.red, 50), linewidth=1)
+middleLine = plot(middleChannel, title="Middle Line", color=color.new(color.gray, 50), linewidth=1, style=plot.style_line)
+lowerLine = plot(lowerChannel, title="Lower Channel", color=color.new(color.green, 50), linewidth=1)
+
+// Channel Fill
+fill(upperLine, lowerLine, title="Channel Range", color=showChannelFill ? color.new(color.gray, 90) : na)
+
+// Price Color Based on Position
+priceColor = close > upperChannel ? color.red : close < lowerChannel ? color.green : color.gray
+barcolor(colorSignals ? priceColor : na)
+
+// ═════════════════════════════════════════════════════════════════════════════
+// SIGNALS
+// ═════════════════════════════════════════════════════════════════════════════
+
+// Long Signal (Green Triangle)
+plotshape(showSignals and longCondition, title="Long Signal", location=location.belowbar, 
+     color=color.new(color.green, 0), style=shape.triangleup, size=size.normal, text="LONG", 
+     textcolor=color.new(color.white, 0))
+
+// Short Signal (Red Triangle)
+plotshape(showSignals and shortCondition, title="Short Signal", location=location.abovebar, 
+     color=color.new(color.red, 0), style=shape.triangledown, size=size.normal, text="SHORT", 
+     textcolor=color.new(color.white, 0))
+
+// Consideration Zone (Yellow Diamond)
+plotshape(showSignals and inConsiderationZone and not longCondition and not shortCondition, 
+     title="Consideration", location=location.belowbar, color=color.new(color.yellow, 0), 
+     style=shape.diamond, size=size.small, text="45%+", textcolor=color.new(color.black, 0))
+
+// ═════════════════════════════════════════════════════════════════════════════
+// ALERTS
+// ═════════════════════════════════════════════════════════════════════════════
+
+alertcondition(longCondition, title="Long Signal", message="TrojanLogic4H: LONG signal on {{ticker}} - RSI {{combinedRsi}}")
+alertcondition(shortCondition, title="Short Signal", message="TrojanLogic4H: SHORT signal on {{ticker}} - RSI {{combinedRsi}}")
+alertcondition(inConsiderationZone, title="Consideration Zone", message="TrojanLogic4H: {{ticker}} in consideration zone (45%+) - RSI {{combinedRsi}}")
+
+// ═════════════════════════════════════════════════════════════════════════════
+// INFO PANEL
+// ═════════════════════════════════════════════════════════════════════════════
+
+// Create table for RSI values
+if showRSI
+    var table infoTable = table.new(position.top_right, 2, 5, bgcolor=color.new(color.black, 80), border_width=1)
+    
+    table.cell(infoTable, 0, 0, "CS RSI", text_color=color.white, text_size=size.small)
+    table.cell(infoTable, 1, 0, str.tostring(combinedRsi, "#.##"), text_color=combinedRsi > 70 ? color.red : combinedRsi < 30 ? color.green : color.white, text_size=size.small)
+    
+    table.cell(infoTable, 0, 1, "Signal", text_color=color.white, text_size=size.small)
+    table.cell(infoTable, 1, 1, longCondition ? "LONG" : shortCondition ? "SHORT" : inConsiderationZone ? "45%+" : "HOLD", 
+         text_color=longCondition ? color.green : shortCondition ? color.red : inConsiderationZone ? color.yellow : color.gray, text_size=size.small)
+    
+    table.cell(infoTable, 0, 2, "Position", text_color=color.white, text_size=size.small)
+    table.cell(infoTable, 1, 2, close > upperChannel ? "Above Upper" : close < lowerChannel ? "Below Lower" : "In Channel", 
+         text_color=close > upperChannel ? color.red : close < lowerChannel ? color.green : color.gray, text_size=size.small)
+
+// ═════════════════════════════════════════════════════════════════════════════
+// STRATEGY COMMENTARY (For Backtesting)
+// ═════════════════════════════════════════════════════════════════════════════
+
+// Uncomment below for strategy backtesting (not available in free TradingView)
+// strategy("TrojanLogic4H Strategy", overlay=true, initial_capital=10000, default_qty_type=strategy.percent_of_equity, default_qty_value=5)
+// 
+// if longCondition
+//     strategy.entry("Long", strategy.long, comment="LONG")
+// 
+// if shortCondition
+//     strategy.entry("Short", strategy.short, comment="SHORT")
+// 
+// // Exit conditions
+// if close > upperChannel and strategy.position_size > 0
+//     strategy.close("Long", comment="Take Profit")
+// 
+// if close < lowerChannel and strategy.position_size < 0
+//     strategy.close("Short", comment="Take Profit")
+
+// ═════════════════════════════════════════════════════════════════════════════
+// TOOLTIP / HELP
+// ═════════════════════════════════════════════════════════════════════════════
+
+// Trading Rules:
+// 1. LONG: RSI crosses above 65 + price below middle channel (mean reversion)
+// 2. SHORT: RSI crosses below 35 + price above middle channel (mean reversion)
+// 3. 45%+ CONSIDERATION: RSI 45-65, monitor for breakout
+// 4. Risk Management: Max 5% per trade, core holdings only
+// 5. Timeframe: 4H recommended, D for confirmation
+// 
+// Core Holdings: BTC, ETH, SOL, XRP, DOGE, BNB, LINK
+// Strategy: CS RSI MTF + RtoM Channels
+// Signal Threshold: 45%+ consideration, 65%+ action

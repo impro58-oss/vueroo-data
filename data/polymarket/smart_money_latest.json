@@ -1,39 +1,14 @@
 ﻿{
-    "markets_with_movement":  2,
-    "timestamp":  "2026-03-24 20:00:28",
-    "scan_file":  "markets-2026-03-24-2000.json",
+    "markets_with_movement":  0,
+    "timestamp":  "2026-03-25 07:00:20",
+    "scan_file":  "markets-2026-03-25-0700.json",
     "top_opportunities":  {
 
                           },
     "total_markets":  120,
     "threshold":  5,
     "movements":  [
-                      {
-                          "Market":  "Will Google (GOOGL) close above ___ end of March?",
-                          "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/googl-above-in-march-2026",
-                          "PreviousOdds":  59,
-                          "CurrentOdds":  54,
-                          "Movement":  -5,
-                          "MovementPercent":  5,
-                          "Direction":  "DOWN",
-                          "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-24 19:00:29",
-                          "CurrentTime":  "2026-03-24 20:00:28"
-                      },
-                      {
-                          "Market":  "Google (GOOGL) closes week of Mar 23 at ___?",
-                          "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/googl-week-march-27-2026",
-                          "PreviousOdds":  20,
-                          "CurrentOdds":  27,
-                          "Movement":  7,
-                          "MovementPercent":  7,
-                          "Direction":  "UP",
-                          "Confidence":  "MEDIUM",
-                          "PreviousTime":  "2026-03-24 19:00:29",
-                          "CurrentTime":  "2026-03-24 20:00:28"
-                      }
+
                   ],
     "smart_money_alerts":  0
 }

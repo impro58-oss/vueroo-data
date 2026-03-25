@@ -1,47 +1,73 @@
 ﻿{
-    "timestamp":  "2026-03-24 17:00:28",
+    "timestamp":  "2026-03-25 04:00:25",
     "all_movements":  [
                           {
                               "Market":  "Highest temperature in Taipei on March 25?",
                               "Category":  "trending",
                               "Url":  "https://polymarket.com/event/highest-temperature-in-taipei-on-march-25-2026",
-                              "PreviousOdds":  38,
-                              "CurrentOdds":  45,
-                              "Movement":  7,
-                              "MovementPercent":  7,
+                              "PreviousOdds":  33,
+                              "CurrentOdds":  55,
+                              "Movement":  22,
+                              "MovementPercent":  22,
                               "Direction":  "UP",
-                              "Confidence":  "MEDIUM",
-                              "PreviousTime":  "2026-03-24 16:00:30",
-                              "CurrentTime":  "2026-03-24 17:00:28"
+                              "Confidence":  "HIGH",
+                              "PreviousTime":  "2026-03-25 03:00:20",
+                              "CurrentTime":  "2026-03-25 04:00:25"
                           },
                           {
-                              "Market":  "Will Google (GOOGL) close above ___ end of March?",
-                              "Category":  "finance",
-                              "Url":  "https://polymarket.com/event/googl-above-in-march-2026",
+                              "Market":  "Nuggets vs. Suns",
+                              "Category":  "sports",
+                              "Url":  "https://polymarket.com/event/nba-den-phx-2026-03-24",
                               "PreviousOdds":  69,
-                              "CurrentOdds":  64,
+                              "CurrentOdds":  61,
+                              "Movement":  -8,
+                              "MovementPercent":  8,
+                              "Direction":  "DOWN",
+                              "Confidence":  "MEDIUM",
+                              "PreviousTime":  "2026-03-25 03:00:20",
+                              "CurrentTime":  "2026-03-25 04:00:25"
+                          },
+                          {
+                              "Market":  "Google (GOOGL) closes above ___ on March 25?",
+                              "Category":  "finance",
+                              "Url":  "https://polymarket.com/event/googl-close-above-on-march-25-2026",
+                              "PreviousOdds":  68,
+                              "CurrentOdds":  63,
                               "Movement":  -5,
                               "MovementPercent":  5,
                               "Direction":  "DOWN",
                               "Confidence":  "LOW",
-                              "PreviousTime":  "2026-03-24 16:00:30",
-                              "CurrentTime":  "2026-03-24 17:00:28"
+                              "PreviousTime":  "2026-03-25 03:00:20",
+                              "CurrentTime":  "2026-03-25 04:00:25"
                           }
                       ],
-    "total_movements":  2,
+    "total_movements":  3,
     "smart_money_alerts":  [
                                {
                                    "Market":  "Highest temperature in Taipei on March 25?",
                                    "Category":  "trending",
                                    "Url":  "https://polymarket.com/event/highest-temperature-in-taipei-on-march-25-2026",
-                                   "PreviousOdds":  38,
-                                   "CurrentOdds":  45,
-                                   "Movement":  7,
-                                   "MovementPercent":  7,
+                                   "PreviousOdds":  33,
+                                   "CurrentOdds":  55,
+                                   "Movement":  22,
+                                   "MovementPercent":  22,
                                    "Direction":  "UP",
+                                   "Confidence":  "HIGH",
+                                   "PreviousTime":  "2026-03-25 03:00:20",
+                                   "CurrentTime":  "2026-03-25 04:00:25"
+                               },
+                               {
+                                   "Market":  "Nuggets vs. Suns",
+                                   "Category":  "sports",
+                                   "Url":  "https://polymarket.com/event/nba-den-phx-2026-03-24",
+                                   "PreviousOdds":  69,
+                                   "CurrentOdds":  61,
+                                   "Movement":  -8,
+                                   "MovementPercent":  8,
+                                   "Direction":  "DOWN",
                                    "Confidence":  "MEDIUM",
-                                   "PreviousTime":  "2026-03-24 16:00:30",
-                                   "CurrentTime":  "2026-03-24 17:00:28"
+                                   "PreviousTime":  "2026-03-25 03:00:20",
+                                   "CurrentTime":  "2026-03-25 04:00:25"
                                }
                            ]
 }
