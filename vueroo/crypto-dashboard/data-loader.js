@@ -119,18 +119,18 @@ function generatePotentialFilenames() {
 
 /**
  * Fallback: Use curated list of recent known files
- * Updated: 2026-03-24 - includes latest scans
+ * Updated: 2026-03-25 - includes latest scans
  */
 async function loadFallbackScan() {
     const fallbackFiles = [
-        'top_50_analysis_20260324_200035.json',  // Latest: March 24, 8:00 PM
+        'top_50_analysis_20260325_080031.json',  // Latest: March 25, 8:00 AM
+        'top_50_analysis_20260325_040031.json',  // March 25, 4:00 AM
+        'top_50_analysis_20260325_000035.json',  // March 25, 12:00 AM
+        'top_50_analysis_20260324_200035.json',  // March 24, 8:00 PM
         'top_50_analysis_20260324_160033.json',  // March 24, 4:00 PM
         'top_50_analysis_20260324_120036.json',  // March 24, 12:00 PM
         'top_50_analysis_20260324_080028.json',  // March 24, 8:00 AM
-        'top_50_analysis_20260324_040031.json',  // March 24, 4:00 AM
-        'top_50_analysis_20260324_000037.json',  // March 24, 12:00 AM
-        'top_50_analysis_20260323_200041.json',  // March 23, 8:00 PM
-        'top_50_analysis_20260322_205143.json'   // March 22, 8:51 PM
+        'top_50_analysis_20260324_040031.json'   // March 24, 4:00 AM
     ];
     
     for (const filename of fallbackFiles) {
