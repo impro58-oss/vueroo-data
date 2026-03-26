@@ -1,0 +1,15 @@
+{
+  "silo": "stockvue",
+  "timestamp": "2026-03-26T19:17:47.800525",
+  "status": "warning",
+  "freshness_ok": false,
+  "schema_ok": true,
+  "completeness_ok": true,
+  "github_sync_ok": true,
+  "message": "Data is 11.2h old (threshold: 6h); Schema validation passed; Completeness check passed",
+  "details": {
+    "freshness": "Data is 11.2h old (threshold: 6h)",
+    "schema": "Schema validation passed",
+    "completeness": "Completeness check passed"
+  }
+}

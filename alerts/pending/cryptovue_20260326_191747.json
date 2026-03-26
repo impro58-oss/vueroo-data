@@ -1,0 +1,15 @@
+{
+  "silo": "cryptovue",
+  "timestamp": "2026-03-26T19:17:47.327146",
+  "status": "error",
+  "freshness_ok": true,
+  "schema_ok": false,
+  "completeness_ok": true,
+  "github_sync_ok": true,
+  "message": "Data is fresh (3.3h old); Missing required fields: ['total_cryptos']; Completeness check passed",
+  "details": {
+    "freshness": "Data is fresh (3.3h old)",
+    "schema": "Missing required fields: ['total_cryptos']",
+    "completeness": "Completeness check passed"
+  }
+}

@@ -1,0 +1,365 @@
+[19:30:56] ============================================================
+[19:30:56] LOTTERYVUE FULL HISTORICAL SCRAPE
+[19:30:56] ============================================================
+[19:30:56] Started: 2026-03-26 19:30:56.130616
+[19:30:56] 
+[19:30:56] PHASE 1: Irish Lotto (1988-2026)
+[19:30:56] ------------------------------------------------------------
+[19:30:56] Scraping irish for year 2026...
+[19:30:56] Found 52 draw links for 2026
+[19:31:26] Scraped 0 draws from 2026
+[19:31:26] Year 2026 complete. Total Irish draws: 0
+[19:31:26] Elapsed: 0.5 minutes
+[19:31:26] 
+[19:31:26] Scraping irish for year 2025...
+[19:31:26] Found 52 draw links for 2025
+[19:31:55] Scraped 0 draws from 2025
+[19:31:55] Year 2025 complete. Total Irish draws: 0
+[19:31:55] Elapsed: 1.0 minutes
+[19:31:55] 
+[19:31:55] Scraping irish for year 2024...
+[19:31:55] Found 52 draw links for 2024
+[19:32:24] Scraped 0 draws from 2024
+[19:32:24] Year 2024 complete. Total Irish draws: 0
+[19:32:24] Elapsed: 1.5 minutes
+[19:32:24] 
+[19:32:24] Scraping irish for year 2023...
+[19:32:24] Found 52 draw links for 2023
+[19:32:54] Scraped 0 draws from 2023
+[19:32:54] Year 2023 complete. Total Irish draws: 0
+[19:32:54] Elapsed: 2.0 minutes
+[19:32:54] 
+[19:32:54] Scraping irish for year 2022...
+[19:32:54] Found 52 draw links for 2022
+[19:33:23] Scraped 0 draws from 2022
+[19:33:23] Year 2022 complete. Total Irish draws: 0
+[19:33:23] Elapsed: 2.5 minutes
+[19:33:23] 
+[19:33:23] Scraping irish for year 2021...
+[19:33:23] Found 52 draw links for 2021
+[19:33:53] Scraped 0 draws from 2021
+[19:33:53] Year 2021 complete. Total Irish draws: 0
+[19:33:53] Elapsed: 2.9 minutes
+[19:33:53] 
+[19:33:53] Scraping irish for year 2020...
+[19:33:53] Found 52 draw links for 2020
+[19:34:22] Scraped 0 draws from 2020
+[19:34:22] Year 2020 complete. Total Irish draws: 0
+[19:34:22] Elapsed: 3.4 minutes
+[19:34:22] 
+[19:34:22] Scraping irish for year 2019...
+[19:34:22] Found 52 draw links for 2019
+[19:34:51] Scraped 0 draws from 2019
+[19:34:51] Year 2019 complete. Total Irish draws: 0
+[19:34:51] Elapsed: 3.9 minutes
+[19:34:51] 
+[19:34:51] Scraping irish for year 2018...
+[19:34:51] Found 52 draw links for 2018
+[19:35:21] Scraped 0 draws from 2018
+[19:35:21] Year 2018 complete. Total Irish draws: 0
+[19:35:21] Elapsed: 4.4 minutes
+[19:35:21] 
+[19:35:21] Scraping irish for year 2017...
+[19:35:21] Found 52 draw links for 2017
+[19:35:50] Scraped 0 draws from 2017
+[19:35:50] Year 2017 complete. Total Irish draws: 0
+[19:35:50] Elapsed: 4.9 minutes
+[19:35:50] 
+[19:35:50] Scraping irish for year 2016...
+[19:35:50] Found 52 draw links for 2016
+[19:36:20] Scraped 0 draws from 2016
+[19:36:20] Year 2016 complete. Total Irish draws: 0
+[19:36:20] Elapsed: 5.4 minutes
+[19:36:20] 
+[19:36:20] Scraping irish for year 2015...
+[19:36:20] Found 52 draw links for 2015
+[19:36:49] Scraped 0 draws from 2015
+[19:36:49] Year 2015 complete. Total Irish draws: 0
+[19:36:49] Elapsed: 5.9 minutes
+[19:36:49] 
+[19:36:49] Scraping irish for year 2014...
+[19:36:49] Found 52 draw links for 2014
+[19:37:19] Scraped 0 draws from 2014
+[19:37:19] Year 2014 complete. Total Irish draws: 0
+[19:37:19] Elapsed: 6.4 minutes
+[19:37:19] 
+[19:37:19] Scraping irish for year 2013...
+[19:37:19] Found 52 draw links for 2013
+[19:37:49] Scraped 0 draws from 2013
+[19:37:49] Year 2013 complete. Total Irish draws: 0
+[19:37:49] Elapsed: 6.9 minutes
+[19:37:49] 
+[19:37:49] Scraping irish for year 2012...
+[19:37:49] Found 52 draw links for 2012
+[19:38:19] Scraped 0 draws from 2012
+[19:38:19] Year 2012 complete. Total Irish draws: 0
+[19:38:19] Elapsed: 7.4 minutes
+[19:38:19] 
+[19:38:19] Scraping irish for year 2011...
+[19:38:19] Found 52 draw links for 2011
+[19:38:48] Scraped 0 draws from 2011
+[19:38:48] Year 2011 complete. Total Irish draws: 0
+[19:38:48] Elapsed: 7.9 minutes
+[19:38:48] 
+[19:38:48] Scraping irish for year 2010...
+[19:38:48] Found 52 draw links for 2010
+[19:39:18] Scraped 0 draws from 2010
+[19:39:18] Year 2010 complete. Total Irish draws: 0
+[19:39:18] Elapsed: 8.4 minutes
+[19:39:18] 
+[19:39:18] Scraping irish for year 2009...
+[19:39:18] Found 52 draw links for 2009
+[19:39:47] Scraped 0 draws from 2009
+[19:39:47] Year 2009 complete. Total Irish draws: 0
+[19:39:47] Elapsed: 8.9 minutes
+[19:39:47] 
+[19:39:47] Scraping irish for year 2008...
+[19:39:47] Found 52 draw links for 2008
+[19:40:16] Scraped 0 draws from 2008
+[19:40:16] Year 2008 complete. Total Irish draws: 0
+[19:40:16] Elapsed: 9.3 minutes
+[19:40:16] 
+[19:40:16] Scraping irish for year 2007...
+[19:40:16] Found 52 draw links for 2007
+[19:40:46] Scraped 0 draws from 2007
+[19:40:46] Year 2007 complete. Total Irish draws: 0
+[19:40:46] Elapsed: 9.8 minutes
+[19:40:46] 
+[19:40:46] Scraping irish for year 2006...
+[19:40:46] Found 52 draw links for 2006
+[19:41:15] Scraped 0 draws from 2006
+[19:41:15] Year 2006 complete. Total Irish draws: 0
+[19:41:15] Elapsed: 10.3 minutes
+[19:41:15] 
+[19:41:15] Scraping irish for year 2005...
+[19:41:15] Found 52 draw links for 2005
+[19:41:44] Scraped 0 draws from 2005
+[19:41:44] Year 2005 complete. Total Irish draws: 0
+[19:41:44] Elapsed: 10.8 minutes
+[19:41:44] 
+[19:41:44] Scraping irish for year 2004...
+[19:41:44] Found 52 draw links for 2004
+[19:42:14] Scraped 0 draws from 2004
+[19:42:14] Year 2004 complete. Total Irish draws: 0
+[19:42:14] Elapsed: 11.3 minutes
+[19:42:14] 
+[19:42:14] Scraping irish for year 2003...
+[19:42:14] Found 52 draw links for 2003
+[19:42:43] Scraped 0 draws from 2003
+[19:42:43] Year 2003 complete. Total Irish draws: 0
+[19:42:43] Elapsed: 11.8 minutes
+[19:42:43] 
+[19:42:43] Scraping irish for year 2002...
+[19:42:44] Found 52 draw links for 2002
+[19:43:13] Scraped 0 draws from 2002
+[19:43:13] Year 2002 complete. Total Irish draws: 0
+[19:43:13] Elapsed: 12.3 minutes
+[19:43:13] 
+[19:43:13] Scraping irish for year 2001...
+[19:43:13] Found 52 draw links for 2001
+[19:43:44] Scraped 0 draws from 2001
+[19:43:44] Year 2001 complete. Total Irish draws: 0
+[19:43:44] Elapsed: 12.8 minutes
+[19:43:44] 
+[19:43:44] Scraping irish for year 2000...
+[19:43:44] Found 52 draw links for 2000
+[19:44:14] Scraped 0 draws from 2000
+[19:44:14] Year 2000 complete. Total Irish draws: 0
+[19:44:14] Elapsed: 13.3 minutes
+[19:44:14] 
+[19:44:14] Scraping irish for year 1999...
+[19:44:14] Found 52 draw links for 1999
+[19:44:44] Scraped 0 draws from 1999
+[19:44:44] Year 1999 complete. Total Irish draws: 0
+[19:44:44] Elapsed: 13.8 minutes
+[19:44:44] 
+[19:44:44] Scraping irish for year 1998...
+[19:44:44] Found 52 draw links for 1998
+[19:45:13] Scraped 0 draws from 1998
+[19:45:13] Year 1998 complete. Total Irish draws: 0
+[19:45:13] Elapsed: 14.3 minutes
+[19:45:13] 
+[19:45:13] Scraping irish for year 1997...
+[19:45:13] Found 52 draw links for 1997
+[19:45:42] Scraped 0 draws from 1997
+[19:45:42] Year 1997 complete. Total Irish draws: 0
+[19:45:42] Elapsed: 14.8 minutes
+[19:45:42] 
+[19:45:42] Scraping irish for year 1996...
+[19:45:43] Found 52 draw links for 1996
+[19:46:12] Scraped 0 draws from 1996
+[19:46:12] Year 1996 complete. Total Irish draws: 0
+[19:46:12] Elapsed: 15.3 minutes
+[19:46:12] 
+[19:46:12] Scraping irish for year 1995...
+[19:46:12] Found 52 draw links for 1995
+[19:46:41] Scraped 0 draws from 1995
+[19:46:41] Year 1995 complete. Total Irish draws: 0
+[19:46:41] Elapsed: 15.8 minutes
+[19:46:41] 
+[19:46:41] Scraping irish for year 1994...
+[19:46:41] Found 52 draw links for 1994
+[19:47:10] Scraped 0 draws from 1994
+[19:47:10] Year 1994 complete. Total Irish draws: 0
+[19:47:10] Elapsed: 16.2 minutes
+[19:47:10] 
+[19:47:10] Scraping irish for year 1993...
+[19:47:10] Found 52 draw links for 1993
+[19:47:39] Scraped 0 draws from 1993
+[19:47:39] Year 1993 complete. Total Irish draws: 0
+[19:47:39] Elapsed: 16.7 minutes
+[19:47:39] 
+[19:47:39] Scraping irish for year 1992...
+[19:47:39] Found 52 draw links for 1992
+[19:48:08] Scraped 0 draws from 1992
+[19:48:08] Year 1992 complete. Total Irish draws: 0
+[19:48:08] Elapsed: 17.2 minutes
+[19:48:08] 
+[19:48:08] Scraping irish for year 1991...
+[19:48:08] Found 52 draw links for 1991
+[19:48:37] Scraped 0 draws from 1991
+[19:48:37] Year 1991 complete. Total Irish draws: 0
+[19:48:37] Elapsed: 17.7 minutes
+[19:48:37] 
+[19:48:37] Scraping irish for year 1990...
+[19:48:37] Found 52 draw links for 1990
+[19:49:07] Scraped 0 draws from 1990
+[19:49:07] Year 1990 complete. Total Irish draws: 0
+[19:49:07] Elapsed: 18.2 minutes
+[19:49:07] 
+[19:49:07] Scraping irish for year 1989...
+[19:49:07] Found 52 draw links for 1989
+[19:49:36] Scraped 0 draws from 1989
+[19:49:36] Year 1989 complete. Total Irish draws: 0
+[19:49:36] Elapsed: 18.7 minutes
+[19:49:36] 
+[19:49:36] Scraping irish for year 1988...
+[19:49:36] Found 52 draw links for 1988
+[19:50:05] Scraped 0 draws from 1988
+[19:50:05] Year 1988 complete. Total Irish draws: 0
+[19:50:05] Elapsed: 19.2 minutes
+[19:50:05] 
+[19:50:05] PHASE 2: EuroMillions (2004-2026)
+[19:50:05] ------------------------------------------------------------
+[19:50:05] Scraping euromillions for year 2026...
+[19:50:05] Found 51 draw links for 2026
+[19:50:33] Scraped 0 draws from 2026
+[19:50:33] Year 2026 complete. Total Euro draws: 0
+[19:50:33] Elapsed: 19.6 minutes
+[19:50:33] 
+[19:50:33] Scraping euromillions for year 2025...
+[19:50:33] Found 51 draw links for 2025
+[19:51:02] Scraped 0 draws from 2025
+[19:51:02] Year 2025 complete. Total Euro draws: 0
+[19:51:02] Elapsed: 20.1 minutes
+[19:51:02] 
+[19:51:02] Scraping euromillions for year 2024...
+[19:51:02] Found 51 draw links for 2024
+[19:51:30] Scraped 0 draws from 2024
+[19:51:30] Year 2024 complete. Total Euro draws: 0
+[19:51:30] Elapsed: 20.6 minutes
+[19:51:30] 
+[19:51:30] Scraping euromillions for year 2023...
+[19:51:30] Found 51 draw links for 2023
+[19:51:59] Scraped 0 draws from 2023
+[19:51:59] Year 2023 complete. Total Euro draws: 0
+[19:51:59] Elapsed: 21.0 minutes
+[19:51:59] 
+[19:51:59] Scraping euromillions for year 2022...
+[19:51:59] Found 51 draw links for 2022
+[19:52:27] Scraped 0 draws from 2022
+[19:52:27] Year 2022 complete. Total Euro draws: 0
+[19:52:27] Elapsed: 21.5 minutes
+[19:52:27] 
+[19:52:27] Scraping euromillions for year 2021...
+[19:52:27] Found 51 draw links for 2021
+[19:52:56] Scraped 0 draws from 2021
+[19:52:56] Year 2021 complete. Total Euro draws: 0
+[19:52:56] Elapsed: 22.0 minutes
+[19:52:56] 
+[19:52:56] Scraping euromillions for year 2020...
+[19:52:56] Found 51 draw links for 2020
+[19:53:24] Scraped 0 draws from 2020
+[19:53:24] Year 2020 complete. Total Euro draws: 0
+[19:53:24] Elapsed: 22.5 minutes
+[19:53:24] 
+[19:53:24] Scraping euromillions for year 2019...
+[19:53:24] Found 51 draw links for 2019
+[19:53:53] Scraped 0 draws from 2019
+[19:53:53] Year 2019 complete. Total Euro draws: 0
+[19:53:53] Elapsed: 23.0 minutes
+[19:53:53] 
+[19:53:53] Scraping euromillions for year 2018...
+[19:53:53] Found 51 draw links for 2018
+[19:54:22] Scraped 0 draws from 2018
+[19:54:22] Year 2018 complete. Total Euro draws: 0
+[19:54:22] Elapsed: 23.4 minutes
+[19:54:22] 
+[19:54:22] Scraping euromillions for year 2017...
+[19:54:22] Found 51 draw links for 2017
+[19:54:54] Scraped 0 draws from 2017
+[19:54:54] Year 2017 complete. Total Euro draws: 0
+[19:54:54] Elapsed: 24.0 minutes
+[19:54:54] 
+[19:54:54] Scraping euromillions for year 2016...
+[19:54:54] Found 51 draw links for 2016
+[19:55:22] Scraped 0 draws from 2016
+[19:55:22] Year 2016 complete. Total Euro draws: 0
+[19:55:22] Elapsed: 24.4 minutes
+[19:55:22] 
+[19:55:22] Scraping euromillions for year 2015...
+[19:55:22] Found 51 draw links for 2015
+[19:55:51] Scraped 0 draws from 2015
+[19:55:51] Year 2015 complete. Total Euro draws: 0
+[19:55:51] Elapsed: 24.9 minutes
+[19:55:51] 
+[19:55:51] Scraping euromillions for year 2014...
+[19:55:51] Found 51 draw links for 2014
+[19:56:20] Scraped 0 draws from 2014
+[19:56:20] Year 2014 complete. Total Euro draws: 0
+[19:56:20] Elapsed: 25.4 minutes
+[19:56:20] 
+[19:56:20] Scraping euromillions for year 2013...
+[19:56:20] Found 51 draw links for 2013
+[19:56:48] Scraped 0 draws from 2013
+[19:56:48] Year 2013 complete. Total Euro draws: 0
+[19:56:48] Elapsed: 25.9 minutes
+[19:56:48] 
+[19:56:48] Scraping euromillions for year 2012...
+[19:56:48] Found 51 draw links for 2012
+[19:57:17] Scraped 0 draws from 2012
+[19:57:17] Year 2012 complete. Total Euro draws: 0
+[19:57:17] Elapsed: 26.4 minutes
+[19:57:17] 
+[19:57:17] Scraping euromillions for year 2011...
+[19:57:17] Found 51 draw links for 2011
+[19:57:46] Scraped 0 draws from 2011
+[19:57:46] Year 2011 complete. Total Euro draws: 0
+[19:57:46] Elapsed: 26.8 minutes
+[19:57:46] 
+[19:57:46] Scraping euromillions for year 2010...
+[19:57:46] Found 51 draw links for 2010
+[19:58:14] Scraped 0 draws from 2010
+[19:58:14] Year 2010 complete. Total Euro draws: 0
+[19:58:14] Elapsed: 27.3 minutes
+[19:58:14] 
+[19:58:14] Scraping euromillions for year 2009...
+[19:58:14] Found 51 draw links for 2009
+[19:58:43] Scraped 0 draws from 2009
+[19:58:43] Year 2009 complete. Total Euro draws: 0
+[19:58:43] Elapsed: 27.8 minutes
+[19:58:43] 
+[19:58:43] Scraping euromillions for year 2008...
+[19:58:43] Found 51 draw links for 2008
+[19:59:11] Scraped 0 draws from 2008
+[19:59:11] Year 2008 complete. Total Euro draws: 0
+[19:59:11] Elapsed: 28.3 minutes
+[19:59:11] 
+[19:59:11] Scraping euromillions for year 2007...
+[19:59:11] Found 51 draw links for 2007
+[19:59:40] Scraped 0 draws from 2007
+[19:59:40] Year 2007 complete. Total Euro draws: 0
+[19:59:40] Elapsed: 28.7 minutes
+[19:59:40] 
+[19:59:40] Scraping euromillions for year 2006...
+[19:59:40] Found 51 draw links for 2006

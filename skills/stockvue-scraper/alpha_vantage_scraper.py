@@ -19,23 +19,23 @@ DATA_DIR = Path("C:\\Users\\impro\\.openclaw\\workspace\\data\\stocks")
 
 # Stock symbols to track (prioritized list - 12 symbols for 24 calls/day with RSI)
 # 25 calls/day = 12 symbols x 2 calls (price + RSI) = 24 calls, 1 spare
+# Updated 2026-03-26: Balanced portfolio - Tech, Healthcare, Energy, Materials, Broad Market
 DEFAULT_SYMBOLS = [
-    # Tech/Growth - High momentum
+    # Tech/Growth - AI & Semiconductors
     'NVDA',  # AI/GPU leader
     'TSLA',  # EV/Energy
     'AAPL',  # Consumer tech
     'AMD',   # Semiconductor
-    # Blue Chips - Stability
+    # Cloud/Big Tech
     'MSFT',  # Cloud/AI
-    'GOOGL', # Search/AI
     'AMZN',  # E-commerce/Cloud
-    'META',  # Social/VR
-    # Financial/Industrial
-    'JPM',   # Banking
-    'V',     # Payments
-    # Additional opportunities
-    'COIN',  # Crypto proxy
-    'PLTR',  # AI/Data
+    'META',  # Social/VR/Metaverse
+    'PLTR',  # AI/Data analytics
+    # Defensive/Sectors
+    'JNJ',   # Healthcare/pharma dividend
+    'SLB',   # Energy/oilfield services
+    'RGLD',  # Gold royalty - recession hedge
+    'VUAG',  # S&P 500 ETF - broad exposure
 ]
 
 

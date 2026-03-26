@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "game": "EuroMillions",
+    "start_date": "2004-02-13",
+    "format": "5/50 + 2/12 Lucky Stars",
+    "draw_days": "Tuesday, Friday",
+    "last_updated": "2026-03-26T19:25:27.781173",
+    "total_draws": 2
+  },
+  "draws": [
+    {
+      "date": "2026-03-24",
+      "game": "EuroMillions",
+      "numbers": [
+        12,
+        16,
+        17,
+        18,
+        27
+      ],
+      "lucky_stars": [
+        1,
+        3
+      ],
+      "jackpot_eur": null,
+      "winners": null,
+      "source_url": "https://www.irishlottery.com/results/euromillions-result-24-03-2026"
+    },
+    {
+      "date": "2026-03-20",
+      "game": "EuroMillions",
+      "numbers": [
+        5,
+        12,
+        16,
+        37,
+        46
+      ],
+      "lucky_stars": [
+        8,
+        10
+      ],
+      "jackpot_eur": null,
+      "winners": null,
+      "source_url": "https://www.irishlottery.com/results/euromillions-result-20-03-2026"
+    }
+  ]
+}

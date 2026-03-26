@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "game": "Irish Lotto",
+    "start_date": "1988-04-16",
+    "format": "6/47 + Bonus",
+    "draw_days": "Wednesday, Saturday",
+    "last_updated": "2026-03-26T19:25:27.781173",
+    "total_draws": 2
+  },
+  "draws": [
+    {
+      "date": "2026-03-25",
+      "game": "Irish Lotto",
+      "numbers": [
+        4,
+        6,
+        8,
+        19,
+        22,
+        27
+      ],
+      "bonus": 5,
+      "jackpot_eur": 4800000,
+      "winners": null,
+      "source_url": "https://www.irishlottery.com/results/irish-lotto-result-25-03-2026"
+    },
+    {
+      "date": "2026-03-21",
+      "game": "Irish Lotto",
+      "numbers": [
+        1,
+        5,
+        15,
+        17,
+        23,
+        45
+      ],
+      "bonus": 40,
+      "jackpot_eur": null,
+      "winners": null,
+      "source_url": "https://www.irishlottery.com/results/irish-lotto-result-21-03-2026"
+    }
+  ]
+}

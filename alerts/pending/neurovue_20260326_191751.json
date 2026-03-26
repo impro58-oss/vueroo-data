@@ -1,0 +1,15 @@
+{
+  "silo": "neurovue",
+  "timestamp": "2026-03-26T19:17:51.550517",
+  "status": "warning",
+  "freshness_ok": false,
+  "schema_ok": true,
+  "completeness_ok": false,
+  "github_sync_ok": false,
+  "message": "No scan_timestamp found; Schema validation passed; Completeness issues: results array is empty",
+  "details": {
+    "freshness": "No scan_timestamp found",
+    "schema": "Schema validation passed",
+    "completeness": "Completeness issues: results array is empty"
+  }
+}
