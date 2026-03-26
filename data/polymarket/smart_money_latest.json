@@ -1,88 +1,26 @@
 ﻿{
-    "markets_with_movement":  5,
-    "timestamp":  "2026-03-26 12:00:26",
-    "scan_file":  "markets-2026-03-26-1200.json",
+    "markets_with_movement":  1,
+    "timestamp":  "2026-03-26 13:00:27",
+    "scan_file":  "markets-2026-03-26-1300.json",
     "top_opportunities":  {
-                              "Market":  "Will Google (GOOGL) close above ___ end of March?",
-                              "Category":  "finance",
-                              "Url":  "https://polymarket.com/event/googl-above-in-march-2026",
-                              "PreviousOdds":  52,
-                              "CurrentOdds":  45,
-                              "Movement":  -7,
-                              "MovementPercent":  7,
-                              "Direction":  "DOWN",
-                              "Confidence":  "MEDIUM",
-                              "PreviousTime":  "2026-03-26 11:00:24",
-                              "CurrentTime":  "2026-03-26 12:00:26"
+
                           },
     "total_markets":  120,
     "threshold":  5,
     "movements":  [
                       {
-                          "Market":  "Robinhood (HOOD) Up or Down on March 26?",
-                          "Category":  "trending",
-                          "Url":  "https://polymarket.com/event/hood-up-or-down-on-march-26-2026",
-                          "PreviousOdds":  68,
-                          "CurrentOdds":  73,
-                          "Movement":  5,
-                          "MovementPercent":  5,
-                          "Direction":  "UP",
-                          "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-26 11:00:24",
-                          "CurrentTime":  "2026-03-26 12:00:26"
-                      },
-                      {
-                          "Market":  "Highest temperature in Taipei on March 27?",
-                          "Category":  "trending",
-                          "Url":  "https://polymarket.com/event/highest-temperature-in-taipei-on-march-27-2026",
-                          "PreviousOdds":  23,
-                          "CurrentOdds":  28,
-                          "Movement":  5,
-                          "MovementPercent":  5,
-                          "Direction":  "UP",
-                          "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-26 11:00:24",
-                          "CurrentTime":  "2026-03-26 12:00:26"
-                      },
-                      {
-                          "Market":  "Will Palantir (PLTR) finish week of March 23 above___?",
-                          "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/pltr-above-on-march-27-2026",
-                          "PreviousOdds":  79,
-                          "CurrentOdds":  74,
-                          "Movement":  -5,
-                          "MovementPercent":  5,
-                          "Direction":  "DOWN",
-                          "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-26 11:00:24",
-                          "CurrentTime":  "2026-03-26 12:00:26"
-                      },
-                      {
-                          "Market":  "Will Google (GOOGL) close above ___ end of March?",
-                          "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/googl-above-in-march-2026",
-                          "PreviousOdds":  52,
-                          "CurrentOdds":  45,
-                          "Movement":  -7,
-                          "MovementPercent":  7,
-                          "Direction":  "DOWN",
-                          "Confidence":  "MEDIUM",
-                          "PreviousTime":  "2026-03-26 11:00:24",
-                          "CurrentTime":  "2026-03-26 12:00:26"
-                      },
-                      {
                           "Market":  "Google (GOOGL) closes week of Mar 23 at ___?",
                           "Category":  "finance",
                           "Url":  "https://polymarket.com/event/googl-week-march-27-2026",
-                          "PreviousOdds":  23,
-                          "CurrentOdds":  28,
+                          "PreviousOdds":  28,
+                          "CurrentOdds":  33,
                           "Movement":  5,
                           "MovementPercent":  5,
                           "Direction":  "UP",
                           "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-26 11:00:24",
-                          "CurrentTime":  "2026-03-26 12:00:26"
+                          "PreviousTime":  "2026-03-26 12:00:26",
+                          "CurrentTime":  "2026-03-26 13:00:27"
                       }
                   ],
-    "smart_money_alerts":  1
+    "smart_money_alerts":  0
 }
