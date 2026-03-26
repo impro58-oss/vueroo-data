@@ -31,6 +31,13 @@
 **Stocks:** Alpha Vantage = 25 calls/day (we use 24)  
 **Fix:** Reduce symbols if limits hit
 
+### JSON Parse Error: "Unexpected token 'N'"
+**Cause:** Scanner outputting `NaN` values which are invalid JSON  
+**Fix:** Replace `: NaN` with `: null` in JSON files before committing
+```bash
+sed -i 's/: NaN/: null/g' crypto_latest.json
+```
+
 ### Vercel Deployment Fails
 **Check:** Git status should be clean  
 **Trigger:** Push empty commit if needed
@@ -74,8 +81,8 @@ vueroo-portal/      (dashboard repo)
 
 | Repo | Commit | Last Push |
 |------|--------|-----------|
-| rooquest1 | 628e61d | 2026-03-26 17:16 |
-| vueroo-portal | 94910c6 | 2026-03-26 17:07 |
+| rooquest1 | 2ae30a5 | 2026-03-26 17:47 |
+| vueroo-portal | 30f612b | 2026-03-26 17:42 |
 
 ---
 
