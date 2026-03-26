@@ -1,11 +1,13 @@
 {
   "metadata": {
     "game": "Irish Lotto",
-    "start_date": "1988-04-16",
     "format": "6/47 + Bonus",
-    "draw_days": "Wednesday, Saturday",
-    "last_updated": "2026-03-26T19:25:27.781173",
-    "total_draws": 2
+    "draw_days": [
+      "Wednesday",
+      "Saturday"
+    ],
+    "total_draws": 52,
+    "scraped_at": "2026-03-26T20:17:37.407518"
   },
   "draws": [
     {
@@ -20,9 +22,7 @@
         27
       ],
       "bonus": 5,
-      "jackpot_eur": 4800000,
-      "winners": null,
-      "source_url": "https://www.irishlottery.com/results/irish-lotto-result-25-03-2026"
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-25-03-2026"
     },
     {
       "date": "2026-03-21",
@@ -36,9 +36,707 @@
         45
       ],
       "bonus": 40,
-      "jackpot_eur": null,
-      "winners": null,
-      "source_url": "https://www.irishlottery.com/results/irish-lotto-result-21-03-2026"
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-21-03-2026"
+    },
+    {
+      "date": "2026-03-18",
+      "game": "Irish Lotto",
+      "numbers": [
+        16,
+        20,
+        30,
+        39,
+        46,
+        47
+      ],
+      "bonus": 43,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-18-03-2026"
+    },
+    {
+      "date": "2026-03-14",
+      "game": "Irish Lotto",
+      "numbers": [
+        3,
+        5,
+        31,
+        37,
+        42,
+        46
+      ],
+      "bonus": 17,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-14-03-2026"
+    },
+    {
+      "date": "2026-03-11",
+      "game": "Irish Lotto",
+      "numbers": [
+        5,
+        10,
+        11,
+        17,
+        40,
+        41
+      ],
+      "bonus": 14,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-11-03-2026"
+    },
+    {
+      "date": "2026-03-07",
+      "game": "Irish Lotto",
+      "numbers": [
+        14,
+        24,
+        33,
+        34,
+        37,
+        43
+      ],
+      "bonus": 15,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-07-03-2026"
+    },
+    {
+      "date": "2026-03-04",
+      "game": "Irish Lotto",
+      "numbers": [
+        5,
+        8,
+        11,
+        25,
+        27,
+        37
+      ],
+      "bonus": 2,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-04-03-2026"
+    },
+    {
+      "date": "2026-02-28",
+      "game": "Irish Lotto",
+      "numbers": [
+        12,
+        14,
+        21,
+        24,
+        32,
+        38
+      ],
+      "bonus": 20,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-28-02-2026"
+    },
+    {
+      "date": "2026-02-25",
+      "game": "Irish Lotto",
+      "numbers": [
+        19,
+        20,
+        22,
+        25,
+        28,
+        43
+      ],
+      "bonus": 1,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-25-02-2026"
+    },
+    {
+      "date": "2026-02-21",
+      "game": "Irish Lotto",
+      "numbers": [
+        7,
+        32,
+        35,
+        41,
+        44,
+        45
+      ],
+      "bonus": 31,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-21-02-2026"
+    },
+    {
+      "date": "2026-02-18",
+      "game": "Irish Lotto",
+      "numbers": [
+        3,
+        10,
+        20,
+        31,
+        34,
+        43
+      ],
+      "bonus": 42,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-18-02-2026"
+    },
+    {
+      "date": "2026-02-14",
+      "game": "Irish Lotto",
+      "numbers": [
+        9,
+        15,
+        32,
+        34,
+        40,
+        41
+      ],
+      "bonus": 4,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-14-02-2026"
+    },
+    {
+      "date": "2026-02-11",
+      "game": "Irish Lotto",
+      "numbers": [
+        3,
+        16,
+        24,
+        31,
+        32,
+        47
+      ],
+      "bonus": 36,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-11-02-2026"
+    },
+    {
+      "date": "2026-02-07",
+      "game": "Irish Lotto",
+      "numbers": [
+        4,
+        5,
+        19,
+        21,
+        32,
+        35
+      ],
+      "bonus": 39,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-07-02-2026"
+    },
+    {
+      "date": "2026-02-04",
+      "game": "Irish Lotto",
+      "numbers": [
+        9,
+        16,
+        30,
+        34,
+        36,
+        45
+      ],
+      "bonus": 46,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-04-02-2026"
+    },
+    {
+      "date": "2026-01-31",
+      "game": "Irish Lotto",
+      "numbers": [
+        1,
+        4,
+        23,
+        29,
+        46,
+        47
+      ],
+      "bonus": 13,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-31-01-2026"
+    },
+    {
+      "date": "2026-01-28",
+      "game": "Irish Lotto",
+      "numbers": [
+        8,
+        9,
+        14,
+        26,
+        30,
+        31
+      ],
+      "bonus": 42,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-28-01-2026"
+    },
+    {
+      "date": "2026-01-24",
+      "game": "Irish Lotto",
+      "numbers": [
+        12,
+        13,
+        18,
+        19,
+        31,
+        46
+      ],
+      "bonus": 36,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-24-01-2026"
+    },
+    {
+      "date": "2026-01-21",
+      "game": "Irish Lotto",
+      "numbers": [
+        6,
+        10,
+        11,
+        18,
+        37,
+        44
+      ],
+      "bonus": 22,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-21-01-2026"
+    },
+    {
+      "date": "2026-01-17",
+      "game": "Irish Lotto",
+      "numbers": [
+        30,
+        34,
+        36,
+        38,
+        40,
+        45
+      ],
+      "bonus": 13,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-17-01-2026"
+    },
+    {
+      "date": "2026-01-14",
+      "game": "Irish Lotto",
+      "numbers": [
+        14,
+        23,
+        33,
+        38,
+        41,
+        43
+      ],
+      "bonus": 12,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-14-01-2026"
+    },
+    {
+      "date": "2026-01-10",
+      "game": "Irish Lotto",
+      "numbers": [
+        5,
+        10,
+        24,
+        30,
+        36,
+        40
+      ],
+      "bonus": 42,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-10-01-2026"
+    },
+    {
+      "date": "2026-01-07",
+      "game": "Irish Lotto",
+      "numbers": [
+        12,
+        16,
+        22,
+        35,
+        39,
+        44
+      ],
+      "bonus": 36,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-07-01-2026"
+    },
+    {
+      "date": "2026-01-03",
+      "game": "Irish Lotto",
+      "numbers": [
+        3,
+        9,
+        11,
+        13,
+        26,
+        35
+      ],
+      "bonus": 31,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-03-01-2026"
+    },
+    {
+      "date": "2025-12-31",
+      "game": "Irish Lotto",
+      "numbers": [
+        7,
+        15,
+        16,
+        24,
+        37,
+        40
+      ],
+      "bonus": 26,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-31-12-2025"
+    },
+    {
+      "date": "2025-12-27",
+      "game": "Irish Lotto",
+      "numbers": [
+        11,
+        19,
+        20,
+        34,
+        36,
+        42
+      ],
+      "bonus": 32,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-27-12-2025"
+    },
+    {
+      "date": "2025-12-24",
+      "game": "Irish Lotto",
+      "numbers": [
+        3,
+        15,
+        22,
+        33,
+        35,
+        38
+      ],
+      "bonus": 41,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-24-12-2025"
+    },
+    {
+      "date": "2025-12-20",
+      "game": "Irish Lotto",
+      "numbers": [
+        3,
+        15,
+        18,
+        20,
+        27,
+        43
+      ],
+      "bonus": 30,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-20-12-2025"
+    },
+    {
+      "date": "2025-12-17",
+      "game": "Irish Lotto",
+      "numbers": [
+        5,
+        24,
+        25,
+        27,
+        35,
+        47
+      ],
+      "bonus": 17,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-17-12-2025"
+    },
+    {
+      "date": "2025-12-13",
+      "game": "Irish Lotto",
+      "numbers": [
+        16,
+        19,
+        25,
+        41,
+        46,
+        47
+      ],
+      "bonus": 40,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-13-12-2025"
+    },
+    {
+      "date": "2025-12-10",
+      "game": "Irish Lotto",
+      "numbers": [
+        5,
+        14,
+        24,
+        29,
+        37,
+        39
+      ],
+      "bonus": 13,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-10-12-2025"
+    },
+    {
+      "date": "2025-12-06",
+      "game": "Irish Lotto",
+      "numbers": [
+        10,
+        15,
+        16,
+        25,
+        27,
+        41
+      ],
+      "bonus": 42,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-06-12-2025"
+    },
+    {
+      "date": "2025-12-03",
+      "game": "Irish Lotto",
+      "numbers": [
+        4,
+        21,
+        23,
+        27,
+        34,
+        38
+      ],
+      "bonus": 37,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-03-12-2025"
+    },
+    {
+      "date": "2025-11-29",
+      "game": "Irish Lotto",
+      "numbers": [
+        12,
+        18,
+        29,
+        30,
+        36,
+        47
+      ],
+      "bonus": 43,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-29-11-2025"
+    },
+    {
+      "date": "2025-11-26",
+      "game": "Irish Lotto",
+      "numbers": [
+        11,
+        12,
+        24,
+        29,
+        33,
+        34
+      ],
+      "bonus": 9,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-26-11-2025"
+    },
+    {
+      "date": "2025-11-22",
+      "game": "Irish Lotto",
+      "numbers": [
+        2,
+        13,
+        29,
+        32,
+        35,
+        44
+      ],
+      "bonus": 45,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-22-11-2025"
+    },
+    {
+      "date": "2025-11-19",
+      "game": "Irish Lotto",
+      "numbers": [
+        20,
+        26,
+        32,
+        36,
+        45,
+        47
+      ],
+      "bonus": 6,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-19-11-2025"
+    },
+    {
+      "date": "2025-11-15",
+      "game": "Irish Lotto",
+      "numbers": [
+        2,
+        5,
+        12,
+        24,
+        25,
+        44
+      ],
+      "bonus": 46,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-15-11-2025"
+    },
+    {
+      "date": "2025-11-12",
+      "game": "Irish Lotto",
+      "numbers": [
+        13,
+        14,
+        30,
+        36,
+        37,
+        41
+      ],
+      "bonus": 46,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-12-11-2025"
+    },
+    {
+      "date": "2025-11-08",
+      "game": "Irish Lotto",
+      "numbers": [
+        9,
+        15,
+        20,
+        27,
+        31,
+        39
+      ],
+      "bonus": 35,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-08-11-2025"
+    },
+    {
+      "date": "2025-11-05",
+      "game": "Irish Lotto",
+      "numbers": [
+        1,
+        12,
+        17,
+        28,
+        32,
+        45
+      ],
+      "bonus": 46,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-05-11-2025"
+    },
+    {
+      "date": "2025-11-01",
+      "game": "Irish Lotto",
+      "numbers": [
+        11,
+        12,
+        13,
+        22,
+        26,
+        32
+      ],
+      "bonus": 8,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-01-11-2025"
+    },
+    {
+      "date": "2025-10-29",
+      "game": "Irish Lotto",
+      "numbers": [
+        4,
+        15,
+        19,
+        21,
+        39,
+        45
+      ],
+      "bonus": 44,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-29-10-2025"
+    },
+    {
+      "date": "2025-10-25",
+      "game": "Irish Lotto",
+      "numbers": [
+        3,
+        21,
+        35,
+        36,
+        42,
+        43
+      ],
+      "bonus": 1,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-25-10-2025"
+    },
+    {
+      "date": "2025-10-22",
+      "game": "Irish Lotto",
+      "numbers": [
+        8,
+        16,
+        26,
+        28,
+        34,
+        41
+      ],
+      "bonus": 42,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-22-10-2025"
+    },
+    {
+      "date": "2025-10-18",
+      "game": "Irish Lotto",
+      "numbers": [
+        6,
+        13,
+        14,
+        27,
+        35,
+        44
+      ],
+      "bonus": 47,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-18-10-2025"
+    },
+    {
+      "date": "2025-10-15",
+      "game": "Irish Lotto",
+      "numbers": [
+        16,
+        23,
+        35,
+        43,
+        45,
+        46
+      ],
+      "bonus": 17,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-15-10-2025"
+    },
+    {
+      "date": "2025-10-11",
+      "game": "Irish Lotto",
+      "numbers": [
+        6,
+        13,
+        16,
+        27,
+        28,
+        36
+      ],
+      "bonus": 15,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-11-10-2025"
+    },
+    {
+      "date": "2025-10-08",
+      "game": "Irish Lotto",
+      "numbers": [
+        6,
+        12,
+        20,
+        25,
+        37,
+        44
+      ],
+      "bonus": 46,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-08-10-2025"
+    },
+    {
+      "date": "2025-10-04",
+      "game": "Irish Lotto",
+      "numbers": [
+        5,
+        21,
+        22,
+        39,
+        40,
+        43
+      ],
+      "bonus": 12,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-04-10-2025"
+    },
+    {
+      "date": "2025-10-01",
+      "game": "Irish Lotto",
+      "numbers": [
+        6,
+        11,
+        12,
+        19,
+        28,
+        42
+      ],
+      "bonus": 13,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-01-10-2025"
+    },
+    {
+      "date": "2025-09-27",
+      "game": "Irish Lotto",
+      "numbers": [
+        1,
+        12,
+        22,
+        24,
+        40,
+        41
+      ],
+      "bonus": 32,
+      "url": "https://www.irishlottery.com/results/irish-lotto-result-27-09-2025"
     }
   ]
 }

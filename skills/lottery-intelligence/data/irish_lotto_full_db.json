@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "game": "Irish Lotto",
+    "format": "6/47 + Bonus",
+    "draw_days": [
+      "Wednesday",
+      "Saturday"
+    ],
+    "start_date": "1988-04-16",
+    "last_draw_date": null,
+    "total_draws": 0,
+    "scraped_at": "2026-03-26T20:01:07.354183"
+  },
+  "draws": []
+}

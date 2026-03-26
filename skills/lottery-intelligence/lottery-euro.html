@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LotteryVue - EuroMillions Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            color: #e2e8f0;
+        }
+        
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .number-ball {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 13px;
+            margin: 2px;
+        }
+        
+        .star-ball {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 11px;
+            margin: 2px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #1e293b;
+        }
+        
+        .hot-ball { background: linear-gradient(135deg, #ef4444, #f87171); }
+        .cold-ball { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
+        .neutral-ball { background: linear-gradient(135deg, #64748b, #94a3b8); }
+        
+        .jackpot-badge {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #1e293b;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .wheel-ticket {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 12px;
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body class="p-6">
+    
+    <!-- Header -->
+    <div class="max-w-7xl mx-auto mb-8">
+        <div class="flex items-center justify-between">
+            <div>
+                <h1 class="text-4xl font-bold bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                    LotteryVue
+                </h1>
+                <p class="text-slate-400 mt-2 text-lg">EuroMillions Intelligence Dashboard</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="lottery-irish.html" class="px-4 py-2 bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-500 hover:to-teal-500 rounded-lg text-sm font-medium text-white transition">
+                    Irish Lotto
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Stats Overview -->
+    <div class="max-w-7xl mx-auto mb-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="glass rounded-xl p-4 text-center">
+                <div class="text-3xl font-bold text-amber-400" id="stat-total-draws">-</div>
+                <div class="text-sm text-slate-400">Total Draws</div>
+            </div>
+            <div class="glass rounded-xl p-4 text-center">
+                <div class="text-3xl font-bold text-green-400" id="stat-avg-jackpot">-</div>
+                <div class="text-sm text-slate-400">Avg Jackpot</div>
+            </div>
+            <div class="glass rounded-xl p-4 text-center">
+                <div class="text-3xl font-bold text-blue-400" id="stat-hot-number">-</div>
+                <div class="text-sm text-slate-400">Hottest Number</div>
+            </div>
+            <div class="glass rounded-xl p-4 text-center">
+                <div class="text-3xl font-bold text-purple-400" id="stat-hot-star">-</div>
+                <div class="text-sm text-slate-400">Hottest Star</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Left Column: Draws -->
+        <div class="lg:col-span-2 space-y-6">
+            
+            <!-- Draw History -->
+            <div class="glass rounded-2xl p-6">
+                <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-history text-amber-400"></i>
+                    Draw History with Jackpots
+                </h2>
+                <div id="draw-history" class="space-y-3">
+                    <div class="text-slate-400 text-center py-8">Loading...</div>
+                </div>
+            </div>
+            
+            <!-- Frequency Chart -->
+            <div class="glass rounded-2xl p-6">
+                <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-chart-bar text-blue-400"></i>
+                    Number Frequency
+                </h2>
+                <canvas id="frequencyChart" height="150"></canvas>
+            </div>
+            
+            <!-- Lucky Stars Chart -->
+            <div class="glass rounded-2xl p-6">
+                <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    Lucky Stars Frequency
+                </h2>
+                <canvas id="starsChart" height="100"></canvas>
+            </div>
+        </div>
+        
+        <!-- Right Column: Analysis -->
+        <div class="space-y-6">
+            
+            <!-- Hot Numbers -->
+            <div class="glass rounded-2xl p-6">
+                <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-fire text-red-400"></i>
+                    Hot Numbers
+                </h2>
+                <div id="hot-numbers" class="flex flex-wrap gap-2"></div>
+                <p class="text-xs text-slate-500 mt-3">Most frequent main numbers</p>
+            </div>
+            
+            <!-- Hot Lucky Stars -->
+            <div class="glass rounded-2xl p-6">
+                <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    Hot Lucky Stars
+                </h2>
+                <div id="hot-stars" class="flex flex-wrap gap-2"></div>
+            </div>
+            
+            <!-- Cold Numbers -->
+            <div class="glass rounded-2xl p-6">
+                <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-snowflake text-blue-400"></i>
+                    Cold Numbers
+                </h2>
+                <div id="cold-numbers" class="flex flex-wrap gap-2"></div>
+            </div>
+            
+            <!-- Wheel Generator -->
+            <div class="glass rounded-2xl p-6">
+                <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-cog text-amber-400"></i>
+                    Wheel Generator
+                </h2>
+                <p class="text-sm text-slate-400 mb-3">Select 5 numbers + 2 stars</p>
+                
+                <div id="number-selector" class="grid grid-cols-10 gap-1 mb-3"></div>
+                
+                <p class="text-sm text-slate-400 mb-2">Lucky Stars:</p>
+                <div id="star-selector" class="flex gap-2 mb-4"></div>
+                
+                <button onclick="generateWheel()" class="w-full py-2 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 rounded-lg text-sm font-medium text-white transition">
+                    Generate Wheel
+                </button>
+                
+                <div id="wheel-results" class="mt-4 space-y-2"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Embedded EuroMillions data with jackpot amounts
+        const lotteryData = {"draws": [{"date": "2026-03-24", "numbers": [12, 16, 17, 18, 27], "lucky_stars": [1, 3], "jackpot_amount": "£54 Million"}, {"date": "2026-03-20", "numbers": [5, 12, 16, 37, 46], "lucky_stars": [8, 10], "jackpot_amount": "£54 Million"}, {"date": "2026-03-17", "numbers": [5, 17, 28, 33, 41], "lucky_stars": [3, 9], "jackpot_amount": "£54 Million"}, {"date": "2026-03-13", "numbers": [13, 17, 26, 41, 48], "lucky_stars": [4, 10], "jackpot_amount": "£54 Million"}, {"date": "2026-03-10", "numbers": [12, 14, 27, 44, 50], "lucky_stars": [4, 11], "jackpot_amount": "£54 Million"}, {"date": "2026-03-06", "numbers": [15, 16, 19, 28, 37], "lucky_stars": [3, 6], "jackpot_amount": "£54 Million"}, {"date": "2026-03-03", "numbers": [6, 7, 24, 34, 50], "lucky_stars": [1, 11], "jackpot_amount": "£54 Million"}, {"date": "2026-02-27", "numbers": [14, 24, 27, 39, 42], "lucky_stars": [4, 9], "jackpot_amount": "£74 Million"}, {"date": "2026-02-24", "numbers": [10, 27, 40, 43, 47], "lucky_stars": [2, 6], "jackpot_amount": "£62 Million"}, {"date": "2026-02-20", "numbers": [13, 24, 28, 33, 35], "lucky_stars": [4, 10], "jackpot_amount": "£52 Million"}, {"date": "2026-02-17", "numbers": [1, 4, 6, 10, 41], "lucky_stars": [2, 10], "jackpot_amount": "£42 Million"}, {"date": "2026-02-13", "numbers": [9, 13, 31, 37, 40], "lucky_stars": [3, 9], "jackpot_amount": "£33 Million"}, {"date": "2026-02-10", "numbers": [1, 17, 19, 34, 42], "lucky_stars": [6, 10], "jackpot_amount": "£26 Million"}, {"date": "2026-02-06", "numbers": [10, 13, 20, 23, 24], "lucky_stars": [1, 9], "jackpot_amount": "£19 Million"}, {"date": "2026-02-03", "numbers": [26, 27, 31, 43, 46], "lucky_stars": [1, 10], "jackpot_amount": "£14 Million"}]};
+        
+        let selectedNumbers = new Set();
+        let selectedStars = new Set();
+        let frequencyChart = null;
+        let starsChart = null;
+        
+        function calculateStats() {
+            const draws = lotteryData.draws;
+            const numFreq = {};
+            const starFreq = {};
+            
+            for (let i = 1; i <= 50; i++) numFreq[i] = 0;
+            for (let i = 1; i <= 12; i++) starFreq[i] = 0;
+            
+            let totalJackpot = 0;
+            let jackpotCount = 0;
+            
+            draws.forEach(draw => {
+                draw.numbers.forEach(n => numFreq[n]++);
+                (draw.lucky_stars || []).forEach(s => starFreq[s]++);
+                
+                if (draw.jackpot_amount) {
+                    const match = draw.jackpot_amount.match(/[£€](\d+)/);
+                    if (match) {
+                        totalJackpot += parseInt(match[1]);
+                        jackpotCount++;
+                    }
+                }
+            });
+            
+            return { numFreq, starFreq, avgJackpot: jackpotCount > 0 ? Math.round(totalJackpot / jackpotCount) : 0 };
+        }
+        
+        function getHotCold(freq, count = 10) {
+            const sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]);
+            return {
+                hot: sorted.slice(0, count).map(x => parseInt(x[0])),
+                cold: sorted.slice(-count).map(x => parseInt(x[0]))
+            };
+        }
+        
+        function renderDashboard() {
+            const draws = lotteryData.draws;
+            const { numFreq, starFreq, avgJackpot } = calculateStats();
+            const { hot, cold } = getHotCold(numFreq);
+            const starsHot = getHotCold(starFreq, 6).hot;
+            
+            // Update stats
+            document.getElementById('stat-total-draws').textContent = draws.length;
+            document.getElementById('stat-avg-jackpot').textContent = `£${avgJackpot}M`;
+            document.getElementById('stat-hot-number').textContent = hot[0];
+            document.getElementById('stat-hot-star').textContent = starsHot[0];
+            
+            // Draw history with jackpots
+            const historyDiv = document.getElementById('draw-history');
+            historyDiv.innerHTML = draws.slice(0, 15).map(draw => `
+                <div class="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                    <div class="flex items-center gap-3">
+                        <div class="text-slate-400 text-sm w-24">${draw.date}</div>
+                        <div class="flex gap-1">
+                            ${draw.numbers.map(n => `
+                                <div class="number-ball ${hot.includes(n) ? 'hot-ball' : cold.includes(n) ? 'cold-ball' : 'neutral-ball'}">${n}</div>
+                            `).join('')}
+                        </div>
+                        <div class="flex gap-1 ml-2">
+                            ${(draw.lucky_stars || []).map(s => `
+                                <div class="star-ball">${s}</div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    ${draw.jackpot_amount ? `<div class="jackpot-badge">${draw.jackpot_amount}</div>` : ''}
+                </div>
+            `).join('');
+            
+            // Hot/Cold numbers
+            document.getElementById('hot-numbers').innerHTML = hot.slice(0, 10).map(n => `
+                <div class="number-ball hot-ball cursor-pointer hover:scale-110" onclick="toggleNumber(${n})">${n}</div>
+            `).join('');
+            
+            document.getElementById('hot-stars').innerHTML = starsHot.map(s => `
+                <div class="star-ball cursor-pointer hover:scale-110" onclick="toggleStar(${s})">${s}</div>
+            `).join('');
+            
+            document.getElementById('cold-numbers').innerHTML = cold.slice(0, 10).map(n => `
+                <div class="number-ball cold-ball cursor-pointer hover:scale-110" onclick="toggleNumber(${n})">${n}</div>
+            `).join('');
+            
+            // Number frequency chart
+            const ctx = document.getElementById('frequencyChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(numFreq),
+                    datasets: [{
+                        label: 'Frequency',
+                        data: Object.values(numFreq),
+                        backgroundColor: Object.keys(numFreq).map(n => 
+                            hot.includes(parseInt(n)) ? 'rgba(239, 68, 68, 0.7)' :
+                            cold.includes(parseInt(n)) ? 'rgba(59, 130, 246, 0.7)' :
+                            'rgba(148, 163, 184, 0.3)'
+                        )
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#94a3b8' } },
+                        x: { display: false }
+                    }
+                }
+            });
+            
+            // Stars frequency chart
+            const starsCtx = document.getElementById('starsChart').getContext('2d');
+            new Chart(starsCtx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(starFreq),
+                    datasets: [{
+                        label: 'Frequency',
+                        data: Object.values(starFreq),
+                        backgroundColor: 'rgba(251, 191, 36, 0.7)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#94a3b8' } },
+                        x: { ticks: { color: '#94a3b8' } }
+                    }
+                }
+            });
+            
+            // Selectors
+            const numSelector = document.getElementById('number-selector');
+            for (let i = 1; i <= 50; i++) {
+                const div = document.createElement('div');
+                div.className = 'number-ball neutral-ball cursor-pointer hover:scale-110 text-xs';
+                div.style.cssText = 'width: 28px; height: 28px; font-size: 10px;';
+                div.textContent = i;
+                div.onclick = () => toggleNumber(i);
+                div.id = `select-${i}`;
+                numSelector.appendChild(div);
+            }
+            
+            const starSelector = document.getElementById('star-selector');
+            for (let i = 1; i <= 12; i++) {
+                const div = document.createElement('div');
+                div.className = 'star-ball cursor-pointer hover:scale-110';
+                div.style.cssText = 'width: 28px; height: 28px; font-size: 10px;';
+                div.textContent = i;
+                div.onclick = () => toggleStar(i);
+                div.id = `star-select-${i}`;
+                starSelector.appendChild(div);
+            }
+        }
+        
+        function toggleNumber(num) {
+            if (selectedNumbers.has(num)) {
+                selectedNumbers.delete(num);
+            } else if (selectedNumbers.size < 10) {
+                selectedNumbers.add(num);
+            }
+            updateSelection();
+        }
+        
+        function toggleStar(star) {
+            if (selectedStars.has(star)) {
+                selectedStars.delete(star);
+            } else if (selectedStars.size < 3) {
+                selectedStars.add(star);
+            }
+            updateSelection();
+        }
+        
+        function updateSelection() {
+            for (let i = 1; i <= 50; i++) {
+                const el = document.getElementById(`select-${i}`);
+                if (el) {
+                    el.classList.toggle('hot-ball', selectedNumbers.has(i));
+                    el.classList.toggle('neutral-ball', !selectedNumbers.has(i));
+                    el.classList.toggle('ring-2', selectedNumbers.has(i));
+                    el.classList.toggle('ring-white', selectedNumbers.has(i));
+                }
+            }
+            for (let i = 1; i <= 12; i++) {
+                const el = document.getElementById(`star-select-${i}`);
+                if (el) el.style.opacity = selectedStars.has(i) ? '1' : '0.5';
+            }
+        }
+        
+        function generateWheel() {
+            if (selectedNumbers.size < 5) {
+                alert('Select at least 5 numbers');
+                return;
+            }
+            
+            const numbers = Array.from(selectedNumbers).sort((a,b) => a-b);
+            const stars = Array.from(selectedStars).sort((a,b) => a-b);
+            const tickets = [];
+            
+            if (numbers.length >= 5) {
+                tickets.push({ nums: numbers.slice(0, 5), stars: stars.slice(0, 2).length > 0 ? stars.slice(0, 2) : [1, 2] });
+            }
+            
+            const results = document.getElementById('wheel-results');
+            results.innerHTML = tickets.map((t, i) => `
+                <div class="wheel-ticket">
+                    <div class="text-xs text-slate-400 mb-2">Ticket ${i + 1}</div>
+                    <div class="flex gap-1 mb-2">
+                        ${t.nums.map(n => `<div class="number-ball hot-ball" style="width:28px;height:28px;font-size:11px;">${n}</div>`).join('')}
+                    </div>
+                    <div class="flex gap-1">
+                        ${t.stars.map(s => `<div class="star-ball" style="width:24px;height:24px;font-size:10px;">${s}</div>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        renderDashboard();
+    </script>
+</body>
+</html>

@@ -363,3 +363,29 @@
 [19:59:40] 
 [19:59:40] Scraping euromillions for year 2006...
 [19:59:40] Found 51 draw links for 2006
+[20:00:09] Scraped 0 draws from 2006
+[20:00:09] Year 2006 complete. Total Euro draws: 0
+[20:00:09] Elapsed: 29.2 minutes
+[20:00:09] 
+[20:00:09] Scraping euromillions for year 2005...
+[20:00:09] Found 51 draw links for 2005
+[20:00:38] Scraped 0 draws from 2005
+[20:00:38] Year 2005 complete. Total Euro draws: 0
+[20:00:38] Elapsed: 29.7 minutes
+[20:00:38] 
+[20:00:38] Scraping euromillions for year 2004...
+[20:00:39] Found 51 draw links for 2004
+[20:01:07] Scraped 0 draws from 2004
+[20:01:07] Year 2004 complete. Total Euro draws: 0
+[20:01:07] Elapsed: 30.2 minutes
+[20:01:07] 
+[20:01:07] Databases saved to C:\Users\impro\.openclaw\workspace\skills\lottery-intelligence\data
+[20:01:07] ============================================================
+[20:01:07] SCRAPING COMPLETE
+[20:01:07] ============================================================
+[20:01:07] Irish Lotto draws: 0
+[20:01:07] EuroMillions draws: 0
+[20:01:07] Total pages fetched: 3263
+[20:01:07] Errors: 0
+[20:01:07] Total time: 0.50 hours
+[20:01:07] ============================================================

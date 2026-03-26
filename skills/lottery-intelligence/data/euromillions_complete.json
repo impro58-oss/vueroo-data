@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "game": "EuroMillions",
+    "format": "5/50 + 2/12 Lucky Stars",
+    "draw_days": [
+      "Tuesday",
+      "Friday"
+    ],
+    "first_draw": "2004-02-13",
+    "total_draws": 0,
+    "scraped_at": "2026-03-26T20:20:12.076917"
+  },
+  "draws": []
+}

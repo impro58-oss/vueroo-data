@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LotteryVue - Irish Lotto Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            color: #e2e8f0;
+        }
+        
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .number-ball {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            margin: 2px;
+        }
+        
+        .hot-ball { background: linear-gradient(135deg, #ef4444, #f87171); }
+        .cold-ball { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
+        .neutral-ball { background: linear-gradient(135deg, #64748b, #94a3b8); }
+        .bonus-ball { 
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            border: 2px solid #f59e0b;
+        }
+        
+        .wheel-ticket {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 12px;
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body class="p-6">
+    
+    <!-- Header -->
+    <div class="max-w-7xl mx-auto mb-8">
+        <div class="flex items-center justify-between">
+            <div>
+                <h1 class="text-4xl font-bold bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                    LotteryVue
+                </h1>
+                <p class="text-slate-400 mt-2 text-lg">Irish Lotto Intelligence Dashboard</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="lottery-euro.html" class="px-4 py-2 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 rounded-lg text-sm font-medium text-white transition">
+                    EuroMillions
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Left Column: Stats -->
+        <div class="lg:col-span-2 space-y-6">
+            
+            <!-- Draw History -->
+            <div class="glass rounded-2xl p-6">
+                <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-history text-green-400"></i>
+                    Recent Draws (2026)
+                </h2>
+                <div id="draw-history" class="space-y-3">
+                    <div class="text-slate-400 text-center py-8">Loading...</div>
+                </div>
+            </div>
+            
+            <!-- Frequency Chart -->
+            <div class="glass rounded-2xl p-6">
+                <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-chart-bar text-blue-400"></i>
+                    Number Frequency (2026)
+                </h2>
+                <canvas id="frequencyChart" height="150"></canvas>
+            </div>
+        </div>
+        
+        <!-- Right Column: Analysis -->
+        <div class="space-y-6">
+            
+            <!-- Hot Numbers -->
+            <div class="glass rounded-2xl p-6">
+                <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-fire text-red-400"></i>
+                    Hot Numbers
+                </h2>
+                <div id="hot-numbers" class="flex flex-wrap gap-2">
+                    <div class="text-slate-400 text-center py-4 w-full">Loading...</div>
+                </div>
+                <p class="text-xs text-slate-500 mt-3">Most frequent in 2026 draws</p>
+            </div>
+            
+            <!-- Cold Numbers -->
+            <div class="glass rounded-2xl p-6">
+                <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-snowflake text-blue-400"></i>
+                    Cold Numbers
+                </h2>
+                <div id="cold-numbers" class="flex flex-wrap gap-2">
+                    <div class="text-slate-400 text-center py-4 w-full">Loading...</div>
+                </div>
+                <p class="text-xs text-slate-500 mt-3">Least frequent in 2026 draws</p>
+            </div>
+            
+            <!-- Wheel Generator -->
+            <div class="glass rounded-2xl p-6">
+                <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-cog text-amber-400"></i>
+                    Wheel Generator
+                </h2>
+                <p class="text-sm text-slate-400 mb-4">Click numbers to select (max 12)</p>
+                
+                <div id="number-selector" class="grid grid-cols-7 gap-2 mb-4">
+                    <!-- Numbers 1-47 -->
+                </div>
+                
+                <button onclick="generateWheel()" class="w-full py-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 rounded-lg text-sm font-medium text-white transition">
+                    Generate Wheel
+                </button>
+                
+                <div id="wheel-results" class="mt-4 space-y-2">
+                    <!-- Wheel tickets appear here -->
+                </div>
+            </div>
+            
+            <!-- Pattern Stats -->
+            <div class="glass rounded-2xl p-6">
+                <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-chart-pie text-purple-400"></i>
+                    Pattern Analysis
+                </h2>
+                <div id="pattern-stats" class="space-y-3 text-sm">
+                    <div class="text-slate-400 text-center py-4">Loading...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Embedded data - avoids CORS issues with file:// protocol
+        const lotteryData = {"metadata": {"game": "Irish Lotto", "format": "6/47 + Bonus", "draw_days": ["Wednesday", "Saturday"], "total_draws": 52, "scraped_at": "2026-03-26T20:17:37.407518"}, "draws": [{"date": "2026-03-25", "numbers": [4, 6, 8, 19, 22, 27], "bonus": 5}, {"date": "2026-03-21", "numbers": [1, 5, 15, 17, 23, 45], "bonus": 40}, {"date": "2026-03-18", "numbers": [16, 20, 30, 39, 46, 47], "bonus": 43}, {"date": "2026-03-14", "numbers": [3, 5, 31, 37, 42, 46], "bonus": 17}, {"date": "2026-03-11", "numbers": [5, 10, 11, 17, 40, 41], "bonus": 14}, {"date": "2026-03-07", "numbers": [14, 24, 33, 34, 37, 43], "bonus": 15}, {"date": "2026-03-04", "numbers": [5, 8, 11, 25, 27, 37], "bonus": 2}, {"date": "2026-02-28", "numbers": [12, 14, 21, 24, 32, 38], "bonus": 20}, {"date": "2026-02-25", "numbers": [19, 20, 22, 25, 28, 43], "bonus": 1}, {"date": "2026-02-21", "numbers": [7, 32, 35, 41, 44, 45], "bonus": 31}, {"date": "2026-02-18", "numbers": [3, 10, 20, 31, 34, 43], "bonus": 42}, {"date": "2026-02-14", "numbers": [9, 15, 32, 34, 40, 41], "bonus": 4}, {"date": "2026-02-11", "numbers": [3, 16, 24, 31, 32, 47], "bonus": 36}, {"date": "2026-02-07", "numbers": [4, 5, 8, 12, 20, 26], "bonus": 39}, {"date": "2026-02-04", "numbers": [16, 19, 21, 22, 32, 36], "bonus": 15}, {"date": "2026-01-31", "numbers": [1, 5, 10, 12, 16, 41], "bonus": 4}, {"date": "2026-01-28", "numbers": [17, 19, 23, 24, 26, 30], "bonus": 27}, {"date": "2026-01-24", "numbers": [3, 13, 16, 24, 30, 38], "bonus": 31}, {"date": "2026-01-21", "numbers": [12, 23, 24, 27, 28, 32], "bonus": 7}, {"date": "2026-01-17", "numbers": [2, 13, 16, 17, 23, 27], "bonus": 37}, {"date": "2026-01-14", "numbers": [2, 8, 9, 10, 24, 32], "bonus": 25}, {"date": "2026-01-10", "numbers": [9, 10, 18, 24, 29, 42], "bonus": 26}, {"date": "2026-01-07", "numbers": [2, 13, 22, 25, 27, 36], "bonus": 12}, {"date": "2026-01-03", "numbers": [14, 20, 28, 37, 44, 46], "bonus": 5}]};
+        
+        let selectedNumbers = new Set();
+        let frequencyChart = null;
+        
+        function calculateFrequency(draws) {
+            const freq = {};
+            for (let i = 1; i <= 47; i++) freq[i] = 0;
+            
+            draws.forEach(draw => {
+                draw.numbers.forEach(num => {
+                    freq[num] = (freq[num] || 0) + 1;
+                });
+            });
+            
+            return freq;
+        }
+        
+        function getHotColdNumbers(freq, count = 10) {
+            const sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]);
+            return {
+                hot: sorted.slice(0, count).map(x => parseInt(x[0])),
+                cold: sorted.slice(-count).map(x => parseInt(x[0]))
+            };
+        }
+        
+        function analyzePatterns(draws) {
+            let odd = 0, even = 0, high = 0, low = 0, consecutive = 0, sums = [];
+            
+            draws.forEach(draw => {
+                draw.numbers.forEach(num => {
+                    if (num % 2 === 1) odd++; else even++;
+                    if (num > 23) high++; else low++;
+                });
+                
+                const sorted = [...draw.numbers].sort((a,b) => a-b);
+                for (let i = 0; i < sorted.length - 1; i++) {
+                    if (sorted[i+1] - sorted[i] === 1) consecutive++;
+                }
+                
+                sums.push(draw.numbers.reduce((a,b) => a+b, 0));
+            });
+            
+            const avgSum = sums.reduce((a,b) => a+b, 0) / sums.length;
+            
+            return { odd, even, high, low, consecutive, avgSum };
+        }
+        
+        function renderDashboard() {
+            const draws = lotteryData.draws;
+            const freq = calculateFrequency(draws);
+            const { hot, cold } = getHotColdNumbers(freq);
+            const patterns = analyzePatterns(draws);
+            
+            // Draw history
+            const historyDiv = document.getElementById('draw-history');
+            historyDiv.innerHTML = draws.slice(0, 10).map(draw => `
+                <div class="flex items-center gap-4 p-3 bg-slate-800/50 rounded-lg">
+                    <div class="text-slate-400 text-sm w-28">${draw.date}</div>
+                    <div class="flex gap-1">
+                        ${draw.numbers.map(n => `
+                            <div class="number-ball ${hot.includes(n) ? 'hot-ball' : cold.includes(n) ? 'cold-ball' : 'neutral-ball'}">
+                                ${n}
+                            </div>
+                        `).join('')}
+                        ${draw.bonus ? `<div class="number-ball bonus-ball">${draw.bonus}</div>` : ''}
+                    </div>
+                </div>
+            `).join('');
+            
+            // Hot numbers
+            document.getElementById('hot-numbers').innerHTML = hot.map(n => `
+                <div class="number-ball hot-ball cursor-pointer hover:scale-110 transition" 
+                     onclick="toggleNumber(${n})" id="ball-${n}">${n}</div>
+            `).join('');
+            
+            // Cold numbers
+            document.getElementById('cold-numbers').innerHTML = cold.map(n => `
+                <div class="number-ball cold-ball cursor-pointer hover:scale-110 transition"
+                     onclick="toggleNumber(${n})" id="ball-${n}">${n}</div>
+            `).join('');
+            
+            // Pattern stats
+            document.getElementById('pattern-stats').innerHTML = `
+                <div class="flex justify-between"><span class="text-slate-400">Odd/Even:</span> <span>${patterns.odd} / ${patterns.even}</span></div>
+                <div class="flex justify-between"><span class="text-slate-400">High/Low:</span> <span>${patterns.high} / ${patterns.low}</span></div>
+                <div class="flex justify-between"><span class="text-slate-400">Consecutive:</span> <span>${patterns.consecutive} pairs</span></div>
+                <div class="flex justify-between"><span class="text-slate-400">Avg Sum:</span> <span>${patterns.avgSum.toFixed(1)}</span></div>
+            `;
+            
+            // Frequency chart
+            const ctx = document.getElementById('frequencyChart').getContext('2d');
+            if (frequencyChart) frequencyChart.destroy();
+            
+            frequencyChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(freq),
+                    datasets: [{
+                        label: 'Frequency',
+                        data: Object.values(freq),
+                        backgroundColor: Object.keys(freq).map(n => 
+                            hot.includes(parseInt(n)) ? 'rgba(239, 68, 68, 0.7)' :
+                            cold.includes(parseInt(n)) ? 'rgba(59, 130, 246, 0.7)' :
+                            'rgba(148, 163, 184, 0.3)'
+                        )
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#94a3b8' } },
+                        x: { grid: { display: false }, ticks: { color: '#94a3b8', maxTicksLimit: 20 } }
+                    }
+                }
+            });
+            
+            // Number selector
+            const selector = document.getElementById('number-selector');
+            selector.innerHTML = '';
+            for (let i = 1; i <= 47; i++) {
+                const div = document.createElement('div');
+                div.className = 'number-ball neutral-ball cursor-pointer hover:scale-110 transition text-xs';
+                div.style.cssText = 'width: 32px; height: 32px; font-size: 11px;';
+                div.textContent = i;
+                div.onclick = () => toggleNumber(i);
+                div.id = `select-${i}`;
+                selector.appendChild(div);
+            }
+        }
+        
+        function toggleNumber(num) {
+            if (selectedNumbers.has(num)) {
+                selectedNumbers.delete(num);
+            } else if (selectedNumbers.size < 12) {
+                selectedNumbers.add(num);
+            }
+            updateSelection();
+        }
+        
+        function updateSelection() {
+            for (let i = 1; i <= 47; i++) {
+                const el = document.getElementById(`select-${i}`);
+                if (el) {
+                    el.classList.toggle('hot-ball', selectedNumbers.has(i));
+                    el.classList.toggle('neutral-ball', !selectedNumbers.has(i));
+                    el.classList.toggle('ring-2', selectedNumbers.has(i));
+                    el.classList.toggle('ring-white', selectedNumbers.has(i));
+                }
+            }
+        }
+        
+        function generateWheel() {
+            if (selectedNumbers.size < 6) {
+                alert('Select at least 6 numbers');
+                return;
+            }
+            
+            const numbers = Array.from(selectedNumbers).sort((a,b) => a-b);
+            const tickets = [];
+            
+            // Simple abbreviated wheel
+            const pool = numbers.slice(0, 12);
+            if (pool.length >= 6) {
+                tickets.push(pool.slice(0, 6));
+                if (pool.length >= 8) tickets.push(pool.slice(2, 8));
+                if (pool.length >= 10) tickets.push(pool.slice(4, 10));
+                if (pool.length >= 12) tickets.push(pool.slice(6, 12));
+            }
+            
+            const results = document.getElementById('wheel-results');
+            results.innerHTML = `
+                <div class="text-sm text-slate-400 mb-2">Generated ${tickets.length} tickets:</div>
+                ${tickets.map((ticket, i) => `
+                    <div class="wheel-ticket">
+                        <div class="text-xs text-slate-400 mb-2">Ticket ${i + 1}</div>
+                        <div class="flex gap-2">
+                            ${ticket.map(n => `<div class="number-ball hot-ball">${n}</div>`).join('')}
+                        </div>
+                    </div>
+                `).join('')}
+            `;
+        }
+        
+        // Render on load
+        renderDashboard();
+    </script>
+</body>
+</html>

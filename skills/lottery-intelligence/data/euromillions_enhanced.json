@@ -1,0 +1,2248 @@
+{
+  "metadata": {
+    "game": "EuroMillions",
+    "format": "5/50 + 2/12 Lucky Stars",
+    "draw_days": [
+      "Tuesday",
+      "Friday"
+    ],
+    "total_draws": 51,
+    "date_range": "2025-09-30 to 2026-03-24",
+    "scraped_at": "2026-03-26T21:20:52.221839",
+    "enhanced_at": "2026-03-26T21:44:26.266252"
+  },
+  "draws": [
+    {
+      "date": "2026-03-24",
+      "game": "EuroMillions",
+      "numbers": [
+        12,
+        16,
+        17,
+        18,
+        27
+      ],
+      "lucky_stars": [
+        1,
+        3
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-24-03-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n1",
+          "winners": "\u20ac500,000.00",
+          "prize": "1"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n42",
+          "winners": "\u20ac2,000.00",
+          "prize": "42"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n1,822",
+          "winners": "\u20ac20.00",
+          "prize": "1,822"
+        },
+        {
+          "match": "Totals\n-\n1,865",
+          "winners": "-",
+          "prize": "1,865"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-20",
+      "game": "EuroMillions",
+      "numbers": [
+        5,
+        12,
+        16,
+        37,
+        46
+      ],
+      "lucky_stars": [
+        8,
+        10
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-20-03-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n50",
+          "winners": "\u20ac2,000.00",
+          "prize": "50"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,539",
+          "winners": "\u20ac20.00",
+          "prize": "2,539"
+        },
+        {
+          "match": "Totals\n-\n2,589",
+          "winners": "-",
+          "prize": "2,589"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-17",
+      "game": "EuroMillions",
+      "numbers": [
+        5,
+        17,
+        28,
+        33,
+        41
+      ],
+      "lucky_stars": [
+        3,
+        9
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-17-03-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n2",
+          "winners": "\u20ac500,000.00",
+          "prize": "2"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n41",
+          "winners": "\u20ac2,000.00",
+          "prize": "41"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n1,700",
+          "winners": "\u20ac20.00",
+          "prize": "1,700"
+        },
+        {
+          "match": "Totals\n-\n1,743",
+          "winners": "-",
+          "prize": "1,743"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-13",
+      "game": "EuroMillions",
+      "numbers": [
+        13,
+        17,
+        26,
+        41,
+        48
+      ],
+      "lucky_stars": [
+        4,
+        10
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-13-03-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n48",
+          "winners": "\u20ac2,000.00",
+          "prize": "48"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,268",
+          "winners": "\u20ac20.00",
+          "prize": "2,268"
+        },
+        {
+          "match": "Totals\n-\n2,316",
+          "winners": "-",
+          "prize": "2,316"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-10",
+      "game": "EuroMillions",
+      "numbers": [
+        12,
+        14,
+        27,
+        44,
+        50
+      ],
+      "lucky_stars": [
+        4
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-10-03-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n1",
+          "winners": "\u20ac500,000.00",
+          "prize": "1"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n86",
+          "winners": "\u20ac2,000.00",
+          "prize": "86"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n3,438",
+          "winners": "\u20ac20.00",
+          "prize": "3,438"
+        },
+        {
+          "match": "Totals\n-\n3,525",
+          "winners": "-",
+          "prize": "3,525"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-06",
+      "game": "EuroMillions",
+      "numbers": [
+        15,
+        16,
+        19,
+        28,
+        37
+      ],
+      "lucky_stars": [
+        6,
+        9
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-06-03-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n87",
+          "winners": "\u20ac2,000.00",
+          "prize": "87"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n3,761",
+          "winners": "\u20ac20.00",
+          "prize": "3,761"
+        },
+        {
+          "match": "Totals\n-\n3,848",
+          "winners": "-",
+          "prize": "3,848"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "game": "EuroMillions",
+      "numbers": [
+        6,
+        7,
+        24,
+        34,
+        50
+      ],
+      "lucky_stars": [
+        5
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-03-03-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n60",
+          "winners": "\u20ac2,000.00",
+          "prize": "60"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,750",
+          "winners": "\u20ac20.00",
+          "prize": "2,750"
+        },
+        {
+          "match": "Totals\n-\n2,810",
+          "winners": "-",
+          "prize": "2,810"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-27",
+      "game": "EuroMillions",
+      "numbers": [
+        14,
+        24,
+        27,
+        39,
+        42
+      ],
+      "lucky_stars": [
+        6,
+        10
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-27-02-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n91",
+          "winners": "\u20ac2,000.00",
+          "prize": "91"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n4,016",
+          "winners": "\u20ac20.00",
+          "prize": "4,016"
+        },
+        {
+          "match": "Totals\n-\n4,107",
+          "winners": "-",
+          "prize": "4,107"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-24",
+      "game": "EuroMillions",
+      "numbers": [
+        10,
+        27,
+        40,
+        43,
+        47
+      ],
+      "lucky_stars": [
+        6
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-24-02-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n59",
+          "winners": "\u20ac2,000.00",
+          "prize": "59"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,427",
+          "winners": "\u20ac20.00",
+          "prize": "2,427"
+        },
+        {
+          "match": "Totals\n-\n2,486",
+          "winners": "-",
+          "prize": "2,486"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-20",
+      "game": "EuroMillions",
+      "numbers": [
+        13,
+        24,
+        28,
+        33,
+        35
+      ],
+      "lucky_stars": [
+        5,
+        9
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-20-02-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n1",
+          "winners": "\u20ac500,000.00",
+          "prize": "1"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n64",
+          "winners": "\u20ac2,000.00",
+          "prize": "64"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n3,274",
+          "winners": "\u20ac20.00",
+          "prize": "3,274"
+        },
+        {
+          "match": "Totals\n-\n3,339",
+          "winners": "-",
+          "prize": "3,339"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-17",
+      "game": "EuroMillions",
+      "numbers": [
+        1,
+        4,
+        6,
+        10,
+        41
+      ],
+      "lucky_stars": [
+        5,
+        12
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-17-02-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n1",
+          "winners": "\u20ac500,000.00",
+          "prize": "1"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n58",
+          "winners": "\u20ac2,000.00",
+          "prize": "58"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,279",
+          "winners": "\u20ac20.00",
+          "prize": "2,279"
+        },
+        {
+          "match": "Totals\n-\n2,338",
+          "winners": "-",
+          "prize": "2,338"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-13",
+      "game": "EuroMillions",
+      "numbers": [
+        9,
+        13,
+        31,
+        37,
+        40
+      ],
+      "lucky_stars": [
+        6
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-13-02-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n75",
+          "winners": "\u20ac2,000.00",
+          "prize": "75"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,659",
+          "winners": "\u20ac20.00",
+          "prize": "2,659"
+        },
+        {
+          "match": "Totals\n-\n2,734",
+          "winners": "-",
+          "prize": "2,734"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-10",
+      "game": "EuroMillions",
+      "numbers": [
+        1,
+        17,
+        19,
+        34,
+        42
+      ],
+      "lucky_stars": [
+        5,
+        8
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-10-02-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n44",
+          "winners": "\u20ac2,000.00",
+          "prize": "44"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,179",
+          "winners": "\u20ac20.00",
+          "prize": "2,179"
+        },
+        {
+          "match": "Totals\n-\n2,223",
+          "winners": "-",
+          "prize": "2,223"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-06",
+      "game": "EuroMillions",
+      "numbers": [
+        10,
+        13,
+        20,
+        23,
+        24
+      ],
+      "lucky_stars": [
+        6,
+        11
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-06-02-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n65",
+          "winners": "\u20ac2,000.00",
+          "prize": "65"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,438",
+          "winners": "\u20ac20.00",
+          "prize": "2,438"
+        },
+        {
+          "match": "Totals\n-\n2,503",
+          "winners": "-",
+          "prize": "2,503"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-03",
+      "game": "EuroMillions",
+      "numbers": [
+        26,
+        27,
+        28,
+        34,
+        37
+      ],
+      "lucky_stars": [
+        4,
+        9
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-03-02-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n28",
+          "winners": "\u20ac2,000.00",
+          "prize": "28"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n1,411",
+          "winners": "\u20ac20.00",
+          "prize": "1,411"
+        },
+        {
+          "match": "Totals\n-\n1,439",
+          "winners": "-",
+          "prize": "1,439"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-30",
+      "game": "EuroMillions",
+      "numbers": [
+        14,
+        18,
+        31,
+        35,
+        46
+      ],
+      "lucky_stars": [
+        7,
+        11
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-30-01-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n83",
+          "winners": "\u20ac2,000.00",
+          "prize": "83"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n3,391",
+          "winners": "\u20ac20.00",
+          "prize": "3,391"
+        },
+        {
+          "match": "Totals\n-\n3,474",
+          "winners": "-",
+          "prize": "3,474"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-27",
+      "game": "EuroMillions",
+      "numbers": [
+        4,
+        23,
+        42,
+        43,
+        47
+      ],
+      "lucky_stars": [
+        3,
+        9
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-27-01-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n2",
+          "winners": "\u20ac500,000.00",
+          "prize": "2"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n82",
+          "winners": "\u20ac2,000.00",
+          "prize": "82"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,982",
+          "winners": "\u20ac20.00",
+          "prize": "2,982"
+        },
+        {
+          "match": "Totals\n-\n3,066",
+          "winners": "-",
+          "prize": "3,066"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-23",
+      "game": "EuroMillions",
+      "numbers": [
+        4,
+        5,
+        13,
+        21,
+        42
+      ],
+      "lucky_stars": [
+        3,
+        10
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-23-01-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n63",
+          "winners": "\u20ac2,000.00",
+          "prize": "63"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,994",
+          "winners": "\u20ac20.00",
+          "prize": "2,994"
+        },
+        {
+          "match": "Totals\n-\n3,057",
+          "winners": "-",
+          "prize": "3,057"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-20",
+      "game": "EuroMillions",
+      "numbers": [
+        11,
+        18,
+        19,
+        22,
+        50
+      ],
+      "lucky_stars": [
+        1
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-20-01-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n55",
+          "winners": "\u20ac2,000.00",
+          "prize": "55"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,338",
+          "winners": "\u20ac20.00",
+          "prize": "2,338"
+        },
+        {
+          "match": "Totals\n-\n2,393",
+          "winners": "-",
+          "prize": "2,393"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-16",
+      "game": "EuroMillions",
+      "numbers": [
+        5,
+        17,
+        24,
+        29,
+        50
+      ],
+      "lucky_stars": [
+        10
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-16-01-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n56",
+          "winners": "\u20ac2,000.00",
+          "prize": "56"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,585",
+          "winners": "\u20ac20.00",
+          "prize": "2,585"
+        },
+        {
+          "match": "Totals\n-\n2,641",
+          "winners": "-",
+          "prize": "2,641"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-13",
+      "game": "EuroMillions",
+      "numbers": [
+        6,
+        10,
+        18,
+        44,
+        47
+      ],
+      "lucky_stars": [
+        2
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-13-01-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n60",
+          "winners": "\u20ac2,000.00",
+          "prize": "60"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,446",
+          "winners": "\u20ac20.00",
+          "prize": "2,446"
+        },
+        {
+          "match": "Totals\n-\n2,506",
+          "winners": "-",
+          "prize": "2,506"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-09",
+      "game": "EuroMillions",
+      "numbers": [
+        1,
+        7,
+        10,
+        26,
+        34
+      ],
+      "lucky_stars": [
+        2,
+        4
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-09-01-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n49",
+          "winners": "\u20ac2,000.00",
+          "prize": "49"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,478",
+          "winners": "\u20ac20.00",
+          "prize": "2,478"
+        },
+        {
+          "match": "Totals\n-\n2,527",
+          "winners": "-",
+          "prize": "2,527"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-06",
+      "game": "EuroMillions",
+      "numbers": [
+        5,
+        14,
+        17,
+        18,
+        31
+      ],
+      "lucky_stars": [
+        10,
+        12
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-06-01-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n50",
+          "winners": "\u20ac2,000.00",
+          "prize": "50"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n1,783",
+          "winners": "\u20ac20.00",
+          "prize": "1,783"
+        },
+        {
+          "match": "Totals\n-\n1,833",
+          "winners": "-",
+          "prize": "1,833"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-02",
+      "game": "EuroMillions",
+      "numbers": [
+        8,
+        27,
+        42,
+        44,
+        46
+      ],
+      "lucky_stars": [
+        1,
+        10
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-02-01-2026",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n45",
+          "winners": "\u20ac2,000.00",
+          "prize": "45"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,111",
+          "winners": "\u20ac20.00",
+          "prize": "2,111"
+        },
+        {
+          "match": "Totals\n-\n2,156",
+          "winners": "-",
+          "prize": "2,156"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-30",
+      "game": "EuroMillions",
+      "numbers": [
+        11,
+        26,
+        29,
+        34,
+        44
+      ],
+      "lucky_stars": [
+        1,
+        10
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-30-12-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n42",
+          "winners": "\u20ac2,000.00",
+          "prize": "42"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n1,892",
+          "winners": "\u20ac20.00",
+          "prize": "1,892"
+        },
+        {
+          "match": "Totals\n-\n1,934",
+          "winners": "-",
+          "prize": "1,934"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-26",
+      "game": "EuroMillions",
+      "numbers": [
+        12,
+        22,
+        32,
+        36,
+        48
+      ],
+      "lucky_stars": [
+        3,
+        4
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-26-12-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n37",
+          "winners": "\u20ac2,000.00",
+          "prize": "37"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n1,623",
+          "winners": "\u20ac20.00",
+          "prize": "1,623"
+        },
+        {
+          "match": "Totals\n-\n1,660",
+          "winners": "-",
+          "prize": "1,660"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-23",
+      "game": "EuroMillions",
+      "numbers": [
+        8,
+        26,
+        27,
+        29,
+        44
+      ],
+      "lucky_stars": [
+        11,
+        12
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-23-12-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n68",
+          "winners": "\u20ac2,000.00",
+          "prize": "68"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,391",
+          "winners": "\u20ac20.00",
+          "prize": "2,391"
+        },
+        {
+          "match": "Totals\n-\n2,459",
+          "winners": "-",
+          "prize": "2,459"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-19",
+      "game": "EuroMillions",
+      "numbers": [
+        17,
+        21,
+        39,
+        43,
+        44
+      ],
+      "lucky_stars": [
+        1,
+        11
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-19-12-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n47",
+          "winners": "\u20ac2,000.00",
+          "prize": "47"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,226",
+          "winners": "\u20ac20.00",
+          "prize": "2,226"
+        },
+        {
+          "match": "Totals\n-\n2,273",
+          "winners": "-",
+          "prize": "2,273"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-16",
+      "game": "EuroMillions",
+      "numbers": [
+        14,
+        16,
+        40,
+        41,
+        44
+      ],
+      "lucky_stars": [
+        2,
+        10
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-16-12-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n33",
+          "winners": "\u20ac2,000.00",
+          "prize": "33"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n1,712",
+          "winners": "\u20ac20.00",
+          "prize": "1,712"
+        },
+        {
+          "match": "Totals\n-\n1,745",
+          "winners": "-",
+          "prize": "1,745"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-12",
+      "game": "EuroMillions",
+      "numbers": [
+        7,
+        25,
+        30,
+        37,
+        41
+      ],
+      "lucky_stars": [
+        5,
+        11
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-12-12-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n1",
+          "winners": "\u20ac500,000.00",
+          "prize": "1"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n55",
+          "winners": "\u20ac2,000.00",
+          "prize": "55"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,200",
+          "winners": "\u20ac20.00",
+          "prize": "2,200"
+        },
+        {
+          "match": "Totals\n-\n2,256",
+          "winners": "-",
+          "prize": "2,256"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-09",
+      "game": "EuroMillions",
+      "numbers": [
+        2,
+        8,
+        13,
+        29,
+        49
+      ],
+      "lucky_stars": [
+        11
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-09-12-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n1",
+          "winners": "\u20ac500,000.00",
+          "prize": "1"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n70",
+          "winners": "\u20ac2,000.00",
+          "prize": "70"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,614",
+          "winners": "\u20ac20.00",
+          "prize": "2,614"
+        },
+        {
+          "match": "Totals\n-\n2,685",
+          "winners": "-",
+          "prize": "2,685"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-05",
+      "game": "EuroMillions",
+      "numbers": [
+        9,
+        15,
+        25,
+        34,
+        46
+      ],
+      "lucky_stars": [
+        8,
+        12
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-05-12-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n80",
+          "winners": "\u20ac2,000.00",
+          "prize": "80"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,751",
+          "winners": "\u20ac20.00",
+          "prize": "2,751"
+        },
+        {
+          "match": "Totals\n-\n2,831",
+          "winners": "-",
+          "prize": "2,831"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-02",
+      "game": "EuroMillions",
+      "numbers": [
+        4,
+        13,
+        14,
+        20,
+        41
+      ],
+      "lucky_stars": [
+        6,
+        12
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-02-12-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n33",
+          "winners": "\u20ac2,000.00",
+          "prize": "33"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n1,776",
+          "winners": "\u20ac20.00",
+          "prize": "1,776"
+        },
+        {
+          "match": "Totals\n-\n1,809",
+          "winners": "-",
+          "prize": "1,809"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-28",
+      "game": "EuroMillions",
+      "numbers": [
+        5,
+        29,
+        33,
+        39,
+        42
+      ],
+      "lucky_stars": [
+        3,
+        9
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-28-11-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n69",
+          "winners": "\u20ac2,000.00",
+          "prize": "69"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,891",
+          "winners": "\u20ac20.00",
+          "prize": "2,891"
+        },
+        {
+          "match": "Totals\n-\n2,960",
+          "winners": "-",
+          "prize": "2,960"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-25",
+      "game": "EuroMillions",
+      "numbers": [
+        6,
+        11,
+        17,
+        35,
+        44
+      ],
+      "lucky_stars": [
+        3,
+        7
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-25-11-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n52",
+          "winners": "\u20ac2,000.00",
+          "prize": "52"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,164",
+          "winners": "\u20ac20.00",
+          "prize": "2,164"
+        },
+        {
+          "match": "Totals\n-\n2,216",
+          "winners": "-",
+          "prize": "2,216"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-21",
+      "game": "EuroMillions",
+      "numbers": [
+        17,
+        19,
+        29,
+        35,
+        48
+      ],
+      "lucky_stars": [
+        5,
+        9
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-21-11-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n56",
+          "winners": "\u20ac2,000.00",
+          "prize": "56"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,852",
+          "winners": "\u20ac20.00",
+          "prize": "2,852"
+        },
+        {
+          "match": "Totals\n-\n2,908",
+          "winners": "-",
+          "prize": "2,908"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-18",
+      "game": "EuroMillions",
+      "numbers": [
+        2,
+        4,
+        15,
+        21,
+        48
+      ],
+      "lucky_stars": [
+        6,
+        12
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-18-11-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n36",
+          "winners": "\u20ac2,000.00",
+          "prize": "36"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,344",
+          "winners": "\u20ac20.00",
+          "prize": "2,344"
+        },
+        {
+          "match": "Totals\n-\n2,380",
+          "winners": "-",
+          "prize": "2,380"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-14",
+      "game": "EuroMillions",
+      "numbers": [
+        9,
+        26,
+        27,
+        45,
+        48
+      ],
+      "lucky_stars": [
+        8
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-14-11-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n46",
+          "winners": "\u20ac2,000.00",
+          "prize": "46"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,656",
+          "winners": "\u20ac20.00",
+          "prize": "2,656"
+        },
+        {
+          "match": "Totals\n-\n2,702",
+          "winners": "-",
+          "prize": "2,702"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-11",
+      "game": "EuroMillions",
+      "numbers": [
+        4,
+        22,
+        32,
+        36,
+        47
+      ],
+      "lucky_stars": [
+        2,
+        10
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-11-11-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n36",
+          "winners": "\u20ac2,000.00",
+          "prize": "36"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n1,880",
+          "winners": "\u20ac20.00",
+          "prize": "1,880"
+        },
+        {
+          "match": "Totals\n-\n1,916",
+          "winners": "-",
+          "prize": "1,916"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-07",
+      "game": "EuroMillions",
+      "numbers": [
+        11,
+        21,
+        39,
+        40,
+        43
+      ],
+      "lucky_stars": [
+        2,
+        8
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-07-11-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n96",
+          "winners": "\u20ac2,000.00",
+          "prize": "96"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n3,475",
+          "winners": "\u20ac20.00",
+          "prize": "3,475"
+        },
+        {
+          "match": "Totals\n-\n3,571",
+          "winners": "-",
+          "prize": "3,571"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-04",
+      "game": "EuroMillions",
+      "numbers": [
+        6,
+        9,
+        25,
+        28,
+        45
+      ],
+      "lucky_stars": [
+        1,
+        4
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-04-11-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n1",
+          "winners": "\u20ac500,000.00",
+          "prize": "1"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n40",
+          "winners": "\u20ac2,000.00",
+          "prize": "40"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n1,922",
+          "winners": "\u20ac20.00",
+          "prize": "1,922"
+        },
+        {
+          "match": "Totals\n-\n1,963",
+          "winners": "-",
+          "prize": "1,963"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-31",
+      "game": "EuroMillions",
+      "numbers": [
+        5,
+        14,
+        38,
+        43,
+        45
+      ],
+      "lucky_stars": [
+        7,
+        11
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-31-10-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n46",
+          "winners": "\u20ac2,000.00",
+          "prize": "46"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,358",
+          "winners": "\u20ac20.00",
+          "prize": "2,358"
+        },
+        {
+          "match": "Totals\n-\n2,404",
+          "winners": "-",
+          "prize": "2,404"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-28",
+      "game": "EuroMillions",
+      "numbers": [
+        7,
+        8,
+        24,
+        35,
+        49
+      ],
+      "lucky_stars": [
+        2,
+        12
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-28-10-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n38",
+          "winners": "\u20ac2,000.00",
+          "prize": "38"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n1,874",
+          "winners": "\u20ac20.00",
+          "prize": "1,874"
+        },
+        {
+          "match": "Totals\n-\n1,912",
+          "winners": "-",
+          "prize": "1,912"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-24",
+      "game": "EuroMillions",
+      "numbers": [
+        7,
+        8,
+        25,
+        31,
+        45
+      ],
+      "lucky_stars": [
+        12
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-24-10-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n54",
+          "winners": "\u20ac2,000.00",
+          "prize": "54"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,336",
+          "winners": "\u20ac20.00",
+          "prize": "2,336"
+        },
+        {
+          "match": "Totals\n-\n2,390",
+          "winners": "-",
+          "prize": "2,390"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-21",
+      "game": "EuroMillions",
+      "numbers": [
+        5,
+        24,
+        29,
+        40,
+        42
+      ],
+      "lucky_stars": [
+        6,
+        12
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-21-10-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n41",
+          "winners": "\u20ac2,000.00",
+          "prize": "41"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n1,685",
+          "winners": "\u20ac20.00",
+          "prize": "1,685"
+        },
+        {
+          "match": "Totals\n-\n1,726",
+          "winners": "-",
+          "prize": "1,726"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-17",
+      "game": "EuroMillions",
+      "numbers": [
+        13,
+        35,
+        39,
+        44,
+        47
+      ],
+      "lucky_stars": [
+        3,
+        5
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-17-10-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n48",
+          "winners": "\u20ac2,000.00",
+          "prize": "48"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,274",
+          "winners": "\u20ac20.00",
+          "prize": "2,274"
+        },
+        {
+          "match": "Totals\n-\n2,322",
+          "winners": "-",
+          "prize": "2,322"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-14",
+      "game": "EuroMillions",
+      "numbers": [
+        5,
+        8,
+        14,
+        16,
+        18
+      ],
+      "lucky_stars": [
+        3,
+        10
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-14-10-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n40",
+          "winners": "\u20ac2,000.00",
+          "prize": "40"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n1,598",
+          "winners": "\u20ac20.00",
+          "prize": "1,598"
+        },
+        {
+          "match": "Totals\n-\n1,638",
+          "winners": "-",
+          "prize": "1,638"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-10",
+      "game": "EuroMillions",
+      "numbers": [
+        6,
+        7,
+        17,
+        20,
+        21
+      ],
+      "lucky_stars": [
+        1,
+        10
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-10-10-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n53",
+          "winners": "\u20ac2,000.00",
+          "prize": "53"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,306",
+          "winners": "\u20ac20.00",
+          "prize": "2,306"
+        },
+        {
+          "match": "Totals\n-\n2,359",
+          "winners": "-",
+          "prize": "2,359"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-07",
+      "game": "EuroMillions",
+      "numbers": [
+        24,
+        39,
+        42,
+        43,
+        48
+      ],
+      "lucky_stars": [
+        5,
+        8
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-07-10-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n29",
+          "winners": "\u20ac2,000.00",
+          "prize": "29"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n1,752",
+          "winners": "\u20ac20.00",
+          "prize": "1,752"
+        },
+        {
+          "match": "Totals\n-\n1,781",
+          "winners": "-",
+          "prize": "1,781"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-03",
+      "game": "EuroMillions",
+      "numbers": [
+        6,
+        12,
+        18,
+        25,
+        41
+      ],
+      "lucky_stars": [
+        2
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-03-10-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n59",
+          "winners": "\u20ac2,000.00",
+          "prize": "59"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,409",
+          "winners": "\u20ac20.00",
+          "prize": "2,409"
+        },
+        {
+          "match": "Totals\n-\n2,468",
+          "winners": "-",
+          "prize": "2,468"
+        }
+      ]
+    },
+    {
+      "date": "2025-09-30",
+      "game": "EuroMillions",
+      "numbers": [
+        3,
+        8,
+        15,
+        17,
+        48
+      ],
+      "lucky_stars": [
+        2
+      ],
+      "url": "https://www.irishlottery.com/results/euromillions-result-30-09-2025",
+      "jackpot_amount": "\u00c2\u00a354 Million",
+      "jackpot_winners": null,
+      "total_winners": null,
+      "total_prize_fund": null,
+      "machine": null,
+      "ball_set": null,
+      "prize_breakdown": [
+        {
+          "match": "Match 5\n\u20ac500,000.00\n0",
+          "winners": "\u20ac500,000.00",
+          "prize": "0"
+        },
+        {
+          "match": "Match 4\n\u20ac2,000.00\n47",
+          "winners": "\u20ac2,000.00",
+          "prize": "47"
+        },
+        {
+          "match": "Match 3\n\u20ac20.00\n2,095",
+          "winners": "\u20ac20.00",
+          "prize": "2,095"
+        },
+        {
+          "match": "Totals\n-\n2,142",
+          "winners": "-",
+          "prize": "2,142"
+        }
+      ]
+    }
+  ]
+}
