@@ -1,10 +1,4 @@
 ﻿{
-    "https://polymarket.com/event/dota2-ts8-xtreme-2026-03-24":  {
-                                                                     "odds":  100,
-                                                                     "timestamp":  "2026-03-25 19:00:30",
-                                                                     "name":  "Dota 2: Team Spirit vs Xtreme Gaming (BO2) - ESL One Birmingham Group B",
-                                                                     "category":  "sports"
-                                                                 },
     "https://polymarket.com/event/nba-orl-cha-2026-03-19":  {
                                                                 "odds":  100,
                                                                 "timestamp":  "2026-03-20 07:24:27",
@@ -19,7 +13,7 @@
                                                                },
     "https://polymarket.com/event/hyperliquid-open-interest-flipped-in-2026":  {
                                                                                    "odds":  8,
-                                                                                   "timestamp":  "2026-03-26 09:00:21",
+                                                                                   "timestamp":  "2026-03-26 11:00:24",
                                                                                    "name":  "Hyperliquid open interest flipped in 2026?",
                                                                                    "category":  "crypto"
                                                                                },
@@ -29,12 +23,6 @@
                                                                                         "name":  "Highest temperature in Taipei on March 24?",
                                                                                         "category":  "trending"
                                                                                     },
-    "https://polymarket.com/event/highest-temperature-in-tel-aviv-on-march-29-2026":  {
-                                                                                          "odds":  18,
-                                                                                          "timestamp":  "2026-03-26 09:00:21",
-                                                                                          "name":  "Highest temperature in Tel Aviv on March 29?",
-                                                                                          "category":  "trending"
-                                                                                      },
     "https://polymarket.com/event/nya-above-on-march-20-2026":  {
                                                                     "odds":  99,
                                                                     "timestamp":  "2026-03-18 08:00:26",
@@ -73,7 +61,7 @@
                                                                                     },
     "https://polymarket.com/event/megaeth-airdrop-by":  {
                                                             "odds":  0,
-                                                            "timestamp":  "2026-03-26 09:00:21",
+                                                            "timestamp":  "2026-03-26 11:00:24",
                                                             "name":  "MegaETH airdrop by...?",
                                                             "category":  "entertainment"
                                                         },
@@ -96,14 +84,14 @@
                                                                 "category":  "sports"
                                                             },
     "https://polymarket.com/event/googl-week-march-27-2026":  {
-                                                                  "odds":  26,
-                                                                  "timestamp":  "2026-03-26 09:00:21",
+                                                                  "odds":  23,
+                                                                  "timestamp":  "2026-03-26 11:00:24",
                                                                   "name":  "Google (GOOGL) closes week of Mar 23 at ___?",
                                                                   "category":  "finance"
                                                               },
     "https://polymarket.com/event/fed-decision-in-july-181":  {
                                                                   "odds":  76,
-                                                                  "timestamp":  "2026-03-26 09:00:21",
+                                                                  "timestamp":  "2026-03-26 11:00:24",
                                                                   "name":  "Fed Decision in July?",
                                                                   "category":  "politics"
                                                               },
@@ -133,7 +121,7 @@
                                                              },
     "https://polymarket.com/event/how-high-will-inflation-get-in-2026":  {
                                                                              "odds":  44,
-                                                                             "timestamp":  "2026-03-26 09:00:21",
+                                                                             "timestamp":  "2026-03-26 11:00:24",
                                                                              "name":  "How high will inflation get in 2026?",
                                                                              "category":  "trending"
                                                                          },
@@ -151,7 +139,7 @@
                                                                                          },
     "https://polymarket.com/event/uefa-europa-conference-league-top-scorer-club":  {
                                                                                        "odds":  0,
-                                                                                       "timestamp":  "2026-03-26 09:00:21",
+                                                                                       "timestamp":  "2026-03-26 11:00:24",
                                                                                        "name":  "UEFA Europa Conference League: Top Scorer (Club)",
                                                                                        "category":  "sports"
                                                                                    },
@@ -161,12 +149,6 @@
                                                                    "name":  "Bitcoin above ___ on March 25?",
                                                                    "category":  "crypto"
                                                                },
-    "https://polymarket.com/event/usd-cad-up-or-down-on-march-16-2026":  {
-                                                                             "odds":  100,
-                                                                             "timestamp":  "2026-03-17 20:00:27",
-                                                                             "name":  "USD/CAD Up or Down on March 16?",
-                                                                             "category":  "trending"
-                                                                         },
     "https://polymarket.com/event/backpack-fdv-above-one-day-after-launch":  {
                                                                                  "odds":  0,
                                                                                  "timestamp":  "2026-03-24 22:00:35",
@@ -181,7 +163,7 @@
                                                                        },
     "https://polymarket.com/event/which-countries-will-join-the-board-of-peace-by-march-31":  {
                                                                                                   "odds":  1,
-                                                                                                  "timestamp":  "2026-03-26 09:00:21",
+                                                                                                  "timestamp":  "2026-03-26 11:00:24",
                                                                                                   "name":  "Which countries will join the Board of Peace by March 31?",
                                                                                                   "category":  "trending"
                                                                                               },
@@ -193,7 +175,7 @@
                                                         },
     "https://polymarket.com/event/what-will-the-average-monthly-ethereum-gas-price-hit-before-2027":  {
                                                                                                           "odds":  38,
-                                                                                                          "timestamp":  "2026-03-26 09:00:21",
+                                                                                                          "timestamp":  "2026-03-26 11:00:24",
                                                                                                           "name":  "What will the average monthly Ethereum gas price hit before 2027?",
                                                                                                           "category":  "crypto"
                                                                                                       },
@@ -277,13 +259,13 @@
                                                               },
     "https://polymarket.com/event/will-usdcad-hit-in-2026":  {
                                                                  "odds":  10,
-                                                                 "timestamp":  "2026-03-26 09:00:21",
+                                                                 "timestamp":  "2026-03-26 11:00:24",
                                                                  "name":  "Will USD/CAD hit __ in 2026?",
                                                                  "category":  "trending"
                                                              },
     "https://polymarket.com/event/highest-temperature-in-taipei-on-march-28-2026":  {
-                                                                                        "odds":  2,
-                                                                                        "timestamp":  "2026-03-26 09:00:21",
+                                                                                        "odds":  1,
+                                                                                        "timestamp":  "2026-03-26 11:00:24",
                                                                                         "name":  "Highest temperature in Taipei on March 28?",
                                                                                         "category":  "trending"
                                                                                     },
@@ -311,12 +293,6 @@
                                                                 "name":  "Capitals vs. Blues",
                                                                 "category":  "sports"
                                                             },
-    "https://polymarket.com/event/iran-leadership-change-by":  {
-                                                                   "odds":  13,
-                                                                   "timestamp":  "2026-03-18 05:00:53",
-                                                                   "name":  "Iran leadership change by...?",
-                                                                   "category":  "politics"
-                                                               },
     "https://polymarket.com/event/crint-nzl-zaf-2026-03-17":  {
                                                                   "odds":  100,
                                                                   "timestamp":  "2026-03-17 12:00:27",
@@ -331,7 +307,7 @@
                                                                                     },
     "https://polymarket.com/event/ucl-ars-kai1-2026-01-28-more-markets":  {
                                                                               "odds":  50,
-                                                                              "timestamp":  "2026-03-26 08:00:26",
+                                                                              "timestamp":  "2026-03-26 11:00:24",
                                                                               "name":  "Arsenal FC vs. Qairat FK - More Markets",
                                                                               "category":  "entertainment"
                                                                           },
@@ -345,12 +321,6 @@
                                                                              "odds":  51,
                                                                              "timestamp":  "2026-03-19 22:00:32",
                                                                              "name":  "USD/KRW Up or Down on March 19?",
-                                                                             "category":  "trending"
-                                                                         },
-    "https://polymarket.com/event/eur-usd-up-or-down-on-march-19-2026":  {
-                                                                             "odds":  99,
-                                                                             "timestamp":  "2026-03-19 20:00:33",
-                                                                             "name":  "EUR/USD Up or Down on March 19?",
                                                                              "category":  "trending"
                                                                          },
     "https://polymarket.com/event/amzn-week-march-20-2026":  {
@@ -409,13 +379,13 @@
                                                                            },
     "https://polymarket.com/event/will-us-crude-oil-reserves-fall-to-by-may-1":  {
                                                                                      "odds":  5,
-                                                                                     "timestamp":  "2026-03-26 09:00:21",
+                                                                                     "timestamp":  "2026-03-26 11:00:24",
                                                                                      "name":  "Will US crude oil reserves fall to __ by May 1?",
                                                                                      "category":  "trending"
                                                                                  },
     "https://polymarket.com/event/how-much-will-be-wagered-on-us-sports-betting-in-2026":  {
                                                                                                "odds":  96,
-                                                                                               "timestamp":  "2026-03-26 09:00:21",
+                                                                                               "timestamp":  "2026-03-26 11:00:24",
                                                                                                "name":  "How much will be wagered on US sports betting in 2026?",
                                                                                                "category":  "sports"
                                                                                            },
@@ -444,8 +414,8 @@
                                                                   "category":  "finance"
                                                               },
     "https://polymarket.com/event/hood-up-or-down-on-march-26-2026":  {
-                                                                          "odds":  58,
-                                                                          "timestamp":  "2026-03-26 09:00:21",
+                                                                          "odds":  68,
+                                                                          "timestamp":  "2026-03-26 11:00:24",
                                                                           "name":  "Robinhood (HOOD) Up or Down on March 26?",
                                                                           "category":  "trending"
                                                                       },
@@ -467,12 +437,12 @@
                                                                 "name":  "SC Freiburg vs. 1. FC Union Berlin",
                                                                 "category":  "sports"
                                                             },
-    "https://polymarket.com/event/nba-lal-det-2026-03-23":  {
-                                                                "odds":  100,
-                                                                "timestamp":  "2026-03-24 05:00:25",
-                                                                "name":  "Lakers vs. Pistons",
-                                                                "category":  "sports"
-                                                            },
+    "https://polymarket.com/event/tsla-close-above-on-march-17-2026":  {
+                                                                           "odds":  100,
+                                                                           "timestamp":  "2026-03-17 23:00:25",
+                                                                           "name":  "Tesla (TSLA) closes above ___ on March 17?",
+                                                                           "category":  "finance"
+                                                                       },
     "https://polymarket.com/event/hood-up-or-down-on-march-18-2026":  {
                                                                           "odds":  100,
                                                                           "timestamp":  "2026-03-19 01:00:23",
@@ -481,7 +451,7 @@
                                                                       },
     "https://polymarket.com/event/uel-utr1-gnk-2026-01-22-more-markets":  {
                                                                               "odds":  50,
-                                                                              "timestamp":  "2026-03-26 09:00:21",
+                                                                              "timestamp":  "2026-03-26 11:00:24",
                                                                               "name":  "FC Utrecht vs. KRC Genk - More Markets",
                                                                               "category":  "entertainment"
                                                                           },
@@ -503,6 +473,12 @@
                                                                     "name":  "Dota 2: PARIVISION vs MOUZ (BO2) - ESL One Birmingham Group A",
                                                                     "category":  "sports"
                                                                 },
+    "https://polymarket.com/event/highest-temperature-in-tel-aviv-on-march-23-2026":  {
+                                                                                          "odds":  0,
+                                                                                          "timestamp":  "2026-03-24 00:00:30",
+                                                                                          "name":  "Highest temperature in Tel Aviv on March 23?",
+                                                                                          "category":  "trending"
+                                                                                      },
     "https://polymarket.com/event/nvda-above-on-march-20-2026":  {
                                                                      "odds":  100,
                                                                      "timestamp":  "2026-03-20 16:00:24",
@@ -527,18 +503,24 @@
                                                                            "name":  "Meta (META) closes above ___ on March 25?",
                                                                            "category":  "finance"
                                                                        },
-    "https://polymarket.com/event/wta-rybakin-pegula-2026-03-25":  {
-                                                                       "odds":  100,
-                                                                       "timestamp":  "2026-03-25 22:00:27",
-                                                                       "name":  "Miami Open: Elena Rybakina vs Jessica Pegula",
-                                                                       "category":  "sports"
-                                                                   },
+    "https://polymarket.com/event/nba-tor-chi-2026-03-18":  {
+                                                                "odds":  100,
+                                                                "timestamp":  "2026-03-19 06:00:25",
+                                                                "name":  "Raptors vs. Bulls",
+                                                                "category":  "sports"
+                                                            },
     "https://polymarket.com/event/ere-tel-az-2026-01-25-more-markets":  {
                                                                             "odds":  50,
-                                                                            "timestamp":  "2026-03-26 08:00:26",
+                                                                            "timestamp":  "2026-03-26 11:00:24",
                                                                             "name":  "Telstar 1963 vs. AZ - More Markets",
                                                                             "category":  "entertainment"
                                                                         },
+    "https://polymarket.com/event/highest-temperature-in-taipei-on-march-17-2026":  {
+                                                                                        "odds":  0,
+                                                                                        "timestamp":  "2026-03-18 01:00:26",
+                                                                                        "name":  "Highest temperature in Taipei on March 17?",
+                                                                                        "category":  "trending"
+                                                                                    },
     "https://polymarket.com/event/ndx-above-on-march-20-2026":  {
                                                                     "odds":  97,
                                                                     "timestamp":  "2026-03-19 04:00:24",
@@ -565,7 +547,7 @@
                                                             },
     "https://polymarket.com/event/megaeth-market-cap-fdv-one-day-after-launch":  {
                                                                                      "odds":  2,
-                                                                                     "timestamp":  "2026-03-26 09:00:21",
+                                                                                     "timestamp":  "2026-03-26 11:00:24",
                                                                                      "name":  "MegaETH market cap (FDV) one day after launch?",
                                                                                      "category":  "entertainment"
                                                                                  },
@@ -589,7 +571,7 @@
                                                             },
     "https://polymarket.com/event/augusta-national-invitational-winner":  {
                                                                               "odds":  5,
-                                                                              "timestamp":  "2026-03-26 09:00:21",
+                                                                              "timestamp":  "2026-03-26 11:00:24",
                                                                               "name":  "Augusta National Invitational - Winner ",
                                                                               "category":  "sports"
                                                                           },
@@ -631,7 +613,7 @@
                                                             },
     "https://polymarket.com/event/republican-presidential-nominee-2028":  {
                                                                               "odds":  2,
-                                                                              "timestamp":  "2026-03-26 09:00:21",
+                                                                              "timestamp":  "2026-03-26 11:00:24",
                                                                               "name":  "Republican Presidential Nominee 2028",
                                                                               "category":  "politics"
                                                                           },
@@ -643,7 +625,7 @@
                                                                                       },
     "https://polymarket.com/event/avatar-4-greenlit-by-march-31":  {
                                                                        "odds":  4,
-                                                                       "timestamp":  "2026-03-26 09:00:21",
+                                                                       "timestamp":  "2026-03-26 11:00:24",
                                                                        "name":  "Avatar 4 greenlit by March 31?",
                                                                        "category":  "entertainment"
                                                                    },
@@ -659,12 +641,12 @@
                                                                            "name":  "Apple (AAPL) closes above ___ on March 24?",
                                                                            "category":  "finance"
                                                                        },
-    "https://polymarket.com/event/mlb-2026-american-league-champion":  {
-                                                                           "odds":  8,
-                                                                           "timestamp":  "2026-03-26 09:00:21",
-                                                                           "name":  "MLB: 2026 American League Champion",
-                                                                           "category":  "sports"
-                                                                       },
+    "https://polymarket.com/event/next-prime-minister-of-hungary":  {
+                                                                        "odds":  35,
+                                                                        "timestamp":  "2026-03-26 11:00:24",
+                                                                        "name":  "Next Prime Minister of Hungary",
+                                                                        "category":  "politics"
+                                                                    },
     "https://polymarket.com/event/cs2-navi-aur1-2026-03-23":  {
                                                                   "odds":  100,
                                                                   "timestamp":  "2026-03-24 12:00:36",
@@ -678,8 +660,8 @@
                                                                     "category":  "sports"
                                                                 },
     "https://polymarket.com/event/robinhood-launches-prediction-market-through-miaxdx-by-march-31":  {
-                                                                                                         "odds":  3,
-                                                                                                         "timestamp":  "2026-03-26 09:00:21",
+                                                                                                         "odds":  2,
+                                                                                                         "timestamp":  "2026-03-26 11:00:24",
                                                                                                          "name":  "Robinhood launches prediction market through MIAXdx by March 31?",
                                                                                                          "category":  "trending"
                                                                                                      },
@@ -769,7 +751,7 @@
                                                                  },
     "https://polymarket.com/event/open-above-on-march-27-2026":  {
                                                                      "odds":  100,
-                                                                     "timestamp":  "2026-03-26 09:00:21",
+                                                                     "timestamp":  "2026-03-26 11:00:24",
                                                                      "name":  "Will Opendoor (OPEN) finish week of March 23 above___?",
                                                                      "category":  "finance"
                                                                  },
@@ -793,7 +775,7 @@
                                                             },
     "https://polymarket.com/event/will-eurusd-hit-in-2026":  {
                                                                  "odds":  12,
-                                                                 "timestamp":  "2026-03-25 12:00:27",
+                                                                 "timestamp":  "2026-03-26 11:00:24",
                                                                  "name":  "Will EUR/USD hit __ in 2026?",
                                                                  "category":  "trending"
                                                              },
@@ -811,7 +793,7 @@
                                                                },
     "https://polymarket.com/event/bitcoin-price-on-march-26":  {
                                                                    "odds":  0,
-                                                                   "timestamp":  "2026-03-26 09:00:21",
+                                                                   "timestamp":  "2026-03-26 11:00:24",
                                                                    "name":  "Bitcoin price on March 26?",
                                                                    "category":  "crypto"
                                                                },
@@ -822,8 +804,8 @@
                                                                  "category":  "sports"
                                                              },
     "https://polymarket.com/event/highest-temperature-in-taipei-on-march-27-2026":  {
-                                                                                        "odds":  33,
-                                                                                        "timestamp":  "2026-03-26 09:00:21",
+                                                                                        "odds":  23,
+                                                                                        "timestamp":  "2026-03-26 11:00:24",
                                                                                         "name":  "Highest temperature in Taipei on March 27?",
                                                                                         "category":  "trending"
                                                                                     },
@@ -851,12 +833,12 @@
                                                                            "name":  "Microsoft (MSFT) closes above ___ on March 17?",
                                                                            "category":  "finance"
                                                                        },
-    "https://polymarket.com/event/nba-lal-mia-2026-03-19":  {
-                                                                "odds":  68,
-                                                                "timestamp":  "2026-03-19 22:00:32",
-                                                                "name":  "Lakers vs. Heat",
-                                                                "category":  "sports"
-                                                            },
+    "https://polymarket.com/event/ethereum-above-on-march-17":  {
+                                                                    "odds":  100,
+                                                                    "timestamp":  "2026-03-17 15:00:22",
+                                                                    "name":  "Ethereum above ___ on March 17?",
+                                                                    "category":  "crypto"
+                                                                },
     "https://polymarket.com/event/googl-week-march-20-2026":  {
                                                                   "odds":  5,
                                                                   "timestamp":  "2026-03-20 13:00:27",
@@ -871,7 +853,7 @@
                                                             },
     "https://polymarket.com/event/mls-cup-winner-2026":  {
                                                              "odds":  1,
-                                                             "timestamp":  "2026-03-26 09:00:21",
+                                                             "timestamp":  "2026-03-26 11:00:24",
                                                              "name":  "MLS Cup Winner 2026",
                                                              "category":  "sports"
                                                          },
@@ -881,6 +863,12 @@
                                                                   "name":  "High Point Panthers vs. Wisconsin Badgers",
                                                                   "category":  "sports"
                                                               },
+    "https://polymarket.com/event/cbb-mia-pur-2026-03-22":  {
+                                                                "odds":  100,
+                                                                "timestamp":  "2026-03-22 21:00:23",
+                                                                "name":  "Miami Hurricanes vs. Purdue Boilermakers",
+                                                                "category":  "sports"
+                                                            },
     "https://polymarket.com/event/usd-krw-up-or-down-on-march-17-2026":  {
                                                                              "odds":  56,
                                                                              "timestamp":  "2026-03-18 06:00:17",
@@ -907,7 +895,7 @@
                                                                                         },
     "https://polymarket.com/event/highest-temperature-in-tel-aviv-on-march-28-2026":  {
                                                                                           "odds":  0,
-                                                                                          "timestamp":  "2026-03-26 09:00:21",
+                                                                                          "timestamp":  "2026-03-26 11:00:24",
                                                                                           "name":  "Highest temperature in Tel Aviv on March 28?",
                                                                                           "category":  "trending"
                                                                                       },
@@ -925,7 +913,7 @@
                                                               },
     "https://polymarket.com/event/who-will-be-confirmed-as-fed-chair":  {
                                                                             "odds":  96,
-                                                                            "timestamp":  "2026-03-26 09:00:21",
+                                                                            "timestamp":  "2026-03-26 11:00:24",
                                                                             "name":  "Who will be confirmed as Fed Chair?",
                                                                             "category":  "politics"
                                                                         },
@@ -959,12 +947,6 @@
                                                                       "name":  "2026 Women\u0027s Wimbledon Winner",
                                                                       "category":  "sports"
                                                                   },
-    "https://polymarket.com/event/elon-musk-of-tweets-march-17-march-24":  {
-                                                                               "odds":  0,
-                                                                               "timestamp":  "2026-03-24 19:00:29",
-                                                                               "name":  "Elon Musk # tweets March 17 - March 24, 2026?",
-                                                                               "category":  "politics"
-                                                                           },
     "https://polymarket.com/event/amzn-close-above-on-march-19-2026":  {
                                                                            "odds":  100,
                                                                            "timestamp":  "2026-03-19 22:00:32",
@@ -985,16 +967,10 @@
                                                                        },
     "https://polymarket.com/event/democratic-presidential-nominee-2028":  {
                                                                               "odds":  1,
-                                                                              "timestamp":  "2026-03-26 09:00:21",
+                                                                              "timestamp":  "2026-03-26 11:00:24",
                                                                               "name":  "Democratic Presidential Nominee 2028",
                                                                               "category":  "politics"
                                                                           },
-    "https://polymarket.com/event/meta-close-above-on-march-19-2026":  {
-                                                                           "odds":  100,
-                                                                           "timestamp":  "2026-03-19 22:00:32",
-                                                                           "name":  "Meta (META) closes above ___ on March 19?",
-                                                                           "category":  "finance"
-                                                                       },
     "https://polymarket.com/event/bitcoin-above-on-march-20":  {
                                                                    "odds":  100,
                                                                    "timestamp":  "2026-03-20 16:00:24",
@@ -1007,24 +983,30 @@
                                                                    "name":  "Bitcoin above ___ on March 23?",
                                                                    "category":  "crypto"
                                                                },
-    "https://polymarket.com/event/amzn-close-above-on-march-23-2026":  {
-                                                                           "odds":  0,
-                                                                           "timestamp":  "2026-03-23 22:00:34",
-                                                                           "name":  "Amazon (AMZN) closes above ___ on March 23?",
-                                                                           "category":  "finance"
-                                                                       },
-    "https://polymarket.com/event/what-price-will-bitcoin-hit-march-16-22":  {
-                                                                                 "odds":  0,
-                                                                                 "timestamp":  "2026-03-22 23:00:36",
-                                                                                 "name":  "What price will Bitcoin hit March 16-22?",
-                                                                                 "category":  "crypto"
-                                                                             },
+    "https://polymarket.com/event/iran-leadership-change-by":  {
+                                                                   "odds":  13,
+                                                                   "timestamp":  "2026-03-18 05:00:53",
+                                                                   "name":  "Iran leadership change by...?",
+                                                                   "category":  "politics"
+                                                               },
+    "https://polymarket.com/event/dota2-ts8-xtreme-2026-03-24":  {
+                                                                     "odds":  100,
+                                                                     "timestamp":  "2026-03-25 19:00:30",
+                                                                     "name":  "Dota 2: Team Spirit vs Xtreme Gaming (BO2) - ESL One Birmingham Group B",
+                                                                     "category":  "sports"
+                                                                 },
     "https://polymarket.com/event/tsla-week-march-27-2026":  {
                                                                  "odds":  7,
                                                                  "timestamp":  "2026-03-25 23:00:24",
                                                                  "name":  "Tesla (TSLA) closes week of Mar 23 at ___?",
                                                                  "category":  "finance"
                                                              },
+    "https://polymarket.com/event/nba-det-tor-2026-03-15":  {
+                                                                "odds":  100,
+                                                                "timestamp":  "2026-03-16 15:00:26",
+                                                                "name":  "Pistons vs. Raptors",
+                                                                "category":  "sports"
+                                                            },
     "https://polymarket.com/event/nvda-close-above-on-march-23-2026":  {
                                                                            "odds":  100,
                                                                            "timestamp":  "2026-03-23 22:00:34",
@@ -1033,7 +1015,7 @@
                                                                        },
     "https://polymarket.com/event/will-bitcoin-kimchi-premium-hit-8-in-2026":  {
                                                                                    "odds":  63,
-                                                                                   "timestamp":  "2026-03-26 09:00:21",
+                                                                                   "timestamp":  "2026-03-26 11:00:24",
                                                                                    "name":  "Will Bitcoin kimchi premium hit 8% in 2026?",
                                                                                    "category":  "crypto"
                                                                                },
@@ -1063,7 +1045,7 @@
                                                             },
     "https://polymarket.com/event/what-price-will-bitcoin-hit-in-march-2026":  {
                                                                                    "odds":  0,
-                                                                                   "timestamp":  "2026-03-26 09:00:21",
+                                                                                   "timestamp":  "2026-03-26 11:00:24",
                                                                                    "name":  "What price will Bitcoin hit in March?",
                                                                                    "category":  "crypto"
                                                                                },
@@ -1075,7 +1057,7 @@
                                                             },
     "https://polymarket.com/event/will-usd-denominated-stablecoin-market-share-fall-below-99-in-2026":  {
                                                                                                             "odds":  34,
-                                                                                                            "timestamp":  "2026-03-26 09:00:21",
+                                                                                                            "timestamp":  "2026-03-26 11:00:24",
                                                                                                             "name":  "Will USD-denominated stablecoin market share fall below 99% in 2026?",
                                                                                                             "category":  "crypto"
                                                                                                         },
@@ -1099,7 +1081,7 @@
                                                                              },
     "https://polymarket.com/event/cbb-ill-hou-2026-03-26":  {
                                                                 "odds":  58,
-                                                                "timestamp":  "2026-03-26 09:00:21",
+                                                                "timestamp":  "2026-03-26 11:00:24",
                                                                 "name":  "Illinois Fighting Illini vs. Houston Cougars",
                                                                 "category":  "sports"
                                                             },
@@ -1151,12 +1133,12 @@
                                                                            "name":  "Amazon (AMZN) closes above ___ on March 24?",
                                                                            "category":  "finance"
                                                                        },
-    "https://polymarket.com/event/cbb-mia-pur-2026-03-22":  {
-                                                                "odds":  100,
-                                                                "timestamp":  "2026-03-22 21:00:23",
-                                                                "name":  "Miami Hurricanes vs. Purdue Boilermakers",
-                                                                "category":  "sports"
-                                                            },
+    "https://polymarket.com/event/hungary-parliamentary-election-winner":  {
+                                                                               "odds":  0,
+                                                                               "timestamp":  "2026-03-26 11:00:24",
+                                                                               "name":  "Hungary Parliamentary Election Winner",
+                                                                               "category":  "politics"
+                                                                           },
     "https://polymarket.com/event/bitcoin-above-on-march-18":  {
                                                                    "odds":  100,
                                                                    "timestamp":  "2026-03-18 18:00:45",
@@ -1181,6 +1163,12 @@
                                                                 "name":  "Islanders vs. Maple Leafs",
                                                                 "category":  "sports"
                                                             },
+    "https://polymarket.com/event/venezuela-leader-end-of-2026":  {
+                                                                      "odds":  13,
+                                                                      "timestamp":  "2026-03-22 23:00:36",
+                                                                      "name":  "Venezuela leader end of 2026?",
+                                                                      "category":  "politics"
+                                                                  },
     "https://polymarket.com/event/nba-por-min-2026-03-20":  {
                                                                 "odds":  56,
                                                                 "timestamp":  "2026-03-20 15:00:46",
@@ -1189,7 +1177,7 @@
                                                             },
     "https://polymarket.com/event/lal-bil-rso-2026-02-01-more-markets":  {
                                                                              "odds":  50,
-                                                                             "timestamp":  "2026-03-26 09:00:21",
+                                                                             "timestamp":  "2026-03-26 11:00:24",
                                                                              "name":  "Athletic Club vs. Real Sociedad de F├║tbol - More Markets",
                                                                              "category":  "entertainment"
                                                                          },
@@ -1249,7 +1237,7 @@
                                                             },
     "https://polymarket.com/event/nothing-ever-happens-crypto-edition-319":  {
                                                                                  "odds":  100,
-                                                                                 "timestamp":  "2026-03-26 09:00:21",
+                                                                                 "timestamp":  "2026-03-26 11:00:24",
                                                                                  "name":  "Nothing Ever Happens: Crypto Edition",
                                                                                  "category":  "crypto"
                                                                              },
@@ -1309,22 +1297,22 @@
                                                             },
     "https://polymarket.com/event/elon-musk-of-tweets-march-27-april-3":  {
                                                                               "odds":  0,
-                                                                              "timestamp":  "2026-03-26 09:00:21",
+                                                                              "timestamp":  "2026-03-26 11:00:24",
                                                                               "name":  "Elon Musk # tweets March 27 - April 3, 2026?",
                                                                               "category":  "politics"
                                                                           },
-    "https://polymarket.com/event/highest-temperature-in-taipei-on-march-17-2026":  {
-                                                                                        "odds":  0,
-                                                                                        "timestamp":  "2026-03-18 01:00:26",
-                                                                                        "name":  "Highest temperature in Taipei on March 17?",
-                                                                                        "category":  "trending"
-                                                                                    },
-    "https://polymarket.com/event/bitcoin-price-on-march-20":  {
-                                                                   "odds":  0,
-                                                                   "timestamp":  "2026-03-20 16:00:24",
-                                                                   "name":  "Bitcoin price on March 20?",
-                                                                   "category":  "crypto"
-                                                               },
+    "https://polymarket.com/event/open-week-march-27-2026":  {
+                                                                 "odds":  0,
+                                                                 "timestamp":  "2026-03-26 09:00:21",
+                                                                 "name":  "Opendoor (OPEN) closes week of Mar 23 at ___?",
+                                                                 "category":  "finance"
+                                                             },
+    "https://polymarket.com/event/nba-lal-mia-2026-03-19":  {
+                                                                "odds":  68,
+                                                                "timestamp":  "2026-03-19 22:00:32",
+                                                                "name":  "Lakers vs. Heat",
+                                                                "category":  "sports"
+                                                            },
     "https://polymarket.com/event/atp-medvede-sinner-2026-03-15":  {
                                                                        "odds":  100,
                                                                        "timestamp":  "2026-03-16 00:00:23",
@@ -1339,7 +1327,7 @@
                                                              },
     "https://polymarket.com/event/will-jd-vance-talk-to-iranian-negotiators-by":  {
                                                                                       "odds":  20,
-                                                                                      "timestamp":  "2026-03-26 09:00:21",
+                                                                                      "timestamp":  "2026-03-26 11:00:24",
                                                                                       "name":  "Will JD Vance talk to Iranian negotiators by...?",
                                                                                       "category":  "entertainment"
                                                                                   },
@@ -1363,7 +1351,7 @@
                                                             },
     "https://polymarket.com/event/ere-az-nec-2026-01-31-more-markets":  {
                                                                             "odds":  50,
-                                                                            "timestamp":  "2026-03-26 08:00:26",
+                                                                            "timestamp":  "2026-03-26 11:00:24",
                                                                             "name":  "AZ vs. NEC - More Markets",
                                                                             "category":  "entertainment"
                                                                         },
@@ -1387,7 +1375,7 @@
                                                                            },
     "https://polymarket.com/event/main-street-sports-salemerger-by":  {
                                                                           "odds":  0,
-                                                                          "timestamp":  "2026-03-26 09:00:21",
+                                                                          "timestamp":  "2026-03-26 11:00:24",
                                                                           "name":  "Main Street Sports Sale/Merger byΓÇª?",
                                                                           "category":  "sports"
                                                                       },
@@ -1416,8 +1404,8 @@
                                                                "category":  "sports"
                                                            },
     "https://polymarket.com/event/brazil-presidential-election":  {
-                                                                      "odds":  1,
-                                                                      "timestamp":  "2026-03-26 09:00:21",
+                                                                      "odds":  2,
+                                                                      "timestamp":  "2026-03-26 11:00:24",
                                                                       "name":  "Brazil Presidential Election",
                                                                       "category":  "politics"
                                                                   },
@@ -1429,7 +1417,7 @@
                                                               },
     "https://polymarket.com/event/will-monero-hit-1000-in-2026":  {
                                                                       "odds":  19,
-                                                                      "timestamp":  "2026-03-26 09:00:21",
+                                                                      "timestamp":  "2026-03-26 11:00:24",
                                                                       "name":  "Will Monero hit $1000 in 2026?",
                                                                       "category":  "trending"
                                                                   },
@@ -1451,15 +1439,21 @@
                                                                  "name":  "Tesla (TSLA) closes week of Mar 16 at ___?",
                                                                  "category":  "finance"
                                                              },
+    "https://polymarket.com/event/2026-fifa-world-cup-winner-595":  {
+                                                                        "odds":  16,
+                                                                        "timestamp":  "2026-03-26 11:00:24",
+                                                                        "name":  "2026 FIFA World Cup Winner ",
+                                                                        "category":  "sports"
+                                                                    },
     "https://polymarket.com/event/nvda-above-in-march-2026":  {
                                                                   "odds":  100,
-                                                                  "timestamp":  "2026-03-26 09:00:21",
+                                                                  "timestamp":  "2026-03-26 11:00:24",
                                                                   "name":  "Will NVIDIA (NVDA) close above ___ end of March?",
                                                                   "category":  "finance"
                                                               },
     "https://polymarket.com/event/will-rami-leave-babymonster":  {
                                                                      "odds":  3,
-                                                                     "timestamp":  "2026-03-26 09:00:21",
+                                                                     "timestamp":  "2026-03-26 11:00:24",
                                                                      "name":  "Will Rami leave Babymonster?",
                                                                      "category":  "entertainment"
                                                                  },
@@ -1471,28 +1465,22 @@
                                                                  },
     "https://polymarket.com/event/will-bitcoin-replace-sha-256-before-2027":  {
                                                                                   "odds":  6,
-                                                                                  "timestamp":  "2026-03-26 09:00:21",
+                                                                                  "timestamp":  "2026-03-26 11:00:24",
                                                                                   "name":  "Will Bitcoin replace SHA-256 before 2027?",
                                                                                   "category":  "crypto"
                                                                               },
-    "https://polymarket.com/event/trump-out-as-president-by-june-30":  {
-                                                                           "odds":  8,
-                                                                           "timestamp":  "2026-03-24 21:00:39",
-                                                                           "name":  "Trump out as President by June 30?",
-                                                                           "category":  "politics"
-                                                                       },
+    "https://polymarket.com/event/nba-sac-orl-2026-03-26":  {
+                                                                "odds":  91,
+                                                                "timestamp":  "2026-03-26 11:00:24",
+                                                                "name":  "Kings vs. Magic",
+                                                                "category":  "sports"
+                                                            },
     "https://polymarket.com/event/amzn-close-above-on-march-17-2026":  {
                                                                            "odds":  100,
                                                                            "timestamp":  "2026-03-17 22:00:32",
                                                                            "name":  "Amazon (AMZN) closes above ___ on March 17?",
                                                                            "category":  "finance"
                                                                        },
-    "https://polymarket.com/event/cs2-furia-tyloo-2026-03-18":  {
-                                                                    "odds":  100,
-                                                                    "timestamp":  "2026-03-19 07:00:28",
-                                                                    "name":  "Counter-Strike: FURIA vs TYLOO (BO3) - BLAST Open Rotterdam Group A",
-                                                                    "category":  "sports"
-                                                                },
     "https://polymarket.com/event/atp-lehecka-fritz-2026-03-24":  {
                                                                       "odds":  100,
                                                                       "timestamp":  "2026-03-24 21:00:39",
@@ -1584,8 +1572,8 @@
                                                                           "category":  "trending"
                                                                       },
     "https://polymarket.com/event/highest-temperature-in-taipei-on-march-29-2026":  {
-                                                                                        "odds":  22,
-                                                                                        "timestamp":  "2026-03-26 09:00:21",
+                                                                                        "odds":  23,
+                                                                                        "timestamp":  "2026-03-26 11:00:24",
                                                                                         "name":  "Highest temperature in Taipei on March 29?",
                                                                                         "category":  "trending"
                                                                                     },
@@ -1627,19 +1615,19 @@
                                                               },
     "https://polymarket.com/event/what-price-will-kinetiq-hit-in-2026":  {
                                                                              "odds":  15,
-                                                                             "timestamp":  "2026-03-26 09:00:21",
+                                                                             "timestamp":  "2026-03-26 11:00:24",
                                                                              "name":  "What price will Kinetiq hit in 2026?",
                                                                              "category":  "trending"
                                                                          },
     "https://polymarket.com/event/what-will-based-prediction-market-revenue-hit-before-2027":  {
                                                                                                    "odds":  8,
-                                                                                                   "timestamp":  "2026-03-26 09:00:21",
+                                                                                                   "timestamp":  "2026-03-26 11:00:24",
                                                                                                    "name":  "What will Based prediction market revenue hit before 2027?",
                                                                                                    "category":  "crypto"
                                                                                                },
     "https://polymarket.com/event/msft-above-on-march-27-2026":  {
                                                                      "odds":  99,
-                                                                     "timestamp":  "2026-03-26 09:00:21",
+                                                                     "timestamp":  "2026-03-26 11:00:24",
                                                                      "name":  "Will Microsoft (MSFT) finish week of March 23 above___?",
                                                                      "category":  "finance"
                                                                  },
@@ -1734,17 +1722,11 @@
                                                                              "category":  "trending"
                                                                          },
     "https://polymarket.com/event/amzn-above-in-march-2026":  {
-                                                                  "odds":  84,
-                                                                  "timestamp":  "2026-03-26 09:00:21",
+                                                                  "odds":  90,
+                                                                  "timestamp":  "2026-03-26 11:00:24",
                                                                   "name":  "Will Amazon (AMZN) close above ___ end of March?",
                                                                   "category":  "finance"
                                                               },
-    "https://polymarket.com/event/aapl-close-above-on-march-19-2026":  {
-                                                                           "odds":  100,
-                                                                           "timestamp":  "2026-03-19 22:00:32",
-                                                                           "name":  "Apple (AAPL) closes above ___ on March 19?",
-                                                                           "category":  "finance"
-                                                                       },
     "https://polymarket.com/event/aapl-close-above-on-march-25-2026":  {
                                                                            "odds":  100,
                                                                            "timestamp":  "2026-03-25 22:00:27",
@@ -1765,7 +1747,7 @@
                                                                        },
     "https://polymarket.com/event/penguin-listed-on-binance-by-march-31":  {
                                                                                "odds":  2,
-                                                                               "timestamp":  "2026-03-26 09:00:21",
+                                                                               "timestamp":  "2026-03-26 11:00:24",
                                                                                "name":  "Penguin listed on Binance by March 31?",
                                                                                "category":  "crypto"
                                                                            },
@@ -1775,6 +1757,12 @@
                                                                            "name":  "Amazon (AMZN) closes above ___ on March 20?",
                                                                            "category":  "finance"
                                                                        },
+    "https://polymarket.com/event/wta-rybakin-pegula-2026-03-25":  {
+                                                                       "odds":  100,
+                                                                       "timestamp":  "2026-03-25 22:00:27",
+                                                                       "name":  "Miami Open: Elena Rybakina vs Jessica Pegula",
+                                                                       "category":  "sports"
+                                                                   },
     "https://polymarket.com/event/ucl-tot-atm1-2026-03-18":  {
                                                                  "odds":  100,
                                                                  "timestamp":  "2026-03-19 00:00:24",
@@ -1783,7 +1771,7 @@
                                                              },
     "https://polymarket.com/event/who-will-die-in-the-boys-season-5":  {
                                                                            "odds":  84,
-                                                                           "timestamp":  "2026-03-26 09:00:21",
+                                                                           "timestamp":  "2026-03-26 11:00:24",
                                                                            "name":  "Who will die in The Boys: Season 5?",
                                                                            "category":  "trending"
                                                                        },
@@ -1799,6 +1787,12 @@
                                                                  "name":  "Microsoft (MSFT) closes week of Mar 16 at ___?",
                                                                  "category":  "finance"
                                                              },
+    "https://polymarket.com/event/what-price-will-ethena-hit-in-march":  {
+                                                                             "odds":  1,
+                                                                             "timestamp":  "2026-03-26 09:00:21",
+                                                                             "name":  "What price will Ethena hit in March?",
+                                                                             "category":  "entertainment"
+                                                                         },
     "https://polymarket.com/event/meta-close-above-on-march-24-2026":  {
                                                                            "odds":  0,
                                                                            "timestamp":  "2026-03-24 22:00:35",
@@ -1813,7 +1807,7 @@
                                                             },
     "https://polymarket.com/event/bitcoin-above-on-march-26":  {
                                                                    "odds":  100,
-                                                                   "timestamp":  "2026-03-26 09:00:21",
+                                                                   "timestamp":  "2026-03-26 11:00:24",
                                                                    "name":  "Bitcoin above ___ on March 26?",
                                                                    "category":  "crypto"
                                                                },
@@ -1825,7 +1819,7 @@
                                                                },
     "https://polymarket.com/event/scotus-accepts-sports-event-contract-case-by-july-31-2026":  {
                                                                                                    "odds":  14,
-                                                                                                   "timestamp":  "2026-03-26 09:00:21",
+                                                                                                   "timestamp":  "2026-03-26 11:00:24",
                                                                                                    "name":  "SCOTUS accepts sports event contract case by...?     ",
                                                                                                    "category":  "trending"
                                                                                                },
@@ -1837,7 +1831,7 @@
                                                                     },
     "https://polymarket.com/event/nba-mvp-694":  {
                                                      "odds":  0,
-                                                     "timestamp":  "2026-03-26 09:00:21",
+                                                     "timestamp":  "2026-03-26 11:00:24",
                                                      "name":  "NBA MVP ",
                                                      "category":  "sports"
                                                  },
@@ -1855,19 +1849,19 @@
                                                                        },
     "https://polymarket.com/event/meta-above-on-march-27-2026":  {
                                                                      "odds":  98,
-                                                                     "timestamp":  "2026-03-26 09:00:21",
+                                                                     "timestamp":  "2026-03-26 11:00:24",
                                                                      "name":  "Will Meta (META) finish week of March 23 above___?",
                                                                      "category":  "finance"
                                                                  },
     "https://polymarket.com/event/cbb-tx-pur-2026-03-26":  {
                                                                "odds":  76,
-                                                               "timestamp":  "2026-03-26 09:00:21",
+                                                               "timestamp":  "2026-03-26 11:00:24",
                                                                "name":  "Texas Longhorns vs. Purdue Boilermakers",
                                                                "category":  "sports"
                                                            },
     "https://polymarket.com/event/next-prime-minister-of-denmark-after-parliamentary-election":  {
                                                                                                      "odds":  7,
-                                                                                                     "timestamp":  "2026-03-26 09:00:21",
+                                                                                                     "timestamp":  "2026-03-26 11:00:24",
                                                                                                      "name":  "Next Prime Minister of Denmark?",
                                                                                                      "category":  "politics"
                                                                                                  },
@@ -1877,15 +1871,15 @@
                                                                "name":  "LoL: LYON vs JD Gaming (BO5) - First Stand Group B",
                                                                "category":  "sports"
                                                            },
-    "https://polymarket.com/event/hungary-parliamentary-election-winner":  {
-                                                                               "odds":  0,
-                                                                               "timestamp":  "2026-03-26 09:00:21",
-                                                                               "name":  "Hungary Parliamentary Election Winner",
-                                                                               "category":  "politics"
-                                                                           },
+    "https://polymarket.com/event/what-price-will-bitcoin-hit-march-16-22":  {
+                                                                                 "odds":  0,
+                                                                                 "timestamp":  "2026-03-22 23:00:36",
+                                                                                 "name":  "What price will Bitcoin hit March 16-22?",
+                                                                                 "category":  "crypto"
+                                                                             },
     "https://polymarket.com/event/highest-temperature-in-tel-aviv-on-march-27-2026":  {
                                                                                           "odds":  1,
-                                                                                          "timestamp":  "2026-03-26 09:00:21",
+                                                                                          "timestamp":  "2026-03-26 11:00:24",
                                                                                           "name":  "Highest temperature in Tel Aviv on March 27?",
                                                                                           "category":  "trending"
                                                                                       },
@@ -1949,12 +1943,18 @@
                                                                  "name":  "Will USD/KRW hit __ in 2026?",
                                                                  "category":  "trending"
                                                              },
-    "https://polymarket.com/event/2026-fifa-world-cup-winner-595":  {
-                                                                        "odds":  16,
-                                                                        "timestamp":  "2026-03-26 09:00:21",
-                                                                        "name":  "2026 FIFA World Cup Winner ",
-                                                                        "category":  "sports"
-                                                                    },
+    "https://polymarket.com/event/will-gbpusd-hit-in-2026":  {
+                                                                 "odds":  36,
+                                                                 "timestamp":  "2026-03-16 15:00:26",
+                                                                 "name":  "Will GBP/USD hit __ in 2026?",
+                                                                 "category":  "trending"
+                                                             },
+    "https://polymarket.com/event/eur-usd-up-or-down-on-march-19-2026":  {
+                                                                             "odds":  99,
+                                                                             "timestamp":  "2026-03-19 20:00:33",
+                                                                             "name":  "EUR/USD Up or Down on March 19?",
+                                                                             "category":  "trending"
+                                                                         },
     "https://polymarket.com/event/epl-cry-lee-2026-03-15":  {
                                                                 "odds":  0,
                                                                 "timestamp":  "2026-03-15 19:00:42",
@@ -1987,7 +1987,7 @@
                                                                          },
     "https://polymarket.com/event/top-performing-crypto-for-the-week-of-march-23":  {
                                                                                         "odds":  23,
-                                                                                        "timestamp":  "2026-03-26 09:00:21",
+                                                                                        "timestamp":  "2026-03-26 11:00:24",
                                                                                         "name":  "Top performing crypto for the week of March 23?",
                                                                                         "category":  "crypto"
                                                                                     },
@@ -1997,11 +1997,11 @@
                                                                 "name":  "Jazz vs. Kings",
                                                                 "category":  "sports"
                                                             },
-    "https://polymarket.com/event/tsla-close-above-on-march-17-2026":  {
-                                                                           "odds":  100,
-                                                                           "timestamp":  "2026-03-17 23:00:25",
-                                                                           "name":  "Tesla (TSLA) closes above ___ on March 17?",
-                                                                           "category":  "finance"
+    "https://polymarket.com/event/trump-out-as-president-by-june-30":  {
+                                                                           "odds":  8,
+                                                                           "timestamp":  "2026-03-24 21:00:39",
+                                                                           "name":  "Trump out as President by June 30?",
+                                                                           "category":  "politics"
                                                                        },
     "https://polymarket.com/event/dota2-vp-ts8-2026-03-24":  {
                                                                  "odds":  100,
@@ -2016,17 +2016,11 @@
                                                                            "category":  "finance"
                                                                        },
     "https://polymarket.com/event/pltr-above-on-march-27-2026":  {
-                                                                     "odds":  85,
-                                                                     "timestamp":  "2026-03-26 09:00:21",
+                                                                     "odds":  79,
+                                                                     "timestamp":  "2026-03-26 11:00:24",
                                                                      "name":  "Will Palantir (PLTR) finish week of March 23 above___?",
                                                                      "category":  "finance"
                                                                  },
-    "https://polymarket.com/event/msft-close-above-on-march-25-2026":  {
-                                                                           "odds":  100,
-                                                                           "timestamp":  "2026-03-25 22:00:27",
-                                                                           "name":  "Microsoft (MSFT) closes above ___ on March 25?",
-                                                                           "category":  "finance"
-                                                                       },
     "https://polymarket.com/event/tsla-close-above-on-march-19-2026":  {
                                                                            "odds":  0,
                                                                            "timestamp":  "2026-03-19 22:00:32",
@@ -2046,8 +2040,8 @@
                                                                            "category":  "finance"
                                                                        },
     "https://polymarket.com/event/us-x-iran-ceasefire-by":  {
-                                                                "odds":  13,
-                                                                "timestamp":  "2026-03-26 09:00:21",
+                                                                "odds":  12,
+                                                                "timestamp":  "2026-03-26 11:00:24",
                                                                 "name":  "US x Iran ceasefire by...?",
                                                                 "category":  "politics"
                                                             },
@@ -2058,8 +2052,8 @@
                                                                                "category":  "entertainment"
                                                                            },
     "https://polymarket.com/event/googl-above-in-march-2026":  {
-                                                                   "odds":  47,
-                                                                   "timestamp":  "2026-03-26 09:00:21",
+                                                                   "odds":  52,
+                                                                   "timestamp":  "2026-03-26 11:00:24",
                                                                    "name":  "Will Google (GOOGL) close above ___ end of March?",
                                                                    "category":  "finance"
                                                                },
@@ -2076,8 +2070,8 @@
                                                                   "category":  "sports"
                                                               },
     "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31":  {
-                                                                                  "odds":  0,
-                                                                                  "timestamp":  "2026-03-26 09:00:21",
+                                                                                  "odds":  1,
+                                                                                  "timestamp":  "2026-03-26 11:00:24",
                                                                                   "name":  "Will the Iranian regime fall by March 31?",
                                                                                   "category":  "politics"
                                                                               },
@@ -2087,6 +2081,12 @@
                                                                    "name":  "Bitcoin above ___ on March 19?",
                                                                    "category":  "crypto"
                                                                },
+    "https://polymarket.com/event/lol-g2-tsw-2026-03-16":  {
+                                                               "odds":  100,
+                                                               "timestamp":  "2026-03-17 18:00:28",
+                                                               "name":  "LoL: G2 Esports vs Team Secret Whales (BO5) - First Stand Group A",
+                                                               "category":  "sports"
+                                                           },
     "https://polymarket.com/event/eur-usd-up-or-down-on-march-18-2026":  {
                                                                              "odds":  51,
                                                                              "timestamp":  "2026-03-19 06:00:25",
@@ -2111,12 +2111,12 @@
                                                                 "name":  "Nuggets vs. Suns",
                                                                 "category":  "sports"
                                                             },
-    "https://polymarket.com/event/highest-temperature-in-tel-aviv-on-march-23-2026":  {
-                                                                                          "odds":  0,
-                                                                                          "timestamp":  "2026-03-24 00:00:30",
-                                                                                          "name":  "Highest temperature in Tel Aviv on March 23?",
-                                                                                          "category":  "trending"
-                                                                                      },
+    "https://polymarket.com/event/2026-ncaa-tournament-winner":  {
+                                                                     "odds":  0,
+                                                                     "timestamp":  "2026-03-26 11:00:24",
+                                                                     "name":  "2026 NCAA Tournament Winner",
+                                                                     "category":  "sports"
+                                                                 },
     "https://polymarket.com/event/nba-det-was-2026-03-17":  {
                                                                 "odds":  100,
                                                                 "timestamp":  "2026-03-18 05:00:53",
@@ -2125,7 +2125,7 @@
                                                             },
     "https://polymarket.com/event/googl-close-above-on-march-26-2026":  {
                                                                             "odds":  99,
-                                                                            "timestamp":  "2026-03-26 09:00:21",
+                                                                            "timestamp":  "2026-03-26 11:00:24",
                                                                             "name":  "Google (GOOGL) closes above ___ on March 26?",
                                                                             "category":  "finance"
                                                                         },
@@ -2137,7 +2137,7 @@
                                                             },
     "https://polymarket.com/event/netanyahu-out-before-2027":  {
                                                                    "odds":  49,
-                                                                   "timestamp":  "2026-03-26 09:00:21",
+                                                                   "timestamp":  "2026-03-26 11:00:24",
                                                                    "name":  "Netanyahu out by...?",
                                                                    "category":  "politics"
                                                                },
@@ -2149,7 +2149,7 @@
                                                             },
     "https://polymarket.com/event/nasa-artemis-ii":  {
                                                          "odds":  0,
-                                                         "timestamp":  "2026-03-26 08:00:26",
+                                                         "timestamp":  "2026-03-26 11:00:24",
                                                          "name":  "NASA Artemis II",
                                                          "category":  "entertainment"
                                                      },
@@ -2167,13 +2167,13 @@
                                                                         },
     "https://polymarket.com/event/ucl-atm-bog1-2026-01-28-more-markets":  {
                                                                               "odds":  50,
-                                                                              "timestamp":  "2026-03-26 09:00:21",
+                                                                              "timestamp":  "2026-03-26 11:00:24",
                                                                               "name":  "Club Atl├⌐tico de Madrid vs. FK Bod├╕/Glimt - More Markets",
                                                                               "category":  "entertainment"
                                                                           },
     "https://polymarket.com/event/elon-musk-of-tweets-march-24-march-31":  {
                                                                                "odds":  1,
-                                                                               "timestamp":  "2026-03-26 09:00:21",
+                                                                               "timestamp":  "2026-03-26 11:00:24",
                                                                                "name":  "Elon Musk # tweets March 24 - March 31, 2026?",
                                                                                "category":  "politics"
                                                                            },
@@ -2195,6 +2195,12 @@
                                                                 "name":  "Bucks vs. Clippers",
                                                                 "category":  "sports"
                                                             },
+    "https://polymarket.com/event/amzn-close-above-on-march-23-2026":  {
+                                                                           "odds":  0,
+                                                                           "timestamp":  "2026-03-23 22:00:34",
+                                                                           "name":  "Amazon (AMZN) closes above ___ on March 23?",
+                                                                           "category":  "finance"
+                                                                       },
     "https://polymarket.com/event/cbb-sfl-lou-2026-03-19":  {
                                                                 "odds":  100,
                                                                 "timestamp":  "2026-03-19 22:00:32",
@@ -2203,13 +2209,13 @@
                                                             },
     "https://polymarket.com/event/play-quarterly-earnings-nongaap-eps-03-31-2026-0pt46":  {
                                                                                               "odds":  21,
-                                                                                              "timestamp":  "2026-03-26 09:00:21",
+                                                                                              "timestamp":  "2026-03-26 11:00:24",
                                                                                               "name":  "Will Dave and Buster\u0027s Entertainment (PLAY) beat quarterly earnings?",
                                                                                               "category":  "entertainment"
                                                                                           },
     "https://polymarket.com/event/tsla-above-on-march-27-2026":  {
-                                                                     "odds":  93,
-                                                                     "timestamp":  "2026-03-26 09:00:21",
+                                                                     "odds":  96,
+                                                                     "timestamp":  "2026-03-26 11:00:24",
                                                                      "name":  "Will Tesla (TSLA) finish week of March 23 above___?",
                                                                      "category":  "finance"
                                                                  },
@@ -2231,12 +2237,12 @@
                                                                 "name":  "Rockets vs. Bulls",
                                                                 "category":  "sports"
                                                             },
-    "https://polymarket.com/event/will-gbpusd-hit-in-2026":  {
-                                                                 "odds":  36,
-                                                                 "timestamp":  "2026-03-16 15:00:26",
-                                                                 "name":  "Will GBP/USD hit __ in 2026?",
-                                                                 "category":  "trending"
-                                                             },
+    "https://polymarket.com/event/what-will-sp-500-spx-hit-by-end-of-march":  {
+                                                                                  "odds":  0,
+                                                                                  "timestamp":  "2026-03-26 11:00:24",
+                                                                                  "name":  "What will S\u0026P 500 (SPX) hit by end of March?",
+                                                                                  "category":  "finance"
+                                                                              },
     "https://polymarket.com/event/nhl-ott-nyr-2026-03-23":  {
                                                                 "odds":  88,
                                                                 "timestamp":  "2026-03-24 02:00:40",
@@ -2257,7 +2263,7 @@
                                                                            },
     "https://polymarket.com/event/uel-gnk-mal2-2026-01-29-more-markets":  {
                                                                               "odds":  50,
-                                                                              "timestamp":  "2026-03-26 09:00:21",
+                                                                              "timestamp":  "2026-03-26 11:00:24",
                                                                               "name":  "KRC Genk vs. Malm├╢ FF - More Markets",
                                                                               "category":  "entertainment"
                                                                           },
@@ -2273,12 +2279,12 @@
                                                                            "name":  "Amazon (AMZN) closes above ___ on March 16?",
                                                                            "category":  "finance"
                                                                        },
-    "https://polymarket.com/event/venezuela-leader-end-of-2026":  {
-                                                                      "odds":  13,
-                                                                      "timestamp":  "2026-03-22 23:00:36",
-                                                                      "name":  "Venezuela leader end of 2026?",
-                                                                      "category":  "politics"
-                                                                  },
+    "https://polymarket.com/event/epl-mun-ast-2026-03-15":  {
+                                                                "odds":  100,
+                                                                "timestamp":  "2026-03-15 18:00:25",
+                                                                "name":  "Manchester United FC vs. Aston Villa FC",
+                                                                "category":  "sports"
+                                                            },
     "https://polymarket.com/event/nba-was-uta-2026-03-25":  {
                                                                 "odds":  100,
                                                                 "timestamp":  "2026-03-26 07:00:27",
@@ -2299,16 +2305,16 @@
                                                                         },
     "https://polymarket.com/event/what-price-will-ethereum-hit-in-march-2026":  {
                                                                                     "odds":  0,
-                                                                                    "timestamp":  "2026-03-26 09:00:21",
+                                                                                    "timestamp":  "2026-03-26 11:00:24",
                                                                                     "name":  "What price will Ethereum hit in March?",
                                                                                     "category":  "crypto"
                                                                                 },
-    "https://polymarket.com/event/ethereum-above-on-march-17":  {
-                                                                    "odds":  100,
-                                                                    "timestamp":  "2026-03-17 15:00:22",
-                                                                    "name":  "Ethereum above ___ on March 17?",
-                                                                    "category":  "crypto"
-                                                                },
+    "https://polymarket.com/event/nba-phx-min-2026-03-17":  {
+                                                                "odds":  100,
+                                                                "timestamp":  "2026-03-18 05:00:53",
+                                                                "name":  "Suns vs. Timberwolves",
+                                                                "category":  "sports"
+                                                            },
     "https://polymarket.com/event/nhl-stl-cal-2026-03-18":  {
                                                                 "odds":  100,
                                                                 "timestamp":  "2026-03-19 06:00:25",
@@ -2316,8 +2322,8 @@
                                                                 "category":  "sports"
                                                             },
     "https://polymarket.com/event/pro-football-2027-nfc-champion":  {
-                                                                        "odds":  8,
-                                                                        "timestamp":  "2026-03-26 09:00:21",
+                                                                        "odds":  7,
+                                                                        "timestamp":  "2026-03-26 11:00:24",
                                                                         "name":  "Pro Football: 2027 NFC Champion ",
                                                                         "category":  "sports"
                                                                     },
@@ -2329,7 +2335,7 @@
                                                                        },
     "https://polymarket.com/event/elon-musk-of-tweets-march-20-march-27":  {
                                                                                "odds":  0,
-                                                                               "timestamp":  "2026-03-26 09:00:21",
+                                                                               "timestamp":  "2026-03-26 11:00:24",
                                                                                "name":  "Elon Musk # tweets March 20 - March 27, 2026?",
                                                                                "category":  "politics"
                                                                            },
@@ -2339,15 +2345,15 @@
                                                                           "name":  "Robinhood (HOOD) Up or Down on March 19?",
                                                                           "category":  "trending"
                                                                       },
-    "https://polymarket.com/event/lol-g2-tsw-2026-03-16":  {
-                                                               "odds":  100,
-                                                               "timestamp":  "2026-03-17 18:00:28",
-                                                               "name":  "LoL: G2 Esports vs Team Secret Whales (BO5) - First Stand Group A",
-                                                               "category":  "sports"
-                                                           },
+    "https://polymarket.com/event/fed-decision-in-march-885":  {
+                                                                   "odds":  0,
+                                                                   "timestamp":  "2026-03-18 21:00:25",
+                                                                   "name":  "Fed decision in March?",
+                                                                   "category":  "politics"
+                                                               },
     "https://polymarket.com/event/which-companies-will-be-acquired-before-2027":  {
                                                                                       "odds":  100,
-                                                                                      "timestamp":  "2026-03-26 09:00:21",
+                                                                                      "timestamp":  "2026-03-26 11:00:24",
                                                                                       "name":  "Which companies will be acquired before 2027?",
                                                                                       "category":  "entertainment"
                                                                                   },
@@ -2359,7 +2365,7 @@
                                                             },
     "https://polymarket.com/event/uefa-champions-league-winner":  {
                                                                       "odds":  10,
-                                                                      "timestamp":  "2026-03-26 09:00:21",
+                                                                      "timestamp":  "2026-03-26 11:00:24",
                                                                       "name":  "UEFA Champions League Winner ",
                                                                       "category":  "sports"
                                                                   },
@@ -2377,13 +2383,13 @@
                                                             },
     "https://polymarket.com/event/r6siege-liquid-bd-2026-03-31":  {
                                                                       "odds":  69,
-                                                                      "timestamp":  "2026-03-26 09:00:21",
+                                                                      "timestamp":  "2026-03-26 11:00:24",
                                                                       "name":  "Rainbow Six Siege: Team Liquid vs Black Dragons e-Sports (BO1) - South America League Kickoff Group A",
                                                                       "category":  "sports"
                                                                   },
     "https://polymarket.com/event/uel-ast4-rbs1-2026-01-29-more-markets":  {
                                                                                "odds":  50,
-                                                                               "timestamp":  "2026-03-26 09:00:21",
+                                                                               "timestamp":  "2026-03-26 11:00:24",
                                                                                "name":  "Aston Villa FC vs. FC Red Bull Salzburg - More Markets",
                                                                                "category":  "entertainment"
                                                                            },
@@ -2399,18 +2405,24 @@
                                                                             "name":  "Trump out as President by March 31?",
                                                                             "category":  "politics"
                                                                         },
+    "https://polymarket.com/event/what-price-will-bitcoin-hit-on-march-17":  {
+                                                                                 "odds":  0,
+                                                                                 "timestamp":  "2026-03-18 05:00:53",
+                                                                                 "name":  "What price will Bitcoin hit on March 17?",
+                                                                                 "category":  "crypto"
+                                                                             },
     "https://polymarket.com/event/record-crypto-liquidation-in-2026":  {
                                                                            "odds":  20,
-                                                                           "timestamp":  "2026-03-26 09:00:21",
+                                                                           "timestamp":  "2026-03-26 11:00:24",
                                                                            "name":  "Record crypto liquidation in 2026?",
                                                                            "category":  "crypto"
                                                                        },
-    "https://polymarket.com/event/open-week-march-27-2026":  {
-                                                                 "odds":  0,
-                                                                 "timestamp":  "2026-03-26 09:00:21",
-                                                                 "name":  "Opendoor (OPEN) closes week of Mar 23 at ___?",
-                                                                 "category":  "finance"
-                                                             },
+    "https://polymarket.com/event/highest-temperature-in-tel-aviv-on-march-29-2026":  {
+                                                                                          "odds":  36,
+                                                                                          "timestamp":  "2026-03-26 11:00:24",
+                                                                                          "name":  "Highest temperature in Tel Aviv on March 29?",
+                                                                                          "category":  "trending"
+                                                                                      },
     "https://polymarket.com/event/nhl-pit-car-2026-03-18":  {
                                                                 "odds":  100,
                                                                 "timestamp":  "2026-03-19 02:00:24",
@@ -2467,7 +2479,7 @@
                                                             },
     "https://polymarket.com/event/nasdaq-round-the-clock-trading-by-june-30":  {
                                                                                    "odds":  13,
-                                                                                   "timestamp":  "2026-03-26 09:00:21",
+                                                                                   "timestamp":  "2026-03-26 11:00:24",
                                                                                    "name":  "Nasdaq round-the-clock trading by June 30?",
                                                                                    "category":  "trending"
                                                                                },
@@ -2477,12 +2489,6 @@
                                                                              "name":  "GBP/USD Up or Down on March 17?",
                                                                              "category":  "trending"
                                                                          },
-    "https://polymarket.com/event/bitcoin-vs-gold-vs-sp-500-in-2026":  {
-                                                                           "odds":  28,
-                                                                           "timestamp":  "2026-03-25 08:00:23",
-                                                                           "name":  "Bitcoin vs. Gold vs. S\u0026P 500 in 2026",
-                                                                           "category":  "finance"
-                                                                       },
     "https://polymarket.com/event/pltr-week-march-27-2026":  {
                                                                  "odds":  8,
                                                                  "timestamp":  "2026-03-25 09:00:25",
@@ -2491,7 +2497,7 @@
                                                              },
     "https://polymarket.com/event/hyperliquid-listed-on-binance-in-2026":  {
                                                                                "odds":  33,
-                                                                               "timestamp":  "2026-03-26 09:00:21",
+                                                                               "timestamp":  "2026-03-26 11:00:24",
                                                                                "name":  "Hyperliquid listed on Binance in 2026?",
                                                                                "category":  "crypto"
                                                                            },
@@ -2509,7 +2515,7 @@
                                                             },
     "https://polymarket.com/event/nvda-above-on-march-27-2026":  {
                                                                      "odds":  99,
-                                                                     "timestamp":  "2026-03-26 09:00:21",
+                                                                     "timestamp":  "2026-03-26 11:00:24",
                                                                      "name":  "Will NVIDIA (NVDA) finish week of March 23 above___?",
                                                                      "category":  "finance"
                                                                  },
@@ -2533,7 +2539,7 @@
                                                             },
     "https://polymarket.com/event/aapl-close-above-on-march-26-2026":  {
                                                                            "odds":  95,
-                                                                           "timestamp":  "2026-03-26 09:00:21",
+                                                                           "timestamp":  "2026-03-26 11:00:24",
                                                                            "name":  "Apple (AAPL) closes above ___ on March 26?",
                                                                            "category":  "finance"
                                                                        },
@@ -2575,7 +2581,7 @@
                                                                  },
     "https://polymarket.com/event/nba-nop-det-2026-03-26":  {
                                                                 "odds":  65,
-                                                                "timestamp":  "2026-03-26 09:00:21",
+                                                                "timestamp":  "2026-03-26 11:00:24",
                                                                 "name":  "Pelicans vs. Pistons",
                                                                 "category":  "sports"
                                                             },
@@ -2605,25 +2611,25 @@
                                                               },
     "https://polymarket.com/event/another-crypto-hack-over-100m-in-2025":  {
                                                                                "odds":  0,
-                                                                               "timestamp":  "2026-03-26 09:00:21",
+                                                                               "timestamp":  "2026-03-26 11:00:24",
                                                                                "name":  "Another crypto hack over $100m by ___?",
                                                                                "category":  "crypto"
                                                                            },
     "https://polymarket.com/event/aapl-above-in-march-2026":  {
                                                                   "odds":  97,
-                                                                  "timestamp":  "2026-03-26 09:00:21",
+                                                                  "timestamp":  "2026-03-26 11:00:24",
                                                                   "name":  "Will Apple (AAPL) close above ___ end of March?",
                                                                   "category":  "finance"
                                                               },
     "https://polymarket.com/event/tsla-above-in-march-2026":  {
-                                                                  "odds":  92,
-                                                                  "timestamp":  "2026-03-26 08:00:26",
+                                                                  "odds":  93,
+                                                                  "timestamp":  "2026-03-26 11:00:24",
                                                                   "name":  "Will Tesla (TSLA) close above ___ end of March?",
                                                                   "category":  "finance"
                                                               },
     "https://polymarket.com/event/ucl-fcb1-kob1-2026-01-28-more-markets":  {
                                                                                "odds":  50,
-                                                                               "timestamp":  "2026-03-26 09:00:21",
+                                                                               "timestamp":  "2026-03-26 11:00:24",
                                                                                "name":  "FC Barcelona vs. FC K├╕benhavn - More Markets",
                                                                                "category":  "entertainment"
                                                                            },
@@ -2653,7 +2659,7 @@
                                                              },
     "https://polymarket.com/event/ct-creator-mindshare-ath-by-march-31-2026":  {
                                                                                    "odds":  6,
-                                                                                   "timestamp":  "2026-03-26 09:00:21",
+                                                                                   "timestamp":  "2026-03-26 11:00:24",
                                                                                    "name":  "Crypto Twitter mindshare ATH by March 31, 2026?",
                                                                                    "category":  "crypto"
                                                                                },
@@ -2670,8 +2676,8 @@
                                                                 "category":  "sports"
                                                             },
     "https://polymarket.com/event/over-200m-hyperliquid-buybacks-in-q1":  {
-                                                                              "odds":  1,
-                                                                              "timestamp":  "2026-03-26 09:00:21",
+                                                                              "odds":  0,
+                                                                              "timestamp":  "2026-03-26 11:00:24",
                                                                               "name":  "Over $200M Hyperliquid buybacks in Q1?",
                                                                               "category":  "crypto"
                                                                           },
@@ -2683,7 +2689,7 @@
                                                               },
     "https://polymarket.com/event/trump-eliminates-capital-gains-tax-on-crypto-in-2025":  {
                                                                                               "odds":  0,
-                                                                                              "timestamp":  "2026-03-26 09:00:21",
+                                                                                              "timestamp":  "2026-03-26 11:00:24",
                                                                                               "name":  "Trump eliminates capital gains tax on crypto by ___?",
                                                                                               "category":  "crypto"
                                                                                           },
@@ -2699,12 +2705,12 @@
                                                                     "name":  "Ethereum above ___ on March 16?",
                                                                     "category":  "crypto"
                                                                 },
-    "https://polymarket.com/event/what-price-will-bitcoin-hit-on-march-17":  {
-                                                                                 "odds":  0,
-                                                                                 "timestamp":  "2026-03-18 05:00:53",
-                                                                                 "name":  "What price will Bitcoin hit on March 17?",
-                                                                                 "category":  "crypto"
-                                                                             },
+    "https://polymarket.com/event/aapl-close-above-on-march-19-2026":  {
+                                                                           "odds":  100,
+                                                                           "timestamp":  "2026-03-19 22:00:32",
+                                                                           "name":  "Apple (AAPL) closes above ___ on March 19?",
+                                                                           "category":  "finance"
+                                                                       },
     "https://polymarket.com/event/elon-musk-of-tweets-march-23-march-25":  {
                                                                                "odds":  0,
                                                                                "timestamp":  "2026-03-25 19:00:30",
@@ -2731,25 +2737,25 @@
                                                                          },
     "https://polymarket.com/event/kharg-island-no-longer-under-iranian-control-by-march-31":  {
                                                                                                   "odds":  8,
-                                                                                                  "timestamp":  "2026-03-26 09:00:21",
+                                                                                                  "timestamp":  "2026-03-26 11:00:24",
                                                                                                   "name":  "Kharg Island no longer under Iranian control by...?",
                                                                                                   "category":  "politics"
                                                                                               },
     "https://polymarket.com/event/2026-f1-drivers-champion":  {
                                                                   "odds":  56,
-                                                                  "timestamp":  "2026-03-26 09:00:21",
+                                                                  "timestamp":  "2026-03-26 11:00:24",
                                                                   "name":  "F1 Drivers\u0027 Champion",
                                                                   "category":  "sports"
                                                               },
     "https://polymarket.com/event/sp-500-all-time-high-by":  {
                                                                  "odds":  0,
-                                                                 "timestamp":  "2026-03-26 09:00:21",
+                                                                 "timestamp":  "2026-03-26 11:00:24",
                                                                  "name":  "S\u0026P 500 all time high by...?",
                                                                  "category":  "finance"
                                                              },
     "https://polymarket.com/event/fed-decision-in-april":  {
                                                                "odds":  0,
-                                                               "timestamp":  "2026-03-26 09:00:21",
+                                                               "timestamp":  "2026-03-26 11:00:24",
                                                                "name":  "Fed decision in April?",
                                                                "category":  "politics"
                                                            },
@@ -2766,17 +2772,17 @@
                                                                              "category":  "trending"
                                                                          },
     "https://polymarket.com/event/what-price-will-pumpfun-hit-before-2027":  {
-                                                                                 "odds":  23,
-                                                                                 "timestamp":  "2026-03-26 09:00:21",
+                                                                                 "odds":  27,
+                                                                                 "timestamp":  "2026-03-26 11:00:24",
                                                                                  "name":  "What price will Pump.fun hit in 2026?",
                                                                                  "category":  "entertainment"
                                                                              },
-    "https://polymarket.com/event/what-will-sp-500-spx-hit-by-end-of-march":  {
-                                                                                  "odds":  0,
-                                                                                  "timestamp":  "2026-03-26 09:00:21",
-                                                                                  "name":  "What will S\u0026P 500 (SPX) hit by end of March?",
-                                                                                  "category":  "finance"
-                                                                              },
+    "https://polymarket.com/event/bitcoin-price-on-march-20":  {
+                                                                   "odds":  0,
+                                                                   "timestamp":  "2026-03-20 16:00:24",
+                                                                   "name":  "Bitcoin price on March 20?",
+                                                                   "category":  "crypto"
+                                                               },
     "https://polymarket.com/event/cbb-stjohn-kan-2026-03-22":  {
                                                                    "odds":  89,
                                                                    "timestamp":  "2026-03-22 23:00:36",
@@ -2791,7 +2797,7 @@
                                                                },
     "https://polymarket.com/event/highest-temperature-in-tel-aviv-on-march-26-2026":  {
                                                                                           "odds":  0,
-                                                                                          "timestamp":  "2026-03-26 09:00:21",
+                                                                                          "timestamp":  "2026-03-26 11:00:24",
                                                                                           "name":  "Highest temperature in Tel Aviv on March 26?",
                                                                                           "category":  "trending"
                                                                                       },
@@ -2803,7 +2809,7 @@
                                                                        },
     "https://polymarket.com/event/2026-nhl-stanley-cup-champion":  {
                                                                        "odds":  10,
-                                                                       "timestamp":  "2026-03-26 09:00:21",
+                                                                       "timestamp":  "2026-03-26 11:00:24",
                                                                        "name":  "2026 NHL Stanley Cup Champion ",
                                                                        "category":  "sports"
                                                                    },
@@ -2833,7 +2839,7 @@
                                                                  },
     "https://polymarket.com/event/will-forsen-beat-xqcs-minecraft-speedrun-record-by":  {
                                                                                             "odds":  0,
-                                                                                            "timestamp":  "2026-03-26 09:00:21",
+                                                                                            "timestamp":  "2026-03-26 11:00:24",
                                                                                             "name":  "Will Forsen beat xQc\u0027s Minecraft speedrun record by...?",
                                                                                             "category":  "trending"
                                                                                         },
@@ -2862,8 +2868,8 @@
                                                                              "category":  "trending"
                                                                          },
     "https://polymarket.com/event/nvda-week-march-27-2026":  {
-                                                                 "odds":  1,
-                                                                 "timestamp":  "2026-03-26 09:00:21",
+                                                                 "odds":  0,
+                                                                 "timestamp":  "2026-03-26 11:00:24",
                                                                  "name":  "NVIDIA (NVDA) closes week of Mar 23 at ___?",
                                                                  "category":  "finance"
                                                              },
@@ -2873,12 +2879,12 @@
                                                                                 "name":  "Texas Republican Senate Primary Winner",
                                                                                 "category":  "politics"
                                                                             },
-    "https://polymarket.com/event/epl-mun-ast-2026-03-15":  {
-                                                                "odds":  100,
-                                                                "timestamp":  "2026-03-15 18:00:25",
-                                                                "name":  "Manchester United FC vs. Aston Villa FC",
-                                                                "category":  "sports"
-                                                            },
+    "https://polymarket.com/event/cbb-troy-nebr-2026-03-19":  {
+                                                                  "odds":  100,
+                                                                  "timestamp":  "2026-03-19 21:00:33",
+                                                                  "name":  "Troy Trojans vs. Nebraska Cornhuskers",
+                                                                  "category":  "sports"
+                                                              },
     "https://polymarket.com/event/cs2-tl1-mglz-2026-03-22":  {
                                                                  "odds":  100,
                                                                  "timestamp":  "2026-03-22 23:00:36",
@@ -2903,15 +2909,15 @@
                                                                    "name":  "Bitcoin price on March 16?",
                                                                    "category":  "crypto"
                                                                },
-    "https://polymarket.com/event/what-price-will-ethena-hit-in-march":  {
-                                                                             "odds":  1,
-                                                                             "timestamp":  "2026-03-26 09:00:21",
-                                                                             "name":  "What price will Ethena hit in March?",
-                                                                             "category":  "entertainment"
-                                                                         },
+    "https://polymarket.com/event/cs2-furia-tyloo-2026-03-18":  {
+                                                                    "odds":  100,
+                                                                    "timestamp":  "2026-03-19 07:00:28",
+                                                                    "name":  "Counter-Strike: FURIA vs TYLOO (BO3) - BLAST Open Rotterdam Group A",
+                                                                    "category":  "sports"
+                                                                },
     "https://polymarket.com/event/california-governor-election-2026":  {
                                                                            "odds":  0,
-                                                                           "timestamp":  "2026-03-26 09:00:21",
+                                                                           "timestamp":  "2026-03-26 11:00:24",
                                                                            "name":  "California Governor Election Winner",
                                                                            "category":  "politics"
                                                                        },
@@ -2963,12 +2969,12 @@
                                                                "name":  "Sharks vs. Predators",
                                                                "category":  "sports"
                                                            },
-    "https://polymarket.com/event/next-prime-minister-of-hungary":  {
-                                                                        "odds":  35,
-                                                                        "timestamp":  "2026-03-26 09:00:21",
-                                                                        "name":  "Next Prime Minister of Hungary",
-                                                                        "category":  "politics"
-                                                                    },
+    "https://polymarket.com/event/will-the-us-confirm-that-aliens-exist-before-2027":  {
+                                                                                           "odds":  17,
+                                                                                           "timestamp":  "2026-03-20 16:00:24",
+                                                                                           "name":  "Will the US confirm that aliens exist by...?",
+                                                                                           "category":  "politics"
+                                                                                       },
     "https://polymarket.com/event/meta-close-above-on-march-18-2026":  {
                                                                            "odds":  0,
                                                                            "timestamp":  "2026-03-18 22:00:29",
@@ -2981,12 +2987,12 @@
                                                                  "name":  "Opendoor (OPEN) closes week of Mar 16 at ___?",
                                                                  "category":  "finance"
                                                              },
-    "https://polymarket.com/event/fed-decision-in-march-885":  {
-                                                                   "odds":  0,
-                                                                   "timestamp":  "2026-03-18 21:00:25",
-                                                                   "name":  "Fed decision in March?",
-                                                                   "category":  "politics"
-                                                               },
+    "https://polymarket.com/event/nba-lal-det-2026-03-23":  {
+                                                                "odds":  100,
+                                                                "timestamp":  "2026-03-24 05:00:25",
+                                                                "name":  "Lakers vs. Pistons",
+                                                                "category":  "sports"
+                                                            },
     "https://polymarket.com/event/spacex-or-openai-higher-ipo-closing-market-cap":  {
                                                                                         "odds":  81,
                                                                                         "timestamp":  "2026-03-20 14:00:27",
@@ -3007,13 +3013,13 @@
                                                                  },
     "https://polymarket.com/event/nflx-above-on-march-27-2026":  {
                                                                      "odds":  100,
-                                                                     "timestamp":  "2026-03-26 09:00:21",
+                                                                     "timestamp":  "2026-03-26 11:00:24",
                                                                      "name":  "Will Netflix (NFLX) finish week of March 23 above___?",
                                                                      "category":  "finance"
                                                                  },
     "https://polymarket.com/event/will-trump-visit-china-by":  {
                                                                    "odds":  0,
-                                                                   "timestamp":  "2026-03-26 09:00:21",
+                                                                   "timestamp":  "2026-03-26 11:00:24",
                                                                    "name":  "Will Trump visit China by...?",
                                                                    "category":  "politics"
                                                                },
@@ -3043,7 +3049,7 @@
                                                             },
     "https://polymarket.com/event/uel-ste-fen1-2026-01-29-more-markets":  {
                                                                               "odds":  50,
-                                                                              "timestamp":  "2026-03-26 09:00:21",
+                                                                              "timestamp":  "2026-03-26 11:00:24",
                                                                               "name":  "FCSB vs. Fenerbah├ºe SK - More Markets",
                                                                               "category":  "entertainment"
                                                                           },
@@ -3053,15 +3059,15 @@
                                                                                "name":  "Elon Musk # tweets March 14 - March 16, 2026?",
                                                                                "category":  "politics"
                                                                            },
-    "https://polymarket.com/event/2026-ncaa-tournament-winner":  {
-                                                                     "odds":  0,
-                                                                     "timestamp":  "2026-03-26 09:00:21",
-                                                                     "name":  "2026 NCAA Tournament Winner",
-                                                                     "category":  "sports"
-                                                                 },
+    "https://polymarket.com/event/msft-close-above-on-march-25-2026":  {
+                                                                           "odds":  100,
+                                                                           "timestamp":  "2026-03-25 22:00:27",
+                                                                           "name":  "Microsoft (MSFT) closes above ___ on March 25?",
+                                                                           "category":  "finance"
+                                                                       },
     "https://polymarket.com/event/did-a-crypto-hedge-fund-blow-up":  {
-                                                                         "odds":  36,
-                                                                         "timestamp":  "2026-03-26 09:00:21",
+                                                                         "odds":  37,
+                                                                         "timestamp":  "2026-03-26 11:00:24",
                                                                          "name":  "Did a crypto hedge fund blow up?",
                                                                          "category":  "crypto"
                                                                      },
@@ -3071,12 +3077,12 @@
                                                                 "name":  "Spurs vs. Clippers",
                                                                 "category":  "sports"
                                                             },
-    "https://polymarket.com/event/cbb-troy-nebr-2026-03-19":  {
-                                                                  "odds":  100,
-                                                                  "timestamp":  "2026-03-19 21:00:33",
-                                                                  "name":  "Troy Trojans vs. Nebraska Cornhuskers",
-                                                                  "category":  "sports"
-                                                              },
+    "https://polymarket.com/event/bitcoin-vs-gold-vs-sp-500-in-2026":  {
+                                                                           "odds":  28,
+                                                                           "timestamp":  "2026-03-25 08:00:23",
+                                                                           "name":  "Bitcoin vs. Gold vs. S\u0026P 500 in 2026",
+                                                                           "category":  "finance"
+                                                                       },
     "https://polymarket.com/event/meta-above-on-march-20-2026":  {
                                                                      "odds":  1,
                                                                      "timestamp":  "2026-03-20 16:00:24",
@@ -3097,13 +3103,13 @@
                                                               },
     "https://polymarket.com/event/ncaa-tournament-perfect-bracket":  {
                                                                          "odds":  0,
-                                                                         "timestamp":  "2026-03-26 09:00:21",
+                                                                         "timestamp":  "2026-03-26 11:00:24",
                                                                          "name":  "Will there be a perfect NCAA bracket?",
                                                                          "category":  "sports"
                                                                      },
     "https://polymarket.com/event/next-french-presidential-election":  {
                                                                            "odds":  8,
-                                                                           "timestamp":  "2026-03-26 09:00:21",
+                                                                           "timestamp":  "2026-03-26 11:00:24",
                                                                            "name":  "Next French Presidential Election",
                                                                            "category":  "politics"
                                                                        },
@@ -3126,8 +3132,8 @@
                                                                       "category":  "sports"
                                                                   },
     "https://polymarket.com/event/pltr-above-in-march-2026":  {
-                                                                  "odds":  52,
-                                                                  "timestamp":  "2026-03-26 09:00:21",
+                                                                  "odds":  94,
+                                                                  "timestamp":  "2026-03-26 11:00:24",
                                                                   "name":  "Will Palantir (PLTR) close above ___ end of March?",
                                                                   "category":  "finance"
                                                               },
@@ -3145,28 +3151,28 @@
                                                                          },
     "https://polymarket.com/event/sp-500-spx-above-end-of-march":  {
                                                                        "odds":  2,
-                                                                       "timestamp":  "2026-03-26 09:00:21",
+                                                                       "timestamp":  "2026-03-26 11:00:24",
                                                                        "name":  "S\u0026P 500 (SPX) above ___ end of March?",
                                                                        "category":  "finance"
                                                                    },
-    "https://polymarket.com/event/will-the-us-confirm-that-aliens-exist-before-2027":  {
-                                                                                           "odds":  17,
-                                                                                           "timestamp":  "2026-03-20 16:00:24",
-                                                                                           "name":  "Will the US confirm that aliens exist by...?",
-                                                                                           "category":  "politics"
-                                                                                       },
-    "https://polymarket.com/event/nba-det-tor-2026-03-15":  {
-                                                                "odds":  100,
-                                                                "timestamp":  "2026-03-16 15:00:26",
-                                                                "name":  "Pistons vs. Raptors",
-                                                                "category":  "sports"
-                                                            },
-    "https://polymarket.com/event/nba-tor-chi-2026-03-18":  {
-                                                                "odds":  100,
-                                                                "timestamp":  "2026-03-19 06:00:25",
-                                                                "name":  "Raptors vs. Bulls",
-                                                                "category":  "sports"
-                                                            },
+    "https://polymarket.com/event/elon-musk-of-tweets-march-17-march-24":  {
+                                                                               "odds":  0,
+                                                                               "timestamp":  "2026-03-24 19:00:29",
+                                                                               "name":  "Elon Musk # tweets March 17 - March 24, 2026?",
+                                                                               "category":  "politics"
+                                                                           },
+    "https://polymarket.com/event/usd-cad-up-or-down-on-march-16-2026":  {
+                                                                             "odds":  100,
+                                                                             "timestamp":  "2026-03-17 20:00:27",
+                                                                             "name":  "USD/CAD Up or Down on March 16?",
+                                                                             "category":  "trending"
+                                                                         },
+    "https://polymarket.com/event/mlb-2026-american-league-champion":  {
+                                                                           "odds":  7,
+                                                                           "timestamp":  "2026-03-26 10:00:25",
+                                                                           "name":  "MLB: 2026 American League Champion",
+                                                                           "category":  "sports"
+                                                                       },
     "https://polymarket.com/event/uel-mid1-not-2026-03-19":  {
                                                                  "odds":  0,
                                                                  "timestamp":  "2026-03-19 22:00:32",
@@ -3179,24 +3185,30 @@
                                                                         "name":  "Elon Musk musk # tweets in April 2026?",
                                                                         "category":  "politics"
                                                                     },
-    "https://polymarket.com/event/nba-phx-min-2026-03-17":  {
-                                                                "odds":  100,
-                                                                "timestamp":  "2026-03-18 05:00:53",
-                                                                "name":  "Suns vs. Timberwolves",
-                                                                "category":  "sports"
-                                                            },
+    "https://polymarket.com/event/meta-close-above-on-march-19-2026":  {
+                                                                           "odds":  100,
+                                                                           "timestamp":  "2026-03-19 22:00:32",
+                                                                           "name":  "Meta (META) closes above ___ on March 19?",
+                                                                           "category":  "finance"
+                                                                       },
     "https://polymarket.com/event/ucl-ata-ath1-2026-01-21-more-markets":  {
                                                                               "odds":  50,
-                                                                              "timestamp":  "2026-03-26 09:00:21",
+                                                                              "timestamp":  "2026-03-26 11:00:24",
                                                                               "name":  "Atalanta BC vs. Athletic Club - More Markets",
                                                                               "category":  "entertainment"
                                                                           },
     "https://polymarket.com/event/2026-nba-champion":  {
-                                                           "odds":  36,
-                                                           "timestamp":  "2026-03-26 09:00:21",
+                                                           "odds":  38,
+                                                           "timestamp":  "2026-03-26 11:00:24",
                                                            "name":  "2026 NBA Champion",
                                                            "category":  "sports"
                                                        },
+    "https://polymarket.com/event/nba-nyk-cha-2026-03-26":  {
+                                                                "odds":  52,
+                                                                "timestamp":  "2026-03-26 11:00:24",
+                                                                "name":  "Knicks vs. Hornets",
+                                                                "category":  "sports"
+                                                            },
     "https://polymarket.com/event/googl-close-above-on-march-23-2026":  {
                                                                             "odds":  100,
                                                                             "timestamp":  "2026-03-23 22:00:34",
@@ -3205,7 +3217,7 @@
                                                                         },
     "https://polymarket.com/event/presidential-election-winner-2028":  {
                                                                            "odds":  0,
-                                                                           "timestamp":  "2026-03-26 09:00:21",
+                                                                           "timestamp":  "2026-03-26 11:00:24",
                                                                            "name":  "Presidential Election Winner 2028",
                                                                            "category":  "politics"
                                                                        },
