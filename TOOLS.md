@@ -186,4 +186,74 @@ const appData = await NeuroVueDataLoader.loadNeuroVueData();
 
 ---
 
-*Last updated: 2026-03-25 22:03 UTC*
+## 📊 STOCKVUE DATA COLLECTION — YAHOO FINANCE STATUS
+
+**Current Status:** ⚠️ NOT COLLECTING DATA
+
+### What Happened
+- **Last successful scan:** None (scraper running but returning 0 results)
+- **Issue:** Yahoo Finance blocking Playwright scraper (JavaScript-rendered anti-bot protection)
+- **Scraper:** `yahoo_finance_scraper_v2.py` using Playwright with stealth
+- **Schedule:** Every 3 hours via `StockVue Auto Scanner` task
+
+### Current Data Files
+| File | Location | Last Update | Status |
+|------|----------|-------------|--------|
+| stocks_latest.json | `data/stocks/` | 2026-03-25 22:23 | Empty (0 stocks) |
+| stocks_history.json | `data/stocks/` | 2026-03-25 22:23 | Empty |
+
+### Root Cause
+Yahoo Finance has implemented aggressive anti-scraping:
+- JavaScript challenges requiring browser fingerprinting
+- Rate limiting and IP blocking
+- Dynamic content that doesn't render in headless mode
+- Cloudflare protection on some endpoints
+
+### Solution Options
+1. **Alpha Vantage API** — Free tier 25 calls/day, paid plans available
+2. **Polygon.io** — $49/mo for 1000 calls/min, institutional quality
+3. **Finnhub** — Free tier 60 calls/min, good for US stocks
+4. **Yahoo Finance API** — Unofficial endpoints (yfinance library) — may break
+5. **Manual data import** — Import from broker exports (TD/IBKR/etc)
+
+### Recommended Fix
+**Option: Alpha Vantage + Finnhub combo**
+- Alpha Vantage: Core price data, technical indicators
+- Finnhub: Real-time news, sentiment
+- Cost: Free tier sufficient for daily scans
+- Reliability: API-based, won't break like scraping
+
+### Immediate Action Required
+Choose one:
+- [ ] **Sign up for Alpha Vantage** (free API key) — I'll update scraper
+- [ ] **Sign up for Polygon.io** ($49/mo) — Higher quality data
+- [ ] **Pause StockVue** until you decide — Stop wasting compute cycles
+
+---
+
+## 🔄 AUTO-BACKUP IMPLEMENTATION — COMPLETE
+
+### ✅ Daily Memory Backup
+**Script:** `scripts/daily-memory-backup.ps1`  
+**Schedule:** Daily at 23:00  
+**What it does:**
+- Creates zip archive in `C:\Users\impro\OneDrive\OpenClaw\backups`
+- Commits memory files to GitHub
+- Cleans up archives older than 30 days
+- Writes status to `memory/backup-status.json`
+
+**Status:** ✅ ACTIVE (created 2026-03-26)
+
+### ✅ Workspace Auto-Commit
+**Script:** `scripts/auto-commit-workspace.ps1`  
+**Schedule:** Every 2 hours (recommend setting up)  
+**What it does:**
+- Stages changes in `data/`, `memory/`, `scripts/`, `skills/`
+- Commits with timestamp
+- Pushes to `impro58-oss/rooquest1`
+
+**To activate:** Run `setup-auto-commit-task.ps1`
+
+---
+
+*Last updated: 2026-03-26 06:58 UTC*

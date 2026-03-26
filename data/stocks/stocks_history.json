@@ -9,5 +9,63 @@
     "short_opportunities": 0,
     "categories_scanned": [],
     "results": []
+  },
+  {
+    "scan_timestamp": "2026-03-26T07:59:33.263569",
+    "scan_date": "2026-03-26",
+    "scan_time": "07:59:33",
+    "api": "Alpha Vantage",
+    "api_calls_used": 6,
+    "total_stocks": 3,
+    "signals_found": 0,
+    "long_opportunities": 0,
+    "short_opportunities": 0,
+    "categories_scanned": [
+      "alpha_vantage_universe"
+    ],
+    "results": [
+      {
+        "symbol": "AAPL",
+        "price": 252.62,
+        "change_percent": 0.39,
+        "volume": 28476668,
+        "rsi": null,
+        "macd": null,
+        "signal": "hold",
+        "confidence": 0.0,
+        "confidence_label": "low",
+        "reasons": [],
+        "timestamp": "2026-03-26T07:58:54.929735",
+        "data_date": "2026-03-25"
+      },
+      {
+        "symbol": "NVDA",
+        "price": 178.68,
+        "change_percent": 1.99,
+        "volume": 162602054,
+        "rsi": null,
+        "macd": null,
+        "signal": "hold",
+        "confidence": 0.0,
+        "confidence_label": "low",
+        "reasons": [],
+        "timestamp": "2026-03-26T07:59:07.951138",
+        "data_date": "2026-03-25"
+      },
+      {
+        "symbol": "TSLA",
+        "price": 385.95,
+        "change_percent": 0.76,
+        "volume": 55157265,
+        "rsi": null,
+        "macd": null,
+        "signal": "hold",
+        "confidence": 0.0,
+        "confidence_label": "low",
+        "reasons": [],
+        "timestamp": "2026-03-26T07:59:21.259476",
+        "data_date": "2026-03-25"
+      }
+    ]
   }
 ]

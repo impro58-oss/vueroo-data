@@ -1,7 +1,7 @@
 ﻿{
     "markets_with_movement":  2,
-    "timestamp":  "2026-03-25 22:00:27",
-    "scan_file":  "markets-2026-03-25-2200.json",
+    "timestamp":  "2026-03-26 07:00:27",
+    "scan_file":  "markets-2026-03-26-0700.json",
     "top_opportunities":  {
 
                           },
@@ -9,30 +9,30 @@
     "threshold":  5,
     "movements":  [
                       {
-                          "Market":  "Highest temperature in Taipei on March 27?",
-                          "Category":  "trending",
-                          "Url":  "https://polymarket.com/event/highest-temperature-in-taipei-on-march-27-2026",
-                          "PreviousOdds":  38,
-                          "CurrentOdds":  29,
-                          "Movement":  -9,
-                          "MovementPercent":  9,
-                          "Direction":  "DOWN",
-                          "Confidence":  "MEDIUM",
-                          "PreviousTime":  "2026-03-25 21:00:28",
-                          "CurrentTime":  "2026-03-25 22:00:27"
-                      },
-                      {
-                          "Market":  "Will JD Vance talk to Iranian negotiators by...?",
-                          "Category":  "entertainment",
-                          "Url":  "https://polymarket.com/event/will-jd-vance-talk-to-iranian-negotiators-by",
-                          "PreviousOdds":  17,
-                          "CurrentOdds":  22,
-                          "Movement":  5,
-                          "MovementPercent":  5,
+                          "Market":  "What will the average monthly Ethereum gas price hit before 2027?",
+                          "Category":  "crypto",
+                          "Url":  "https://polymarket.com/event/what-will-the-average-monthly-ethereum-gas-price-hit-before-2027",
+                          "PreviousOdds":  34,
+                          "CurrentOdds":  40,
+                          "Movement":  6,
+                          "MovementPercent":  6,
                           "Direction":  "UP",
                           "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-25 20:00:41",
-                          "CurrentTime":  "2026-03-25 22:00:27"
+                          "PreviousTime":  "2026-03-26 06:01:09",
+                          "CurrentTime":  "2026-03-26 07:00:27"
+                      },
+                      {
+                          "Market":  "Will Amazon (AMZN) close above ___ end of March?",
+                          "Category":  "finance",
+                          "Url":  "https://polymarket.com/event/amzn-above-in-march-2026",
+                          "PreviousOdds":  99,
+                          "CurrentOdds":  84,
+                          "Movement":  -15,
+                          "MovementPercent":  15,
+                          "Direction":  "DOWN",
+                          "Confidence":  "HIGH",
+                          "PreviousTime":  "2026-03-26 06:01:09",
+                          "CurrentTime":  "2026-03-26 07:00:27"
                       }
                   ],
     "smart_money_alerts":  0
