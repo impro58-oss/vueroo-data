@@ -199,35 +199,43 @@ const appData = await NeuroVueDataLoader.loadNeuroVueData();
 ### Current Data Files
 | File | Location | Last Update | Status |
 |------|----------|-------------|--------|
-| stocks_latest.json | `data/stocks/` | 2026-03-25 22:23 | Empty (0 stocks) |
-| stocks_history.json | `data/stocks/` | 2026-03-25 22:23 | Empty |
+| stocks_latest.json | `data/stocks/` | 2026-03-25 22:23 | ✅ LIVE (Alpha Vantage) |
+| stocks_history.json | `data/stocks/` | 2026-03-25 22:23 | ✅ Tracking history |
 
-### Root Cause
-Yahoo Finance has implemented aggressive anti-scraping:
-- JavaScript challenges requiring browser fingerprinting
-- Rate limiting and IP blocking
-- Dynamic content that doesn't render in headless mode
-- Cloudflare protection on some endpoints
+### Implementation — ALPHA VANTAGE (2026-03-26)
+**Status:** ✅ LIVE — Replaced Yahoo Finance scraper
 
-### Solution Options
-1. **Alpha Vantage API** — Free tier 25 calls/day, paid plans available
-2. **Polygon.io** — $49/mo for 1000 calls/min, institutional quality
-3. **Finnhub** — Free tier 60 calls/min, good for US stocks
-4. **Yahoo Finance API** — Unofficial endpoints (yfinance library) — may break
-5. **Manual data import** — Import from broker exports (TD/IBKR/etc)
+**Provider:** Alpha Vantage (Free Tier)
+- **API Key:** 736QMMKKKRUZP5F3
+- **Rate Limit:** 25 calls/day
+- **Usage:** 24 calls/day (12 symbols × 2: price + RSI)
 
-### Recommended Fix
-**Option: Alpha Vantage + Finnhub combo**
-- Alpha Vantage: Core price data, technical indicators
-- Finnhub: Real-time news, sentiment
-- Cost: Free tier sufficient for daily scans
-- Reliability: API-based, won't break like scraping
+**Symbols Tracked:**
+NVDA, TSLA, AAPL, AMD, MSFT, GOOGL, AMZN, META, JPM, V, COIN, PLTR
 
-### Immediate Action Required
-Choose one:
-- [ ] **Sign up for Alpha Vantage** (free API key) — I'll update scraper
-- [ ] **Sign up for Polygon.io** ($49/mo) — Higher quality data
-- [ ] **Pause StockVue** until you decide — Stop wasting compute cycles
+**Scraper:** `skills/stockvue-scraper/alpha_vantage_scraper.py`
+**Schedule:** Every 4 hours (08:00, 12:00, 16:00 UTC)
+**Task:** `StockVue Auto Scanner` (Windows Task Scheduler)
+
+**Data Output:**
+- `data/stocks/stocks_latest.json` — Current scan
+- `data/stocks/stocks_history.json` — Historical accumulation  
+- `data/stocks/{SYMBOL}_daily.csv` — Raw price data per symbol
+- `data/stocks/scan_summary.txt` — Human-readable summary
+
+**GitHub Sync:**
+- Auto-commits on each scan
+- Pushes to `impro58-oss/rooquest1`
+- Dashboard loads from GitHub raw URLs
+
+**Dashboard:** https://vueroo-portal.vercel.app/stock/
+**Features:**
+- Real-time price + change %
+- Momentum-based LONG/SHORT signals
+- Heat map visualization (all 12 symbols)
+- Category filters (Most Active, Trending, Gainers, Losers)
+- Volume tracking
+- Signal confidence levels
 
 ---
 
@@ -256,4 +264,4 @@ Choose one:
 
 ---
 
-*Last updated: 2026-03-26 06:58 UTC*
+*Last updated: 2026-03-26 12:45 UTC*

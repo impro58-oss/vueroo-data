@@ -81,11 +81,91 @@ Full spec saved at: `~/.openclaw/workspace/docs/vueroo-portal-architecture.md`
 
 ## 📁 ACTIVE PROJECTS
 
-1. **CryptoVue Dashboard** - ✅ LIVE
+1. **CryptoVue Dashboard** - ✅ LIVE (194 assets, 4h scans)
 2. **NeuroVue Platform** - ✅ LIVE (Revision One)
-3. **Vueroo Portal** - 🏗️ Architecture complete, awaiting build
-4. **Stockward Partnership** - ⏳ Awaiting materials
-5. **Personal MedTech Research** - ✅ Hemorrhagic stroke coils analysis complete (2026-03-24)
+3. **StockVue Dashboard** - ✅ LIVE (Alpha Vantage, 12 symbols)
+4. **Vueroo Portal** - 🏗️ Dashboard buttons added, deployment live
+5. **Stockward Partnership** - ⏳ Awaiting materials
+6. **Personal MedTech Research** - ✅ Hemorrhagic stroke coils analysis complete (2026-03-24)
+
+---
+
+## 🚀 MAJOR DEPLOYMENT: 2026-03-26
+
+### StockVue - NEW SILO ADDED
+**Status:** LIVE on Vercel
+**URL:** https://vueroo-portal.vercel.app/stock/
+**Data Source:** Alpha Vantage API (Free Tier)
+**Symbols:** 12 (NVDA, TSLA, AAPL, AMD, MSFT, GOOGL, AMZN, META, JPM, V, COIN, PLTR)
+**Frequency:** Every 4 hours (08:00, 12:00, 16:00 UTC)
+**Features:**
+- Real-time price data
+- Momentum-based LONG/SHORT signals
+- Heat map visualization
+- Category filtering (Most Active, Trending, Gainers, Losers)
+- Volume confirmation
+- Auto-deploy to GitHub/Vercel
+
+**Files:**
+- `skills/stockvue-scraper/alpha_vantage_scraper.py`
+- `data/stocks/stocks_latest.json` → GitHub
+- `vueroo-portal/public/stock/index.html`
+
+**API Usage:** 24 calls/day (12 symbols × 2 calls: price + RSI)
+**Rate Limit:** 25 calls/day (Alpha Vantage free tier)
+
+### CryptoVue - EXPANDED TO 194 ASSETS
+**Before:** Top 50 only
+**Now:** Top 200 by volume (194 valid after filtering)
+**Scans:** Every 4 hours since 2026-03-14
+**Data Storage:** `skills/tradingview-claw-v2/top_50_analysis_*.json` (194 results)
+
+**Fixes Applied:**
+- GitHub-first loading for Vercel compatibility
+- Updated fallback filenames with correct timestamps
+- Dashboard labels updated to show "200 Assets"
+
+### NeuroVue - UI POLISH
+**Fix:** Product Coverage chart Y-axis scale 8 → 12
+**Reason:** Bars were maxing out at 8, needed headroom for visualization
+
+### Vueroo Portal Dashboard
+**Added:** StockVue button on main dashboard (vueroo.com/dashboard)
+**Style:** Amber color scheme, chart icon, links to /stock/
+
+---
+
+## 🔧 SYSTEM IMPROVEMENTS
+
+### Data Architecture
+**Rule:** All dashboards load from GitHub raw URLs
+**Repos:**
+- `rooquest1` → Data files (crypto/, stocks/, polymarket/)
+- `vueroo-portal` → Dashboard frontend
+
+### Deployment Pattern
+1. Local scan → JSON files
+2. Git commit → rooquest1
+3. Vercel auto-deploy from GitHub
+4. Dashboard fetches fresh data
+
+### Backup Status
+**Last Full Backup:** 2026-03-26 12:41 UTC
+**Commits:**
+- rooquest1: de4bd6f
+- vueroo-portal: 0f88d5c
+
+---
+
+## 📊 CURRENT LIVE DASHBOARDS
+
+| Dashboard | URL | Assets | Update Frequency |
+|-----------|-----|--------|------------------|
+| CryptoVue | /crypto/ | 194 coins | Every 4h |
+| StockVue | /stock/ | 12 stocks | Every 4h |
+| NeuroVue | /medtech/ | MedTech CI | Manual |
+
+**All synced to GitHub and deployed to Vercel.**
 
 ---
 
