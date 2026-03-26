@@ -17,18 +17,25 @@ API_KEY = os.getenv('ALPHA_VANTAGE_API_KEY') or Path.home().joinpath('.openclaw/
 BASE_URL = "https://www.alphavantage.co/query"
 DATA_DIR = Path("C:\\Users\\impro\\.openclaw\\workspace\\data\\stocks")
 
-# Stock symbols to track (prioritized list)
-# 25 calls/day = we can scan 25 companies with full data
-# Or fewer companies with technicals
+# Stock symbols to track (prioritized list - 12 symbols for 24 calls/day with RSI)
+# 25 calls/day = 12 symbols x 2 calls (price + RSI) = 24 calls, 1 spare
 DEFAULT_SYMBOLS = [
-    # Tech/Growth (high priority)
-    'NVDA', 'AAPL', 'MSFT', 'GOOGL', 'META', 'AMZN', 'TSLA',
-    # Blue Chips
-    'JPM', 'V', 'JNJ', 'WMT', 'UNH', 'HD', 'PG',
+    # Tech/Growth - High momentum
+    'NVDA',  # AI/GPU leader
+    'TSLA',  # EV/Energy
+    'AAPL',  # Consumer tech
+    'AMD',   # Semiconductor
+    # Blue Chips - Stability
+    'MSFT',  # Cloud/AI
+    'GOOGL', # Search/AI
+    'AMZN',  # E-commerce/Cloud
+    'META',  # Social/VR
+    # Financial/Industrial
+    'JPM',   # Banking
+    'V',     # Payments
     # Additional opportunities
-    'AMD', 'COIN', 'PLTR', 'CRM', 'NFLX', 'DIS', 'BA',
-    # Defensive/Energy
-    'XOM', 'JNJ', 'KO', 'PFE', 'VZ', 'T', 'MRK'
+    'COIN',  # Crypto proxy
+    'PLTR',  # AI/Data
 ]
 
 

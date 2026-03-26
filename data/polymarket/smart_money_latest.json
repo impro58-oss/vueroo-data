@@ -1,7 +1,7 @@
 ﻿{
-    "markets_with_movement":  2,
-    "timestamp":  "2026-03-26 07:00:27",
-    "scan_file":  "markets-2026-03-26-0700.json",
+    "markets_with_movement":  1,
+    "timestamp":  "2026-03-26 09:00:21",
+    "scan_file":  "markets-2026-03-26-0900.json",
     "top_opportunities":  {
 
                           },
@@ -9,30 +9,17 @@
     "threshold":  5,
     "movements":  [
                       {
-                          "Market":  "What will the average monthly Ethereum gas price hit before 2027?",
-                          "Category":  "crypto",
-                          "Url":  "https://polymarket.com/event/what-will-the-average-monthly-ethereum-gas-price-hit-before-2027",
-                          "PreviousOdds":  34,
-                          "CurrentOdds":  40,
+                          "Market":  "Will NVIDIA (NVDA) finish week of March 23 above___?",
+                          "Category":  "finance",
+                          "Url":  "https://polymarket.com/event/nvda-above-on-march-27-2026",
+                          "PreviousOdds":  93,
+                          "CurrentOdds":  99,
                           "Movement":  6,
                           "MovementPercent":  6,
                           "Direction":  "UP",
                           "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-26 06:01:09",
-                          "CurrentTime":  "2026-03-26 07:00:27"
-                      },
-                      {
-                          "Market":  "Will Amazon (AMZN) close above ___ end of March?",
-                          "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/amzn-above-in-march-2026",
-                          "PreviousOdds":  99,
-                          "CurrentOdds":  84,
-                          "Movement":  -15,
-                          "MovementPercent":  15,
-                          "Direction":  "DOWN",
-                          "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-26 06:01:09",
-                          "CurrentTime":  "2026-03-26 07:00:27"
+                          "PreviousTime":  "2026-03-26 00:00:28",
+                          "CurrentTime":  "2026-03-26 09:00:21"
                       }
                   ],
     "smart_money_alerts":  0

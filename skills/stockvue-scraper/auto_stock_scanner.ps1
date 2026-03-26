@@ -1,14 +1,16 @@
-# StockVue Auto Scanner — Runs every 3 hours
+# StockVue Auto Scanner — Runs every 3 hours using Alpha Vantage
 param(
     [string]$WorkingDir = "C:\Users\impro\.openclaw\workspace\skills\stockvue-scraper",
-    [string]$PythonPath = "C:\Users\impro\AppData\Local\Programs\Python\Python311\python.exe"
+    [string]$PythonPath = "C:\Users\impro\AppData\Local\Programs\Python\Python311\python.exe",
+    [string]$ApiKey = "736QMMKKKRUZP5F3"
 )
 
 Set-Location $WorkingDir
 
 # Log file
-$LogFile = "$WorkingDir\logs\stock_scan_$(Get-Date -Format 'yyyyMMdd').log"
-New-Item -ItemType Directory -Force -Path "$WorkingDir\logs" | Out-Null
+$LogDir = "$WorkingDir\logs"
+$LogFile = "$LogDir\stock_scan_$(Get-Date -Format 'yyyyMMdd').log"
+New-Item -ItemType Directory -Force -Path $LogDir | Out-Null
 
 function Write-Log {
     param([string]$Message)
@@ -16,12 +18,13 @@ function Write-Log {
     "$Timestamp - $Message" | Tee-Object -FilePath $LogFile -Append
 }
 
-Write-Log "=== Starting StockVue Scan ==="
+Write-Log "=== Starting StockVue Alpha Vantage Scan ==="
 
-# Run scraper (v2 with Playwright)
-Write-Log "Scraping Yahoo Finance markets (Playwright v2)..."
+# Run scraper
+Write-Log "Scanning stocks using Alpha Vantage API..."
 try {
-    $Output = & $PythonPath yahoo_finance_scraper_v2.py 2>&1
+    $env:ALPHA_VANTAGE_API_KEY = $ApiKey
+    $Output = & $PythonPath alpha_vantage_scraper.py 2>&1
     $Output | ForEach-Object { Write-Log $_ }
     
     # Commit to GitHub

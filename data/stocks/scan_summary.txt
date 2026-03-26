@@ -1,0 +1,57 @@
+
+StockVue Alpha Vantage Scan - Results
+======================================
+Scan Time: 2026-03-26 08:06 UTC
+API: Alpha Vantage (Free Tier)
+
+SCAN SUMMARY
+------------
+Total Stocks Scanned: 4
+Signals Found: 3
+  LONG: 3
+  SHORT: 0
+  HOLD: 1
+
+SIGNALS FOUND
+-------------
+1. AMD
+   Price: $220.27 (+7.26%)
+   Signal: LONG
+   Confidence: MEDIUM (55%)
+   Reason: Strong positive momentum (+7.3%)
+   Volume: 48.5M
+
+2. NVDA  
+   Price: $178.68 (+1.99%)
+   Signal: LONG
+   Confidence: LOW (45%)
+   Reason: Positive momentum (+2.0%)
+   Volume: 162.6M
+
+3. TSLA
+   Price: $385.95 (+0.76%)
+   Signal: LONG
+   Confidence: LOW (45%)
+   Reason: Positive momentum (+0.8%)
+   Volume: 55.2M
+
+HOLD POSITION
+-------------
+4. AAPL
+   Price: $252.62 (+0.39%)
+   Signal: HOLD
+   Volume: 28.5M
+
+FAILED SYMBOLS
+--------------
+MSFT, GOOGL, AMZN, META, JPM, V, COIN, PLTR
+(These failed to fetch - likely API rate limit hit)
+
+API USAGE
+---------
+Calls Used: 8/25 (4 symbols × 2 calls each)
+Remaining Today: 17 calls
+
+NEXT RUN
+--------
+Scheduled: 12:00 UTC today

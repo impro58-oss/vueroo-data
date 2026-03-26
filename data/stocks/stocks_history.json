@@ -67,5 +67,83 @@
         "data_date": "2026-03-25"
       }
     ]
+  },
+  {
+    "scan_timestamp": "2026-03-26T08:06:33.465031",
+    "scan_date": "2026-03-26",
+    "scan_time": "08:06:33",
+    "api": "Alpha Vantage",
+    "api_calls_used": 8,
+    "total_stocks": 4,
+    "signals_found": 3,
+    "long_opportunities": 3,
+    "short_opportunities": 0,
+    "categories_scanned": [
+      "alpha_vantage_universe"
+    ],
+    "results": [
+      {
+        "symbol": "NVDA",
+        "price": 178.68,
+        "change_percent": 1.99,
+        "volume": 162602054,
+        "rsi": null,
+        "macd": null,
+        "signal": "long",
+        "confidence": 0.45,
+        "confidence_label": "low",
+        "reasons": [
+          "Positive momentum (+2.0%)"
+        ],
+        "timestamp": "2026-03-26T08:04:02.348997",
+        "data_date": "2026-03-25"
+      },
+      {
+        "symbol": "TSLA",
+        "price": 385.95,
+        "change_percent": 0.76,
+        "volume": 55157265,
+        "rsi": null,
+        "macd": null,
+        "signal": "long",
+        "confidence": 0.45,
+        "confidence_label": "low",
+        "reasons": [
+          "Positive momentum (+0.8%)"
+        ],
+        "timestamp": "2026-03-26T08:04:15.478668",
+        "data_date": "2026-03-25"
+      },
+      {
+        "symbol": "AAPL",
+        "price": 252.62,
+        "change_percent": 0.39,
+        "volume": 28476668,
+        "rsi": null,
+        "macd": null,
+        "signal": "hold",
+        "confidence": 0.0,
+        "confidence_label": "low",
+        "reasons": [],
+        "timestamp": "2026-03-26T08:04:28.691395",
+        "data_date": "2026-03-25"
+      },
+      {
+        "symbol": "AMD",
+        "price": 220.27,
+        "change_percent": 7.26,
+        "volume": 48518269,
+        "rsi": null,
+        "macd": null,
+        "signal": "long",
+        "confidence": 0.55,
+        "confidence_label": "medium",
+        "reasons": [
+          "Strong positive momentum (+7.3%)"
+        ],
+        "timestamp": "2026-03-26T08:04:41.716109",
+        "data_date": "2026-03-25"
+      }
+    ]
   }
 ]
