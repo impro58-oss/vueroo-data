@@ -13,7 +13,8 @@ from typing import Dict, List, Optional
 import time
 
 # Config
-API_KEY = os.getenv('ALPHA_VANTAGE_API_KEY') or Path.home().joinpath('.openclaw/.config/alphavantage/api_key').read_text().strip()
+# API key from TOOLS.md
+API_KEY = '736QMMKKKRUZP5F3'
 BASE_URL = "https://www.alphavantage.co/query"
 DATA_DIR = Path("C:\\Users\\impro\\.openclaw\\workspace\\data\\stocks")
 

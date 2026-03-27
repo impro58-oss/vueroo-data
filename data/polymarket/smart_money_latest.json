@@ -1,49 +1,26 @@
 ﻿{
-    "markets_with_movement":  2,
-    "timestamp":  "2026-03-27 05:00:25",
-    "scan_file":  "markets-2026-03-27-0500.json",
+    "markets_with_movement":  1,
+    "timestamp":  "2026-03-27 07:00:25",
+    "scan_file":  "markets-2026-03-27-0700.json",
     "top_opportunities":  {
-                              "Market":  "Highest temperature in Tel Aviv on March 29?",
-                              "Category":  "trending",
-                              "Url":  "https://polymarket.com/event/highest-temperature-in-tel-aviv-on-march-29-2026",
-                              "PreviousOdds":  30,
-                              "CurrentOdds":  43,
-                              "Movement":  13,
-                              "MovementPercent":  13,
-                              "Direction":  "UP",
-                              "Confidence":  "HIGH",
-                              "PreviousTime":  "2026-03-27 04:00:27",
-                              "CurrentTime":  "2026-03-27 05:00:25"
+
                           },
     "total_markets":  120,
     "threshold":  5,
     "movements":  [
                       {
-                          "Market":  "What price will Kinetiq hit in 2026?",
+                          "Market":  "Robinhood (HOOD) Up or Down on March 27?",
                           "Category":  "trending",
-                          "Url":  "https://polymarket.com/event/what-price-will-kinetiq-hit-in-2026",
-                          "PreviousOdds":  23,
-                          "CurrentOdds":  18,
+                          "Url":  "https://polymarket.com/event/hood-up-or-down-on-march-27-2026",
+                          "PreviousOdds":  63,
+                          "CurrentOdds":  58,
                           "Movement":  -5,
                           "MovementPercent":  5,
                           "Direction":  "DOWN",
                           "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-27 04:00:27",
-                          "CurrentTime":  "2026-03-27 05:00:25"
-                      },
-                      {
-                          "Market":  "Highest temperature in Tel Aviv on March 29?",
-                          "Category":  "trending",
-                          "Url":  "https://polymarket.com/event/highest-temperature-in-tel-aviv-on-march-29-2026",
-                          "PreviousOdds":  30,
-                          "CurrentOdds":  43,
-                          "Movement":  13,
-                          "MovementPercent":  13,
-                          "Direction":  "UP",
-                          "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-27 04:00:27",
-                          "CurrentTime":  "2026-03-27 05:00:25"
+                          "PreviousTime":  "2026-03-27 06:00:23",
+                          "CurrentTime":  "2026-03-27 07:00:25"
                       }
                   ],
-    "smart_money_alerts":  1
+    "smart_money_alerts":  0
 }
