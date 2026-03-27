@@ -264,4 +264,44 @@ NVDA, TSLA, AAPL, AMD, MSFT, GOOGL, AMZN, META, JPM, V, COIN, PLTR
 
 ---
 
+## 🔧 DASHBOARD DEBUG CHEAT SHEET
+
+### Common Issues & Fixes
+
+#### Issue: CryptoVue showing stale data / "Last Scan" is yesterday
+**Symptoms:** Dashboard displays old timestamps, refresh doesn't update
+
+**Diagnosis Steps:**
+1. Open browser console (F12 → Console)
+2. Look for fetch errors or JSON parse errors
+3. Check if `crypto_latest.json` loads successfully
+
+**Common Causes & Fixes:**
+
+| Cause | Error in Console | Fix |
+|-------|------------------|-----|
+| **NaN in JSON** | `Unexpected token 'N', "er_blue": NaN` | Replace `NaN` with `null` in data file |
+| **404 on fallback** | `Failed to load resource: 404` | Update fallback file list in `data-loader.js` |
+| **Browser cache** | Old data persists after refresh | Hard refresh: `Ctrl + Shift + R` |
+| **Vercel cache** | Old code after deploy | Empty commit to force redeploy |
+
+**Quick Fix Commands:**
+```powershell
+# Fix NaN values in crypto_latest.json
+$content = Get-Content data/crypto/crypto_latest.json -Raw
+$fixed = $content -replace ': NaN', ': null'
+Set-Content data/crypto/crypto_latest.json $fixed
+
+# Force Vercel redeploy
+git commit --allow-empty -m "Force redeploy"
+git push
+```
+
+**Prevention:**
+- Always validate JSON before pushing: `python -m json.tool data/crypto/crypto_latest.json`
+- Check scanner output for `NaN` values in CS RSI calculations
+- Use `null` instead of `NaN` in Python: `float('nan')` → `None`
+
+---
+
 *Last updated: 2026-03-26 12:45 UTC*
