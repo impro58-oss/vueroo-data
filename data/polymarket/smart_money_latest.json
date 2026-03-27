@@ -1,77 +1,52 @@
 ﻿{
     "markets_with_movement":  3,
-    "timestamp":  "2026-03-27 19:00:25",
-    "scan_file":  "markets-2026-03-27-1900.json",
-    "top_opportunities":  [
-                              {
-                                  "Market":  "Tesla (TSLA) closes week of Mar 23 at ___?",
-                                  "Category":  "finance",
-                                  "Url":  "https://polymarket.com/event/tsla-week-march-27-2026",
-                                  "PreviousOdds":  52,
-                                  "CurrentOdds":  36,
-                                  "Movement":  -16,
-                                  "MovementPercent":  16,
-                                  "Direction":  "DOWN",
-                                  "Confidence":  "HIGH",
-                                  "PreviousTime":  "2026-03-27 18:00:22",
-                                  "CurrentTime":  "2026-03-27 19:00:25"
-                              },
-                              {
-                                  "Market":  "Will Google (GOOGL) finish week of March 23 above___?",
-                                  "Category":  "finance",
-                                  "Url":  "https://polymarket.com/event/googl-above-on-march-27-2026",
-                                  "PreviousOdds":  44,
-                                  "CurrentOdds":  54,
-                                  "Movement":  10,
-                                  "MovementPercent":  10,
-                                  "Direction":  "UP",
-                                  "Confidence":  "HIGH",
-                                  "PreviousTime":  "2026-03-27 18:00:22",
-                                  "CurrentTime":  "2026-03-27 19:00:25"
-                              }
-                          ],
+    "timestamp":  "2026-03-27 21:00:28",
+    "scan_file":  "markets-2026-03-27-2100.json",
+    "top_opportunities":  {
+
+                          },
     "total_markets":  120,
     "threshold":  5,
     "movements":  [
                       {
-                          "Market":  "Counter-Strike: Team Falcons vs PARIVISION (BO3) - BLAST Open Rotterdam Playoffs",
-                          "Category":  "sports",
-                          "Url":  "https://polymarket.com/event/cs2-fal2-prv-2026-03-27",
-                          "PreviousOdds":  65,
-                          "CurrentOdds":  100,
-                          "Movement":  35,
-                          "MovementPercent":  35,
-                          "Direction":  "UP",
-                          "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-27 18:00:22",
-                          "CurrentTime":  "2026-03-27 19:00:25"
-                      },
-                      {
                           "Market":  "Tesla (TSLA) closes week of Mar 23 at ___?",
                           "Category":  "finance",
                           "Url":  "https://polymarket.com/event/tsla-week-march-27-2026",
-                          "PreviousOdds":  52,
-                          "CurrentOdds":  36,
-                          "Movement":  -16,
-                          "MovementPercent":  16,
+                          "PreviousOdds":  10,
+                          "CurrentOdds":  0,
+                          "Movement":  -10,
+                          "MovementPercent":  10,
                           "Direction":  "DOWN",
                           "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-27 18:00:22",
-                          "CurrentTime":  "2026-03-27 19:00:25"
+                          "PreviousTime":  "2026-03-27 20:00:24",
+                          "CurrentTime":  "2026-03-27 21:00:28"
                       },
                       {
                           "Market":  "Will Google (GOOGL) finish week of March 23 above___?",
                           "Category":  "finance",
                           "Url":  "https://polymarket.com/event/googl-above-on-march-27-2026",
-                          "PreviousOdds":  44,
-                          "CurrentOdds":  54,
-                          "Movement":  10,
-                          "MovementPercent":  10,
+                          "PreviousOdds":  59,
+                          "CurrentOdds":  0,
+                          "Movement":  -59,
+                          "MovementPercent":  59,
+                          "Direction":  "DOWN",
+                          "Confidence":  "HIGH",
+                          "PreviousTime":  "2026-03-27 20:00:24",
+                          "CurrentTime":  "2026-03-27 21:00:28"
+                      },
+                      {
+                          "Market":  "Palantir (PLTR) closes week of Mar 23 at ___?",
+                          "Category":  "finance",
+                          "Url":  "https://polymarket.com/event/pltr-week-march-27-2026",
+                          "PreviousOdds":  8,
+                          "CurrentOdds":  100,
+                          "Movement":  92,
+                          "MovementPercent":  92,
                           "Direction":  "UP",
                           "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-27 18:00:22",
-                          "CurrentTime":  "2026-03-27 19:00:25"
+                          "PreviousTime":  "2026-03-25 09:00:25",
+                          "CurrentTime":  "2026-03-27 21:00:28"
                       }
                   ],
-    "smart_money_alerts":  2
+    "smart_money_alerts":  0
 }
