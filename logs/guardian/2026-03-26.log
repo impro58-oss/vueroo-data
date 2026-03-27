@@ -1,0 +1,14 @@
+2026-03-26 19:17:46,720 | INFO     | ============================================================
+2026-03-26 19:17:46,720 | INFO     | PIPELINE GUARDIAN — Full System Check
+2026-03-26 19:17:46,727 | INFO     | Timestamp: 2026-03-26T19:17:46.727049
+2026-03-26 19:17:46,727 | INFO     | ============================================================
+2026-03-26 19:17:46,727 | INFO     | Checking CryptoVue...
+2026-03-26 19:17:47,327 | INFO     | CryptoVue: ERROR - Data is fresh (3.3h old); Missing required fields: ['total_cryptos']; Completeness check passed
+2026-03-26 19:17:47,330 | INFO     | Checking StockVue...
+2026-03-26 19:17:47,800 | INFO     | StockVue: WARNING - Data is 11.2h old (threshold: 6h); Schema validation passed; Completeness check passed
+2026-03-26 19:17:47,800 | INFO     | Checking NeuroVue...
+2026-03-26 19:17:51,550 | ERROR    | Failed to fetch https://raw.githubusercontent.com/impro58-oss/rooquest1/master/data/medtech-intelligence/dashboard/data/epidemiology-comprehensive.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/impro58-oss/rooquest1/master/data/medtech-intelligence/dashboard/data/epidemiology-comprehensive.json
+2026-03-26 19:17:51,550 | INFO     | NeuroVue: WARNING - No scan_timestamp found; Schema validation passed; Completeness issues: results array is empty
+2026-03-26 19:17:51,553 | INFO     | ------------------------------------------------------------
+2026-03-26 19:17:51,553 | INFO     | SUMMARY: 0 OK, 2 warnings, 1 errors, 0 critical
+2026-03-26 19:17:51,553 | INFO     | ============================================================

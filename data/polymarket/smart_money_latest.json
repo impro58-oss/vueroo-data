@@ -1,7 +1,7 @@
 ﻿{
-    "markets_with_movement":  5,
-    "timestamp":  "2026-03-27 11:00:22",
-    "scan_file":  "markets-2026-03-27-1100.json",
+    "markets_with_movement":  2,
+    "timestamp":  "2026-03-27 13:00:22",
+    "scan_file":  "markets-2026-03-27-1300.json",
     "top_opportunities":  {
 
                           },
@@ -12,66 +12,27 @@
                           "Market":  "Robinhood (HOOD) Up or Down on March 27?",
                           "Category":  "trending",
                           "Url":  "https://polymarket.com/event/hood-up-or-down-on-march-27-2026",
-                          "PreviousOdds":  65,
-                          "CurrentOdds":  79,
-                          "Movement":  14,
-                          "MovementPercent":  14,
+                          "PreviousOdds":  77,
+                          "CurrentOdds":  86,
+                          "Movement":  9,
+                          "MovementPercent":  9,
                           "Direction":  "UP",
-                          "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-27 10:00:42",
-                          "CurrentTime":  "2026-03-27 11:00:22"
-                      },
-                      {
-                          "Market":  "Will Palantir (PLTR) finish week of March 23 above___?",
-                          "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/pltr-above-on-march-27-2026",
-                          "PreviousOdds":  40,
-                          "CurrentOdds":  35,
-                          "Movement":  -5,
-                          "MovementPercent":  5,
-                          "Direction":  "DOWN",
-                          "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-27 10:00:42",
-                          "CurrentTime":  "2026-03-27 11:00:22"
+                          "Confidence":  "MEDIUM",
+                          "PreviousTime":  "2026-03-27 12:00:25",
+                          "CurrentTime":  "2026-03-27 13:00:22"
                       },
                       {
                           "Market":  "Will Google (GOOGL) finish week of March 23 above___?",
                           "Category":  "finance",
                           "Url":  "https://polymarket.com/event/googl-above-on-march-27-2026",
-                          "PreviousOdds":  81,
-                          "CurrentOdds":  74,
-                          "Movement":  -7,
-                          "MovementPercent":  7,
+                          "PreviousOdds":  77,
+                          "CurrentOdds":  69,
+                          "Movement":  -8,
+                          "MovementPercent":  8,
                           "Direction":  "DOWN",
                           "Confidence":  "MEDIUM",
-                          "PreviousTime":  "2026-03-27 10:00:42",
-                          "CurrentTime":  "2026-03-27 11:00:22"
-                      },
-                      {
-                          "Market":  "Google (GOOGL) closes week of Mar 23 at ___?",
-                          "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/googl-week-march-27-2026",
-                          "PreviousOdds":  81,
-                          "CurrentOdds":  86,
-                          "Movement":  5,
-                          "MovementPercent":  5,
-                          "Direction":  "UP",
-                          "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-27 10:00:42",
-                          "CurrentTime":  "2026-03-27 11:00:22"
-                      },
-                      {
-                          "Market":  "Meta (META) closes week of Mar 23 at ___?",
-                          "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/meta-week-march-27-2026",
-                          "PreviousOdds":  78,
-                          "CurrentOdds":  83,
-                          "Movement":  5,
-                          "MovementPercent":  5,
-                          "Direction":  "UP",
-                          "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-27 10:00:42",
-                          "CurrentTime":  "2026-03-27 11:00:22"
+                          "PreviousTime":  "2026-03-27 12:00:25",
+                          "CurrentTime":  "2026-03-27 13:00:22"
                       }
                   ],
     "smart_money_alerts":  0

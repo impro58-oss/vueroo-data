@@ -18,9 +18,9 @@ API_KEY = '736QMMKKKRUZP5F3'
 BASE_URL = "https://www.alphavantage.co/query"
 DATA_DIR = Path("C:\\Users\\impro\\.openclaw\\workspace\\data\\stocks")
 
-# Stock symbols to track (prioritized list - 12 symbols for 24 calls/day with RSI)
-# 25 calls/day = 12 symbols x 2 calls (price + RSI) = 24 calls, 1 spare
-# Updated 2026-03-26: Balanced portfolio - Tech, Healthcare, Energy, Materials, Broad Market
+# Stock symbols to track (prioritized list - 10 symbols for 20 calls/day with RSI)
+# 25 calls/day = 10 symbols x 2 calls (price + RSI) = 20 calls, 5 spare
+# Updated 2026-03-27: Reduced from 12 to 10 for rate limit compliance
 DEFAULT_SYMBOLS = [
     # Tech/Growth - AI & Semiconductors
     'NVDA',  # AI/GPU leader
@@ -32,11 +32,9 @@ DEFAULT_SYMBOLS = [
     'AMZN',  # E-commerce/Cloud
     'META',  # Social/VR/Metaverse
     'PLTR',  # AI/Data analytics
-    # Defensive/Sectors
+    # Defensive/Hedge
     'JNJ',   # Healthcare/pharma dividend
-    'SLB',   # Energy/oilfield services
     'RGLD',  # Gold royalty - recession hedge
-    'VUAG',  # S&P 500 ETF - broad exposure
 ]
 
 
