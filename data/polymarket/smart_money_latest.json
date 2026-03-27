@@ -1,39 +1,77 @@
 ﻿{
-    "markets_with_movement":  2,
-    "timestamp":  "2026-03-27 17:00:21",
-    "scan_file":  "markets-2026-03-27-1700.json",
-    "top_opportunities":  {
-
-                          },
+    "markets_with_movement":  3,
+    "timestamp":  "2026-03-27 19:00:25",
+    "scan_file":  "markets-2026-03-27-1900.json",
+    "top_opportunities":  [
+                              {
+                                  "Market":  "Tesla (TSLA) closes week of Mar 23 at ___?",
+                                  "Category":  "finance",
+                                  "Url":  "https://polymarket.com/event/tsla-week-march-27-2026",
+                                  "PreviousOdds":  52,
+                                  "CurrentOdds":  36,
+                                  "Movement":  -16,
+                                  "MovementPercent":  16,
+                                  "Direction":  "DOWN",
+                                  "Confidence":  "HIGH",
+                                  "PreviousTime":  "2026-03-27 18:00:22",
+                                  "CurrentTime":  "2026-03-27 19:00:25"
+                              },
+                              {
+                                  "Market":  "Will Google (GOOGL) finish week of March 23 above___?",
+                                  "Category":  "finance",
+                                  "Url":  "https://polymarket.com/event/googl-above-on-march-27-2026",
+                                  "PreviousOdds":  44,
+                                  "CurrentOdds":  54,
+                                  "Movement":  10,
+                                  "MovementPercent":  10,
+                                  "Direction":  "UP",
+                                  "Confidence":  "HIGH",
+                                  "PreviousTime":  "2026-03-27 18:00:22",
+                                  "CurrentTime":  "2026-03-27 19:00:25"
+                              }
+                          ],
     "total_markets":  120,
     "threshold":  5,
     "movements":  [
                       {
-                          "Market":  "Will Google (GOOGL) finish week of March 23 above___?",
-                          "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/googl-above-on-march-27-2026",
-                          "PreviousOdds":  90,
-                          "CurrentOdds":  81,
-                          "Movement":  -9,
-                          "MovementPercent":  9,
-                          "Direction":  "DOWN",
-                          "Confidence":  "MEDIUM",
-                          "PreviousTime":  "2026-03-27 16:00:22",
-                          "CurrentTime":  "2026-03-27 17:00:21"
+                          "Market":  "Counter-Strike: Team Falcons vs PARIVISION (BO3) - BLAST Open Rotterdam Playoffs",
+                          "Category":  "sports",
+                          "Url":  "https://polymarket.com/event/cs2-fal2-prv-2026-03-27",
+                          "PreviousOdds":  65,
+                          "CurrentOdds":  100,
+                          "Movement":  35,
+                          "MovementPercent":  35,
+                          "Direction":  "UP",
+                          "Confidence":  "HIGH",
+                          "PreviousTime":  "2026-03-27 18:00:22",
+                          "CurrentTime":  "2026-03-27 19:00:25"
                       },
                       {
                           "Market":  "Tesla (TSLA) closes week of Mar 23 at ___?",
                           "Category":  "finance",
                           "Url":  "https://polymarket.com/event/tsla-week-march-27-2026",
-                          "PreviousOdds":  5,
-                          "CurrentOdds":  13,
-                          "Movement":  8,
-                          "MovementPercent":  8,
+                          "PreviousOdds":  52,
+                          "CurrentOdds":  36,
+                          "Movement":  -16,
+                          "MovementPercent":  16,
+                          "Direction":  "DOWN",
+                          "Confidence":  "HIGH",
+                          "PreviousTime":  "2026-03-27 18:00:22",
+                          "CurrentTime":  "2026-03-27 19:00:25"
+                      },
+                      {
+                          "Market":  "Will Google (GOOGL) finish week of March 23 above___?",
+                          "Category":  "finance",
+                          "Url":  "https://polymarket.com/event/googl-above-on-march-27-2026",
+                          "PreviousOdds":  44,
+                          "CurrentOdds":  54,
+                          "Movement":  10,
+                          "MovementPercent":  10,
                           "Direction":  "UP",
-                          "Confidence":  "MEDIUM",
-                          "PreviousTime":  "2026-03-27 16:00:22",
-                          "CurrentTime":  "2026-03-27 17:00:21"
+                          "Confidence":  "HIGH",
+                          "PreviousTime":  "2026-03-27 18:00:22",
+                          "CurrentTime":  "2026-03-27 19:00:25"
                       }
                   ],
-    "smart_money_alerts":  0
+    "smart_money_alerts":  2
 }
