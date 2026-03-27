@@ -1,47 +1,99 @@
 ﻿{
-    "timestamp":  "2026-03-27 05:00:25",
+    "timestamp":  "2026-03-27 09:00:52",
     "all_movements":  [
                           {
-                              "Market":  "What price will Kinetiq hit in 2026?",
+                              "Market":  "Highest temperature in Taipei on March 29?",
                               "Category":  "trending",
-                              "Url":  "https://polymarket.com/event/what-price-will-kinetiq-hit-in-2026",
-                              "PreviousOdds":  23,
-                              "CurrentOdds":  18,
-                              "Movement":  -5,
-                              "MovementPercent":  5,
+                              "Url":  "https://polymarket.com/event/highest-temperature-in-taipei-on-march-29-2026",
+                              "PreviousOdds":  21,
+                              "CurrentOdds":  10,
+                              "Movement":  -11,
+                              "MovementPercent":  11,
                               "Direction":  "DOWN",
-                              "Confidence":  "LOW",
-                              "PreviousTime":  "2026-03-27 04:00:27",
-                              "CurrentTime":  "2026-03-27 05:00:25"
+                              "Confidence":  "HIGH",
+                              "PreviousTime":  "2026-03-27 08:00:24",
+                              "CurrentTime":  "2026-03-27 09:00:52"
                           },
                           {
-                              "Market":  "Highest temperature in Tel Aviv on March 29?",
-                              "Category":  "trending",
-                              "Url":  "https://polymarket.com/event/highest-temperature-in-tel-aviv-on-march-29-2026",
-                              "PreviousOdds":  30,
-                              "CurrentOdds":  43,
+                              "Market":  "Top performing crypto for the week of March 23?",
+                              "Category":  "crypto",
+                              "Url":  "https://polymarket.com/event/top-performing-crypto-for-the-week-of-march-23",
+                              "PreviousOdds":  27,
+                              "CurrentOdds":  19,
+                              "Movement":  -8,
+                              "MovementPercent":  8,
+                              "Direction":  "DOWN",
+                              "Confidence":  "MEDIUM",
+                              "PreviousTime":  "2026-03-27 08:00:24",
+                              "CurrentTime":  "2026-03-27 09:00:52"
+                          },
+                          {
+                              "Market":  "Will Palantir (PLTR) finish week of March 23 above___?",
+                              "Category":  "finance",
+                              "Url":  "https://polymarket.com/event/pltr-above-on-march-27-2026",
+                              "PreviousOdds":  41,
+                              "CurrentOdds":  34,
+                              "Movement":  -7,
+                              "MovementPercent":  7,
+                              "Direction":  "DOWN",
+                              "Confidence":  "MEDIUM",
+                              "PreviousTime":  "2026-03-27 08:00:24",
+                              "CurrentTime":  "2026-03-27 09:00:52"
+                          },
+                          {
+                              "Market":  "Will Meta (META) finish week of March 23 above___?",
+                              "Category":  "finance",
+                              "Url":  "https://polymarket.com/event/meta-above-on-march-27-2026",
+                              "PreviousOdds":  44,
+                              "CurrentOdds":  52,
+                              "Movement":  8,
+                              "MovementPercent":  8,
+                              "Direction":  "UP",
+                              "Confidence":  "MEDIUM",
+                              "PreviousTime":  "2026-03-27 08:00:24",
+                              "CurrentTime":  "2026-03-27 09:00:52"
+                          },
+                          {
+                              "Market":  "Will Google (GOOGL) finish week of March 23 above___?",
+                              "Category":  "finance",
+                              "Url":  "https://polymarket.com/event/googl-above-on-march-27-2026",
+                              "PreviousOdds":  87,
+                              "CurrentOdds":  81,
+                              "Movement":  -6,
+                              "MovementPercent":  6,
+                              "Direction":  "DOWN",
+                              "Confidence":  "LOW",
+                              "PreviousTime":  "2026-03-27 08:00:24",
+                              "CurrentTime":  "2026-03-27 09:00:52"
+                          },
+                          {
+                              "Market":  "Google (GOOGL) closes week of Mar 23 at ___?",
+                              "Category":  "finance",
+                              "Url":  "https://polymarket.com/event/googl-week-march-27-2026",
+                              "PreviousOdds":  71,
+                              "CurrentOdds":  84,
                               "Movement":  13,
                               "MovementPercent":  13,
                               "Direction":  "UP",
                               "Confidence":  "HIGH",
-                              "PreviousTime":  "2026-03-27 04:00:27",
-                              "CurrentTime":  "2026-03-27 05:00:25"
+                              "PreviousTime":  "2026-03-27 08:00:24",
+                              "CurrentTime":  "2026-03-27 09:00:52"
                           }
                       ],
-    "total_movements":  2,
+    "total_movements":  6,
     "smart_money_alerts":  [
                                {
-                                   "Market":  "Highest temperature in Tel Aviv on March 29?",
-                                   "Category":  "trending",
-                                   "Url":  "https://polymarket.com/event/highest-temperature-in-tel-aviv-on-march-29-2026",
-                                   "PreviousOdds":  30,
-                                   "CurrentOdds":  43,
-                                   "Movement":  13,
-                                   "MovementPercent":  13,
+                                   "Market":  "Will Meta (META) finish week of March 23 above___?",
+                                   "Category":  "finance",
+                                   "Url":  "https://polymarket.com/event/meta-above-on-march-27-2026",
+                                   "PreviousOdds":  44,
+                                   "CurrentOdds":  52,
+                                   "Movement":  8,
+                                   "MovementPercent":  8,
                                    "Direction":  "UP",
-                                   "Confidence":  "HIGH",
-                                   "PreviousTime":  "2026-03-27 04:00:27",
-                                   "CurrentTime":  "2026-03-27 05:00:25"
+                                   "Confidence":  "MEDIUM",
+                                   "PreviousTime":  "2026-03-27 08:00:24",
+                                   "CurrentTime":  "2026-03-27 09:00:52"
                                }
                            ]
 }
