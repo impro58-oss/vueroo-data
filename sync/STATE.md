@@ -15,7 +15,9 @@ BLOCKERS: none
 (none yet)
 
 ## Context briefing
-Fresh sync install. Full protocol stack activated on DreamQuest PC node 2026-03-28. Adversarial critique, confidence calibration, weekly retro, startup checklist, and sync protocols all live.
+Full protocol stack activated on DreamQuest PC node 2026-03-28. Adversarial critique, confidence calibration, weekly retro, startup checklist, and sync protocols all live.
+
+**FOR TELEGRAM NODE:** Read sync/TELEGRAM-BRIEFING.md immediately on startup. Contains full protocol stack instructions, startup checklist, and current state.
 
 ## Decisions log
 - 2026-03-28: Full OpenClaw protocol stack activated
