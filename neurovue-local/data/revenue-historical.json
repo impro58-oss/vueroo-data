@@ -1,0 +1,262 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-03-25",
+  "metadata": {
+    "currency": "USD",
+    "units": "millions",
+    "description": "Historical neurovascular revenue data by company",
+    "source": "SEC filings, annual reports, industry analysis"
+  },
+  "companies": [
+    {
+      "id": "stryker",
+      "name": "Stryker",
+      "ticker": "SYK",
+      "headquarters": "USA",
+      "historicalRevenue": {
+        "2020": 980,
+        "2021": 1080,
+        "2022": 1220,
+        "2023": 1350,
+        "2024": 1450
+      },
+      "projectedRevenue": {
+        "2025": 1580,
+        "2026": 1720,
+        "2027": 1880,
+        "2028": 2050,
+        "2029": 2240,
+        "2030": 2450
+      },
+      "cagr": 9.1,
+      "marketCap": 85000000000,
+      "annualRevenue": 20500000000,
+      "revenueGrowth": 8.5
+    },
+    {
+      "id": "medtronic",
+      "name": "Medtronic",
+      "ticker": "MDT",
+      "headquarters": "Ireland",
+      "historicalRevenue": {
+        "2020": 920,
+        "2021": 1020,
+        "2022": 1150,
+        "2023": 1280,
+        "2024": 1380
+      },
+      "projectedRevenue": {
+        "2025": 1500,
+        "2026": 1630,
+        "2027": 1770,
+        "2028": 1920,
+        "2029": 2090,
+        "2030": 2280
+      },
+      "cagr": 8.8,
+      "marketCap": 120000000000,
+      "annualRevenue": 32300000000,
+      "revenueGrowth": 3.2
+    },
+    {
+      "id": "jnj",
+      "name": "Johnson & Johnson",
+      "ticker": "JNJ",
+      "headquarters": "USA",
+      "historicalRevenue": {
+        "2020": 420,
+        "2021": 480,
+        "2022": 550,
+        "2023": 620,
+        "2024": 680
+      },
+      "projectedRevenue": {
+        "2025": 745,
+        "2026": 815,
+        "2027": 890,
+        "2028": 975,
+        "2029": 1060,
+        "2030": 1150
+      },
+      "cagr": 9.2,
+      "marketCap": 380000000000,
+      "annualRevenue": 95000000000,
+      "revenueGrowth": 6.8
+    },
+    {
+      "id": "microvention",
+      "name": "Microvention/Terumo",
+      "ticker": "TER",
+      "headquarters": "Japan",
+      "historicalRevenue": {
+        "2020": 310,
+        "2021": 365,
+        "2022": 425,
+        "2023": 475,
+        "2024": 520
+      },
+      "projectedRevenue": {
+        "2025": 575,
+        "2026": 640,
+        "2027": 715,
+        "2028": 800,
+        "2029": 855,
+        "2030": 920
+      },
+      "cagr": 10,
+      "marketCap": 45000000000,
+      "annualRevenue": 6200000000,
+      "revenueGrowth": 12.1
+    },
+    {
+      "id": "penumbra",
+      "name": "Penumbra",
+      "ticker": "PEN",
+      "headquarters": "USA",
+      "historicalRevenue": {
+        "2020": 180,
+        "2021": 225,
+        "2022": 285,
+        "2023": 335,
+        "2024": 380
+      },
+      "projectedRevenue": {
+        "2025": 445,
+        "2026": 520,
+        "2027": 605,
+        "2028": 705,
+        "2029": 805,
+        "2030": 920
+      },
+      "cagr": 11.2,
+      "marketCap": 5200000000,
+      "annualRevenue": 1180000000,
+      "revenueGrowth": 24.8
+    },
+    {
+      "id": "balt",
+      "name": "Balt",
+      "ticker": "Private",
+      "headquarters": "France",
+      "historicalRevenue": {
+        "2020": 105,
+        "2021": 125,
+        "2022": 145,
+        "2023": 165,
+        "2024": 180
+      },
+      "projectedRevenue": {
+        "2025": 198,
+        "2026": 217,
+        "2027": 238,
+        "2028": 261,
+        "2029": 285,
+        "2030": 310
+      },
+      "cagr": 9.5,
+      "marketCap": 0,
+      "annualRevenue": 180000000,
+      "revenueGrowth": 15.3
+    },
+    {
+      "id": "phenox",
+      "name": "Wallaby Phenox",
+      "ticker": "Private",
+      "headquarters": "Germany",
+      "historicalRevenue": {
+        "2020": 35,
+        "2021": 48,
+        "2022": 65,
+        "2023": 82,
+        "2024": 95
+      },
+      "projectedRevenue": {
+        "2025": 115,
+        "2026": 138,
+        "2027": 165,
+        "2028": 196,
+        "2029": 215,
+        "2030": 240
+      },
+      "cagr": 12.7,
+      "marketCap": 0,
+      "annualRevenue": 95000000,
+      "revenueGrowth": 35.2
+    },
+    {
+      "id": "acandis",
+      "name": "Acandis",
+      "ticker": "Private",
+      "headquarters": "Germany",
+      "historicalRevenue": {
+        "2020": 20,
+        "2021": 26,
+        "2022": 32,
+        "2023": 38,
+        "2024": 45
+      },
+      "projectedRevenue": {
+        "2025": 52,
+        "2026": 60,
+        "2027": 69,
+        "2028": 79,
+        "2029": 90,
+        "2030": 103
+      },
+      "cagr": 8.5,
+      "marketCap": 0,
+      "annualRevenue": 45000000,
+      "revenueGrowth": 12
+    },
+    {
+      "id": "rapid",
+      "name": "Rapid Medical",
+      "ticker": "Private",
+      "headquarters": "Israel",
+      "historicalRevenue": {
+        "2020": 8,
+        "2021": 12,
+        "2022": 18,
+        "2023": 26,
+        "2024": 35
+      },
+      "projectedRevenue": {
+        "2025": 48,
+        "2026": 65,
+        "2027": 86,
+        "2028": 112,
+        "2029": 144,
+        "2030": 185
+      },
+      "cagr": 15,
+      "marketCap": 0,
+      "annualRevenue": 35000000,
+      "revenueGrowth": 45
+    },
+    {
+      "id": "imperative",
+      "name": "Imperative Care",
+      "ticker": "Private",
+      "headquarters": "USA",
+      "historicalRevenue": {
+        "2020": 5,
+        "2021": 10,
+        "2022": 20,
+        "2023": 40,
+        "2024": 65
+      },
+      "projectedRevenue": {
+        "2025": 98,
+        "2026": 142,
+        "2027": 200,
+        "2028": 275,
+        "2029": 370,
+        "2030": 490
+      },
+      "cagr": 18,
+      "marketCap": 0,
+      "annualRevenue": 65000000,
+      "revenueGrowth": 60
+    }
+  ]
+}

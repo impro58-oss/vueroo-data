@@ -1,0 +1,2572 @@
+{
+  "metadata": {
+    "totalRecords": 256,
+    "companies": 22,
+    "yearRange": {
+      "min": 2016,
+      "max": 2030
+    }
+  },
+  "records": [
+    {
+      "company": "Medtronic",
+      "companyCode": "MDT NV",
+      "year": 2016,
+      "revenue": 587000000.0,
+      "revenueFormatted": "$587.0M",
+      "highlight": "NV LDD g%; FD mid-teens g%; Asp LDD g%; MT HSD g%",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Medtronic",
+      "companyCode": "MDT NV",
+      "year": 2017,
+      "revenue": 662774315.1290756,
+      "revenueFormatted": "$662.8M",
+      "highlight": "NV LDD g%; FD mid-teens g%; Asp LDD g%; MT HSD g%",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Medtronic",
+      "companyCode": "MDT NV",
+      "year": 2018,
+      "revenue": 748330141.0473855,
+      "revenueFormatted": "$748.3M",
+      "highlight": "NV LDD g%; FD mid-teens g%; Asp LDD g%; MT HSD g%",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Medtronic",
+      "companyCode": "MDT NV",
+      "year": 2019,
+      "revenue": 844930147.7395663,
+      "revenueFormatted": "$844.9M",
+      "highlight": "NV LDD g%; FD mid-teens g%; Asp LDD g%; MT HSD g%",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Medtronic",
+      "companyCode": "MDT NV",
+      "year": 2020,
+      "revenue": 971000000.0,
+      "revenueFormatted": "$971.0M",
+      "highlight": "NV LDD g%; FD mid-teens g%; Asp LDD g%; MT HSD g%",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Medtronic",
+      "companyCode": "MDT NV",
+      "year": 2021,
+      "revenue": 1105172300.0,
+      "revenueFormatted": "$1105.2M",
+      "highlight": "NV LDD g%; FD mid-teens g%; Asp LDD g%; MT HSD g%",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Medtronic",
+      "companyCode": "MDT NV",
+      "year": 2022,
+      "revenue": 1238174806.0,
+      "revenueFormatted": "$1238.2M",
+      "highlight": "NV LDD g%; FD mid-teens g%; Asp LDD g%; MT HSD g%",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Medtronic",
+      "companyCode": "MDT NV",
+      "year": 2023,
+      "revenue": 1311891100.62,
+      "revenueFormatted": "$1311.9M",
+      "highlight": "NV LDD g%; FD mid-teens g%; Asp LDD g%; MT HSD g%",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Medtronic",
+      "companyCode": "MDT NV",
+      "year": 2024,
+      "revenue": 1340478575.3328,
+      "revenueFormatted": "$1340.5M",
+      "highlight": "NV LDD g%; FD mid-teens g%; Asp LDD g%; MT HSD g%",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Medtronic",
+      "companyCode": "MDT NV",
+      "year": 2025,
+      "revenue": 1369689000.9216816,
+      "revenueFormatted": "$1369.7M",
+      "highlight": "NV LDD g%; FD mid-teens g%; Asp LDD g%; MT HSD g%",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Medtronic",
+      "companyCode": "MDT NV",
+      "year": 2026,
+      "revenue": 1399535952.1356535,
+      "revenueFormatted": "$1399.5M",
+      "highlight": "NV LDD g%; FD mid-teens g%; Asp LDD g%; MT HSD g%",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Medtronic",
+      "companyCode": "MDT NV",
+      "year": 2027,
+      "revenue": 1430033299.5316563,
+      "revenueFormatted": "$1430.0M",
+      "highlight": "NV LDD g%; FD mid-teens g%; Asp LDD g%; MT HSD g%",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Medtronic",
+      "companyCode": "MDT NV",
+      "year": 2028,
+      "revenue": 1461195215.9205265,
+      "revenueFormatted": "$1461.2M",
+      "highlight": "NV LDD g%; FD mid-teens g%; Asp LDD g%; MT HSD g%",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Medtronic",
+      "companyCode": "MDT NV",
+      "year": 2029,
+      "revenue": 1493036182.9534235,
+      "revenueFormatted": "$1493.0M",
+      "highlight": "NV LDD g%; FD mid-teens g%; Asp LDD g%; MT HSD g%",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Medtronic",
+      "companyCode": "MDT NV",
+      "year": 2030,
+      "revenue": 1525570997.8517828,
+      "revenueFormatted": "$1525.6M",
+      "highlight": "NV LDD g%; FD mid-teens g%; Asp LDD g%; MT HSD g%",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Stryker",
+      "companyCode": "SYK NV",
+      "year": 2016,
+      "revenue": 627500000.0,
+      "revenueFormatted": "$627.5M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Stryker",
+      "companyCode": "SYK NV",
+      "year": 2017,
+      "revenue": 711500000.0,
+      "revenueFormatted": "$711.5M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Stryker",
+      "companyCode": "SYK NV",
+      "year": 2018,
+      "revenue": 868500000.0,
+      "revenueFormatted": "$868.5M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Stryker",
+      "companyCode": "SYK NV",
+      "year": 2019,
+      "revenue": 924000000.0,
+      "revenueFormatted": "$924.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Stryker",
+      "companyCode": "SYK NV",
+      "year": 2020,
+      "revenue": 973000000.0,
+      "revenueFormatted": "$973.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Stryker",
+      "companyCode": "SYK NV",
+      "year": 2021,
+      "revenue": 1188000000.0,
+      "revenueFormatted": "$1188.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Stryker",
+      "companyCode": "SYK NV",
+      "year": 2022,
+      "revenue": 1200000000.0,
+      "revenueFormatted": "$1200.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Stryker",
+      "companyCode": "SYK NV",
+      "year": 2023,
+      "revenue": 1226000000.0,
+      "revenueFormatted": "$1226.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Stryker",
+      "companyCode": "SYK NV",
+      "year": 2024,
+      "revenue": 1307000000.0,
+      "revenueFormatted": "$1307.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Stryker",
+      "companyCode": "SYK NV",
+      "year": 2025,
+      "revenue": 1333140000.0,
+      "revenueFormatted": "$1333.1M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Stryker",
+      "companyCode": "SYK NV",
+      "year": 2026,
+      "revenue": 1359802800.0,
+      "revenueFormatted": "$1359.8M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Stryker",
+      "companyCode": "SYK NV",
+      "year": 2027,
+      "revenue": 1386998856.0,
+      "revenueFormatted": "$1387.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Stryker",
+      "companyCode": "SYK NV",
+      "year": 2028,
+      "revenue": 1414738833.12,
+      "revenueFormatted": "$1414.7M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Stryker",
+      "companyCode": "SYK NV",
+      "year": 2029,
+      "revenue": 1443033609.7824,
+      "revenueFormatted": "$1443.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Stryker",
+      "companyCode": "SYK NV",
+      "year": 2030,
+      "revenue": 1471894281.9780478,
+      "revenueFormatted": "$1471.9M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroVention",
+      "companyCode": "MicroVention",
+      "year": 2018,
+      "revenue": 320000000.0,
+      "revenueFormatted": "$320.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroVention",
+      "companyCode": "MicroVention",
+      "year": 2019,
+      "revenue": 435298418.79170096,
+      "revenueFormatted": "$435.3M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroVention",
+      "companyCode": "MicroVention",
+      "year": 2020,
+      "revenue": 436201550.3875969,
+      "revenueFormatted": "$436.2M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroVention",
+      "companyCode": "MicroVention",
+      "year": 2021,
+      "revenue": 517412581.19049734,
+      "revenueFormatted": "$517.4M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroVention",
+      "companyCode": "MicroVention",
+      "year": 2022,
+      "revenue": 523350553.5055351,
+      "revenueFormatted": "$523.4M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroVention",
+      "companyCode": "MicroVention",
+      "year": 2023,
+      "revenue": 575088180.3720865,
+      "revenueFormatted": "$575.1M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroVention",
+      "companyCode": "MicroVention",
+      "year": 2024,
+      "revenue": 632302585.6044725,
+      "revenueFormatted": "$632.3M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroVention",
+      "companyCode": "MicroVention",
+      "year": 2025,
+      "revenue": 646886807.0166712,
+      "revenueFormatted": "$646.9M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroVention",
+      "companyCode": "MicroVention",
+      "year": 2026,
+      "revenue": 661807417.2386621,
+      "revenueFormatted": "$661.8M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroVention",
+      "companyCode": "MicroVention",
+      "year": 2027,
+      "revenue": 677072175.1646745,
+      "revenueFormatted": "$677.1M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroVention",
+      "companyCode": "MicroVention",
+      "year": 2028,
+      "revenue": 692689018.6498244,
+      "revenueFormatted": "$692.7M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroVention",
+      "companyCode": "MicroVention",
+      "year": 2029,
+      "revenue": 708666068.637893,
+      "revenueFormatted": "$708.7M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroVention",
+      "companyCode": "MicroVention",
+      "year": 2030,
+      "revenue": 725011633.3843142,
+      "revenueFormatted": "$725.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Penumbra Neuro",
+      "companyCode": "Penumbra Neuro",
+      "year": 2016,
+      "revenue": 185533000.0,
+      "revenueFormatted": "$185.5M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Penumbra Neuro",
+      "companyCode": "Penumbra Neuro",
+      "year": 2017,
+      "revenue": 232446000.0,
+      "revenueFormatted": "$232.4M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Penumbra Neuro",
+      "companyCode": "Penumbra Neuro",
+      "year": 2018,
+      "revenue": 294333000.0,
+      "revenueFormatted": "$294.3M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Penumbra Neuro",
+      "companyCode": "Penumbra Neuro",
+      "year": 2019,
+      "revenue": 331685000.0,
+      "revenueFormatted": "$331.7M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Penumbra Neuro",
+      "companyCode": "Penumbra Neuro",
+      "year": 2020,
+      "revenue": 292629000.0,
+      "revenueFormatted": "$292.6M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Penumbra Neuro",
+      "companyCode": "Penumbra Neuro",
+      "year": 2021,
+      "revenue": 339000000.0,
+      "revenueFormatted": "$339.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Penumbra Neuro",
+      "companyCode": "Penumbra Neuro",
+      "year": 2022,
+      "revenue": 348000000.0,
+      "revenueFormatted": "$348.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Penumbra Neuro",
+      "companyCode": "Penumbra Neuro",
+      "year": 2023,
+      "revenue": 406000000.0,
+      "revenueFormatted": "$406.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Penumbra Neuro",
+      "companyCode": "Penumbra Neuro",
+      "year": 2024,
+      "revenue": 444313185.14047664,
+      "revenueFormatted": "$444.3M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Penumbra Neuro",
+      "companyCode": "Penumbra Neuro",
+      "year": 2025,
+      "revenue": 453199448.84328616,
+      "revenueFormatted": "$453.2M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Penumbra Neuro",
+      "companyCode": "Penumbra Neuro",
+      "year": 2026,
+      "revenue": 462263437.82015187,
+      "revenueFormatted": "$462.3M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Penumbra Neuro",
+      "companyCode": "Penumbra Neuro",
+      "year": 2027,
+      "revenue": 471508706.5765549,
+      "revenueFormatted": "$471.5M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Penumbra Neuro",
+      "companyCode": "Penumbra Neuro",
+      "year": 2028,
+      "revenue": 480938880.708086,
+      "revenueFormatted": "$480.9M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Penumbra Neuro",
+      "companyCode": "Penumbra Neuro",
+      "year": 2029,
+      "revenue": 490557658.32224774,
+      "revenueFormatted": "$490.6M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Penumbra Neuro",
+      "companyCode": "Penumbra Neuro",
+      "year": 2030,
+      "revenue": 500368811.4886927,
+      "revenueFormatted": "$500.4M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "JnJ Ceranovus",
+      "companyCode": "JnJ Ceranovus",
+      "year": 2018,
+      "revenue": 320000000.0,
+      "revenueFormatted": "$320.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "JnJ Ceranovus",
+      "companyCode": "JnJ Ceranovus",
+      "year": 2019,
+      "revenue": 435298418.79170096,
+      "revenueFormatted": "$435.3M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "JnJ Ceranovus",
+      "companyCode": "JnJ Ceranovus",
+      "year": 2020,
+      "revenue": 436201550.3875969,
+      "revenueFormatted": "$436.2M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "JnJ Ceranovus",
+      "companyCode": "JnJ Ceranovus",
+      "year": 2021,
+      "revenue": 380674500.0,
+      "revenueFormatted": "$380.7M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "JnJ Ceranovus",
+      "companyCode": "JnJ Ceranovus",
+      "year": 2022,
+      "revenue": 400710000.0,
+      "revenueFormatted": "$400.7M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "JnJ Ceranovus",
+      "companyCode": "JnJ Ceranovus",
+      "year": 2023,
+      "revenue": 421800000.0,
+      "revenueFormatted": "$421.8M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "JnJ Ceranovus",
+      "companyCode": "JnJ Ceranovus",
+      "year": 2024,
+      "revenue": 444000000.0,
+      "revenueFormatted": "$444.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "JnJ Ceranovus",
+      "companyCode": "JnJ Ceranovus",
+      "year": 2025,
+      "revenue": 576607500.0,
+      "revenueFormatted": "$576.6M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "JnJ Ceranovus",
+      "companyCode": "JnJ Ceranovus",
+      "year": 2026,
+      "revenue": 605437875.0,
+      "revenueFormatted": "$605.4M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "JnJ Ceranovus",
+      "companyCode": "JnJ Ceranovus",
+      "year": 2027,
+      "revenue": 635709768.75,
+      "revenueFormatted": "$635.7M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "JnJ Ceranovus",
+      "companyCode": "JnJ Ceranovus",
+      "year": 2028,
+      "revenue": 667495257.1875,
+      "revenueFormatted": "$667.5M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "JnJ Ceranovus",
+      "companyCode": "JnJ Ceranovus",
+      "year": 2029,
+      "revenue": 700870020.046875,
+      "revenueFormatted": "$700.9M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "JnJ Ceranovus",
+      "companyCode": "JnJ Ceranovus",
+      "year": 2030,
+      "revenue": 735913521.0492188,
+      "revenueFormatted": "$735.9M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Balt Medical",
+      "companyCode": "Balt Medical",
+      "year": 2018,
+      "revenue": 112000000.0,
+      "revenueFormatted": "$112.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Balt Medical",
+      "companyCode": "Balt Medical",
+      "year": 2019,
+      "revenue": 134400000.0,
+      "revenueFormatted": "$134.4M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Balt Medical",
+      "companyCode": "Balt Medical",
+      "year": 2020,
+      "revenue": 161280000.0,
+      "revenueFormatted": "$161.3M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Balt Medical",
+      "companyCode": "Balt Medical",
+      "year": 2021,
+      "revenue": 220000000.0,
+      "revenueFormatted": "$220.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Balt Medical",
+      "companyCode": "Balt Medical",
+      "year": 2022,
+      "revenue": 225000000.0,
+      "revenueFormatted": "$225.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Balt Medical",
+      "companyCode": "Balt Medical",
+      "year": 2023,
+      "revenue": 230000000.0,
+      "revenueFormatted": "$230.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Balt Medical",
+      "companyCode": "Balt Medical",
+      "year": 2024,
+      "revenue": 238000000.0,
+      "revenueFormatted": "$238.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Balt Medical",
+      "companyCode": "Balt Medical",
+      "year": 2025,
+      "revenue": 456192000.0,
+      "revenueFormatted": "$456.2M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Balt Medical",
+      "companyCode": "Balt Medical",
+      "year": 2026,
+      "revenue": 547430400.0,
+      "revenueFormatted": "$547.4M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Balt Medical",
+      "companyCode": "Balt Medical",
+      "year": 2027,
+      "revenue": 629544960.0,
+      "revenueFormatted": "$629.5M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Balt Medical",
+      "companyCode": "Balt Medical",
+      "year": 2028,
+      "revenue": 723976704.0,
+      "revenueFormatted": "$724.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Balt Medical",
+      "companyCode": "Balt Medical",
+      "year": 2029,
+      "revenue": 832573209.5999999,
+      "revenueFormatted": "$832.6M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Balt Medical",
+      "companyCode": "Balt Medical",
+      "year": 2030,
+      "revenue": 957459191.0399998,
+      "revenueFormatted": "$957.5M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Asahi Neuro",
+      "companyCode": "Asahi Neuro",
+      "year": 2018,
+      "revenue": 27129814.378136523,
+      "revenueFormatted": "$27.1M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Asahi Neuro",
+      "companyCode": "Asahi Neuro",
+      "year": 2019,
+      "revenue": 25162233.799469884,
+      "revenueFormatted": "$25.2M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Asahi Neuro",
+      "companyCode": "Asahi Neuro",
+      "year": 2020,
+      "revenue": 29421834.625322994,
+      "revenueFormatted": "$29.4M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Asahi Neuro",
+      "companyCode": "Asahi Neuro",
+      "year": 2021,
+      "revenue": 34132777.19847063,
+      "revenueFormatted": "$34.1M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Asahi Neuro",
+      "companyCode": "Asahi Neuro",
+      "year": 2022,
+      "revenue": 41983315.95411888,
+      "revenueFormatted": "$42.0M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Asahi Neuro",
+      "companyCode": "Asahi Neuro",
+      "year": 2023,
+      "revenue": 46181647.54953077,
+      "revenueFormatted": "$46.2M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Asahi Neuro",
+      "companyCode": "Asahi Neuro",
+      "year": 2024,
+      "revenue": 50799812.304483846,
+      "revenueFormatted": "$50.8M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Asahi Neuro",
+      "companyCode": "Asahi Neuro",
+      "year": 2025,
+      "revenue": 55879793.53493223,
+      "revenueFormatted": "$55.9M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Asahi Neuro",
+      "companyCode": "Asahi Neuro",
+      "year": 2026,
+      "revenue": 61467772.88842546,
+      "revenueFormatted": "$61.5M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Asahi Neuro",
+      "companyCode": "Asahi Neuro",
+      "year": 2027,
+      "revenue": 67614550.17726801,
+      "revenueFormatted": "$67.6M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Asahi Neuro",
+      "companyCode": "Asahi Neuro",
+      "year": 2028,
+      "revenue": 74376005.19499482,
+      "revenueFormatted": "$74.4M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Asahi Neuro",
+      "companyCode": "Asahi Neuro",
+      "year": 2029,
+      "revenue": 81813605.71449432,
+      "revenueFormatted": "$81.8M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Asahi Neuro",
+      "companyCode": "Asahi Neuro",
+      "year": 2030,
+      "revenue": 89994966.28594376,
+      "revenueFormatted": "$90.0M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Tokai",
+      "companyCode": "Tokai",
+      "year": 2020,
+      "revenue": 27000000.0,
+      "revenueFormatted": "$27.0M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Tokai",
+      "companyCode": "Tokai",
+      "year": 2021,
+      "revenue": 29700000.000000004,
+      "revenueFormatted": "$29.7M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Tokai",
+      "companyCode": "Tokai",
+      "year": 2022,
+      "revenue": 32670000.000000007,
+      "revenueFormatted": "$32.7M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Tokai",
+      "companyCode": "Tokai",
+      "year": 2023,
+      "revenue": 35937000.00000001,
+      "revenueFormatted": "$35.9M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Tokai",
+      "companyCode": "Tokai",
+      "year": 2024,
+      "revenue": 39530700.000000015,
+      "revenueFormatted": "$39.5M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Tokai",
+      "companyCode": "Tokai",
+      "year": 2025,
+      "revenue": 43483770.00000002,
+      "revenueFormatted": "$43.5M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Tokai",
+      "companyCode": "Tokai",
+      "year": 2026,
+      "revenue": 47832147.00000003,
+      "revenueFormatted": "$47.8M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Tokai",
+      "companyCode": "Tokai",
+      "year": 2027,
+      "revenue": 52615361.70000004,
+      "revenueFormatted": "$52.6M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Tokai",
+      "companyCode": "Tokai",
+      "year": 2028,
+      "revenue": 57876897.87000005,
+      "revenueFormatted": "$57.9M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Tokai",
+      "companyCode": "Tokai",
+      "year": 2029,
+      "revenue": 63664587.65700006,
+      "revenueFormatted": "$63.7M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Tokai",
+      "companyCode": "Tokai",
+      "year": 2030,
+      "revenue": 70031046.42270006,
+      "revenueFormatted": "$70.0M",
+      "highlight": "Updated on June 20th 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Kaneka",
+      "companyCode": "Kaneka",
+      "year": 2020,
+      "revenue": 20000000.0,
+      "revenueFormatted": "$20.0M",
+      "highlight": "20K coils sold in JPN. Updated on June 21st 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Kaneka",
+      "companyCode": "Kaneka",
+      "year": 2021,
+      "revenue": 30000000.0,
+      "revenueFormatted": "$30.0M",
+      "highlight": "20K coils sold in JPN. Updated on June 21st 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Kaneka",
+      "companyCode": "Kaneka",
+      "year": 2022,
+      "revenue": 33000000.000000004,
+      "revenueFormatted": "$33.0M",
+      "highlight": "20K coils sold in JPN. Updated on June 21st 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Kaneka",
+      "companyCode": "Kaneka",
+      "year": 2023,
+      "revenue": 36300000.00000001,
+      "revenueFormatted": "$36.3M",
+      "highlight": "20K coils sold in JPN. Updated on June 21st 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Kaneka",
+      "companyCode": "Kaneka",
+      "year": 2024,
+      "revenue": 39930000.000000015,
+      "revenueFormatted": "$39.9M",
+      "highlight": "20K coils sold in JPN. Updated on June 21st 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Kaneka",
+      "companyCode": "Kaneka",
+      "year": 2025,
+      "revenue": 43923000.00000002,
+      "revenueFormatted": "$43.9M",
+      "highlight": "20K coils sold in JPN. Updated on June 21st 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Kaneka",
+      "companyCode": "Kaneka",
+      "year": 2026,
+      "revenue": 48315300.00000003,
+      "revenueFormatted": "$48.3M",
+      "highlight": "20K coils sold in JPN. Updated on June 21st 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Kaneka",
+      "companyCode": "Kaneka",
+      "year": 2027,
+      "revenue": 53146830.00000004,
+      "revenueFormatted": "$53.1M",
+      "highlight": "20K coils sold in JPN. Updated on June 21st 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Kaneka",
+      "companyCode": "Kaneka",
+      "year": 2028,
+      "revenue": 58461513.000000045,
+      "revenueFormatted": "$58.5M",
+      "highlight": "20K coils sold in JPN. Updated on June 21st 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Kaneka",
+      "companyCode": "Kaneka",
+      "year": 2029,
+      "revenue": 64307664.3000001,
+      "revenueFormatted": "$64.3M",
+      "highlight": "20K coils sold in JPN. Updated on June 21st 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Kaneka",
+      "companyCode": "Kaneka",
+      "year": 2030,
+      "revenue": 70738430.73000006,
+      "revenueFormatted": "$70.7M",
+      "highlight": "20K coils sold in JPN. Updated on June 21st 2023",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Acandis GmbH",
+      "companyCode": "Acandis GmbH",
+      "year": 2020,
+      "revenue": 30000000.0,
+      "revenueFormatted": "$30.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Acandis GmbH",
+      "companyCode": "Acandis GmbH",
+      "year": 2021,
+      "revenue": 40000000.0,
+      "revenueFormatted": "$40.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Acandis GmbH",
+      "companyCode": "Acandis GmbH",
+      "year": 2022,
+      "revenue": 48000000.0,
+      "revenueFormatted": "$48.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Acandis GmbH",
+      "companyCode": "Acandis GmbH",
+      "year": 2023,
+      "revenue": 60000000.0,
+      "revenueFormatted": "$60.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Acandis GmbH",
+      "companyCode": "Acandis GmbH",
+      "year": 2024,
+      "revenue": 72000000.0,
+      "revenueFormatted": "$72.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Acandis GmbH",
+      "companyCode": "Acandis GmbH",
+      "year": 2025,
+      "revenue": 86400000.0,
+      "revenueFormatted": "$86.4M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Acandis GmbH",
+      "companyCode": "Acandis GmbH",
+      "year": 2026,
+      "revenue": 103680000.0,
+      "revenueFormatted": "$103.7M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Acandis GmbH",
+      "companyCode": "Acandis GmbH",
+      "year": 2027,
+      "revenue": 124416000.0,
+      "revenueFormatted": "$124.4M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Acandis GmbH",
+      "companyCode": "Acandis GmbH",
+      "year": 2028,
+      "revenue": 149299200.0,
+      "revenueFormatted": "$149.3M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Acandis GmbH",
+      "companyCode": "Acandis GmbH",
+      "year": 2029,
+      "revenue": 179159040.0,
+      "revenueFormatted": "$179.2M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Acandis GmbH",
+      "companyCode": "Acandis GmbH",
+      "year": 2030,
+      "revenue": 214990848.0,
+      "revenueFormatted": "$215.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Imperative Care",
+      "companyCode": "Imperative Care",
+      "year": 2020,
+      "revenue": 10000000.0,
+      "revenueFormatted": "$10.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Imperative Care",
+      "companyCode": "Imperative Care",
+      "year": 2021,
+      "revenue": 30000000.0,
+      "revenueFormatted": "$30.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Imperative Care",
+      "companyCode": "Imperative Care",
+      "year": 2022,
+      "revenue": 72000000.0,
+      "revenueFormatted": "$72.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Imperative Care",
+      "companyCode": "Imperative Care",
+      "year": 2023,
+      "revenue": 150000000.0,
+      "revenueFormatted": "$150.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Imperative Care",
+      "companyCode": "Imperative Care",
+      "year": 2024,
+      "revenue": 167700000.0,
+      "revenueFormatted": "$167.7M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Imperative Care",
+      "companyCode": "Imperative Care",
+      "year": 2025,
+      "revenue": 216000000.0,
+      "revenueFormatted": "$216.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Imperative Care",
+      "companyCode": "Imperative Care",
+      "year": 2026,
+      "revenue": 259200000.0,
+      "revenueFormatted": "$259.2M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Imperative Care",
+      "companyCode": "Imperative Care",
+      "year": 2027,
+      "revenue": 311040000.0,
+      "revenueFormatted": "$311.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Imperative Care",
+      "companyCode": "Imperative Care",
+      "year": 2028,
+      "revenue": 373248000.0,
+      "revenueFormatted": "$373.2M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Imperative Care",
+      "companyCode": "Imperative Care",
+      "year": 2029,
+      "revenue": 447897600.0,
+      "revenueFormatted": "$447.9M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Imperative Care",
+      "companyCode": "Imperative Care",
+      "year": 2030,
+      "revenue": 537477120.0,
+      "revenueFormatted": "$537.5M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Route 92",
+      "companyCode": "Route 92",
+      "year": 2021,
+      "revenue": 3000000.0,
+      "revenueFormatted": "$3.0M",
+      "highlight": "Route 92 business plan",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Route 92",
+      "companyCode": "Route 92",
+      "year": 2022,
+      "revenue": 10000000.0,
+      "revenueFormatted": "$10.0M",
+      "highlight": "Route 92 business plan",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Route 92",
+      "companyCode": "Route 92",
+      "year": 2023,
+      "revenue": 28000000.0,
+      "revenueFormatted": "$28.0M",
+      "highlight": "Route 92 business plan",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Route 92",
+      "companyCode": "Route 92",
+      "year": 2024,
+      "revenue": 48000000.0,
+      "revenueFormatted": "$48.0M",
+      "highlight": "Route 92 business plan",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Route 92",
+      "companyCode": "Route 92",
+      "year": 2025,
+      "revenue": 86400000.0,
+      "revenueFormatted": "$86.4M",
+      "highlight": "Route 92 business plan",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Route 92",
+      "companyCode": "Route 92",
+      "year": 2026,
+      "revenue": 155520000.0,
+      "revenueFormatted": "$155.5M",
+      "highlight": "Route 92 business plan",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Route 92",
+      "companyCode": "Route 92",
+      "year": 2027,
+      "revenue": 279936000.0,
+      "revenueFormatted": "$279.9M",
+      "highlight": "Route 92 business plan",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Route 92",
+      "companyCode": "Route 92",
+      "year": 2028,
+      "revenue": 503884800.0,
+      "revenueFormatted": "$503.9M",
+      "highlight": "Route 92 business plan",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Route 92",
+      "companyCode": "Route 92",
+      "year": 2029,
+      "revenue": 906992640.0,
+      "revenueFormatted": "$907.0M",
+      "highlight": "Route 92 business plan",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Route 92",
+      "companyCode": "Route 92",
+      "year": 2030,
+      "revenue": 1632586752.0,
+      "revenueFormatted": "$1632.6M",
+      "highlight": "Route 92 business plan",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Q'Apel",
+      "companyCode": "Q'Apel",
+      "year": 2020,
+      "revenue": 5000000.0,
+      "revenueFormatted": "$5.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Q'Apel",
+      "companyCode": "Q'Apel",
+      "year": 2021,
+      "revenue": 10000000.0,
+      "revenueFormatted": "$10.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Q'Apel",
+      "companyCode": "Q'Apel",
+      "year": 2022,
+      "revenue": 13000000.0,
+      "revenueFormatted": "$13.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Q'Apel",
+      "companyCode": "Q'Apel",
+      "year": 2023,
+      "revenue": 16900000.0,
+      "revenueFormatted": "$16.9M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Q'Apel",
+      "companyCode": "Q'Apel",
+      "year": 2024,
+      "revenue": 21970000.0,
+      "revenueFormatted": "$22.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Q'Apel",
+      "companyCode": "Q'Apel",
+      "year": 2025,
+      "revenue": 28561000.0,
+      "revenueFormatted": "$28.6M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Q'Apel",
+      "companyCode": "Q'Apel",
+      "year": 2026,
+      "revenue": 37129300.0,
+      "revenueFormatted": "$37.1M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Q'Apel",
+      "companyCode": "Q'Apel",
+      "year": 2027,
+      "revenue": 48268090.0,
+      "revenueFormatted": "$48.3M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Q'Apel",
+      "companyCode": "Q'Apel",
+      "year": 2028,
+      "revenue": 62748517.0,
+      "revenueFormatted": "$62.7M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Q'Apel",
+      "companyCode": "Q'Apel",
+      "year": 2029,
+      "revenue": 81573072.10000001,
+      "revenueFormatted": "$81.6M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Q'Apel",
+      "companyCode": "Q'Apel",
+      "year": 2030,
+      "revenue": 106044993.73000002,
+      "revenueFormatted": "$106.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Wallaby + Phenox",
+      "companyCode": "Wallaby + Phenox",
+      "year": 2020,
+      "revenue": 35000000.0,
+      "revenueFormatted": "$35.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Wallaby + Phenox",
+      "companyCode": "Wallaby + Phenox",
+      "year": 2021,
+      "revenue": 50221000.0,
+      "revenueFormatted": "$50.2M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Wallaby + Phenox",
+      "companyCode": "Wallaby + Phenox",
+      "year": 2022,
+      "revenue": 57950000.0,
+      "revenueFormatted": "$58.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Wallaby + Phenox",
+      "companyCode": "Wallaby + Phenox",
+      "year": 2023,
+      "revenue": 82770000.0,
+      "revenueFormatted": "$82.8M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Wallaby + Phenox",
+      "companyCode": "Wallaby + Phenox",
+      "year": 2024,
+      "revenue": 102000000.0,
+      "revenueFormatted": "$102.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Wallaby + Phenox",
+      "companyCode": "Wallaby + Phenox",
+      "year": 2025,
+      "revenue": 152743980.1317352,
+      "revenueFormatted": "$152.7M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Wallaby + Phenox",
+      "companyCode": "Wallaby + Phenox",
+      "year": 2026,
+      "revenue": 210932163.0390629,
+      "revenueFormatted": "$210.9M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Wallaby + Phenox",
+      "companyCode": "Wallaby + Phenox",
+      "year": 2027,
+      "revenue": 291287272.7682297,
+      "revenueFormatted": "$291.3M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Wallaby + Phenox",
+      "companyCode": "Wallaby + Phenox",
+      "year": 2028,
+      "revenue": 349544727.32187563,
+      "revenueFormatted": "$349.5M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Wallaby + Phenox",
+      "companyCode": "Wallaby + Phenox",
+      "year": 2029,
+      "revenue": 419453672.78625077,
+      "revenueFormatted": "$419.5M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Wallaby + Phenox",
+      "companyCode": "Wallaby + Phenox",
+      "year": 2030,
+      "revenue": 503344407.3435009,
+      "revenueFormatted": "$503.3M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroPort Neuro",
+      "companyCode": "MicroPort Neuro",
+      "year": 2018,
+      "revenue": 18037354.651162792,
+      "revenueFormatted": "$18.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroPort Neuro",
+      "companyCode": "MicroPort Neuro",
+      "year": 2019,
+      "revenue": 26245714.285714287,
+      "revenueFormatted": "$26.2M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroPort Neuro",
+      "companyCode": "MicroPort Neuro",
+      "year": 2020,
+      "revenue": 33985145.48238897,
+      "revenueFormatted": "$34.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroPort Neuro",
+      "companyCode": "MicroPort Neuro",
+      "year": 2021,
+      "revenue": 59053000.0,
+      "revenueFormatted": "$59.1M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroPort Neuro",
+      "companyCode": "MicroPort Neuro",
+      "year": 2022,
+      "revenue": 79326086.95652173,
+      "revenueFormatted": "$79.3M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroPort Neuro",
+      "companyCode": "MicroPort Neuro",
+      "year": 2023,
+      "revenue": 113436304.34782608,
+      "revenueFormatted": "$113.4M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroPort Neuro",
+      "companyCode": "MicroPort Neuro",
+      "year": 2024,
+      "revenue": 125000000.0,
+      "revenueFormatted": "$125.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroPort Neuro",
+      "companyCode": "MicroPort Neuro",
+      "year": 2025,
+      "revenue": 231965898.76086953,
+      "revenueFormatted": "$232.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroPort Neuro",
+      "companyCode": "MicroPort Neuro",
+      "year": 2026,
+      "revenue": 331711235.22804344,
+      "revenueFormatted": "$331.7M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroPort Neuro",
+      "companyCode": "MicroPort Neuro",
+      "year": 2027,
+      "revenue": 474347066.3761021,
+      "revenueFormatted": "$474.3M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroPort Neuro",
+      "companyCode": "MicroPort Neuro",
+      "year": 2028,
+      "revenue": 678316304.9178259,
+      "revenueFormatted": "$678.3M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroPort Neuro",
+      "companyCode": "MicroPort Neuro",
+      "year": 2029,
+      "revenue": 969992316.0324911,
+      "revenueFormatted": "$970.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "MicroPort Neuro",
+      "companyCode": "MicroPort Neuro",
+      "year": 2030,
+      "revenue": 1387089011.9264622,
+      "revenueFormatted": "$1387.1M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Zylox-Tonbridge",
+      "companyCode": "Zylox-Tonbridge",
+      "year": 2019,
+      "revenue": 702428.5714285715,
+      "revenueFormatted": "$702.4K",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Zylox-Tonbridge",
+      "companyCode": "Zylox-Tonbridge",
+      "year": 2020,
+      "revenue": 4231393.568147014,
+      "revenueFormatted": "$4.2M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Zylox-Tonbridge",
+      "companyCode": "Zylox-Tonbridge",
+      "year": 2021,
+      "revenue": 15593194.444444444,
+      "revenueFormatted": "$15.6M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Zylox-Tonbridge",
+      "companyCode": "Zylox-Tonbridge",
+      "year": 2022,
+      "revenue": 32416388.888888888,
+      "revenueFormatted": "$32.4M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Zylox-Tonbridge",
+      "companyCode": "Zylox-Tonbridge",
+      "year": 2023,
+      "revenue": 73574479.44444445,
+      "revenueFormatted": "$73.6M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Zylox-Tonbridge",
+      "companyCode": "Zylox-Tonbridge",
+      "year": 2024,
+      "revenue": 73574479.44444445,
+      "revenueFormatted": "$73.6M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Zylox-Tonbridge",
+      "companyCode": "Zylox-Tonbridge",
+      "year": 2025,
+      "revenue": 134127308.8235294,
+      "revenueFormatted": "$134.1M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Zylox-Tonbridge",
+      "companyCode": "Zylox-Tonbridge",
+      "year": 2026,
+      "revenue": 174365501.47058824,
+      "revenueFormatted": "$174.4M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Zylox-Tonbridge",
+      "companyCode": "Zylox-Tonbridge",
+      "year": 2027,
+      "revenue": 200520326.69117644,
+      "revenueFormatted": "$200.5M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Zylox-Tonbridge",
+      "companyCode": "Zylox-Tonbridge",
+      "year": 2028,
+      "revenue": 230598375.6948529,
+      "revenueFormatted": "$230.6M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Zylox-Tonbridge",
+      "companyCode": "Zylox-Tonbridge",
+      "year": 2029,
+      "revenue": 253658213.2643382,
+      "revenueFormatted": "$253.7M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Zylox-Tonbridge",
+      "companyCode": "Zylox-Tonbridge",
+      "year": 2030,
+      "revenue": 279024034.59077203,
+      "revenueFormatted": "$279.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "TJWY - Lepu",
+      "companyCode": "TJWY - Lepu",
+      "year": 2020,
+      "revenue": 20000000.0,
+      "revenueFormatted": "$20.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "TJWY - Lepu",
+      "companyCode": "TJWY - Lepu",
+      "year": 2021,
+      "revenue": 30000000.0,
+      "revenueFormatted": "$30.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "TJWY - Lepu",
+      "companyCode": "TJWY - Lepu",
+      "year": 2022,
+      "revenue": 39000000.0,
+      "revenueFormatted": "$39.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "TJWY - Lepu",
+      "companyCode": "TJWY - Lepu",
+      "year": 2023,
+      "revenue": 50700000.0,
+      "revenueFormatted": "$50.7M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "TJWY - Lepu",
+      "companyCode": "TJWY - Lepu",
+      "year": 2024,
+      "revenue": 65910000.0,
+      "revenueFormatted": "$65.9M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "TJWY - Lepu",
+      "companyCode": "TJWY - Lepu",
+      "year": 2025,
+      "revenue": 85683000.0,
+      "revenueFormatted": "$85.7M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "TJWY - Lepu",
+      "companyCode": "TJWY - Lepu",
+      "year": 2026,
+      "revenue": 111387900.0,
+      "revenueFormatted": "$111.4M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "TJWY - Lepu",
+      "companyCode": "TJWY - Lepu",
+      "year": 2027,
+      "revenue": 144804270.0,
+      "revenueFormatted": "$144.8M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "TJWY - Lepu",
+      "companyCode": "TJWY - Lepu",
+      "year": 2028,
+      "revenue": 188245551.0,
+      "revenueFormatted": "$188.2M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "TJWY - Lepu",
+      "companyCode": "TJWY - Lepu",
+      "year": 2029,
+      "revenue": 244719216.3,
+      "revenueFormatted": "$244.7M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "TJWY - Lepu",
+      "companyCode": "TJWY - Lepu",
+      "year": 2030,
+      "revenue": 318134981.19,
+      "revenueFormatted": "$318.1M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Peijia Jiaqi",
+      "companyCode": "Peijia Jiaqi",
+      "year": 2020,
+      "revenue": 5972434.915773354,
+      "revenueFormatted": "$6.0M",
+      "highlight": "NV. Structure heart not included.",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Peijia Jiaqi",
+      "companyCode": "Peijia Jiaqi",
+      "year": 2021,
+      "revenue": 14960629.921259843,
+      "revenueFormatted": "$15.0M",
+      "highlight": "NV. Structure heart not included.",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Peijia Jiaqi",
+      "companyCode": "Peijia Jiaqi",
+      "year": 2022,
+      "revenue": 21029411.76470588,
+      "revenueFormatted": "$21.0M",
+      "highlight": "NV. Structure heart not included.",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Peijia Jiaqi",
+      "companyCode": "Peijia Jiaqi",
+      "year": 2023,
+      "revenue": 30704225.352112677,
+      "revenueFormatted": "$30.7M",
+      "highlight": "NV. Structure heart not included.",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Peijia Jiaqi",
+      "companyCode": "Peijia Jiaqi",
+      "year": 2024,
+      "revenue": 43521126.76056338,
+      "revenueFormatted": "$43.5M",
+      "highlight": "NV. Structure heart not included.",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Peijia Jiaqi",
+      "companyCode": "Peijia Jiaqi",
+      "year": 2025,
+      "revenue": 56577464.788732395,
+      "revenueFormatted": "$56.6M",
+      "highlight": "NV. Structure heart not included.",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Peijia Jiaqi",
+      "companyCode": "Peijia Jiaqi",
+      "year": 2026,
+      "revenue": 73550704.22535211,
+      "revenueFormatted": "$73.6M",
+      "highlight": "NV. Structure heart not included.",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Peijia Jiaqi",
+      "companyCode": "Peijia Jiaqi",
+      "year": 2027,
+      "revenue": 84583309.85915492,
+      "revenueFormatted": "$84.6M",
+      "highlight": "NV. Structure heart not included.",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Peijia Jiaqi",
+      "companyCode": "Peijia Jiaqi",
+      "year": 2028,
+      "revenue": 97270806.33802816,
+      "revenueFormatted": "$97.3M",
+      "highlight": "NV. Structure heart not included.",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Peijia Jiaqi",
+      "companyCode": "Peijia Jiaqi",
+      "year": 2029,
+      "revenue": 106997886.971831,
+      "revenueFormatted": "$107.0M",
+      "highlight": "NV. Structure heart not included.",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Peijia Jiaqi",
+      "companyCode": "Peijia Jiaqi",
+      "year": 2030,
+      "revenue": 117697675.6690141,
+      "revenueFormatted": "$117.7M",
+      "highlight": "NV. Structure heart not included.",
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Heartcare",
+      "companyCode": "Heartcare",
+      "year": 2020,
+      "revenue": 2230015.3139356812,
+      "revenueFormatted": "$2.2M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Heartcare",
+      "companyCode": "Heartcare",
+      "year": 2021,
+      "revenue": 12513888.0,
+      "revenueFormatted": "$12.5M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Heartcare",
+      "companyCode": "Heartcare",
+      "year": 2022,
+      "revenue": 25416666.0,
+      "revenueFormatted": "$25.4M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Heartcare",
+      "companyCode": "Heartcare",
+      "year": 2023,
+      "revenue": 32222222.0,
+      "revenueFormatted": "$32.2M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Heartcare",
+      "companyCode": "Heartcare",
+      "year": 2024,
+      "revenue": 38597083.33333333,
+      "revenueFormatted": "$38.6M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Heartcare",
+      "companyCode": "Heartcare",
+      "year": 2025,
+      "revenue": 77987547.82608694,
+      "revenueFormatted": "$78.0M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Heartcare",
+      "companyCode": "Heartcare",
+      "year": 2026,
+      "revenue": 101383812.17391302,
+      "revenueFormatted": "$101.4M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Heartcare",
+      "companyCode": "Heartcare",
+      "year": 2027,
+      "revenue": 116591383.99999996,
+      "revenueFormatted": "$116.6M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Heartcare",
+      "companyCode": "Heartcare",
+      "year": 2028,
+      "revenue": 134080091.59999993,
+      "revenueFormatted": "$134.1M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Heartcare",
+      "companyCode": "Heartcare",
+      "year": 2029,
+      "revenue": 147488100.75999993,
+      "revenueFormatted": "$147.5M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Heartcare",
+      "companyCode": "Heartcare",
+      "year": 2030,
+      "revenue": 162236910.83599994,
+      "revenueFormatted": "$162.2M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "SinoMed Neuro",
+      "companyCode": "SinoMed Neuro",
+      "year": 2017,
+      "revenue": 511643.6251920123,
+      "revenueFormatted": "$511.6K",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "SinoMed Neuro",
+      "companyCode": "SinoMed Neuro",
+      "year": 2018,
+      "revenue": 2611162.7906976743,
+      "revenueFormatted": "$2.6M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "SinoMed Neuro",
+      "companyCode": "SinoMed Neuro",
+      "year": 2019,
+      "revenue": 6360357.142857143,
+      "revenueFormatted": "$6.4M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "SinoMed Neuro",
+      "companyCode": "SinoMed Neuro",
+      "year": 2020,
+      "revenue": 11638160.796324655,
+      "revenueFormatted": "$11.6M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "SinoMed Neuro",
+      "companyCode": "SinoMed Neuro",
+      "year": 2021,
+      "revenue": 9927351.159264931,
+      "revenueFormatted": "$9.9M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "SinoMed Neuro",
+      "companyCode": "SinoMed Neuro",
+      "year": 2022,
+      "revenue": 12309915.437488515,
+      "revenueFormatted": "$12.3M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "SinoMed Neuro",
+      "companyCode": "SinoMed Neuro",
+      "year": 2023,
+      "revenue": 15264295.142485758,
+      "revenueFormatted": "$15.3M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "SinoMed Neuro",
+      "companyCode": "SinoMed Neuro",
+      "year": 2024,
+      "revenue": 18927725.97668234,
+      "revenueFormatted": "$18.9M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "SinoMed Neuro",
+      "companyCode": "SinoMed Neuro",
+      "year": 2025,
+      "revenue": 23470380.2110861,
+      "revenueFormatted": "$23.5M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "SinoMed Neuro",
+      "companyCode": "SinoMed Neuro",
+      "year": 2026,
+      "revenue": 29103271.461746767,
+      "revenueFormatted": "$29.1M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "SinoMed Neuro",
+      "companyCode": "SinoMed Neuro",
+      "year": 2027,
+      "revenue": 36088056.612565994,
+      "revenueFormatted": "$36.1M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "SinoMed Neuro",
+      "companyCode": "SinoMed Neuro",
+      "year": 2028,
+      "revenue": 44749190.19958183,
+      "revenueFormatted": "$44.7M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "SinoMed Neuro",
+      "companyCode": "SinoMed Neuro",
+      "year": 2029,
+      "revenue": 55488995.847481474,
+      "revenueFormatted": "$55.5M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "SinoMed Neuro",
+      "companyCode": "SinoMed Neuro",
+      "year": 2030,
+      "revenue": 68806354.85087703,
+      "revenueFormatted": "$68.8M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Estimation / Approximation with internal source",
+      "companyCode": "Estimation / Approximation with internal source",
+      "year": 2023,
+      "revenue": 2022.0,
+      "revenueFormatted": "$2.0K",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Estimation / Approximation with internal source",
+      "companyCode": "Estimation / Approximation with internal source",
+      "year": 2024,
+      "revenue": 2024.0,
+      "revenueFormatted": "$2.0K",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Estimation / Approximation with internal source",
+      "companyCode": "Estimation / Approximation with internal source",
+      "year": 2027,
+      "revenue": 2022.0,
+      "revenueFormatted": "$2.0K",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Estimation / Approximation with internal source",
+      "companyCode": "Estimation / Approximation with internal source",
+      "year": 2028,
+      "revenue": 2023.0,
+      "revenueFormatted": "$2.0K",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Estimation / Approximation with internal source",
+      "companyCode": "Estimation / Approximation with internal source",
+      "year": 2029,
+      "revenue": 2024.0,
+      "revenueFormatted": "$2.0K",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Future forecast or guess",
+      "companyCode": "Future forecast or guess",
+      "year": 2023,
+      "revenue": 1238174806.0,
+      "revenueFormatted": "$1238.2M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Future forecast or guess",
+      "companyCode": "Future forecast or guess",
+      "year": 2024,
+      "revenue": 1340478575.3328,
+      "revenueFormatted": "$1340.5M",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Future forecast or guess",
+      "companyCode": "Future forecast or guess",
+      "year": 2027,
+      "revenue": 0.12034549363931757,
+      "revenueFormatted": "$0.0K",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Future forecast or guess",
+      "companyCode": "Future forecast or guess",
+      "year": 2028,
+      "revenue": 0.05953625793610273,
+      "revenueFormatted": "$0.0K",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Future forecast or guess",
+      "companyCode": "Future forecast or guess",
+      "year": 2029,
+      "revenue": 0.021791042487665058,
+      "revenueFormatted": "$0.0K",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    },
+    {
+      "company": "Future forecast or guess",
+      "companyCode": "Future forecast or guess",
+      "year": 2030,
+      "revenue": 0.06645686761935776,
+      "revenueFormatted": "$0.0K",
+      "highlight": null,
+      "type": "company_revenue",
+      "source": "Jie's Analysis"
+    }
+  ]
+}

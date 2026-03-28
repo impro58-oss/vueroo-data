@@ -1,7 +1,7 @@
 ﻿{
-    "markets_with_movement":  4,
-    "timestamp":  "2026-03-28 15:00:20",
-    "scan_file":  "markets-2026-03-28-1500.json",
+    "markets_with_movement":  2,
+    "timestamp":  "2026-03-28 17:00:21",
+    "scan_file":  "markets-2026-03-28-1700.json",
     "top_opportunities":  {
 
                           },
@@ -9,56 +9,30 @@
     "threshold":  5,
     "movements":  [
                       {
-                          "Market":  "Mexico Annual Inflation 2026",
+                          "Market":  "Highest temperature in Tel Aviv on March 29?",
                           "Category":  "trending",
-                          "Url":  "https://polymarket.com/event/mexico-annual-inflation-2026",
-                          "PreviousOdds":  26,
-                          "CurrentOdds":  20,
-                          "Movement":  -6,
-                          "MovementPercent":  6,
-                          "Direction":  "DOWN",
-                          "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-28 14:00:26",
-                          "CurrentTime":  "2026-03-28 15:00:20"
-                      },
-                      {
-                          "Market":  "Berlin State Election Winner",
-                          "Category":  "politics",
-                          "Url":  "https://polymarket.com/event/berlin-state-election-winner",
-                          "PreviousOdds":  12,
-                          "CurrentOdds":  19,
-                          "Movement":  7,
-                          "MovementPercent":  7,
-                          "Direction":  "UP",
-                          "Confidence":  "MEDIUM",
-                          "PreviousTime":  "2026-03-28 14:00:26",
-                          "CurrentTime":  "2026-03-28 15:00:20"
-                      },
-                      {
-                          "Market":  "What will S\u0026P 500 (SPX) close at in March?",
-                          "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/what-will-sp-500-spx-close-at-in-march",
-                          "PreviousOdds":  28,
-                          "CurrentOdds":  12,
-                          "Movement":  -16,
-                          "MovementPercent":  16,
+                          "Url":  "https://polymarket.com/event/highest-temperature-in-tel-aviv-on-march-29-2026",
+                          "PreviousOdds":  82,
+                          "CurrentOdds":  68,
+                          "Movement":  -14,
+                          "MovementPercent":  14,
                           "Direction":  "DOWN",
                           "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-28 14:00:26",
-                          "CurrentTime":  "2026-03-28 15:00:20"
+                          "PreviousTime":  "2026-03-28 16:00:23",
+                          "CurrentTime":  "2026-03-28 17:00:21"
                       },
                       {
-                          "Market":  "Amazon (AMZN) closes above ___ on March 30?",
+                          "Market":  "S\u0026P 500 (SPX) above ___ end of March?",
                           "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/amzn-close-above-on-march-30-2026",
-                          "PreviousOdds":  42,
-                          "CurrentOdds":  48,
-                          "Movement":  6,
-                          "MovementPercent":  6,
+                          "Url":  "https://polymarket.com/event/sp-500-spx-above-end-of-march",
+                          "PreviousOdds":  1,
+                          "CurrentOdds":  17,
+                          "Movement":  16,
+                          "MovementPercent":  16,
                           "Direction":  "UP",
-                          "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-28 14:00:26",
-                          "CurrentTime":  "2026-03-28 15:00:20"
+                          "Confidence":  "HIGH",
+                          "PreviousTime":  "2026-03-28 16:00:23",
+                          "CurrentTime":  "2026-03-28 17:00:21"
                       }
                   ],
     "smart_money_alerts":  0

@@ -1,0 +1,77 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "lastUpdated": "2026-03-18T20:06:33.261320",
+    "extractionDate": "2026-03-18",
+    "filesProcessed": 3,
+    "regions": [
+      "eu",
+      "germany"
+    ],
+    "totalRecords": 0
+  },
+  "rawExtractions": [
+    {
+      "filename": "DM_Aneurysm_GL_A_20250211.xlsx",
+      "file_date": {
+        "year": 2025,
+        "month": 2,
+        "day": 11,
+        "full": "2025-02-11"
+      },
+      "inferred_region": "eu",
+      "sheets": {},
+      "error": "`Import openpyxl` failed.  Use pip or conda to install the openpyxl package."
+    },
+    {
+      "filename": "Epidemiological model aSAH__updated_18_6_24.xlsx",
+      "file_date": {
+        "year": 2018,
+        "month": 6,
+        "day": 24,
+        "full": "2018-06-24"
+      },
+      "inferred_region": "germany",
+      "sheets": {},
+      "error": "`Import openpyxl` failed.  Use pip or conda to install the openpyxl package."
+    },
+    {
+      "filename": "Epidemiology of stroke and EVT in EU_April2023.xlsx",
+      "file_date": {
+        "year": 2023,
+        "month": null,
+        "day": null,
+        "full": "2023"
+      },
+      "inferred_region": "eu",
+      "sheets": {},
+      "error": "`Import openpyxl` failed.  Use pip or conda to install the openpyxl package."
+    }
+  ],
+  "timeSeriesByRegion": {
+    "eu": {},
+    "germany": {}
+  },
+  "dataQuality": {
+    "dateCoverage": {
+      "eu": [],
+      "germany": []
+    },
+    "regionCoverage": {
+      "eu": {
+        "yearsAvailable": [],
+        "metricTypes": [],
+        "totalRecords": 0
+      },
+      "germany": {
+        "yearsAvailable": [],
+        "metricTypes": [],
+        "totalRecords": 0
+      }
+    },
+    "metricCoverage": {
+      "eu": {},
+      "germany": {}
+    }
+  }
+}

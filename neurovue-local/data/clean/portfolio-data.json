@@ -1,0 +1,210 @@
+{
+  "metadata": {
+    "version": "2026-03",
+    "lastUpdated": "2026-03-20",
+    "dataQuality": "complete",
+    "totalCategories": 29,
+    "source": "medtech-intelligence-portfolio-analysis"
+  },
+  "categories": [
+    {
+      "id": "coils",
+      "name": "Embolization Coils",
+      "segment": "aneurysm",
+      "segmentName": "Aneurysm Treatment",
+      "marketVolume": "large",
+      "crowdedMarket": true,
+      "strategicImportance": "high",
+      "callToAction": "watch"
+    },
+    {
+      "id": "remodelling_balloons",
+      "name": "Remodelling Balloons",
+      "segment": "aneurysm",
+      "segmentName": "Aneurysm Treatment",
+      "marketVolume": "small",
+      "crowdedMarket": true,
+      "strategicImportance": "low",
+      "callToAction": "no"
+    },
+    {
+      "id": "stents_ab_lasercut",
+      "name": "Stents (AB) - Lasercut",
+      "segment": "aneurysm",
+      "segmentName": "Aneurysm Treatment",
+      "marketVolume": "medium",
+      "crowdedMarket": false,
+      "strategicImportance": "medium",
+      "callToAction": "facelift"
+    },
+    {
+      "id": "stents_ab_braided",
+      "name": "Stents (AB) - Braided",
+      "segment": "aneurysm",
+      "segmentName": "Aneurysm Treatment",
+      "marketVolume": "medium-low",
+      "crowdedMarket": false,
+      "strategicImportance": "medium",
+      "callToAction": "watch"
+    },
+    {
+      "id": "stents_bif",
+      "name": "Stents (Bifurcation)",
+      "segment": "aneurysm",
+      "segmentName": "Aneurysm Treatment",
+      "marketVolume": "small",
+      "crowdedMarket": false,
+      "strategicImportance": "low",
+      "callToAction": "no"
+    },
+    {
+      "id": "flow_diverters",
+      "name": "Flow Diverters",
+      "segment": "aneurysm",
+      "segmentName": "Aneurysm Treatment",
+      "marketVolume": "large",
+      "crowdedMarket": true,
+      "strategicImportance": "high",
+      "callToAction": "strat-review-hpc"
+    },
+    {
+      "id": "mini_fd",
+      "name": "Mini Flow Diverters",
+      "segment": "aneurysm",
+      "segmentName": "Aneurysm Treatment",
+      "marketVolume": "medium-large",
+      "crowdedMarket": true,
+      "strategicImportance": "high",
+      "callToAction": "strat-review-hpc"
+    },
+    {
+      "id": "intrasaccular",
+      "name": "Intrasaccular Devices",
+      "segment": "aneurysm",
+      "segmentName": "Aneurysm Treatment",
+      "marketVolume": "medium",
+      "crowdedMarket": false,
+      "strategicImportance": "high",
+      "callToAction": "strat-review",
+      "isGap": true,
+      "gapPriority": "critical"
+    },
+    {
+      "id": "thrombectomy_lvo",
+      "name": "Thrombectomy Devices (LVO)",
+      "segment": "ischemic",
+      "segmentName": "Ischemic Stroke Treatment",
+      "marketVolume": "large",
+      "crowdedMarket": true,
+      "strategicImportance": "high",
+      "callToAction": "visible-preset"
+    },
+    {
+      "id": "thrombectomy_mevo",
+      "name": "Thrombectomy Devices (MeVO)",
+      "segment": "ischemic",
+      "segmentName": "Ischemic Stroke Treatment",
+      "marketVolume": "medium-growing",
+      "crowdedMarket": true,
+      "strategicImportance": "high",
+      "callToAction": "visible-preset"
+    },
+    {
+      "id": "aspiration_catheters",
+      "name": "Aspiration Catheters (0.068-0.072)",
+      "segment": "ischemic",
+      "segmentName": "Ischemic Stroke Treatment",
+      "marketVolume": "medium-large",
+      "crowdedMarket": true,
+      "strategicImportance": "high",
+      "callToAction": "visible"
+    }
+  ],
+  "companies": [
+    { "id": "wallaby", "name": "Wallaby Phenox", "isPortfolio": true },
+    { "id": "medtronic", "name": "Medtronic" },
+    { "id": "stryker", "name": "Stryker" },
+    { "id": "microvention", "name": "Microvention/Terumo" },
+    { "id": "cerenovus", "name": "Cerenovus" },
+    { "id": "balt", "name": "Balt" },
+    { "id": "penumbra", "name": "Penumbra" },
+    { "id": "acandis", "name": "Acandis" }
+  ],
+  "products": [
+    {
+      "categoryId": "coils",
+      "wallaby": { "name": "Avenir, PICO", "status": "available" },
+      "medtronic": { "name": "Axium, Axium MicroFX, Axium Prime", "status": "available" },
+      "stryker": { "name": "Target XXL, XL, 360, 3D, Nano, Tetra", "status": "available" },
+      "microvention": { "name": "Cosmos, Hypersoft, HydroFrame, VFC", "status": "available" },
+      "cerenovus": { "name": "Spectra, GALAXY G3, DELTAFILL", "status": "available" },
+      "balt": { "name": "Optima, Barricade", "status": "available" },
+      "penumbra": { "name": "PC400, POD400, PAC400, Smart", "status": "available" },
+      "acandis": { "status": "gap" }
+    },
+    {
+      "categoryId": "remodelling_balloons",
+      "wallaby": { "status": "gap" },
+      "medtronic": { "name": "HyperForm, HyperGlide", "status": "available" },
+      "stryker": { "name": "Transform", "status": "available" },
+      "microvention": { "name": "Scepter", "status": "available" },
+      "cerenovus": { "name": "Ascent", "status": "available" },
+      "balt": { "name": "Eclipse, Copernic", "status": "available" },
+      "penumbra": { "status": "gap" },
+      "acandis": { "status": "gap" }
+    },
+    {
+      "categoryId": "intrasaccular",
+      "wallaby": { "status": "gap", "note": "Critical Gap" },
+      "medtronic": { "name": "Artisse/Medina", "status": "available" },
+      "stryker": { "name": "Trenza, Contour", "status": "available" },
+      "microvention": { "name": "WEB", "status": "available" },
+      "cerenovus": { "status": "gap" },
+      "balt": { "name": "Contour", "status": "available" },
+      "penumbra": { "status": "gap" },
+      "acandis": { "status": "gap" }
+    },
+    {
+      "categoryId": "flow_diverters",
+      "wallaby": { "name": "p64 (MW) (HPC)", "status": "available" },
+      "medtronic": { "name": "Pipeline Flex, Pipeline Vantage", "status": "available" },
+      "stryker": { "name": "Surpass Evolve, NeuroEndoGraft", "status": "available" },
+      "microvention": { "name": "FRED (X)", "status": "available" },
+      "cerenovus": { "name": "BRAVO", "status": "available" },
+      "balt": { "name": "Silk Vista", "status": "available" },
+      "penumbra": { "status": "gap" },
+      "acandis": { "name": "Derivo 2", "status": "available" }
+    },
+    {
+      "categoryId": "thrombectomy_lvo",
+      "wallaby": { "name": "pRESET", "status": "available" },
+      "medtronic": { "name": "Solitaire X", "status": "available" },
+      "stryker": { "name": "Trevo, Trevo 2", "status": "available" },
+      "microvention": { "name": "Eric", "status": "available" },
+      "cerenovus": { "name": "ReVive, Nimbus, Embotrap", "status": "available" },
+      "balt": { "name": "Catchview", "status": "available" },
+      "penumbra": { "name": "3D Revascularization Device", "status": "available" },
+      "acandis": { "name": "Aperio", "status": "available" }
+    },
+    {
+      "categoryId": "aspiration_catheters",
+      "wallaby": { "name": "pHLO, Esperance", "status": "available" },
+      "medtronic": { "name": "React, ARC, Navien A+", "status": "available" },
+      "stryker": { "name": "AXS Catalyst, AXS Vecta 71", "status": "available" },
+      "microvention": { "name": "Sofia Plus", "status": "available" },
+      "penumbra": { "name": "MAX, ACE, Jet 7", "status": "available" }
+    }
+  ],
+  "summary": {
+    "totalCategories": 29,
+    "wallabyPresent": 18,
+    "criticalGaps": [
+      "intrasaccular",
+      "remodelling_balloons",
+      "stents_ab_braided"
+    ],
+    "highPriorityOpportunities": [
+      "intrasaccular"
+    ]
+  }
+}
