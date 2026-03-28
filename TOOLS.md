@@ -268,6 +268,35 @@ NVDA, TSLA, AAPL, AMD, MSFT, GOOGL, AMZN, META, JPM, V, COIN, PLTR
 
 ### Common Issues & Fixes
 
+#### Issue: Gateway crashing every 2-5 minutes (V24 Discord bug)
+**Symptoms:** Gateway starts then immediately crashes, repeating cycle
+
+**Root Cause:** V2026.3.24 Discord plugin health check causing WebSocket disconnects
+
+**Fix:** Rollback to V15
+```cmd
+# Stop gateway
+openclaw gateway stop
+
+# Rollback to V15
+npm install -g openclaw@2026.2.15
+
+# Remove V24 "updates" key from config (causes config invalid error)
+powershell -Command "(Get-Content '~\.openclaw\openclaw.json' -Raw) -notmatch '\"updates\"' | Set-Content '~\.openclaw\openclaw.json'"
+
+# Restart
+openclaw gateway start
+```
+
+**Verification:**
+- Gateway stable > 10 minutes
+- Telegram still working
+- Shell commands execute
+
+**Note:** Discord disabled on V15. Telegram only for messaging.
+
+---
+
 #### Issue: CryptoVue showing stale data / "Last Scan" is yesterday
 **Symptoms:** Dashboard displays old timestamps, refresh doesn't update
 
