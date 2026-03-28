@@ -14,11 +14,25 @@ BLOCKERS: none
 ## Open tasks
 - Healthcare AI Documentation Opportunity (identified, needs research)
 - Install summarize/web-research CLI tools for web research capability
+- [OPTION A] Implement encrypted JSON files for NeuroVue data (encrypted at rest in private repo, client-side decryption)
+- [OPTION B] Implement Vercel serverless proxy for NeuroVue data (API route with auth, hides GitHub token, no local server needed)
 
 ## Context briefing
-**2026-03-28 Morning Session Summary:**
+**2026-03-28 Evening Session Summary:**
 
-### Research Completed:
+### Security Decision Pending:
+NeuroVue competitive intelligence requires protection decision:
+- Option A: Encrypted JSON files (at-rest encryption, client-side decryption)
+- Option B: Vercel serverless proxy (API layer with auth, hides GitHub access)
+
+Current status: Local server working but impractical long-term. Both options preserve online access with enhanced security.
+
+### CryptoVue/StockVue Status:
+✅ Both dashboards migrated to new public repo (vueroo-data)
+✅ No longer dependent on private repo for public data
+✅ Data files contain NaN handling fixes
+
+### Morning Session Research (from Telegram node):
 1. ✅ Scientia Vascular competitive intelligence (~10,700 bytes)
 2. ✅ Post-merger competitive landscape analysis (~20,400 bytes)
 3. ✅ Healthcare AI documentation opportunity (captured)
