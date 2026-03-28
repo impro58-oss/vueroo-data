@@ -1,17 +1,8 @@
 ﻿{
-    "scan_time":  "2026-03-28 19:00:22",
-    "total_opportunities":  46,
-    "timestamp":  "2026-03-28-1900",
+    "scan_time":  "2026-03-28 18:00:21",
+    "total_opportunities":  47,
+    "timestamp":  "2026-03-28-1800",
     "hot_bets":  [
-                     {
-                         "Odds":  "50%",
-                         "Category":  "ENTERTAINMENT",
-                         "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/ucl-ata-ath1-2026-01-21-more-markets",
-                         "Name":  "Atalanta BC vs. Athletic Club - More Markets",
-                         "Outcome":  "Various outcomes (check link)",
-                         "OddsNum":  50
-                     },
                      {
                          "Odds":  "50%",
                          "Category":  "ENTERTAINMENT",
@@ -25,8 +16,8 @@
                          "Odds":  "50%",
                          "Category":  "ENTERTAINMENT",
                          "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/uel-ste-fen1-2026-01-29-more-markets",
-                         "Name":  "FCSB vs. Fenerbahe SK - More Markets",
+                         "Url":  "https://polymarket.com/event/ucl-ata-ath1-2026-01-21-more-markets",
+                         "Name":  "Atalanta BC vs. Athletic Club - More Markets",
                          "Outcome":  "Various outcomes (check link)",
                          "OddsNum":  50
                      },
@@ -36,6 +27,24 @@
                          "EdgeType":  "CLOSE_CALL",
                          "Url":  "https://polymarket.com/event/ucl-atm-bog1-2026-01-28-more-markets",
                          "Name":  "Club Atltico de Madrid vs. FK Bod/Glimt - More Markets",
+                         "Outcome":  "Various outcomes (check link)",
+                         "OddsNum":  50
+                     },
+                     {
+                         "Odds":  "50%",
+                         "Category":  "ENTERTAINMENT",
+                         "EdgeType":  "CLOSE_CALL",
+                         "Url":  "https://polymarket.com/event/uel-gnk-mal2-2026-01-29-more-markets",
+                         "Name":  "KRC Genk vs. Malm FF - More Markets",
+                         "Outcome":  "Various outcomes (check link)",
+                         "OddsNum":  50
+                     },
+                     {
+                         "Odds":  "50%",
+                         "Category":  "ENTERTAINMENT",
+                         "EdgeType":  "CLOSE_CALL",
+                         "Url":  "https://polymarket.com/event/uel-mta1-bol1-2026-01-29-more-markets",
+                         "Name":  "MH Maccabi Tel Aviv vs. Bologna FC 1909 - More Markets",
                          "Outcome":  "Various outcomes (check link)",
                          "OddsNum":  50
                      },
@@ -52,24 +61,6 @@
                          "Odds":  "50%",
                          "Category":  "FINANCE",
                          "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/pltr-above-in-april-2026",
-                         "Name":  "Will Palantir (PLTR) close above ___ end of April?",
-                         "Outcome":  "YES: Palantir (PLTR) close above ___ end of April",
-                         "OddsNum":  50
-                     },
-                     {
-                         "Odds":  "50%",
-                         "Category":  "ENTERTAINMENT",
-                         "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/uel-gnk-mal2-2026-01-29-more-markets",
-                         "Name":  "KRC Genk vs. Malm FF - More Markets",
-                         "Outcome":  "Various outcomes (check link)",
-                         "OddsNum":  50
-                     },
-                     {
-                         "Odds":  "50%",
-                         "Category":  "FINANCE",
-                         "EdgeType":  "CLOSE_CALL",
                          "Url":  "https://polymarket.com/event/amzn-above-in-april-2026",
                          "Name":  "Will Amazon (AMZN) close above ___ end of April?",
                          "Outcome":  "YES: Amazon (AMZN) close above ___ end of April",
@@ -79,26 +70,8 @@
                          "Odds":  "50%",
                          "Category":  "ENTERTAINMENT",
                          "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/ucl-fcb1-kob1-2026-01-28-more-markets",
-                         "Name":  "FC Barcelona vs. FC Kbenhavn - More Markets",
-                         "Outcome":  "Various outcomes (check link)",
-                         "OddsNum":  50
-                     },
-                     {
-                         "Odds":  "50%",
-                         "Category":  "ENTERTAINMENT",
-                         "EdgeType":  "CLOSE_CALL",
                          "Url":  "https://polymarket.com/event/ere-tel-az-2026-01-25-more-markets",
                          "Name":  "Telstar 1963 vs. AZ - More Markets",
-                         "Outcome":  "Various outcomes (check link)",
-                         "OddsNum":  50
-                     },
-                     {
-                         "Odds":  "50%",
-                         "Category":  "ENTERTAINMENT",
-                         "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/ere-az-nec-2026-01-31-more-markets",
-                         "Name":  "AZ vs. NEC - More Markets",
                          "Outcome":  "Various outcomes (check link)",
                          "OddsNum":  50
                      },
@@ -115,8 +88,8 @@
                          "Odds":  "50%",
                          "Category":  "ENTERTAINMENT",
                          "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/uel-utr1-gnk-2026-01-22-more-markets",
-                         "Name":  "FC Utrecht vs. KRC Genk - More Markets",
+                         "Url":  "https://polymarket.com/event/ere-az-nec-2026-01-31-more-markets",
+                         "Name":  "AZ vs. NEC - More Markets",
                          "Outcome":  "Various outcomes (check link)",
                          "OddsNum":  50
                      },
@@ -130,31 +103,67 @@
                          "OddsNum":  50
                      },
                      {
-                         "Odds":  "51%",
+                         "Odds":  "50%",
+                         "Category":  "ENTERTAINMENT",
+                         "EdgeType":  "CLOSE_CALL",
+                         "Url":  "https://polymarket.com/event/uel-ste-fen1-2026-01-29-more-markets",
+                         "Name":  "FCSB vs. Fenerbahe SK - More Markets",
+                         "Outcome":  "Various outcomes (check link)",
+                         "OddsNum":  50
+                     },
+                     {
+                         "Odds":  "50%",
+                         "Category":  "ENTERTAINMENT",
+                         "EdgeType":  "CLOSE_CALL",
+                         "Url":  "https://polymarket.com/event/ucl-fcb1-kob1-2026-01-28-more-markets",
+                         "Name":  "FC Barcelona vs. FC Kbenhavn - More Markets",
+                         "Outcome":  "Various outcomes (check link)",
+                         "OddsNum":  50
+                     },
+                     {
+                         "Odds":  "50%",
+                         "Category":  "ENTERTAINMENT",
+                         "EdgeType":  "CLOSE_CALL",
+                         "Url":  "https://polymarket.com/event/uel-utr1-gnk-2026-01-22-more-markets",
+                         "Name":  "FC Utrecht vs. KRC Genk - More Markets",
+                         "Outcome":  "Various outcomes (check link)",
+                         "OddsNum":  50
+                     },
+                     {
+                         "Odds":  "50%",
                          "Category":  "TRENDING",
                          "EdgeType":  "CLOSE_CALL",
                          "Url":  "https://polymarket.com/event/hood-up-or-down-on-march-30-2026",
                          "Name":  "Robinhood (HOOD) Up or Down on March 30?",
                          "Outcome":  "Check market for outcomes",
-                         "OddsNum":  51
+                         "OddsNum":  50
                      },
                      {
-                         "Odds":  "48%",
+                         "Odds":  "50%",
+                         "Category":  "FINANCE",
+                         "EdgeType":  "CLOSE_CALL",
+                         "Url":  "https://polymarket.com/event/pltr-above-in-april-2026",
+                         "Name":  "Will Palantir (PLTR) close above ___ end of April?",
+                         "Outcome":  "YES: Palantir (PLTR) close above ___ end of April",
+                         "OddsNum":  50
+                     },
+                     {
+                         "Odds":  "49%",
                          "Category":  "SPORTS",
                          "EdgeType":  "CLOSE_CALL",
                          "Url":  "https://polymarket.com/event/2026-f1-drivers-champion",
                          "Name":  "F1 Drivers\u0027 Champion",
                          "Outcome":  "Check market for outcomes",
-                         "OddsNum":  48
+                         "OddsNum":  49
                      },
                      {
-                         "Odds":  "52%",
-                         "Category":  "FINANCE",
+                         "Odds":  "53%",
+                         "Category":  "SPORTS",
                          "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/googl-above-in-april-2026",
-                         "Name":  "Will Google (GOOGL) close above ___ end of April?",
-                         "Outcome":  "YES: Google (GOOGL) close above ___ end of April",
-                         "OddsNum":  52
+                         "Url":  "https://polymarket.com/event/nba-det-min-2026-03-28",
+                         "Name":  "Pistons vs. Timberwolves",
+                         "Outcome":  "Likely: Timberwolves wins or specific outcome",
+                         "OddsNum":  53
                      },
                      {
                          "Odds":  "47%",
@@ -167,21 +176,12 @@
                      },
                      {
                          "Odds":  "53%",
-                         "Category":  "SPORTS",
+                         "Category":  "FINANCE",
                          "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/cs2-navi-prv-2026-03-28",
-                         "Name":  "Counter-Strike: Natus Vincere vs PARIVISION (BO3) - BLAST Open Rotterdam Playoffs",
-                         "Outcome":  "Likely: PARIVISION (BO3) wins or specific outcome",
+                         "Url":  "https://polymarket.com/event/googl-above-in-april-2026",
+                         "Name":  "Will Google (GOOGL) close above ___ end of April?",
+                         "Outcome":  "YES: Google (GOOGL) close above ___ end of April",
                          "OddsNum":  53
-                     },
-                     {
-                         "Odds":  "54%",
-                         "Category":  "SPORTS",
-                         "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/nba-det-min-2026-03-28",
-                         "Name":  "Pistons vs. Timberwolves",
-                         "Outcome":  "Likely: Timberwolves wins or specific outcome",
-                         "OddsNum":  54
                      },
                      {
                          "Odds":  "46%",
@@ -193,12 +193,21 @@
                          "OddsNum":  46
                      },
                      {
+                         "Odds":  "45%",
+                         "Category":  "FINANCE",
+                         "EdgeType":  "CLOSE_CALL",
+                         "Url":  "https://polymarket.com/event/amzn-close-above-on-march-30-2026",
+                         "Name":  "Amazon (AMZN) closes above ___ on March 30?",
+                         "Outcome":  "Check market for outcomes",
+                         "OddsNum":  45
+                     },
+                     {
                          "Odds":  "56%",
                          "Category":  "SPORTS",
                          "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/nhl-ott-tb-2026-03-28",
-                         "Name":  "Senators vs. Lightning",
-                         "Outcome":  "Likely: Lightning wins or specific outcome",
+                         "Url":  "https://polymarket.com/event/lol-itz-kbm-2026-03-31",
+                         "Name":  "LoL: INTZ e-Sports vs KaBuM! Ilha das Lendas (BO1) - Circuito Desafiante Regular Season",
+                         "Outcome":  "Likely: KaBuM! Ilha das Lendas (BO1) wins or specific outcome",
                          "OddsNum":  56
                      },
                      {
@@ -211,24 +220,6 @@
                          "OddsNum":  56
                      },
                      {
-                         "Odds":  "57%",
-                         "Category":  "SPORTS",
-                         "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/lol-itz-kbm-2026-03-31",
-                         "Name":  "LoL: INTZ e-Sports vs KaBuM! Ilha das Lendas (BO1) - Circuito Desafiante Regular Season",
-                         "Outcome":  "Likely: KaBuM! Ilha das Lendas (BO1) wins or specific outcome",
-                         "OddsNum":  57
-                     },
-                     {
-                         "Odds":  "43%",
-                         "Category":  "FINANCE",
-                         "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/amzn-close-above-on-march-30-2026",
-                         "Name":  "Amazon (AMZN) closes above ___ on March 30?",
-                         "Outcome":  "Check market for outcomes",
-                         "OddsNum":  43
-                     },
-                     {
                          "Odds":  "59%",
                          "Category":  "CRYPTO",
                          "EdgeType":  "CLOSE_CALL",
@@ -239,21 +230,12 @@
                      },
                      {
                          "Odds":  "38%",
-                         "Category":  "SPORTS",
-                         "EdgeType":  "UNDERDOG",
-                         "Url":  "https://polymarket.com/event/2026-nba-champion",
-                         "Name":  "2026 NBA Champion",
-                         "Outcome":  "Check market for outcomes",
-                         "OddsNum":  38
-                     },
-                     {
-                         "Odds":  "37%",
                          "Category":  "CRYPTO",
                          "EdgeType":  "UNDERDOG",
                          "Url":  "https://polymarket.com/event/did-a-crypto-hedge-fund-blow-up",
                          "Name":  "Did a crypto hedge fund blow up?",
                          "Outcome":  "Check market for outcomes",
-                         "OddsNum":  37
+                         "OddsNum":  38
                      },
                      {
                          "Odds":  "63%",
@@ -266,10 +248,10 @@
                      },
                      {
                          "Odds":  "36%",
-                         "Category":  "CRYPTO",
+                         "Category":  "SPORTS",
                          "EdgeType":  "UNDERDOG",
-                         "Url":  "https://polymarket.com/event/hyperliquid-listed-on-binance-in-2026",
-                         "Name":  "Hyperliquid listed on Binance in 2026?",
+                         "Url":  "https://polymarket.com/event/2026-nba-champion",
+                         "Name":  "2026 NBA Champion",
                          "Outcome":  "Check market for outcomes",
                          "OddsNum":  36
                      },
@@ -283,13 +265,22 @@
                          "OddsNum":  36
                      },
                      {
-                         "Odds":  "33%",
+                         "Odds":  "35%",
+                         "Category":  "CRYPTO",
+                         "EdgeType":  "UNDERDOG",
+                         "Url":  "https://polymarket.com/event/hyperliquid-listed-on-binance-in-2026",
+                         "Name":  "Hyperliquid listed on Binance in 2026?",
+                         "Outcome":  "Check market for outcomes",
+                         "OddsNum":  35
+                     },
+                     {
+                         "Odds":  "34%",
                          "Category":  "CRYPTO",
                          "EdgeType":  "UNDERDOG",
                          "Url":  "https://polymarket.com/event/will-usd-denominated-stablecoin-market-share-fall-below-99-in-2026",
                          "Name":  "Will USD-denominated stablecoin market share fall below 99% in 2026?",
                          "Outcome":  "YES: USD-denominated stablecoin market share fall below 99% in 2026",
-                         "OddsNum":  33
+                         "OddsNum":  34
                      },
                      {
                          "Odds":  "67%",
@@ -301,13 +292,13 @@
                          "OddsNum":  67
                      },
                      {
-                         "Odds":  "68%",
+                         "Odds":  "71%",
                          "Category":  "SPORTS",
                          "EdgeType":  "FAVORITE",
                          "Url":  "https://polymarket.com/event/lol-reda-itz-2026-04-01",
                          "Name":  "LoL: RED Academy vs INTZ e-Sports (BO1) - Circuito Desafiante Regular Season",
                          "Outcome":  "Likely: INTZ e-Sports (BO1) wins or specific outcome",
-                         "OddsNum":  68
+                         "OddsNum":  71
                      },
                      {
                          "Odds":  "73%",
@@ -317,6 +308,24 @@
                          "Name":  "Will Tesla (TSLA) close above ___ end of March?",
                          "Outcome":  "YES: Tesla (TSLA) close above ___ end of March",
                          "OddsNum":  73
+                     },
+                     {
+                         "Odds":  "26%",
+                         "Category":  "CRYPTO",
+                         "EdgeType":  "UNDERDOG",
+                         "Url":  "https://polymarket.com/event/top-performing-crypto-for-the-week-of-march-23",
+                         "Name":  "Top performing crypto for the week of March 23?",
+                         "Outcome":  "Check market for outcomes",
+                         "OddsNum":  26
+                     },
+                     {
+                         "Odds":  "26%",
+                         "Category":  "FINANCE",
+                         "EdgeType":  "UNDERDOG",
+                         "Url":  "https://polymarket.com/event/bitcoin-vs-gold-vs-sp-500-in-2026",
+                         "Name":  "Bitcoin vs. Gold vs. S\u0026P 500 in 2026",
+                         "Outcome":  "Likely: Gold vs. S\u0026P 500 in 2026 wins or specific outcome",
+                         "OddsNum":  26
                      },
                      {
                          "Odds":  "74%",
@@ -329,15 +338,6 @@
                      },
                      {
                          "Odds":  "26%",
-                         "Category":  "FINANCE",
-                         "EdgeType":  "UNDERDOG",
-                         "Url":  "https://polymarket.com/event/bitcoin-vs-gold-vs-sp-500-in-2026",
-                         "Name":  "Bitcoin vs. Gold vs. S\u0026P 500 in 2026",
-                         "Outcome":  "Likely: Gold vs. S\u0026P 500 in 2026 wins or specific outcome",
-                         "OddsNum":  26
-                     },
-                     {
-                         "Odds":  "26%",
                          "Category":  "ENTERTAINMENT",
                          "EdgeType":  "UNDERDOG",
                          "Url":  "https://polymarket.com/event/what-price-will-pumpfun-hit-before-2027",
@@ -347,21 +347,12 @@
                      },
                      {
                          "Odds":  "76%",
-                         "Category":  "TRENDING",
-                         "EdgeType":  "FAVORITE",
-                         "Url":  "https://polymarket.com/event/highest-temperature-in-tel-aviv-on-march-29-2026",
-                         "Name":  "Highest temperature in Tel Aviv on March 29?",
-                         "Outcome":  "Check market for outcomes",
-                         "OddsNum":  76
-                     },
-                     {
-                         "Odds":  "77%",
                          "Category":  "SPORTS",
                          "EdgeType":  "FAVORITE",
                          "Url":  "https://polymarket.com/event/cbb-ill-iowa-2026-03-28",
                          "Name":  "Illinois Fighting Illini vs. Iowa Hawkeyes",
                          "Outcome":  "Likely: Iowa Hawkeyes wins or specific outcome",
-                         "OddsNum":  77
+                         "OddsNum":  76
                      },
                      {
                          "Odds":  "77%",
@@ -373,22 +364,13 @@
                          "OddsNum":  77
                      },
                      {
-                         "Odds":  "21%",
+                         "Odds":  "78%",
                          "Category":  "TRENDING",
-                         "EdgeType":  "UNDERDOG",
-                         "Url":  "https://polymarket.com/event/south-korea-annual-inflation-2026",
-                         "Name":  "South Korea Annual Inflation 2026",
+                         "EdgeType":  "FAVORITE",
+                         "Url":  "https://polymarket.com/event/highest-temperature-in-tel-aviv-on-march-29-2026",
+                         "Name":  "Highest temperature in Tel Aviv on March 29?",
                          "Outcome":  "Check market for outcomes",
-                         "OddsNum":  21
-                     },
-                     {
-                         "Odds":  "21%",
-                         "Category":  "POLITICS",
-                         "EdgeType":  "UNDERDOG",
-                         "Url":  "https://polymarket.com/event/berlin-state-election-winner",
-                         "Name":  "Berlin State Election Winner",
-                         "Outcome":  "Check market for outcomes",
-                         "OddsNum":  21
+                         "OddsNum":  78
                      },
                      {
                          "Odds":  "21%",
@@ -398,6 +380,24 @@
                          "Name":  "Will Dave and Buster\u0027s Entertainment (PLAY) beat quarterly earnings?",
                          "Outcome":  "YES: Dave and Buster\u0027s Entertainment (PLAY) beat quarterly earnings",
                          "OddsNum":  21
+                     },
+                     {
+                         "Odds":  "79%",
+                         "Category":  "SPORTS",
+                         "EdgeType":  "FAVORITE",
+                         "Url":  "https://polymarket.com/event/cs2-navi-prv-2026-03-28",
+                         "Name":  "Counter-Strike: Natus Vincere vs PARIVISION (BO3) - BLAST Open Rotterdam Playoffs",
+                         "Outcome":  "Likely: PARIVISION (BO3) wins or specific outcome",
+                         "OddsNum":  79
+                     },
+                     {
+                         "Odds":  "79%",
+                         "Category":  "SPORTS",
+                         "EdgeType":  "FAVORITE",
+                         "Url":  "https://polymarket.com/event/nhl-ott-tb-2026-03-28",
+                         "Name":  "Senators vs. Lightning",
+                         "Outcome":  "Likely: Lightning wins or specific outcome",
+                         "OddsNum":  79
                      },
                      {
                          "Odds":  "20%",
@@ -410,10 +410,19 @@
                      },
                      {
                          "Odds":  "20%",
-                         "Category":  "CRYPTO",
+                         "Category":  "TRENDING",
                          "EdgeType":  "UNDERDOG",
-                         "Url":  "https://polymarket.com/event/top-performing-crypto-for-the-week-of-march-23",
-                         "Name":  "Top performing crypto for the week of March 23?",
+                         "Url":  "https://polymarket.com/event/mexico-annual-inflation-2026",
+                         "Name":  "Mexico Annual Inflation 2026",
+                         "Outcome":  "Check market for outcomes",
+                         "OddsNum":  20
+                     },
+                     {
+                         "Odds":  "20%",
+                         "Category":  "POLITICS",
+                         "EdgeType":  "UNDERDOG",
+                         "Url":  "https://polymarket.com/event/berlin-state-election-winner",
+                         "Name":  "Berlin State Election Winner",
                          "Outcome":  "Check market for outcomes",
                          "OddsNum":  20
                      }
