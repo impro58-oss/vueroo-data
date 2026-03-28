@@ -1,77 +1,14 @@
 ﻿{
-    "markets_with_movement":  3,
-    "timestamp":  "2026-03-28 19:00:22",
-    "scan_file":  "markets-2026-03-28-1900.json",
-    "top_opportunities":  [
-                              {
-                                  "Market":  "Counter-Strike: Natus Vincere vs PARIVISION (BO3) - BLAST Open Rotterdam Playoffs",
-                                  "Category":  "sports",
-                                  "Url":  "https://polymarket.com/event/cs2-navi-prv-2026-03-28",
-                                  "PreviousOdds":  79,
-                                  "CurrentOdds":  53,
-                                  "Movement":  -26,
-                                  "MovementPercent":  26,
-                                  "Direction":  "DOWN",
-                                  "Confidence":  "HIGH",
-                                  "PreviousTime":  "2026-03-28 18:00:21",
-                                  "CurrentTime":  "2026-03-28 19:00:22"
-                              },
-                              {
-                                  "Market":  "Senators vs. Lightning",
-                                  "Category":  "sports",
-                                  "Url":  "https://polymarket.com/event/nhl-ott-tb-2026-03-28",
-                                  "PreviousOdds":  79,
-                                  "CurrentOdds":  56,
-                                  "Movement":  -23,
-                                  "MovementPercent":  23,
-                                  "Direction":  "DOWN",
-                                  "Confidence":  "HIGH",
-                                  "PreviousTime":  "2026-03-28 18:00:21",
-                                  "CurrentTime":  "2026-03-28 19:00:22"
-                              }
-                          ],
+    "markets_with_movement":  0,
+    "timestamp":  "2026-03-28 21:00:19",
+    "scan_file":  "markets-2026-03-28-2100.json",
+    "top_opportunities":  {
+
+                          },
     "total_markets":  120,
     "threshold":  5,
     "movements":  [
-                      {
-                          "Market":  "Top performing crypto for the week of March 23?",
-                          "Category":  "crypto",
-                          "Url":  "https://polymarket.com/event/top-performing-crypto-for-the-week-of-march-23",
-                          "PreviousOdds":  26,
-                          "CurrentOdds":  20,
-                          "Movement":  -6,
-                          "MovementPercent":  6,
-                          "Direction":  "DOWN",
-                          "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-28 18:00:21",
-                          "CurrentTime":  "2026-03-28 19:00:22"
-                      },
-                      {
-                          "Market":  "Counter-Strike: Natus Vincere vs PARIVISION (BO3) - BLAST Open Rotterdam Playoffs",
-                          "Category":  "sports",
-                          "Url":  "https://polymarket.com/event/cs2-navi-prv-2026-03-28",
-                          "PreviousOdds":  79,
-                          "CurrentOdds":  53,
-                          "Movement":  -26,
-                          "MovementPercent":  26,
-                          "Direction":  "DOWN",
-                          "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-28 18:00:21",
-                          "CurrentTime":  "2026-03-28 19:00:22"
-                      },
-                      {
-                          "Market":  "Senators vs. Lightning",
-                          "Category":  "sports",
-                          "Url":  "https://polymarket.com/event/nhl-ott-tb-2026-03-28",
-                          "PreviousOdds":  79,
-                          "CurrentOdds":  56,
-                          "Movement":  -23,
-                          "MovementPercent":  23,
-                          "Direction":  "DOWN",
-                          "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-28 18:00:21",
-                          "CurrentTime":  "2026-03-28 19:00:22"
-                      }
+
                   ],
-    "smart_money_alerts":  2
+    "smart_money_alerts":  0
 }

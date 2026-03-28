@@ -1,73 +1,73 @@
 ﻿{
-    "timestamp":  "2026-03-28 19:00:22",
+    "timestamp":  "2026-03-28 20:00:24",
     "all_movements":  [
                           {
-                              "Market":  "Top performing crypto for the week of March 23?",
-                              "Category":  "crypto",
-                              "Url":  "https://polymarket.com/event/top-performing-crypto-for-the-week-of-march-23",
-                              "PreviousOdds":  26,
-                              "CurrentOdds":  20,
-                              "Movement":  -6,
-                              "MovementPercent":  6,
+                              "Market":  "LoL: RED Academy vs INTZ e-Sports (BO1) - Circuito Desafiante Regular Season",
+                              "Category":  "sports",
+                              "Url":  "https://polymarket.com/event/lol-reda-itz-2026-04-01",
+                              "PreviousOdds":  68,
+                              "CurrentOdds":  54,
+                              "Movement":  -14,
+                              "MovementPercent":  14,
                               "Direction":  "DOWN",
-                              "Confidence":  "LOW",
-                              "PreviousTime":  "2026-03-28 18:00:21",
-                              "CurrentTime":  "2026-03-28 19:00:22"
+                              "Confidence":  "HIGH",
+                              "PreviousTime":  "2026-03-28 19:00:22",
+                              "CurrentTime":  "2026-03-28 20:00:24"
                           },
                           {
                               "Market":  "Counter-Strike: Natus Vincere vs PARIVISION (BO3) - BLAST Open Rotterdam Playoffs",
                               "Category":  "sports",
                               "Url":  "https://polymarket.com/event/cs2-navi-prv-2026-03-28",
-                              "PreviousOdds":  79,
-                              "CurrentOdds":  53,
-                              "Movement":  -26,
-                              "MovementPercent":  26,
-                              "Direction":  "DOWN",
+                              "PreviousOdds":  53,
+                              "CurrentOdds":  100,
+                              "Movement":  47,
+                              "MovementPercent":  47,
+                              "Direction":  "UP",
                               "Confidence":  "HIGH",
-                              "PreviousTime":  "2026-03-28 18:00:21",
-                              "CurrentTime":  "2026-03-28 19:00:22"
+                              "PreviousTime":  "2026-03-28 19:00:22",
+                              "CurrentTime":  "2026-03-28 20:00:24"
+                          },
+                          {
+                              "Market":  "Spurs vs. Bucks",
+                              "Category":  "sports",
+                              "Url":  "https://polymarket.com/event/nba-sas-mil-2026-03-28",
+                              "PreviousOdds":  94,
+                              "CurrentOdds":  100,
+                              "Movement":  6,
+                              "MovementPercent":  6,
+                              "Direction":  "UP",
+                              "Confidence":  "LOW",
+                              "PreviousTime":  "2026-03-28 19:00:22",
+                              "CurrentTime":  "2026-03-28 20:00:24"
                           },
                           {
                               "Market":  "Senators vs. Lightning",
                               "Category":  "sports",
                               "Url":  "https://polymarket.com/event/nhl-ott-tb-2026-03-28",
-                              "PreviousOdds":  79,
-                              "CurrentOdds":  56,
-                              "Movement":  -23,
-                              "MovementPercent":  23,
-                              "Direction":  "DOWN",
+                              "PreviousOdds":  56,
+                              "CurrentOdds":  100,
+                              "Movement":  44,
+                              "MovementPercent":  44,
+                              "Direction":  "UP",
                               "Confidence":  "HIGH",
-                              "PreviousTime":  "2026-03-28 18:00:21",
-                              "CurrentTime":  "2026-03-28 19:00:22"
+                              "PreviousTime":  "2026-03-28 19:00:22",
+                              "CurrentTime":  "2026-03-28 20:00:24"
                           }
                       ],
-    "total_movements":  3,
+    "total_movements":  4,
     "smart_money_alerts":  [
                                {
-                                   "Market":  "Counter-Strike: Natus Vincere vs PARIVISION (BO3) - BLAST Open Rotterdam Playoffs",
+                                   "Market":  "LoL: RED Academy vs INTZ e-Sports (BO1) - Circuito Desafiante Regular Season",
                                    "Category":  "sports",
-                                   "Url":  "https://polymarket.com/event/cs2-navi-prv-2026-03-28",
-                                   "PreviousOdds":  79,
-                                   "CurrentOdds":  53,
-                                   "Movement":  -26,
-                                   "MovementPercent":  26,
+                                   "Url":  "https://polymarket.com/event/lol-reda-itz-2026-04-01",
+                                   "PreviousOdds":  68,
+                                   "CurrentOdds":  54,
+                                   "Movement":  -14,
+                                   "MovementPercent":  14,
                                    "Direction":  "DOWN",
                                    "Confidence":  "HIGH",
-                                   "PreviousTime":  "2026-03-28 18:00:21",
-                                   "CurrentTime":  "2026-03-28 19:00:22"
-                               },
-                               {
-                                   "Market":  "Senators vs. Lightning",
-                                   "Category":  "sports",
-                                   "Url":  "https://polymarket.com/event/nhl-ott-tb-2026-03-28",
-                                   "PreviousOdds":  79,
-                                   "CurrentOdds":  56,
-                                   "Movement":  -23,
-                                   "MovementPercent":  23,
-                                   "Direction":  "DOWN",
-                                   "Confidence":  "HIGH",
-                                   "PreviousTime":  "2026-03-28 18:00:21",
-                                   "CurrentTime":  "2026-03-28 19:00:22"
+                                   "PreviousTime":  "2026-03-28 19:00:22",
+                                   "CurrentTime":  "2026-03-28 20:00:24"
                                }
                            ]
 }
