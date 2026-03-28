@@ -33,20 +33,29 @@ function extractTimestamp(filename) {
 async function loadLatestScan() {
     try {
         // Try crypto_latest.json first - always has the most recent scan
-        const latestJsonUrl = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/data/crypto/crypto_latest.json';
+        // Add cache-busting to prevent stale data
+        const cacheBuster = Date.now();
+        const latestJsonUrl = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/data/crypto/crypto_latest.json?t=' + cacheBuster;
+        
+        console.log('Fetching:', latestJsonUrl);
+        
         try {
             const response = await fetch(latestJsonUrl);
             if (response.ok) {
                 const data = await response.json();
                 latestData = data;
-                console.log('Loaded latest scan from crypto_latest.json');
+                console.log('✅ Loaded latest scan from crypto_latest.json:', data.scan_timestamp);
+                console.log('Total symbols:', data.total_symbols);
                 return data;
+            } else {
+                console.error('❌ crypto_latest.json fetch failed:', response.status, response.statusText);
             }
         } catch (e) {
-            console.log('crypto_latest.json not found, trying fallback...');
+            console.log('❌ Error loading crypto_latest.json:', e.message);
         }
         
         // Try fallback list with exact filenames
+        console.log('Trying fallback scan files...');
         return await loadFallbackScan();
         
     } catch (error) {
@@ -112,18 +121,18 @@ function generatePotentialFilenames() {
 
 /**
  * Fallback: Use curated list of recent known files
- * Updated: 2026-03-22 - includes latest scans
+ * Updated: 2026-03-28 - includes today's scans
  */
 async function loadFallbackScan() {
     const fallbackFiles = [
-        'top_50_analysis_20260322_205143.json',  // Latest: March 22, 8:51 PM
-        'top_50_analysis_20260320_160038.json',  // March 20, 4:00 PM
-        'top_50_analysis_20260320_120035.json',  // March 20, 12:00 PM
-        'top_50_analysis_20260320_083305.json',  // March 20, 8:33 AM
-        'top_50_analysis_20260319_200033.json',  // March 19, 8:00 PM
-        'top_50_analysis_20260319_160035.json',  // March 19, 4:00 PM
-        'top_50_analysis_20260319_120036.json',  // March 19, 12:00 PM
-        'top_50_analysis_20260319_080035.json'   // March 19, 8:00 AM
+        'top_50_analysis_20260328_120213.json',  // LATEST: March 28, 12:02 PM
+        'top_50_analysis_20260328_080155.json',  // March 28, 8:01 AM
+        'top_50_analysis_20260328_040158.json',  // March 28, 4:01 AM
+        'top_50_analysis_20260328_000210.json',  // March 28, 12:00 AM
+        'top_50_analysis_20260327_200157.json',  // March 27, 8:01 PM
+        'top_50_analysis_20260327_160203.json',  // March 27, 4:02 PM
+        'top_50_analysis_20260327_120206.json',  // March 27, 12:02 PM
+        'top_50_analysis_20260327_080201.json'   // March 27, 8:02 AM
     ];
     
     for (const filename of fallbackFiles) {
