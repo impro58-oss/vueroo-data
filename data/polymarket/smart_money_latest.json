@@ -1,7 +1,7 @@
 ﻿{
-    "markets_with_movement":  3,
-    "timestamp":  "2026-03-27 21:00:28",
-    "scan_file":  "markets-2026-03-27-2100.json",
+    "markets_with_movement":  1,
+    "timestamp":  "2026-03-27 23:00:23",
+    "scan_file":  "markets-2026-03-27-2300.json",
     "top_opportunities":  {
 
                           },
@@ -9,43 +9,17 @@
     "threshold":  5,
     "movements":  [
                       {
-                          "Market":  "Tesla (TSLA) closes week of Mar 23 at ___?",
-                          "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/tsla-week-march-27-2026",
-                          "PreviousOdds":  10,
-                          "CurrentOdds":  0,
-                          "Movement":  -10,
-                          "MovementPercent":  10,
-                          "Direction":  "DOWN",
-                          "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-27 20:00:24",
-                          "CurrentTime":  "2026-03-27 21:00:28"
-                      },
-                      {
-                          "Market":  "Will Google (GOOGL) finish week of March 23 above___?",
-                          "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/googl-above-on-march-27-2026",
-                          "PreviousOdds":  59,
-                          "CurrentOdds":  0,
-                          "Movement":  -59,
-                          "MovementPercent":  59,
-                          "Direction":  "DOWN",
-                          "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-27 20:00:24",
-                          "CurrentTime":  "2026-03-27 21:00:28"
-                      },
-                      {
-                          "Market":  "Palantir (PLTR) closes week of Mar 23 at ___?",
-                          "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/pltr-week-march-27-2026",
-                          "PreviousOdds":  8,
-                          "CurrentOdds":  100,
-                          "Movement":  92,
-                          "MovementPercent":  92,
+                          "Market":  "New York Yankees vs. San Francisco Giants",
+                          "Category":  "sports",
+                          "Url":  "https://polymarket.com/event/mlb-nyy-sf-2026-03-27",
+                          "PreviousOdds":  66,
+                          "CurrentOdds":  97,
+                          "Movement":  31,
+                          "MovementPercent":  31,
                           "Direction":  "UP",
                           "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-25 09:00:25",
-                          "CurrentTime":  "2026-03-27 21:00:28"
+                          "PreviousTime":  "2026-03-27 22:00:26",
+                          "CurrentTime":  "2026-03-27 23:00:23"
                       }
                   ],
     "smart_money_alerts":  0
