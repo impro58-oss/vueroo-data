@@ -1,9 +1,9 @@
-# OpenClaw Node Activation Briefing — TELEGRAM
-<!-- For Telegram node startup — read this before accepting commands -->
+# OpenClaw Node Activation Briefing — ALL NODES
+<!-- For Telegram, Discord, PC, VPS nodes — read this before accepting commands -->
 
 ## ⚡ CRITICAL: RUN STARTUP CHECKLIST FIRST
 
-Before processing ANY user request, execute:
+Before processing ANY user request on ANY node, execute:
 
 ```
 1. Read memory/retro-last-run.md
