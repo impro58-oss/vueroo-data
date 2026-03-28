@@ -416,6 +416,34 @@ CS = (RSI_Primary × 0.50) +
 
 ## 📝 NOTES
 
+## 🎮 SLASH COMMANDS
+**Reference:** `COMMANDS.md` in workspace root  
+**Last Updated:** 2026-03-28
+
+### Essential Commands
+
+| Command | Action | When to Use |
+|---------|--------|-------------|
+| `/sync pull` | Pull state from GitHub | Session start, resuming work |
+| `/sync push` | Push state to GitHub | Session end, before handoff |
+| `/sync up` | Shortcut for `/sync pull` | Quick sync |
+| `/status` | Full system status | Check what's happening |
+| `/research [query]` | Web research | Need information |
+| `/catalyst [project]` | Start project mode | New or resumed project |
+| `/consolidate memory` | Memory cleanup | End of day |
+| `/restart` | Restart protocol | Fresh start, issues |
+| `/help [command]` | Show help | Forgot how something works |
+
+### Natural Triggers
+- "Research..." → Activates research agent
+- "Sync up" → `/sync pull`
+- "What's the status?" → `/status`
+- "Let's start [project]" → `/catalyst`
+
+**Full reference:** See `COMMANDS.md`
+
+---
+
 *This file is maintained by the consolidate-memory skill*  
 *Updated nightly with distilled facts from recent-memory.md*  
 *Reference at session start for context restoration*  
