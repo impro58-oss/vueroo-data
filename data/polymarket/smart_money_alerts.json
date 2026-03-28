@@ -1,73 +1,60 @@
 ﻿{
-    "timestamp":  "2026-03-28 05:00:20",
+    "timestamp":  "2026-03-28 07:00:19",
     "all_movements":  [
                           {
-                              "Market":  "Michigan State Spartans vs. Connecticut Huskies",
-                              "Category":  "sports",
-                              "Url":  "https://polymarket.com/event/cbb-mst-uconn-2026-03-27",
-                              "PreviousOdds":  81,
-                              "CurrentOdds":  100,
-                              "Movement":  19,
-                              "MovementPercent":  19,
-                              "Direction":  "UP",
-                              "Confidence":  "HIGH",
-                              "PreviousTime":  "2026-03-28 04:00:26",
-                              "CurrentTime":  "2026-03-28 05:00:20"
-                          },
-                          {
-                              "Market":  "Tennessee Volunteers vs. Iowa State Cyclones",
-                              "Category":  "sports",
-                              "Url":  "https://polymarket.com/event/cbb-tenn-iowast-2026-03-27",
-                              "PreviousOdds":  68,
-                              "CurrentOdds":  100,
-                              "Movement":  32,
-                              "MovementPercent":  32,
-                              "Direction":  "UP",
-                              "Confidence":  "HIGH",
-                              "PreviousTime":  "2026-03-28 04:00:26",
-                              "CurrentTime":  "2026-03-28 05:00:20"
-                          },
-                          {
-                              "Market":  "Amazon (AMZN) closes above ___ on March 30?",
-                              "Category":  "finance",
-                              "Url":  "https://polymarket.com/event/amzn-close-above-on-march-30-2026",
-                              "PreviousOdds":  48,
-                              "CurrentOdds":  42,
+                              "Market":  "Top performing crypto for the week of March 23?",
+                              "Category":  "crypto",
+                              "Url":  "https://polymarket.com/event/top-performing-crypto-for-the-week-of-march-23",
+                              "PreviousOdds":  26,
+                              "CurrentOdds":  20,
                               "Movement":  -6,
                               "MovementPercent":  6,
                               "Direction":  "DOWN",
                               "Confidence":  "LOW",
-                              "PreviousTime":  "2026-03-28 04:00:26",
-                              "CurrentTime":  "2026-03-28 05:00:20"
+                              "PreviousTime":  "2026-03-28 06:00:24",
+                              "CurrentTime":  "2026-03-28 07:00:19"
                           },
                           {
-                              "Market":  "Apple (AAPL) closes above ___ on March 30?",
-                              "Category":  "finance",
-                              "Url":  "https://polymarket.com/event/aapl-close-above-on-march-30-2026",
-                              "PreviousOdds":  52,
-                              "CurrentOdds":  60,
-                              "Movement":  8,
-                              "MovementPercent":  8,
-                              "Direction":  "UP",
+                              "Market":  "F1 Drivers\u0027 Champion",
+                              "Category":  "sports",
+                              "Url":  "https://polymarket.com/event/2026-f1-drivers-champion",
+                              "PreviousOdds":  56,
+                              "CurrentOdds":  49,
+                              "Movement":  -7,
+                              "MovementPercent":  7,
+                              "Direction":  "DOWN",
                               "Confidence":  "MEDIUM",
-                              "PreviousTime":  "2026-03-28 04:00:26",
-                              "CurrentTime":  "2026-03-28 05:00:20"
+                              "PreviousTime":  "2026-03-28 06:00:24",
+                              "CurrentTime":  "2026-03-28 07:00:19"
+                          },
+                          {
+                              "Market":  "What will S\u0026P 500 (SPX) close at in March?",
+                              "Category":  "finance",
+                              "Url":  "https://polymarket.com/event/what-will-sp-500-spx-close-at-in-march",
+                              "PreviousOdds":  35,
+                              "CurrentOdds":  15,
+                              "Movement":  -20,
+                              "MovementPercent":  20,
+                              "Direction":  "DOWN",
+                              "Confidence":  "HIGH",
+                              "PreviousTime":  "2026-03-28 06:00:24",
+                              "CurrentTime":  "2026-03-28 07:00:19"
                           }
                       ],
-    "total_movements":  4,
+    "total_movements":  3,
     "smart_money_alerts":  [
                                {
-                                   "Market":  "Apple (AAPL) closes above ___ on March 30?",
-                                   "Category":  "finance",
-                                   "Url":  "https://polymarket.com/event/aapl-close-above-on-march-30-2026",
-                                   "PreviousOdds":  52,
-                                   "CurrentOdds":  60,
-                                   "Movement":  8,
-                                   "MovementPercent":  8,
-                                   "Direction":  "UP",
+                                   "Market":  "F1 Drivers\u0027 Champion",
+                                   "Category":  "sports",
+                                   "Url":  "https://polymarket.com/event/2026-f1-drivers-champion",
+                                   "PreviousOdds":  56,
+                                   "CurrentOdds":  49,
+                                   "Movement":  -7,
+                                   "MovementPercent":  7,
+                                   "Direction":  "DOWN",
                                    "Confidence":  "MEDIUM",
-                                   "PreviousTime":  "2026-03-28 04:00:26",
-                                   "CurrentTime":  "2026-03-28 05:00:20"
+                                   "PreviousTime":  "2026-03-28 06:00:24",
+                                   "CurrentTime":  "2026-03-28 07:00:19"
                                }
                            ]
 }
