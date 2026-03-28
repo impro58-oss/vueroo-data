@@ -1,62 +1,26 @@
 ﻿{
-    "markets_with_movement":  3,
-    "timestamp":  "2026-03-28 07:00:19",
-    "scan_file":  "markets-2026-03-28-0700.json",
+    "markets_with_movement":  1,
+    "timestamp":  "2026-03-28 09:00:17",
+    "scan_file":  "markets-2026-03-28-0900.json",
     "top_opportunities":  {
-                              "Market":  "F1 Drivers\u0027 Champion",
-                              "Category":  "sports",
-                              "Url":  "https://polymarket.com/event/2026-f1-drivers-champion",
-                              "PreviousOdds":  56,
-                              "CurrentOdds":  49,
-                              "Movement":  -7,
-                              "MovementPercent":  7,
-                              "Direction":  "DOWN",
-                              "Confidence":  "MEDIUM",
-                              "PreviousTime":  "2026-03-28 06:00:24",
-                              "CurrentTime":  "2026-03-28 07:00:19"
+
                           },
     "total_markets":  120,
     "threshold":  5,
     "movements":  [
                       {
-                          "Market":  "Top performing crypto for the week of March 23?",
-                          "Category":  "crypto",
-                          "Url":  "https://polymarket.com/event/top-performing-crypto-for-the-week-of-march-23",
-                          "PreviousOdds":  26,
-                          "CurrentOdds":  20,
-                          "Movement":  -6,
-                          "MovementPercent":  6,
-                          "Direction":  "DOWN",
-                          "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-28 06:00:24",
-                          "CurrentTime":  "2026-03-28 07:00:19"
-                      },
-                      {
-                          "Market":  "F1 Drivers\u0027 Champion",
+                          "Market":  "LoL: RED Academy vs INTZ e-Sports (BO1) - Circuito Desafiante Regular Season",
                           "Category":  "sports",
-                          "Url":  "https://polymarket.com/event/2026-f1-drivers-champion",
-                          "PreviousOdds":  56,
-                          "CurrentOdds":  49,
-                          "Movement":  -7,
-                          "MovementPercent":  7,
-                          "Direction":  "DOWN",
-                          "Confidence":  "MEDIUM",
-                          "PreviousTime":  "2026-03-28 06:00:24",
-                          "CurrentTime":  "2026-03-28 07:00:19"
-                      },
-                      {
-                          "Market":  "What will S\u0026P 500 (SPX) close at in March?",
-                          "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/what-will-sp-500-spx-close-at-in-march",
-                          "PreviousOdds":  35,
-                          "CurrentOdds":  15,
-                          "Movement":  -20,
-                          "MovementPercent":  20,
-                          "Direction":  "DOWN",
+                          "Url":  "https://polymarket.com/event/lol-reda-itz-2026-04-01",
+                          "PreviousOdds":  62,
+                          "CurrentOdds":  77,
+                          "Movement":  15,
+                          "MovementPercent":  15,
+                          "Direction":  "UP",
                           "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-28 06:00:24",
-                          "CurrentTime":  "2026-03-28 07:00:19"
+                          "PreviousTime":  "2026-03-28 08:00:20",
+                          "CurrentTime":  "2026-03-28 09:00:17"
                       }
                   ],
-    "smart_money_alerts":  1
+    "smart_money_alerts":  0
 }
