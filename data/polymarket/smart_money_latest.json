@@ -1,49 +1,52 @@
 ﻿{
-    "markets_with_movement":  2,
-    "timestamp":  "2026-03-28 11:00:20",
-    "scan_file":  "markets-2026-03-28-1100.json",
+    "markets_with_movement":  3,
+    "timestamp":  "2026-03-28 13:00:21",
+    "scan_file":  "markets-2026-03-28-1300.json",
     "top_opportunities":  {
-                              "Market":  "What will Bitcoin outperform in April?",
-                              "Category":  "entertainment",
-                              "Url":  "https://polymarket.com/event/what-will-bitcoin-outperform-in-april",
-                              "PreviousOdds":  38,
-                              "CurrentOdds":  45,
-                              "Movement":  7,
-                              "MovementPercent":  7,
-                              "Direction":  "UP",
-                              "Confidence":  "MEDIUM",
-                              "PreviousTime":  "2026-03-28 07:00:19",
-                              "CurrentTime":  "2026-03-28 11:00:20"
+
                           },
     "total_markets":  120,
     "threshold":  5,
     "movements":  [
                       {
-                          "Market":  "Top performing crypto for the week of March 23?",
-                          "Category":  "crypto",
-                          "Url":  "https://polymarket.com/event/top-performing-crypto-for-the-week-of-march-23",
-                          "PreviousOdds":  21,
-                          "CurrentOdds":  26,
-                          "Movement":  5,
+                          "Market":  "Mexico Annual Inflation 2026",
+                          "Category":  "trending",
+                          "Url":  "https://polymarket.com/event/mexico-annual-inflation-2026",
+                          "PreviousOdds":  27,
+                          "CurrentOdds":  22,
+                          "Movement":  -5,
                           "MovementPercent":  5,
-                          "Direction":  "UP",
+                          "Direction":  "DOWN",
                           "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-28 10:00:22",
-                          "CurrentTime":  "2026-03-28 11:00:20"
+                          "PreviousTime":  "2026-03-28 12:00:21",
+                          "CurrentTime":  "2026-03-28 13:00:21"
                       },
                       {
-                          "Market":  "What will Bitcoin outperform in April?",
-                          "Category":  "entertainment",
-                          "Url":  "https://polymarket.com/event/what-will-bitcoin-outperform-in-april",
-                          "PreviousOdds":  38,
-                          "CurrentOdds":  45,
-                          "Movement":  7,
-                          "MovementPercent":  7,
+                          "Market":  "LoL: LNG Esports vs ThunderTalk Gaming (BO3) - Esports World Cup China Qualifier Phase 1",
+                          "Category":  "sports",
+                          "Url":  "https://polymarket.com/event/lol-lng-tt-2026-03-28",
+                          "PreviousOdds":  52,
+                          "CurrentOdds":  100,
+                          "Movement":  48,
+                          "MovementPercent":  48,
                           "Direction":  "UP",
-                          "Confidence":  "MEDIUM",
-                          "PreviousTime":  "2026-03-28 07:00:19",
-                          "CurrentTime":  "2026-03-28 11:00:20"
+                          "Confidence":  "HIGH",
+                          "PreviousTime":  "2026-03-28 12:00:21",
+                          "CurrentTime":  "2026-03-28 13:00:21"
+                      },
+                      {
+                          "Market":  "Amazon (AMZN) closes above ___ on March 30?",
+                          "Category":  "finance",
+                          "Url":  "https://polymarket.com/event/amzn-close-above-on-march-30-2026",
+                          "PreviousOdds":  34,
+                          "CurrentOdds":  40,
+                          "Movement":  6,
+                          "MovementPercent":  6,
+                          "Direction":  "UP",
+                          "Confidence":  "LOW",
+                          "PreviousTime":  "2026-03-28 12:00:21",
+                          "CurrentTime":  "2026-03-28 13:00:21"
                       }
                   ],
-    "smart_money_alerts":  1
+    "smart_money_alerts":  0
 }
