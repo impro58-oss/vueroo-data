@@ -1,11 +1,11 @@
-# Long-Term Memory — Distilled Facts, Preferences & Patterns
-**Version:** 1.0  
-**Last Updated:** 2026-03-20 15:58 UTC  
+# Long-Term Memory - Distilled Facts, Preferences & Patterns
+**Version:** 1.0
+**Last Updated:** 2026-03-20 15:58 UTC
 **Scope:** Persistent knowledge across sessions
 
 ---
 
-## 👤 USER PROFILE — ROO WOO
+## 👤 USER PROFILE - ROO WOO
 
 ### Core Identity
 - **Name:** Roo Woo
@@ -58,7 +58,7 @@
 
 ```
 ┌─────────────────────────────────────────┐
-│  HOME PC (Primary) — Windows/DreamQuest │
+│  HOME PC (Primary) - Windows/DreamQuest │
 │  • Model: kimi-k2.5:cloud              │
 │  • Gateway: Port 18789                 │
 │  • Status: Priority #1, full control     │
@@ -67,7 +67,7 @@
               │
               ▼ GitHub Sync
 ┌─────────────────────────────────────────┐
-│  GITHUB — rooquest1 repo                │
+│  GITHUB - rooquest1 repo                │
 │  • Source of truth for all instances    │
 │  • Memory files, skills, data           │
 │  • Auto-sync from Home PC               │
@@ -75,7 +75,7 @@
               │
               ▼ Pull on Request
 ┌─────────────────────────────────────────┐
-│  VPS (Backup) — Ubuntu/187.77.101.220  │
+│  VPS (Backup) - Ubuntu/187.77.101.220  │
 │  • Role: Secondary, takes over if Home │
 │  • Sync: Manual (user-initiated)       │
 │  • Status: Operational, synced          │
@@ -91,7 +91,7 @@
 6. **Home continues** as primary
 
 ### Handoff Trigger
-**User says:** "VPS sync up and continue [task]"  
+**User says:** "VPS sync up and continue [task]"
 **VPS responds:** Pulls GitHub → reads memory → executes → commits → reports
 
 ---
@@ -99,14 +99,14 @@
 ## 📊 ACTIVE PROJECTS
 
 ### 1. MedTech Intelligence System
-**Status:** Data cleaned, API architecture designed  
-**Location:** `medtech-intelligence/`  
+**Status:** Data cleaned, API architecture designed
+**Location:** `medtech-intelligence/`
 **Live Portal:** https://vueroo.com/dashboard/neurovue
 
 **Data Catalogued:**
 - **Epidemiology:** 7 regions, 12M+ strokes/year globally
-  - China: 3.4M strokes (MT only 1.5% — massive opportunity)
-  - USA: 795K strokes (MT 25% — highest adoption)
+  - China: 3.4M strokes (MT only 1.5% - massive opportunity)
+  - USA: 795K strokes (MT 25% - highest adoption)
   - EU: 1.1M strokes (variance 5-45% MT between states)
   - Japan, Germany, India (pending), Brazil (pending)
 - **Competitive Landscape:** 11 companies mapped
@@ -140,7 +140,7 @@ Local HTML → Vueroo API → GitHub Private Repo (token hidden)
 ---
 
 ### 2. Crypto Intelligence System (TrojanLogic4H)
-**Status:** Live — Running every 4 hours  
+**Status:** Live - Running every 4 hours
 **Dashboard:** https://vueroo.com/dashboard/cryptovue
 
 **Strategy Components:**
@@ -165,9 +165,9 @@ Local HTML → Vueroo API → GitHub Private Repo (token hidden)
 
 **TradingView Integration:**
 - 3 Pine Scripts created:
-  1. `trojanlogic4h-indicator.pine` — Overlay with RtoM channels
-  2. `trojanlogic4h-oscillator.pine` — Composite Score panel
-  3. `trojanlogic4h-strategy.pine` — Strategy Tester with backtesting
+  1. `trojanlogic4h-indicator.pine` - Overlay with RtoM channels
+  2. `trojanlogic4h-oscillator.pine` - Composite Score panel
+  3. `trojanlogic4h-strategy.pine` - Strategy Tester with backtesting
 
 **Current Portfolio:**
 - **Polymarket P&L:** -26.59 USDC (-30.95%)
@@ -179,8 +179,8 @@ Local HTML → Vueroo API → GitHub Private Repo (token hidden)
 ---
 
 ### 3. Vueroo Portal
-**Status:** Live  
-**URL:** https://vueroo.com  
+**Status:** Live
+**URL:** https://vueroo.com
 **Password:** `Vueroo2026!`
 
 **Architecture:**
@@ -206,11 +206,11 @@ Local HTML → Vueroo API → GitHub Private Repo (token hidden)
 ### 4. Agent System
 **Status:** Configured (persona mode), ACP pending
 **Agents Ready:**
-- `neurovascular-upstream-director` — MedTech strategy
-- `stockward-bd-director` — Business development
-- `opportunity-scout` — Opportunity research
+- `neurovascular-upstream-director` - MedTech strategy
+- `stockward-bd-director` - Business development
+- `opportunity-scout` - Opportunity research
 
-**Mode:** Sequential execution (one agent at a time)  
+**Mode:** Sequential execution (one agent at a time)
 **Future:** True ACP subagent spawning (requires config fix)
 
 ---
@@ -254,9 +254,9 @@ Local HTML → Vueroo API → GitHub Private Repo (token hidden)
 ### Signal Generation
 **Composite Score Calculation:**
 ```
-CS = (RSI_Primary × 0.50) + 
-     (RSI_1H × 0.25) + 
-     (RSI_4H × 0.15) + 
+CS = (RSI_Primary × 0.50) +
+     (RSI_1H × 0.25) +
+     (RSI_4H × 0.15) +
      (RSI_Daily × 0.10)
 ```
 
@@ -286,7 +286,7 @@ CS = (RSI_Primary × 0.50) +
 ### Competitive Intelligence
 **MedTech Market Gaps (Wallaby vs Competition):**
 
-1. **🔴 Intrasaccular Device:** CRITICAL — Missing entirely
+1. **🔴 Intrasaccular Device:** CRITICAL - Missing entirely
    - Competitors: Microvention (WEB), Medtronic (Artisse), Stryker (Contour/Trenza)
    - Market: Fastest-growing aneurysm segment
    - Strategic Action: HIGH priority
@@ -306,7 +306,7 @@ CS = (RSI_Primary × 0.50) +
 ### Market Trends (Stroke Treatment)
 - **Mechanical Thrombectomy:** Global access growing (12% → 25% by 2030)
 - **IV tPA:** Access varies wildly (3% low-income → 40% USA)
-- **Treatment Gap:** China MT only 1.5% vs USA 25% — massive opportunity
+- **Treatment Gap:** China MT only 1.5% vs USA 25% - massive opportunity
 
 ### Technical Learnings
 **Successful Patterns:**
@@ -381,7 +381,7 @@ CS = (RSI_Primary × 0.50) +
 
 ## 🧪 EXPERIMENTS & OUTCOMES
 
-### Memory System (NEW — 2026-03-20)
+### Memory System (NEW - 2026-03-20)
 **Hypothesis:** 3-tier memory improves context retention across sessions
 **Architecture:**
 - Recent (48hr): Rolling context, inline load at startup
@@ -389,12 +389,12 @@ CS = (RSI_Primary × 0.50) +
 - Project: Active state, task tracking
 **Status:** Deployed, testing effectiveness
 
-### Vueroo Portal (SUCCESS — 2026-03-19)
+### Vueroo Portal (SUCCESS - 2026-03-19)
 **Hypothesis:** Password-protected portal enables secure intelligence sharing
 **Outcome:** ✅ Deployed and operational
 **Metrics:** Live at vueroo.com, CryptoVue + NeuroVue integrated
 
-### TradingView Pine Scripts (SUCCESS — 2026-03-20)
+### TradingView Pine Scripts (SUCCESS - 2026-03-20)
 **Hypothesis:** CS RSI MTF can be implemented in Pine Script
 **Outcome:** ✅ 3 scripts created, backtesting enabled
 **Metrics:** Strategy Tester compatible, alerts configured
@@ -403,21 +403,21 @@ CS = (RSI_Primary × 0.50) +
 
 ## 🔄 EVOLUTION LOG
 
-**2026-03-20:** Memory system created (3-tier: recent/long-term/project)  
-**2026-03-20:** TradingView Pine Scripts complete  
-**2026-03-19:** Vueroo portal deployed  
-**2026-03-18:** Competitive intelligence documented (11 competitors)  
-**2026-03-17:** VPS backup operational  
-**2026-03-16:** Gateway troubleshooting complete (zombie processes fixed)  
-**2026-03-15:** Agent system configured  
-**2026-03-14:** Polymarket tracker enhanced with smart money detection  
+**2026-03-20:** Memory system created (3-tier: recent/long-term/project)
+**2026-03-20:** TradingView Pine Scripts complete
+**2026-03-19:** Vueroo portal deployed
+**2026-03-18:** Competitive intelligence documented (11 competitors)
+**2026-03-17:** VPS backup operational
+**2026-03-16:** Gateway troubleshooting complete (zombie processes fixed)
+**2026-03-15:** Agent system configured
+**2026-03-14:** Polymarket tracker enhanced with smart money detection
 
 ---
 
 ## 📝 NOTES
 
 ## 🎮 SLASH COMMANDS
-**Reference:** `COMMANDS.md` in workspace root  
+**Reference:** `COMMANDS.md` in workspace root
 **Last Updated:** 2026-03-28
 
 ### Essential Commands
@@ -444,7 +444,66 @@ CS = (RSI_Primary × 0.50) +
 
 ---
 
-*This file is maintained by the consolidate-memory skill*  
-*Updated nightly with distilled facts from recent-memory.md*  
-*Reference at session start for context restoration*  
-*Never delete — append new learnings*
+*This file is maintained by the consolidate-memory skill*
+*Updated nightly with distilled facts from recent-memory.md*
+*Reference at session start for context restoration*
+
+---
+
+## 🐛 CRYPTO JSON NaN ERROR FIX
+
+**Date:** 2026-03-28
+**Issue:** Python scanner outputs `NaN` values in JSON, causing JavaScript `JSON.parse()` failures
+**Error Message:** `Unexpected token 'N', ..."er_blue": NaN, "... is not valid JSON`
+
+**Root Cause:**
+Python's `json.dumps()` outputs `NaN` (not valid JSON), but JavaScript `JSON.parse()` cannot handle `NaN` — it requires `null`.
+
+**Solution Applied:**
+1. Created `safeJsonParse(text)` function that replaces `: NaN` with `: null` before parsing
+2. Created `fetchJsonSafe(url)` wrapper that fetches text, cleans it, then parses
+3. Replaced ALL JSON loading paths with `fetchJsonSafe()`:
+   - Primary fetch: `crypto_latest.json`
+   - GitHub API discovered files
+   - Fallback scan files
+   - `fetchWithFallback()` helper
+
+**Code Pattern:**
+```javascript
+function safeJsonParse(text) {
+    const cleaned = text.replace(/: NaN/g, ': null');
+    return JSON.parse(cleaned);
+}
+
+async function fetchJsonSafe(url) {
+    const response = await fetch(url);
+    const text = await response.text();
+    return safeJsonParse(text);
+}
+```
+
+**Files Modified:**
+- `vueroo-portal/public/crypto/data-loader.js` — All fetch paths updated
+- Commit: `927590c`
+
+**Long-term Fix:**
+Update Python scanner to use `None` instead of `NaN` when serializing:
+```python
+# Instead of:
+json.dumps(data)  # Can produce NaN
+
+# Use:
+def clean_for_json(obj):
+    if isinstance(obj, dict):
+        return {k: clean_for_json(v) for k, v in obj.items()}
+    elif isinstance(obj, float) and (math.isnan(obj) or math.isinf(obj)):
+        return None
+    return obj
+json.dumps(clean_for_json(data))
+```
+
+**Verification:**
+After deployment, check browser console for:
+- ✅ `✅ Loaded latest scan from GitHub: [timestamp]`
+- ❌ Should NOT see: `❌ Error fetching crypto_latest.json: Unexpected token 'N'`
+*Never delete - append new learnings*
