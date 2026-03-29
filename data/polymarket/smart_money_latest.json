@@ -1,7 +1,7 @@
 ﻿{
-    "markets_with_movement":  2,
-    "timestamp":  "2026-03-29 20:00:21",
-    "scan_file":  "markets-2026-03-29-2000.json",
+    "markets_with_movement":  4,
+    "timestamp":  "2026-03-29 22:00:20",
+    "scan_file":  "markets-2026-03-29-2200.json",
     "top_opportunities":  {
 
                           },
@@ -9,30 +9,56 @@
     "threshold":  5,
     "movements":  [
                       {
-                          "Market":  "Tennessee Volunteers vs. Michigan Wolverines",
-                          "Category":  "sports",
-                          "Url":  "https://polymarket.com/event/cbb-tenn-mich-2026-03-29",
-                          "PreviousOdds":  79,
-                          "CurrentOdds":  96,
-                          "Movement":  17,
-                          "MovementPercent":  17,
-                          "Direction":  "UP",
+                          "Market":  "SCOTUS accepts sports event contract case by...?     ",
+                          "Category":  "trending",
+                          "Url":  "https://polymarket.com/event/scotus-accepts-sports-event-contract-case-by-july-31-2026",
+                          "PreviousOdds":  36,
+                          "CurrentOdds":  20,
+                          "Movement":  -16,
+                          "MovementPercent":  16,
+                          "Direction":  "DOWN",
                           "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-29 19:00:22",
-                          "CurrentTime":  "2026-03-29 20:00:21"
+                          "PreviousTime":  "2026-03-29 21:00:20",
+                          "CurrentTime":  "2026-03-29 22:00:20"
+                      },
+                      {
+                          "Market":  "Top performing crypto for the week of March 23?",
+                          "Category":  "crypto",
+                          "Url":  "https://polymarket.com/event/top-performing-crypto-for-the-week-of-march-23",
+                          "PreviousOdds":  12,
+                          "CurrentOdds":  6,
+                          "Movement":  -6,
+                          "MovementPercent":  6,
+                          "Direction":  "DOWN",
+                          "Confidence":  "LOW",
+                          "PreviousTime":  "2026-03-29 21:00:20",
+                          "CurrentTime":  "2026-03-29 22:00:20"
                       },
                       {
                           "Market":  "Dota 2: Tundra Esports vs Team Yandex (BO5) - ESL One Birmingham Playoffs",
                           "Category":  "sports",
                           "Url":  "https://polymarket.com/event/dota2-tundra-ty-2026-03-29",
-                          "PreviousOdds":  64,
-                          "CurrentOdds":  81,
-                          "Movement":  17,
-                          "MovementPercent":  17,
+                          "PreviousOdds":  86,
+                          "CurrentOdds":  100,
+                          "Movement":  14,
+                          "MovementPercent":  14,
                           "Direction":  "UP",
                           "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-29 19:00:22",
-                          "CurrentTime":  "2026-03-29 20:00:21"
+                          "PreviousTime":  "2026-03-29 21:00:20",
+                          "CurrentTime":  "2026-03-29 22:00:20"
+                      },
+                      {
+                          "Market":  "Clippers vs. Bucks",
+                          "Category":  "sports",
+                          "Url":  "https://polymarket.com/event/nba-lac-mil-2026-03-29",
+                          "PreviousOdds":  92,
+                          "CurrentOdds":  98,
+                          "Movement":  6,
+                          "MovementPercent":  6,
+                          "Direction":  "UP",
+                          "Confidence":  "LOW",
+                          "PreviousTime":  "2026-03-29 21:00:20",
+                          "CurrentTime":  "2026-03-29 22:00:20"
                       }
                   ],
     "smart_money_alerts":  0

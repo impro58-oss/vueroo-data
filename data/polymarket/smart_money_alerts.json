@@ -1,47 +1,73 @@
 ﻿{
-    "timestamp":  "2026-03-29 19:00:22",
+    "timestamp":  "2026-03-29 21:00:20",
     "all_movements":  [
                           {
-                              "Market":  "How much will be wagered on US sports betting in 2026?",
-                              "Category":  "sports",
-                              "Url":  "https://polymarket.com/event/how-much-will-be-wagered-on-us-sports-betting-in-2026",
-                              "PreviousOdds":  74,
-                              "CurrentOdds":  69,
+                              "Market":  "SCOTUS accepts sports event contract case by...?     ",
+                              "Category":  "trending",
+                              "Url":  "https://polymarket.com/event/scotus-accepts-sports-event-contract-case-by-july-31-2026",
+                              "PreviousOdds":  14,
+                              "CurrentOdds":  36,
+                              "Movement":  22,
+                              "MovementPercent":  22,
+                              "Direction":  "UP",
+                              "Confidence":  "HIGH",
+                              "PreviousTime":  "2026-03-29 20:00:21",
+                              "CurrentTime":  "2026-03-29 21:00:20"
+                          },
+                          {
+                              "Market":  "Elon Musk # tweets March 24 - March 31, 2026?",
+                              "Category":  "politics",
+                              "Url":  "https://polymarket.com/event/elon-musk-of-tweets-march-24-march-31",
+                              "PreviousOdds":  7,
+                              "CurrentOdds":  2,
                               "Movement":  -5,
                               "MovementPercent":  5,
                               "Direction":  "DOWN",
                               "Confidence":  "LOW",
-                              "PreviousTime":  "2026-03-29 18:00:26",
-                              "CurrentTime":  "2026-03-29 19:00:22"
+                              "PreviousTime":  "2026-03-29 20:00:21",
+                              "CurrentTime":  "2026-03-29 21:00:20"
+                          },
+                          {
+                              "Market":  "Elon Musk # tweets March 28 - March 30, 2026?",
+                              "Category":  "politics",
+                              "Url":  "https://polymarket.com/event/elon-musk-of-tweets-march-28-march-30",
+                              "PreviousOdds":  40,
+                              "CurrentOdds":  33,
+                              "Movement":  -7,
+                              "MovementPercent":  7,
+                              "Direction":  "DOWN",
+                              "Confidence":  "MEDIUM",
+                              "PreviousTime":  "2026-03-29 20:00:21",
+                              "CurrentTime":  "2026-03-29 21:00:20"
                           },
                           {
                               "Market":  "Dota 2: Tundra Esports vs Team Yandex (BO5) - ESL One Birmingham Playoffs",
                               "Category":  "sports",
                               "Url":  "https://polymarket.com/event/dota2-tundra-ty-2026-03-29",
-                              "PreviousOdds":  51,
-                              "CurrentOdds":  64,
-                              "Movement":  13,
-                              "MovementPercent":  13,
+                              "PreviousOdds":  81,
+                              "CurrentOdds":  86,
+                              "Movement":  5,
+                              "MovementPercent":  5,
                               "Direction":  "UP",
-                              "Confidence":  "HIGH",
-                              "PreviousTime":  "2026-03-29 18:00:26",
-                              "CurrentTime":  "2026-03-29 19:00:22"
+                              "Confidence":  "LOW",
+                              "PreviousTime":  "2026-03-29 20:00:21",
+                              "CurrentTime":  "2026-03-29 21:00:20"
                           }
                       ],
-    "total_movements":  2,
+    "total_movements":  4,
     "smart_money_alerts":  [
                                {
-                                   "Market":  "Dota 2: Tundra Esports vs Team Yandex (BO5) - ESL One Birmingham Playoffs",
-                                   "Category":  "sports",
-                                   "Url":  "https://polymarket.com/event/dota2-tundra-ty-2026-03-29",
-                                   "PreviousOdds":  51,
-                                   "CurrentOdds":  64,
-                                   "Movement":  13,
-                                   "MovementPercent":  13,
+                                   "Market":  "SCOTUS accepts sports event contract case by...?     ",
+                                   "Category":  "trending",
+                                   "Url":  "https://polymarket.com/event/scotus-accepts-sports-event-contract-case-by-july-31-2026",
+                                   "PreviousOdds":  14,
+                                   "CurrentOdds":  36,
+                                   "Movement":  22,
+                                   "MovementPercent":  22,
                                    "Direction":  "UP",
                                    "Confidence":  "HIGH",
-                                   "PreviousTime":  "2026-03-29 18:00:26",
-                                   "CurrentTime":  "2026-03-29 19:00:22"
+                                   "PreviousTime":  "2026-03-29 20:00:21",
+                                   "CurrentTime":  "2026-03-29 21:00:20"
                                }
                            ]
 }
