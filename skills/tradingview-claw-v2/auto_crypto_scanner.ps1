@@ -46,13 +46,13 @@ try {
         $TrendOutput = & $PythonPath analyze_trends.py 2>&1
         $TrendOutput | ForEach-Object { Write-Log $_ }
         
-        # Step 4: Commit to GitHub
-        Write-Log "Committing data to GitHub..."
+        # Step 4: Deploy to GitHub and Vercel (PERMANENT SOLUTION)
+        Write-Log "Running full deploy pipeline..."
         try {
-            $CommitOutput = & "C:\Users\impro\.openclaw\workspace\scripts\auto-commit-crypto-data.ps1" -WorkingDir "C:\Users\impro\.openclaw\workspace" 2>&1
-            $CommitOutput | ForEach-Object { Write-Log $_ }
+            $DeployOutput = & "C:\Users\impro\.openclaw\workspace\scripts\post-scan-deploy.ps1" 2>&1
+            $DeployOutput | ForEach-Object { Write-Log $_ }
         } catch {
-            Write-Log "[WARN] Git commit error: $_"
+            Write-Log "[WARN] Deploy error: $_"
         }
         
         # Step 5: Send to Telegram if enabled
