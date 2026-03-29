@@ -25,7 +25,7 @@ if ($Source -eq 'crypto' -or $Source -eq 'all') {
     Write-Host "`n[CRYPTO] Checking for updates..." -ForegroundColor Yellow
     
     $CryptoDir = "$RepoRoot\skills\tradingview-claw-v2"
-    $CryptoLatest = Get-ChildItem -Path $CryptoDir -Filter "top_50_analysis_*.json" |
+    $CryptoLatest = Get-ChildItem -Path $CryptoDir -Filter "top_200_analysis_*.json" |
         Sort-Object LastWriteTime -Descending | Select-Object -First 1
     
     if ($CryptoLatest) {

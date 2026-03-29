@@ -25,7 +25,7 @@ Write-Log "=== Starting Auto Crypto Scan ==="
 # Step 1: Run analysis
 Write-Log "Running top 200 analysis..."
 try {
-    $AnalysisOutput = & $PythonPath analyze_top_50.py 2>&1
+    $AnalysisOutput = & $PythonPath analyze_top_200.py 2>&1
     $AnalysisOutput | ForEach-Object { Write-Log $_ }
     
     # Find the generated file

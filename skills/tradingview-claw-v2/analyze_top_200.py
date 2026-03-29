@@ -1,5 +1,5 @@
 """
-analyze_top_50.py — Run TrojanLogic4H on top 50 cryptos with strategy tagging
+analyze_top_200.py — Run TrojanLogic4H on top 200 cryptos with strategy tagging
 """
 import sys
 import os
@@ -12,8 +12,8 @@ from trojanlogic_4h import TrojanLogic4H
 from multi_source_feed import MultiSourceFeed
 from crypto_data_manager import save_scan_results, export_for_huggingface
 
-# Get top 50 from Binance
-def get_top_50():
+# Get top 200 from Binance by volume
+def get_top_200():
     import requests
     url = 'https://api.binance.com/api/v3/ticker/24hr'
     response = requests.get(url, timeout=30)
@@ -54,10 +54,10 @@ def determine_strategy(symbol, result):
 
 def analyze_all():
     """Analyze top 50 and generate report."""
-    print("=== TROJANLOGIC4H: TOP 50 CRYPTO ANALYSIS ===\n")
+    print("=== TROJANLOGIC4H: TOP 200 CRYPTO ANALYSIS ===\n")
     print(f"Analysis Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
     
-    TOP_200 = get_top_50()
+    TOP_200 = get_top_200()
     print(f"Analyzing top {len(TOP_200)} symbols by 24h volume...\n")
     
     feed = MultiSourceFeed()
@@ -145,7 +145,7 @@ def analyze_all():
             })
     
     # Save results
-    output_file = f"top_50_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+    output_file = f"top_200_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
     with open(output_file, 'w') as f:
         json.dump({
             'analysis_time': datetime.now().isoformat(),
@@ -169,7 +169,7 @@ def analyze_all():
     
     print(f"\n=== SUMMARY ===")
     print(f"Analysis saved to: {output_file}")
-    print(f"Total scanned: {len([r for r in results if 'error' not in r])}/50")
+    print(f"Total scanned: {len([r for r in results if 'error' not in r])}/200")
     
     # Save to GitHub data files
     print("\n[SAVING] Exporting to GitHub data files...")
