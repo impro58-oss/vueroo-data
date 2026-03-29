@@ -1,47 +1,73 @@
 ﻿{
-    "timestamp":  "2026-03-29 15:00:19",
+    "timestamp":  "2026-03-29 18:00:26",
     "all_movements":  [
                           {
                               "Market":  "Elon Musk # tweets March 28 - March 30, 2026?",
                               "Category":  "politics",
                               "Url":  "https://polymarket.com/event/elon-musk-of-tweets-march-28-march-30",
-                              "PreviousOdds":  18,
-                              "CurrentOdds":  24,
-                              "Movement":  6,
-                              "MovementPercent":  6,
+                              "PreviousOdds":  33,
+                              "CurrentOdds":  45,
+                              "Movement":  12,
+                              "MovementPercent":  12,
                               "Direction":  "UP",
-                              "Confidence":  "LOW",
-                              "PreviousTime":  "2026-03-29 14:00:20",
-                              "CurrentTime":  "2026-03-29 15:00:19"
+                              "Confidence":  "HIGH",
+                              "PreviousTime":  "2026-03-29 17:00:23",
+                              "CurrentTime":  "2026-03-29 18:00:26"
                           },
                           {
-                              "Market":  "LoL: RED Academy vs INTZ e-Sports (BO1) - Circuito Desafiante Regular Season",
-                              "Category":  "sports",
-                              "Url":  "https://polymarket.com/event/lol-reda-itz-2026-04-01",
-                              "PreviousOdds":  71,
-                              "CurrentOdds":  52,
-                              "Movement":  -19,
-                              "MovementPercent":  19,
+                              "Market":  "Top performing crypto for the week of March 23?",
+                              "Category":  "crypto",
+                              "Url":  "https://polymarket.com/event/top-performing-crypto-for-the-week-of-march-23",
+                              "PreviousOdds":  20,
+                              "CurrentOdds":  12,
+                              "Movement":  -8,
+                              "MovementPercent":  8,
                               "Direction":  "DOWN",
-                              "Confidence":  "HIGH",
-                              "PreviousTime":  "2026-03-29 14:00:20",
-                              "CurrentTime":  "2026-03-29 15:00:19"
+                              "Confidence":  "MEDIUM",
+                              "PreviousTime":  "2026-03-29 17:00:23",
+                              "CurrentTime":  "2026-03-29 18:00:26"
+                          },
+                          {
+                              "Market":  "Dota 2: Tundra Esports vs Team Yandex (BO5) - ESL One Birmingham Playoffs",
+                              "Category":  "sports",
+                              "Url":  "https://polymarket.com/event/dota2-tundra-ty-2026-03-29",
+                              "PreviousOdds":  56,
+                              "CurrentOdds":  51,
+                              "Movement":  -5,
+                              "MovementPercent":  5,
+                              "Direction":  "DOWN",
+                              "Confidence":  "LOW",
+                              "PreviousTime":  "2026-03-29 17:00:23",
+                              "CurrentTime":  "2026-03-29 18:00:26"
+                          },
+                          {
+                              "Market":  "Will Google (GOOGL) close above ___ end of March?",
+                              "Category":  "finance",
+                              "Url":  "https://polymarket.com/event/googl-above-in-march-2026",
+                              "PreviousOdds":  21,
+                              "CurrentOdds":  12,
+                              "Movement":  -9,
+                              "MovementPercent":  9,
+                              "Direction":  "DOWN",
+                              "Confidence":  "MEDIUM",
+                              "PreviousTime":  "2026-03-29 17:00:23",
+                              "CurrentTime":  "2026-03-29 18:00:26"
                           }
                       ],
-    "total_movements":  2,
+    "total_movements":  4,
     "smart_money_alerts":  [
                                {
-                                   "Market":  "LoL: RED Academy vs INTZ e-Sports (BO1) - Circuito Desafiante Regular Season",
-                                   "Category":  "sports",
-                                   "Url":  "https://polymarket.com/event/lol-reda-itz-2026-04-01",
-                                   "PreviousOdds":  71,
-                                   "CurrentOdds":  52,
-                                   "Movement":  -19,
-                                   "MovementPercent":  19,
-                                   "Direction":  "DOWN",
+                                   "Market":  "Elon Musk # tweets March 28 - March 30, 2026?",
+                                   "Category":  "politics",
+                                   "Url":  "https://polymarket.com/event/elon-musk-of-tweets-march-28-march-30",
+                                   "PreviousOdds":  33,
+                                   "CurrentOdds":  45,
+                                   "Movement":  12,
+                                   "MovementPercent":  12,
+                                   "Direction":  "UP",
                                    "Confidence":  "HIGH",
-                                   "PreviousTime":  "2026-03-29 14:00:20",
-                                   "CurrentTime":  "2026-03-29 15:00:19"
+                                   "PreviousTime":  "2026-03-29 17:00:23",
+                                   "CurrentTime":  "2026-03-29 18:00:26"
                                }
                            ]
 }

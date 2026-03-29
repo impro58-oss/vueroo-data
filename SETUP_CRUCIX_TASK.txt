@@ -1,0 +1,7 @@
+Run this in PowerShell as Administrator:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File C:\Users\impro\.openclaw\workspace\skills\crucix-bridge\setup-scheduled-task.ps1
+```
+
+This creates "Crucix-Auto-Update" task that runs every 15 minutes.

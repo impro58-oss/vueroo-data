@@ -1,9 +1,19 @@
 ﻿{
-    "markets_with_movement":  3,
-    "timestamp":  "2026-03-29 16:00:21",
-    "scan_file":  "markets-2026-03-29-1600.json",
+    "markets_with_movement":  4,
+    "timestamp":  "2026-03-29 18:00:26",
+    "scan_file":  "markets-2026-03-29-1800.json",
     "top_opportunities":  {
-
+                              "Market":  "Elon Musk # tweets March 28 - March 30, 2026?",
+                              "Category":  "politics",
+                              "Url":  "https://polymarket.com/event/elon-musk-of-tweets-march-28-march-30",
+                              "PreviousOdds":  33,
+                              "CurrentOdds":  45,
+                              "Movement":  12,
+                              "MovementPercent":  12,
+                              "Direction":  "UP",
+                              "Confidence":  "HIGH",
+                              "PreviousTime":  "2026-03-29 17:00:23",
+                              "CurrentTime":  "2026-03-29 18:00:26"
                           },
     "total_markets":  120,
     "threshold":  5,
@@ -12,41 +22,54 @@
                           "Market":  "Elon Musk # tweets March 28 - March 30, 2026?",
                           "Category":  "politics",
                           "Url":  "https://polymarket.com/event/elon-musk-of-tweets-march-28-march-30",
-                          "PreviousOdds":  24,
-                          "CurrentOdds":  30,
-                          "Movement":  6,
-                          "MovementPercent":  6,
-                          "Direction":  "UP",
-                          "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-29 15:00:19",
-                          "CurrentTime":  "2026-03-29 16:00:21"
-                      },
-                      {
-                          "Market":  "Dota 2: Team Yandex vs Xtreme Gaming (BO3) - ESL One Birmingham Playoffs",
-                          "Category":  "sports",
-                          "Url":  "https://polymarket.com/event/dota2-ty-xtreme-2026-03-29",
-                          "PreviousOdds":  55,
-                          "CurrentOdds":  100,
-                          "Movement":  45,
-                          "MovementPercent":  45,
+                          "PreviousOdds":  33,
+                          "CurrentOdds":  45,
+                          "Movement":  12,
+                          "MovementPercent":  12,
                           "Direction":  "UP",
                           "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-29 15:00:19",
-                          "CurrentTime":  "2026-03-29 16:00:21"
+                          "PreviousTime":  "2026-03-29 17:00:23",
+                          "CurrentTime":  "2026-03-29 18:00:26"
                       },
                       {
-                          "Market":  "Google (GOOGL) closes week of Mar 30 at ___?",
-                          "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/googl-week-april-3-2026",
-                          "PreviousOdds":  8,
-                          "CurrentOdds":  3,
+                          "Market":  "Top performing crypto for the week of March 23?",
+                          "Category":  "crypto",
+                          "Url":  "https://polymarket.com/event/top-performing-crypto-for-the-week-of-march-23",
+                          "PreviousOdds":  20,
+                          "CurrentOdds":  12,
+                          "Movement":  -8,
+                          "MovementPercent":  8,
+                          "Direction":  "DOWN",
+                          "Confidence":  "MEDIUM",
+                          "PreviousTime":  "2026-03-29 17:00:23",
+                          "CurrentTime":  "2026-03-29 18:00:26"
+                      },
+                      {
+                          "Market":  "Dota 2: Tundra Esports vs Team Yandex (BO5) - ESL One Birmingham Playoffs",
+                          "Category":  "sports",
+                          "Url":  "https://polymarket.com/event/dota2-tundra-ty-2026-03-29",
+                          "PreviousOdds":  56,
+                          "CurrentOdds":  51,
                           "Movement":  -5,
                           "MovementPercent":  5,
                           "Direction":  "DOWN",
                           "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-29 15:00:19",
-                          "CurrentTime":  "2026-03-29 16:00:21"
+                          "PreviousTime":  "2026-03-29 17:00:23",
+                          "CurrentTime":  "2026-03-29 18:00:26"
+                      },
+                      {
+                          "Market":  "Will Google (GOOGL) close above ___ end of March?",
+                          "Category":  "finance",
+                          "Url":  "https://polymarket.com/event/googl-above-in-march-2026",
+                          "PreviousOdds":  21,
+                          "CurrentOdds":  12,
+                          "Movement":  -9,
+                          "MovementPercent":  9,
+                          "Direction":  "DOWN",
+                          "Confidence":  "MEDIUM",
+                          "PreviousTime":  "2026-03-29 17:00:23",
+                          "CurrentTime":  "2026-03-29 18:00:26"
                       }
                   ],
-    "smart_money_alerts":  0
+    "smart_money_alerts":  1
 }

@@ -1349,5 +1349,117 @@
         "data_date": "2026-03-27"
       }
     ]
+  },
+  {
+    "scan_timestamp": "2026-03-29T17:02:19.675734",
+    "scan_date": "2026-03-29",
+    "scan_time": "17:02:19",
+    "api": "Alpha Vantage",
+    "api_calls_used": 12,
+    "total_stocks": 6,
+    "signals_found": 6,
+    "long_opportunities": 0,
+    "short_opportunities": 6,
+    "categories_scanned": [
+      "alpha_vantage_universe"
+    ],
+    "results": [
+      {
+        "symbol": "NVDA",
+        "price": 167.52,
+        "change_percent": -2.17,
+        "volume": 196212684,
+        "rsi": null,
+        "macd": null,
+        "signal": "short",
+        "confidence": 0.55,
+        "confidence_label": "medium",
+        "reasons": [
+          "Strong negative momentum (-2.2%)"
+        ],
+        "timestamp": "2026-03-29T17:00:10.470425",
+        "data_date": "2026-03-27"
+      },
+      {
+        "symbol": "TSLA",
+        "price": 361.83,
+        "change_percent": -2.76,
+        "volume": 62065659,
+        "rsi": null,
+        "macd": null,
+        "signal": "short",
+        "confidence": 0.55,
+        "confidence_label": "medium",
+        "reasons": [
+          "Strong negative momentum (-2.8%)"
+        ],
+        "timestamp": "2026-03-29T17:00:24.031393",
+        "data_date": "2026-03-27"
+      },
+      {
+        "symbol": "AAPL",
+        "price": 248.8,
+        "change_percent": -1.62,
+        "volume": 47899998,
+        "rsi": null,
+        "macd": null,
+        "signal": "short",
+        "confidence": 0.45,
+        "confidence_label": "low",
+        "reasons": [
+          "Negative momentum (-1.6%)"
+        ],
+        "timestamp": "2026-03-29T17:00:37.400093",
+        "data_date": "2026-03-27"
+      },
+      {
+        "symbol": "AMD",
+        "price": 201.99,
+        "change_percent": -0.87,
+        "volume": 29206578,
+        "rsi": null,
+        "macd": null,
+        "signal": "short",
+        "confidence": 0.45,
+        "confidence_label": "low",
+        "reasons": [
+          "Negative momentum (-0.9%)"
+        ],
+        "timestamp": "2026-03-29T17:00:50.850563",
+        "data_date": "2026-03-27"
+      },
+      {
+        "symbol": "MSFT",
+        "price": 356.77,
+        "change_percent": -2.51,
+        "volume": 37883400,
+        "rsi": null,
+        "macd": null,
+        "signal": "short",
+        "confidence": 0.55,
+        "confidence_label": "medium",
+        "reasons": [
+          "Strong negative momentum (-2.5%)"
+        ],
+        "timestamp": "2026-03-29T17:01:04.049718",
+        "data_date": "2026-03-27"
+      },
+      {
+        "symbol": "AMZN",
+        "price": 199.34,
+        "change_percent": -3.95,
+        "volume": 56009763,
+        "rsi": null,
+        "macd": null,
+        "signal": "short",
+        "confidence": 0.55,
+        "confidence_label": "medium",
+        "reasons": [
+          "Strong negative momentum (-4.0%)"
+        ],
+        "timestamp": "2026-03-29T17:01:17.372173",
+        "data_date": "2026-03-27"
+      }
+    ]
   }
 ]
