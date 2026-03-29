@@ -1,14 +1,91 @@
 ﻿{
-    "markets_with_movement":  0,
-    "timestamp":  "2026-03-28 21:00:19",
-    "scan_file":  "markets-2026-03-28-2100.json",
+    "markets_with_movement":  6,
+    "timestamp":  "2026-03-28 23:00:19",
+    "scan_file":  "markets-2026-03-28-2300.json",
     "top_opportunities":  {
 
                           },
     "total_markets":  120,
     "threshold":  5,
     "movements":  [
-
+                      {
+                          "Market":  "South Korea Annual Inflation 2026",
+                          "Category":  "trending",
+                          "Url":  "https://polymarket.com/event/south-korea-annual-inflation-2026",
+                          "PreviousOdds":  24,
+                          "CurrentOdds":  19,
+                          "Movement":  -5,
+                          "MovementPercent":  5,
+                          "Direction":  "DOWN",
+                          "Confidence":  "LOW",
+                          "PreviousTime":  "2026-03-28 22:00:20",
+                          "CurrentTime":  "2026-03-28 23:00:19"
+                      },
+                      {
+                          "Market":  "Illinois Fighting Illini vs. Iowa Hawkeyes",
+                          "Category":  "sports",
+                          "Url":  "https://polymarket.com/event/cbb-ill-iowa-2026-03-28",
+                          "PreviousOdds":  77,
+                          "CurrentOdds":  72,
+                          "Movement":  -5,
+                          "MovementPercent":  5,
+                          "Direction":  "DOWN",
+                          "Confidence":  "LOW",
+                          "PreviousTime":  "2026-03-28 22:00:20",
+                          "CurrentTime":  "2026-03-28 23:00:19"
+                      },
+                      {
+                          "Market":  "Dota 2: Xtreme Gaming vs PARIVISION (BO3) - ESL One Birmingham Playoffs",
+                          "Category":  "sports",
+                          "Url":  "https://polymarket.com/event/dota2-xtreme-pari-2026-03-28",
+                          "PreviousOdds":  81,
+                          "CurrentOdds":  100,
+                          "Movement":  19,
+                          "MovementPercent":  19,
+                          "Direction":  "UP",
+                          "Confidence":  "HIGH",
+                          "PreviousTime":  "2026-03-28 22:00:20",
+                          "CurrentTime":  "2026-03-28 23:00:19"
+                      },
+                      {
+                          "Market":  "Pistons vs. Timberwolves",
+                          "Category":  "sports",
+                          "Url":  "https://polymarket.com/event/nba-det-min-2026-03-28",
+                          "PreviousOdds":  59,
+                          "CurrentOdds":  68,
+                          "Movement":  9,
+                          "MovementPercent":  9,
+                          "Direction":  "UP",
+                          "Confidence":  "MEDIUM",
+                          "PreviousTime":  "2026-03-28 22:00:20",
+                          "CurrentTime":  "2026-03-28 23:00:19"
+                      },
+                      {
+                          "Market":  "76ers vs. Hornets",
+                          "Category":  "sports",
+                          "Url":  "https://polymarket.com/event/nba-phi-cha-2026-03-28",
+                          "PreviousOdds":  69,
+                          "CurrentOdds":  74,
+                          "Movement":  5,
+                          "MovementPercent":  5,
+                          "Direction":  "UP",
+                          "Confidence":  "LOW",
+                          "PreviousTime":  "2026-03-28 22:00:20",
+                          "CurrentTime":  "2026-03-28 23:00:19"
+                      },
+                      {
+                          "Market":  "Microsoft (MSFT) closes above ___ on March 30?",
+                          "Category":  "finance",
+                          "Url":  "https://polymarket.com/event/msft-close-above-on-march-30-2026",
+                          "PreviousOdds":  83,
+                          "CurrentOdds":  89,
+                          "Movement":  6,
+                          "MovementPercent":  6,
+                          "Direction":  "UP",
+                          "Confidence":  "LOW",
+                          "PreviousTime":  "2026-03-28 22:00:20",
+                          "CurrentTime":  "2026-03-28 23:00:19"
+                      }
                   ],
     "smart_money_alerts":  0
 }
