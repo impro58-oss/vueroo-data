@@ -98,10 +98,10 @@ if ($Source -eq 'polymarket' -or $Source -eq 'all') {
 }
 
 # ============================================================================
-# COMMIT TO GITHUB
+# COMMIT TO GITHUB (vueroo-data public repo)
 # ============================================================================
 if ($ChangesMade -and -not $SkipCommit) {
-    Write-Host "`n[GIT] Committing changes..." -ForegroundColor Cyan
+    Write-Host "`n[GIT] Committing to vueroo-data..." -ForegroundColor Cyan
     
     Set-Location $RepoRoot
     
@@ -112,12 +112,13 @@ if ($ChangesMade -and -not $SkipCommit) {
     $Status = git status --porcelain
     if ($Status) {
         $CommitMsg = "Deploy: $Source data update [$Timestamp]"
-        git commit -m $CommitMessage 2>$null | Out-Null
+        git commit -m $CommitMsg 2>$null | Out-Null
         
-        Write-Host "  Pushing to GitHub..." -ForegroundColor Yellow
-        git push origin master 2>$null | Out-Null
+        Write-Host "  Pushing to vueroo-data..." -ForegroundColor Yellow
+        # Push to the data remote (vueroo-data public repo)
+        git push data master 2>$null | Out-Null
         
-        Write-Host "  ✓ Committed and pushed" -ForegroundColor Green
+        Write-Host "  ✓ Committed and pushed to vueroo-data" -ForegroundColor Green
         
         # Wait for CDN propagation
         Write-Host "  Waiting for CDN propagation (3s)..." -ForegroundColor Gray
