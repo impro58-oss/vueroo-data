@@ -1,75 +1,52 @@
 ﻿{
-    "markets_with_movement":  4,
-    "timestamp":  "2026-03-29 14:00:20",
-    "scan_file":  "markets-2026-03-29-1400.json",
+    "markets_with_movement":  3,
+    "timestamp":  "2026-03-29 16:00:21",
+    "scan_file":  "markets-2026-03-29-1600.json",
     "top_opportunities":  {
-                              "Market":  "Dota 2: Team Yandex vs Xtreme Gaming (BO3) - ESL One Birmingham Playoffs",
-                              "Category":  "sports",
-                              "Url":  "https://polymarket.com/event/dota2-ty-xtreme-2026-03-29",
-                              "PreviousOdds":  65,
-                              "CurrentOdds":  55,
-                              "Movement":  -10,
-                              "MovementPercent":  10,
-                              "Direction":  "DOWN",
-                              "Confidence":  "HIGH",
-                              "PreviousTime":  "2026-03-29 13:00:22",
-                              "CurrentTime":  "2026-03-29 14:00:20"
+
                           },
     "total_markets":  120,
     "threshold":  5,
     "movements":  [
                       {
-                          "Market":  "Counter-Strike: Vitality vs Natus Vincere (BO5) - BLAST Open Rotterdam Playoffs",
-                          "Category":  "sports",
-                          "Url":  "https://polymarket.com/event/cs2-vit-navi-2026-03-29",
-                          "PreviousOdds":  91,
-                          "CurrentOdds":  96,
-                          "Movement":  5,
-                          "MovementPercent":  5,
+                          "Market":  "Elon Musk # tweets March 28 - March 30, 2026?",
+                          "Category":  "politics",
+                          "Url":  "https://polymarket.com/event/elon-musk-of-tweets-march-28-march-30",
+                          "PreviousOdds":  24,
+                          "CurrentOdds":  30,
+                          "Movement":  6,
+                          "MovementPercent":  6,
                           "Direction":  "UP",
                           "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-29 13:00:22",
-                          "CurrentTime":  "2026-03-29 14:00:20"
+                          "PreviousTime":  "2026-03-29 15:00:19",
+                          "CurrentTime":  "2026-03-29 16:00:21"
                       },
                       {
                           "Market":  "Dota 2: Team Yandex vs Xtreme Gaming (BO3) - ESL One Birmingham Playoffs",
                           "Category":  "sports",
                           "Url":  "https://polymarket.com/event/dota2-ty-xtreme-2026-03-29",
-                          "PreviousOdds":  65,
-                          "CurrentOdds":  55,
-                          "Movement":  -10,
-                          "MovementPercent":  10,
-                          "Direction":  "DOWN",
-                          "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-29 13:00:22",
-                          "CurrentTime":  "2026-03-29 14:00:20"
-                      },
-                      {
-                          "Market":  "LoL: Team WE vs ThunderTalk Gaming (BO3) - Esports World Cup China Qualifier Phase 1",
-                          "Category":  "sports",
-                          "Url":  "https://polymarket.com/event/lol-we-tt-2026-03-29",
-                          "PreviousOdds":  83,
+                          "PreviousOdds":  55,
                           "CurrentOdds":  100,
-                          "Movement":  17,
-                          "MovementPercent":  17,
+                          "Movement":  45,
+                          "MovementPercent":  45,
                           "Direction":  "UP",
                           "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-29 13:00:22",
-                          "CurrentTime":  "2026-03-29 14:00:20"
+                          "PreviousTime":  "2026-03-29 15:00:19",
+                          "CurrentTime":  "2026-03-29 16:00:21"
                       },
                       {
-                          "Market":  "Will Tesla (TSLA) close above ___ end of March?",
+                          "Market":  "Google (GOOGL) closes week of Mar 30 at ___?",
                           "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/tsla-above-in-march-2026",
-                          "PreviousOdds":  64,
-                          "CurrentOdds":  69,
-                          "Movement":  5,
+                          "Url":  "https://polymarket.com/event/googl-week-april-3-2026",
+                          "PreviousOdds":  8,
+                          "CurrentOdds":  3,
+                          "Movement":  -5,
                           "MovementPercent":  5,
-                          "Direction":  "UP",
+                          "Direction":  "DOWN",
                           "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-29 13:00:22",
-                          "CurrentTime":  "2026-03-29 14:00:20"
+                          "PreviousTime":  "2026-03-29 15:00:19",
+                          "CurrentTime":  "2026-03-29 16:00:21"
                       }
                   ],
-    "smart_money_alerts":  1
+    "smart_money_alerts":  0
 }
