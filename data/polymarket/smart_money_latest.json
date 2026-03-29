@@ -1,7 +1,7 @@
 ﻿{
-    "markets_with_movement":  1,
-    "timestamp":  "2026-03-29 12:00:22",
-    "scan_file":  "markets-2026-03-29-1200.json",
+    "markets_with_movement":  2,
+    "timestamp":  "2026-03-29 13:00:22",
+    "scan_file":  "markets-2026-03-29-1300.json",
     "top_opportunities":  {
 
                           },
@@ -9,17 +9,30 @@
     "threshold":  5,
     "movements":  [
                       {
-                          "Market":  "How much will be wagered on US sports betting in 2026?",
+                          "Market":  "Counter-Strike: Vitality vs Natus Vincere (BO5) - BLAST Open Rotterdam Playoffs",
                           "Category":  "sports",
-                          "Url":  "https://polymarket.com/event/how-much-will-be-wagered-on-us-sports-betting-in-2026",
-                          "PreviousOdds":  83,
-                          "CurrentOdds":  77,
-                          "Movement":  -6,
-                          "MovementPercent":  6,
-                          "Direction":  "DOWN",
-                          "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-29 11:00:19",
-                          "CurrentTime":  "2026-03-29 12:00:22"
+                          "Url":  "https://polymarket.com/event/cs2-vit-navi-2026-03-29",
+                          "PreviousOdds":  81,
+                          "CurrentOdds":  91,
+                          "Movement":  10,
+                          "MovementPercent":  10,
+                          "Direction":  "UP",
+                          "Confidence":  "HIGH",
+                          "PreviousTime":  "2026-03-29 12:00:22",
+                          "CurrentTime":  "2026-03-29 13:00:22"
+                      },
+                      {
+                          "Market":  "LoL: Ninjas in Pyjamas vs Oh My God (BO3) - Esports World Cup China Qualifier Phase 1",
+                          "Category":  "sports",
+                          "Url":  "https://polymarket.com/event/lol-nip-omg-2026-03-29",
+                          "PreviousOdds":  54,
+                          "CurrentOdds":  100,
+                          "Movement":  46,
+                          "MovementPercent":  46,
+                          "Direction":  "UP",
+                          "Confidence":  "HIGH",
+                          "PreviousTime":  "2026-03-29 12:00:22",
+                          "CurrentTime":  "2026-03-29 13:00:22"
                       }
                   ],
     "smart_money_alerts":  0

@@ -1,11 +1,13 @@
 {
-  "scan_timestamp": "2026-03-29T13:02:19.471858",
-  "scan_date": "2026-03-29",
-  "scan_time": "13:02:19",
-  "total_symbols": 193,
-  "signals_found": 2,
-  "futures_opportunities": 0,
-  "hold_opportunities": 0,
+  "analysis_time": "2026-03-29T13:02:19.461470",
+  "strategy": "TrojanLogic4H",
+  "parameters": {
+    "rsi_short": 13,
+    "rsi_long": 64,
+    "channel_lookback": 200,
+    "inner_mult": 1.0,
+    "outer_mult": 2.415
+  },
   "results": [
     {
       "symbol": "BTCUSDT",
@@ -6813,5 +6815,12 @@
       "data_source": "Binance",
       "candles": 360
     }
-  ]
+  ],
+  "summary": {
+    "total_scanned": 193,
+    "futures_opportunities": 0,
+    "hold_opportunities": 0,
+    "futures_list": [],
+    "hold_list": []
+  }
 }
