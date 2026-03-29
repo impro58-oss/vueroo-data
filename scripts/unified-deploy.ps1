@@ -114,11 +114,15 @@ if ($ChangesMade -and -not $SkipCommit) {
         $CommitMsg = "Deploy: $Source data update [$Timestamp]"
         git commit -m $CommitMsg 2>$null | Out-Null
         
-        Write-Host "  Pushing to vueroo-data..." -ForegroundColor Yellow
-        # Push to the data remote (vueroo-data public repo)
+        # Push to vueroo-data (public - for dashboards)
+        Write-Host "  Pushing to vueroo-data (public)..." -ForegroundColor Yellow
         git push data master 2>$null | Out-Null
+        Write-Host "  ✓ Pushed to vueroo-data" -ForegroundColor Green
         
-        Write-Host "  ✓ Committed and pushed to vueroo-data" -ForegroundColor Green
+        # Push to rooquest1 (private - for archive)
+        Write-Host "  Pushing to rooquest1 (private)..." -ForegroundColor Yellow
+        git push origin master 2>$null | Out-Null
+        Write-Host "  ✓ Pushed to rooquest1" -ForegroundColor Green
         
         # Wait for CDN propagation
         Write-Host "  Waiting for CDN propagation (3s)..." -ForegroundColor Gray
