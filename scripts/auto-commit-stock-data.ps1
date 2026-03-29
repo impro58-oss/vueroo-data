@@ -1,5 +1,5 @@
 #!/usr/bin/env powershell
-# Auto-commit stock data to GitHub
+# Auto-commit stock data to GitHub (both repos)
 
 $WorkingDir = "C:\Users\impro\.openclaw\workspace"
 $DataDir = "$WorkingDir\data\stocks"
@@ -10,7 +10,7 @@ Set-Location $WorkingDir
 $Status = git status --porcelain
 
 if ($Status) {
-    Write-Host "📊 Changes detected in stock data"
+    Write-Host "Stock data changes detected"
     
     # Stage stock data
     git add data/stocks/
@@ -19,10 +19,15 @@ if ($Status) {
     $Timestamp = Get-Date -Format "yyyy-MM-dd HH:mm"
     git commit -m "StockVue: Update stock market data - $Timestamp UTC"
     
-    # Push
+    # Push to rooquest1 (private archive)
     git push origin master
+    Write-Host "Pushed to rooquest1"
     
-    Write-Host "✅ Stock data committed to GitHub"
+    # Push to vueroo-data (public - for dashboards)
+    git push data master
+    Write-Host "Pushed to vueroo-data"
+    
+    Write-Host "Stock data committed to both repos"
 } else {
-    Write-Host "📭 No changes to commit"
+    Write-Host "No changes to commit"
 }
