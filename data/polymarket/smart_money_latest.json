@@ -1,114 +1,26 @@
 ﻿{
-    "markets_with_movement":  7,
-    "timestamp":  "2026-03-29 04:00:17",
-    "scan_file":  "markets-2026-03-29-0400.json",
+    "markets_with_movement":  1,
+    "timestamp":  "2026-03-29 06:00:20",
+    "scan_file":  "markets-2026-03-29-0600.json",
     "top_opportunities":  {
-                              "Market":  "Will Tesla (TSLA) close above ___ end of March?",
-                              "Category":  "finance",
-                              "Url":  "https://polymarket.com/event/tsla-above-in-march-2026",
-                              "PreviousOdds":  67,
-                              "CurrentOdds":  60,
-                              "Movement":  -7,
-                              "MovementPercent":  7,
-                              "Direction":  "DOWN",
-                              "Confidence":  "MEDIUM",
-                              "PreviousTime":  "2026-03-29 03:00:21",
-                              "CurrentTime":  "2026-03-29 04:00:17"
+
                           },
     "total_markets":  120,
     "threshold":  5,
     "movements":  [
                       {
-                          "Market":  "Highest temperature in Tel Aviv on March 29?",
+                          "Market":  "How high will inflation get in 2026?",
                           "Category":  "trending",
-                          "Url":  "https://polymarket.com/event/highest-temperature-in-tel-aviv-on-march-29-2026",
-                          "PreviousOdds":  84,
-                          "CurrentOdds":  0,
-                          "Movement":  -84,
-                          "MovementPercent":  84,
-                          "Direction":  "DOWN",
-                          "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-29 03:00:21",
-                          "CurrentTime":  "2026-03-29 04:00:17"
-                      },
-                      {
-                          "Market":  "Highest temperature in Taipei on March 29?",
-                          "Category":  "trending",
-                          "Url":  "https://polymarket.com/event/highest-temperature-in-taipei-on-march-29-2026",
-                          "PreviousOdds":  40,
-                          "CurrentOdds":  46,
+                          "Url":  "https://polymarket.com/event/how-high-will-inflation-get-in-2026",
+                          "PreviousOdds":  47,
+                          "CurrentOdds":  53,
                           "Movement":  6,
                           "MovementPercent":  6,
                           "Direction":  "UP",
                           "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-29 03:00:21",
-                          "CurrentTime":  "2026-03-29 04:00:17"
-                      },
-                      {
-                          "Market":  "South Korea Annual Inflation 2026",
-                          "Category":  "trending",
-                          "Url":  "https://polymarket.com/event/south-korea-annual-inflation-2026",
-                          "PreviousOdds":  24,
-                          "CurrentOdds":  18,
-                          "Movement":  -6,
-                          "MovementPercent":  6,
-                          "Direction":  "DOWN",
-                          "Confidence":  "LOW",
-                          "PreviousTime":  "2026-03-29 03:00:21",
-                          "CurrentTime":  "2026-03-29 04:00:17"
-                      },
-                      {
-                          "Market":  "LoL: RED Academy vs INTZ e-Sports (BO1) - Circuito Desafiante Regular Season",
-                          "Category":  "sports",
-                          "Url":  "https://polymarket.com/event/lol-reda-itz-2026-04-01",
-                          "PreviousOdds":  66,
-                          "CurrentOdds":  73,
-                          "Movement":  7,
-                          "MovementPercent":  7,
-                          "Direction":  "UP",
-                          "Confidence":  "MEDIUM",
-                          "PreviousTime":  "2026-03-29 03:00:21",
-                          "CurrentTime":  "2026-03-29 04:00:17"
-                      },
-                      {
-                          "Market":  "Purdue Boilermakers vs. Arizona Wildcats",
-                          "Category":  "sports",
-                          "Url":  "https://polymarket.com/event/cbb-pur-arz-2026-03-28",
-                          "PreviousOdds":  51,
-                          "CurrentOdds":  99,
-                          "Movement":  48,
-                          "MovementPercent":  48,
-                          "Direction":  "UP",
-                          "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-29 03:00:21",
-                          "CurrentTime":  "2026-03-29 04:00:17"
-                      },
-                      {
-                          "Market":  "Bulls vs. Grizzlies",
-                          "Category":  "sports",
-                          "Url":  "https://polymarket.com/event/nba-chi-mem-2026-03-28",
-                          "PreviousOdds":  66,
-                          "CurrentOdds":  100,
-                          "Movement":  34,
-                          "MovementPercent":  34,
-                          "Direction":  "UP",
-                          "Confidence":  "HIGH",
-                          "PreviousTime":  "2026-03-29 03:00:21",
-                          "CurrentTime":  "2026-03-29 04:00:17"
-                      },
-                      {
-                          "Market":  "Will Tesla (TSLA) close above ___ end of March?",
-                          "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/tsla-above-in-march-2026",
-                          "PreviousOdds":  67,
-                          "CurrentOdds":  60,
-                          "Movement":  -7,
-                          "MovementPercent":  7,
-                          "Direction":  "DOWN",
-                          "Confidence":  "MEDIUM",
-                          "PreviousTime":  "2026-03-29 03:00:21",
-                          "CurrentTime":  "2026-03-29 04:00:17"
+                          "PreviousTime":  "2026-03-29 05:00:19",
+                          "CurrentTime":  "2026-03-29 06:00:20"
                       }
                   ],
-    "smart_money_alerts":  1
+    "smart_money_alerts":  0
 }
