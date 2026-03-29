@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroVue Intelligence - Neurovascular Market Intelligence Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.8); backdrop-filter: blur(12px); }
+        .nav-item { transition: all 0.2s; }
+        .nav-item:hover { background: rgba(59, 130, 246, 0.2); }
+        .nav-item.active { background: rgba(59, 130, 246, 0.3); border-left: 3px solid #3B82F6; }
+        .card-hover { transition: all 0.3s; }
+        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.3); }
+        .metric-glow { text-shadow: 0 0 20px currentColor; }
+        .section { display: none; }
+        .section.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .company-card { transition: all 0.3s ease; cursor: pointer; }
+        .company-card:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+        .product-badge { transition: all 0.2s; }
+        .product-badge:hover { transform: scale(1.05); }
+        .severity-high { color: #ef4444; }
+        .severity-medium { color: #f59e0b; }
+        .severity-low { color: #10b981; }
+        .filter-btn.active { background: #3B82F6; color: white; }
+        .comparison-row:hover { background: rgba(59, 130, 246, 0.1); }
+        .modal-backdrop { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(4px); }
+        .gradient-text { background: linear-gradient(135deg, #3B82F6, #8B5CF6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .loading-spinner { animation: spin 1s linear infinite; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .chart-container { position: relative; height: 350px; width: 100%; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="fixed inset-0 bg-slate-950 z-50 flex items-center justify-center">
+        <div class="text-center">
+            <div class="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full loading-spinner mb-4 mx-auto"></div>
+            <div class="text-xl font-bold text-white">NeuroVue</div>
+            <div class="text-slate-400">Loading intelligence data...</div>
+        </div>
+    </div>
+
+    <div class="flex h-screen">
+        
+        <!-- Sidebar -->
+        <aside class="w-64 bg-slate-900 border-r border-slate-800 flex flex-col">
+            <div class="p-6 border-b border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-brain text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-white">NeuroVue</h1>
+                        <p class="text-xs text-slate-400">Intelligence Platform</p>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="flex-1 overflow-y-auto py-4">
+                <div class="px-4 mb-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Overview</div>
+                <button onclick="showSection('dashboard')" id="nav-dashboard" class="nav-item active w-full text-left px-4 py-3 flex items-center gap-3">
+                    <i class="fas fa-globe w-5"></i>
+                    <span>Global Dashboard</span>
+                </button>
+                
+                <div class="px-4 mt-6 mb-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Market Data</div>
+                <button onclick="showSection('epidemiology')" id="nav-epidemiology" class="nav-item w-full text-left px-4 py-3 flex items-center gap-3">
+                    <i class="fas fa-chart-bar w-5"></i>
+                    <span>Epidemiology</span>
+                </button>
+                
+                <button onclick="showSection('revenue')" id="nav-revenue" class="nav-item w-full text-left px-4 py-3 flex items-center gap-3">
+                    <i class="fas fa-dollar-sign w-5"></i>
+                    <span>Revenue Analysis</span>
+                </button>
+                
+                <div class="px-4 mt-6 mb-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Competitive</div>
+                <button onclick="showSection('competitors')" id="nav-competitors" class="nav-item w-full text-left px-4 py-3 flex items-center gap-3">
+                    <i class="fas fa-chess w-5"></i>
+                    <span>Competitor Intel</span>
+                </button>
+                
+                <button onclick="showSection('portfolio')" id="nav-portfolio" class="nav-item w-full text-left px-4 py-3 flex items-center gap-3">
+                    <i class="fas fa-layer-group w-5"></i>
+                    <span>Portfolio Matrix</span>
+                </button>
+                
+                <div class="px-4 mt-6 mb-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Resources</div>
+                <button onclick="showSection('research')" id="nav-research" class="nav-item w-full text-left px-4 py-3 flex items-center gap-3">
+                    <i class="fas fa-file-alt w-5"></i>
+                    <span>Research Hub</span>
+                </button>
+                <a href="/medtech/due-diligence-template.html" class="nav-item w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-slate-800 transition">
+                    <i class="fas fa-clipboard-check w-5"></i>
+                    <span>Due Diligence Template</span>
+                    <i class="fas fa-external-link-alt text-xs text-slate-500 ml-auto"></i>
+                </a>
+            </nav>
+            
+            <!-- Back to Main Dashboard -->
+            <div class="p-4 border-t border-slate-800 bg-slate-800/50">
+                <a href="/dashboard" class="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 rounded-lg text-sm font-medium text-white transition flex items-center justify-center gap-2 shadow-lg shadow-blue-900/20">
+                    <i class="fas fa-home"></i>
+                    <span>Back to Dashboard</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto">
+            
+            <!-- Header -->
+            <header class="sticky top-0 z-40 glass border-b border-slate-800 px-8 py-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 id="page-title" class="text-2xl font-bold text-white">Global Neurovascular Intelligence</h2>
+                        <p id="last-updated" class="text-sm text-slate-400 mt-1">Last updated: March 2024</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <button class="p-2 text-slate-400 hover:text-white transition">
+                            <i class="fas fa-search text-lg"></i>
+                        </button>
+                        <button class="p-2 text-slate-400 hover:text-white transition">
+                            <i class="fas fa-bell text-lg"></i>
+                        </button>
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="section-dashboard" class="section active p-8">
+                <!-- Hero Metrics -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="glass rounded-2xl p-6 card-hover border border-slate-800">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-heartbeat text-blue-400 text-xl"></i>
+                            </div>
+                            <div class="text-sm text-slate-400">Annual Strokes</div>
+                        </div>
+                        <div class="text-3xl font-bold text-white metric-glow" id="hero-strokes">--</div>
+                        <div class="text-sm text-emerald-400 mt-2"><i class="fas fa-arrow-up mr-1"></i>+3.6% YoY</div>
+                    </div>
+                    
+                    <div class="glass rounded-2xl p-6 card-hover border border-slate-800">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-skull-crossbones text-red-400 text-xl"></i>
+                            </div>
+                            <div class="text-sm text-slate-400">Stroke Deaths</div>
+                        </div>
+                        <div class="text-3xl font-bold text-white metric-glow" id="hero-deaths">--</div>
+                        <div class="text-sm text-slate-400 mt-2">Mortality Rate</div>
+                    </div>
+                    
+                    <div class="glass rounded-2xl p-6 card-hover border border-slate-800">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-users text-purple-400 text-xl"></i>
+                            </div>
+                            <div class="text-sm text-slate-400">Prevalence</div>
+                        </div>
+                        <div class="text-3xl font-bold text-white metric-glow" id="hero-prevalence">--</div>
+                        <div class="text-sm text-slate-400 mt-2">Living with stroke</div>
+                    </div>
+                    
+                    <div class="glass rounded-2xl p-6 card-hover border border-slate-800">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-procedures text-emerald-400 text-xl"></i>
+                            </div>
+                            <div class="text-sm text-slate-400">MT Access</div>
+                        </div>
+                        <div class="text-3xl font-bold text-white metric-glow" id="hero-mt">--%</div>
+                        <div class="text-sm text-emerald-400 mt-2">Mechanical Thrombectomy</div>
+                    </div>
+                </div>
+
+                <!-- 2030 Projection -->
+                <div class="bg-gradient-to-r from-purple-900/30 to-blue-900/30 border border-purple-700/50 rounded-xl p-6 mb-8">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-chart-line text-purple-400 text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="font-semibold text-purple-400 text-lg">2030 Projection</div>
+                            <div class="text-slate-300">Stroke incidence projected to reach <span class="text-white font-bold" id="projection-2030">--</span> cases annually by 2030</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-purple-400" id="cagr-value">+3.6%</div>
+                            <div class="text-sm text-slate-400">Annual Growth</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Regions Table -->
+                <div class="glass rounded-2xl border border-slate-800 overflow-hidden">
+                    <div class="p-6 border-b border-slate-800">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold text-white">Top Regions by Stroke Burden</h3>
+                            <select id="regionFilter" class="bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm">
+                                <option value="all">All Regions</option>
+                                <option value="asia">Asia Pacific</option>
+                                <option value="europe">Europe</option>
+                                <option value="americas">Americas</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-slate-900/50">
+                                <tr>
+                                    <th class="text-left py-3 px-4 text-slate-400 font-medium">Region</th>
+                                    <th class="text-right py-3 px-4 text-slate-400 font-medium">Annual Strokes</th>
+                                    <th class="text-right py-3 px-4 text-slate-400 font-medium">Deaths</th>
+                                    <th class="text-right py-3 px-4 text-slate-400 font-medium">MT Rate</th>
+                                    <th class="text-right py-3 px-4 text-slate-400 font-medium">2030 Proj.</th>
+                                </tr>
+                            </thead>
+                            <tbody id="top-regions-table" class="divide-y divide-slate-800">
+                                <!-- Data rendered here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <a href="competitive-intelligence.html" class="glass rounded-xl p-6 card-hover border border-slate-800 block">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-chess text-blue-400 text-xl"></i>
+                            </div>
+                            <div class="font-semibold text-white">Competitive Intelligence</div>
+                        </div>
+                        <p class="text-sm text-slate-400">Full competitor analysis with Wallaby positioning</p>
+                    </a>
+                    
+                    <a href="revenue-v2.html" class="glass rounded-xl p-6 card-hover border border-slate-800 block">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-chart-pie text-green-400 text-xl"></i>
+                            </div>
+                            <div class="font-semibold text-white">Revenue Dashboard</div>
+                        </div>
+                        <p class="text-sm text-slate-400">Company financials and market share analysis</p>
+                    </a>
+                    
+                    <a href="portfolio-dashboard.html" class="glass rounded-xl p-6 card-hover border border-slate-800 block">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-th-large text-purple-400 text-xl"></i>
+                            </div>
+                            <div class="font-semibold text-white">Portfolio Matrix</div>
+                        </div>
+                        <p class="text-sm text-slate-400">Product category coverage across competitors</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Revenue Section - Dynamic Revenue Intelligence -->
+            <section id="section-revenue" class="section p-8">
+                <!-- Header -->
+                <header class="mb-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-slate-400 mt-1">Neurovascular Market: Company Revenue Analytics</p>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Filters -->
+                <div class="bg-slate-800 rounded-lg p-4 mb-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-slate-400 text-sm mb-1">Year Range</label>
+                            <select id="yearFilter" onchange="updateRevenueDashboard()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2 text-sm">
+                                <option value="all">All Years (2024-2030)</option>
+                                <option value="2020-2024">2020-2024 (Historical)</option>
+                                <option value="2024-2030">2024-2030 (Forecast)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Company Selector -->
+                    <div class="mt-4 pt-4 border-t border-slate-700">
+                        <div class="flex items-center justify-between mb-2">
+                            <label class="text-slate-300 font-medium">Select Companies to Display</label>
+                            <div class="space-x-2">
+                                <button onclick="selectAllRevenueCompanies(true)" class="text-xs bg-slate-700 hover:bg-slate-600 text-slate-300 px-3 py-1 rounded">Select All</button>
+                                <button onclick="selectAllRevenueCompanies(false)" class="text-xs bg-slate-700 hover:bg-slate-600 text-slate-300 px-3 py-1 rounded">Deselect All</button>
+                                <button onclick="selectTopRevenueCompanies(5)" class="text-xs bg-blue-700 hover:bg-blue-600 text-white px-3 py-1 rounded">Top 5</button>
+                            </div>
+                        </div>
+                        <div id="revenueCompanySelector" class="flex flex-wrap gap-2">
+                            <!-- Checkboxes inserted by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metrics -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                    <div class="bg-slate-800 rounded-lg p-4">
+                        <div class="text-slate-400 text-xs uppercase tracking-wide">Total Market 2024</div>
+                        <div id="metricTotal2024" class="text-2xl font-bold text-emerald-400 mt-1">$4.2B</div>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-4">
+                        <div class="text-slate-400 text-xs uppercase tracking-wide">Top Company 2024</div>
+                        <div id="metricTopCompany" class="text-2xl font-bold text-blue-400 mt-1">Stryker</div>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-4">
+                        <div class="text-slate-400 text-xs uppercase tracking-wide">Companies</div>
+                        <div id="metricCompanies" class="text-2xl font-bold text-purple-400 mt-1">--</div>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-4">
+                        <div class="text-slate-400 text-xs uppercase tracking-wide">CAGR (2024-2030)</div>
+                        <div id="metricCAGR" class="text-2xl font-bold text-yellow-400 mt-1">--%</div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="bg-slate-800 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-emerald-300 mb-4">Company Revenue Trends ($M)</h3>
+                        <div class="chart-container"><canvas id="trendChart"></canvas></div>
+                    </div>
+
+                    <div class="bg-slate-800 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-blue-300 mb-4">Market Share 2024</h3>
+                        <div class="chart-container"><canvas id="shareChart"></canvas></div>
+                    </div>
+                </div>
+
+                <!-- Data Table -->
+                <div class="bg-slate-800 rounded-lg p-6 mt-6">
+                    <h3 class="text-lg font-semibold text-orange-300 mb-4">Company Revenue Detail</h3>
+                    <div class="overflow-x-auto">
+                        <table id="revenueTable" class="w-full text-left text-sm">
+                            <thead class="bg-slate-700">
+                                <tr>
+                                    <th class="p-3">Company</th>
+                                    <th class="p-3 text-right">2024 Revenue</th>
+                                    <th class="p-3 text-right">2030 Proj</th>
+                                    <th class="p-3 text-right">CAGR</th>
+                                    <th class="p-3">Headquarters</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-700">
+                                <!-- Dynamic rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other Sections -->
+            <section id="section-epidemiology" class="section p-8">
+                <div class="mb-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-2xl font-bold text-white mb-2">Global Stroke Epidemiology</h2>
+                            <p class="text-slate-400">Comprehensive stroke burden and treatment access intelligence</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button id="epiViewSummary" class="view-toggle-btn active px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium transition" onclick="setEpidemiologyView('summary')">
+                                Summary
+                            </button>
+                            <button id="epiViewDetailed" class="view-toggle-btn px-4 py-2 bg-slate-700 text-slate-300 rounded-lg text-sm font-medium transition hover:bg-slate-600" onclick="setEpidemiologyView('detailed')">
+                                Detailed
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary View -->
+                <div id="epidemiologySummaryView" class="space-y-6">
+                    <!-- Global Metrics -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                        <div class="bg-slate-800 rounded-lg p-4">
+                            <div class="text-slate-400 text-xs uppercase tracking-wide">Annual Strokes (2024)</div>
+                            <div id="epiAnnualStrokes" class="text-2xl font-bold text-emerald-400 mt-1">--</div>
+                            <div class="text-xs text-slate-500 mt-1">cases/year</div>
+                        </div>
+                        <div class="bg-slate-800 rounded-lg p-4">
+                            <div class="text-slate-400 text-xs uppercase tracking-wide">Stroke Deaths</div>
+                            <div id="epiStrokeDeaths" class="text-2xl font-bold text-red-400 mt-1">--</div>
+                            <div class="text-xs text-slate-500 mt-1">deaths/year</div>
+                        </div>
+                        <div class="bg-slate-800 rounded-lg p-4">
+                            <div class="text-slate-400 text-xs uppercase tracking-wide">Survivors</div>
+                            <div id="epiSurvivors" class="text-2xl font-bold text-blue-400 mt-1">--</div>
+                            <div class="text-xs text-slate-500 mt-1">living with stroke</div>
+                        </div>
+                        <div class="bg-slate-800 rounded-lg p-4">
+                            <div class="text-slate-400 text-xs uppercase tracking-wide">MT Access</div>
+                            <div id="epiMTAccess" class="text-2xl font-bold text-purple-400 mt-1">--%</div>
+                            <div class="text-xs text-slate-500 mt-1">of eligible patients</div>
+                        </div>
+                    </div>
+
+                    <!-- Regional Table -->
+                    <div class="bg-slate-800 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-emerald-300 mb-4">Regional Stroke Burden</h3>
+                        <div class="overflow-x-auto">
+                            <table id="epidemiologyTable" class="w-full text-left text-sm">
+                                <thead class="bg-slate-700">
+                                    <tr>
+                                        <th class="p-3">Region</th>
+                                        <th class="p-3 text-right">Annual Strokes</th>
+                                        <th class="p-3 text-right">Deaths</th>
+                                        <th class="p-3 text-right">Survivors</th>
+                                        <th class="p-3 text-right">MT Access</th>
+                                        <th class="p-3 text-right">2030 Proj</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-700">
+                                    <!-- Dynamic rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed View -->
+                <div id="epidemiologyDetailedView" class="space-y-6 hidden">
+                    <div id="epiDetailedContent" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Detailed cards inserted by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-competitors" class="section p-8">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-white mb-2">Competitive Intelligence</h2>
+                    <p class="text-slate-400">Neurovascular market landscape and competitor analysis</p>
+                </div>
+
+                <!-- Filters & Actions -->
+                <div class="glass rounded-xl p-4 mb-6 border border-slate-800">
+                    <div class="flex flex-wrap items-center gap-3">
+                        <span class="text-sm text-slate-400 mr-2">Filter by:</span>
+                        <button class="ci-filter-btn active px-3 py-1.5 rounded-full text-sm font-medium bg-blue-600 text-white transition" data-filter="all">All Companies</button>
+                        <button class="ci-filter-btn px-3 py-1.5 rounded-full text-sm font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition" data-filter="high">High Threat</button>
+                        <button class="ci-filter-btn px-3 py-1.5 rounded-full text-sm font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition" data-filter="complete">Complete Portfolio</button>
+                        <button class="ci-filter-btn px-3 py-1.5 rounded-full text-sm font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition" data-filter="gaps">Has Major Gaps</button>
+                        <div class="flex-1"></div>
+                        <button id="compareBtn" onclick="toggleComparison()" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-sm font-medium transition flex items-center gap-2">
+                            <i class="fas fa-th-large"></i>
+                            Compare Portfolio
+                        </button>
+                        <div class="relative">
+                            <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"></i>
+                            <input type="text" id="ciSearchInput" placeholder="Search companies or products..." 
+                                   class="pl-10 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm focus:outline-none focus:border-blue-500 w-64">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comparison Matrix (Hidden by default) -->
+                <div id="ciComparisonView" class="hidden mb-6">
+                    <div class="glass rounded-xl p-6 border border-slate-800">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-white text-lg">Portfolio Comparison Matrix</h3>
+                            <button onclick="hideComparison()" class="text-slate-400 hover:text-white transition">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="border-b border-slate-700">
+                                        <th class="text-left py-3 px-2 text-slate-400 font-medium sticky left-0 bg-slate-900">Company</th>
+                                        <th class="text-center py-3 px-2 text-slate-400 font-medium">Coils</th>
+                                        <th class="text-center py-3 px-2 text-slate-400 font-medium">Flow Div.</th>
+                                        <th class="text-center py-3 px-2 text-slate-400 font-medium">Stents</th>
+                                        <th class="text-center py-3 px-2 text-slate-400 font-medium">Aspiration</th>
+                                        <th class="text-center py-3 px-2 text-slate-400 font-medium">Intrasacc.</th>
+                                        <th class="text-center py-3 px-2 text-slate-400 font-medium">Retrievers</th>
+                                        <th class="text-center py-3 px-2 text-slate-400 font-medium">Balloons</th>
+                                        <th class="text-center py-3 px-2 text-slate-400 font-medium">Radial</th>
+                                        <th class="text-center py-3 px-2 text-slate-400 font-medium">Pump</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ciComparisonTable"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Company Cards -->
+                    <div class="lg:col-span-2">
+                        <div id="ciCompanyGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Companies rendered via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Sidebar: Insights & Wallaby -->
+                    <div class="space-y-6">
+                        <!-- Wallaby Status Card -->
+                        <div class="glass rounded-xl p-6 border border-blue-800/50" style="background: linear-gradient(135deg, rgba(30, 58, 138, 0.3), rgba(15, 23, 42, 0.8));">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-shield-alt text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-white">Wallaby Position</h3>
+                                    <span class="text-xs text-blue-400">Your Company</span>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-slate-400">Portfolio Coverage</span>
+                                    <span class="text-sm font-mono text-green-400">7/10 Categories</span>
+                                </div>
+                                <div class="w-full bg-slate-800 rounded-full h-2">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 70%"></div>
+                                </div>
+                                
+                                <div class="mt-4 space-y-2">
+                                    <div class="flex items-center gap-2 text-sm">
+                                        <i class="fas fa-check-circle text-green-500"></i>
+                                        <span class="text-slate-300">Unique bifurcation device (pCONUS2)</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm">
+                                        <i class="fas fa-check-circle text-green-500"></i>
+                                        <span class="text-slate-300">Strong coil portfolio (Avenir)</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm">
+                                        <i class="fas fa-check-circle text-green-500"></i>
+                                        <span class="text-slate-300">Growing flow diverter line (p64)</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4 pt-4 border-t border-slate-800">
+                                    <p class="text-sm font-medium text-red-400 mb-2">Critical Gaps:</p>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center gap-2 text-sm px-3 py-2 rounded-lg" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.2)); border-left: 3px solid #EF4444;">
+                                            <i class="fas fa-times-circle text-red-500"></i>
+                                            <span class="text-slate-300">No intrasaccular device</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm px-3 py-2 rounded-lg" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.2)); border-left: 3px solid #EF4444;">
+                                            <i class="fas fa-times-circle text-red-500"></i>
+                                            <span class="text-slate-300">Limited radial access</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm px-3 py-2 rounded-lg" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.2)); border-left: 3px solid #EF4444;">
+                                            <i class="fas fa-times-circle text-red-500"></i>
+                                            <span class="text-slate-300">No aspiration pump</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Market Insights -->
+                        <div class="glass rounded-xl p-6 border border-slate-800">
+                            <h3 class="font-bold text-white mb-4 flex items-center gap-2">
+                                <i class="fas fa-lightbulb text-yellow-500"></i>
+                                Strategic Insights
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="p-3 bg-slate-800/50 rounded-lg border-l-2 border-yellow-500">
+                                    <p class="text-sm text-slate-300">
+                                        <span class="font-semibold text-yellow-400">Intrasaccular Gap:</span> 
+                                        WEB, Artisse, and Contour dominate this fast-growing segment. Major opportunity for Wallaby.
+                                    </p>
+                                </div>
+                                <div class="p-3 bg-slate-800/50 rounded-lg border-l-2 border-blue-500">
+                                    <p class="text-sm text-slate-300">
+                                        <span class="font-semibold text-blue-400">Radial Trend:</span> 
+                                        Competitors investing heavily in radial-first approaches (RIST, FUBUKI, BMX81).
+                                    </p>
+                                </div>
+                                <div class="p-3 bg-slate-800/50 rounded-lg border-l-2 border-green-500">
+                                    <p class="text-sm text-slate-300">
+                                        <span class="font-semibold text-green-400">Aspiration Leader:</span> 
+                                        Penumbra ENGINE sets the standard. Wallaby needs dedicated pump strategy.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Market Overview -->
+                        <div class="glass rounded-xl p-6 border border-slate-800">
+                            <h3 class="font-bold text-white mb-4">Market Overview</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="text-center p-3 bg-slate-800 rounded-lg">
+                                    <div class="text-2xl font-bold text-blue-400">12</div>
+                                    <div class="text-xs text-slate-400">Competitors</div>
+                                </div>
+                                <div class="text-center p-3 bg-slate-800 rounded-lg">
+                                    <div class="text-2xl font-bold text-green-400">4</div>
+                                    <div class="text-xs text-slate-400">Full Portfolio</div>
+                                </div>
+                                <div class="text-center p-3 bg-slate-800 rounded-lg">
+                                    <div class="text-2xl font-bold text-yellow-400">3</div>
+                                    <div class="text-xs text-slate-400">Major Threats</div>
+                                </div>
+                                <div class="text-center p-3 bg-slate-800 rounded-lg">
+                                    <div class="text-2xl font-bold text-red-400">5</div>
+                                    <div class="text-xs text-slate-400">Wallaby Gaps</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-portfolio" class="section p-8">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-white mb-2">Product Portfolio Intelligence</h2>
+                    <p class="text-slate-400">Competitive Product Mapping & Market Coverage Analysis</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="glass rounded-xl p-4 mb-6 border border-slate-800">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-slate-400 text-sm mb-2">View</label>
+                            <select id="pmViewFilter" onchange="updatePortfolioMatrix()" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500">
+                                <option value="all">All Companies</option>
+                                <option value="wallaby">Wallaby/Phenox Focus</option>
+                                <option value="competitors">Competitors Only</option>
+                                <option value="gaps">Coverage Gaps</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-slate-400 text-sm mb-2">Product Category</label>
+                            <select id="pmCategoryFilter" onchange="updatePortfolioMatrix()" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500">
+                                <option value="all">All Categories</option>
+                                <option value="coils">Coils</option>
+                                <option value="flowDiverters">Flow Diverters</option>
+                                <option value="stents">Stents</option>
+                                <option value="aspiration">Aspiration</option>
+                                <option value="intrasaccular">Intrasaccular</option>
+                                <option value="retrievers">Stent Retrievers</option>
+                                <option value="balloons">Balloons</option>
+                                <option value="pump">Aspiration Pump</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metrics -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                    <div class="glass rounded-xl p-4 border border-slate-800">
+                        <div class="text-slate-400 text-xs uppercase tracking-wide mb-1">Total Products</div>
+                        <div class="text-2xl font-bold text-blue-400">45+</div>
+                    </div>
+                    <div class="glass rounded-xl p-4 border border-slate-800">
+                        <div class="text-slate-400 text-xs uppercase tracking-wide mb-1">Wallaby Coverage</div>
+                        <div class="text-2xl font-bold text-emerald-400">7/10</div>
+                    </div>
+                    <div class="glass rounded-xl p-4 border border-slate-800">
+                        <div class="text-slate-400 text-xs uppercase tracking-wide mb-1">Top Competitor</div>
+                        <div class="text-2xl font-bold text-purple-400">Stryker</div>
+                    </div>
+                    <div class="glass rounded-xl p-4 border border-slate-800">
+                        <div class="text-slate-400 text-xs uppercase tracking-wide mb-1">Coverage Gaps</div>
+                        <div class="text-2xl font-bold text-yellow-400">3</div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                    <div class="glass rounded-xl p-6 border border-slate-800">
+                        <h3 class="text-lg font-semibold text-blue-300 mb-4">Product Coverage by Company</h3>
+                        <div class="relative h-64 w-full">
+                            <canvas id="pmCoverageChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="glass rounded-xl p-6 border border-slate-800">
+                        <h3 class="text-lg font-semibold text-emerald-300 mb-4">Product Category Distribution</h3>
+                        <div class="relative h-64 w-full">
+                            <canvas id="pmCategoryChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Matrix -->
+                <div class="glass rounded-xl p-6 border border-slate-800">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-white">Product Portfolio Matrix</h3>
+                        <div class="flex gap-4 text-xs">
+                            <span class="flex items-center gap-1"><span class="w-3 h-3 bg-emerald-500 rounded"></span> Full</span>
+                            <span class="flex items-center gap-1"><span class="w-3 h-3 bg-amber-500 rounded"></span> Partial</span>
+                            <span class="flex items-center gap-1"><span class="w-3 h-3 bg-red-500 rounded"></span> None</span>
+                        </div>
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm" id="portfolioMatrixTable">
+                            <thead class="bg-slate-900/50">
+                                <tr>
+                                    <th class="p-3 text-slate-400 font-medium sticky left-0 bg-slate-900">Category</th>
+                                    <th class="p-3 text-slate-400 font-medium">Medtronic</th>
+                                    <th class="p-3 text-slate-400 font-medium">Stryker</th>
+                                    <th class="p-3 text-slate-400 font-medium">Microvention</th>
+                                    <th class="p-3 text-slate-400 font-medium">Penumbra</th>
+                                    <th class="p-3 text-slate-400 font-medium">J&J</th>
+                                    <th class="p-3 text-slate-400 font-medium">Balt</th>
+                                    <th class="p-3 font-medium bg-[#39FF14]/10 border-2 border-[#39FF14] text-[#39FF14] shadow-[0_0_10px_rgba(57,255,20,0.3)]">★ Wallaby Phenox</th>
+                                    <th class="p-3 text-slate-400 font-medium">Rapid</th>
+                                    <th class="p-3 text-slate-400 font-medium">Acandis</th>
+                                    <th class="p-3 text-slate-400 font-medium">Imperative</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800" id="portfolioMatrixBody">
+                                <!-- Rendered via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-research" class="section p-8">
+                <header class="mb-8">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h1 class="text-3xl font-bold text-blue-400">Research Hub</h1>
+                            <p class="text-slate-400 mt-1">Advanced analytics and visualization tools</p>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Global Heatmap -->
+                    <a href="/medtech/global-heatmap-v3b.html" class="glass rounded-2xl p-6 card-hover border border-slate-800 block group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-globe text-blue-400 text-xl"></i>
+                            </div>
+                            <div class="text-sm text-slate-400">Global Heatmap</div>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4">Interactive visualization of neurovascular market data across regions</p>
+                        <div class="flex items-center text-blue-400 text-sm group-hover:text-blue-300 transition">
+                            <span>View Analysis</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </a>
+
+                    <!-- Competition Optic -->
+                    <a href="/medtech/competition-optic.html" class="glass rounded-2xl p-6 card-hover border border-slate-800 block group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-binoculars text-emerald-400 text-xl"></i>
+                            </div>
+                            <div class="text-sm text-slate-400">Competition Optic</div>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4">Competitive landscape analysis and strategic positioning</p>
+                        <div class="flex items-center text-emerald-400 text-sm group-hover:text-emerald-300 transition">
+                            <span>View Analysis</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </a>
+
+                    <!-- Platform Analysis -->
+                    <a href="/medtech/platform-analysis.html" class="glass rounded-2xl p-6 card-hover border border-slate-800 block group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-chart-pie text-purple-400 text-xl"></i>
+                            </div>
+                            <div class="text-sm text-slate-400">Platform Analysis</div>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4">Comprehensive platform metrics and performance analytics</p>
+                        <div class="flex items-center text-purple-400 text-sm group-hover:text-purple-300 transition">
+                            <span>View Analysis</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </a>
+
+                    <!-- Platform Naming -->
+                    <a href="/medtech/platform-naming.html" class="glass rounded-2xl p-6 card-hover border border-slate-800 block group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-tags text-amber-400 text-xl"></i>
+                            </div>
+                            <div class="text-sm text-slate-400">Platform Naming</div>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4">Product naming strategy and brand positioning framework</p>
+                        <div class="flex items-center text-amber-400 text-sm group-hover:text-amber-300 transition">
+                            <span>View Analysis</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </a>
+
+                    <!-- Portfolio Manager -->
+                    <a href="/medtech/portfolio-manager.html" class="glass rounded-2xl p-6 card-hover border border-slate-800 block group lg:col-span-2">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-[#39FF14]/20 rounded-xl flex items-center justify-center border border-[#39FF14]/50 shadow-[0_0_15px_rgba(57,255,20,0.3)]">
+                                <i class="fas fa-edit text-[#39FF14] text-xl"></i>
+                            </div>
+                            <div class="text-sm text-[#39FF14] font-medium">Portfolio Manager (Beta)</div>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4">Interactive product portfolio editor - edit, add, and export competitor data locally. No GitHub commits.</p>
+                        <div class="flex items-center text-[#39FF14] text-sm group-hover:text-[#50FF30] transition">
+                            <span>Open Editor</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- EMBEDDED DATA AND FUNCTIONS - ZERO DEPENDENCIES -->
+    <script>
+        // LOCAL-ONLY: All data loads from local data/ folder - no GitHub
+        const DATA_BASE = './data';
+        
+        window.NeuroVueDataLoader = {
+            loadNeuroVueData: function() {
+                // Load all data files with individual error handling
+                var loadJson = function(url, name) {
+                    var fullUrl = url + '?t=' + Date.now();
+                    console.log('📡 Loading:', name, 'from', fullUrl);
+                    return fetch(fullUrl)
+                        .then(function(r) {
+                            if (!r.ok) {
+                                console.error('❌ Failed to load ' + name + ': HTTP ' + r.status);
+                                return null;
+                            }
+                            return r.json().then(function(data) {
+                                console.log('✅ Loaded', name + ':', data ? 'Success' : 'Empty');
+                                if (name === 'Epidemiology' && data) {
+                                    console.log('   - Global summary:', data.global && data.global.summary ? 'Present' : 'Missing');
+                                    console.log('   - Regions:', data.regions ? Object.keys(data.regions).length : 0);
+                                }
+                                return data;
+                            });
+                        })
+                        .catch(function(err) {
+                            console.error('❌ Failed to load ' + name + ':', err);
+                            return null;
+                        });
+                };
+                
+                return Promise.all([
+                    loadJson(DATA_BASE + '/epidemiological-data.json', 'Epidemiology'),
+                    loadJson(DATA_BASE + '/revenue-historical.json', 'Revenue'),
+                    loadJson(DATA_BASE + '/master-data.json', 'Competitors'),
+                    loadJson(DATA_BASE + '/product-portfolio-data.json', 'Portfolio')
+                ]).then(function(results) {
+                    console.log('✅ All data loaded from LOCAL data/ folder');
+                    console.log('📊 Epidemiology:', results[0] ? 'Loaded' : 'Failed');
+                    console.log('💰 Revenue:', results[1] ? 'Loaded' : 'Failed');
+                    return {
+                        epidemiology: results[0],
+                        revenue: results[1],
+                        competitors: results[2],
+                        portfolio: results[3]
+                    };
+                }).catch(function(err) {
+                    console.error('❌ Failed to load data from LOCAL folder:', err);
+                    throw new Error('Data sync failed. Check that JSON files exist in data/ folder.');
+                });
+            },
+            formatNumber: function(num, compact) {
+                if (num === null || num === undefined) return '--';
+                if (num === 0) return '0';
+                if (compact) {
+                    if (num >= 1000000000) return (num / 1000000000).toFixed(1) + 'B';
+                    if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+                    if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+                }
+                return num.toLocaleString();
+            },
+            formatCurrency: function(num) {
+                if (num === null || num === undefined || num === 0) return '--';
+                if (num >= 1000000000) return '$' + (num / 1000000000).toFixed(1) + 'B';
+                if (num >= 1000000) return '$' + (num / 1000000).toFixed(0) + 'M';
+                if (num >= 1000) return '$' + (num / 1000).toFixed(1) + 'K';
+                return '$' + num.toLocaleString();
+            },
+            getGlobalStats: function(data) {
+                // Handle both old format and new comprehensive format
+                const summary = data && data.global && data.global.summary ? data.global.summary : {};
+                const global2024 = summary['2024'] || (data && data.global && data.global['2024'] ? data.global['2024'] : {});
+                return {
+                    annualStrokes: global2024.annualStrokes ? global2024.annualStrokes.value : 12200000,
+                    strokeDeaths: global2024.strokeDeaths ? global2024.strokeDeaths.value : 6500000,
+                    prevalence: global2024.prevalence ? global2024.prevalence.value : 101000000,
+                    mt: global2024.treatmentAccess && global2024.treatmentAccess.mechanicalThrombectomy ? global2024.treatmentAccess.mechanicalThrombectomy.global : 12,
+                    projected2030: summary['2030'] && summary['2030'].projectedStrokes ? summary['2030'].projectedStrokes.value : 15100000
+                };
+            },
+            processEpidemiologyData: function(data) {
+                if (!data || !data.regions) return [];
+                const result = [];
+                Object.keys(data.regions).forEach(function(key) {
+                    const region = data.regions[key];
+                    if (!region) return;
+                    
+                    // Handle pending regions
+                    if (region.status === 'pending_extraction') {
+                        result.push({
+                            name: region.name || key,
+                            flag: region.flag,
+                            population: region.population2024 || 0,
+                            status: 'pending',
+                            annualStrokes: 0,
+                            strokeDeaths: 0,
+                            prevalence: 0,
+                            ivTpa: 0,
+                            mt: 0,
+                            projected2030: 0
+                        });
+                        return;
+                    }
+                    
+                    // Use summary data directly (flat structure in comprehensive format)
+                    const summary = region.summary || {};
+                    
+                    result.push({
+                        name: region.name || key,
+                        flag: region.flag,
+                        population: region.population2024 || region.population || 0,
+                        status: 'complete',
+                        annualStrokes: summary.annualStrokes ? summary.annualStrokes.value : 0,
+                        strokeDeaths: summary.strokeDeaths ? summary.strokeDeaths.value : 0,
+                        prevalence: summary.prevalence ? summary.prevalence.value : 0,
+                        ivTpa: summary.treatmentAccess ? summary.treatmentAccess.ivTpa : 0,
+                        mt: summary.treatmentAccess ? summary.treatmentAccess.mt : 0,
+                        projected2030: summary['2030Projection'] ? summary['2030Projection'].value : 0
+                    });
+                });
+                return result.sort(function(a, b) { return b.annualStrokes - a.annualStrokes; });
+            },
+            processRevenueData: function(data) {
+                if (!data || !data.companies) return [];
+                return data.companies.map(function(c) {
+                    return {
+                        name: c.name,
+                        ticker: c.ticker || 'N/A',
+                        headquarters: c.headquarters || 'Unknown',
+                        marketCap: c.marketCap || c.market_cap || 0,
+                        annualRevenue: c.annualRevenue || c.annual_revenue || 0,
+                        revenueGrowth: c.revenueGrowth || c.revenue_growth || 0,
+                        neurovascularRevenue: c.neurovascularRevenue || c.neurovascular_revenue || 0,
+                        neurovascularGrowth: c.neurovascularGrowth || c.neurovascular_growth || 0
+                    };
+                }).sort(function(a, b) { return b.neurovascularRevenue - a.neurovascularRevenue; });
+            }
+        };
+        
+        console.log('Embedded NeuroVueDataLoader created');
+        
+        // State
+        var appData = null;
+        var currentSection = 'dashboard';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Initializing NeuroVue Dashboard...');
+            
+            // Check if navigation from Global Heatmap was requested (AFTER data loads)
+            var navigateToSection = null;
+            if (sessionStorage.getItem('navigateToRevenue') === 'true') {
+                navigateToSection = 'revenue';
+                sessionStorage.removeItem('navigateToRevenue');
+            } else if (sessionStorage.getItem('navigateToPortfolio') === 'true') {
+                navigateToSection = 'portfolio';
+                sessionStorage.removeItem('navigateToPortfolio');
+            }
+            
+            NeuroVueDataLoader.loadNeuroVueData().then(function(data) {
+                console.log('✅ Data loaded:', data);
+                appData = data;
+                window.appData = data;
+                
+                if (appData && appData.epidemiology) {
+                    renderDashboard();
+                    renderEpidemiologyDashboard(); // Force render epidemiology section
+                    console.log('📊 Epidemiology dashboard rendered');
+                    document.getElementById('loading-overlay').style.display = 'none';
+                    
+                    // Navigate to requested section after dashboard renders
+                    if (navigateToSection) {
+                        setTimeout(function() { showSection(navigateToSection); }, 100);
+                    }
+                } else {
+                    throw new Error('Epidemiology data not loaded from local data folder');
+                }
+            }).catch(function(error) {
+                console.error('❌ Failed to initialize NeuroVue:', error);
+                document.getElementById('loading-overlay').innerHTML = 
+                    '<div class="text-center"><div class="text-xl font-bold text-red-400 mb-2">Failed to Load Data</div>' +
+                    '<div class="text-slate-400">' + error.message + '</div>' +
+                    '<button onclick="location.reload()" class="mt-4 px-4 py-2 bg-blue-600 rounded text-white hover:bg-blue-500">Retry</button></div>';
+            });
+        });
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(function(s) { s.classList.remove('active'); });
+            document.querySelectorAll('.nav-item').forEach(function(n) { n.classList.remove('active'); });
+            
+            var sectionEl = document.getElementById('section-' + sectionId);
+            var navEl = document.getElementById('nav-' + sectionId);
+            if (sectionEl) sectionEl.classList.add('active');
+            if (navEl) navEl.classList.add('active');
+            
+            currentSection = sectionId;
+            if (document.querySelector('main')) document.querySelector('main').scrollTop = 0;
+        }
+
+        function renderDashboard() {
+            if (!appData || !appData.epidemiology) return;
+            
+            var stats = NeuroVueDataLoader.getGlobalStats(appData.epidemiology);
+            var regions = NeuroVueDataLoader.processEpidemiologyData(appData.epidemiology);
+            
+            document.getElementById('hero-strokes').textContent = NeuroVueDataLoader.formatNumber(stats.annualStrokes, true);
+            document.getElementById('hero-deaths').textContent = NeuroVueDataLoader.formatNumber(stats.strokeDeaths, true);
+            document.getElementById('hero-prevalence').textContent = NeuroVueDataLoader.formatNumber(stats.prevalence, true);
+            document.getElementById('hero-mt').textContent = stats.mt + '%';
+            document.getElementById('projection-2030').textContent = NeuroVueDataLoader.formatNumber(stats.projected2030, true);
+            
+            var topRegions = regions.slice(0, 10);
+            var tableHtml = '';
+            for (var i = 0; i < topRegions.length; i++) {
+                var r = topRegions[i];
+                tableHtml += '<tr class="hover:bg-slate-800/50 transition"><td class="py-3 px-4"><div class="flex items-center gap-2"><span class="text-lg">' + r.flag + '</span><span class="text-white font-medium">' + r.name + '</span></div></td><td class="py-3 px-4 text-right text-slate-300">' + NeuroVueDataLoader.formatNumber(r.annualStrokes) + '</td><td class="py-3 px-4 text-right text-slate-300">' + NeuroVueDataLoader.formatNumber(r.strokeDeaths) + '</td><td class="py-3 px-4 text-right text-emerald-400">' + r.mt + '%</td><td class="py-3 px-4 text-right text-purple-400">' + NeuroVueDataLoader.formatNumber(r.projected2030) + '</td></tr>';
+            }
+            document.getElementById('top-regions-table').innerHTML = tableHtml;
+            
+            // Also render epidemiology section if data available
+            if (appData.epidemiology) {
+                renderEpidemiologyDashboard();
+            }
+        }
+        
+        // EPIDEMIOLOGY DASHBOARD FUNCTIONS
+        var currentEpiView = 'summary';
+        
+        function setEpidemiologyView(view) {
+            currentEpiView = view;
+            document.getElementById('epidemiologySummaryView').classList.toggle('hidden', view !== 'summary');
+            document.getElementById('epidemiologyDetailedView').classList.toggle('hidden', view !== 'detailed');
+            document.getElementById('epiViewSummary').classList.toggle('active', view === 'summary');
+            document.getElementById('epiViewDetailed').classList.toggle('active', view === 'detailed');
+            
+            if (view === 'detailed') {
+                renderEpidemiologyDetailed();
+            }
+        }
+        
+        function renderEpidemiologyDashboard() {
+            if (!appData || !appData.epidemiology) return;
+            
+            var data = appData.epidemiology;
+            var summary = data.global && data.global.summary ? data.global.summary : {};
+            var global2024 = summary['2024'] || {};
+            var treatmentAccess = summary.treatmentAccess2024 || {};
+            
+            // Update summary metrics
+            var strokesEl = document.getElementById('epiAnnualStrokes');
+            var deathsEl = document.getElementById('epiStrokeDeaths');
+            var survivorsEl = document.getElementById('epiSurvivors');
+            var mtEl = document.getElementById('epiMTAccess');
+            
+            if (strokesEl && global2024.annualStrokes) {
+                strokesEl.textContent = NeuroVueDataLoader.formatNumber(global2024.annualStrokes.value, true);
+            }
+            if (deathsEl && global2024.strokeDeaths) {
+                deathsEl.textContent = NeuroVueDataLoader.formatNumber(global2024.strokeDeaths.value, true);
+            }
+            if (survivorsEl && global2024.prevalence) {
+                survivorsEl.textContent = NeuroVueDataLoader.formatNumber(global2024.prevalence.value, true);
+            }
+            if (mtEl && treatmentAccess.mechanicalThrombectomy) {
+                mtEl.textContent = treatmentAccess.mechanicalThrombectomy.global + '%';
+            }
+            
+            // Render regional table
+            var regions = NeuroVueDataLoader.processEpidemiologyData(data);
+            var tbody = document.querySelector('#epidemiologyTable tbody');
+            if (tbody) {
+                tbody.innerHTML = regions.map(function(r) {
+                    if (r.status === 'pending') {
+                        return '<tr class="hover:bg-slate-800/50 transition opacity-60"><td class="p-3"><div class="flex items-center gap-2"><span class="text-lg">' + r.flag + '</span><span class="text-white font-medium">' + r.name + '</span><span class="text-xs bg-yellow-900/50 text-yellow-400 px-2 py-0.5 rounded">Pending Data</span></div></td><td class="p-3 text-right text-slate-500" colspan="5">Data extraction in progress</td></tr>';
+                    }
+                    return '<tr class="hover:bg-slate-800/50 transition"><td class="p-3"><div class="flex items-center gap-2"><span class="text-lg">' + r.flag + '</span><span class="text-white font-medium">' + r.name + '</span></div></td><td class="p-3 text-right text-slate-300">' + NeuroVueDataLoader.formatNumber(r.annualStrokes) + '</td><td class="p-3 text-right text-slate-300">' + NeuroVueDataLoader.formatNumber(r.strokeDeaths) + '</td><td class="p-3 text-right text-slate-300">' + NeuroVueDataLoader.formatNumber(r.prevalence) + '</td><td class="p-3 text-right text-emerald-400">' + r.mt + '%</td><td class="p-3 text-right text-purple-400">' + NeuroVueDataLoader.formatNumber(r.projected2030) + '</td></tr>';
+                }).join('');
+            }
+        }
+        
+        function renderEpidemiologyDetailed() {
+            var container = document.getElementById('epiDetailedContent');
+            if (!container || !appData || !appData.epidemiology) return;
+            
+            var data = appData.epidemiology;
+            var regions = data.regions || {};
+            var html = '';
+            
+            Object.keys(regions).forEach(function(key) {
+                var region = regions[key];
+                if (region.status === 'pending_extraction') return;
+                
+                var detailed = region.detailed || {};
+                var summary = region.summary || {};
+                
+                html += '<div class="bg-slate-800 rounded-lg p-6">';
+                html += '<div class="flex items-center gap-3 mb-4"><span class="text-2xl">' + region.flag + '</span><h3 class="text-xl font-bold text-white">' + region.name + '</h3></div>';
+                
+                // Key stats
+                html += '<div class="grid grid-cols-2 gap-4 mb-4">';
+                if (summary.annualStrokes) {
+                    html += '<div class="bg-slate-700/50 rounded p-3"><div class="text-xs text-slate-400">Annual Strokes</div><div class="text-lg font-bold text-emerald-400">' + NeuroVueDataLoader.formatNumber(summary.annualStrokes.value) + '</div></div>';
+                }
+                if (summary.treatmentAccess) {
+                    html += '<div class="bg-slate-700/50 rounded p-3"><div class="text-xs text-slate-400">MT Access</div><div class="text-lg font-bold text-blue-400">' + summary.treatmentAccess.mt + '%</div></div>';
+                }
+                html += '</div>';
+                
+                // Key insights
+                if (detailed.keyInsights && detailed.keyInsights.length > 0) {
+                    html += '<div class="text-sm text-slate-300"><ul class="space-y-1">';
+                    detailed.keyInsights.slice(0, 3).forEach(function(insight) {
+                        html += '<li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-400 mt-0.5"></i><span>' + insight + '</span></li>';
+                    });
+                    html += '</ul></div>';
+                }
+                
+                html += '</div>';
+            });
+            
+            container.innerHTML = html || '<div class="col-span-2 text-center text-slate-500 py-8">Detailed data available for major regions only</div>';
+        }
+
+        // COMPETITOR INTELLIGENCE - data loaded from GitHub
+        function getCICompanies() {
+            return appData && appData.competitors ? appData.competitors.companies : [];
+        }
+
+        // PORTFOLIO MATRIX - data loaded from GitHub
+        function getPMData() {
+            return appData && appData.portfolio ? appData.portfolio : { categories: [] };
+        }
+
+        function getProductCount(products) {
+            var count = 0;
+            if (products.coils) count += products.coils.length;
+            if (products.flowDiverters) count += products.flowDiverters.length;
+            if (products.stents) count += products.stents.length;
+            if (products.aspiration) count += products.aspiration.length;
+            if (products.intrasaccular) count += products.intrasaccular.length;
+            if (products.retrievers) count += products.retrievers.length;
+            if (products.balloons) count += products.balloons.length;
+            if (products.radial) count += products.radial.length;
+            if (products.pump && products.pump !== false) count += products.pump.length;
+            return count;
+        }
+
+        function renderCompetitorIntel(filterType, searchTerm) {
+            var grid = document.getElementById('ciCompanyGrid');
+            if (!grid) return;
+            
+            // Get revenue data from appData if available
+            var revData = (window.appData && window.appData.revenue && window.appData.revenue.companies) ? window.appData.revenue.companies : [];
+            
+            var filtered = getCICompanies().filter(function(company) {
+                if (company.id === 'phenox') return false;
+                
+                if (filterType === 'high' && company.threatLevel !== 'high') return false;
+                if (filterType === 'complete' && company.portfolio !== 'complete') return false;
+                if (filterType === 'gaps' && (!company.gaps || company.gaps.length === 0)) return false;
+                
+                if (searchTerm) {
+                    var search = searchTerm.toLowerCase();
+                    var matchName = company.name.toLowerCase().includes(search);
+                    var matchProducts = false;
+                    var p = company.products;
+                    if (p.coils) p.coils.forEach(function(x) { if (x.toLowerCase().includes(search)) matchProducts = true; });
+                    if (p.flowDiverters) p.flowDiverters.forEach(function(x) { if (x.toLowerCase().includes(search)) matchProducts = true; });
+                    if (p.stents) p.stents.forEach(function(x) { if (x.toLowerCase().includes(search)) matchProducts = true; });
+                    if (p.aspiration) p.aspiration.forEach(function(x) { if (x.toLowerCase().includes(search)) matchProducts = true; });
+                    if (p.retrievers) p.retrievers.forEach(function(x) { if (x.toLowerCase().includes(search)) matchProducts = true; });
+                    if (!matchName && !matchProducts) return false;
+                }
+                
+                return true;
+            });
+            
+            var html = '';
+            for (var i = 0; i < filtered.length; i++) {
+                var c = filtered[i];
+                var threatClass = c.threatLevel === 'high' ? 'bg-red-500/20 text-red-400' : c.threatLevel === 'medium' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-slate-500/20 text-slate-400';
+                var portfolioClass = c.portfolio === 'complete' ? 'bg-green-500/20 text-green-400' : c.portfolio === 'specialized' ? 'bg-blue-500/20 text-blue-400' : 'bg-slate-500/20 text-slate-400';
+                var productCount = getProductCount(c.products);
+                
+                // Look up revenue from appData
+                var revMatch = revData.find(function(r) { 
+                    return r.id === c.id || r.name.toLowerCase() === c.name.toLowerCase() || r.name.toLowerCase().includes(c.name.split(' ')[0].toLowerCase());
+                });
+                var revenue = revMatch ? NeuroVueDataLoader.formatCurrency(revMatch.annualRevenue) : 'N/A';
+                var neuroRev = revMatch ? NeuroVueDataLoader.formatCurrency(revMatch.neurovascularRevenue) : 'N/A';
+                
+                html += '<div class="glass rounded-xl p-5 border border-slate-800 hover:border-slate-700 transition cursor-pointer" onclick="showCompanyDetail(\'' + c.id + '\')">';
+                html += '<div class="flex items-start justify-between mb-3">';
+                html += '<div><div class="font-bold text-white text-lg">' + c.name + '</div>';
+                html += '<div class="text-sm text-slate-400">' + c.country + ' • ' + c.ticker + '</div></div>';
+                html += '<div class="flex flex-col gap-1">';
+                html += '<span class="px-2 py-1 rounded text-xs font-medium ' + threatClass + '">' + c.threatLevel.toUpperCase() + '</span>';
+                html += '<span class="px-2 py-1 rounded text-xs font-medium ' + portfolioClass + '">' + c.portfolio + '</span>';
+                html += '</div></div>';
+                html += '<div class="grid grid-cols-2 gap-3 mb-3 text-sm">';
+                html += '<div><div class="text-slate-400">Revenue</div><div class="text-white">' + revenue + '</div></div>';
+                html += '<div><div class="text-slate-400">Neuro</div><div class="text-blue-400">' + neuroRev + '</div></div>';
+                html += '</div>';
+                html += '<div class="text-xs text-slate-400 mb-1">Products: ' + productCount + ' total</div>';
+                html += '<div class="flex flex-wrap gap-1 mb-3">';
+                
+                // Show key products by category
+                var allProducts = [];
+                if (c.products.coils && c.products.coils.length) allProducts.push(c.products.coils[0]);
+                if (c.products.flowDiverters && c.products.flowDiverters.length) allProducts.push(c.products.flowDiverters[0]);
+                if (c.products.retrievers && c.products.retrievers.length) allProducts.push(c.products.retrievers[0]);
+                if (c.products.intrasaccular && c.products.intrasaccular.length) allProducts.push(c.products.intrasaccular[0]);
+                if (c.products.pump && c.products.pump !== false && c.products.pump.length) allProducts.push(c.products.pump[0]);
+                
+                for (var j = 0; j < Math.min(allProducts.length, 4); j++) {
+                    html += '<span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">' + allProducts[j] + '</span>';
+                }
+                if (allProducts.length > 4) {
+                    html += '<span class="px-2 py-1 text-xs text-slate-500">+' + (productCount - 4) + '</span>';
+                }
+                html += '</div>';
+                
+                if (c.strengths && c.strengths.length > 0) {
+                    html += '<div class="text-xs text-green-400 mb-1">✓ ' + c.strengths[0] + (c.strengths.length > 1 ? ' +' + (c.strengths.length - 1) : '') + '</div>';
+                }
+                if (c.gaps && c.gaps.length > 0) {
+                    html += '<div class="text-xs text-red-400">⚠ ' + c.gaps[0] + (c.gaps.length > 1 ? ' +' + (c.gaps.length - 1) : '') + '</div>';
+                }
+                html += '</div>';
+            }
+            
+            grid.innerHTML = html || '<div class="col-span-2 text-center py-12 text-slate-400">No companies match the selected filter</div>';
+        }
+
+        function showCompanyDetail(companyId) {
+            var company = getCICompanies().find(function(c) { return c.id === companyId; });
+            if (!company) return;
+            
+            // Get revenue from appData
+            var revData = (window.appData && window.appData.revenue && window.appData.revenue.companies) ? window.appData.revenue.companies : [];
+            var revMatch = revData.find(function(r) { 
+                return r.id === company.id || r.name.toLowerCase() === company.name.toLowerCase() || r.name.toLowerCase().includes(company.name.split(' ')[0].toLowerCase());
+            });
+            var revenue = revMatch ? NeuroVueDataLoader.formatCurrency(revMatch.annualRevenue) : 'N/A';
+            var neuroRev = revMatch ? NeuroVueDataLoader.formatCurrency(revMatch.neurovascularRevenue) : 'N/A';
+            
+            var p = company.products;
+            var productsHtml = '';
+            var categories = [
+                { key: 'coils', label: 'Coils' },
+                { key: 'flowDiverters', label: 'Flow Diverters' },
+                { key: 'stents', label: 'Stents' },
+                { key: 'aspiration', label: 'Aspiration' },
+                { key: 'intrasaccular', label: 'Intrasaccular' },
+                { key: 'retrievers', label: 'Retrievers' },
+                { key: 'balloons', label: 'Balloons' },
+                { key: 'radial', label: 'Radial Access' },
+                { key: 'pump', label: 'Aspiration Pump' }
+            ];
+            
+            for (var i = 0; i < categories.length; i++) {
+                var cat = categories[i];
+                var items = p[cat.key];
+                if (items && items !== false && items.length > 0) {
+                    productsHtml += '<div class="mb-3"><div class="text-xs text-slate-400 mb-1">' + cat.label + '</div><div class="flex flex-wrap gap-1">';
+                    for (var j = 0; j < items.length; j++) {
+                        productsHtml += '<span class="px-2 py-1 bg-blue-900/30 border border-blue-700/50 rounded text-xs text-blue-300">' + items[j] + '</span>';
+                    }
+                    productsHtml += '</div></div>';
+                }
+            }
+            
+            var modal = document.createElement('div');
+            modal.id = 'ciModal';
+            modal.className = 'fixed inset-0 z-50 flex items-center justify-center p-4';
+            modal.style = 'background: rgba(0,0,0,0.8); backdrop-filter: blur(8px);';
+            modal.innerHTML = '<div class="bg-slate-900 rounded-2xl max-w-2xl w-full border border-slate-700 shadow-2xl max-h-[90vh] overflow-y-auto"><div class="p-6"><div class="flex items-start justify-between mb-4"><div class="flex-1"><div class="font-bold text-white text-2xl">' + company.name + '</div><div class="text-slate-400 mb-3">' + company.country + ' • ' + company.ticker + '</div>' + (company.website ? '<a href="' + company.website + '" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-sm font-semibold transition shadow-lg shadow-blue-900/50 border border-blue-500"><i class="fas fa-external-link-alt"></i> Visit Company Website</a>' : '') + '</div><button onclick="closeCompanyDetail()" class="text-slate-400 hover:text-white transition ml-4"><i class="fas fa-times text-xl"></i></button></div><div class="mb-4"><div class="text-xs text-slate-400 mb-2">Revenue: <span class="text-white">' + revenue + '</span> • Neuro: <span class="text-blue-400">' + neuroRev + '</span></div><div class="text-sm text-slate-300 mb-4">' + company.notes + '</div><div class="mb-4">' + productsHtml + '</div><div class="grid grid-cols-2 gap-4"><div><div class="text-xs text-slate-400 mb-2">Strengths:</div>' + (company.strengths ? company.strengths.map(function(s) { return '<div class="text-sm text-green-400 mb-1">✓ ' + s + '</div>'; }).join('') : '') + '</div><div><div class="text-xs text-slate-400 mb-2">Gaps:</div>' + (company.gaps ? company.gaps.map(function(g) { return '<div class="text-sm text-red-400 mb-1">⚠ ' + g + '</div>'; }).join('') : '<div class="text-sm text-slate-500">None identified</div>') + '</div></div></div></div></div>';
+            document.body.appendChild(modal);
+        }
+
+        function closeCompanyDetail() {
+            var modal = document.getElementById('ciModal');
+            if (modal) modal.remove();
+        }
+
+        function toggleComparison() {
+            var view = document.getElementById('ciComparisonView');
+            if (view) {
+                view.classList.toggle('hidden');
+                if (!view.classList.contains('hidden')) {
+                    renderComparisonMatrix();
+                }
+            }
+        }
+
+        function hideComparison() {
+            var view = document.getElementById('ciComparisonView');
+            if (view) view.classList.add('hidden');
+        }
+
+        function renderComparisonMatrix() {
+            var tbody = document.getElementById('ciComparisonTable');
+            if (!tbody) return;
+            
+            var html = '';
+            for (var i = 0; i < getCICompanies().length; i++) {
+                var c = getCICompanies()[i];
+                if (c.id === 'phenox') continue;
+                
+                var p = c.products;
+                html += '<tr class="border-b border-slate-800 hover:bg-slate-800/50 transition">';
+                html += '<td class="py-3 px-2 font-medium text-white sticky left-0 bg-slate-900">' + c.name + '</td>';
+                html += '<td class="py-3 px-2 text-center">' + (p.coils && p.coils.length ? '<i class="fas fa-check text-green-500"></i><div class="text-xs text-slate-500">' + p.coils.length + '</div>' : '<i class="fas fa-times text-slate-600"></i>') + '</td>';
+                html += '<td class="py-3 px-2 text-center">' + (p.flowDiverters && p.flowDiverters.length ? '<i class="fas fa-check text-green-500"></i><div class="text-xs text-slate-500">' + p.flowDiverters.length + '</div>' : '<i class="fas fa-times text-slate-600"></i>') + '</td>';
+                html += '<td class="py-3 px-2 text-center">' + (p.stents && p.stents.length ? '<i class="fas fa-check text-green-500"></i><div class="text-xs text-slate-500">' + p.stents.length + '</div>' : '<i class="fas fa-times text-slate-600"></i>') + '</td>';
+                html += '<td class="py-3 px-2 text-center">' + (p.aspiration && p.aspiration.length ? '<i class="fas fa-check text-green-500"></i><div class="text-xs text-slate-500">' + p.aspiration.length + '</div>' : '<i class="fas fa-times text-slate-600"></i>') + '</td>';
+                html += '<td class="py-3 px-2 text-center">' + (p.intrasaccular && p.intrasaccular.length ? '<i class="fas fa-check text-green-500"></i><div class="text-xs text-slate-500">' + p.intrasaccular.length + '</div>' : '<i class="fas fa-times text-slate-600"></i>') + '</td>';
+                html += '<td class="py-3 px-2 text-center">' + (p.retrievers && p.retrievers.length ? '<i class="fas fa-check text-green-500"></i><div class="text-xs text-slate-500">' + p.retrievers.length + '</div>' : '<i class="fas fa-times text-slate-600"></i>') + '</td>';
+                html += '<td class="py-3 px-2 text-center">' + (p.balloons && p.balloons.length ? '<i class="fas fa-check text-green-500"></i><div class="text-xs text-slate-500">' + p.balloons.length + '</div>' : '<i class="fas fa-times text-slate-600"></i>') + '</td>';
+                html += '<td class="py-3 px-2 text-center">' + (p.radial && p.radial.length ? '<i class="fas fa-check text-green-500"></i><div class="text-xs text-slate-500">' + p.radial.length + '</div>' : '<i class="fas fa-times text-slate-600"></i>') + '</td>';
+                html += '<td class="py-3 px-2 text-center">' + (p.pump && p.pump !== false && p.pump.length ? '<i class="fas fa-check text-green-500"></i><div class="text-xs text-slate-500">' + p.pump.length + '</div>' : '<i class="fas fa-times text-slate-600"></i>') + '</td>';
+                html += '</tr>';
+            }
+            tbody.innerHTML = html;
+        }
+
+        // Initialize Competitor Intel when section shown
+        document.querySelectorAll('.nav-item').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var section = this.getAttribute('onclick').match(/showSection\('([^']+)'\)/);
+                if (section && section[1] === 'competitors') {
+                    setTimeout(function() { renderCompetitorIntel('all', ''); }, 100);
+                }
+            });
+        });
+
+        // CI Filter buttons
+        document.querySelectorAll('.ci-filter-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.ci-filter-btn').forEach(function(b) {
+                    b.classList.remove('active', 'bg-blue-600', 'text-white');
+                    b.classList.add('bg-slate-800', 'text-slate-300');
+                });
+                this.classList.add('active', 'bg-blue-600', 'text-white');
+                this.classList.remove('bg-slate-800', 'text-slate-300');
+                
+                var filter = this.getAttribute('data-filter');
+                var search = document.getElementById('ciSearchInput') ? document.getElementById('ciSearchInput').value : '';
+                renderCompetitorIntel(filter, search);
+            });
+        });
+
+        // CI Search input
+        var ciSearch = document.getElementById('ciSearchInput');
+        if (ciSearch) {
+            ciSearch.addEventListener('input', function() {
+                var activeFilter = document.querySelector('.ci-filter-btn.active');
+                var filter = activeFilter ? activeFilter.getAttribute('data-filter') : 'all';
+                renderCompetitorIntel(filter, this.value);
+            });
+        }
+
+        // PORTFOLIO MATRIX - data loaded from GitHub
+        function getPMData() {
+            return appData && appData.portfolio ? appData.portfolio : { categories: [] };
+        }
+
+        // Store chart instances for updates
+        var pmCoverageChart = null;
+        var pmCategoryChart = null;
+
+        function getCoverageCounts() {
+            var companies = ['medtronic', 'stryker', 'microvention', 'penumbra', 'jnj', 'balt', 'phenox', 'rapid', 'acandis', 'imperative'];
+            var companyLabels = ['Medtronic', 'Stryker', 'Microvention', 'Penumbra', 'J&J', 'Balt', 'Wallaby Phenox', 'Rapid', 'Acandis', 'Imperative'];
+            var counts = [];
+            var colors = ['#3B82F6', '#10B981', '#EF4444', '#F59E0B', '#EC4899', '#8B5CF6', '#39FF14', '#14B8A6', '#6366F1', '#F472B6'];
+            
+            for (var i = 0; i < companies.length; i++) {
+                var count = 0;
+                for (var j = 0; j < getPMData().categories.length; j++) {
+                    var cat = getPMData().categories[j];
+                    var companyData = cat[companies[i]];
+                    if (companyData && companyData.products && companyData.products.length > 0) count++;
+                }
+                counts.push(count);
+            }
+            
+            return { labels: companyLabels, data: counts, colors: colors };
+        }
+
+        function getCategoryDistribution() {
+            var labels = [];
+            var data = [];
+            var colors = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#06B6D4', '#EC4899', '#14B8A6', '#6366F1', '#F472B6'];
+            
+            var companies = ['medtronic', 'stryker', 'microvention', 'penumbra', 'jnj', 'balt', 'phenox', 'rapid', 'acandis', 'imperative'];
+            
+            for (var i = 0; i < getPMData().categories.length; i++) {
+                var cat = getPMData().categories[i];
+                var count = 0;
+                for (var j = 0; j < companies.length; j++) {
+                    var companyData = cat[companies[j]];
+                    if (companyData && companyData.products && companyData.products.length > 0) count++;
+                }
+                labels.push(cat.name);  // Use cat.name, not cat.label
+                data.push(count);
+            }
+            
+            return { labels: labels, data: data, colors: colors };
+        }
+
+        function initPortfolioCharts() {
+            var coverageCtx = document.getElementById('pmCoverageChart');
+            var categoryCtx = document.getElementById('pmCategoryChart');
+            
+            if (!coverageCtx || !categoryCtx) return;
+            
+            // Destroy existing charts if they exist
+            if (pmCoverageChart) { pmCoverageChart.destroy(); }
+            if (pmCategoryChart) { pmCategoryChart.destroy(); }
+            
+            var coverageData = getCoverageCounts();
+            var categoryData = getCategoryDistribution();
+            
+            // Coverage Chart (Bar)
+            pmCoverageChart = new Chart(coverageCtx, {
+                type: 'bar',
+                data: {
+                    labels: coverageData.labels,
+                    datasets: [{
+                        label: 'Categories Covered',
+                        data: coverageData.data,
+                        backgroundColor: coverageData.colors,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#1e293b',
+                            titleColor: '#fff',
+                            bodyColor: '#cbd5e1',
+                            borderColor: '#334155',
+                            borderWidth: 1
+                        }
+                    },
+                    scales: {
+                        y: {
+                            max: 12,
+                            grid: { color: '#334155' },
+                            ticks: { color: '#94a3b8' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#94a3b8' }
+                        }
+                    }
+                }
+            });
+            
+            // Category Chart (Pie)
+            pmCategoryChart = new Chart(categoryCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: categoryData.labels,
+                    datasets: [{
+                        data: categoryData.data,
+                        backgroundColor: categoryData.colors,
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: { color: '#94a3b8', font: { size: 10 } }
+                        },
+                        tooltip: {
+                            backgroundColor: '#1e293b',
+                            titleColor: '#fff',
+                            bodyColor: '#cbd5e1',
+                            borderColor: '#334155',
+                            borderWidth: 1
+                        }
+                    }
+                }
+            });
+        }
+
+        function updatePortfolioMatrix() {
+            var viewFilter = document.getElementById('pmViewFilter');
+            var catFilter = document.getElementById('pmCategoryFilter');
+            var tbody = document.getElementById('portfolioMatrixBody');
+            
+            if (!tbody) return;
+            
+            var view = viewFilter ? viewFilter.value : 'all';
+            var category = catFilter ? catFilter.value : 'all';
+            
+            var pmData = getPMData();
+            if (!pmData || !pmData.categories || pmData.categories.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="11" class="p-8 text-center text-slate-400">No portfolio data available. Check data loading.</td></tr>';
+                return;
+            }
+            
+            var companies = ['medtronic', 'stryker', 'microvention', 'penumbra', 'jnj', 'balt', 'phenox', 'rapid', 'acandis', 'imperative'];
+            
+            var filteredCategories = pmData.categories.filter(function(cat) {
+                // Filter by category
+                if (category !== 'all' && cat.id !== category) return false;
+                
+                // Filter by view type
+                if (view === 'comprehensive') {
+                    // Show categories with 6+ companies having products
+                    var companiesWithProducts = 0;
+                    for (var i = 0; i < companies.length; i++) {
+                        var companyData = cat[companies[i]];
+                        if (companyData && companyData.products && companyData.products.length > 0) companiesWithProducts++;
+                    }
+                    if (companiesWithProducts < 6) return false;
+                } else if (view === 'gaps') {
+                    // Show categories with < 5 companies having products
+                    var companiesWithProducts = 0;
+                    for (var i = 0; i < companies.length; i++) {
+                        var companyData = cat[companies[i]];
+                        if (companyData && companyData.products && companyData.products.length > 0) companiesWithProducts++;
+                    }
+                    if (companiesWithProducts >= 5) return false;
+                }
+                // 'all' shows everything
+                return true;
+            });
+            
+            var html = '';
+            for (var i = 0; i < filteredCategories.length; i++) {
+                var cat = filteredCategories[i];
+                var rowClass = '';
+                
+                html += '<tr class="hover:bg-slate-800/50 transition ' + rowClass + '">';
+                html += '<td class="p-3 font-medium sticky left-0 bg-slate-900">' + cat.name + '</td>';
+                
+                // Helper to render cell - takes company data object and company name
+                function renderCell(companyData, companyName) {
+                    var isWallaby = companyName === 'phenox';
+                    if (companyData && companyData.products && companyData.products.length > 0) {
+                        var productList = companyData.products.join(', ');
+                        var strength = companyData.strength || 'medium';
+                        var strengthColor = strength === 'high' ? 'text-emerald-400' : strength === 'medium' ? 'text-yellow-400' : 'text-slate-400';
+                        var cellClass = isWallaby ? 'p-3 border border-[#39FF14]/50 bg-[#39FF14]/5' : 'p-3';
+                        var checkColor = isWallaby ? 'text-[#39FF14]' : strengthColor;
+                        return '<td class="' + cellClass + '" style="' + (isWallaby ? 'box-shadow: inset 0 0 8px rgba(57,255,20,0.1);' : '') + '"><span class="' + checkColor + '"><i class="fas fa-check-circle mr-1"></i></span><span class="' + (isWallaby ? 'text-white font-medium' : 'text-slate-300') + '">' + productList + '</span></td>';
+                    } else {
+                        var emptyCellClass = isWallaby ? 'p-3 border border-[#39FF14]/30 bg-[#39FF14]/5' : 'p-3';
+                        var emptyIcon = '<i class="far fa-circle text-slate-600"></i>'; // Neutral circle outline
+                        return '<td class="' + emptyCellClass + '" style="' + (isWallaby ? 'box-shadow: inset 0 0 5px rgba(57,255,20,0.05);' : '') + '"><span class="text-slate-600">' + emptyIcon + '</span></td>';
+                    }
+                }
+                
+                // Render cells for each company
+                html += renderCell(cat.medtronic, 'medtronic');
+                html += renderCell(cat.stryker, 'stryker');
+                html += renderCell(cat.microvention, 'microvention');
+                html += renderCell(cat.penumbra, 'penumbra');
+                html += renderCell(cat.jnj, 'jnj');
+                html += renderCell(cat.balt, 'balt');
+                html += renderCell(cat.phenox, 'phenox');
+                html += renderCell(cat.rapid, 'rapid');
+                html += renderCell(cat.acandis, 'acandis');
+                html += renderCell(cat.imperative, 'imperative');
+                
+                html += '</tr>';
+            }
+            
+            tbody.innerHTML = html || '<tr><td colspan="11" class="p-8 text-center text-slate-400">No categories match the selected filter</td></tr>';
+        }
+
+        // Initialize Portfolio Matrix when section shown
+        document.querySelectorAll('.nav-item').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var onclickAttr = this.getAttribute('onclick');
+                if (onclickAttr && onclickAttr.indexOf("'portfolio'") > -1) {
+                    setTimeout(function() { 
+                        initPortfolioCharts();  // Initialize charts first
+                        updatePortfolioMatrix(); // Then update table
+                    }, 100);
+                }
+            });
+        });
+
+        // Region filter
+        var regionFilter = document.getElementById('regionFilter');
+        if (regionFilter) {
+            regionFilter.addEventListener('change', renderDashboard);
+        }
+        
+        // REVENUE DASHBOARD FUNCTIONS
+        var revenueData = [];
+        var selectedRevenueCompanies = new Set();
+        var trendChart = null;
+        var shareChart = null;
+        var currentYearRange = 'all';
+        
+        const companyColors = {
+            'Stryker': '#10B981',
+            'Medtronic': '#3B82F6',
+            'Johnson & Johnson': '#8B5CF6',
+            'Johnson & Johnson (Cerenovus)': '#8B5CF6',
+            'Microvention/Terumo': '#EF4444',
+            'Microvention': '#EF4444',
+            'Terumo': '#EF4444',
+            'Penumbra': '#F59E0B',
+            'Balt': '#06B6D4',
+            'Wallaby Phenox': '#EC4899',
+            'Phenox': '#EC4899',
+            'Rapid Medical': '#14B8A6',
+            'Acandis': '#6366F1',
+            'Imperative Care': '#F472B6'
+        };
+        
+        function loadRevenueData() {
+            if (!appData || !appData.revenue || !appData.revenue.companies) {
+                showRevenueError('No revenue data available. Please ensure revenue-historical.json is deployed.');
+                return;
+            }
+            
+            // Transform data from NEW historical JSON format
+            revenueData = appData.revenue.companies.map(function(c) {
+                var hist = c.historicalRevenue || {};
+                var proj = c.projectedRevenue || {};
+                
+                return {
+                    company: c.name,
+                    ticker: c.ticker,
+                    headquarters: c.headquarters,
+                    color: companyColors[c.name] || '#3B82F6',
+                    cagr: c.cagr,
+                    // All historical years
+                    '2020': hist['2020'] || 0,
+                    '2021': hist['2021'] || 0,
+                    '2022': hist['2022'] || 0,
+                    '2023': hist['2023'] || 0,
+                    '2024': hist['2024'] || 0,
+                    // All projected years
+                    '2025': proj['2025'] || 0,
+                    '2026': proj['2026'] || 0,
+                    '2027': proj['2027'] || 0,
+                    '2028': proj['2028'] || 0,
+                    '2029': proj['2029'] || 0,
+                    '2030': proj['2030'] || 0
+                };
+            }).sort(function(a, b) { return b['2024'] - a['2024']; });
+            
+            // Initialize selected companies (all by default)
+            selectedRevenueCompanies.clear();
+            revenueData.forEach(function(c) { selectedRevenueCompanies.add(c.company); });
+            
+            updateRevenueMetrics();
+            initRevenueCompanySelector();
+            initRevenueCharts();
+            updateRevenueTable();
+        }
+        
+        function showRevenueError(message) {
+            var section = document.getElementById('section-revenue');
+            if (section) {
+                section.innerHTML = '<div class="p-8 text-center"><div class="text-xl font-bold text-red-400 mb-2">Error Loading Revenue Data</div><div class="text-slate-400">' + message + '</div></div>';
+            }
+        }
+        
+        function getYearRange() {
+            var filter = document.getElementById('yearFilter');
+            return filter ? filter.value : 'all';
+        }
+        
+        function getYearsForRange(range) {
+            if (range === '2020-2024') return ['2020', '2021', '2022', '2023', '2024'];
+            if (range === '2024-2030') return ['2024', '2025', '2026', '2027', '2028', '2029', '2030'];
+            // 'all' - full range
+            return ['2020', '2021', '2022', '2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030'];
+        }
+        
+        function updateRevenueMetrics() {
+            var total2024 = revenueData.reduce(function(sum, c) { return sum + (c['2024'] || 0); }, 0);
+            var topCompany = revenueData[0];
+            var avgCAGR = revenueData.reduce(function(sum, c) { return sum + c.cagr; }, 0) / revenueData.length;
+            
+            var elTotal = document.getElementById('metricTotal2024');
+            var elTop = document.getElementById('metricTopCompany');
+            var elCount = document.getElementById('metricCompanies');
+            var elCAGR = document.getElementById('metricCAGR');
+            
+            if (elTotal) elTotal.textContent = '$' + (total2024 / 1000).toFixed(1) + 'B';
+            if (elTop) elTop.textContent = topCompany ? topCompany.company : '--';
+            if (elCount) elCount.textContent = revenueData.length;
+            if (elCAGR) elCAGR.textContent = avgCAGR.toFixed(1) + '%';
+        }
+        
+        function initRevenueCompanySelector() {
+            var container = document.getElementById('revenueCompanySelector');
+            if (!container) return;
+            
+            container.innerHTML = revenueData.map(function(d, i) {
+                return '<label class="flex items-center gap-2 bg-slate-700 px-3 py-1 rounded cursor-pointer hover:bg-slate-600">' +
+                    '<input type="checkbox" value="' + d.company + '" checked onchange="toggleRevenueCompany(this)">' +
+                    '<span class="text-sm" style="color: ' + d.color + '">' + d.company + '</span>' +
+                    '</label>';
+            }).join('');
+        }
+        
+        function toggleRevenueCompany(checkbox) {
+            if (checkbox.checked) {
+                selectedRevenueCompanies.add(checkbox.value);
+            } else {
+                selectedRevenueCompanies.delete(checkbox.value);
+            }
+            updateRevenueDashboard();
+        }
+        
+        function selectAllRevenueCompanies(select) {
+            var checkboxes = document.querySelectorAll('#revenueCompanySelector input');
+            checkboxes.forEach(function(cb) {
+                cb.checked = select;
+                if (select) {
+                    selectedRevenueCompanies.add(cb.value);
+                } else {
+                    selectedRevenueCompanies.delete(cb.value);
+                }
+            });
+            updateRevenueDashboard();
+        }
+        
+        function selectTopRevenueCompanies(n) {
+            var checkboxes = document.querySelectorAll('#revenueCompanySelector input');
+            checkboxes.forEach(function(cb, i) {
+                cb.checked = i < n;
+                if (i < n) {
+                    selectedRevenueCompanies.add(cb.value);
+                } else {
+                    selectedRevenueCompanies.delete(cb.value);
+                }
+            });
+            updateRevenueDashboard();
+        }
+        
+        function initRevenueCharts() {
+            // Destroy existing charts
+            if (trendChart) { trendChart.destroy(); }
+            if (shareChart) { shareChart.destroy(); }
+            
+            var filteredData = revenueData.filter(function(c) { return selectedRevenueCompanies.has(c.company); });
+            var yearRange = getYearRange();
+            var years = getYearsForRange(yearRange);
+            
+            // Trend Chart - uses actual historical/projected data
+            var trendCtx = document.getElementById('trendChart');
+            if (trendCtx) {
+                trendChart = new Chart(trendCtx, {
+                    type: 'line',
+                    data: {
+                        labels: years,
+                        datasets: filteredData.map(function(d) {
+                            return {
+                                label: d.company,
+                                data: years.map(function(y) { return d[y] || 0; }),
+                                borderColor: d.color,
+                                backgroundColor: d.color + '20',
+                                tension: 0.4,
+                                fill: false
+                            };
+                        })
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { position: 'bottom', labels: { color: '#94a3b8' } }
+                        },
+                        scales: {
+                            y: {
+                                grid: { color: '#334155' },
+                                ticks: { color: '#94a3b8', callback: function(v) { return '$' + v.toFixed(0) + 'M'; } }
+                            },
+                            x: {
+                                grid: { color: '#334155' },
+                                ticks: { color: '#94a3b8' }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Market Share Chart - based on 2024 data
+            var shareCtx = document.getElementById('shareChart');
+            if (shareCtx) {
+                shareChart = new Chart(shareCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: filteredData.map(function(d) { return d.company; }),
+                        datasets: [{
+                            data: filteredData.map(function(d) { return d['2024'] || 0; }),
+                            backgroundColor: filteredData.map(function(d) { return d.color; })
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { position: 'right', labels: { color: '#94a3b8' } }
+                        }
+                    }
+                });
+            }
+        }
+        
+        function updateRevenueTable() {
+            var tbody = document.querySelector('#revenueTable tbody');
+            if (!tbody) return;
+            
+            var filteredData = revenueData.filter(function(c) { return selectedRevenueCompanies.has(c.company); });
+            
+            tbody.innerHTML = filteredData.map(function(c) {
+                var rev2024 = c['2024'] || 0;
+                var rev2030 = c['2030'] || 0;
+                var cagr = c.cagr || 0;
+                return '<tr class="hover:bg-slate-700/50">' +
+                    '<td class="p-3 font-medium">' + c.company + '</td>' +
+                    '<td class="p-3 text-right text-emerald-400">$' + rev2024.toFixed(0) + 'M</td>' +
+                    '<td class="p-3 text-right">$' + rev2030.toFixed(0) + 'M</td>' +
+                    '<td class="p-3 text-right text-yellow-400">' + cagr.toFixed(1) + '%</td>' +
+                    '<td class="p-3 text-slate-400">' + (c.headquarters || '') + '</td>' +
+                    '</tr>';
+            }).join('');
+        }
+        
+        function updateRevenueDashboard() {
+            updateRevenueMetrics();
+            initRevenueCharts();
+            updateRevenueTable();
+        }
+        
+        // Initialize Revenue Dashboard when section is shown
+        document.querySelectorAll('.nav-item').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var onclickAttr = this.getAttribute('onclick');
+                if (!onclickAttr) return;
+                var section = onclickAttr.match(/showSection\('([^']+)'\)/);
+                if (section && section[1] === 'revenue') {
+                    setTimeout(function() { 
+                        if (revenueData.length === 0) {
+                            loadRevenueData();
+                        } else {
+                            updateRevenueDashboard();
+                        }
+                    }, 100);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

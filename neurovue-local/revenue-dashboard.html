@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedTech Revenue Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container { position: relative; height: 350px; width: 100%; }
+        .metric-card { transition: all 0.3s ease; }
+        .metric-card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); }
+        .company-logo { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+    <div class="container mx-auto px-4 py-6">
+        <!-- Header -->
+        <header class="mb-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold text-emerald-400">MedTech Revenue Intelligence</h1>
+                    <p class="text-slate-400 mt-1">Neurovascular Market: Company Revenue & Product Analytics</p>
+                </div>
+                <button onclick="loadRevenueData()" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-lg font-medium transition">
+                    Load Revenue Data
+                </button>
+            </div>
+            <div id="status" class="mt-2 text-sm"></div>
+        </header>
+
+        <!-- Filters -->
+        <div id="filters" class="bg-slate-800 rounded-lg p-4 mb-6 hidden">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <div>
+                    <label class="block text-slate-400 text-sm mb-1">Company</label>
+                    <select id="companyFilter" onchange="updateRevenueDashboard()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2 text-sm">
+                        <option value="all">All Companies</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-slate-400 text-sm mb-1">Market/Region</label>
+                    <select id="marketFilter" onchange="updateRevenueDashboard()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2 text-sm">
+                        <option value="all">All Markets</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-slate-400 text-sm mb-1">Product Category</label>
+                    <select id="productFilter" onchange="updateRevenueDashboard()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2 text-sm">
+                        <option value="all">All Products</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-slate-400 text-sm mb-1">Year Range</label>
+                    <select id="yearFilter" onchange="updateRevenueDashboard()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2 text-sm">
+                        <option value="all">All Years</option>
+                        <option value="2024">2024 Only</option>
+                        <option value="2020-2024">2020-2024</option>
+                        <option value="2024-2030">2024-2030 (Forecast)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-slate-400 text-sm mb-1">Metric</label>
+                    <select id="metricFilter" onchange="updateRevenueDashboard()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2 text-sm">
+                        <option value="revenue">Revenue ($)</option>
+                        <option value="growth">Growth Rate (%)</option>
+                        <option value="share">Market Share (%)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Metrics -->
+        <div id="metrics" class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6 hidden">
+            <div class="metric-card bg-slate-800 rounded-lg p-4">
+                <div class="text-slate-400 text-xs uppercase tracking-wide">Total Market 2024</div>
+                <div id="metricTotalMarket" class="text-2xl font-bold text-emerald-400 mt-1">-</div>
+                <div id="metricTotalMarketChange" class="text-xs mt-1"></div>
+            </div>
+            <div class="metric-card bg-slate-800 rounded-lg p-4">
+                <div class="text-slate-400 text-xs uppercase tracking-wide">Top Company</div>
+                <div id="metricTopCompany" class="text-2xl font-bold text-blue-400 mt-1">-</div>
+                <div id="metricTopCompanyShare" class="text-xs text-slate-500 mt-1">-</div>
+            </div>
+            <div class="metric-card bg-slate-800 rounded-lg p-4">
+                <div class="text-slate-400 text-xs uppercase tracking-wide">Companies Tracked</div>
+                <div id="metricCompanies" class="text-2xl font-bold text-purple-400 mt-1">-</div>
+                <div class="text-xs text-slate-500 mt-1">With revenue data</div>
+            </div>
+            <div class="metric-card bg-slate-800 rounded-lg p-4">
+                <div class="text-slate-400 text-xs uppercase tracking-wide">Top Product</div>
+                <div id="metricTopProduct" class="text-2xl font-bold text-yellow-400 mt-1">-</div>
+                <div id="metricTopProductRev" class="text-xs text-slate-500 mt-1">-</div>
+            </div>
+        </div>
+
+        <!-- Charts Grid -->
+        <div id="charts" class="grid grid-cols-1 lg:grid-cols-2 gap-6 hidden">
+            <!-- Company Revenue Trends -->
+            <div class="bg-slate-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-emerald-300 mb-4">Company Revenue Trends ($M)</h3>
+                <div class="chart-container">
+                    <canvas id="companyTrendChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Market Share 2024 -->
+            <div class="bg-slate-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-blue-300 mb-4">Market Share 2024</h3>
+                <div class="chart-container">
+                    <canvas id="marketShareChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Product Revenue Breakdown -->
+            <div class="bg-slate-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-purple-300 mb-4">Product Category Revenue</h3>
+                <div class="chart-container">
+                    <canvas id="productChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Regional Breakdown -->
+            <div class="bg-slate-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-yellow-300 mb-4">Revenue by Region</h3>
+                <div class="chart-container">
+                    <canvas id="regionChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Company Comparison Table -->
+        <div id="companyTable" class="bg-slate-800 rounded-lg p-6 mt-6 hidden">
+            <h3 class="text-lg font-semibold text-orange-300 mb-4">Company Performance Comparison</h3>
+            <div class="overflow-x-auto">
+                <table id="comparisonTable" class="w-full text-left text-sm">
+                    <thead class="bg-slate-700"></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Product Detail Table -->
+        <div id="productTable" class="bg-slate-800 rounded-lg p-6 mt-6 hidden">
+            <h3 class="text-lg font-semibold text-cyan-300 mb-4">Product Revenue Detail</h3>
+            <div class="overflow-x-auto">
+                <table id="productDetailTable" class="w-full text-left text-sm">
+                    <thead class="bg-slate-700"></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let rawRevenueData = null;
+        let parsedRevenueData = null;
+        let revenueCharts = {};
+
+        // Company mapping
+        const companyNames = {
+            'MDT': 'Medtronic',
+            'SYK': 'Stryker',
+            'MV': 'MicroVention',
+            'PEN': 'Penumbra',
+            'JNJ': 'Johnson & Johnson',
+            'ACDS': 'Acandis',
+            'BALT': 'Balt',
+            'ZOOM': 'Zoom',
+            'MP': 'MicroPort',
+            'JQ': 'Jiaqi',
+            'TB': 'Tianbo',
+            'SN': 'Sinobioway',
+            'HC': 'Haichuang',
+            'WP': 'Wallaby/Whisper',
+            'OTHERS': 'Others'
+        };
+
+        // Product categories
+        const productCategories = {
+            'Coil': 'Coils',
+            'Adjuctive Stent': 'Stents',
+            'FD': 'Flow Diverters',
+            'SR': 'Stent Retrievers',
+            'Aspiration Catheter': 'Aspiration',
+            'BGC': 'Balloon Guide Catheters',
+            'Micro Catheter': 'Micro Catheters',
+            'Guidewire': 'Guidewires',
+            'DAC': 'Distal Access Catheters',
+            'AVM Liquid': 'AVM Treatment',
+            'Guide Catheter': 'Guide Catheters',
+            'Long Sheath': 'Long Sheaths',
+            'Remodeling Balloon': 'Remodeling Balloons',
+            'Intrasaccular Device': 'Intrasaccular Devices'
+        };
+
+        async function loadRevenueData() {
+            const statusEl = document.getElementById('status');
+            statusEl.innerHTML = '<span class="text-yellow-400">Loading revenue data...</span>';
+            
+            try {
+                console.log('Starting to fetch data...');
+                const response = await fetch('data/revenue-data.json');
+                console.log('Fetch response:', response.status, response.statusText);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                
+                rawRevenueData = await response.json();
+                console.log('Raw data loaded:', Object.keys(rawRevenueData));
+                parsedRevenueData = parseRevenueData(rawRevenueData);
+                console.log('Parsed records:', parsedRevenueData.length);
+                console.log('Sample records:', parsedRevenueData.slice(0, 3));
+                
+                // Show UI
+                document.getElementById('filters').classList.remove('hidden');
+                document.getElementById('metrics').classList.remove('hidden');
+                document.getElementById('charts').classList.remove('hidden');
+                document.getElementById('companyTable').classList.remove('hidden');
+                document.getElementById('productTable').classList.remove('hidden');
+                
+                // Check if we have data
+                if (parsedRevenueData.length === 0) {
+                    statusEl.innerHTML = '<span class="text-yellow-400">⚠ No revenue data found in files</span>';
+                    return;
+                }
+                
+                // Populate filters
+                populateRevenueFilters();
+                
+                // Update dashboard
+                updateRevenueDashboard();
+                
+                statusEl.innerHTML = `<span class="text-green-400">✓ Revenue data loaded: ${parsedRevenueData.length} records</span>`;
+                
+            } catch (error) {
+                statusEl.innerHTML = `<span class="text-red-400">✗ Error: ${error.message}</span>`;
+                console.error('Full error:', error);
+                console.error('Stack:', error.stack);
+            }
+        }
+
+        function parseRevenueData(rawData) {
+            const records = [];
+            
+            // Parse Jie's sheet from Aug file (has comprehensive company data)
+            const augFile = rawData.revenue_companies_aug;
+            if (augFile && augFile.sheets) {
+                const jieSheet = augFile.sheets["Jie's"];
+                if (jieSheet) {
+                    // Data starts at row index 2 (row 3 in Excel)
+                    for (let i = 2; i < jieSheet.length; i++) {
+                        const row = jieSheet[i];
+                        const companyCode = row['Unnamed: 1'];
+                        if (!companyCode || companyCode === 'Tab.3 Key Companies') continue;
+                        
+                        const companyName = companyNames[companyCode] || companyCode;
+                        const highlight = row['Unnamed: 2'];
+                        const growthLatest = row['Unnamed: 3'];
+                        const growthFuture = row['Unnamed: 4'];
+                        
+                        // Extract yearly revenue data
+                        // Columns: 5=2016, 6=2017, 7=2018, 8=2019, 9=2020, 10=2021, 11=2022, 13=2023, 15=2024, 17=2025, 18=2026, 19=2027, 20=2028, 21=2029, 22=2030
+                        const yearMap = {
+                            2016: 'Unnamed: 5', 2017: 'Unnamed: 6', 2018: 'Unnamed: 7', 2019: 'Unnamed: 8',
+                            2020: 'Unnamed: 9', 2021: 'Unnamed: 10', 2022: 'Unnamed: 11',
+                            2023: 'Unnamed: 13', 2024: 'Unnamed: 15', 2025: 'Unnamed: 17',
+                            2026: 'Unnamed: 18', 2027: 'Unnamed: 19', 2028: 'Unnamed: 20',
+                            2029: 'Unnamed: 21', 2030: 'Unnamed: 22'
+                        };
+                        
+                        Object.entries(yearMap).forEach(([year, col]) => {
+                            const revenue = row[col];
+                            if (revenue && typeof revenue === 'number' && !isNaN(revenue) && revenue > 0) {
+                                records.push({
+                                    company: companyName,
+                                    companyCode: companyCode,
+                                    year: parseInt(year),
+                                    revenue: revenue,
+                                    growthLatest: growthLatest,
+                                    growthFuture: growthFuture,
+                                    highlight: highlight,
+                                    source: '10-K/Company filings',
+                                    type: 'company_revenue'
+                                });
+                            }
+                        });
+                    }
+                }
+                
+                // Parse individual company sheets (MDT, SYK, etc.)
+                const companySheets = ['MDT', 'SYK', 'MV', 'PEN', 'JNJ', 'ACDS', 'BALT', 'ZOOM'];
+                companySheets.forEach(sheetName => {
+                    const sheet = augFile.sheets[sheetName];
+                    if (sheet) {
+                        // Data starts at row index 3
+                        for (let i = 3; i < sheet.length; i++) {
+                            const row = sheet[i];
+                            const market = row['Unnamed: 2'];
+                            const company = row['Unnamed: 3'];
+                            const year = row['Unnamed: 4'];
+                            const revenue = row['Unnamed: 5'];
+                            const comment = row['Unnamed: 6'];
+                            
+                            if (market && company && year && revenue && typeof revenue === 'number') {
+                                records.push({
+                                    market: market,
+                                    region: market,
+                                    company: company,
+                                    year: typeof year === 'number' ? year : parseInt(year),
+                                    revenue: revenue,
+                                    comment: comment,
+                                    type: 'company_regional'
+                                });
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Parse product data from medtech_europe_2024
+            const europeFile = rawData.medtech_europe_2024;
+            if (europeFile && europeFile.sheets) {
+                const revenueSheet = europeFile.sheets["2024_Revenue"];
+                if (revenueSheet && revenueSheet.length > 2) {
+                    // Header row is at index 1
+                    const headerRow = revenueSheet[1];
+                    const products = [];
+                    
+                    // Extract product names from header
+                    for (let col = 2; col <= 15; col++) {
+                        const productName = headerRow[`Unnamed: ${col}`];
+                        if (productName && productName !== 'Grand Total') {
+                            products.push({ name: productName, colIndex: col });
+                        }
+                    }
+                    
+                    // Parse data rows (starting from index 2)
+                    for (let i = 2; i < revenueSheet.length; i++) {
+                        const row = revenueSheet[i];
+                        const region = row['Unnamed: 1'];
+                        if (!region || region === 'Row Labels' || region === 'Grand Total') continue;
+                        
+                        products.forEach(product => {
+                            const revenue = row[`Unnamed: ${product.colIndex}`];
+                            if (revenue && typeof revenue === 'number' && revenue > 0) {
+                                records.push({
+                                    region: region,
+                                    product: product.name,
+                                    productCategory: productCategories[product.name] || product.name,
+                                    year: 2024,
+                                    revenue: revenue,
+                                    type: 'product'
+                                });
+                            }
+                        });
+                    }
+                }
+                
+                // Parse 2024_Combined_Mod1 sheet
+                const combinedSheet = europeFile.sheets["2024_Combined_Mod1"];
+                if (combinedSheet) {
+                    combinedSheet.forEach(row => {
+                        if (row.Market && row.Product && row['2024 Mod1']) {
+                            const revenue = row['2024 Mod1'];
+                            if (typeof revenue === 'number' && revenue > 0) {
+                                records.push({
+                                    market: row.Market,
+                                    region: row.Market,
+                                    product: row.Product,
+                                    productCategory: productCategories[row.Product] || row.Product,
+                                    year: 2024,
+                                    revenue: revenue,
+                                    comment: row.Comment,
+                                    type: 'market_product'
+                                });
+                            }
+                        }
+                    });
+                }
+            }
+            
+            console.log(`Parsed ${records.length} revenue records`);
+            return records;
+        }
+
+        function populateRevenueFilters() {
+            if (!parsedRevenueData) return;
+            
+            // Companies
+            const companies = [...new Set(parsedRevenueData.filter(r => r.company).map(r => r.company))].sort();
+            const companyFilter = document.getElementById('companyFilter');
+            companies.forEach(c => {
+                if (c) companyFilter.innerHTML += `<option value="${c}">${c}</option>`;
+            });
+            
+            // Markets/Regions
+            const markets = [...new Set(parsedRevenueData.filter(r => r.market || r.region).map(r => r.market || r.region))].sort();
+            const marketFilter = document.getElementById('marketFilter');
+            markets.forEach(m => {
+                if (m) marketFilter.innerHTML += `<option value="${m}">${m}</option>`;
+            });
+            
+            // Products
+            const products = [...new Set(parsedRevenueData.filter(r => r.product).map(r => r.product))].sort();
+            const productFilter = document.getElementById('productFilter');
+            products.forEach(p => {
+                if (p) productFilter.innerHTML += `<option value="${p}">${p}</option>`;
+            });
+        }
+
+        function updateRevenueDashboard() {
+            if (!parsedRevenueData) return;
+            
+            const companyFilter = document.getElementById('companyFilter').value;
+            const marketFilter = document.getElementById('marketFilter').value;
+            const productFilter = document.getElementById('productFilter').value;
+            const yearFilter = document.getElementById('yearFilter').value;
+            const metricFilter = document.getElementById('metricFilter').value;
+            
+            // Filter data
+            let filtered = parsedRevenueData.filter(r => {
+                // Company filter
+                if (companyFilter !== 'all' && r.company !== companyFilter) return false;
+                
+                // Market filter
+                if (marketFilter !== 'all' && r.market !== marketFilter && r.region !== marketFilter) return false;
+                
+                // Product filter
+                if (productFilter !== 'all' && r.product !== productFilter) return false;
+                
+                // Year filter
+                if (yearFilter === '2024' && r.year !== 2024) return false;
+                if (yearFilter === '2020-2024' && (r.year < 2020 || r.year > 2024)) return false;
+                if (yearFilter === '2024-2030' && (r.year < 2024 || r.year > 2030)) return false;
+                
+                return true;
+            });
+            
+            // Update metrics
+            updateRevenueMetrics(filtered);
+            
+            // Update charts
+            updateCompanyTrendChart(filtered);
+            updateMarketShareChart(filtered);
+            updateProductChart(filtered);
+            updateRegionChart(filtered);
+            
+            // Update tables
+            updateComparisonTable(filtered);
+            updateProductDetailTable(filtered);
+        }
+
+        function updateRevenueMetrics(data) {
+            // Total market 2024
+            const data2024 = data.filter(r => r.year === 2024 && r.revenue);
+            const total2024 = data2024.reduce((sum, r) => sum + (r.revenue || 0), 0);
+            
+            // Format based on size (could be in millions or actual dollars)
+            let totalDisplay = total2024;
+            let suffix = '';
+            if (total2024 > 1000000) {
+                totalDisplay = total2024 / 1000000;
+                suffix = 'M';
+            } else if (total2024 > 1000) {
+                totalDisplay = total2024 / 1000;
+                suffix = 'K';
+            }
+            
+            document.getElementById('metricTotalMarket').textContent = `$${totalDisplay.toFixed(1)}${suffix}`;
+            
+            // Calculate YoY growth
+            const data2023 = data.filter(r => r.year === 2023 && r.revenue);
+            const total2023 = data2023.reduce((sum, r) => sum + (r.revenue || 0), 0);
+            if (total2023 > 0) {
+                const growth = ((total2024 - total2023) / total2023 * 100).toFixed(1);
+                document.getElementById('metricTotalMarketChange').innerHTML = 
+                    `<span class="${growth >= 0 ? 'text-green-400' : 'text-red-400'}">${growth >= 0 ? '↑' : '↓'} ${Math.abs(growth)}% vs 2023</span>`;
+            }
+            
+            // Top company
+            const companyTotals = {};
+            data2024.forEach(r => {
+                if (r.company) {
+                    if (!companyTotals[r.company]) companyTotals[r.company] = 0;
+                    companyTotals[r.company] += r.revenue || 0;
+                }
+            });
+            const topCompany = Object.entries(companyTotals).sort((a, b) => b[1] - a[1])[0];
+            if (topCompany) {
+                document.getElementById('metricTopCompany').textContent = topCompany[0];
+                const share = total2024 > 0 ? (topCompany[1] / total2024 * 100).toFixed(1) : 0;
+                document.getElementById('metricTopCompanyShare').textContent = `${share}% market share`;
+            }
+            
+            // Companies tracked
+            const uniqueCompanies = Object.keys(companyTotals).length;
+            document.getElementById('metricCompanies').textContent = uniqueCompanies;
+            
+            // Top product
+            const productTotals = {};
+            data2024.forEach(r => {
+                if (r.product) {
+                    if (!productTotals[r.product]) productTotals[r.product] = 0;
+                    productTotals[r.product] += r.revenue || 0;
+                }
+            });
+            const topProduct = Object.entries(productTotals).sort((a, b) => b[1] - a[1])[0];
+            if (topProduct) {
+                document.getElementById('metricTopProduct').textContent = topProduct[0];
+                let prodRev = topProduct[1];
+                if (prodRev > 1000000) {
+                    document.getElementById('metricTopProductRev').textContent = `$${(prodRev/1000000).toFixed(1)}M revenue`;
+                } else if (prodRev > 1000) {
+                    document.getElementById('metricTopProductRev').textContent = `$${(prodRev/1000).toFixed(1)}K revenue`;
+                } else {
+                    document.getElementById('metricTopProductRev').textContent = `$${prodRev.toFixed(0)} revenue`;
+                }
+            }
+        }
+
+        function updateCompanyTrendChart(data) {
+            const ctx = document.getElementById('companyTrendChart').getContext('2d');
+            
+            if (revenueCharts.companyTrend) revenueCharts.companyTrend.destroy();
+            
+            // Get unique companies with revenue data
+            const companies = [...new Set(data.filter(r => r.company && r.revenue).map(r => r.company))];
+            const years = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030];
+            
+            const colors = ['#10B981', '#3B82F6', '#8B5CF6', '#F59E0B', '#EF4444', '#06B6D4', '#EC4899', '#84CC16'];
+            
+            const datasets = companies.slice(0, 6).map((company, idx) => {
+                const companyData = data.filter(r => r.company === company);
+                return {
+                    label: company,
+                    data: years.map(year => {
+                        const yearData = companyData.find(r => r.year === year);
+                        return yearData ? yearData.revenue / 1000000 : null; // Convert to millions
+                    }),
+                    borderColor: colors[idx % colors.length],
+                    backgroundColor: colors[idx % colors.length] + '20',
+                    fill: false,
+                    tension: 0.3
+                };
+            });
+            
+            revenueCharts.companyTrend = new Chart(ctx, {
+                type: 'line',
+                data: { labels: years, datasets },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { 
+                            position: 'top',
+                            labels: { color: '#94A3B8', boxWidth: 12 }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: (ctx) => `${ctx.dataset.label}: $${ctx.raw?.toFixed(1) || 0}M`
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: { 
+                                color: '#94A3B8', 
+                                callback: v => `$${v}M`
+                            },
+                            grid: { color: '#334155' },
+                            title: { display: true, text: 'Revenue ($M)', color: '#64748B' }
+                        },
+                        x: {
+                            ticks: { color: '#94A3B8' },
+                            grid: { color: '#334155' }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateMarketShareChart(data) {
+            const ctx = document.getElementById('marketShareChart').getContext('2d');
+            
+            if (revenueCharts.marketShare) revenueCharts.marketShare.destroy();
+            
+            // Calculate market share for 2024
+            const data2024 = data.filter(r => r.year === 2024 && r.company && r.revenue);
+            const companyTotals = {};
+            data2024.forEach(r => {
+                if (!companyTotals[r.company]) companyTotals[r.company] = 0;
+                companyTotals[r.company] += r.revenue;
+            });
+            
+            const sorted = Object.entries(companyTotals).sort((a, b) => b[1] - a[1]).slice(0, 8);
+            const total = sorted.reduce((sum, [, val]) => sum + val, 0);
+            
+            const labels = sorted.map(([name]) => name);
+            const values = sorted.map(([, val]) => (val / total * 100).toFixed(1));
+            
+            const colors = ['#10B981', '#3B82F6', '#8B5CF6', '#F59E0B', '#EF4444', '#06B6D4', '#EC4899', '#84CC16'];
+            
+            revenueCharts.marketShare = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels,
+                    datasets: [{
+                        data: values,
+                        backgroundColor: colors,
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: { color: '#94A3B8', boxWidth: 12 }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: (ctx) => `${ctx.label}: ${ctx.raw}%`
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateProductChart(data) {
+            const ctx = document.getElementById('productChart').getContext('2d');
+            
+            if (revenueCharts.product) revenueCharts.product.destroy();
+            
+            // Aggregate by product category
+            const data2024 = data.filter(r => r.year === 2024 &> r.revenue && r.product);
+            const productTotals = {};
+            data2024.forEach(r => {
+                const category = r.productCategory || r.product;
+                if (!productTotals[category]) productTotals[category] = 0;
+                productTotals[category] += r.revenue;
+            });
+            
+            const sorted = Object.entries(productTotals).sort((a, b) => b[1] - a[1]).slice(0, 10);
+            
+            revenueCharts.product = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: sorted.map(([name]) => name),
+                    datasets: [{
+                        label: 'Revenue 2024',
+                        data: sorted.map(([, val]) => val > 1000000 ? val / 1000000 : val / 1000),
+                        backgroundColor: '#8B5CF6'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: (ctx) => {
+                                    const val = sorted[ctx.dataIndex][1];
+                                    return val > 1000000 ? `$${(val/1000000).toFixed(1)}M` : `$${(val/1000).toFixed(1)}K`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: { color: '#94A3B8' },
+                            grid: { color: '#334155' }
+                        },
+                        x: {
+                            ticks: { color: '#94A3B8', maxRotation: 45 },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateRegionChart(data) {
+            const ctx = document.getElementById('regionChart').getContext('2d');
+            
+            if (revenueCharts.region) revenueCharts.region.destroy();
+            
+            // Aggregate by region/market
+            const data2024 = data.filter(r => r.year === 2024 && r.revenue && (r.region || r.market));
+            const regionTotals = {};
+            data2024.forEach(r => {
+                const region = r.region || r.market;
+                if (!regionTotals[region]) regionTotals[region] = 0;
+                regionTotals[region] += r.revenue;
+            });
+            
+            const sorted = Object.entries(regionTotals).sort((a, b) => b[1] - a[1]).slice(0, 8);
+            
+            revenueCharts.region = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: sorted.map(([name]) => name),
+                    datasets: [{
+                        label: 'Revenue 2024',
+                        data: sorted.map(([, val]) => val > 1000000 ? val / 1000000 : val / 1000),
+                        backgroundColor: '#F59E0B'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#94A3B8' },
+                            grid: { color: '#334155' }
+                        },
+                        y: {
+                            ticks: { color: '#94A3B8' },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateComparisonTable(data) {
+            const thead = document.querySelector('#comparisonTable thead');
+            const tbody = document.querySelector('#comparisonTable tbody');
+            
+            // Get company data for 2024
+            const companyData2024 = {};
+            data.filter(r => r.year === 2024 && r.company).forEach(r => {
+                if (!companyData2024[r.company]) {
+                    companyData2024[r.company] = { revenue: 0, growth: r.growth || 0, highlight: r.highlight || '' };
+                }
+                companyData2024[r.company].revenue += r.revenue || 0;
+            });
+            
+            // Get 2023 data for YoY
+            const companyData2023 = {};
+            data.filter(r => r.year === 2023 && r.company).forEach(r => {
+                if (!companyData2023[r.company]) companyData2023[r.company] = 0;
+                companyData2023[r.company] += r.revenue || 0;
+            });
+            
+            thead.innerHTML = `
+                <tr class="text-slate-300 text-xs">
+                    <th class="px-4 py-3">Company</th>
+                    <th class="px-4 py-3 text-right">2024 Revenue</th>
+                    <th class="px-4 py-3 text-right">YoY Growth</th>
+                    <th class="px-4 py-3">Key Highlights</th>
+                </tr>
+            `;
+            
+            const sorted = Object.entries(companyData2024).sort((a, b) => b[1].revenue - a[1].revenue);
+            
+            tbody.innerHTML = sorted.map(([company, data]) => {
+                const rev2023 = companyData2023[company] || 0;
+                const yoy = rev2023 > 0 ? ((data.revenue - rev2023) / rev2023 * 100).toFixed(1) : 0;
+                
+                let revenueDisplay = data.revenue > 1000000000 ? `$${(data.revenue/1000000000).toFixed(2)}B` :
+                                    data.revenue > 1000000 ? `$${(data.revenue/1000000).toFixed(1)}M` :
+                                    `$${(data.revenue/1000).toFixed(1)}K`;
+                
+                return `
+                    <tr class="border-t border-slate-700 hover:bg-slate-750">
+                        <td class="px-4 py-3 font-medium">${company}</td>
+                        <td class="px-4 py-3 text-right font-mono text-emerald-400">${revenueDisplay}</td>
+                        <td class="px-4 py-3 text-right font-mono ${yoy >= 0 ? 'text-green-400' : 'text-red-400'}">${yoy > 0 ? '+' : ''}${yoy}%</td>
+                        <td class="px-4 py-3 text-slate-400 text-xs">${data.highlight || '-'}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function updateProductDetailTable(data) {
+            const thead = document.querySelector('#productDetailTable thead');
+            const tbody = document.querySelector('#productDetailTable tbody');
+            
+            // Aggregate product data
+            const productData = {};
+            data.filter(r => r.year === 2024 && r.product).forEach(r => {
+                const key = `${r.product}-${r.market || r.region || 'Global'}`;
+                if (!productData[key]) {
+                    productData[key] = {
+                        product: r.product,
+                        category: r.productCategory || r.product,
+                        market: r.market || r.region || 'Global',
+                        revenue: 0
+                    };
+                }
+                productData[key].revenue += r.revenue || 0;
+            });
+            
+            thead.innerHTML = `
+                <tr class="text-slate-300 text-xs">
+                    <th class="px-4 py-3">Product</th>
+                    <th class="px-4 py-3">Category</th>
+                    <th class="px-4 py-3">Market/Region</th>
+                    <th class="px-4 py-3 text-right">2024 Revenue</th>
+                </tr>
+            `;
+            
+            const sorted = Object.values(productData).sort((a, b) => b.revenue - a.revenue);
+            
+            tbody.innerHTML = sorted.slice(0, 30).map(item => {
+                let revenueDisplay = item.revenue > 1000000 ? `$${(item.revenue/1000000).toFixed(1)}M` :
+                                    `$${(item.revenue/1000).toFixed(1)}K`;
+                
+                return `
+                    <tr class="border-t border-slate-700 hover:bg-slate-750">
+                        <td class="px-4 py-3">${item.product}</td>
+                        <td class="px-4 py-3 text-slate-400">${item.category}</td>
+                        <td class="px-4 py-3 text-slate-400">${item.market}</td>
+                        <td class="px-4 py-3 text-right font-mono text-emerald-400">${revenueDisplay}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+    </script>
+</body>
+</html>

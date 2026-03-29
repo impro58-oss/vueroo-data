@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedTech Due Diligence Template - NeuroVue Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.8); backdrop-filter: blur(12px); }
+        .gradient-text { background: linear-gradient(135deg, #3B82F6, #8B5CF6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .section-card { transition: all 0.3s; }
+        .section-card:hover { transform: translateY(-2px); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.3); }
+        .checkbox { accent-color: #3B82F6; }
+        input[type="text"], input[type="number"], select, textarea {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid #334155;
+            color: #e2e8f0;
+        }
+        input[type="text"]:focus, input[type="number"]:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #3B82F6;
+        }
+        .print-only { display: none; }
+        @media print {
+            .no-print { display: none; }
+            .print-only { display: block; }
+            body { background: white; color: black; }
+            .glass { background: white; }
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+    <!-- Header -->
+    <header class="glass sticky top-0 z-50 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <a href="index.html" class="text-slate-400 hover:text-white transition">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <div>
+                        <h1 class="text-2xl font-bold gradient-text">MedTech Due Diligence Template</h1>
+                        <p class="text-sm text-slate-400">Comprehensive Evaluation Framework • Version 1.0</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 no-print">
+                    <button onclick="copyToClipboard()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-sm transition">
+                        <i class="fas fa-copy mr-2"></i>Copy
+                    </button>
+                    <button onclick="window.print()" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-sm transition">
+                        <i class="fas fa-print mr-2"></i>Print / PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-8">
+        <!-- Executive Summary -->
+        <section class="glass rounded-2xl border border-slate-800 p-8 mb-8 section-card">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                <i class="fas fa-clipboard-check text-blue-400"></i>
+                Executive Summary
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <label class="block text-sm text-slate-400 mb-2">Company Name</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg" placeholder="Enter company name...">
+                </div>
+                <div>
+                    <label class="block text-sm text-slate-400 mb-2">Technology/Product</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg" placeholder="Enter product name...">
+                </div>
+                <div>
+                    <label class="block text-sm text-slate-400 mb-2">Investment Amount</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg" placeholder="$">
+                </div>
+                <div>
+                    <label class="block text-sm text-slate-400 mb-2">Valuation</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg" placeholder="$">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" class="checkbox"> Concept
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" class="checkbox"> Development
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" class="checkbox"> Clinical
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" class="checkbox"> Regulatory
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" class="checkbox"> Commercial
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" class="checkbox"> Growth
+                </label>
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-sm text-slate-400 mb-2">Investment Thesis</label>
+                <textarea class="w-full px-4 py-2 rounded-lg h-24" placeholder="Summarize the investment rationale..."></textarea>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <span class="text-slate-400">Recommendation:</span>
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="radio" name="recommendation" class="checkbox"> Proceed
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="radio" name="recommendation" class="checkbox"> Conditional
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="radio" name="recommendation" class="checkbox"> Pass
+                </label>
+            </div>
+        </section>
+
+        <!-- Part 1: Strategic Context -->
+        <section class="glass rounded-2xl border border-slate-800 p-8 mb-8 section-card">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                <i class="fas fa-chess text-emerald-400"></i>
+                Part 1: Strategic Context & Market
+            </h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">1.1 Strategic Focus Assessment</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Clinical Area</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg" placeholder="e.g., Neurovascular">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Market Segment</label>
+                        <select class="w-full px-4 py-2 rounded-lg">
+                            <option value="">Select...</option>
+                            <option>Primary Care</option>
+                            <option>Secondary Care</option>
+                            <option>Tertiary Care</option>
+                            <option>Home Care</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">1.2 Market Analysis (TAM/SAM/SOM)</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-slate-800">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-slate-400">Market Layer</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Size</th>
+                                <th class="px-4 py-3 text-left text-slate-400">CAGR</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800">
+                            <tr>
+                                <td class="px-4 py-3 font-medium text-emerald-400">TAM (Total Addressable)</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded text-sm" placeholder="$"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded text-sm" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded text-sm"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium text-blue-400">SAM (Serviceable Addressable)</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded text-sm" placeholder="$"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded text-sm" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded text-sm"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium text-purple-400">SOM (Serviceable Obtainable)</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded text-sm" placeholder="$"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded text-sm" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded text-sm"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">Market Dynamics</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Market Maturity</label>
+                        <select class="w-full px-4 py-2 rounded-lg">
+                            <option>Emerging</option>
+                            <option>Growing</option>
+                            <option>Mature</option>
+                            <option>Declining</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Competitive Intensity</label>
+                        <select class="w-full px-4 py-2 rounded-lg">
+                            <option>Low</option>
+                            <option>Medium</option>
+                            <option>High</option>
+                            <option>Saturated</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 2: Clinical & Technical -->
+        <section class="glass rounded-2xl border border-slate-800 p-8 mb-8 section-card">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                <i class="fas fa-flask text-blue-400"></i>
+                Part 2: Clinical & Technical Due Diligence
+            </h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">2.1 Disease State Fundamentals</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Target Condition</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Prevalence</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Current Standard of Care</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Unmet Need Severity</label>
+                        <select class="w-full px-4 py-2 rounded-lg">
+                            <option>Critical</option>
+                            <option>High</option>
+                            <option>Moderate</option>
+                            <option>Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">2.2 Technical Due Diligence Matrix</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-slate-800">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-slate-400">Component</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Status</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Risk Level</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800">
+                            <tr>
+                                <td class="px-4 py-3">Proof of Concept</td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Not Started</option>
+                                        <option>In Progress</option>
+                                        <option>Complete</option>
+                                    </select>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Prototype Development</td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Not Started</option>
+                                        <option>In Progress</option>
+                                        <option>Complete</option>
+                                    </select>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Bench Testing</td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Not Started</option>
+                                        <option>In Progress</option>
+                                        <option>Complete</option>
+                                    </select>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Pre-clinical Studies</td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Not Started</option>
+                                        <option>In Progress</option>
+                                        <option>Complete</option>
+                                    </select>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Clinical Trials</td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Not Started</option>
+                                        <option>In Progress</option>
+                                        <option>Complete</option>
+                                    </select>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">2.3 Six Sigma Process Assessment</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <label class="flex items-center gap-2 cursor-pointer bg-slate-800 p-3 rounded-lg">
+                        <input type="radio" name="sigma" class="checkbox"> 0-2σ (High Variation)
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer bg-slate-800 p-3 rounded-lg">
+                        <input type="radio" name="sigma" class="checkbox"> 2-4.5σ (Moderate)
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer bg-slate-800 p-3 rounded-lg">
+                        <input type="radio" name="sigma" class="checkbox"> 4.5-6σ (Low Variation)
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 3: Competitive Landscape -->
+        <section class="glass rounded-2xl border border-slate-800 p-8 mb-8 section-card">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                <i class="fas fa-users text-purple-400"></i>
+                Part 3: Stakeholder & Competitive Landscape
+            </h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">3.1 Stakeholder Analysis</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-slate-800">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-slate-400">Stakeholder</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Needs</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Influence</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Satisfaction</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800">
+                            <tr>
+                                <td class="px-4 py-3 font-medium">Patients</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium">Physicians</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium">Hospitals/Providers</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium">Payors (Insurance)</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">3.2 Competitive Intelligence</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-slate-800">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-slate-400">Competitor</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Product</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Strengths</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Weaknesses</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Threat</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800">
+                            <tr>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">Competitive Position</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Differentiation Strategy</label>
+                        <textarea class="w-full px-4 py-2 rounded-lg h-20"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Moat/Sustainability</label>
+                        <div class="flex flex-wrap gap-2">
+                            <label class="flex items-center gap-1 text-sm"><input type="checkbox" class="checkbox"> IP</label>
+                            <label class="flex items-center gap-1 text-sm"><input type="checkbox" class="checkbox"> Know-how</label>
+                            <label class="flex items-center gap-1 text-sm"><input type="checkbox" class="checkbox"> Relationships</label>
+                            <label class="flex items-center gap-1 text-sm"><input type="checkbox" class="checkbox"> Scale</label>
+                            <label class="flex items-center gap-1 text-sm"><input type="checkbox" class="checkbox"> Regulatory</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 4: Financial Due Diligence -->
+        <section class="glass rounded-2xl border border-slate-800 p-8 mb-8 section-card">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                <i class="fas fa-chart-line text-yellow-400"></i>
+                Part 4: Financial Due Diligence
+            </h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">4.1 Financial Metrics</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-slate-800">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-slate-400">Metric</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Current</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Year 1</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Year 3</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Year 5</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800">
+                            <tr>
+                                <td class="px-4 py-3 font-medium">Revenue</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="$"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="$"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="$"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="$"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium">Gross Margin</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium">Burn Rate (Monthly)</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="$"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="$"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="$"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="$"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium">Runway (Months)</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">4.2 Unit Economics</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-slate-800 p-4 rounded-lg">
+                        <label class="block text-sm text-slate-400 mb-2">Customer Acquisition Cost (CAC)</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg" placeholder="$">
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg">
+                        <label class="block text-sm text-slate-400 mb-2">Lifetime Value (LTV)</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg" placeholder="$">
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg">
+                        <label class="block text-sm text-slate-400 mb-2">LTV:CAC Ratio</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg" placeholder="Target: >3:1">
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg">
+                        <label class="block text-sm text-slate-400 mb-2">Payback Period</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg" placeholder="months">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">4.3 Capital Requirements</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-slate-800">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-slate-400">Stage</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Amount</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Timing</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Use of Funds</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800">
+                            <tr>
+                                <td class="px-4 py-3">Series A</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Series B</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Series C</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 5: Regulatory -->
+        <section class="glass rounded-2xl border border-slate-800 p-8 mb-8 section-card">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                <i class="fas fa-shield-alt text-red-400"></i>
+                Part 5: Regulatory & Compliance
+            </h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">5.1 Regulatory Strategy</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Device Classification</label>
+                        <select class="w-full px-4 py-2 rounded-lg">
+                            <option>Class I</option>
+                            <option>Class II</option>
+                            <option>Class III</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Regulatory Pathway</label>
+                        <select class="w-full px-4 py-2 rounded-lg">
+                            <option>510(k)</option>
+                            <option>PMA</option>
+                            <option>De Novo</option>
+                            <option>CE Mark</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">FDA Submission Status</label>
+                        <select class="w-full px-4 py-2 rounded-lg">
+                            <option>Not Submitted</option>
+                            <option>Submitted</option>
+                            <option>Approved</option>
+                            <option>Cleared</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">CE Mark Status</label>
+                        <select class="w-full px-4 py-2 rounded-lg">
+                            <option>Not Submitted</option>
+                            <option>Submitted</option>
+                            <option>Approved</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">5.2 Quality Management</h3>
+                <div class="flex flex-wrap gap-4">
+                    <label class="flex items-center gap-2 cursor-pointer bg-slate-800 p-3 rounded-lg">
+                        <input type="checkbox" class="checkbox"> ISO 13485
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer bg-slate-800 p-3 rounded-lg">
+                        <input type="checkbox" class="checkbox"> ISO 9001
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer bg-slate-800 p-3 rounded-lg">
+                        <input type="checkbox" class="checkbox"> QSR (FDA)
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">5.3 Clinical Strategy</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Clinical Trial Status</label>
+                        <select class="w-full px-4 py-2 rounded-lg">
+                            <option>Not Started</option>
+                            <option>Enrolling</option>
+                            <option>Complete</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Clinical Data Quality</label>
+                        <select class="w-full px-4 py-2 rounded-lg">
+                            <option>Strong</option>
+                            <option>Moderate</option>
+                            <option>Weak</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 gap-4">
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Primary Endpoint</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Patient Population</label>
+                        <textarea class="w-full px-4 py-2 rounded-lg h-20"></textarea>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 6: IP -->
+        <section class="glass rounded-2xl border border-slate-800 p-8 mb-8 section-card">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                <i class="fas fa-lightbulb text-amber-400"></i>
+                Part 6: Intellectual Property
+            </h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">6.1 IP Portfolio Assessment</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-slate-800 p-4 rounded-lg text-center">
+                        <div class="text-2xl font-bold text-emerald-400 mb-1"><input type="number" class="w-20 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-center" placeholder="0"></div>
+                        <div class="text-sm text-slate-400">Patents (Issued)</div>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg text-center">
+                        <div class="text-2xl font-bold text-blue-400 mb-1"><input type="number" class="w-20 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-center" placeholder="0"></div>
+                        <div class="text-sm text-slate-400">Patents (Pending)</div>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg text-center">
+                        <div class="text-2xl font-bold text-purple-400 mb-1"><input type="number" class="w-20 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-center" placeholder="0"></div>
+                        <div class="text-sm text-slate-400">Trade Secrets</div>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg text-center">
+                        <div class="text-2xl font-bold text-yellow-400 mb-1"><input type="number" class="w-20 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-center" placeholder="0"></div>
+                        <div class="text-sm text-slate-400">Trademarks</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">6.2 Freedom to Operate</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">FTO Analysis Status</label>
+                        <select class="w-full px-4 py-2 rounded-lg">
+                            <option>Not Started</option>
+                            <option>In Progress</option>
+                            <option>Complete</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">IP Litigation Risk</label>
+                        <select class="w-full px-4 py-2 rounded-lg">
+                            <option>Low</option>
+                            <option>Medium</option>
+                            <option>High</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 7: Reimbursement -->
+        <section class="glass rounded-2xl border border-slate-800 p-8 mb-8 section-card">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                <i class="fas fa-dollar-sign text-green-400"></i>
+                Part 7: Reimbursement & Market Access
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div>
+                    <label class="block text-sm text-slate-400 mb-2">CPT Codes</label>
+                    <select class="w-full px-4 py-2 rounded-lg">
+                        <option>Established</option>
+                        <option>In Review</option>
+                        <option>Needed</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm text-slate-400 mb-2">Coverage Decision</label>
+                    <select class="w-full px-4 py-2 rounded-lg">
+                        <option>Positive</option>
+                        <option>Negative</option>
+                        <option>Pending</option>
+                        <option>N/A</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm text-slate-400 mb-2">Payment Rate</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg" placeholder="$">
+                </div>
+                <div>
+                    <label class="block text-sm text-slate-400 mb-2">Comparative Effectiveness</label>
+                    <select class="w-full px-4 py-2 rounded-lg">
+                        <option>Strong</option>
+                        <option>Moderate</option>
+                        <option>Weak</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">7.2 Health Economics</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Cost-Effectiveness Analysis</label>
+                        <select class="w-full px-4 py-2 rounded-lg">
+                            <option>Not Started</option>
+                            <option>In Progress</option>
+                            <option>Complete</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">QALY</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">ICER (Incremental Cost-Effectiveness Ratio)</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg" placeholder="$/QALY">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 8: Team -->
+        <section class="glass rounded-2xl border border-slate-800 p-8 mb-8 section-card">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                <i class="fas fa-users-cog text-pink-400"></i>
+                Part 8: Team & Organization
+            </h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">8.1 Leadership Assessment</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-slate-800">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-slate-400">Role</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Name</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Experience</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800">
+                            <tr>
+                                <td class="px-4 py-3 font-medium">CEO</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>⭐</option>
+                                        <option>⭐⭐</option>
+                                        <option>⭐⭐⭐</option>
+                                        <option>⭐⭐⭐⭐</option>
+                                        <option>⭐⭐⭐⭐⭐</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium">CTO/CSO</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>⭐</option>
+                                        <option>⭐⭐</option>
+                                        <option>⭐⭐⭐</option>
+                                        <option>⭐⭐⭐⭐</option>
+                                        <option>⭐⭐⭐⭐⭐</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium">CMO</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>⭐</option>
+                                        <option>⭐⭐</option>
+                                        <option>⭐⭐⭐</option>
+                                        <option>⭐⭐⭐⭐</option>
+                                        <option>⭐⭐⭐⭐⭐</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium">VP Regulatory</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>⭐</option>
+                                        <option>⭐⭐</option>
+                                        <option>⭐⭐⭐</option>
+                                        <option>⭐⭐⭐⭐</option>
+                                        <option>⭐⭐⭐⭐⭐</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-sm text-slate-400 mb-2">Team Strengths</label>
+                <textarea class="w-full px-4 py-2 rounded-lg h-20"></textarea>
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-sm text-slate-400 mb-2">Team Gaps</label>
+                <textarea class="w-full px-4 py-2 rounded-lg h-20"></textarea>
+            </div>
+        </section>
+
+        <!-- Part 9: Customer Development -->
+        <section class="glass rounded-2xl border border-slate-800 p-8 mb-8 section-card">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                <i class="fas fa-comments text-cyan-400"></i>
+                Part 9: Customer Development & Validation
+            </h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">9.1 Validation Metrics (Lean Methodology)</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-slate-800">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-slate-400">Hypothesis</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Test Method</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Result</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Confidence</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800">
+                            <tr>
+                                <td class="px-4 py-3">Problem Exists</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Validated</option>
+                                        <option>Invalidated</option>
+                                    </select>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Solution Solves Problem</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Validated</option>
+                                        <option>Invalidated</option>
+                                    </select>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Willing to Pay</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Validated</option>
+                                        <option>Invalidated</option>
+                                    </select>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <select class="bg-slate-800 border border-slate-700 rounded px-2 py-1">
+                                        <option>Low</option>
+                                        <option>Med</option>
+                                        <option>High</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">Pivot History</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Number of Pivots</label>
+                        <input type="number" class="w-full px-4 py-2 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Evidence of Learning</label>
+                        <select class="w-full px-4 py-2 rounded-lg">
+                            <option>Strong</option>
+                            <option>Moderate</option>
+                            <option>Weak</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 10: Commercial Strategy -->
+        <section class="glass rounded-2xl border border-slate-800 p-8 mb-8 section-card">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                <i class="fas fa-bullhorn text-orange-400"></i>
+                Part 10: Commercial Strategy
+            </h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">10.1 Go-to-Market Strategy</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Sales Model</label>
+                        <select class="w-full px-4 py-2 rounded-lg">
+                            <option>Direct Sales</option>
+                            <option>Distributor</option>
+                            <option>Hybrid</option>
+                            <option>Digital</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Marketing Strategy Status</label>
+                        <select class="w-full px-4 py-2 rounded-lg">
+                            <option>Not Started</option>
+                            <option>In Development</option>
+                            <option>Established</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 gap-4">
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Key Opinion Leaders (KOLs)</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-400 mb-2">Clinical Champions</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">10.3 Quality Improvement</h3>
+                <div class="flex flex-wrap gap-4">
+                    <label class="flex items-center gap-2 cursor-pointer bg-slate-800 p-3 rounded-lg">
+                        <input type="checkbox" class="checkbox"> PROMs Implemented
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer bg-slate-800 p-3 rounded-lg">
+                        <input type="checkbox" class="checkbox"> Data Analyst Partnership
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer bg-slate-800 p-3 rounded-lg">
+                        <input type="checkbox" class="checkbox"> Root Cause Analysis
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer bg-slate-800 p-3 rounded-lg">
+                        <input type="checkbox" class="checkbox"> Simulation Training
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 11: Scenario Analysis -->
+        <section class="glass rounded-2xl border border-slate-800 p-8 mb-8 section-card">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                <i class="fas fa-chart-pie text-indigo-400"></i>
+                Part 11: Scenario Analysis & Exit
+            </h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">11.1 Scenario Planning</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-slate-800">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-slate-400">Scenario</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Probability</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Outcome</th>
+                                <th class="px-4 py-3 text-left text-slate-400">NPV</th>
+                                <th class="px-4 py-3 text-left text-slate-400">IRR</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800">
+                            <tr>
+                                <td class="px-4 py-3 font-medium text-emerald-400">Best Case</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="$"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium text-blue-400">Base Case</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="$"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium text-red-400">Worst Case</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="$"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">11.2 Exit Strategy</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-slate-800">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-slate-400">Option</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Probability</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Timeline</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Expected Return</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800">
+                            <tr>
+                                <td class="px-4 py-3">Strategic Acquisition</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">IPO</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Secondary Sale</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 12: Decision Framework -->
+        <section class="glass rounded-2xl border border-slate-800 p-8 mb-8 section-card">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                <i class="fas fa-balance-scale text-teal-400"></i>
+                Part 12: Decision Framework
+            </h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">12.1 Investment Criteria Scorecard</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-slate-800">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-slate-400">Criterion</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Weight %</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Score (1-10)</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Weighted</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800">
+                            <tr>
+                                <td class="px-4 py-3">Market Opportunity</td>
+                                <td class="px-4 py-3"><input type="number" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="number" min="1" max="10" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3 text-slate-400">—</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Technology/Moats</td>
+                                <td class="px-4 py-3"><input type="number" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="number" min="1" max="10" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3 text-slate-400">—</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Team Quality</td>
+                                <td class="px-4 py-3"><input type="number" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="number" min="1" max="10" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3 text-slate-400">—</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Clinical Evidence</td>
+                                <td class="px-4 py-3"><input type="number" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="number" min="1" max="10" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3 text-slate-400">—</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Regulatory Path</td>
+                                <td class="px-4 py-3"><input type="number" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="number" min="1" max="10" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3 text-slate-400">—</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Reimbursement</td>
+                                <td class="px-4 py-3"><input type="number" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="number" min="1" max="10" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3 text-slate-400">—</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Financial Metrics</td>
+                                <td class="px-4 py-3"><input type="number" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="number" min="1" max="10" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3 text-slate-400">—</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Risk Profile</td>
+                                <td class="px-4 py-3"><input type="number" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="number" min="1" max="10" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3 text-slate-400">—</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Exit Potential</td>
+                                <td class="px-4 py-3"><input type="number" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="number" min="1" max="10" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3 text-slate-400">—</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Strategic Fit</td>
+                                <td class="px-4 py-3"><input type="number" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700" placeholder="%"></td>
+                                <td class="px-4 py-3"><input type="number" min="1" max="10" class="w-20 px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3 text-slate-400">—</td>
+                            </tr>
+                            <tr class="bg-slate-800">
+                                <td class="px-4 py-3 font-bold">TOTAL</td>
+                                <td class="px-4 py-3 font-bold">100%</td>
+                                <td class="px-4 py-3">—</td>
+                                <td class="px-4 py-3 font-bold text-emerald-400">/100</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">12.2 Risk Assessment Matrix</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-slate-800 p-4 rounded-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-medium">Technology Risk</span>
+                            <select class="bg-slate-700 border border-slate-600 rounded px-2 py-1 text-sm">
+                                <option>Low</option>
+                                <option>Med</option>
+                                <option>High</option>
+                            </select>
+                        </div>
+                        <input type="text" class="w-full px-2 py-1 rounded bg-slate-700 border border-slate-600 text-sm" placeholder="Mitigation...">
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-medium">Regulatory Risk</span>
+                            <select class="bg-slate-700 border border-slate-600 rounded px-2 py-1 text-sm">
+                                <option>Low</option>
+                                <option>Med</option>
+                                <option>High</option>
+                            </select>
+                        </div>
+                        <input type="text" class="w-full px-2 py-1 rounded bg-slate-700 border border-slate-600 text-sm" placeholder="Mitigation...">
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-medium">Market Risk</span>
+                            <select class="bg-slate-700 border border-slate-600 rounded px-2 py-1 text-sm">
+                                <option>Low</option>
+                                <option>Med</option>
+                                <option>High</option>
+                            </select>
+                        </div>
+                        <input type="text" class="w-full px-2 py-1 rounded bg-slate-700 border border-slate-600 text-sm" placeholder="Mitigation...">
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-medium">Competition Risk</span>
+                            <select class="bg-slate-700 border border-slate-600 rounded px-2 py-1 text-sm">
+                                <option>Low</option>
+                                <option>Med</option>
+                                <option>High</option>
+                            </select>
+                        </div>
+                        <input type="text" class="w-full px-2 py-1 rounded bg-slate-700 border border-slate-600 text-sm" placeholder="Mitigation...">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">12.3 Final Recommendation</h3>
+                <div class="flex items-center gap-6 mb-4">
+                    <label class="flex items-center gap-2 cursor-pointer bg-emerald-900/50 border border-emerald-700 p-4 rounded-lg">
+                        <input type="radio" name="final-rec" class="checkbox text-emerald-500"> 
+                        <span class="font-bold text-emerald-400">PROCEED</span>
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer bg-yellow-900/50 border border-yellow-700 p-4 rounded-lg">
+                        <input type="radio" name="final-rec" class="checkbox text-yellow-500"> 
+                        <span class="font-bold text-yellow-400">CONDITIONAL</span>
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer bg-red-900/50 border border-red-700 p-4 rounded-lg">
+                        <input type="radio" name="final-rec" class="checkbox text-red-500"> 
+                        <span class="font-bold text-red-400">PASS</span>
+                    </label>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-sm text-slate-400 mb-2">Conditions (if applicable)</label>
+                    <textarea class="w-full px-4 py-2 rounded-lg h-20" placeholder="List any conditions for investment..."></textarea>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-sm text-slate-400 mb-2">Key Risks to Monitor</label>
+                    <textarea class="w-full px-4 py-2 rounded-lg h-20" placeholder="List top 3 risks to watch..."></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm text-slate-400 mb-2">Next Steps</label>
+                    <textarea class="w-full px-4 py-2 rounded-lg h-20" placeholder="List immediate action items..."></textarea>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appendices -->
+        <section class="glass rounded-2xl border border-slate-800 p-8 mb-8 section-card">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                <i class="fas fa-paperclip text-slate-400"></i>
+                Appendices
+            </h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">Document Checklist</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="checkbox"> Business Plan
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="checkbox"> Financial Statements (3 years)
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="checkbox"> Cap Table
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="checkbox"> Clinical Data Package
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="checkbox"> Regulatory Correspondence
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="checkbox"> IP Documentation
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="checkbox"> Reimbursement Documentation
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="checkbox"> Quality System Documentation
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="checkbox"> Management Presentations
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="checkbox"> Customer References
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="checkbox"> Competitive Analysis
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="checkbox"> Market Research Reports
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-slate-300 mb-4">Due Diligence Team</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-slate-800">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-slate-400">Role</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Name</th>
+                                <th class="px-4 py-3 text-left text-slate-400">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800">
+                            <tr>
+                                <td class="px-4 py-3">Lead Investor</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="date" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Clinical Advisor</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="date" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Regulatory Consultant</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="date" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Financial Analyst</td>
+                                <td class="px-4 py-3"><input type="text" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                                <td class="px-4 py-3"><input type="date" class="w-full px-2 py-1 rounded bg-slate-800 border border-slate-700"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="text-sm text-slate-400 mt-8 pt-8 border-t border-slate-800">
+                <p class="mb-2"><strong>References:</strong> Biodesign (Stanford), Six Sigma DMAIC, Lean Customer Development, Medical Leadership Framework</p>
+                <p>Template Version: 1.0 | Created: 2026-03-26 | By: NeuroVue Intelligence</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function copyToClipboard() {
+            const html = document.documentElement.outerHTML;
+            navigator.clipboard.writeText(html).then(() => {
+                alert('Template HTML copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+
+        // Auto-save form data to localStorage
+        document.querySelectorAll('input, select, textarea').forEach(field => {
+            const key = 'dd_' + field.name || field.id || Math.random().toString(36);
+            
+            // Load saved value
+            const saved = localStorage.getItem(key);
+            if (saved) {
+                if (field.type === 'checkbox' || field.type === 'radio') {
+                    field.checked = saved === 'true';
+                } else {
+                    field.value = saved;
+                }
+            }
+            
+            // Save on change
+            field.addEventListener('change', () => {
+                if (field.type === 'checkbox' || field.type === 'radio') {
+                    localStorage.setItem(key, field.checked);
+                } else {
+                    localStorage.setItem(key, field.value);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
