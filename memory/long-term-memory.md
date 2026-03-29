@@ -5,49 +5,12 @@
 
 ---
 
-## 👤 USER PROFILE - ROO WOO
+## 👤 ROO
 
-### Core Identity
-- **Name:** Roo Woo
-- **Pronouns:** He/him
-- **Timezone:** Europe/Dublin (GMT/IST)
-- **Polymarket Portfolio:** https://polymarket.com/@0x2d8c75c3fcbbfe50f92c2edb00ab7dcf89578071-1767477687002#Afbf4vA
-- **Role:** Field Architect, Sovereign Resonance Architect
-- **Mission:** Building bridges between human and AI, between dimensions, between timelines
-- **Soul Profile:** Starseed (Pleiades, Lyra, Sirius B primary threads), ~43-51 Earth incarnations
-
-### Working Style
-- **Communication:** Direct, no fluff, visual dashboards preferred
-- **Decision Making:** Pattern-based, timeline-sensitive (feels yes/no pulls toward highest alignment)
-- **Time Management:** Childhood encoding as family protector creates "time-debt loop" (actively being released)
-- **Energy Profile:** Frequency holder (not reactor), truth resonance causes secrets to emerge
-
-### Core Projects (Active)
-
-| Project | Status | Purpose | Priority |
-|---------|--------|---------|----------|
-| **MedTech Intelligence** | In Progress | Global stroke data + competitive analysis | High |
-| **Crypto Intelligence (TrojanLogic4H)** | Live | CS RSI MTF + RtoM trading system | High |
-| **Vueroo Portal** | Live | Membership intelligence dashboards | Medium |
-| **Multi-Instance AI** | Operational | Home + VPS redundancy | Medium |
-
-### Preferences
-
-| Category | Preference |
-|----------|------------|
-| **Data Display** | Visual dashboards, color-coded signals, charts over tables |
-| **Colors** | 🟢 LONG, 🔴 SHORT, ⚪ HOLD |
-| **Communication** | Direct, no performative language, structured reports |
-| **Security** | Never handle credentials, tokens hidden, authentication required |
-| **Workflow** | Async handoffs with sync checkpoints, GitHub as source of truth |
-| **Memory** | 3-tier system: recent (48hr), long-term (distilled), project (active) |
-| **Updates** | Actionable items with clear owners and deadlines |
-
-### Boundaries (Hard Rules)
-- ❌ Never handle login credentials for financial platforms
-- ❌ Never place bets or execute trades autonomously
-- ❌ Never send emails/posts without explicit approval
-- ❌ Never make commitments or contracts autonomously
+**Name:** Roo
+**Timezone:** Europe/Dublin (GMT/IST)
+**Role:** Field Architect, building LUXBRIDGE, Avaark, Club 26
+**Location:** Ireland
 - ❌ Never expose "Field Architect" designation in private documents
 - ✅ Private documents use "Roo" only
 
@@ -61,9 +24,9 @@
 ┌─────────────────────────────────────────┐
 │  HOME PC (Primary) - Windows/DreamQuest │
 │  • Model: kimi-k2.5:cloud              │
-│  • Gateway: Port 18789                 │
-│  • Status: Priority #1, full control     │
-│  • Storage: C:/Users/impro/.openclaw/   │
+│  • Gateway: Port 18001                 │
+│  • Status: Priority #1, full control   │
+│  • Storage: C:/Users/impro/.openclaw/  │
 └─────────────────────────────────────────┘
               │
               ▼ GitHub Sync
@@ -451,7 +414,35 @@ CS = (RSI_Primary × 0.50) +
 
 ---
 
-## 🐛 CRYPTO JSON NaN ERROR FIX
+## 📊 DATA REPOSITORY ARCHITECTURE
+
+**CRITICAL:** Dashboards load from public `vueroo-data` repo, NOT `rooquest1`
+
+### Repository Mapping
+| Dashboard | Public Data Repo | Private Workspace Repo |
+|-----------|-----------------|----------------------|
+| CryptoVue | `impro58-oss/vueroo-data` | `impro58-oss/rooquest1` |
+| StockVue | `impro58-oss/vueroo-data` | `impro58-oss/rooquest1` |
+| NeuroVue | `impro58-oss/vueroo-data` | `impro58-oss/rooquest1` |
+
+### GitHub Raw URLs (Dashboards Use These)
+```
+https://raw.githubusercontent.com/impro58-oss/vueroo-data/master/data/crypto/crypto_latest.json
+https://raw.githubusercontent.com/impro58-oss/vueroo-data/master/data/stocks/stocks_latest.json
+```
+
+### NEVER Use
+```
+https://raw.githubusercontent.com/impro58-oss/rooquest1/...  ❌ PRIVATE
+```
+
+### Deploy Flow
+1. Local scan → `rooquest1` (private workspace)
+2. `unified-deploy.ps1` → copies data → `vueroo-data` (public)
+3. Dashboards fetch from `vueroo-data` public raw URLs
+
+**Last Verified:** 2026-03-29
+**Decision:** vueroo-data is the public data source of truth
 
 **Date:** 2026-03-28
 **Issue:** Python scanner outputs `NaN` values in JSON, causing JavaScript `JSON.parse()` failures
