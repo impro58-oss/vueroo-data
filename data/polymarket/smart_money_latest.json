@@ -1,7 +1,7 @@
 ﻿{
-    "markets_with_movement":  2,
-    "timestamp":  "2026-03-29 11:00:19",
-    "scan_file":  "markets-2026-03-29-1100.json",
+    "markets_with_movement":  1,
+    "timestamp":  "2026-03-29 12:00:22",
+    "scan_file":  "markets-2026-03-29-1200.json",
     "top_opportunities":  {
 
                           },
@@ -12,27 +12,14 @@
                           "Market":  "How much will be wagered on US sports betting in 2026?",
                           "Category":  "sports",
                           "Url":  "https://polymarket.com/event/how-much-will-be-wagered-on-us-sports-betting-in-2026",
-                          "PreviousOdds":  75,
-                          "CurrentOdds":  83,
-                          "Movement":  8,
-                          "MovementPercent":  8,
-                          "Direction":  "UP",
-                          "Confidence":  "MEDIUM",
-                          "PreviousTime":  "2026-03-29 10:00:22",
-                          "CurrentTime":  "2026-03-29 11:00:19"
-                      },
-                      {
-                          "Market":  "Will Meta (META) close above ___ end of April?",
-                          "Category":  "finance",
-                          "Url":  "https://polymarket.com/event/meta-above-in-april-2026",
-                          "PreviousOdds":  88,
-                          "CurrentOdds":  80,
-                          "Movement":  -8,
-                          "MovementPercent":  8,
+                          "PreviousOdds":  83,
+                          "CurrentOdds":  77,
+                          "Movement":  -6,
+                          "MovementPercent":  6,
                           "Direction":  "DOWN",
-                          "Confidence":  "MEDIUM",
-                          "PreviousTime":  "2026-03-29 10:00:22",
-                          "CurrentTime":  "2026-03-29 11:00:19"
+                          "Confidence":  "LOW",
+                          "PreviousTime":  "2026-03-29 11:00:19",
+                          "CurrentTime":  "2026-03-29 12:00:22"
                       }
                   ],
     "smart_money_alerts":  0
