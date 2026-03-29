@@ -10,7 +10,7 @@ import time
 from datetime import datetime
 from trojanlogic_4h import TrojanLogic4H
 from multi_source_feed import MultiSourceFeed
-from crypto_data_manager import save_scan_results, export_for_huggingface
+from crypto_data_manager import save_scan_results
 
 # Get top 200 from Binance by volume
 def get_top_200():
@@ -178,10 +178,6 @@ def analyze_all():
         print(f"[OK] Latest scan: {data_info['latest_file']}")
         print(f"[OK] History: {data_info['history_file']}")
         print(f"[OK] Archive: {data_info['dated_file']}")
-        
-        # Export for Hugging Face
-        hf_file = export_for_huggingface()
-        print(f"[OK] Hugging Face export: {hf_file}")
     except Exception as e:
         print(f"[WARN] Data export error: {e}")
     
