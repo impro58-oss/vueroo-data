@@ -463,6 +463,20 @@ def run_stock_scan(symbols: List[str] = None, max_calls: int = 25):
                     print(f"  {emoji} {r['symbol']}: {r['signal'].upper()} (conf: {r['confidence']}, RSI: {r['rsi']})")
                     print(f"     Reasons: {', '.join(r['reasons'])}")
         
+        # AUTO-DEPLOY: Trigger unified deploy pipeline
+        print("")
+        print("=" * 60)
+        print("TRIGGERING DEPLOY...")
+        print("=" * 60)
+        import subprocess
+        deploy_script = r"C:\Users\impro\.openclaw\workspace\scripts\unified-deploy.ps1"
+        try:
+            subprocess.run(["powershell", "-ExecutionPolicy", "Bypass", "-File", deploy_script, "-Source", "stocks"], 
+                         check=True, capture_output=True, text=True)
+            print("✅ Deploy triggered successfully")
+        except Exception as e:
+            print(f"⚠️  Deploy trigger failed (non-critical): {e}")
+        
         return len(results)
     else:
         print("WARNING: No data collected")

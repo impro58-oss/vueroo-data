@@ -47,9 +47,9 @@ try {
         $TrendOutput | ForEach-Object { Write-Log $_ }
         
         # Step 4: Deploy to GitHub and Vercel (PERMANENT SOLUTION)
-        Write-Log "Running full deploy pipeline..."
+        Write-Log "Running unified deploy pipeline..."
         try {
-            $DeployOutput = & "C:\Users\impro\.openclaw\workspace\scripts\post-scan-deploy.ps1" 2>&1
+            $DeployOutput = & "C:\Users\impro\.openclaw\workspace\scripts\unified-deploy.ps1" -Source crypto 2>&1
             $DeployOutput | ForEach-Object { Write-Log $_ }
         } catch {
             Write-Log "[WARN] Deploy error: $_"
