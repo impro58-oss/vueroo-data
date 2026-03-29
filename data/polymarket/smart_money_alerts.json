@@ -1,73 +1,73 @@
 ﻿{
-    "timestamp":  "2026-03-28 20:00:24",
+    "timestamp":  "2026-03-29 00:00:24",
     "all_movements":  [
                           {
-                              "Market":  "LoL: RED Academy vs INTZ e-Sports (BO1) - Circuito Desafiante Regular Season",
+                              "Market":  "Illinois Fighting Illini vs. Iowa Hawkeyes",
                               "Category":  "sports",
-                              "Url":  "https://polymarket.com/event/lol-reda-itz-2026-04-01",
-                              "PreviousOdds":  68,
-                              "CurrentOdds":  54,
-                              "Movement":  -14,
-                              "MovementPercent":  14,
+                              "Url":  "https://polymarket.com/event/cbb-ill-iowa-2026-03-28",
+                              "PreviousOdds":  72,
+                              "CurrentOdds":  64,
+                              "Movement":  -8,
+                              "MovementPercent":  8,
                               "Direction":  "DOWN",
-                              "Confidence":  "HIGH",
-                              "PreviousTime":  "2026-03-28 19:00:22",
-                              "CurrentTime":  "2026-03-28 20:00:24"
+                              "Confidence":  "MEDIUM",
+                              "PreviousTime":  "2026-03-28 23:00:19",
+                              "CurrentTime":  "2026-03-29 00:00:24"
                           },
                           {
-                              "Market":  "Counter-Strike: Natus Vincere vs PARIVISION (BO3) - BLAST Open Rotterdam Playoffs",
+                              "Market":  "Pistons vs. Timberwolves",
                               "Category":  "sports",
-                              "Url":  "https://polymarket.com/event/cs2-navi-prv-2026-03-28",
-                              "PreviousOdds":  53,
+                              "Url":  "https://polymarket.com/event/nba-det-min-2026-03-28",
+                              "PreviousOdds":  68,
                               "CurrentOdds":  100,
-                              "Movement":  47,
-                              "MovementPercent":  47,
+                              "Movement":  32,
+                              "MovementPercent":  32,
                               "Direction":  "UP",
                               "Confidence":  "HIGH",
-                              "PreviousTime":  "2026-03-28 19:00:22",
-                              "CurrentTime":  "2026-03-28 20:00:24"
+                              "PreviousTime":  "2026-03-28 23:00:19",
+                              "CurrentTime":  "2026-03-29 00:00:24"
                           },
                           {
-                              "Market":  "Spurs vs. Bucks",
+                              "Market":  "76ers vs. Hornets",
                               "Category":  "sports",
-                              "Url":  "https://polymarket.com/event/nba-sas-mil-2026-03-28",
-                              "PreviousOdds":  94,
-                              "CurrentOdds":  100,
-                              "Movement":  6,
-                              "MovementPercent":  6,
+                              "Url":  "https://polymarket.com/event/nba-phi-cha-2026-03-28",
+                              "PreviousOdds":  74,
+                              "CurrentOdds":  79,
+                              "Movement":  5,
+                              "MovementPercent":  5,
                               "Direction":  "UP",
                               "Confidence":  "LOW",
-                              "PreviousTime":  "2026-03-28 19:00:22",
-                              "CurrentTime":  "2026-03-28 20:00:24"
+                              "PreviousTime":  "2026-03-28 23:00:19",
+                              "CurrentTime":  "2026-03-29 00:00:24"
                           },
                           {
-                              "Market":  "Senators vs. Lightning",
-                              "Category":  "sports",
-                              "Url":  "https://polymarket.com/event/nhl-ott-tb-2026-03-28",
-                              "PreviousOdds":  56,
-                              "CurrentOdds":  100,
-                              "Movement":  44,
-                              "MovementPercent":  44,
-                              "Direction":  "UP",
+                              "Market":  "Will Amazon (AMZN) close above ___ end of April?",
+                              "Category":  "finance",
+                              "Url":  "https://polymarket.com/event/amzn-above-in-april-2026",
+                              "PreviousOdds":  50,
+                              "CurrentOdds":  26,
+                              "Movement":  -24,
+                              "MovementPercent":  24,
+                              "Direction":  "DOWN",
                               "Confidence":  "HIGH",
-                              "PreviousTime":  "2026-03-28 19:00:22",
-                              "CurrentTime":  "2026-03-28 20:00:24"
+                              "PreviousTime":  "2026-03-28 23:00:19",
+                              "CurrentTime":  "2026-03-29 00:00:24"
                           }
                       ],
     "total_movements":  4,
     "smart_money_alerts":  [
                                {
-                                   "Market":  "LoL: RED Academy vs INTZ e-Sports (BO1) - Circuito Desafiante Regular Season",
+                                   "Market":  "Illinois Fighting Illini vs. Iowa Hawkeyes",
                                    "Category":  "sports",
-                                   "Url":  "https://polymarket.com/event/lol-reda-itz-2026-04-01",
-                                   "PreviousOdds":  68,
-                                   "CurrentOdds":  54,
-                                   "Movement":  -14,
-                                   "MovementPercent":  14,
+                                   "Url":  "https://polymarket.com/event/cbb-ill-iowa-2026-03-28",
+                                   "PreviousOdds":  72,
+                                   "CurrentOdds":  64,
+                                   "Movement":  -8,
+                                   "MovementPercent":  8,
                                    "Direction":  "DOWN",
-                                   "Confidence":  "HIGH",
-                                   "PreviousTime":  "2026-03-28 19:00:22",
-                                   "CurrentTime":  "2026-03-28 20:00:24"
+                                   "Confidence":  "MEDIUM",
+                                   "PreviousTime":  "2026-03-28 23:00:19",
+                                   "CurrentTime":  "2026-03-29 00:00:24"
                                }
                            ]
 }
