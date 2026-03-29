@@ -45,7 +45,7 @@ if ($Source -eq 'crypto' -or $Source -eq 'all') {
         $Archive = "$MonthDir\$($CryptoLatest.Name)"
         Copy-Item $CryptoLatest.FullName $Archive -Force
         
-        Write-Host "  ✓ Crypto data updated: $($CryptoLatest.Name)" -ForegroundColor Green
+        Write-Host "  OK Crypto data updated: $($CryptoLatest.Name)" -ForegroundColor Green
         $ChangesMade = $true
     }
 }
@@ -67,10 +67,10 @@ if ($Source -eq 'stocks' -or $Source -eq 'all') {
         $ArchiveFile = "$MonthDir\$($StockData.scan_date)_$($StockData.scan_time.Replace(':','')).json"
         if (-not (Test-Path $ArchiveFile)) {
             Copy-Item "$StocksDir\stocks_latest.json" $ArchiveFile
-            Write-Host "  ✓ Stocks data archived" -ForegroundColor Green
+            Write-Host "  OK Stocks data archived" -ForegroundColor Green
             $ChangesMade = $true
         } else {
-            Write-Host "  ℹ Stocks data already current" -ForegroundColor Gray
+            Write-Host "  Info Stocks data already current" -ForegroundColor Gray
         }
     }
 }
@@ -91,7 +91,7 @@ if ($Source -eq 'polymarket' -or $Source -eq 'all') {
         $ArchiveFile = "$MonthDir\polymarket_$($PolyData.timestamp.Substring(0,10).Replace('-',''))_$($PolyData.timestamp.Substring(11,2) + $PolyData.timestamp.Substring(14,2)).json"
         if (-not (Test-Path $ArchiveFile)) {
             Copy-Item "$PolyDir\polymarket_latest.json" $ArchiveFile
-            Write-Host "  ✓ Polymarket data archived" -ForegroundColor Green
+            Write-Host "  OK Polymarket data archived" -ForegroundColor Green
             $ChangesMade = $true
         }
     }
@@ -106,7 +106,7 @@ if ($ChangesMade -and -not $SkipCommit) {
     Set-Location $RepoRoot
     
     # Stage all data directories
-    git add data/crypto/ data/stocks/ data/polymarket/ --all 2>$null
+    git add data/crypto/ data/stocks/ data/polymarket/ 2>$null
     
     # Check if there's anything to commit
     $Status = git status --porcelain
@@ -117,18 +117,18 @@ if ($ChangesMade -and -not $SkipCommit) {
         # Push to vueroo-data (public - for dashboards)
         Write-Host "  Pushing to vueroo-data (public)..." -ForegroundColor Yellow
         git push data master 2>$null | Out-Null
-        Write-Host "  ✓ Pushed to vueroo-data" -ForegroundColor Green
+        Write-Host "  OK Pushed to vueroo-data" -ForegroundColor Green
         
         # Push to rooquest1 (private - for archive)
         Write-Host "  Pushing to rooquest1 (private)..." -ForegroundColor Yellow
         git push origin master 2>$null | Out-Null
-        Write-Host "  ✓ Pushed to rooquest1" -ForegroundColor Green
+        Write-Host "  OK Pushed to rooquest1" -ForegroundColor Green
         
         # Wait for CDN propagation
         Write-Host "  Waiting for CDN propagation (3s)..." -ForegroundColor Gray
         Start-Sleep -Seconds 3
     } else {
-        Write-Host "  ℹ No new changes to commit" -ForegroundColor Gray
+        Write-Host "  Info No new changes to commit" -ForegroundColor Gray
     }
     
     # ============================================================================
@@ -142,7 +142,7 @@ if ($ChangesMade -and -not $SkipCommit) {
     git commit --allow-empty -m "Deploy: Dashboard refresh [$Timestamp]" 2>$null | Out-Null
     git push origin main 2>$null | Out-Null
     
-    Write-Host "  ✓ Vercel redeploy triggered" -ForegroundColor Green
+    Write-Host "  OK Vercel redeploy triggered" -ForegroundColor Green
 }
 
 Write-Host "`n=== Deploy Complete ===" -ForegroundColor Cyan
