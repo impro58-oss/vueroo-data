@@ -1,14 +1,130 @@
 ﻿{
-    "markets_with_movement":  0,
-    "timestamp":  "2026-03-30 08:00:20",
-    "scan_file":  "markets-2026-03-30-0800.json",
+    "markets_with_movement":  9,
+    "timestamp":  "2026-03-30 18:26:48",
+    "scan_file":  "markets-2026-03-30-1826.json",
     "top_opportunities":  {
 
                           },
     "total_markets":  120,
     "threshold":  5,
     "movements":  [
-
+                      {
+                          "Market":  "Robinhood (HOOD) Up or Down on March 30?",
+                          "Category":  "trending",
+                          "Url":  "https://polymarket.com/event/hood-up-or-down-on-march-30-2026",
+                          "PreviousOdds":  51,
+                          "CurrentOdds":  88,
+                          "Movement":  37,
+                          "MovementPercent":  37,
+                          "Direction":  "UP",
+                          "Confidence":  "HIGH",
+                          "PreviousTime":  "2026-03-30 08:00:20",
+                          "CurrentTime":  "2026-03-30 18:26:48"
+                      },
+                      {
+                          "Market":  "Highest temperature in Taipei on March 30?",
+                          "Category":  "trending",
+                          "Url":  "https://polymarket.com/event/highest-temperature-in-taipei-on-march-30-2026",
+                          "PreviousOdds":  10,
+                          "CurrentOdds":  0,
+                          "Movement":  -10,
+                          "MovementPercent":  10,
+                          "Direction":  "DOWN",
+                          "Confidence":  "HIGH",
+                          "PreviousTime":  "2026-03-30 08:00:20",
+                          "CurrentTime":  "2026-03-30 18:26:48"
+                      },
+                      {
+                          "Market":  "LoL: paiN Gaming Academy vs INTZ e-Sports (BO1) - Circuito Desafiante Regular Season",
+                          "Category":  "sports",
+                          "Url":  "https://polymarket.com/event/lol-pnga-itz-2026-03-30",
+                          "PreviousOdds":  52,
+                          "CurrentOdds":  57,
+                          "Movement":  5,
+                          "MovementPercent":  5,
+                          "Direction":  "UP",
+                          "Confidence":  "LOW",
+                          "PreviousTime":  "2026-03-30 08:00:20",
+                          "CurrentTime":  "2026-03-30 18:26:48"
+                      },
+                      {
+                          "Market":  "Will Opendoor (OPEN) finish week of March 30 above___?",
+                          "Category":  "finance",
+                          "Url":  "https://polymarket.com/event/open-above-on-april-3-2026",
+                          "PreviousOdds":  91,
+                          "CurrentOdds":  97,
+                          "Movement":  6,
+                          "MovementPercent":  6,
+                          "Direction":  "UP",
+                          "Confidence":  "LOW",
+                          "PreviousTime":  "2026-03-30 08:00:20",
+                          "CurrentTime":  "2026-03-30 18:26:48"
+                      },
+                      {
+                          "Market":  "Microsoft (MSFT) closes above ___ on March 30?",
+                          "Category":  "finance",
+                          "Url":  "https://polymarket.com/event/msft-close-above-on-march-30-2026",
+                          "PreviousOdds":  89,
+                          "CurrentOdds":  98,
+                          "Movement":  9,
+                          "MovementPercent":  9,
+                          "Direction":  "UP",
+                          "Confidence":  "MEDIUM",
+                          "PreviousTime":  "2026-03-28 23:00:19",
+                          "CurrentTime":  "2026-03-30 18:26:48"
+                      },
+                      {
+                          "Market":  "Amazon (AMZN) closes above ___ on March 30?",
+                          "Category":  "finance",
+                          "Url":  "https://polymarket.com/event/amzn-close-above-on-march-30-2026",
+                          "PreviousOdds":  43,
+                          "CurrentOdds":  89,
+                          "Movement":  46,
+                          "MovementPercent":  46,
+                          "Direction":  "UP",
+                          "Confidence":  "HIGH",
+                          "PreviousTime":  "2026-03-28 19:00:22",
+                          "CurrentTime":  "2026-03-30 18:26:48"
+                      },
+                      {
+                          "Market":  "Google (GOOGL) closes above ___ on March 30?",
+                          "Category":  "finance",
+                          "Url":  "https://polymarket.com/event/googl-close-above-on-march-30-2026",
+                          "PreviousOdds":  74,
+                          "CurrentOdds":  99,
+                          "Movement":  25,
+                          "MovementPercent":  25,
+                          "Direction":  "UP",
+                          "Confidence":  "HIGH",
+                          "PreviousTime":  "2026-03-28 03:00:18",
+                          "CurrentTime":  "2026-03-30 18:26:48"
+                      },
+                      {
+                          "Market":  "What will S\u0026P 500 (SPX) close at in March?",
+                          "Category":  "finance",
+                          "Url":  "https://polymarket.com/event/what-will-sp-500-spx-close-at-in-march",
+                          "PreviousOdds":  15,
+                          "CurrentOdds":  28,
+                          "Movement":  13,
+                          "MovementPercent":  13,
+                          "Direction":  "UP",
+                          "Confidence":  "HIGH",
+                          "PreviousTime":  "2026-03-30 08:00:20",
+                          "CurrentTime":  "2026-03-30 18:26:48"
+                      },
+                      {
+                          "Market":  "Will Google (GOOGL) close above ___ end of March?",
+                          "Category":  "finance",
+                          "Url":  "https://polymarket.com/event/googl-above-in-march-2026",
+                          "PreviousOdds":  7,
+                          "CurrentOdds":  2,
+                          "Movement":  -5,
+                          "MovementPercent":  5,
+                          "Direction":  "DOWN",
+                          "Confidence":  "LOW",
+                          "PreviousTime":  "2026-03-30 08:00:20",
+                          "CurrentTime":  "2026-03-30 18:26:48"
+                      }
                   ],
     "smart_money_alerts":  0
 }
