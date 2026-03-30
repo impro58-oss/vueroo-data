@@ -1,8 +1,8 @@
 ﻿{
-    "total_size_mb":  0.32,
+    "total_size_mb":  0.35,
     "github_commit":  null,
-    "archive_path":  "C:\\Users\\impro\\OneDrive\\OpenClaw\\backups\\memory-backup-2026-03-28.zip",
-    "last_backup":  "2026-03-28 23:00:05",
+    "archive_path":  "C:\\Users\\impro\\OneDrive\\OpenClaw\\backups\\memory-backup-2026-03-30.zip",
+    "last_backup":  "2026-03-30 00:00:05",
     "status":  "success",
-    "files_backed_up":  33
+    "files_backed_up":  37
 }
