@@ -1,0 +1,41 @@
+{
+  "Coils_Embolization": {
+    "products": [
+      "Coils",
+      "AVM Liquids"
+    ],
+    "q4_2024_ww_total": 414893
+  },
+  "Access_Delivery": {
+    "products": [
+      "Guidewires",
+      "MicroCatheters",
+      "Guide Catheters",
+      "Long Sheaths",
+      "Distal Access Catheters",
+      "Balloon Guide Catheters"
+    ],
+    "q4_2024_ww_total": 813073
+  },
+  "Thrombectomy": {
+    "products": [
+      "Aspiration Catheters",
+      "Stent Retrievers"
+    ],
+    "q4_2024_ww_total": 123732
+  },
+  "Stents_FlowDiversion": {
+    "products": [
+      "Adjuctive Stents",
+      "Flow Diverters"
+    ],
+    "q4_2024_ww_total": 69527
+  },
+  "SupportTools": {
+    "products": [
+      "Remodeling Balloons",
+      "Intrasaccular Devices"
+    ],
+    "q4_2024_ww_total": 21843
+  }
+}
