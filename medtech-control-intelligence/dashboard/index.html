@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedTech Intelligence Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="data.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: rgba(15, 23, 42, 0.9);
+            padding: 25px 40px;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, #38bdf8, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #94a3b8;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .controls {
+            padding: 25px 40px;
+            background: rgba(30, 41, 59, 0.8);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .control-group label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #38bdf8;
+            font-weight: 600;
+        }
+
+        select, button {
+            padding: 12px 18px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            background: rgba(15, 23, 42, 0.8);
+            color: #e2e8f0;
+            border-radius: 10px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 160px;
+        }
+
+        select:hover, button:hover {
+            border-color: #38bdf8;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+        }
+
+        button {
+            background: linear-gradient(135deg, #38bdf8, #7c3aed);
+            border: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 14px 28px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(56, 189, 248, 0.4);
+        }
+
+        .export-btn {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .export-btn:hover {
+            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.4);
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            padding: 30px 40px;
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        .kpi-card {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(124, 58, 237, 0.1));
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kpi-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #38bdf8, #a855f7);
+        }
+
+        .kpi-card:hover {
+            transform: scale(1.02);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 40px rgba(56, 189, 248, 0.2);
+        }
+
+        .kpi-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #94a3b8;
+            margin-bottom: 12px;
+        }
+
+        .kpi-value {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #38bdf8, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .kpi-change {
+            font-size: 13px;
+            margin-top: 8px;
+            color: #64748b;
+        }
+
+        .dashboard {
+            padding: 30px 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #f1f5f9;
+            letter-spacing: 0.5px;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 320px;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .country-selector {
+            min-width: 300px;
+            max-width: 400px;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 12px;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 10px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .checkbox-item:hover {
+            background: rgba(56, 189, 248, 0.1);
+        }
+
+        .checkbox-item input {
+            accent-color: #38bdf8;
+            width: 16px;
+            height: 16px;
+        }
+
+        .checkbox-item label {
+            cursor: pointer;
+            font-size: 12px;
+            color: #e2e8f0;
+        }
+
+        .data-table {
+            padding: 30px 40px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 14px 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+        }
+
+        th {
+            background: rgba(56, 189, 248, 0.15);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            color: #38bdf8;
+        }
+
+        tr:hover {
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        td {
+            font-size: 13px;
+            color: #cbd5e1;
+        }
+
+        .positive { color: #34d399; }
+        .negative { color: #f87171; }
+
+        select[multiple] {
+            min-height: 200px;
+            min-width: 280px;
+        }
+
+        .country-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .country-actions button {
+            padding: 8px 12px;
+            font-size: 11px;
+            min-width: auto;
+            flex: 1;
+        }
+
+        .btn-select-all {
+            background: linear-gradient(135deg, #10b981, #059669) !important;
+        }
+
+        .btn-clear {
+            background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+        }
+
+        .region-info {
+            padding: 10px;
+            background: rgba(56, 189, 248, 0.1);
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>⚕️ MEDTECH INTELLIGENCE DASHBOARD</h1>
+        <p>Neurovascular Case Volume Analytics | Q1 2022 - Q4 2025 | 14 Products | 40 Countries</p>
+    </div>
+
+    <div class="controls">
+        <div class="control-group">
+            <label>📅 Year</label>
+            <select id="yearFilter" multiple size="5">
+                <option value="all" selected>✓ All Years</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>📊 Quarter</label>
+            <select id="quarterFilter" multiple size="5">
+                <option value="all" selected>✓ All Quarters</option>
+                <option value="Q1">Q1</option>
+                <option value="Q2">Q2</option>
+                <option value="Q3">Q3</option>
+                <option value="Q4">Q4</option>
+            </select>
+        </div>
+
+        <div class="control-group" style="min-width: 320px;">
+            <label>🔬 Product (Hold Ctrl to select multiple)</label>
+            <select id="productFilter" multiple size="8">
+                <option value="all" selected>✓ All Products</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>🌍 Region Selector</label>
+            <select id="regionFilter">
+                <option value="all">🌐 All Regions</option>
+                <option value="china">🇨🇳 China (Standalone)</option>
+                <option value="europe_major">🇪🇺 Europe - Major Markets</option>
+                <option value="europe_smaller">🇪🇺 Europe - Smaller Markets</option>
+                <option value="north_america">🇺🇸 North America</option>
+                <option value="aspac">🌏 Asia Pacific (ex-China)</option>
+                <option value="latam">🌎 Latin America</option>
+                <option value="mea">🌍 Middle East & Africa</option>
+            </select>
+            <div class="region-info" id="regionInfo">Select a region to auto-filter countries</div>
+        </div>
+
+        <div class="control-group country-selector" style="min-width: 340px;">
+            <label>🎯 Countries (Auto-selected by Region)</label>
+            <div class="checkbox-grid" id="countryCheckboxes" style="min-height: 220px; max-height: 280px;">
+                <!-- Populated by JS -->
+            </div>
+            <div class="country-actions">
+                <button class="btn-select-all" onclick="toggleAllCountries(true)">✓ Select All</button>
+                <button class="btn-clear" onclick="toggleAllCountries(false)">✕ Clear All</button>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label>&nbsp;</label>
+            <button class="export-btn" onclick="exportToCSV()">📥 Export CSV</button>
+        </div>
+    </div>
+
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-label">Total Cases</div>
+            <div class="kpi-value" id="totalCases">-</div>
+            <div class="kpi-change" id="casesContext">Selected period</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Top Country</div>
+            <div class="kpi-value" id="topCountry">-</div>
+            <div class="kpi-change" id="countryShare">-</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Top Product</div>
+            <div class="kpi-value" id="topProduct">-</div>
+            <div class="kpi-change" id="productShare">-</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Countries Active</div>
+            <div class="kpi-value" id="activeCountries">-</div>
+            <div class="kpi-change" id="activeContext">In selected region</div>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">📈 Volume by Quarter</span>
+            </div>
+            <div class="chart-container">
+                <canvas id="quarterlyChart"></canvas>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">🏆 Top 10 Countries</span>
+            </div>
+            <div class="chart-container">
+                <canvas id="countriesChart"></canvas>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">🔬 Product Mix</span>
+            </div>
+            <div class="chart-container">
+                <canvas id="productsChart"></canvas>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">🌍 Regional Distribution</span>
+            </div>
+            <div class="chart-container">
+                <canvas id="regionalChart"></canvas>
+            </div>
+        </div>
+
+        <div class="card full-width">
+            <div class="card-header">
+                <span class="card-title">📊 Time Series Trend (All Quarters)</span>
+            </div>
+            <div class="chart-container" style="height: 400px;">
+                <canvas id="trendChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="data-table">
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Quarter</th>
+                    <th>Product</th>
+                    <th>Country</th>
+                    <th>Cases</th>
+                    <th>% of Total</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Data store
+        let rawData = [];
+        let filteredData = [];
+        let charts = {};
+
+        // Country mappings by region
+        const regionMappings = {
+            'china': ['China'],
+            'europe_major': ['Germany', 'France', 'UK', 'Italy', 'Spain'],
+            'europe_smaller': ['Austria', 'Belgium', 'Portugal', 'Ireland', 'Switzerland', 'Nordics', 'Poland', 'The Netherlands', 'Russia'],
+            'north_america': ['United States'],
+            'aspac': ['Japan', 'South Korea', 'India', 'ANZ', 'Vietnam', 'Taiwan', 'Malaysia', 'Singapore', 'Thailand', 'Indonesia', 'Hong Kong'],
+            'latam': ['Brazil', 'Mexico', 'Argentina', 'Colombia', 'Chile', 'Peru', 'Ecuador', 'Costa Rica'],
+            'mea': ['Turkey', 'Saudi Arabia', 'Israel', 'South Africa']
+        };
+
+        const regionDescriptions = {
+            'all': 'Showing all 40 countries across 6 continents',
+            'china': 'China standalone - 30.8% of global volume',
+            'europe_major': 'Top 5 EU markets: Germany, France, UK, Italy, Spain',
+            'europe_smaller': 'Secondary EU + EFTA + Eastern Europe',
+            'north_america': 'United States market',
+            'aspac': 'Asia Pacific excluding China: Japan, Korea, India, SE Asia, ANZ',
+            'latam': 'Latin America: Brazil, Mexico, Colombia, Argentina, Chile',
+            'mea': 'Middle East & Africa: Turkey, Saudi Arabia, Israel, South Africa'
+        };
+
+        // Initialize dashboard
+        function initDashboard() {
+            rawData = window.embeddedData || [];
+            
+            // Setup controls
+            setupProductFilter();
+            setupRegionFilter();
+            
+            // Initial country selection (all)
+            updateCountrySelection();
+            
+            // Initial render
+            updateDashboard();
+        }
+
+        function setupProductFilter() {
+            const products = [...new Set(rawData.map(d => d.Product))].sort();
+            const select = document.getElementById('productFilter');
+            products.forEach(p => {
+                const opt = document.createElement('option');
+                opt.value = p;
+                opt.textContent = p;
+                select.appendChild(opt);
+            });
+        }
+
+        function setupRegionFilter() {
+            const select = document.getElementById('regionFilter');
+            select.addEventListener('change', () => {
+                updateCountrySelection();
+                document.getElementById('regionInfo').textContent = regionDescriptions[select.value] || '';
+            });
+        }
+
+        function updateCountrySelection() {
+            const region = document.getElementById('regionFilter').value;
+            const container = document.getElementById('countryCheckboxes');
+            container.innerHTML = '';
+
+            let countries = [];
+            if (region === 'all') {
+                countries = [...new Set(rawData.map(d => d.Country))].sort();
+            } else {
+                countries = regionMappings[region] || [];
+            }
+
+            countries.forEach(country => {
+                const div = document.createElement('div');
+                div.className = 'checkbox-item';
+                div.innerHTML = `
+                    <input type="checkbox" id="cb_${country.replace(/\s/g, '_')}" value="${country}" checked onchange="updateDashboard()">
+                    <label for="cb_${country.replace(/\s/g, '_')}">${country}</label>
+                `;
+                container.appendChild(div);
+            });
+
+            updateDashboard();
+        }
+
+        function filterData() {
+            const yearSel = document.getElementById('yearFilter');
+            const quarterSel = document.getElementById('quarterFilter');
+            const productSel = document.getElementById('productFilter');
+
+            const selectedYears = [...yearSel.selectedOptions].map(o => o.value);
+            const selectedQuarters = [...quarterSel.selectedOptions].map(o => o.value);
+            const selectedProducts = [...productSel.selectedOptions].map(o => o.value);
+
+            // Get selected countries
+            const selectedCountries = [...document.querySelectorAll('#countryCheckboxes input:checked')].map(cb => cb.value);
+
+            filteredData = rawData.filter(d => {
+                const yearMatch = selectedYears.includes('all') || selectedYears.includes(String(d.Year));
+                const quarterMatch = selectedQuarters.includes('all') || selectedQuarters.includes(d.Quarter);
+                const productMatch = selectedProducts.includes('all') || selectedProducts.includes(d.Product);
+                const countryMatch = selectedCountries.includes(d.Country);
+                return yearMatch && quarterMatch && productMatch && countryMatch;
+            });
+
+            return filteredData;
+        }
+
+        function updateDashboard() {
+            const data = filterData();
+            
+            updateKPIs(data);
+            updateCharts(data);
+            updateTable(data);
+        }
+
+        function updateKPIs(data) {
+            const total = data.reduce((sum, d) => sum + d.Cases, 0);
+            document.getElementById('totalCases').textContent = total.toLocaleString();
+
+            // Top country
+            const byCountry = {};
+            data.forEach(d => {
+                byCountry[d.Country] = (byCountry[d.Country] || 0) + d.Cases;
+            });
+            
+            const sortedCountries = Object.entries(byCountry).sort((a, b) => b[1] - a[1]);
+            if (sortedCountries.length > 0) {
+                document.getElementById('topCountry').textContent = sortedCountries[0][0];
+                document.getElementById('countryShare').textContent = ((sortedCountries[0][1] / total) * 100).toFixed(1) + '% of selected';
+            }
+
+            // Top product
+            const byProduct = {};
+            data.forEach(d => {
+                byProduct[d.Product] = (byProduct[d.Product] || 0) + d.Cases;
+            });
+            
+            const sortedProducts = Object.entries(byProduct).sort((a, b) => b[1] - a[1]);
+            if (sortedProducts.length > 0) {
+                document.getElementById('topProduct').textContent = sortedProducts[0][0].substring(0, 15) + (sortedProducts[0][0].length > 15 ? '...' : '');
+                document.getElementById('productShare').textContent = ((sortedProducts[0][1] / total) * 100).toFixed(1) + '% of selected';
+            }
+
+            document.getElementById('activeCountries').textContent = Object.keys(byCountry).length;
+        }
+
+        function updateCharts(data) {
+            // Quarterly aggregation
+            const byQuarter = {};
+            data.forEach(d => {
+                const key = `${d.Year} ${d.Quarter}`;
+                byQuarter[key] = (byQuarter[key] || 0) + d.Cases;
+            });
+
+            const quarterLabels = Object.keys(byQuarter).sort();
+            const quarterValues = quarterLabels.map(k => byQuarter[k]);
+
+            // Countries aggregation
+            const byCountry = {};
+            data.forEach(d => {
+                byCountry[d.Country] = (byCountry[d.Country] || 0) + d.Cases;
+            });
+            
+            const countryEntries = Object.entries(byCountry).sort((a, b) => b[1] - a[1]).slice(0, 10);
+            const countryLabels = countryEntries.map(e => e[0]);
+            const countryValues = countryEntries.map(e => e[1]);
+
+            // Products aggregation
+            const byProduct = {};
+            data.forEach(d => {
+                byProduct[d.Product] = (byProduct[d.Product] || 0) + d.Cases;
+            });
+            
+            const productEntries = Object.entries(byProduct).sort((a, b) => b[1] - a[1]);
+            const productLabels = productEntries.map(e => e[0]);
+            const productValues = productEntries.map(e => e[1]);
+
+            // Regional aggregation
+            const regionTotals = {
+                'China': 0, 'US': 0, 'Europe Major': 0, 'Europe Smaller': 0,
+                'ASPAC ex-China': 0, 'LATAM': 0, 'MEA': 0
+            };
+            
+            data.forEach(d => {
+                if (d.Country === 'China') regionTotals['China'] += d.Cases;
+                else if (d.Country === 'United States') regionTotals['US'] += d.Cases;
+                else if (regionMappings.europe_major.includes(d.Country)) regionTotals['Europe Major'] += d.Cases;
+                else if (regionMappings.europe_smaller.includes(d.Country)) regionTotals['Europe Smaller'] += d.Cases;
+                else if (regionMappings.aspac.includes(d.Country)) regionTotals['ASPAC ex-China'] += d.Cases;
+                else if (regionMappings.latam.includes(d.Country)) regionTotals['LATAM'] += d.Cases;
+                else if (regionMappings.mea.includes(d.Country)) regionTotals['MEA'] += d.Cases;
+            });
+
+            const regionLabels = Object.keys(regionTotals).filter(k => regionTotals[k] > 0);
+            const regionValues = regionLabels.map(k => regionTotals[k]);
+
+            // Destroy existing charts
+            Object.values(charts).forEach(c => c.destroy());
+
+            // Chart 1: Quarterly
+            const ctx1 = document.getElementById('quarterlyChart').getContext('2d');
+            charts.quarterly = new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: quarterLabels,
+                    datasets: [{
+                        label: 'Cases',
+                        data: quarterValues,
+                        backgroundColor: 'rgba(56, 189, 248, 0.7)',
+                        borderColor: '#38bdf8',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { color: '#e2e8f0' } }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: { color: '#94a3b8', callback: v => v.toLocaleString() },
+                            grid: { color: 'rgba(148, 163, 184, 0.1)' }
+                        },
+                        x: {
+                            ticks: { color: '#94a3b8' },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+
+            // Chart 2: Countries (Horizontal bar)
+            const ctx2 = document.getElementById('countriesChart').getContext('2d');
+            charts.countries = new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: countryLabels,
+                    datasets: [{
+                        label: 'Cases',
+                        data: countryValues,
+                        backgroundColor: [
+                            '#38bdf8', '#a855f7', '#ec4899', '#f59e0b', '#10b981',
+                            '#8b5cf6', '#f97316', '#06b6d4', '#84cc16', '#d946ef'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#94a3b8', callback: v => v.toLocaleString() },
+                            grid: { color: 'rgba(148, 163, 184, 0.1)' }
+                        },
+                        y: {
+                            ticks: { color: '#e2e8f0' },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+
+            // Chart 3: Products (Pie)
+            const ctx3 = document.getElementById('productsChart').getContext('2d');
+            charts.products = new Chart(ctx3, {
+                type: 'doughnut',
+                data: {
+                    labels: productLabels,
+                    datasets: [{
+                        data: productValues,
+                        backgroundColor: [
+                            '#38bdf8', '#a855f7', '#ec4899', '#f59e0b', '#10b981',
+                            '#8b5cf6', '#f97316', '#06b6d4', '#84cc16', '#d946ef',
+                            '#14b8a6', '#6366f1', '#f43f5e', '#eab308'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: { color: '#e2e8f0', font: { size: 11 } }
+                        }
+                    }
+                }
+            });
+
+            // Chart 4: Regional
+            const ctx4 = document.getElementById('regionalChart').getContext('2d');
+            charts.regional = new Chart(ctx4, {
+                type: 'pie',
+                data: {
+                    labels: regionLabels,
+                    datasets: [{
+                        data: regionValues,
+                        backgroundColor: [
+                            '#ef4444', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899', '#06b6d4'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: { color: '#e2e8f0', font: { size: 11 } }
+                        }
+                    }
+                }
+            });
+
+            // Chart 5: Trend Line
+            const ctx5 = document.getElementById('trendChart').getContext('2d');
+            
+            // Aggregate by period for trend
+            const trendData = {};
+            rawData.forEach(d => {
+                const key = `${d.Year} ${d.Quarter}`;
+                trendData[key] = (trendData[key] || 0) + d.Cases;
+            });
+            
+            const trendLabels = Object.keys(trendData).sort();
+            const trendValues = trendLabels.map(k => trendData[k]);
+
+            charts.trend = new Chart(ctx5, {
+                type: 'line',
+                data: {
+                    labels: trendLabels,
+                    datasets: [{
+                        label: 'Global Trend (All Data)',
+                        data: trendValues,
+                        borderColor: '#38bdf8',
+                        backgroundColor: 'rgba(56, 189, 248, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#38bdf8',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 4
+                    }, {
+                        label: 'Filtered Selection',
+                        data: trendLabels.map(k => byQuarter[k] || 0),
+                        borderColor: '#ec4899',
+                        backgroundColor: 'rgba(236, 72, 153, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#ec4899',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: { color: '#e2e8f0' }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: { color: '#94a3b8', callback: v => v.toLocaleString() },
+                            grid: { color: 'rgba(148, 163, 184, 0.1)' }
+                        },
+                        x: {
+                            ticks: { color: '#94a3b8', maxRotation: 45 },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateTable(data) {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+
+            const total = data.reduce((sum, d) => sum + d.Cases, 0);
+
+            // Aggregate by Year-Quarter-Product-Country
+            const aggregated = {};
+            data.forEach(d => {
+                const key = `${d.Year}-${d.Quarter}-${d.Product}-${d.Country}`;
+                if (!aggregated[key]) {
+                    aggregated[key] = { ...d, Cases: 0 };
+                }
+                aggregated[key].Cases += d.Cases;
+            });
+
+            const sortedData = Object.values(aggregated).sort((a, b) => b.Cases - a.Cases).slice(0, 100);
+
+            sortedData.forEach(d => {
+                const pct = ((d.Cases / total) * 100).toFixed(2);
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${d.Year}</td>
+                    <td>${d.Quarter}</td>
+                    <td>${d.Product}</td>
+                    <td>${d.Country}</td>
+                    <td>${d.Cases.toLocaleString()}</td>
+                    <td>${pct}%</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function toggleAllCountries(select) {
+            document.querySelectorAll('#countryCheckboxes input[type="checkbox"]').forEach(cb => {
+                cb.checked = select;
+            });
+            updateDashboard();
+        }
+
+        function exportToCSV() {
+            const data = filteredData;
+            const headers = ['Year', 'Quarter', 'Product', 'Country', 'Cases'];
+            const csv = [
+                headers.join(','),
+                ...data.map(d => [d.Year, d.Quarter, d.Product, d.Country, d.Cases].join(','))
+            ].join('\n');
+
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `medtech_intelligence_${new Date().toISOString().slice(0,10)}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // Event listeners for multi-select
+        ['yearFilter', 'quarterFilter', 'productFilter'].forEach(id => {
+            document.getElementById(id).addEventListener('change', updateDashboard);
+        });
+
+        // Initialize
+        initDashboard();
+    </script>
+</body>
+</html>

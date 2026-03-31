@@ -456,3 +456,157 @@
 2026-03-29 19:00:06 - Commit: bb06aaf
 2026-03-29 19:00:06 - === Auto-commit complete ===
 2026-03-29 19:00:06 - 
+2026-03-29 21:00:02 - === Starting Workspace Auto-Commit ===
+2026-03-29 21:00:02 - Checking for changes...
+2026-03-29 21:00:03 - Found 7 changed files
+2026-03-29 21:00:03 - Staging changes...
+2026-03-29 21:00:03 - Committing: Auto-commit workspace 2026-03-29 21:00 (5 files)
+2026-03-29 21:00:04 - [master db15e4b] Auto-commit workspace 2026-03-29 21:00 (5 files)  5 files changed, 1808 insertions(+), 1 deletion(-)  create mode 100644 memory/futures-research-2046-2056.md  create mode 100644 stockward/research/future-forecast-2046/FINAL-REPORT-2046-2056.md  create mode 100644 stockward/research/future-forecast-2046/billion-dollar-opportunities-report.md  create mode 100644 stockward/research/neurovascular-competitor-gaps-2026-03-29.md
+2026-03-29 21:00:04 - Pushing to GitHub...
+2026-03-29 21:00:05 - [OK] Successfully pushed to GitHub
+2026-03-29 21:00:05 - Commit: db15e4b
+2026-03-29 21:00:05 - === Auto-commit complete ===
+2026-03-29 21:00:05 - 
+2026-03-29 23:00:02 - === Starting Workspace Auto-Commit ===
+2026-03-29 23:00:02 - Checking for changes...
+2026-03-29 23:00:02 - Found 18 changed files
+2026-03-29 23:00:02 - Staging changes...
+2026-03-29 23:00:03 - Committing: Auto-commit workspace 2026-03-29 23:00 (16 files)
+2026-03-29 23:00:03 - [master a1dabe7] Auto-commit workspace 2026-03-29 23:00 (16 files)  16 files changed, 37202 insertions(+), 7166 deletions(-)  create mode 100644 data/crypto/2026-03/2026-03-29_210238.json  create mode 100644 data/crypto/2026-03/top_200_analysis_20260329_210238.json  create mode 100644 data/polymarket/hot-bets-2026-03-29-2100.html  create mode 100644 data/polymarket/hot-bets-2026-03-29-2200.html  create mode 100644 data/polymarket/polymarket_2026-03-29-2100.json  create mode 100644 data/polymarket/polymarket_2026-03-29-2200.json  create mode 100644 skills/tradingview-claw-v2/top_200_analysis_20260329_210238.json  create mode 100644 stockward/research/microport-scientific-comprehensive-report-2026-03-29.md
+2026-03-29 23:00:03 - Pushing to GitHub...
+2026-03-29 23:00:06 - [OK] Successfully pushed to GitHub
+2026-03-29 23:00:06 - Commit: a1dabe7
+2026-03-29 23:00:06 - === Auto-commit complete ===
+2026-03-29 23:00:06 - 
+2026-03-30 01:00:03 - === Starting Workspace Auto-Commit ===
+2026-03-30 01:00:03 - Checking for changes...
+2026-03-30 01:00:03 - Found 14 changed files
+2026-03-30 01:00:03 - Staging changes...
+2026-03-30 01:00:04 - Committing: Auto-commit workspace 2026-03-30 01:00 (11 files)
+2026-03-30 01:00:04 - [master 812d02b] Auto-commit workspace 2026-03-30 01:00 (11 files)  11 files changed, 2434 insertions(+), 508 deletions(-)  create mode 100644 data/polymarket/hot-bets-2026-03-29-2300.html  create mode 100644 data/polymarket/hot-bets-2026-03-30-0000.html  create mode 100644 data/polymarket/polymarket_2026-03-29-2300.json  create mode 100644 data/polymarket/polymarket_2026-03-30-0000.json  create mode 100644 skills/tradingview-claw-v2/logs/auto_scan_20260330.log
+2026-03-30 01:00:04 - Pushing to GitHub...
+2026-03-30 01:00:06 - [OK] Successfully pushed to GitHub
+2026-03-30 01:00:06 - Commit: 812d02b
+2026-03-30 01:00:06 - === Auto-commit complete ===
+2026-03-30 01:00:06 - 
+2026-03-30 03:00:02 - === Starting Workspace Auto-Commit ===
+2026-03-30 03:00:02 - Checking for changes...
+2026-03-30 03:00:02 - Found 18 changed files
+2026-03-30 03:00:02 - Staging changes...
+2026-03-30 03:00:03 - Committing: Auto-commit workspace 2026-03-30 03:00 (15 files)
+2026-03-30 03:00:03 - [master f52676e] Auto-commit workspace 2026-03-30 03:00 (15 files)  15 files changed, 32805 insertions(+), 3540 deletions(-)  create mode 100644 data/crypto/2026-03/2026-03-30_010224.json  create mode 100644 data/crypto/2026-03/top_200_analysis_20260330_010224.json  create mode 100644 data/polymarket/hot-bets-2026-03-30-0100.html  create mode 100644 data/polymarket/hot-bets-2026-03-30-0200.html  create mode 100644 data/polymarket/polymarket_2026-03-30-0100.json  create mode 100644 data/polymarket/polymarket_2026-03-30-0200.json  create mode 100644 skills/tradingview-claw-v2/top_200_analysis_20260330_010224.json
+2026-03-30 03:00:03 - Pushing to GitHub...
+2026-03-30 03:00:06 - [OK] Successfully pushed to GitHub
+2026-03-30 03:00:06 - Commit: f52676e
+2026-03-30 03:00:06 - === Auto-commit complete ===
+2026-03-30 03:00:06 - 
+2026-03-30 05:00:03 - === Starting Workspace Auto-Commit ===
+2026-03-30 05:00:03 - Checking for changes...
+2026-03-30 05:00:03 - Found 12 changed files
+2026-03-30 05:00:03 - Staging changes...
+2026-03-30 05:00:04 - Committing: Auto-commit workspace 2026-03-30 05:00 (9 files)
+2026-03-30 05:00:04 - [master 0d04734] Auto-commit workspace 2026-03-30 05:00 (9 files)  9 files changed, 2074 insertions(+), 367 deletions(-)  create mode 100644 data/polymarket/hot-bets-2026-03-30-0300.html  create mode 100644 data/polymarket/hot-bets-2026-03-30-0400.html  create mode 100644 data/polymarket/polymarket_2026-03-30-0300.json  create mode 100644 data/polymarket/polymarket_2026-03-30-0400.json
+2026-03-30 05:00:04 - Pushing to GitHub...
+2026-03-30 05:00:06 - [OK] Successfully pushed to GitHub
+2026-03-30 05:00:06 - Commit: 0d04734
+2026-03-30 05:00:06 - === Auto-commit complete ===
+2026-03-30 05:00:06 - 
+2026-03-30 07:00:02 - === Starting Workspace Auto-Commit ===
+2026-03-30 07:00:02 - Checking for changes...
+2026-03-30 07:00:02 - Found 17 changed files
+2026-03-30 07:00:02 - Staging changes...
+2026-03-30 07:00:03 - Committing: Auto-commit workspace 2026-03-30 07:00 (14 files)
+2026-03-30 07:00:04 - [master 16ba4cf] Auto-commit workspace 2026-03-30 07:00 (14 files)  14 files changed, 32369 insertions(+), 3599 deletions(-)  create mode 100644 data/crypto/2026-03/2026-03-30_050218.json  create mode 100644 data/crypto/2026-03/top_200_analysis_20260330_050218.json  create mode 100644 data/polymarket/hot-bets-2026-03-30-0500.html  create mode 100644 data/polymarket/hot-bets-2026-03-30-0600.html  create mode 100644 data/polymarket/polymarket_2026-03-30-0500.json  create mode 100644 data/polymarket/polymarket_2026-03-30-0600.json  create mode 100644 skills/tradingview-claw-v2/top_200_analysis_20260330_050218.json
+2026-03-30 07:00:04 - Pushing to GitHub...
+2026-03-30 07:00:06 - [OK] Successfully pushed to GitHub
+2026-03-30 07:00:06 - Commit: 16ba4cf
+2026-03-30 07:00:06 - === Auto-commit complete ===
+2026-03-30 07:00:06 - 
+2026-03-30 18:26:20 - === Starting Workspace Auto-Commit ===
+2026-03-30 18:26:21 - Checking for changes...
+2026-03-30 18:26:24 - Found 15 changed files
+2026-03-30 18:26:24 - Staging changes...
+2026-03-30 18:26:27 - Committing: Auto-commit workspace 2026-03-30 18:26 (13 files)
+2026-03-30 18:26:28 - [master a0937f1] Auto-commit workspace 2026-03-30 18:26 (13 files)  13 files changed, 2213 insertions(+), 280 deletions(-)  create mode 100644 data/polymarket/hot-bets-2026-03-30-0700.html  create mode 100644 data/polymarket/hot-bets-2026-03-30-0800.html  create mode 100644 data/polymarket/polymarket_2026-03-30-0700.json  create mode 100644 data/polymarket/polymarket_2026-03-30-0800.json  create mode 100644 medtech-control-intelligence/medtech-europe-summary.md  create mode 100644 medtech-control-intelligence/product-hierarchy.json  create mode 100644 scripts/read_excel.ps1  create mode 100644 skills/stockvue-scraper/logs/stock_scan_20260330.log
+2026-03-30 18:26:28 - Pushing to GitHub...
+2026-03-30 18:26:32 - [OK] Successfully pushed to GitHub
+2026-03-30 18:26:32 - Commit: a0937f1
+2026-03-30 18:26:32 - === Auto-commit complete ===
+2026-03-30 18:26:32 - 
+2026-03-30 19:00:02 - === Starting Workspace Auto-Commit ===
+2026-03-30 19:00:03 - Checking for changes...
+2026-03-30 19:00:03 - Found 32 changed files
+2026-03-30 19:00:03 - Staging changes...
+2026-03-30 19:00:04 - Committing: Auto-commit workspace 2026-03-30 19:00 (24 files)
+2026-03-30 19:00:04 - [master fbdaf67] Auto-commit workspace 2026-03-30 19:00 (24 files)  24 files changed, 33011 insertions(+), 3519 deletions(-)  create mode 100644 data/crypto/2026-03/2026-03-30_182833.json  create mode 100644 data/crypto/2026-03/top_200_analysis_20260330_182833.json  create mode 100644 data/polymarket/hot-bets-2026-03-30-1826.html  create mode 100644 data/polymarket/polymarket_2026-03-30-1826.json  create mode 100644 medtech-control-intelligence/CORRECTED-regional-intelligence-report.md  create mode 100644 medtech-control-intelligence/DASHBOARD-README.md  create mode 100644 medtech-control-intelligence/DATA-CLARIFICATION.md  create mode 100644 medtech-control-intelligence/country-intelligence-report.md  create mode 100644 medtech-control-intelligence/regional-intelligence-report.md  create mode 100644 medtech-control-intelligence/thrombectomy-intelligence-report.md  create mode 100644 memory/2026-03-30.md  create mode 100644 scripts/prepare_dashboard_data.py  create mode 100644 scripts/regional_analysis.py  create mode 100644 scripts/thrombectomy_analysis.py  create mode 100644 scripts/top_countries_analysis.py  create mode 100644 skills/tradingview-claw-v2/top_200_analysis_20260330_182833.json
+2026-03-30 19:00:04 - Pushing to GitHub...
+2026-03-30 19:00:07 - [OK] Successfully pushed to GitHub
+2026-03-30 19:00:07 - Commit: fbdaf67
+2026-03-30 19:00:07 - === Auto-commit complete ===
+2026-03-30 19:00:07 - 
+2026-03-30 21:00:03 - === Starting Workspace Auto-Commit ===
+2026-03-30 21:00:03 - Checking for changes...
+2026-03-30 21:00:03 - Found 17 changed files
+2026-03-30 21:00:03 - Staging changes...
+2026-03-30 21:00:04 - Committing: Auto-commit workspace 2026-03-30 21:00 (9 files)
+2026-03-30 21:00:04 - [master afb9975] Auto-commit workspace 2026-03-30 21:00 (9 files)  9 files changed, 2299 insertions(+), 559 deletions(-)  create mode 100644 data/polymarket/hot-bets-2026-03-30-1900.html  create mode 100644 data/polymarket/hot-bets-2026-03-30-2000.html  create mode 100644 data/polymarket/polymarket_2026-03-30-1900.json  create mode 100644 data/polymarket/polymarket_2026-03-30-2000.json  create mode 100644 medtech-control-intelligence/DASHBOARD-UPDATE.md
+2026-03-30 21:00:04 - Pushing to GitHub...
+2026-03-30 21:00:16 - [OK] Successfully pushed to GitHub
+2026-03-30 21:00:16 - Commit: afb9975
+2026-03-30 21:00:16 - === Auto-commit complete ===
+2026-03-30 21:00:16 - 
+2026-03-30 23:00:03 - === Starting Workspace Auto-Commit ===
+2026-03-30 23:00:03 - Checking for changes...
+2026-03-30 23:00:03 - Found 23 changed files
+2026-03-30 23:00:03 - Staging changes...
+2026-03-30 23:00:04 - Committing: Auto-commit workspace 2026-03-30 23:00 (15 files)
+2026-03-30 23:00:04 - [master 68409d5] Auto-commit workspace 2026-03-30 23:00 (15 files)  15 files changed, 31996 insertions(+), 2978 deletions(-)  create mode 100644 data/crypto/2026-03/2026-03-30_210207.json  create mode 100644 data/crypto/2026-03/top_200_analysis_20260330_210207.json  create mode 100644 data/polymarket/hot-bets-2026-03-30-2100.html  create mode 100644 data/polymarket/hot-bets-2026-03-30-2200.html  create mode 100644 data/polymarket/polymarket_2026-03-30-2100.json  create mode 100644 data/polymarket/polymarket_2026-03-30-2200.json  create mode 100644 skills/tradingview-claw-v2/top_200_analysis_20260330_210207.json
+2026-03-30 23:00:04 - Pushing to GitHub...
+2026-03-30 23:00:06 - [OK] Successfully pushed to GitHub
+2026-03-30 23:00:06 - Commit: 68409d5
+2026-03-30 23:00:06 - === Auto-commit complete ===
+2026-03-30 23:00:06 - 
+2026-03-31 01:00:03 - === Starting Workspace Auto-Commit ===
+2026-03-31 01:00:03 - Checking for changes...
+2026-03-31 01:00:03 - Found 18 changed files
+2026-03-31 01:00:03 - Staging changes...
+2026-03-31 01:00:04 - Committing: Auto-commit workspace 2026-03-31 01:00 (11 files)
+2026-03-31 01:00:04 - [master ffad6aa] Auto-commit workspace 2026-03-31 01:00 (11 files)  11 files changed, 1998 insertions(+), 547 deletions(-)  create mode 100644 data/polymarket/hot-bets-2026-03-30-2300.html  create mode 100644 data/polymarket/hot-bets-2026-03-31-0000.html  create mode 100644 data/polymarket/polymarket_2026-03-30-2300.json  create mode 100644 data/polymarket/polymarket_2026-03-31-0000.json  create mode 100644 skills/tradingview-claw-v2/logs/auto_scan_20260331.log
+2026-03-31 01:00:04 - Pushing to GitHub...
+2026-03-31 01:00:06 - [OK] Successfully pushed to GitHub
+2026-03-31 01:00:06 - Commit: ffad6aa
+2026-03-31 01:00:06 - === Auto-commit complete ===
+2026-03-31 01:00:06 - 
+2026-03-31 03:00:02 - === Starting Workspace Auto-Commit ===
+2026-03-31 03:00:03 - Checking for changes...
+2026-03-31 03:00:03 - Found 23 changed files
+2026-03-31 03:00:03 - Staging changes...
+2026-03-31 03:00:04 - Committing: Auto-commit workspace 2026-03-31 03:00 (15 files)
+2026-03-31 03:00:04 - [master 5a4848c] Auto-commit workspace 2026-03-31 03:00 (15 files)  15 files changed, 31646 insertions(+), 3043 deletions(-)  create mode 100644 data/crypto/2026-03/2026-03-31_010211.json  create mode 100644 data/crypto/2026-03/top_200_analysis_20260331_010211.json  create mode 100644 data/polymarket/hot-bets-2026-03-31-0100.html  create mode 100644 data/polymarket/hot-bets-2026-03-31-0200.html  create mode 100644 data/polymarket/polymarket_2026-03-31-0100.json  create mode 100644 data/polymarket/polymarket_2026-03-31-0200.json  create mode 100644 skills/tradingview-claw-v2/top_200_analysis_20260331_010211.json
+2026-03-31 03:00:04 - Pushing to GitHub...
+2026-03-31 03:00:06 - [OK] Successfully pushed to GitHub
+2026-03-31 03:00:06 - Commit: 5a4848c
+2026-03-31 03:00:06 - === Auto-commit complete ===
+2026-03-31 03:00:06 - 
+2026-03-31 05:00:02 - === Starting Workspace Auto-Commit ===
+2026-03-31 05:00:02 - Checking for changes...
+2026-03-31 05:00:03 - Found 17 changed files
+2026-03-31 05:00:03 - Staging changes...
+2026-03-31 05:00:04 - Committing: Auto-commit workspace 2026-03-31 05:00 (10 files)
+2026-03-31 05:00:04 - [master 09ea89b] Auto-commit workspace 2026-03-31 05:00 (10 files)  10 files changed, 2143 insertions(+), 486 deletions(-)  create mode 100644 data/polymarket/hot-bets-2026-03-31-0300.html  create mode 100644 data/polymarket/hot-bets-2026-03-31-0400.html  create mode 100644 data/polymarket/polymarket_2026-03-31-0300.json  create mode 100644 data/polymarket/polymarket_2026-03-31-0400.json
+2026-03-31 05:00:04 - Pushing to GitHub...
+2026-03-31 05:00:06 - [OK] Successfully pushed to GitHub
+2026-03-31 05:00:06 - Commit: 09ea89b
+2026-03-31 05:00:06 - === Auto-commit complete ===
+2026-03-31 05:00:06 - 
+2026-03-31 07:00:02 - === Starting Workspace Auto-Commit ===
+2026-03-31 07:00:02 - Checking for changes...
+2026-03-31 07:00:03 - Found 23 changed files
+2026-03-31 07:00:03 - Staging changes...
+2026-03-31 07:00:03 - Committing: Auto-commit workspace 2026-03-31 07:00 (15 files)
+2026-03-31 07:00:04 - [master 5c2e9c5] Auto-commit workspace 2026-03-31 07:00 (15 files)  15 files changed, 31618 insertions(+), 2957 deletions(-)  create mode 100644 data/crypto/2026-03/2026-03-31_050212.json  create mode 100644 data/crypto/2026-03/top_200_analysis_20260331_050212.json  create mode 100644 data/polymarket/hot-bets-2026-03-31-0500.html  create mode 100644 data/polymarket/hot-bets-2026-03-31-0600.html  create mode 100644 data/polymarket/polymarket_2026-03-31-0500.json  create mode 100644 data/polymarket/polymarket_2026-03-31-0600.json  create mode 100644 skills/tradingview-claw-v2/top_200_analysis_20260331_050212.json
+2026-03-31 07:00:04 - Pushing to GitHub...
+2026-03-31 07:00:06 - [OK] Successfully pushed to GitHub
+2026-03-31 07:00:06 - Commit: 5c2e9c5
+2026-03-31 07:00:06 - === Auto-commit complete ===
+2026-03-31 07:00:06 - 
