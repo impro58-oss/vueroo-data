@@ -1,7 +1,7 @@
 ﻿{
-    "scan_time":  "2026-03-31 00:00:17",
-    "total_opportunities":  35,
-    "timestamp":  "2026-03-31-0000",
+    "scan_time":  "2026-03-31 02:00:19",
+    "total_opportunities":  36,
+    "timestamp":  "2026-03-31-0200",
     "hot_bets":  [
                      {
                          "Odds":  "50%",
@@ -25,26 +25,17 @@
                          "Odds":  "50%",
                          "Category":  "ENTERTAINMENT",
                          "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/lal-bil-rso-2026-02-01-more-markets",
-                         "Name":  "Athletic Club vs. Real Sociedad de Ftbol - More Markets",
+                         "Url":  "https://polymarket.com/event/uel-gnk-mal2-2026-01-29-more-markets",
+                         "Name":  "KRC Genk vs. Malm FF - More Markets",
                          "Outcome":  "Various outcomes (check link)",
-                         "OddsNum":  50
-                     },
-                     {
-                         "Odds":  "50%",
-                         "Category":  "FINANCE",
-                         "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/nflx-above-in-april-2026",
-                         "Name":  "Will Netflix (NFLX) close above ___ end of April?",
-                         "Outcome":  "YES: Netflix (NFLX) close above ___ end of April",
                          "OddsNum":  50
                      },
                      {
                          "Odds":  "50%",
                          "Category":  "ENTERTAINMENT",
                          "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/uel-gnk-mal2-2026-01-29-more-markets",
-                         "Name":  "KRC Genk vs. Malm FF - More Markets",
+                         "Url":  "https://polymarket.com/event/lal-bil-rso-2026-02-01-more-markets",
+                         "Name":  "Athletic Club vs. Real Sociedad de Ftbol - More Markets",
                          "Outcome":  "Various outcomes (check link)",
                          "OddsNum":  50
                      },
@@ -59,11 +50,11 @@
                      },
                      {
                          "Odds":  "50%",
-                         "Category":  "TRENDING",
+                         "Category":  "ENTERTAINMENT",
                          "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/hood-up-or-down-on-march-31-2026",
-                         "Name":  "Robinhood (HOOD) Up or Down on March 31?",
-                         "Outcome":  "Check market for outcomes",
+                         "Url":  "https://polymarket.com/event/uel-ast4-rbs1-2026-01-29-more-markets",
+                         "Name":  "Aston Villa FC vs. FC Red Bull Salzburg - More Markets",
+                         "Outcome":  "Various outcomes (check link)",
                          "OddsNum":  50
                      },
                      {
@@ -72,15 +63,6 @@
                          "EdgeType":  "CLOSE_CALL",
                          "Url":  "https://polymarket.com/event/ere-tel-az-2026-01-25-more-markets",
                          "Name":  "Telstar 1963 vs. AZ - More Markets",
-                         "Outcome":  "Various outcomes (check link)",
-                         "OddsNum":  50
-                     },
-                     {
-                         "Odds":  "50%",
-                         "Category":  "ENTERTAINMENT",
-                         "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/uel-ast4-rbs1-2026-01-29-more-markets",
-                         "Name":  "Aston Villa FC vs. FC Red Bull Salzburg - More Markets",
                          "Outcome":  "Various outcomes (check link)",
                          "OddsNum":  50
                      },
@@ -103,13 +85,13 @@
                          "OddsNum":  50
                      },
                      {
-                         "Odds":  "49%",
+                         "Odds":  "48%",
                          "Category":  "FINANCE",
                          "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/pltr-above-in-april-2026",
-                         "Name":  "Will Palantir (PLTR) close above ___ end of April?",
-                         "Outcome":  "YES: Palantir (PLTR) close above ___ end of April",
-                         "OddsNum":  49
+                         "Url":  "https://polymarket.com/event/will-kospi-ks11-close-above-end-of-q1",
+                         "Name":  "Will KOSPI (KS11) close above __ end of Q1?",
+                         "Outcome":  "YES: KOSPI (KS11) close above __ end of Q1",
+                         "OddsNum":  48
                      },
                      {
                          "Odds":  "45%",
@@ -121,31 +103,13 @@
                          "OddsNum":  45
                      },
                      {
-                         "Odds":  "55%",
-                         "Category":  "SPORTS",
+                         "Odds":  "57%",
+                         "Category":  "TRENDING",
                          "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/nba-phi-mia-2026-03-30",
-                         "Name":  "76ers vs. Heat",
-                         "Outcome":  "Likely: Heat wins or specific outcome",
-                         "OddsNum":  55
-                     },
-                     {
-                         "Odds":  "56%",
-                         "Category":  "SPORTS",
-                         "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/nba-bos-atl-2026-03-30",
-                         "Name":  "Celtics vs. Hawks",
-                         "Outcome":  "Likely: Hawks wins or specific outcome",
-                         "OddsNum":  56
-                     },
-                     {
-                         "Odds":  "59%",
-                         "Category":  "SPORTS",
-                         "EdgeType":  "CLOSE_CALL",
-                         "Url":  "https://polymarket.com/event/lol-reda-itz-2026-04-01",
-                         "Name":  "LoL: RED Academy vs INTZ e-Sports (BO1) - Circuito Desafiante Regular Season",
-                         "Outcome":  "Likely: INTZ e-Sports (BO1) wins or specific outcome",
-                         "OddsNum":  59
+                         "Url":  "https://polymarket.com/event/hood-up-or-down-on-march-31-2026",
+                         "Name":  "Robinhood (HOOD) Up or Down on March 31?",
+                         "Outcome":  "Check market for outcomes",
+                         "OddsNum":  57
                      },
                      {
                          "Odds":  "59%",
@@ -166,12 +130,30 @@
                          "OddsNum":  41
                      },
                      {
+                         "Odds":  "41%",
+                         "Category":  "FINANCE",
+                         "EdgeType":  "CLOSE_CALL",
+                         "Url":  "https://polymarket.com/event/tsla-week-april-3-2026",
+                         "Name":  "Tesla (TSLA) closes week of Mar 30 at ___?",
+                         "Outcome":  "Check market for outcomes",
+                         "OddsNum":  41
+                     },
+                     {
                          "Odds":  "60%",
                          "Category":  "SPORTS",
                          "EdgeType":  "CLOSE_CALL",
                          "Url":  "https://polymarket.com/event/lol-khk-ewi-2026-04-01",
                          "Name":  "LoL: Kaufland Hangry Knights vs E WIE EINFACH E-SPORTS (BO1) - Prime League 1st Division Regular Season",
                          "Outcome":  "Likely: E WIE EINFACH E-SPORTS (BO1) wins or specific outcome",
+                         "OddsNum":  60
+                     },
+                     {
+                         "Odds":  "60%",
+                         "Category":  "SPORTS",
+                         "EdgeType":  "CLOSE_CALL",
+                         "Url":  "https://polymarket.com/event/lol-reda-itz-2026-04-01",
+                         "Name":  "LoL: RED Academy vs INTZ e-Sports (BO1) - Circuito Desafiante Regular Season",
+                         "Outcome":  "Likely: INTZ e-Sports (BO1) wins or specific outcome",
                          "OddsNum":  60
                      },
                      {
@@ -184,15 +166,6 @@
                          "OddsNum":  39
                      },
                      {
-                         "Odds":  "61%",
-                         "Category":  "SPORTS",
-                         "EdgeType":  "FAVORITE",
-                         "Url":  "https://polymarket.com/event/lol-itz-kbm-2026-03-31",
-                         "Name":  "LoL: INTZ e-Sports vs KaBuM! Ilha das Lendas (BO1) - Circuito Desafiante Regular Season",
-                         "Outcome":  "Likely: KaBuM! Ilha das Lendas (BO1) wins or specific outcome",
-                         "OddsNum":  61
-                     },
-                     {
                          "Odds":  "38%",
                          "Category":  "SPORTS",
                          "EdgeType":  "UNDERDOG",
@@ -200,6 +173,15 @@
                          "Name":  "2026 NBA Champion",
                          "Outcome":  "Check market for outcomes",
                          "OddsNum":  38
+                     },
+                     {
+                         "Odds":  "62%",
+                         "Category":  "SPORTS",
+                         "EdgeType":  "FAVORITE",
+                         "Url":  "https://polymarket.com/event/lol-itz-kbm-2026-03-31",
+                         "Name":  "LoL: INTZ e-Sports vs KaBuM! Ilha das Lendas (BO1) - Circuito Desafiante Regular Season",
+                         "Outcome":  "Likely: KaBuM! Ilha das Lendas (BO1) wins or specific outcome",
+                         "OddsNum":  62
                      },
                      {
                          "Odds":  "37%",
@@ -220,22 +202,22 @@
                          "OddsNum":  64
                      },
                      {
-                         "Odds":  "35%",
-                         "Category":  "POLITICS",
-                         "EdgeType":  "UNDERDOG",
-                         "Url":  "https://polymarket.com/event/next-prime-minister-of-hungary",
-                         "Name":  "Next Prime Minister of Hungary",
-                         "Outcome":  "Check market for outcomes",
-                         "OddsNum":  35
-                     },
-                     {
-                         "Odds":  "35%",
+                         "Odds":  "36%",
                          "Category":  "CRYPTO",
                          "EdgeType":  "UNDERDOG",
                          "Url":  "https://polymarket.com/event/hyperliquid-listed-on-binance-in-2026",
                          "Name":  "Hyperliquid listed on Binance in 2026?",
                          "Outcome":  "Check market for outcomes",
-                         "OddsNum":  35
+                         "OddsNum":  36
+                     },
+                     {
+                         "Odds":  "67%",
+                         "Category":  "SPORTS",
+                         "EdgeType":  "FAVORITE",
+                         "Url":  "https://polymarket.com/event/nba-phi-mia-2026-03-30",
+                         "Name":  "76ers vs. Heat",
+                         "Outcome":  "Likely: Heat wins or specific outcome",
+                         "OddsNum":  67
                      },
                      {
                          "Odds":  "32%",
@@ -265,6 +247,15 @@
                          "OddsNum":  70
                      },
                      {
+                         "Odds":  "72%",
+                         "Category":  "SPORTS",
+                         "EdgeType":  "FAVORITE",
+                         "Url":  "https://polymarket.com/event/nba-bos-atl-2026-03-30",
+                         "Name":  "Celtics vs. Hawks",
+                         "Outcome":  "Likely: Hawks wins or specific outcome",
+                         "OddsNum":  72
+                     },
+                     {
                          "Odds":  "26%",
                          "Category":  "ENTERTAINMENT",
                          "EdgeType":  "UNDERDOG",
@@ -277,8 +268,8 @@
                          "Odds":  "76%",
                          "Category":  "SPORTS",
                          "EdgeType":  "FAVORITE",
-                         "Url":  "https://polymarket.com/event/lol-g2nord-ewi-2026-04-02",
-                         "Name":  "LoL: G2 NORD vs E WIE EINFACH E-SPORTS (BO1) - Prime League 1st Division Regular Season",
+                         "Url":  "https://polymarket.com/event/lol-ross-ewi-2026-04-03",
+                         "Name":  "LoL: ROSSMANN Centaurs vs E WIE EINFACH E-SPORTS (BO1) - Prime League 1st Division Regular Season",
                          "Outcome":  "Likely: E WIE EINFACH E-SPORTS (BO1) wins or specific outcome",
                          "OddsNum":  76
                      },
@@ -286,8 +277,8 @@
                          "Odds":  "76%",
                          "Category":  "SPORTS",
                          "EdgeType":  "FAVORITE",
-                         "Url":  "https://polymarket.com/event/lol-ross-ewi-2026-04-03",
-                         "Name":  "LoL: ROSSMANN Centaurs vs E WIE EINFACH E-SPORTS (BO1) - Prime League 1st Division Regular Season",
+                         "Url":  "https://polymarket.com/event/lol-g2nord-ewi-2026-04-02",
+                         "Name":  "LoL: G2 NORD vs E WIE EINFACH E-SPORTS (BO1) - Prime League 1st Division Regular Season",
                          "Outcome":  "Likely: E WIE EINFACH E-SPORTS (BO1) wins or specific outcome",
                          "OddsNum":  76
                      },
@@ -299,6 +290,24 @@
                          "Name":  "Rainbow Six Siege: Team Liquid vs Black Dragons e-Sports (BO1) - South America League Kickoff Group A",
                          "Outcome":  "Likely: Black Dragons e-Sports (BO1) wins or specific outcome",
                          "OddsNum":  77
+                     },
+                     {
+                         "Odds":  "78%",
+                         "Category":  "SPORTS",
+                         "EdgeType":  "FAVORITE",
+                         "Url":  "https://polymarket.com/event/nba-phx-mem-2026-03-30",
+                         "Name":  "Suns vs. Grizzlies",
+                         "Outcome":  "Likely: Grizzlies wins or specific outcome",
+                         "OddsNum":  78
+                     },
+                     {
+                         "Odds":  "78%",
+                         "Category":  "POLITICS",
+                         "EdgeType":  "FAVORITE",
+                         "Url":  "https://polymarket.com/event/fed-decision-in-july-181",
+                         "Name":  "Fed Decision in July?",
+                         "Outcome":  "Check market for outcomes",
+                         "OddsNum":  78
                      },
                      {
                          "Odds":  "21%",

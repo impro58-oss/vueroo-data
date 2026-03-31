@@ -1,73 +1,73 @@
 ﻿{
-    "timestamp":  "2026-03-30 23:00:23",
+    "timestamp":  "2026-03-31 02:00:19",
     "all_movements":  [
                           {
-                              "Market":  "LoL: paiN Gaming Academy vs INTZ e-Sports (BO1) - Circuito Desafiante Regular Season",
-                              "Category":  "sports",
-                              "Url":  "https://polymarket.com/event/lol-pnga-itz-2026-03-30",
-                              "PreviousOdds":  57,
-                              "CurrentOdds":  100,
-                              "Movement":  43,
-                              "MovementPercent":  43,
+                              "Market":  "Robinhood (HOOD) Up or Down on March 31?",
+                              "Category":  "trending",
+                              "Url":  "https://polymarket.com/event/hood-up-or-down-on-march-31-2026",
+                              "PreviousOdds":  51,
+                              "CurrentOdds":  57,
+                              "Movement":  6,
+                              "MovementPercent":  6,
                               "Direction":  "UP",
-                              "Confidence":  "HIGH",
-                              "PreviousTime":  "2026-03-30 22:00:19",
-                              "CurrentTime":  "2026-03-30 23:00:23"
+                              "Confidence":  "LOW",
+                              "PreviousTime":  "2026-03-31 01:00:20",
+                              "CurrentTime":  "2026-03-31 02:00:19"
                           },
                           {
-                              "Market":  "LoL: ROSSMANN Centaurs vs E WIE EINFACH E-SPORTS (BO1) - Prime League 1st Division Regular Season",
+                              "Market":  "LoL: INTZ e-Sports vs KaBuM! Ilha das Lendas (BO1) - Circuito Desafiante Regular Season",
                               "Category":  "sports",
-                              "Url":  "https://polymarket.com/event/lol-ross-ewi-2026-04-03",
-                              "PreviousOdds":  71,
-                              "CurrentOdds":  76,
+                              "Url":  "https://polymarket.com/event/lol-itz-kbm-2026-03-31",
+                              "PreviousOdds":  57,
+                              "CurrentOdds":  62,
                               "Movement":  5,
                               "MovementPercent":  5,
                               "Direction":  "UP",
                               "Confidence":  "LOW",
-                              "PreviousTime":  "2026-03-30 22:00:19",
-                              "CurrentTime":  "2026-03-30 23:00:23"
+                              "PreviousTime":  "2026-03-31 01:00:20",
+                              "CurrentTime":  "2026-03-31 02:00:19"
                           },
                           {
-                              "Market":  "LoL: Kaufland Hangry Knights vs E WIE EINFACH E-SPORTS (BO1) - Prime League 1st Division Regular Season",
+                              "Market":  "Celtics vs. Hawks",
                               "Category":  "sports",
-                              "Url":  "https://polymarket.com/event/lol-khk-ewi-2026-04-01",
-                              "PreviousOdds":  73,
-                              "CurrentOdds":  59,
-                              "Movement":  -14,
-                              "MovementPercent":  14,
+                              "Url":  "https://polymarket.com/event/nba-bos-atl-2026-03-30",
+                              "PreviousOdds":  52,
+                              "CurrentOdds":  72,
+                              "Movement":  20,
+                              "MovementPercent":  20,
+                              "Direction":  "UP",
+                              "Confidence":  "HIGH",
+                              "PreviousTime":  "2026-03-31 01:00:20",
+                              "CurrentTime":  "2026-03-31 02:00:19"
+                          },
+                          {
+                              "Market":  "Will KOSPI (KS11) close above __ end of Q1?",
+                              "Category":  "finance",
+                              "Url":  "https://polymarket.com/event/will-kospi-ks11-close-above-end-of-q1",
+                              "PreviousOdds":  70,
+                              "CurrentOdds":  48,
+                              "Movement":  -22,
+                              "MovementPercent":  22,
                               "Direction":  "DOWN",
                               "Confidence":  "HIGH",
-                              "PreviousTime":  "2026-03-30 22:00:19",
-                              "CurrentTime":  "2026-03-30 23:00:23"
-                          },
-                          {
-                              "Market":  "MLB: Scorigami in 2026?",
-                              "Category":  "sports",
-                              "Url":  "https://polymarket.com/event/mlb-scorigami-in-2026",
-                              "PreviousOdds":  23,
-                              "CurrentOdds":  15,
-                              "Movement":  -8,
-                              "MovementPercent":  8,
-                              "Direction":  "DOWN",
-                              "Confidence":  "MEDIUM",
-                              "PreviousTime":  "2026-03-30 22:00:19",
-                              "CurrentTime":  "2026-03-30 23:00:23"
+                              "PreviousTime":  "2026-03-30 08:00:20",
+                              "CurrentTime":  "2026-03-31 02:00:19"
                           }
                       ],
     "total_movements":  4,
     "smart_money_alerts":  [
                                {
-                                   "Market":  "LoL: Kaufland Hangry Knights vs E WIE EINFACH E-SPORTS (BO1) - Prime League 1st Division Regular Season",
-                                   "Category":  "sports",
-                                   "Url":  "https://polymarket.com/event/lol-khk-ewi-2026-04-01",
-                                   "PreviousOdds":  73,
-                                   "CurrentOdds":  59,
-                                   "Movement":  -14,
-                                   "MovementPercent":  14,
+                                   "Market":  "Will KOSPI (KS11) close above __ end of Q1?",
+                                   "Category":  "finance",
+                                   "Url":  "https://polymarket.com/event/will-kospi-ks11-close-above-end-of-q1",
+                                   "PreviousOdds":  70,
+                                   "CurrentOdds":  48,
+                                   "Movement":  -22,
+                                   "MovementPercent":  22,
                                    "Direction":  "DOWN",
                                    "Confidence":  "HIGH",
-                                   "PreviousTime":  "2026-03-30 22:00:19",
-                                   "CurrentTime":  "2026-03-30 23:00:23"
+                                   "PreviousTime":  "2026-03-30 08:00:20",
+                                   "CurrentTime":  "2026-03-31 02:00:19"
                                }
                            ]
 }
