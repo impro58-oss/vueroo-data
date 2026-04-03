@@ -1,6 +1,8 @@
 {
+    "scan_timestamp": "2026-04-03T17:01:50.891343",
     "analysis_time":  "2026-04-03T17:01:50.891343",
     "strategy":  "TrojanLogic4H",
+    "total_symbols": 200,
     "parameters":  {
                        "rsi_short":  13,
                        "rsi_long":  64,
