@@ -1,82 +1,170 @@
-{
-  "scan_timestamp": "2026-05-02T18:54:01.191779",
-  "scan_date": "2026-05-02",
-  "scan_time": "18:54:01",
-  "api": "Alpha Vantage",
-  "api_calls_used": 8,
-  "total_stocks": 4,
-  "signals_found": 4,
-  "long_opportunities": 3,
-  "short_opportunities": 1,
-  "categories_scanned": [
-    "alpha_vantage_universe"
-  ],
-  "results": [
-    {
-      "symbol": "NVDA",
-      "price": 198.45,
-      "change_percent": -0.56,
-      "volume": 128646996,
-      "rsi": null,
-      "macd": null,
-      "signal": "short",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Negative momentum (-0.6%)"
-      ],
-      "timestamp": "2026-05-02T18:51:54.036182",
-      "data_date": "2026-05-01"
-    },
-    {
-      "symbol": "TSLA",
-      "price": 390.82,
-      "change_percent": 2.41,
-      "volume": 64533377,
-      "rsi": null,
-      "macd": null,
-      "signal": "long",
-      "confidence": 0.55,
-      "confidence_label": "medium",
-      "reasons": [
-        "Strong positive momentum (+2.4%)"
-      ],
-      "timestamp": "2026-05-02T18:52:07.113265",
-      "data_date": "2026-05-01"
-    },
-    {
-      "symbol": "AAPL",
-      "price": 280.14,
-      "change_percent": 3.24,
-      "volume": 77938859,
-      "rsi": null,
-      "macd": null,
-      "signal": "long",
-      "confidence": 0.65,
-      "confidence_label": "medium",
-      "reasons": [
-        "Strong positive momentum (+3.2%)",
-        "Volume spike (77.9M vs avg 45.7M)",
-        "High volume (77.9M vs avg 45.7M)"
-      ],
-      "timestamp": "2026-05-02T18:52:20.213979",
-      "data_date": "2026-05-01"
-    },
-    {
-      "symbol": "AMD",
-      "price": 360.54,
-      "change_percent": 1.71,
-      "volume": 34279169,
-      "rsi": null,
-      "macd": null,
-      "signal": "long",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Positive momentum (+1.7%)"
-      ],
-      "timestamp": "2026-05-02T18:52:33.660381",
-      "data_date": "2026-05-01"
-    }
-  ]
+﻿{
+    "scan_timestamp":  "2026-05-02T18:54:01.191779",
+    "scan_date":  "2026-05-02",
+    "scan_time":  "18:54:01",
+    "api":  "Alpha Vantage",
+    "api_calls_used":  8,
+    "total_stocks":  4,
+    "signals_found":  4,
+    "long_opportunities":  3,
+    "short_opportunities":  1,
+    "categories_scanned":  [
+                               "alpha_vantage_universe"
+                           ],
+    "results":  [
+                    {
+                        "symbol":  "NVDA",
+                        "price":  198.45,
+                        "change_percent":  -0.56,
+                        "volume":  128646996,
+                        "rsi":  null,
+                        "macd":  null,
+                        "signal":  "short",
+                        "confidence":  0.45,
+                        "confidence_label":  "low",
+                        "reasons":  [
+                                        "Negative momentum (-0.6%)"
+                                    ],
+                        "timestamp":  "2026-05-02T18:51:54.036182",
+                        "data_date":  "2026-05-01"
+                    },
+                    {
+                        "symbol":  "TSLA",
+                        "price":  390.82,
+                        "change_percent":  2.41,
+                        "volume":  64533377,
+                        "rsi":  null,
+                        "macd":  null,
+                        "signal":  "long",
+                        "confidence":  0.55,
+                        "confidence_label":  "medium",
+                        "reasons":  [
+                                        "Strong positive momentum (+2.4%)"
+                                    ],
+                        "timestamp":  "2026-05-02T18:52:07.113265",
+                        "data_date":  "2026-05-01"
+                    },
+                    {
+                        "symbol":  "AAPL",
+                        "price":  280.14,
+                        "change_percent":  3.24,
+                        "volume":  77938859,
+                        "rsi":  null,
+                        "macd":  null,
+                        "signal":  "long",
+                        "confidence":  0.65,
+                        "confidence_label":  "medium",
+                        "reasons":  [
+                                        "Strong positive momentum (+3.2%)",
+                                        "Volume spike (77.9M vs avg 45.7M)",
+                                        "High volume (77.9M vs avg 45.7M)"
+                                    ],
+                        "timestamp":  "2026-05-02T18:52:20.213979",
+                        "data_date":  "2026-05-01"
+                    },
+                    {
+                        "symbol":  "AMD",
+                        "price":  360.54,
+                        "change_percent":  1.71,
+                        "volume":  34279169,
+                        "rsi":  null,
+                        "macd":  null,
+                        "signal":  "long",
+                        "confidence":  0.45,
+                        "confidence_label":  "low",
+                        "reasons":  [
+                                        "Positive momentum (+1.7%)"
+                                    ],
+                        "timestamp":  "2026-05-02T18:52:33.660381",
+                        "data_date":  "2026-05-01"
+                    }
+                ],
+    "tradingview_snapshot":  {
+                                 "source":  "TradingView + CNBC + TradingEconomics",
+                                 "hot_movers":  {
+                                                    "losers":  [
+                                                                   {
+                                                                       "reason":  "Amgen leading Dow losses",
+                                                                       "change_pct":  "-4.74%",
+                                                                       "symbol":  "AMGN"
+                                                                   },
+                                                                   {
+                                                                       "reason":  "3M dragging",
+                                                                       "change_pct":  "-2.74%",
+                                                                       "symbol":  "MMM"
+                                                                   },
+                                                                   {
+                                                                       "reason":  "McDonalds weak",
+                                                                       "change_pct":  "-2.37%",
+                                                                       "symbol":  "MCD"
+                                                                   }
+                                                               ],
+                                                    "gainers":  [
+                                                                    {
+                                                                        "price":  280.14,
+                                                                        "reason":  "Q2 earnings beat, better revenue outlook",
+                                                                        "change_pct":  "+3.26%",
+                                                                        "symbol":  "AAPL"
+                                                                    },
+                                                                    {
+                                                                        "price":  "est",
+                                                                        "reason":  "Salesforce leading Dow gains",
+                                                                        "change_pct":  "+4.13%",
+                                                                        "symbol":  "CRM"
+                                                                    },
+                                                                    {
+                                                                        "price":  "est",
+                                                                        "reason":  "Merck pharmaceutical strength",
+                                                                        "change_pct":  "+2.73%",
+                                                                        "symbol":  "MRK"
+                                                                    }
+                                                                ]
+                                                },
+                                 "indices":  {
+                                                 "Nasdaq":  {
+                                                                "price":  25114.44,
+                                                                "record":  "All-time closing high",
+                                                                "change":  0.89,
+                                                                "change_pct":  "+0.89%"
+                                                            },
+                                                 "DowJones":  {
+                                                                  "price":  49499.27,
+                                                                  "record":  "None",
+                                                                  "change":  -152.87,
+                                                                  "change_pct":  "-0.31%"
+                                                              },
+                                                 "SP500":  {
+                                                               "price":  7230.12,
+                                                               "record":  "All-time closing high",
+                                                               "change":  0.29,
+                                                               "change_pct":  "+0.29%"
+                                                           }
+                                             },
+                                 "scan_timestamp":  "2026-05-02T20:51:00Z",
+                                 "commodities":  {
+                                                     "WTI":  {
+                                                                 "price":  101.94,
+                                                                 "change_pct":  "-2.98%",
+                                                                 "reason":  "Iran peace deal hopes"
+                                                             },
+                                                     "Brent":  {
+                                                                   "price":  108.17,
+                                                                   "change_pct":  "-2.02%",
+                                                                   "reason":  "Iran peace deal hopes"
+                                                               }
+                                                 },
+                                 "macro":  {
+                                               "US_1Y_Yield":  3.572,
+                                               "US_10Y_Yield":  4.372,
+                                               "narrative":  "S\u0026P 500 and Nasdaq at record highs, 5th straight weekly gain. Tech surge led by Apple earnings beat. Oil fell on Iran peace developments. Earnings season strong."
+                                           },
+                                 "scan_date":  "2026-05-02",
+                                 "community_trends":  [
+                                                          "AAPL",
+                                                          "TSLA",
+                                                          "NVDA",
+                                                          "CRM"
+                                                      ],
+                                 "market_session":  "closed (Friday May 1 close)"
+                             }
 }
