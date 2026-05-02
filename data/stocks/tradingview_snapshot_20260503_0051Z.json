@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-05-02T23:51:00Z",
+  "source": "TradingView",
+  "most_active": [
+    {"symbol": "SNDK", "name": "Sandisk Corporation", "price": 1187.00, "change_pct": 8.25, "volume": "23.13M", "market_cap": "175.2B", "sector": "Electronic Technology", "rating": "Buy"},
+    {"symbol": "TSLA", "name": "Tesla, Inc.", "price": 390.82, "change_pct": 2.41, "volume": "65.34M", "market_cap": "1.47T", "sector": "Consumer Durables", "rating": "Neutral"},
+    {"symbol": "NVDA", "name": "NVIDIA Corporation", "price": 198.45, "change_pct": -0.56, "volume": "128.65M", "market_cap": "4.82T", "sector": "Electronic Technology", "rating": "Strong Buy"},
+    {"symbol": "AAPL", "name": "Apple Inc.", "price": 280.14, "change_pct": 3.24, "volume": "79.91M", "market_cap": "4.11T", "sector": "Electronic Technology", "rating": "Buy"},
+    {"symbol": "MU", "name": "Micron Technology", "price": 542.21, "change_pct": 4.84, "volume": "40.21M", "market_cap": "611.47B", "sector": "Electronic Technology", "rating": "Strong Buy"},
+    {"symbol": "INTC", "name": "Intel Corporation", "price": 99.62, "change_pct": 5.44, "volume": "158.5M", "market_cap": "500.69B", "sector": "Electronic Technology", "rating": "Neutral"},
+    {"symbol": "AMZN", "name": "Amazon.com, Inc.", "price": 268.26, "change_pct": 1.21, "volume": "50.82M", "market_cap": "2.88T", "sector": "Retail Trade", "rating": "Strong Buy"},
+    {"symbol": "META", "name": "Meta Platforms", "price": 608.75, "change_pct": -0.52, "volume": "21.4M", "market_cap": "1.55T", "sector": "Technology Services", "rating": "Strong Buy"},
+    {"symbol": "MSFT", "name": "Microsoft Corporation", "price": 414.44, "change_pct": 1.63, "volume": "31.37M", "market_cap": "3.08T", "sector": "Technology Services", "rating": "Strong Buy"},
+    {"symbol": "AMD", "name": "AMD", "price": 360.54, "change_pct": 1.71, "volume": "34.28M", "market_cap": "587.8B", "sector": "Electronic Technology", "rating": "Buy"},
+    {"symbol": "GOOG", "name": "Alphabet Inc.", "price": 383.22, "change_pct": 0.34, "volume": "28.05M", "market_cap": "4.66T", "sector": "Technology Services", "rating": "Strong Buy"},
+    {"symbol": "ORCL", "name": "Oracle Corporation", "price": 171.83, "change_pct": 6.47, "volume": "26.32M", "market_cap": "494.19B", "sector": "Technology Services", "rating": "Buy"},
+    {"symbol": "PLTR", "name": "Palantir Technologies", "price": 144.07, "change_pct": 3.57, "volume": "33.22M", "market_cap": "344.57B", "sector": "Technology Services", "rating": "Buy"},
+    {"symbol": "LLY", "name": "Eli Lilly", "price": 963.33, "change_pct": 3.07, "volume": "4.35M", "market_cap": "910.17B", "sector": "Health Technology", "rating": "Strong Buy"},
+    {"symbol": "NBIS", "name": "Nebius Group", "price": 154.49, "change_pct": 11.76, "volume": "15.85M", "market_cap": "38.89B", "sector": "Technology Services", "rating": "Buy"},
+    {"symbol": "TEAM", "name": "Atlassian Corporation", "price": 88.88, "change_pct": 29.58, "volume": "27.38M", "market_cap": "23.52B", "sector": "Technology Services", "rating": "Buy"},
+    {"symbol": "RDDT", "name": "Reddit, Inc.", "price": 166.48, "change_pct": 13.07, "volume": "14.25M", "market_cap": "31.8B", "sector": "Technology Services", "rating": "Buy"},
+    {"symbol": "RBLX", "name": "Roblox Corporation", "price": 45.13, "change_pct": -18.33, "volume": "53.4M", "market_cap": "32.3B", "sector": "Technology Services", "rating": "Buy"},
+    {"symbol": "CRWV", "name": "CoreWeave, Inc.", "price": 119.01, "change_pct": 6.64, "volume": "27.41M", "market_cap": "65.41B", "sector": "Technology Services", "rating": "Buy"},
+    {"symbol": "MSTR", "name": "Strategy Inc", "price": 177.17, "change_pct": 7.08, "volume": "21.66M", "market_cap": "61.34B", "sector": "Technology Services", "rating": "Strong Buy"}
+  ],
+  "community_trends": {
+    "crypto_highlights": [
+      {"symbol": "XRP", "market_cap": "86.23B"},
+      {"symbol": "BNB", "market_cap": "83.29B"}
+    ],
+    "bonds": [
+      {"symbol": "US01Y", "yield": 3.572, "change": "+0.07%"},
+      {"symbol": "US10Y", "price": 98.047, "yield": 4.372, "change": "+0.02%"},
+      {"symbol": "FR10Y", "price": 98.375, "yield": 3.703, "change": "+0.62%"},
+      {"symbol": "IT10Y", "price": 96.983, "yield": 3.860, "change": "+0.79%"}
+    ]
+  },
+  "alpha_vantage_status": "no_data_returned_weekend_off_hours"
+}
