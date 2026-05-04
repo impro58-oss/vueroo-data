@@ -356,5 +356,19 @@
         "data_date": "2026-05-01"
       }
     ]
+  },
+  {
+    "timestamp": "2026-05-04T08:58:47Z",
+    "stocks_count": 36,
+    "top_gainers": [
+      "ORCL",
+      "INTC",
+      "CRM"
+    ],
+    "top_losers": [
+      "ABBV",
+      "NFLX",
+      "HD"
+    ]
   }
 ]
