@@ -1,96 +1,87 @@
-﻿{
-    "short_opportunities":  2,
-    "api":  "TradingView/Schwab/StockMarketWatch",
-    "total_stocks":  16,
-    "scan_timestamp":  "2026-05-05T10:06:31",
-    "long_opportunities":  4,
-    "categories_scanned":  [
-                               "market_movers",
-                               "indices",
-                               "sector_leaders"
-                           ],
-    "scan_date":  "2026-05-05",
-    "signals_found":  6,
-    "scan_time":  "10:06:31",
-    "results":  [
-                    {
-                        "confidence_label":  "low",
-                        "symbol":  "MASK3",
-                        "price":  1.45,
-                        "confidence":  0.5,
-                        "signal":  "long",
-                        "change_percent":  62,
-                        "data_date":  "2026-05-05",
-                        "reasons":  [
-                                        "Huge gap +62%"
-                                    ],
-                        "volume":  151000
-                    },
-                    {
-                        "confidence_label":  "medium",
-                        "symbol":  "BLZE",
-                        "price":  4.64,
-                        "confidence":  0.55,
-                        "signal":  "long",
-                        "change_percent":  42,
-                        "data_date":  "2026-05-05",
-                        "reasons":  [
-                                        "Strong momentum +42%"
-                                    ],
-                        "volume":  758000
-                    },
-                    {
-                        "confidence_label":  "medium",
-                        "symbol":  "PINS",
-                        "price":  20.85,
-                        "confidence":  0.65,
-                        "signal":  "long",
-                        "change_percent":  16,
-                        "data_date":  "2026-05-05",
-                        "reasons":  [
-                                        "Strong +16% on high volume 23.5M"
-                                    ],
-                        "volume":  23488000
-                    },
-                    {
-                        "confidence_label":  "medium",
-                        "symbol":  "EBAY",
-                        "price":  0,
-                        "confidence":  0.7,
-                        "signal":  "long",
-                        "change_percent":  8.1,
-                        "data_date":  "2026-05-05",
-                        "reasons":  [
-                                        "GameStop  takeover bid"
-                                    ],
-                        "volume":  0
-                    },
-                    {
-                        "confidence_label":  "medium",
-                        "symbol":  "NCLH",
-                        "price":  0,
-                        "confidence":  0.6,
-                        "signal":  "short",
-                        "change_percent":  -6.5,
-                        "data_date":  "2026-05-05",
-                        "reasons":  [
-                                        "Weak guidance, Middle East disruption"
-                                    ],
-                        "volume":  0
-                    },
-                    {
-                        "confidence_label":  "medium",
-                        "symbol":  "FDX",
-                        "price":  0,
-                        "confidence":  0.6,
-                        "signal":  "short",
-                        "change_percent":  -4,
-                        "data_date":  "2026-05-05",
-                        "reasons":  [
-                                        "Amazon Supply Chain competitive threat"
-                                    ],
-                        "volume":  0
-                    }
-                ],
-    "api_calls_used":  4
+{
+    "api": "YahooFinance/TradingView",
+    "scan_date": "2026-05-05",
+    "scan_time": "12:59:00",
+    "scan_timestamp": "2026-05-05T11:59:00Z",
+    "categories_scanned": ["market_movers", "indices", "futures", "trending"],
+    "total_stocks": 20,
+    "signals_found": 6,
+    "long_opportunities": 4,
+    "short_opportunities": 2,
+    "results": [
+        {
+            "symbol": "TSN",
+            "name": "Tyson Foods",
+            "price": 68.75,
+            "signal": "long",
+            "confidence": 0.72,
+            "confidence_label": "medium",
+            "change_percent": 7.96,
+            "volume": 6227000,
+            "data_date": "2026-05-05",
+            "reasons": ["Strong earnings beat +7.96%", "High volume 6.2M vs avg 2.9M"]
+        },
+        {
+            "symbol": "FIG",
+            "name": "Figma",
+            "price": 19.96,
+            "signal": "long",
+            "confidence": 0.65,
+            "confidence_label": "medium",
+            "change_percent": 6.51,
+            "volume": 19230000,
+            "data_date": "2026-05-05",
+            "reasons": ["Post-IPO momentum +6.51%", "High volume 19.2M"]
+        },
+        {
+            "symbol": "TTWO",
+            "name": "Take-Two Interactive",
+            "price": 225.18,
+            "signal": "long",
+            "confidence": 0.60,
+            "confidence_label": "medium",
+            "change_percent": 4.24,
+            "volume": 2045000,
+            "data_date": "2026-05-05",
+            "reasons": ["Gaming sector strength +4.24%"]
+        },
+        {
+            "symbol": "BLZE",
+            "name": "Backblaze",
+            "price": 4.64,
+            "signal": "long",
+            "confidence": 0.55,
+            "confidence_label": "low",
+            "change_percent": 4.27,
+            "volume": 1329000,
+            "data_date": "2026-05-05",
+            "reasons": ["Cloud storage momentum +4.27%"]
+        },
+        {
+            "symbol": "UPS",
+            "name": "United Parcel Service",
+            "price": 96.31,
+            "signal": "short",
+            "confidence": 0.70,
+            "confidence_label": "medium",
+            "change_percent": -10.47,
+            "volume": 17564000,
+            "data_date": "2026-05-05",
+            "reasons": ["Amazon Supply Chain launch -10.47%", "Structural competitive threat"]
+        },
+        {
+            "symbol": "FDX",
+            "name": "FedEx",
+            "price": 357.80,
+            "signal": "short",
+            "confidence": 0.65,
+            "confidence_label": "medium",
+            "change_percent": -9.11,
+            "volume": 5013000,
+            "data_date": "2026-05-05",
+            "reasons": ["Amazon Supply Chain competitive threat -9.11%"]
+        }
+    ],
+    "api_calls_used": 0,
+    "alpha_vantage_status": "rate_limited"
 }
