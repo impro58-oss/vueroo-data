@@ -1,66 +1,96 @@
-{
-  "scan_timestamp": "2026-05-04T19:01:08.545815",
-  "scan_date": "2026-05-04",
-  "scan_time": "19:01:08",
-  "api": "Alpha Vantage",
-  "api_calls_used": 6,
-  "total_stocks": 3,
-  "signals_found": 3,
-  "long_opportunities": 2,
-  "short_opportunities": 1,
-  "categories_scanned": [
-    "alpha_vantage_universe"
-  ],
-  "results": [
-    {
-      "symbol": "NVDA",
-      "price": 198.45,
-      "change_percent": -0.56,
-      "volume": 128646996,
-      "rsi": null,
-      "macd": null,
-      "signal": "short",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Negative momentum (-0.6%)"
-      ],
-      "timestamp": "2026-05-04T18:59:03.012191",
-      "data_date": "2026-05-01"
-    },
-    {
-      "symbol": "TSLA",
-      "price": 390.82,
-      "change_percent": 2.41,
-      "volume": 64533377,
-      "rsi": null,
-      "macd": null,
-      "signal": "long",
-      "confidence": 0.55,
-      "confidence_label": "medium",
-      "reasons": [
-        "Strong positive momentum (+2.4%)"
-      ],
-      "timestamp": "2026-05-04T18:59:15.972041",
-      "data_date": "2026-05-01"
-    },
-    {
-      "symbol": "AAPL",
-      "price": 280.14,
-      "change_percent": 3.24,
-      "volume": 77938859,
-      "rsi": null,
-      "macd": null,
-      "signal": "long",
-      "confidence": 0.65,
-      "confidence_label": "medium",
-      "reasons": [
-        "Strong positive momentum (+3.2%)",
-        "Volume spike (77.9M vs avg 45.7M)",
-        "High volume (77.9M vs avg 45.7M)"
-      ],
-      "timestamp": "2026-05-04T18:59:28.924683",
-      "data_date": "2026-05-01"
-    }
-  ]
+﻿{
+    "short_opportunities":  2,
+    "api":  "TradingView/Schwab/StockMarketWatch",
+    "total_stocks":  16,
+    "scan_timestamp":  "2026-05-05T10:06:31",
+    "long_opportunities":  4,
+    "categories_scanned":  [
+                               "market_movers",
+                               "indices",
+                               "sector_leaders"
+                           ],
+    "scan_date":  "2026-05-05",
+    "signals_found":  6,
+    "scan_time":  "10:06:31",
+    "results":  [
+                    {
+                        "confidence_label":  "low",
+                        "symbol":  "MASK3",
+                        "price":  1.45,
+                        "confidence":  0.5,
+                        "signal":  "long",
+                        "change_percent":  62,
+                        "data_date":  "2026-05-05",
+                        "reasons":  [
+                                        "Huge gap +62%"
+                                    ],
+                        "volume":  151000
+                    },
+                    {
+                        "confidence_label":  "medium",
+                        "symbol":  "BLZE",
+                        "price":  4.64,
+                        "confidence":  0.55,
+                        "signal":  "long",
+                        "change_percent":  42,
+                        "data_date":  "2026-05-05",
+                        "reasons":  [
+                                        "Strong momentum +42%"
+                                    ],
+                        "volume":  758000
+                    },
+                    {
+                        "confidence_label":  "medium",
+                        "symbol":  "PINS",
+                        "price":  20.85,
+                        "confidence":  0.65,
+                        "signal":  "long",
+                        "change_percent":  16,
+                        "data_date":  "2026-05-05",
+                        "reasons":  [
+                                        "Strong +16% on high volume 23.5M"
+                                    ],
+                        "volume":  23488000
+                    },
+                    {
+                        "confidence_label":  "medium",
+                        "symbol":  "EBAY",
+                        "price":  0,
+                        "confidence":  0.7,
+                        "signal":  "long",
+                        "change_percent":  8.1,
+                        "data_date":  "2026-05-05",
+                        "reasons":  [
+                                        "GameStop  takeover bid"
+                                    ],
+                        "volume":  0
+                    },
+                    {
+                        "confidence_label":  "medium",
+                        "symbol":  "NCLH",
+                        "price":  0,
+                        "confidence":  0.6,
+                        "signal":  "short",
+                        "change_percent":  -6.5,
+                        "data_date":  "2026-05-05",
+                        "reasons":  [
+                                        "Weak guidance, Middle East disruption"
+                                    ],
+                        "volume":  0
+                    },
+                    {
+                        "confidence_label":  "medium",
+                        "symbol":  "FDX",
+                        "price":  0,
+                        "confidence":  0.6,
+                        "signal":  "short",
+                        "change_percent":  -4,
+                        "data_date":  "2026-05-05",
+                        "reasons":  [
+                                        "Amazon Supply Chain competitive threat"
+                                    ],
+                        "volume":  0
+                    }
+                ],
+    "api_calls_used":  4
 }
