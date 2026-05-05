@@ -1,87 +1,168 @@
 {
-    "api": "YahooFinance/TradingView",
-    "scan_date": "2026-05-05",
-    "scan_time": "12:59:00",
-    "scan_timestamp": "2026-05-05T11:59:00Z",
-    "categories_scanned": ["market_movers", "indices", "futures", "trending"],
-    "total_stocks": 20,
-    "signals_found": 6,
-    "long_opportunities": 4,
-    "short_opportunities": 2,
-    "results": [
-        {
-            "symbol": "TSN",
-            "name": "Tyson Foods",
-            "price": 68.75,
-            "signal": "long",
-            "confidence": 0.72,
-            "confidence_label": "medium",
-            "change_percent": 7.96,
-            "volume": 6227000,
-            "data_date": "2026-05-05",
-            "reasons": ["Strong earnings beat +7.96%", "High volume 6.2M vs avg 2.9M"]
-        },
-        {
-            "symbol": "FIG",
-            "name": "Figma",
-            "price": 19.96,
-            "signal": "long",
-            "confidence": 0.65,
-            "confidence_label": "medium",
-            "change_percent": 6.51,
-            "volume": 19230000,
-            "data_date": "2026-05-05",
-            "reasons": ["Post-IPO momentum +6.51%", "High volume 19.2M"]
-        },
-        {
-            "symbol": "TTWO",
-            "name": "Take-Two Interactive",
-            "price": 225.18,
-            "signal": "long",
-            "confidence": 0.60,
-            "confidence_label": "medium",
-            "change_percent": 4.24,
-            "volume": 2045000,
-            "data_date": "2026-05-05",
-            "reasons": ["Gaming sector strength +4.24%"]
-        },
-        {
-            "symbol": "BLZE",
-            "name": "Backblaze",
-            "price": 4.64,
-            "signal": "long",
-            "confidence": 0.55,
-            "confidence_label": "low",
-            "change_percent": 4.27,
-            "volume": 1329000,
-            "data_date": "2026-05-05",
-            "reasons": ["Cloud storage momentum +4.27%"]
-        },
-        {
-            "symbol": "UPS",
-            "name": "United Parcel Service",
-            "price": 96.31,
-            "signal": "short",
-            "confidence": 0.70,
-            "confidence_label": "medium",
-            "change_percent": -10.47,
-            "volume": 17564000,
-            "data_date": "2026-05-05",
-            "reasons": ["Amazon Supply Chain launch -10.47%", "Structural competitive threat"]
-        },
-        {
-            "symbol": "FDX",
-            "name": "FedEx",
-            "price": 357.80,
-            "signal": "short",
-            "confidence": 0.65,
-            "confidence_label": "medium",
-            "change_percent": -9.11,
-            "volume": 5013000,
-            "data_date": "2026-05-05",
-            "reasons": ["Amazon Supply Chain competitive threat -9.11%"]
-        }
-    ],
-    "api_calls_used": 0,
-    "alpha_vantage_status": "rate_limited"
+  "scan_timestamp": "2026-05-05T16:03:14.787467",
+  "scan_date": "2026-05-05",
+  "scan_time": "16:03:14",
+  "api": "Alpha Vantage",
+  "api_calls_used": 20,
+  "total_stocks": 10,
+  "signals_found": 6,
+  "long_opportunities": 2,
+  "short_opportunities": 4,
+  "categories_scanned": [
+    "alpha_vantage_universe"
+  ],
+  "results": [
+    {
+      "symbol": "NVDA",
+      "price": 198.48,
+      "change_percent": 0.02,
+      "volume": 125368092,
+      "rsi": null,
+      "macd": null,
+      "signal": "hold",
+      "confidence": 0.0,
+      "confidence_label": "low",
+      "reasons": [],
+      "timestamp": "2026-05-05T16:01:05.472869",
+      "data_date": "2026-05-04"
+    },
+    {
+      "symbol": "TSLA",
+      "price": 392.51,
+      "change_percent": 0.43,
+      "volume": 48765143,
+      "rsi": null,
+      "macd": null,
+      "signal": "hold",
+      "confidence": 0.0,
+      "confidence_label": "low",
+      "reasons": [],
+      "timestamp": "2026-05-05T16:01:18.647335",
+      "data_date": "2026-05-04"
+    },
+    {
+      "symbol": "AAPL",
+      "price": 276.83,
+      "change_percent": -1.18,
+      "volume": 46668401,
+      "rsi": null,
+      "macd": null,
+      "signal": "short",
+      "confidence": 0.45,
+      "confidence_label": "low",
+      "reasons": [
+        "Negative momentum (-1.2%)"
+      ],
+      "timestamp": "2026-05-05T16:01:31.585975",
+      "data_date": "2026-05-04"
+    },
+    {
+      "symbol": "AMD",
+      "price": 341.54,
+      "change_percent": -5.27,
+      "volume": 42000243,
+      "rsi": null,
+      "macd": null,
+      "signal": "short",
+      "confidence": 0.55,
+      "confidence_label": "medium",
+      "reasons": [
+        "Strong negative momentum (-5.3%)"
+      ],
+      "timestamp": "2026-05-05T16:01:44.674278",
+      "data_date": "2026-05-04"
+    },
+    {
+      "symbol": "MSFT",
+      "price": 413.62,
+      "change_percent": -0.2,
+      "volume": 28066528,
+      "rsi": null,
+      "macd": null,
+      "signal": "hold",
+      "confidence": 0.0,
+      "confidence_label": "low",
+      "reasons": [],
+      "timestamp": "2026-05-05T16:01:57.632818",
+      "data_date": "2026-05-04"
+    },
+    {
+      "symbol": "AMZN",
+      "price": 272.05,
+      "change_percent": 1.41,
+      "volume": 49083734,
+      "rsi": null,
+      "macd": null,
+      "signal": "long",
+      "confidence": 0.45,
+      "confidence_label": "low",
+      "reasons": [
+        "Positive momentum (+1.4%)"
+      ],
+      "timestamp": "2026-05-05T16:02:10.583947",
+      "data_date": "2026-05-04"
+    },
+    {
+      "symbol": "META",
+      "price": 610.41,
+      "change_percent": 0.27,
+      "volume": 16203902,
+      "rsi": null,
+      "macd": null,
+      "signal": "hold",
+      "confidence": 0.0,
+      "confidence_label": "low",
+      "reasons": [],
+      "timestamp": "2026-05-05T16:02:23.860355",
+      "data_date": "2026-05-04"
+    },
+    {
+      "symbol": "PLTR",
+      "price": 146.03,
+      "change_percent": 1.36,
+      "volume": 70525850,
+      "rsi": null,
+      "macd": null,
+      "signal": "long",
+      "confidence": 0.45,
+      "confidence_label": "low",
+      "reasons": [
+        "Positive momentum (+1.4%)"
+      ],
+      "timestamp": "2026-05-05T16:02:36.827546",
+      "data_date": "2026-05-04"
+    },
+    {
+      "symbol": "JNJ",
+      "price": 224.2,
+      "change_percent": -1.32,
+      "volume": 8215235,
+      "rsi": null,
+      "macd": null,
+      "signal": "short",
+      "confidence": 0.45,
+      "confidence_label": "low",
+      "reasons": [
+        "Negative momentum (-1.3%)"
+      ],
+      "timestamp": "2026-05-05T16:02:49.803332",
+      "data_date": "2026-05-04"
+    },
+    {
+      "symbol": "RGLD",
+      "price": 228.42,
+      "change_percent": -0.94,
+      "volume": 583467,
+      "rsi": null,
+      "macd": null,
+      "signal": "short",
+      "confidence": 0.45,
+      "confidence_label": "low",
+      "reasons": [
+        "Negative momentum (-0.9%)"
+      ],
+      "timestamp": "2026-05-05T16:03:02.773210",
+      "data_date": "2026-05-04"
+    }
+  ]
 }
