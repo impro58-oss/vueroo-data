@@ -1541,5 +1541,37 @@
         "data_date": "2026-05-05"
       }
     ]
+  },
+  {
+    "scan_timestamp": "2026-05-06T17:02:13.440399",
+    "scan_date": "2026-05-06",
+    "scan_time": "17:02:13",
+    "api": "Alpha Vantage",
+    "api_calls_used": 2,
+    "total_stocks": 1,
+    "signals_found": 1,
+    "long_opportunities": 0,
+    "short_opportunities": 1,
+    "categories_scanned": [
+      "alpha_vantage_universe"
+    ],
+    "results": [
+      {
+        "symbol": "NVDA",
+        "price": 196.5,
+        "change_percent": -1.0,
+        "volume": 113406620,
+        "rsi": 50.82,
+        "macd": null,
+        "signal": "short",
+        "confidence": 0.45,
+        "confidence_label": "low",
+        "reasons": [
+          "Negative momentum (-1.0%)"
+        ],
+        "timestamp": "2026-05-06T17:00:08.505058",
+        "data_date": "2026-05-05"
+      }
+    ]
   }
 ]
