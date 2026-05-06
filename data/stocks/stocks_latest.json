@@ -1,44 +1,323 @@
 {
-  "scan_timestamp": "2026-05-05T19:04:29.370177",
-  "scan_date": "2026-05-05",
-  "scan_time": "19:04:29",
-  "api": "Alpha Vantage",
-  "api_calls_used": 4,
-  "total_stocks": 2,
-  "signals_found": 0,
-  "long_opportunities": 0,
-  "short_opportunities": 0,
-  "categories_scanned": [
-    "alpha_vantage_universe"
-  ],
-  "results": [
+  "timestamp": "2026-05-06T06:09:31Z",
+  "source": "TradingView+YahooFinance",
+  "total_scanned": 36,
+  "major_stocks": [
+    {
+      "symbol": "AAPL",
+      "close": 284.18,
+      "change_pct": 2.66,
+      "high": 284.57,
+      "low": 276.5,
+      "volume": 49101300
+    },
+    {
+      "symbol": "MSFT",
+      "close": 411.38,
+      "change_pct": -0.54,
+      "high": 416.78,
+      "low": 408.8,
+      "volume": 25561500
+    },
+    {
+      "symbol": "GOOGL",
+      "close": 388.43,
+      "change_pct": 1.35,
+      "high": 392.82,
+      "low": 384.02,
+      "volume": 23694500
+    },
+    {
+      "symbol": "AMZN",
+      "close": 273.55,
+      "change_pct": 0.55,
+      "high": 278.56,
+      "low": 272.38,
+      "volume": 41732600
+    },
     {
       "symbol": "NVDA",
-      "price": 198.48,
-      "change_percent": 0.02,
-      "volume": 125368092,
-      "rsi": null,
-      "macd": null,
-      "signal": "hold",
-      "confidence": 0.0,
-      "confidence_label": "low",
-      "reasons": [],
-      "timestamp": "2026-05-05T19:02:24.718031",
-      "data_date": "2026-05-04"
+      "close": 196.5,
+      "change_pct": -1.0,
+      "high": 200.24,
+      "low": 196.03,
+      "volume": 111816100
+    },
+    {
+      "symbol": "META",
+      "close": 604.96,
+      "change_pct": -0.89,
+      "high": 614.35,
+      "low": 600.36,
+      "volume": 17092000
     },
     {
       "symbol": "TSLA",
-      "price": 392.51,
-      "change_percent": 0.43,
-      "volume": 48765143,
-      "rsi": null,
-      "macd": null,
-      "signal": "hold",
-      "confidence": 0.0,
-      "confidence_label": "low",
-      "reasons": [],
-      "timestamp": "2026-05-05T19:02:37.692243",
-      "data_date": "2026-05-04"
+      "close": 389.37,
+      "change_pct": -0.8,
+      "high": 402.12,
+      "low": 389.0,
+      "volume": 47443000
+    },
+    {
+      "symbol": "BRK-B",
+      "close": 465.52,
+      "change_pct": -0.64,
+      "high": 469.66,
+      "low": 464.34,
+      "volume": 5354200
+    },
+    {
+      "symbol": "JPM",
+      "close": 309.4,
+      "change_pct": 0.57,
+      "high": 310.97,
+      "low": 306.8,
+      "volume": 6310700
+    },
+    {
+      "symbol": "V",
+      "close": 322.03,
+      "change_pct": -1.47,
+      "high": 325.58,
+      "low": 319.65,
+      "volume": 5890300
+    },
+    {
+      "symbol": "UNH",
+      "close": 363.87,
+      "change_pct": -1.86,
+      "high": 371.8,
+      "low": 361.81,
+      "volume": 6478000
+    },
+    {
+      "symbol": "JNJ",
+      "close": 225.55,
+      "change_pct": 0.6,
+      "high": 226.53,
+      "low": 224.9,
+      "volume": 5554300
+    },
+    {
+      "symbol": "XOM",
+      "close": 154.88,
+      "change_pct": 0.77,
+      "high": 155.29,
+      "low": 152.41,
+      "volume": 12448700
+    },
+    {
+      "symbol": "PG",
+      "close": 144.9,
+      "change_pct": 1.03,
+      "high": 145.9,
+      "low": 142.18,
+      "volume": 7661000
+    },
+    {
+      "symbol": "MA",
+      "close": 497.08,
+      "change_pct": -1.52,
+      "high": 503.88,
+      "low": 493.26,
+      "volume": 4216000
+    },
+    {
+      "symbol": "HD",
+      "close": 315.42,
+      "change_pct": 0.96,
+      "high": 317.63,
+      "low": 310.4,
+      "volume": 6387500
+    },
+    {
+      "symbol": "CVX",
+      "close": 192.64,
+      "change_pct": 0.19,
+      "high": 193.67,
+      "low": 190.45,
+      "volume": 5631600
+    },
+    {
+      "symbol": "MRK",
+      "close": 113.15,
+      "change_pct": 0.04,
+      "high": 114.07,
+      "low": 112.83,
+      "volume": 7906500
+    },
+    {
+      "symbol": "ABBV",
+      "close": 206.11,
+      "change_pct": -0.98,
+      "high": 209.52,
+      "low": 205.83,
+      "volume": 4484800
+    },
+    {
+      "symbol": "AVGO",
+      "close": 427.36,
+      "change_pct": 2.61,
+      "high": 433.39,
+      "low": 419.35,
+      "volume": 21082500
+    },
+    {
+      "symbol": "LLY",
+      "close": 988.87,
+      "change_pct": 2.16,
+      "high": 992.8,
+      "low": 964.41,
+      "volume": 2952500
+    },
+    {
+      "symbol": "PEP",
+      "close": 155.04,
+      "change_pct": 0.29,
+      "high": 156.31,
+      "low": 152.54,
+      "volume": 6198900
+    },
+    {
+      "symbol": "KO",
+      "close": 78.48,
+      "change_pct": 0.37,
+      "high": 78.78,
+      "low": 77.74,
+      "volume": 11626600
+    },
+    {
+      "symbol": "COST",
+      "close": 1016.42,
+      "change_pct": 0.36,
+      "high": 1020.78,
+      "low": 1009.07,
+      "volume": 1455600
+    },
+    {
+      "symbol": "ADBE",
+      "close": 255.62,
+      "change_pct": 0.65,
+      "high": 256.62,
+      "low": 248.49,
+      "volume": 3947500
+    },
+    {
+      "symbol": "WMT",
+      "close": 130.79,
+      "change_pct": 0.35,
+      "high": 131.73,
+      "low": 130.3,
+      "volume": 10627800
+    },
+    {
+      "symbol": "BAC",
+      "close": 53.12,
+      "change_pct": 1.78,
+      "high": 53.36,
+      "low": 52.28,
+      "volume": 28138800
+    },
+    {
+      "symbol": "NFLX",
+      "close": 87.89,
+      "change_pct": -3.44,
+      "high": 91.28,
+      "low": 87.57,
+      "volume": 51751300
+    },
+    {
+      "symbol": "CRM",
+      "close": 186.99,
+      "change_pct": 0.81,
+      "high": 187.39,
+      "low": 181.1,
+      "volume": 9732500
+    },
+    {
+      "symbol": "AMD",
+      "close": 355.26,
+      "change_pct": 4.02,
+      "high": 359.57,
+      "low": 344.88,
+      "volume": 59143500
+    },
+    {
+      "symbol": "ORCL",
+      "close": 185.35,
+      "change_pct": 2.81,
+      "high": 186.52,
+      "low": 179.0,
+      "volume": 23329700
+    },
+    {
+      "symbol": "CSCO",
+      "close": 94.3,
+      "change_pct": 1.8,
+      "high": 94.72,
+      "low": 93.38,
+      "volume": 13420100
+    },
+    {
+      "symbol": "INTC",
+      "close": 108.15,
+      "change_pct": 12.92,
+      "high": 110.48,
+      "low": 100.08,
+      "volume": 195570000
+    },
+    {
+      "symbol": "DIS",
+      "close": 100.48,
+      "change_pct": -0.82,
+      "high": 101.73,
+      "low": 100.06,
+      "volume": 14291100
+    },
+    {
+      "symbol": "PYPL",
+      "close": 46.49,
+      "change_pct": -7.74,
+      "high": 46.72,
+      "low": 44.51,
+      "volume": 39025300
+    },
+    {
+      "symbol": "CMCSA",
+      "close": 26.46,
+      "change_pct": -2.25,
+      "high": 27.22,
+      "low": 26.22,
+      "volume": 31369800
+    }
+  ],
+  "bonds": {
+    "US_10Y": {
+      "yield_pct": 4.396,
+      "change": -0.19
+    },
+    "US_1Y": {
+      "yield_pct": 3.726,
+      "change": 0.22
+    },
+    "FR_10Y": {
+      "yield_pct": 3.712,
+      "change": -0.07
+    },
+    "IT_10Y": {
+      "yield_pct": 3.892,
+      "change": -0.25
+    }
+  },
+  "crypto_community_trends": [
+    {
+      "symbol": "XRP",
+      "market_cap_b": 87.19
+    },
+    {
+      "symbol": "BNB",
+      "market_cap_b": 84.64
     }
   ]
 }

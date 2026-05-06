@@ -1334,5 +1334,19 @@
         "data_date": "2026-05-04"
       }
     ]
+  },
+  {
+    "timestamp": "2026-05-06T06:09:31Z",
+    "stocks_count": 36,
+    "top_gainers": [
+      "INTC",
+      "AMD",
+      "ORCL"
+    ],
+    "top_losers": [
+      "PYPL",
+      "NFLX",
+      "CMCSA"
+    ]
   }
 ]
