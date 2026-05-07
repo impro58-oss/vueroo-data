@@ -1,0 +1,140 @@
+﻿{
+    "alpha_vantage_status":  "API_LIMIT_REACHED",
+    "trending_ideas":  [
+                           {
+                               "title":  "Intel - Finishing the +500% parabolic rally!",
+                               "ticker":  "INTC",
+                               "sentiment":  "bearish_pullback"
+                           },
+                           {
+                               "title":  "SMCI: Huge Head-Shoulder-Formation, Drop Incoming!",
+                               "ticker":  "SMCI",
+                               "sentiment":  "bearish"
+                           },
+                           {
+                               "title":  "MICROSOFT Channel Down topped and is reversing again",
+                               "ticker":  "MSFT",
+                               "sentiment":  "bearish_continuation"
+                           },
+                           {
+                               "title":  "NBIS: 5-Month Base Breakout \u0026 Gap Up Buy",
+                               "ticker":  "NBIS",
+                               "sentiment":  "bullish"
+                           },
+                           {
+                               "title":  "NVDA may be a clue",
+                               "ticker":  "NVDA",
+                               "sentiment":  "bearish_signal"
+                           },
+                           {
+                               "title":  "RIOT remains in wave 3,  next target",
+                               "ticker":  "RIOT",
+                               "sentiment":  "bullish"
+                           },
+                           {
+                               "title":  "AMD Is Being Repriced as an AI Infrastructure Play",
+                               "ticker":  "AMD",
+                               "sentiment":  "bullish"
+                           }
+                       ],
+    "sp500":  "SPX",
+    "top_gainers":  [
+                        "Star Fashion Culture Holdings",
+                        "Powell Max Limited",
+                        "Entravision Communications",
+                        "One Stop Systems",
+                        "Ernexa Therapeutics",
+                        "Where Food Comes From"
+                    ],
+    "sectors":  [
+                    {
+                        "name":  "Electronic Technology",
+                        "change":  "+29.06%"
+                    },
+                    {
+                        "name":  "Technology Services",
+                        "change":  "+21.62%"
+                    },
+                    {
+                        "name":  "Finance",
+                        "change":  "+6.51%"
+                    },
+                    {
+                        "name":  "Health Technology",
+                        "change":  "-0.02%"
+                    },
+                    {
+                        "name":  "Retail Trade",
+                        "change":  "+15.86%"
+                    },
+                    {
+                        "name":  "Producer Manufacturing",
+                        "change":  "+19.00%"
+                    },
+                    {
+                        "name":  "Energy Minerals",
+                        "change":  "-4.76%"
+                    }
+                ],
+    "community_trends":  [
+                             "ARM",
+                             "IONQ",
+                             "OKLO",
+                             "GLW",
+                             "HUT",
+                             "OSS",
+                             "PMAX",
+                             "APP",
+                             "SMR",
+                             "UBER"
+                         ],
+    "timestamp":  "2026-05-07T10:12:18Z",
+    "most_active":  [
+                        "NVDA",
+                        "MU",
+                        "AMD",
+                        "SANDISK",
+                        "TSLA",
+                        "INTC",
+                        "AAPL"
+                    ],
+    "top_losers":  [
+                       "Primoris Services",
+                       "OneConstruction Group",
+                       "Angi Inc.",
+                       "Klaviyo Inc.",
+                       "Alphatec Holdings",
+                       "Cre8 Enterprise"
+                   ],
+    "market_status":  "closed",
+    "ipo_calendar":  [
+                         {
+                             "date":  "Today",
+                             "price":  "21.00-24.00",
+                             "ticker":  "SUJA",
+                             "name":  "Suja Life Inc",
+                             "exchange":  "NASDAQ"
+                         },
+                         {
+                             "date":  "Today",
+                             "price":  "26.00",
+                             "ticker":  "HAWK",
+                             "name":  "Hawkeye 360 Inc",
+                             "exchange":  "NYSE"
+                         },
+                         {
+                             "date":  "Tomorrow",
+                             "price":  "14.00-16.00",
+                             "ticker":  "MOBI",
+                             "name":  "Mobia Medical Inc",
+                             "exchange":  "NASDAQ"
+                         },
+                         {
+                             "date":  "Tomorrow",
+                             "price":  "16.00-18.00",
+                             "ticker":  "ODTX",
+                             "name":  "Odyssey Therapeutics",
+                             "exchange":  "NASDAQ"
+                         }
+                     ]
+}
