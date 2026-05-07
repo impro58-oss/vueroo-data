@@ -1573,5 +1573,19 @@
         "data_date": "2026-05-05"
       }
     ]
+  },
+  {
+    "timestamp": "2026-05-07T03:11:14Z",
+    "stocks_count": 36,
+    "top_gainers": [
+      "AMD",
+      "DIS",
+      "NVDA"
+    ],
+    "top_losers": [
+      "XOM",
+      "CVX",
+      "CRM"
+    ]
   }
 ]
