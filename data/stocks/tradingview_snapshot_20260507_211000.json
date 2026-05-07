@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-05-07T21:08:00Z",
+  "source": "TradingView + CNBC/Investopedia",
+  "markets": {
+    "S&P 500": {"close": 7337.11, "change_pct": -0.38, "note": "Pulled back from record close of 7365.12"},
+    "Nasdaq": {"close": 25806.20, "change_pct": -0.13, "note": "Semiconductors buckled, limited tech declines"},
+    "Dow Jones": {"close": null, "change_pct": -0.6, "note": "Down after +612pt surge yesterday to 49910.59"}
+  },
+  "community_trends": {
+    "crypto": ["BNB (mcap $86.58B)", "XRP (mcap $85.38B)"],
+    "bonds": {
+      "US_1Y": {"yield": 3.747, "change": "+0.58%"},
+      "US_10Y": {"yield": 4.384, "change": "-0.25%"},
+      "France_10Y": {"yield": 3.637, "change": "-0.20%"},
+      "Italy_10Y": {"yield": 3.753, "change": "-0.11%"}
+    }
+  },
+  "movers": {
+    "drag": ["AMZN", "AVGO", "MU"],
+    "context": "Semiconductors and Amazon dragged S&P 500 lower"
+  },
+  "headlines": [
+    "S&P 500 pulls back from record as oil prices and Iran deal in focus",
+    "Nasdaq ends at 25,806 — semis finally buckle after multi-day run",
+    "Earnings: Coinbase, Block, Airbnb results out",
+    "Oil prices rising amid Iran deal uncertainty"
+  ],
+  "total_scanner_symbols": 19607
+}
