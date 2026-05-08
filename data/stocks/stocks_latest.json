@@ -1,115 +1,65 @@
 {
-  "source": "yfinance_fallback",
-  "timestamp": "2026-05-08T09:17:57.654914+00:00",
+  "source": "yahoo_finance_live",
+  "timestamp": "2026-05-08T13:38:00Z",
+  "market_indices": {
+    "SP500": {"price": 7376.38, "change": 39.27, "change_pct": 0.54},
+    "Dow30": {"price": 49740.82, "change": 143.85, "change_pct": 0.29},
+    "Nasdaq": {"price": 26020.10, "change": 213.91, "change_pct": 0.83},
+    "Russell2000": {"price": 2839.63, "change": -47.15, "change_pct": -1.63},
+    "VIX": {"price": 17.13, "change": 0.05, "change_pct": 0.29},
+    "Gold": {"price": 4733.60, "change": 22.70, "change_pct": 0.48},
+    "Bitcoin": {"price": 79708.17, "change": -783.84, "change_pct": -0.97},
+    "CrudeOil": {"price": 94.65, "change": -0.16, "change_pct": -0.17}
+  },
   "stocks": [
-    {
-      "symbol": "NVDA",
-      "name": "NVIDIA Corporation",
-      "price": 211.5,
-      "previous_close": 207.66,
-      "change_pct": 1.85,
-      "market_cap": 5140507525120,
-      "volume": 166701997,
-      "pe_ratio": 43.07536
-    },
-    {
-      "symbol": "TSLA",
-      "name": "Tesla, Inc.",
-      "price": 411.79,
-      "previous_close": 398.53,
-      "change_pct": 3.33,
-      "market_cap": 1546569515008,
-      "volume": 61521561,
-      "pe_ratio": 384.85046
-    },
-    {
-      "symbol": "AAPL",
-      "name": "Apple Inc.",
-      "price": 287.44,
-      "previous_close": 287.46,
-      "change_pct": -0.01,
-      "market_cap": 4221733699584,
-      "volume": 40410371,
-      "pe_ratio": 34.841213
-    },
-    {
-      "symbol": "AMD",
-      "name": "Advanced Micro Devices, Inc.",
-      "price": 408.46,
-      "previous_close": 421.47,
-      "change_pct": -3.09,
-      "market_cap": 666035093504,
-      "volume": 43932237,
-      "pe_ratio": 137.06711
-    },
-    {
-      "symbol": "MSFT",
-      "name": "Microsoft Corporation",
-      "price": 420.77,
-      "previous_close": 413.87,
-      "change_pct": 1.67,
-      "market_cap": 3125662449664,
-      "volume": 33917670,
-      "pe_ratio": 25.030933
-    },
-    {
-      "symbol": "AMZN",
-      "name": "Amazon.com, Inc.",
-      "price": 271.17,
-      "previous_close": 274.95,
-      "change_pct": -1.38,
-      "market_cap": 2917005524992,
-      "volume": 33991650,
-      "pe_ratio": 32.47545
-    },
-    {
-      "symbol": "META",
-      "name": "Meta Platforms, Inc.",
-      "price": 616.81,
-      "previous_close": 612.88,
-      "change_pct": 0.64,
-      "market_cap": 1565724901376,
-      "volume": 11929063,
-      "pe_ratio": 22.4213
-    },
-    {
-      "symbol": "PLTR",
-      "name": "Palantir Technologies Inc.",
-      "price": 137.05,
-      "previous_close": 133.79,
-      "change_pct": 2.44,
-      "market_cap": 328551628800,
-      "volume": 49669655,
-      "pe_ratio": 153.98877
-    },
-    {
-      "symbol": "JNJ",
-      "name": "Johnson & Johnson",
-      "price": 222.51,
-      "previous_close": 224.62,
-      "change_pct": -0.94,
-      "market_cap": 535629824000,
-      "volume": 6771465,
-      "pe_ratio": 25.783314
-    },
-    {
-      "symbol": "RGLD",
-      "name": "Royal Gold, Inc.",
-      "price": 232.68,
-      "previous_close": 236.88,
-      "change_pct": -1.77,
-      "market_cap": 19728302080,
-      "volume": 1231629,
-      "pe_ratio": 28.169489
-    }
+    {"symbol": "NVDA", "name": "NVIDIA Corporation", "price": 214.31, "previous_close": 211.50, "change_pct": 1.33, "volume": "7.8M", "pe_ratio": 40.10},
+    {"symbol": "TSLA", "name": "Tesla, Inc.", "price": 411.79, "previous_close": 398.53, "change_pct": 3.33, "volume": "high", "pe_ratio": 384.85},
+    {"symbol": "AAPL", "name": "Apple Inc.", "price": 287.44, "previous_close": 287.46, "change_pct": -0.01, "volume": "moderate"},
+    {"symbol": "AMD", "name": "Advanced Micro Devices", "price": 424.36, "previous_close": 408.46, "change_pct": 3.89, "volume": "high"},
+    {"symbol": "MSFT", "name": "Microsoft Corporation", "price": 420.77, "previous_close": 413.87, "change_pct": 1.67, "volume": "moderate"},
+    {"symbol": "AMZN", "name": "Amazon.com, Inc.", "price": 271.17, "previous_close": 274.95, "change_pct": -1.38, "volume": "moderate"},
+    {"symbol": "META", "name": "Meta Platforms, Inc.", "price": 616.81, "previous_close": 612.88, "change_pct": 0.64, "volume": "moderate"},
+    {"symbol": "PLTR", "name": "Palantir Technologies", "price": 137.05, "previous_close": 133.79, "change_pct": 2.44, "volume": "high"},
+    {"symbol": "JNJ", "name": "Johnson & Johnson", "price": 222.51, "previous_close": 224.62, "change_pct": -0.94, "volume": "low"},
+    {"symbol": "RGLD", "name": "Royal Gold, Inc.", "price": 232.68, "previous_close": 236.88, "change_pct": -1.77, "volume": "low"}
   ],
+  "hot_movers": {
+    "gainers": [
+      {"symbol": "INOD", "change_pct": 71.64, "note": "AI/data analytics surge"},
+      {"symbol": "FLNC", "change_pct": 32.87, "note": "Energy storage breakout"},
+      {"symbol": "LASR", "change_pct": 29.58, "note": "Laser tech rally"},
+      {"symbol": "AKAM", "change_pct": 20.83, "note": "Cybersecurity/CDN"},
+      {"symbol": "RKLB", "change_pct": 15.08, "note": "Space sector momentum"},
+      {"symbol": "MU", "change_pct": 7.46, "note": "Memory chip demand"}
+    ],
+    "losers": [
+      {"symbol": "IBP", "change_pct": -27.57, "note": "Building products sell-off"},
+      {"symbol": "HUBS", "change_pct": -22.65, "note": "CRM disruption fear"},
+      {"symbol": "FIGS", "change_pct": -21.60, "note": "Healthcare apparel drop"},
+      {"symbol": "SOUN", "change_pct": -12.10, "note": "AI voice profit-taking"},
+      {"symbol": "CTRA", "change_pct": -8.62, "note": "Energy sector weakness"}
+    ]
+  },
+  "economic_events": {
+    "non_farm_payrolls": {"actual": 115, "prior": 178, "note": "Labor market softening"},
+    "unemployment_rate": {"actual": 4.3, "prior": 4.3}
+  },
   "signals": [
-    "TSLA: BULLISH (+3.3%)",
-    "AMD: BEARISH (-3.1%)"
+    "INOD: EXTREME_BULLISH (+71.6%) — AI data analytics breakout",
+    "FLNC: STRONG_BULLISH (+32.9%) — energy storage momentum",
+    "AKAM: BULLISH (+20.8%) — cybersecurity M&A speculation",
+    "IBP: SEVERE_BEARISH (-27.6%) — building sector rotation out",
+    "HUBS: BEARISH (-22.7%) — CRM disruption fear",
+    "NFP 115K: MACRO_BEARISH — labor market cooling faster than expected",
+    "Russell 2000 -1.63%: SMALLCAP_WEAKNESS",
+    "Gold $4,733: SAFE_HAVEN_BID continuing",
+    "MU +7.5%: SEMI_STRENGTH memory demand"
   ],
   "scan_summary": {
-    "total_scanned": 10,
-    "signals_found": 2,
-    "data_quality": "live"
+    "total_scanned": 25,
+    "signals_found": 9,
+    "data_quality": "live",
+    "market_sentiment": "mixed_bullish_largecap_bearish_smallcap",
+    "snapshot_file": "tradingview_snapshot_20260508_133800.json"
   }
 }
