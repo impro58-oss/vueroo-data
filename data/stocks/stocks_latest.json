@@ -1,114 +1,115 @@
 {
   "source": "yfinance_fallback",
-  "timestamp": "2026-05-07T18:12:00.903550+00:00",
+  "timestamp": "2026-05-08T09:17:57.654914+00:00",
   "stocks": [
     {
       "symbol": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 212.44,
+      "price": 211.5,
       "previous_close": 207.66,
-      "change_pct": 2.3,
-      "market_cap": 5163597168640,
-      "volume": 122624977,
-      "pe_ratio": 43.35714
+      "change_pct": 1.85,
+      "market_cap": 5140507525120,
+      "volume": 166701997,
+      "pe_ratio": 43.07536
     },
     {
       "symbol": "TSLA",
       "name": "Tesla, Inc.",
-      "price": 407.8,
+      "price": 411.79,
       "previous_close": 398.53,
-      "change_pct": 2.32,
-      "market_cap": 1531415101440,
-      "volume": 45919167,
-      "pe_ratio": 377.5509
+      "change_pct": 3.33,
+      "market_cap": 1546569515008,
+      "volume": 61521561,
+      "pe_ratio": 384.85046
     },
     {
       "symbol": "AAPL",
       "name": "Apple Inc.",
-      "price": 289.2,
+      "price": 287.44,
       "previous_close": 287.46,
-      "change_pct": 0.61,
-      "market_cap": 4247639031808,
-      "volume": 24733362,
-      "pe_ratio": 35.055004
+      "change_pct": -0.01,
+      "market_cap": 4221733699584,
+      "volume": 40410371,
+      "pe_ratio": 34.841213
     },
     {
       "symbol": "AMD",
       "name": "Advanced Micro Devices, Inc.",
-      "price": 406.85,
+      "price": 408.46,
       "previous_close": 421.47,
-      "change_pct": -3.47,
-      "market_cap": 663409852416,
-      "volume": 33259109,
-      "pe_ratio": 136.07024
+      "change_pct": -3.09,
+      "market_cap": 666035093504,
+      "volume": 43932237,
+      "pe_ratio": 137.06711
     },
     {
       "symbol": "MSFT",
       "name": "Microsoft Corporation",
-      "price": 422.23,
+      "price": 420.77,
       "previous_close": 413.87,
-      "change_pct": 2.02,
-      "market_cap": 3136508133376,
-      "volume": 19707719,
-      "pe_ratio": 25.117788
+      "change_pct": 1.67,
+      "market_cap": 3125662449664,
+      "volume": 33917670,
+      "pe_ratio": 25.030933
     },
     {
       "symbol": "AMZN",
       "name": "Amazon.com, Inc.",
-      "price": 272.81,
+      "price": 271.17,
       "previous_close": 274.95,
-      "change_pct": -0.78,
-      "market_cap": 2934701031424,
-      "volume": 21665440,
-      "pe_ratio": 32.633373
+      "change_pct": -1.38,
+      "market_cap": 2917005524992,
+      "volume": 33991650,
+      "pe_ratio": 32.47545
     },
     {
       "symbol": "META",
       "name": "Meta Platforms, Inc.",
-      "price": 616.33,
+      "price": 616.81,
       "previous_close": 612.88,
-      "change_pct": 0.56,
-      "market_cap": 1564506456064,
-      "volume": 8663899,
-      "pe_ratio": 22.395712
+      "change_pct": 0.64,
+      "market_cap": 1565724901376,
+      "volume": 11929063,
+      "pe_ratio": 22.4213
     },
     {
       "symbol": "PLTR",
       "name": "Palantir Technologies Inc.",
-      "price": 137.47,
+      "price": 137.05,
       "previous_close": 133.79,
-      "change_pct": 2.75,
-      "market_cap": 329546498048,
-      "volume": 39076820,
-      "pe_ratio": 152.73889
+      "change_pct": 2.44,
+      "market_cap": 328551628800,
+      "volume": 49669655,
+      "pe_ratio": 153.98877
     },
     {
       "symbol": "JNJ",
       "name": "Johnson & Johnson",
-      "price": 222.07,
+      "price": 222.51,
       "previous_close": 224.62,
-      "change_pct": -1.13,
-      "market_cap": 534582689792,
-      "volume": 3102852,
-      "pe_ratio": 25.732908
+      "change_pct": -0.94,
+      "market_cap": 535629824000,
+      "volume": 6771465,
+      "pe_ratio": 25.783314
     },
     {
       "symbol": "RGLD",
       "name": "Royal Gold, Inc.",
-      "price": 235.07,
+      "price": 232.68,
       "previous_close": 236.88,
-      "change_pct": -0.76,
-      "market_cap": 19943553024,
-      "volume": 643948,
-      "pe_ratio": 35.19087
+      "change_pct": -1.77,
+      "market_cap": 19728302080,
+      "volume": 1231629,
+      "pe_ratio": 28.169489
     }
   ],
   "signals": [
-    "AMD: BEARISH (-3.5%)"
+    "TSLA: BULLISH (+3.3%)",
+    "AMD: BEARISH (-3.1%)"
   ],
   "scan_summary": {
     "total_scanned": 10,
-    "signals_found": 1,
+    "signals_found": 2,
     "data_quality": "live"
   }
 }

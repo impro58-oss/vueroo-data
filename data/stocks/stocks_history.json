@@ -1998,5 +1998,46 @@
         "pe_ratio": 377.5509
       }
     ]
+  },
+  {
+    "timestamp": "2026-05-08T09:17:57.654914+00:00",
+    "source": "yfinance_fallback",
+    "stocks_scanned": 10,
+    "signals": [
+      "TSLA: BULLISH (+3.3%)",
+      "AMD: BEARISH (-3.1%)"
+    ],
+    "top_movers": [
+      {
+        "symbol": "TSLA",
+        "name": "Tesla, Inc.",
+        "price": 411.79,
+        "previous_close": 398.53,
+        "change_pct": 3.33,
+        "market_cap": 1546569515008,
+        "volume": 61521561,
+        "pe_ratio": 384.85046
+      },
+      {
+        "symbol": "AMD",
+        "name": "Advanced Micro Devices, Inc.",
+        "price": 408.46,
+        "previous_close": 421.47,
+        "change_pct": -3.09,
+        "market_cap": 666035093504,
+        "volume": 43932237,
+        "pe_ratio": 137.06711
+      },
+      {
+        "symbol": "PLTR",
+        "name": "Palantir Technologies Inc.",
+        "price": 137.05,
+        "previous_close": 133.79,
+        "change_pct": 2.44,
+        "market_cap": 328551628800,
+        "volume": 49669655,
+        "pe_ratio": 153.98877
+      }
+    ]
   }
 ]
