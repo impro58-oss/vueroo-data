@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-05-08T03:08:00Z",
+  "source": "Google Finance / TradingView",
+  "market_status": "post-market (May 7 session close)",
+  "indexes": {
+    "DJI": { "value": 49596.97, "change_pct": -0.63 },
+    "SP500": { "value": 7337.11, "change_pct": -0.38 },
+    "NASDAQ": { "value": 25806.20, "change_pct": -0.13 },
+    "VIX": { "value": 17.08, "change_pct": 1.78 },
+    "DAX": { "value": 24663.61, "change_pct": -1.02 },
+    "FTSE100": { "value": 10276.95, "change_pct": -1.55 },
+    "CAC40": { "value": 8202.08, "change_pct": -1.17 },
+    "IBEX35": { "value": 18060.80, "change_pct": -0.24 },
+    "STOXX50": { "value": 5972.65, "change_pct": -0.90 }
+  },
+  "gainers": [
+    {"symbol": "XMTR", "name": "Xometry Inc", "price": 78.50, "change_pct": 39.18},
+    {"symbol": "AAON", "name": "Aaon Inc", "price": 129.25, "change_pct": 31.49},
+    {"symbol": "DDOG", "name": "Datadog Inc", "price": 188.73, "change_pct": 31.33},
+    {"symbol": "HIMX", "name": "Himax Technologies", "price": 16.03, "change_pct": 30.01},
+    {"symbol": "SITM", "name": "SiTime Corp", "price": 797.31, "change_pct": 27.91},
+    {"symbol": "HRB", "name": "H&R Block Inc", "price": 36.29, "change_pct": 23.77},
+    {"symbol": "WRBY", "name": "Warby Parker Inc", "price": 27.20, "change_pct": 23.47},
+    {"symbol": "FA", "name": "First Advantage Corp", "price": 15.76, "change_pct": 22.62},
+    {"symbol": "NP", "name": "Neptune Insurance", "price": 30.47, "change_pct": 21.98},
+    {"symbol": "LFST", "name": "Lifestance Health", "price": 8.85, "change_pct": 20.24},
+    {"symbol": "FTNT", "name": "Fortinet Inc", "price": 107.97, "change_pct": 20.03},
+    {"symbol": "PTRN", "name": "Pattern Group Inc", "price": 16.95, "change_pct": 18.95},
+    {"symbol": "COLD", "name": "Americold Realty", "price": 14.97, "change_pct": 17.87},
+    {"symbol": "RXO", "name": "RXO Inc", "price": 23.11, "change_pct": 17.79},
+    {"symbol": "SEZL", "name": "Sezzle Inc", "price": 99.82, "change_pct": 16.04}
+  ],
+  "losers": [
+    {"symbol": "FSLY", "name": "Fastly Inc", "price": 19.50, "change_pct": -38.23},
+    {"symbol": "PLNT", "name": "Planet Fitness Inc", "price": 44.01, "change_pct": -31.19},
+    {"symbol": "SHAK", "name": "Shake Shack Inc", "price": 69.24, "change_pct": -28.26},
+    {"symbol": "IBP", "name": "Installed Building Products", "price": 216.92, "change_pct": -27.57},
+    {"symbol": "AMPX", "name": "Amprius Technologies", "price": 16.11, "change_pct": -27.40},
+    {"symbol": "GPGI", "name": "GPGI Inc", "price": 12.94, "change_pct": -25.89},
+    {"symbol": "INSM", "name": "Insmed Inc", "price": 104.80, "change_pct": -23.55},
+    {"symbol": "ZTS", "name": "Zoetis Inc", "price": 87.31, "change_pct": -21.50},
+    {"symbol": "CTRI", "name": "Centuri Holdings", "price": 33.60, "change_pct": -19.62},
+    {"symbol": "DXPE", "name": "DXP Enterprises", "price": 150.02, "change_pct": -17.35}
+  ],
+  "most_active": [
+    {"symbol": "NVDA", "name": "NVIDIA Corp", "price": 211.50, "change_pct": 1.85},
+    {"symbol": "NOK", "name": "Nokia Oyj", "price": 12.35, "change_pct": -6.37},
+    {"symbol": "INTC", "name": "Intel Corp", "price": 109.62, "change_pct": -3.00},
+    {"symbol": "SNAP", "name": "Snap Inc", "price": 5.98, "change_pct": -2.13},
+    {"symbol": "AAL", "name": "American Airlines", "price": 13.18, "change_pct": 1.85},
+    {"symbol": "TSLA", "name": "Tesla Inc", "price": 411.81, "change_pct": 3.33},
+    {"symbol": "PLTR", "name": "Palantir Technologies", "price": 137.06, "change_pct": 2.45},
+    {"symbol": "QCOM", "name": "Qualcomm Inc", "price": 202.57, "change_pct": 5.14},
+    {"symbol": "AMZN", "name": "Amazon.com Inc", "price": 271.17, "change_pct": -1.38},
+    {"symbol": "MSFT", "name": "Microsoft Corp", "price": 420.92, "change_pct": 1.70},
+    {"symbol": "AAPL", "name": "Apple Inc", "price": 287.42, "change_pct": -0.014},
+    {"symbol": "AMD", "name": "AMD", "price": 408.46, "change_pct": -3.09},
+    {"symbol": "MU", "name": "Micron Technology", "price": 646.47, "change_pct": -3.05},
+    {"symbol": "CRWD", "name": "CrowdStrike Holdings", "price": 505.74, "change_pct": 8.05},
+    {"symbol": "IONQ", "name": "IONQ Inc", "price": 47.68, "change_pct": -9.30}
+  ],
+  "key_observations": {
+    "market_sentiment": "Mixed — European indices down (FTSE -1.55%, DAX -1.02%), US slightly red (S&P -0.38%, NASDAQ -0.13%), VIX elevated at 17.08",
+    "earnings_driven_gainers": "DDOG +31% (strong earnings), SITM +28%, HRB +24%, FTNT +20%",
+    "earnings_driven_losers": "FSLY -38% (post-split/earnings), PLNT -31%, SHAK -28%, ZTS -21.5%",
+    "sector_themes": "Tech earnings bifurcated — DDOG/CRWD up big while FSLY/IONQ down. Gold miners active (BTG +10.6%). Semis mixed (QCOM +5%, AMD/MU -3%).",
+    "crypto_correlation": "BTC miners selling off — IREN -6.8%, CORZ -9.2%, WULF -6.7%"
+  },
+  "alpha_vantage_status": "SKIPPED — API returned no data (likely daily rate limit exhausted)"
+}
