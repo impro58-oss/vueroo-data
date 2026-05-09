@@ -1,160 +1,115 @@
 {
-  "scan_timestamp": "2026-05-09T21:40:28.870179",
-  "scan_date": "2026-05-09",
-  "scan_time": "21:40:28",
-  "api": "Alpha Vantage",
-  "api_calls_used": 18,
-  "total_stocks": 9,
-  "signals_found": 9,
-  "long_opportunities": 6,
-  "short_opportunities": 3,
-  "categories_scanned": [
-    "alpha_vantage_universe"
-  ],
-  "results": [
+  "source": "yfinance_fallback",
+  "timestamp": "2026-05-09T23:40:54.490436+00:00",
+  "stocks": [
     {
       "symbol": "NVDA",
+      "name": "NVIDIA Corporation",
       "price": 215.2,
-      "change_percent": 1.75,
-      "volume": 136421361,
-      "rsi": null,
-      "macd": null,
-      "signal": "long",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Positive momentum (+1.7%)"
-      ],
-      "timestamp": "2026-05-09T21:38:20.091831",
-      "data_date": "2026-05-08"
+      "previous_close": 211.5,
+      "change_pct": 1.75,
+      "market_cap": 5230436024320,
+      "volume": 134128204,
+      "pe_ratio": 43.828922
     },
     {
       "symbol": "TSLA",
+      "name": "Tesla, Inc.",
       "price": 428.35,
-      "change_percent": 4.02,
-      "volume": 65049970,
-      "rsi": null,
-      "macd": null,
-      "signal": "long",
-      "confidence": 0.55,
-      "confidence_label": "medium",
-      "reasons": [
-        "Strong positive momentum (+4.0%)"
-      ],
-      "timestamp": "2026-05-09T21:38:33.072815",
-      "data_date": "2026-05-08"
+      "previous_close": 411.81,
+      "change_pct": 4.02,
+      "market_cap": 1608764358656,
+      "volume": 63479076,
+      "pe_ratio": 400.3271
     },
     {
       "symbol": "AAPL",
+      "name": "Apple Inc.",
       "price": 293.32,
-      "change_percent": 2.05,
-      "volume": 52692761,
-      "rsi": null,
-      "macd": null,
-      "signal": "long",
-      "confidence": 0.55,
-      "confidence_label": "medium",
-      "reasons": [
-        "Strong positive momentum (+2.0%)"
-      ],
-      "timestamp": "2026-05-09T21:38:46.084526",
-      "data_date": "2026-05-08"
+      "previous_close": 287.42,
+      "change_pct": 2.05,
+      "market_cap": 4308095467520,
+      "volume": 45708423,
+      "pe_ratio": 35.467957
     },
     {
       "symbol": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
       "price": 455.19,
-      "change_percent": 11.44,
-      "volume": 58134868,
-      "rsi": null,
-      "macd": null,
-      "signal": "long",
-      "confidence": 0.55,
-      "confidence_label": "medium",
-      "reasons": [
-        "Strong positive momentum (+11.4%)"
-      ],
-      "timestamp": "2026-05-09T21:38:58.992534",
-      "data_date": "2026-05-08"
+      "previous_close": 408.46,
+      "change_pct": 11.44,
+      "market_cap": 742233079808,
+      "volume": 57202223,
+      "pe_ratio": 151.73
     },
     {
       "symbol": "MSFT",
+      "name": "Microsoft Corporation",
       "price": 415.12,
-      "change_percent": -1.34,
-      "volume": 33383790,
-      "rsi": null,
-      "macd": null,
-      "signal": "short",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Negative momentum (-1.3%)"
-      ],
-      "timestamp": "2026-05-09T21:39:12.071152",
-      "data_date": "2026-05-08"
+      "previous_close": 420.92,
+      "change_pct": -1.38,
+      "market_cap": 3083691884544,
+      "volume": 32997463,
+      "pe_ratio": 24.753725
     },
     {
       "symbol": "AMZN",
+      "name": "Amazon.com, Inc.",
       "price": 272.68,
-      "change_percent": 0.56,
-      "volume": 34732681,
-      "rsi": null,
-      "macd": null,
-      "signal": "long",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Positive momentum (+0.6%)"
-      ],
-      "timestamp": "2026-05-09T21:39:25.042687",
-      "data_date": "2026-05-08"
+      "previous_close": 271.17,
+      "change_pct": 0.56,
+      "market_cap": 2933248491520,
+      "volume": 34554546,
+      "pe_ratio": 32.578255
     },
     {
       "symbol": "META",
+      "name": "Meta Platforms, Inc.",
       "price": 609.63,
-      "change_percent": -1.16,
-      "volume": 13556963,
-      "rsi": null,
-      "macd": null,
-      "signal": "short",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Negative momentum (-1.2%)"
-      ],
-      "timestamp": "2026-05-09T21:39:38.024256",
-      "data_date": "2026-05-08"
+      "previous_close": 616.81,
+      "change_pct": -1.16,
+      "market_cap": 1547498946560,
+      "volume": 13287103,
+      "pe_ratio": 22.176428
     },
     {
       "symbol": "PLTR",
+      "name": "Palantir Technologies Inc.",
       "price": 137.8,
-      "change_percent": 0.55,
-      "volume": 41745393,
-      "rsi": null,
-      "macd": null,
-      "signal": "long",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Positive momentum (+0.5%)"
-      ],
-      "timestamp": "2026-05-09T21:39:50.997242",
-      "data_date": "2026-05-08"
+      "previous_close": 137.06,
+      "change_pct": 0.54,
+      "market_cap": 330349608960,
+      "volume": 41510617,
+      "pe_ratio": 153.11111
     },
     {
       "symbol": "JNJ",
+      "name": "Johnson & Johnson",
       "price": 221.32,
-      "change_percent": -0.53,
-      "volume": 5550555,
-      "rsi": null,
-      "macd": null,
-      "signal": "short",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Negative momentum (-0.5%)"
-      ],
-      "timestamp": "2026-05-09T21:40:04.356389",
-      "data_date": "2026-05-08"
+      "previous_close": 222.51,
+      "change_pct": -0.53,
+      "market_cap": 532765245440,
+      "volume": 3850388,
+      "pe_ratio": 25.645424
+    },
+    {
+      "symbol": "RGLD",
+      "name": "Royal Gold, Inc.",
+      "price": 238.91,
+      "previous_close": 232.62,
+      "change_pct": 2.7,
+      "market_cap": 20275480576,
+      "volume": 856310,
+      "pe_ratio": 28.888754
     }
-  ]
+  ],
+  "signals": [
+    "TSLA: BULLISH (+4.0%)",
+    "AMD: BULLISH (+11.4%)"
+  ],
+  "scan_summary": {
+    "total_scanned": 10,
+    "signals_found": 2,
+    "data_quality": "live"
+  }
 }
