@@ -1,12 +1,12 @@
 {
-  "scan_timestamp": "2026-05-10T18:41:53.563273",
+  "scan_timestamp": "2026-05-10T21:41:53.987041",
   "scan_date": "2026-05-10",
-  "scan_time": "18:41:53",
+  "scan_time": "21:41:53",
   "api": "Alpha Vantage",
-  "api_calls_used": 20,
-  "total_stocks": 10,
-  "signals_found": 10,
-  "long_opportunities": 7,
+  "api_calls_used": 18,
+  "total_stocks": 9,
+  "signals_found": 9,
+  "long_opportunities": 6,
   "short_opportunities": 3,
   "categories_scanned": [
     "alpha_vantage_universe"
@@ -25,7 +25,7 @@
       "reasons": [
         "Positive momentum (+1.7%)"
       ],
-      "timestamp": "2026-05-10T18:39:44.642238",
+      "timestamp": "2026-05-10T21:39:45.045738",
       "data_date": "2026-05-08"
     },
     {
@@ -41,7 +41,7 @@
       "reasons": [
         "Strong positive momentum (+4.0%)"
       ],
-      "timestamp": "2026-05-10T18:39:57.645914",
+      "timestamp": "2026-05-10T21:39:58.399942",
       "data_date": "2026-05-08"
     },
     {
@@ -57,7 +57,7 @@
       "reasons": [
         "Strong positive momentum (+2.0%)"
       ],
-      "timestamp": "2026-05-10T18:40:10.613518",
+      "timestamp": "2026-05-10T21:40:11.446707",
       "data_date": "2026-05-08"
     },
     {
@@ -73,7 +73,7 @@
       "reasons": [
         "Strong positive momentum (+11.4%)"
       ],
-      "timestamp": "2026-05-10T18:40:23.573006",
+      "timestamp": "2026-05-10T21:40:24.585131",
       "data_date": "2026-05-08"
     },
     {
@@ -89,7 +89,7 @@
       "reasons": [
         "Negative momentum (-1.3%)"
       ],
-      "timestamp": "2026-05-10T18:40:36.619025",
+      "timestamp": "2026-05-10T21:40:37.567262",
       "data_date": "2026-05-08"
     },
     {
@@ -105,7 +105,7 @@
       "reasons": [
         "Positive momentum (+0.6%)"
       ],
-      "timestamp": "2026-05-10T18:40:49.661358",
+      "timestamp": "2026-05-10T21:40:50.582947",
       "data_date": "2026-05-08"
     },
     {
@@ -121,7 +121,7 @@
       "reasons": [
         "Negative momentum (-1.2%)"
       ],
-      "timestamp": "2026-05-10T18:41:02.636260",
+      "timestamp": "2026-05-10T21:41:03.585316",
       "data_date": "2026-05-08"
     },
     {
@@ -137,7 +137,7 @@
       "reasons": [
         "Positive momentum (+0.5%)"
       ],
-      "timestamp": "2026-05-10T18:41:15.615923",
+      "timestamp": "2026-05-10T21:41:16.565236",
       "data_date": "2026-05-08"
     },
     {
@@ -153,23 +153,7 @@
       "reasons": [
         "Negative momentum (-0.5%)"
       ],
-      "timestamp": "2026-05-10T18:41:28.583770",
-      "data_date": "2026-05-08"
-    },
-    {
-      "symbol": "RGLD",
-      "price": 238.91,
-      "change_percent": 2.68,
-      "volume": 856432,
-      "rsi": null,
-      "macd": null,
-      "signal": "long",
-      "confidence": 0.55,
-      "confidence_label": "medium",
-      "reasons": [
-        "Strong positive momentum (+2.7%)"
-      ],
-      "timestamp": "2026-05-10T18:41:41.551505",
+      "timestamp": "2026-05-10T21:41:29.552222",
       "data_date": "2026-05-08"
     }
   ]
