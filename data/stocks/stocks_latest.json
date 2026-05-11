@@ -1,142 +1,114 @@
 {
-  "scan_timestamp": "2026-05-11T21:41:44.819121",
-  "scan_date": "2026-05-11",
-  "scan_time": "21:41:44",
-  "api": "Alpha Vantage",
-  "api_calls_used": 16,
-  "total_stocks": 8,
-  "signals_found": 7,
-  "long_opportunities": 3,
-  "short_opportunities": 4,
-  "categories_scanned": [
-    "alpha_vantage_universe"
-  ],
-  "results": [
+  "source": "yfinance_fallback",
+  "timestamp": "2026-05-11T23:42:32.229660+00:00",
+  "stocks": [
     {
       "symbol": "NVDA",
+      "name": "NVIDIA Corporation",
       "price": 219.44,
-      "change_percent": 1.97,
-      "volume": 157030866,
-      "rsi": null,
-      "macd": null,
-      "signal": "long",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Positive momentum (+2.0%)"
-      ],
-      "timestamp": "2026-05-11T21:39:36.786359",
-      "data_date": "2026-05-11"
+      "previous_close": 215.22,
+      "change_pct": 1.96,
+      "market_cap": 5333489549312,
+      "volume": 156887900,
+      "pe_ratio": 44.692467
     },
     {
       "symbol": "TSLA",
+      "name": "Tesla, Inc.",
       "price": 445.0,
-      "change_percent": 3.89,
-      "volume": 77697323,
-      "rsi": null,
-      "macd": null,
-      "signal": "long",
-      "confidence": 0.55,
-      "confidence_label": "medium",
-      "reasons": [
-        "Strong positive momentum (+3.9%)"
-      ],
-      "timestamp": "2026-05-11T21:39:49.916848",
-      "data_date": "2026-05-11"
+      "previous_close": 428.35,
+      "change_pct": 3.89,
+      "market_cap": 1671297105920,
+      "volume": 75805866,
+      "pe_ratio": 415.88782
     },
     {
       "symbol": "AAPL",
+      "name": "Apple Inc.",
       "price": 292.68,
-      "change_percent": -0.22,
-      "volume": 39409991,
-      "rsi": null,
-      "macd": null,
-      "signal": "hold",
-      "confidence": 0.0,
-      "confidence_label": "low",
-      "reasons": [],
-      "timestamp": "2026-05-11T21:40:03.056052",
-      "data_date": "2026-05-11"
+      "previous_close": 293.26,
+      "change_pct": -0.2,
+      "market_cap": 4298695245824,
+      "volume": 39366022,
+      "pe_ratio": 35.390564
     },
     {
       "symbol": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
       "price": 458.79,
-      "change_percent": 0.79,
-      "volume": 45913758,
-      "rsi": null,
-      "macd": null,
-      "signal": "long",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Positive momentum (+0.8%)"
-      ],
-      "timestamp": "2026-05-11T21:40:16.117479",
-      "data_date": "2026-05-11"
+      "previous_close": 455.19,
+      "change_pct": 0.79,
+      "market_cap": 748103270400,
+      "volume": 45036766,
+      "pe_ratio": 152.93001
     },
     {
       "symbol": "MSFT",
+      "name": "Microsoft Corporation",
       "price": 412.66,
-      "change_percent": -0.59,
-      "volume": 34339859,
-      "rsi": null,
-      "macd": null,
-      "signal": "short",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Negative momentum (-0.6%)"
-      ],
-      "timestamp": "2026-05-11T21:40:29.118239",
-      "data_date": "2026-05-11"
+      "previous_close": 415.06,
+      "change_pct": -0.58,
+      "market_cap": 3065418088448,
+      "volume": 34355600,
+      "pe_ratio": 24.607037
     },
     {
       "symbol": "AMZN",
+      "name": "Amazon.com, Inc.",
       "price": 268.99,
-      "change_percent": -1.35,
-      "volume": 37751201,
-      "rsi": null,
-      "macd": null,
-      "signal": "short",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Negative momentum (-1.4%)"
-      ],
-      "timestamp": "2026-05-11T21:40:42.105624",
-      "data_date": "2026-05-11"
+      "previous_close": 272.68,
+      "change_pct": -1.35,
+      "market_cap": 2893554909184,
+      "volume": 37729894,
+      "pe_ratio": 32.137394
     },
     {
       "symbol": "META",
+      "name": "Meta Platforms, Inc.",
       "price": 598.86,
-      "change_percent": -1.77,
-      "volume": 15542425,
-      "rsi": null,
-      "macd": null,
-      "signal": "short",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Negative momentum (-1.8%)"
-      ],
-      "timestamp": "2026-05-11T21:40:55.020883",
-      "data_date": "2026-05-11"
+      "previous_close": 609.63,
+      "change_pct": -1.77,
+      "market_cap": 1520160079872,
+      "volume": 14880586,
+      "pe_ratio": 21.784649
     },
     {
       "symbol": "PLTR",
+      "name": "Palantir Technologies Inc.",
       "price": 136.89,
-      "change_percent": -0.66,
-      "volume": 40747618,
-      "rsi": null,
-      "macd": null,
-      "signal": "short",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Negative momentum (-0.7%)"
-      ],
-      "timestamp": "2026-05-11T21:41:07.931011",
-      "data_date": "2026-05-11"
+      "previous_close": 137.8,
+      "change_pct": -0.66,
+      "market_cap": 328168046592,
+      "volume": 41029869,
+      "pe_ratio": 152.1
+    },
+    {
+      "symbol": "JNJ",
+      "name": "Johnson & Johnson",
+      "price": 221.43,
+      "previous_close": 221.32,
+      "change_pct": 0.05,
+      "market_cap": 533030010880,
+      "volume": 3625123,
+      "pe_ratio": 25.658169
+    },
+    {
+      "symbol": "RGLD",
+      "name": "Royal Gold, Inc.",
+      "price": 245.13,
+      "previous_close": 239.03,
+      "change_pct": 2.55,
+      "market_cap": 20803350528,
+      "volume": 657760,
+      "pe_ratio": 29.64087
     }
-  ]
+  ],
+  "signals": [
+    "TSLA: BULLISH (+3.9%)"
+  ],
+  "scan_summary": {
+    "total_scanned": 10,
+    "signals_found": 1,
+    "data_quality": "live"
+  }
 }
