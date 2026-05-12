@@ -1,132 +1,134 @@
 {
-  "scan_timestamp": "2026-05-12T18:41:49.416924",
+  "scan_timestamp": "2026-05-12T21:42:38.482039",
   "scan_date": "2026-05-12",
-  "scan_time": "18:41:49",
+  "scan_time": "21:42:38",
   "api": "Alpha Vantage",
-  "api_calls_used": 20,
-  "total_stocks": 10,
-  "signals_found": 8,
+  "api_calls_used": 18,
+  "total_stocks": 9,
+  "signals_found": 9,
   "long_opportunities": 4,
-  "short_opportunities": 4,
+  "short_opportunities": 5,
   "categories_scanned": [
     "alpha_vantage_universe"
   ],
   "results": [
     {
       "symbol": "NVDA",
-      "price": 219.44,
-      "change_percent": 1.97,
-      "volume": 160685774,
+      "price": 220.78,
+      "change_percent": 0.61,
+      "volume": 158257940,
       "rsi": null,
       "macd": null,
       "signal": "long",
       "confidence": 0.45,
       "confidence_label": "low",
       "reasons": [
-        "Positive momentum (+2.0%)"
+        "Positive momentum (+0.6%)"
       ],
-      "timestamp": "2026-05-12T18:39:39.812488",
-      "data_date": "2026-05-11"
+      "timestamp": "2026-05-12T21:40:26.162591",
+      "data_date": "2026-05-12"
     },
     {
       "symbol": "TSLA",
-      "price": 445.0,
-      "change_percent": 3.89,
-      "volume": 78376127,
+      "price": 433.45,
+      "change_percent": -2.6,
+      "volume": 60216922,
       "rsi": null,
       "macd": null,
-      "signal": "long",
+      "signal": "short",
       "confidence": 0.55,
       "confidence_label": "medium",
       "reasons": [
-        "Strong positive momentum (+3.9%)"
+        "Strong negative momentum (-2.6%)"
       ],
-      "timestamp": "2026-05-12T18:39:52.854377",
-      "data_date": "2026-05-11"
+      "timestamp": "2026-05-12T21:40:42.154322",
+      "data_date": "2026-05-12"
     },
     {
       "symbol": "AAPL",
-      "price": 292.68,
-      "change_percent": -0.22,
-      "volume": 42247285,
-      "rsi": null,
-      "macd": null,
-      "signal": "hold",
-      "confidence": 0.0,
-      "confidence_label": "low",
-      "reasons": [],
-      "timestamp": "2026-05-12T18:40:05.849798",
-      "data_date": "2026-05-11"
-    },
-    {
-      "symbol": "AMD",
-      "price": 458.79,
-      "change_percent": 0.79,
-      "volume": 46085390,
+      "price": 294.8,
+      "change_percent": 0.72,
+      "volume": 43934304,
       "rsi": null,
       "macd": null,
       "signal": "long",
       "confidence": 0.45,
       "confidence_label": "low",
       "reasons": [
-        "Positive momentum (+0.8%)"
+        "Positive momentum (+0.7%)"
       ],
-      "timestamp": "2026-05-12T18:40:19.018451",
-      "data_date": "2026-05-11"
+      "timestamp": "2026-05-12T21:40:55.155205",
+      "data_date": "2026-05-12"
+    },
+    {
+      "symbol": "AMD",
+      "price": 448.29,
+      "change_percent": -2.29,
+      "volume": 38748736,
+      "rsi": null,
+      "macd": null,
+      "signal": "short",
+      "confidence": 0.55,
+      "confidence_label": "medium",
+      "reasons": [
+        "Strong negative momentum (-2.3%)"
+      ],
+      "timestamp": "2026-05-12T21:41:08.897182",
+      "data_date": "2026-05-12"
     },
     {
       "symbol": "MSFT",
-      "price": 412.66,
-      "change_percent": -0.59,
-      "volume": 35657943,
+      "price": 407.77,
+      "change_percent": -1.18,
+      "volume": 36979554,
       "rsi": null,
       "macd": null,
       "signal": "short",
       "confidence": 0.45,
       "confidence_label": "low",
       "reasons": [
-        "Negative momentum (-0.6%)"
+        "Negative momentum (-1.2%)"
       ],
-      "timestamp": "2026-05-12T18:40:32.023855",
-      "data_date": "2026-05-11"
+      "timestamp": "2026-05-12T21:41:21.885393",
+      "data_date": "2026-05-12"
     },
     {
       "symbol": "AMZN",
-      "price": 268.99,
-      "change_percent": -1.35,
-      "volume": 38176696,
+      "price": 265.82,
+      "change_percent": -1.18,
+      "volume": 36317346,
       "rsi": null,
       "macd": null,
       "signal": "short",
       "confidence": 0.45,
       "confidence_label": "low",
       "reasons": [
-        "Negative momentum (-1.4%)"
+        "Negative momentum (-1.2%)"
       ],
-      "timestamp": "2026-05-12T18:40:45.003516",
-      "data_date": "2026-05-11"
+      "timestamp": "2026-05-12T21:41:34.962976",
+      "data_date": "2026-05-12"
     },
     {
       "symbol": "META",
-      "price": 598.86,
-      "change_percent": -1.77,
-      "volume": 15940622,
+      "price": 603.0,
+      "change_percent": 0.69,
+      "volume": 11237599,
       "rsi": null,
       "macd": null,
-      "signal": "short",
+      "signal": "long",
       "confidence": 0.45,
       "confidence_label": "low",
       "reasons": [
-        "Negative momentum (-1.8%)"
+        "Positive momentum (+0.7%)"
       ],
-      "timestamp": "2026-05-12T18:40:57.996965",
-      "data_date": "2026-05-11"
+      "timestamp": "2026-05-12T21:41:47.961891",
+      "data_date": "2026-05-12"
     },
     {
       "symbol": "PLTR",
-      "price": 136.89,
-      "change_percent": -0.66,
-      "volume": 41414474,
+      "price": 136.0,
+      "change_percent": -0.65,
+      "volume": 37636248,
       "rsi": null,
       "macd": null,
       "signal": "short",
@@ -135,38 +137,24 @@
       "reasons": [
         "Negative momentum (-0.7%)"
       ],
-      "timestamp": "2026-05-12T18:41:11.192243",
-      "data_date": "2026-05-11"
+      "timestamp": "2026-05-12T21:42:00.975654",
+      "data_date": "2026-05-12"
     },
     {
       "symbol": "JNJ",
-      "price": 221.43,
-      "change_percent": 0.05,
-      "volume": 6223182,
-      "rsi": null,
-      "macd": null,
-      "signal": "hold",
-      "confidence": 0.0,
-      "confidence_label": "low",
-      "reasons": [],
-      "timestamp": "2026-05-12T18:41:24.407203",
-      "data_date": "2026-05-11"
-    },
-    {
-      "symbol": "RGLD",
-      "price": 245.13,
-      "change_percent": 2.6,
-      "volume": 672092,
+      "price": 224.36,
+      "change_percent": 1.32,
+      "volume": 7981766,
       "rsi": null,
       "macd": null,
       "signal": "long",
-      "confidence": 0.55,
-      "confidence_label": "medium",
+      "confidence": 0.45,
+      "confidence_label": "low",
       "reasons": [
-        "Strong positive momentum (+2.6%)"
+        "Positive momentum (+1.3%)"
       ],
-      "timestamp": "2026-05-12T18:41:37.408541",
-      "data_date": "2026-05-11"
+      "timestamp": "2026-05-12T21:42:14.034481",
+      "data_date": "2026-05-12"
     }
   ]
 }
