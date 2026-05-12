@@ -3968,5 +3968,45 @@
         "pe_ratio": 44.692467
       }
     ]
+  },
+  {
+    "timestamp": "2026-05-12T05:42:34.501654+00:00",
+    "source": "yfinance_fallback",
+    "stocks_scanned": 10,
+    "signals": [
+      "TSLA: BULLISH (+3.9%)"
+    ],
+    "top_movers": [
+      {
+        "symbol": "TSLA",
+        "name": "Tesla, Inc.",
+        "price": 445.0,
+        "previous_close": 428.35,
+        "change_pct": 3.89,
+        "market_cap": 1671297105920,
+        "volume": 75805866,
+        "pe_ratio": 415.88782
+      },
+      {
+        "symbol": "RGLD",
+        "name": "Royal Gold, Inc.",
+        "price": 245.13,
+        "previous_close": 239.03,
+        "change_pct": 2.55,
+        "market_cap": 20803350528,
+        "volume": 657760,
+        "pe_ratio": 29.676756
+      },
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA Corporation",
+        "price": 219.44,
+        "previous_close": 215.22,
+        "change_pct": 1.96,
+        "market_cap": 5333489549312,
+        "volume": 156887900,
+        "pe_ratio": 44.875256
+      }
+    ]
   }
 ]

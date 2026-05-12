@@ -1,6 +1,6 @@
 {
   "source": "yfinance_fallback",
-  "timestamp": "2026-05-11T23:42:32.229660+00:00",
+  "timestamp": "2026-05-12T05:42:34.501654+00:00",
   "stocks": [
     {
       "symbol": "NVDA",
@@ -10,7 +10,7 @@
       "change_pct": 1.96,
       "market_cap": 5333489549312,
       "volume": 156887900,
-      "pe_ratio": 44.692467
+      "pe_ratio": 44.875256
     },
     {
       "symbol": "TSLA",
@@ -30,7 +30,7 @@
       "change_pct": -0.2,
       "market_cap": 4298695245824,
       "volume": 39366022,
-      "pe_ratio": 35.390564
+      "pe_ratio": 35.476364
     },
     {
       "symbol": "AMD",
@@ -40,7 +40,7 @@
       "change_pct": 0.79,
       "market_cap": 748103270400,
       "volume": 45036766,
-      "pe_ratio": 152.93001
+      "pe_ratio": 153.95638
     },
     {
       "symbol": "MSFT",
@@ -50,7 +50,7 @@
       "change_pct": -0.58,
       "market_cap": 3065418088448,
       "volume": 34355600,
-      "pe_ratio": 24.607037
+      "pe_ratio": 24.563097
     },
     {
       "symbol": "AMZN",
@@ -80,7 +80,7 @@
       "change_pct": -0.66,
       "market_cap": 328168046592,
       "volume": 41029869,
-      "pe_ratio": 152.1
+      "pe_ratio": 153.80899
     },
     {
       "symbol": "JNJ",
@@ -100,7 +100,7 @@
       "change_pct": 2.55,
       "market_cap": 20803350528,
       "volume": 657760,
-      "pe_ratio": 29.64087
+      "pe_ratio": 29.676756
     }
   ],
   "signals": [
