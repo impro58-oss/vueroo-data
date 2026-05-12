@@ -1,0 +1,19 @@
+{
+  "source": "TradingView",
+  "timestamp": "2026-05-12T08:40:00Z",
+  "url": "https://www.tradingview.com/markets/",
+  "community_trends": {
+    "crypto": [
+      {"symbol": "XRPUSD", "name": "XRP", "market_cap": "90.74B"},
+      {"symbol": "BNBUSD", "name": "BNB", "market_cap": "88.93B"}
+    ],
+    "bonds": [
+      {"symbol": "US01Y", "name": "US 1 Year", "yield": "3.652%", "change": "+0.68%"},
+      {"symbol": "US10Y", "name": "US 10 Year", "price": "97.559%", "change": "-0.18%", "yield": "4.435%"},
+      {"symbol": "FR10Y", "name": "France 10 Year", "price": "98.170%", "change": "-0.43%", "yield": "3.730%"},
+      {"symbol": "IT10Y", "name": "Italy 10 Year", "price": "96.854%", "change": "-0.66%", "yield": "3.877%"}
+    ]
+  },
+  "world_economy_top": ["USA", "China", "EU", "Germany", "Japan", "India", "UK", "France", "Canada", "Russia"],
+  "indicators": ["GDP Growth", "Budget to GDP", "Government Debt to GDP", "Interest Rate", "Inflation Rate", "Unemployment Rate", "Current Account to GDP", "Industrial Production YoY"]
+}
