@@ -4719,5 +4719,46 @@
         ]
       }
     ]
+  },
+  {
+    "timestamp": "2026-05-13T14:44:43.077877+00:00",
+    "source": "yfinance_fallback",
+    "stocks_scanned": 10,
+    "signals": [
+      "TSLA: BULLISH (+3.3%)",
+      "PLTR: BEARISH (-4.4%)"
+    ],
+    "top_movers": [
+      {
+        "symbol": "PLTR",
+        "name": "Palantir Technologies Inc.",
+        "price": 129.95,
+        "previous_close": 136.0,
+        "change_pct": -4.45,
+        "market_cap": 311578656768,
+        "volume": 18602100,
+        "pe_ratio": 147.69319
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla, Inc.",
+        "price": 447.78,
+        "previous_close": 433.45,
+        "change_pct": 3.31,
+        "market_cap": 1681738039296,
+        "volume": 19901869,
+        "pe_ratio": 418.48596
+      },
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA Corporation",
+        "price": 225.22,
+        "previous_close": 220.78,
+        "change_pct": 2.01,
+        "market_cap": 5474336899072,
+        "volume": 51862366,
+        "pe_ratio": 45.966328
+      }
+    ]
   }
 ]
