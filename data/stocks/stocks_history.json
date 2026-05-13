@@ -4462,5 +4462,262 @@
         "data_date": "2026-05-12"
       }
     ]
+  },
+  {
+    "scan_timestamp": "2026-05-13T05:40:31Z",
+    "scan_date": "2026-05-13",
+    "scan_time": "05:40:31",
+    "api": "TradingView + Morningstar",
+    "api_calls_used": 0,
+    "total_stocks": 39,
+    "signals_found": 12,
+    "long_opportunities": 8,
+    "short_opportunities": 4,
+    "categories_scanned": [
+      "tradingview_gainers",
+      "tradingview_losers",
+      "tradingview_most_active",
+      "morningstar_movers"
+    ],
+    "results": [
+      {
+        "symbol": "NVDA",
+        "price": 220.78,
+        "change_percent": 0.61,
+        "volume": 159000000,
+        "signal": "long",
+        "confidence": 0.45,
+        "confidence_label": "low",
+        "reasons": [
+          "Positive momentum (+0.6%)",
+          "High volume 159M"
+        ]
+      },
+      {
+        "symbol": "TSLA",
+        "price": 433.45,
+        "change_percent": -2.6,
+        "volume": 60216922,
+        "signal": "short",
+        "confidence": 0.55,
+        "confidence_label": "medium",
+        "reasons": [
+          "Strong negative momentum (-2.6%)"
+        ]
+      },
+      {
+        "symbol": "AAPL",
+        "price": 294.8,
+        "change_percent": 0.72,
+        "volume": 43934304,
+        "signal": "long",
+        "confidence": 0.45,
+        "confidence_label": "low",
+        "reasons": [
+          "Positive momentum (+0.7%)"
+        ]
+      },
+      {
+        "symbol": "META",
+        "price": 603.0,
+        "change_percent": 0.69,
+        "volume": 11237599,
+        "signal": "long",
+        "confidence": 0.45,
+        "confidence_label": "low",
+        "reasons": [
+          "Positive momentum (+0.7%)"
+        ]
+      },
+      {
+        "symbol": "INTC",
+        "price": 120.61,
+        "change_percent": -6.82,
+        "volume": 173000000,
+        "signal": "short",
+        "confidence": 0.65,
+        "confidence_label": "medium",
+        "reasons": [
+          "Heavy sell-off (-6.8%)",
+          "Very high volume 173M"
+        ]
+      },
+      {
+        "symbol": "MU",
+        "price": 766.58,
+        "change_percent": -3.61,
+        "volume": 74000000,
+        "signal": "short",
+        "confidence": 0.55,
+        "confidence_label": "medium",
+        "reasons": [
+          "Negative momentum (-3.6%)",
+          "High volume"
+        ]
+      },
+      {
+        "symbol": "PACS",
+        "price": 41.01,
+        "change_percent": 28.56,
+        "volume": 3600000,
+        "signal": "long",
+        "confidence": 0.7,
+        "confidence_label": "high",
+        "reasons": [
+          "Strong breakout +28.6%",
+          "Strong buy rating",
+          "High volume 4x avg"
+        ]
+      },
+      {
+        "symbol": "ZBRA",
+        "price": 241.79,
+        "change_percent": 11.44,
+        "volume": 2880000,
+        "signal": "long",
+        "confidence": 0.65,
+        "confidence_label": "medium",
+        "reasons": [
+          "Strong breakout +11.4%",
+          "Buy rating",
+          "Large-cap $11.7B"
+        ]
+      },
+      {
+        "symbol": "RXT",
+        "price": 6.33,
+        "change_percent": 34.97,
+        "volume": 61330000,
+        "signal": "long",
+        "confidence": 0.5,
+        "confidence_label": "low",
+        "reasons": [
+          "Spike +35%",
+          "Very high volume",
+          "Neutral rating \u2014 speculative"
+        ]
+      },
+      {
+        "symbol": "HUM",
+        "price": 295.35,
+        "change_percent": 7.69,
+        "volume": 2900000,
+        "signal": "long",
+        "confidence": 0.55,
+        "confidence_label": "medium",
+        "reasons": [
+          "Large-cap healthcare +7.7%",
+          "High volume"
+        ]
+      },
+      {
+        "symbol": "INSM",
+        "price": 116.0,
+        "change_percent": 11.66,
+        "volume": 8270000,
+        "signal": "long",
+        "confidence": 0.6,
+        "confidence_label": "medium",
+        "reasons": [
+          "Strong buy rating",
+          "Breakout +11.7%",
+          "Large-cap biotech"
+        ]
+      },
+      {
+        "symbol": "UAA",
+        "price": 5.03,
+        "change_percent": -17.0,
+        "volume": 33000000,
+        "signal": "short",
+        "confidence": 0.65,
+        "confidence_label": "medium",
+        "reasons": [
+          "Heavy decline -17%",
+          "Very high volume",
+          "Consumer sector weakness"
+        ]
+      },
+      {
+        "symbol": "GTM",
+        "price": 4.06,
+        "change_percent": -32.78,
+        "volume": 42000000,
+        "signal": "short",
+        "confidence": 0.55,
+        "confidence_label": "medium",
+        "reasons": [
+          "Crash -32.8%",
+          "Massive volume spike"
+        ]
+      },
+      {
+        "symbol": "FLNC",
+        "price": 21.28,
+        "change_percent": -15.66,
+        "volume": 20000000,
+        "signal": "short",
+        "confidence": 0.55,
+        "confidence_label": "medium",
+        "reasons": [
+          "Sharp decline -15.7%",
+          "Sell rating",
+          "High volume"
+        ]
+      },
+      {
+        "symbol": "NOK",
+        "price": 13.17,
+        "change_percent": -5.39,
+        "volume": 104000000,
+        "signal": "short",
+        "confidence": 0.5,
+        "confidence_label": "low",
+        "reasons": [
+          "Decline -5.4%",
+          "Very high volume 104M"
+        ]
+      },
+      {
+        "symbol": "VG",
+        "price": 13.27,
+        "change_percent": 14.2,
+        "volume": 41850000,
+        "signal": "long",
+        "confidence": 0.55,
+        "confidence_label": "medium",
+        "reasons": [
+          "IPO breakout +14.2%",
+          "Buy rating",
+          "$33B market cap"
+        ]
+      },
+      {
+        "symbol": "QUBT",
+        "price": 11.78,
+        "change_percent": 15.72,
+        "volume": 141000000,
+        "signal": "long",
+        "confidence": 0.45,
+        "confidence_label": "low",
+        "reasons": [
+          "Quantum computing hype +15.7%",
+          "Speculative"
+        ]
+      },
+      {
+        "symbol": "SOXI",
+        "price": 15.9,
+        "change_percent": -2.21,
+        "volume": 63000000,
+        "signal": "neutral",
+        "confidence": 0.4,
+        "confidence_label": "low",
+        "reasons": [
+          "SOFI decline -2.2%",
+          "Fintech sector pressure"
+        ]
+      }
+    ]
   }
 ]
