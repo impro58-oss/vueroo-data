@@ -6397,5 +6397,45 @@
         "data_date": "2026-05-18"
       }
     ]
+  },
+  {
+    "timestamp": "2026-05-20T01:41:25.732344+00:00",
+    "source": "yfinance_fallback",
+    "stocks_scanned": 10,
+    "signals": [
+      "RGLD: BEARISH (-3.2%)"
+    ],
+    "top_movers": [
+      {
+        "symbol": "RGLD",
+        "name": "Royal Gold, Inc.",
+        "price": 218.93,
+        "previous_close": 226.23,
+        "change_pct": -3.23,
+        "market_cap": 18579845120,
+        "volume": 694499,
+        "pe_ratio": 26.44082
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com, Inc.",
+        "price": 259.34,
+        "previous_close": 264.86,
+        "change_pct": -2.08,
+        "market_cap": 2789748768768,
+        "volume": 40091649,
+        "pe_ratio": 31.62683
+      },
+      {
+        "symbol": "AMD",
+        "name": "Advanced Micro Devices, Inc.",
+        "price": 414.05,
+        "previous_close": 420.99,
+        "change_pct": -1.65,
+        "market_cap": 675150168064,
+        "volume": 37434111,
+        "pe_ratio": 138.94295
+      }
+    ]
   }
 ]
