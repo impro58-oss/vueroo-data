@@ -1,0 +1,63 @@
+{
+  "snapshot_time": "2026-05-20T08:38:00+01:00",
+  "source": "TradingView/CNBC/CNN",
+  "market_status": "pre-market",
+  "indices": {
+    "SPX": { "price": 7353.61, "change_pct": -0.67, "trend": "3-session losing streak" },
+    "NDX": { "price": 25870.71, "change_pct": -0.84, "note": "Semis drag" },
+    "DJI": { "price": 49363.88, "change_pct": -0.65, "change_pts": -322.24 }
+  },
+  "hot_movers": {
+    "gainers": [
+      { "symbol": "MU", "name": "Micron Technology", "change_pct": 4.0, "note": "Bounce after 3-day loss streak" },
+      { "symbol": "COST", "name": "Costco", "change_pct": 2.0, "note": "52-week high, Oppenheimer PT $1160" },
+      { "symbol": "SNDK", "name": "Sandisk", "change_pct": 3.0, "note": "Memory chip rebound" },
+      { "symbol": "JAZZ", "name": "Jazz Pharmaceuticals", "change_pct": null, "note": "UBS upgrade to Buy, PT $307 (+33%)" },
+      { "symbol": "AS", "name": "Ascena/Adidas", "change_pct": 4.6, "note": "Q1 beat, raised FY26 guidance" }
+    ],
+    "losers": [
+      { "symbol": "AKAM", "name": "Akamai", "change_pct": -4.0, "note": "$2.6B convertible notes offering" },
+      { "symbol": "DHI", "name": "D.R. Horton", "change_pct": -1.0, "note": "10Y yield at Jan 2025 highs" },
+      { "symbol": "LEN", "name": "Lennar", "change_pct": -1.0, "note": "Homebuilder selloff on yields" },
+      { "symbol": "TOL", "name": "Toll Brothers", "change_pct": -2.0, "note": "Mortgage rate fears" },
+      { "symbol": "ITB", "name": "iShares Home Construction ETF", "change_pct": -1.0, "note": "Yield-sensitive" }
+    ]
+  },
+  "most_active": ["NVDA", "MU", "AMD", "HD", "GOOGL", "BX", "TSLA"],
+  "community_trends": {
+    "crypto": [
+      { "symbol": "BNB", "market_cap_B": 86.71 },
+      { "symbol": "XRP", "market_cap_B": 84.69 }
+    ],
+    "bonds": {
+      "US10Y": { "yield": 4.651, "change_pct": 0.13 },
+      "FR10Y": { "yield": 3.959, "change_pct": 0.30 },
+      "IT10Y": { "yield": 3.948, "change_pct": 0.11 },
+      "US01Y": { "yield": 3.842, "change_pct": 0.41 }
+    }
+  },
+  "key_signals": {
+    "bearish": [
+      "S&P 500 3-session losing streak, rising yields drag",
+      "BofA cash level <4% = sell signal (bull capitulation)",
+      "Nasdaq large specs at largest net short since 2023 low",
+      "Semis 'getting ahead of fundamentals' per Seaport",
+      "10Y Treasury at highest since Jan 2025, homebuilders hit"
+    ],
+    "bullish": [
+      "NVDA earnings upcoming — potential catalyst",
+      "Blackstone + GOOGL $5B AI infrastructure JV",
+      "HD earnings beat ($3.43 vs $3.41 est)",
+      "JAZZ UBS upgrade, Ziihera cancer drug catalyst",
+      "Micron bounce after 3-day selloff"
+    ]
+  },
+  "macro": {
+    "oil_brent": 110.60,
+    "oil_wti": 108.59,
+    "iran_delay": "Trump postpones planned Iran strike",
+    "japan_gdp": "2.1% annualized (est 1.7%)",
+    "fed_chair": "Kevin Warsh confirmed, succeeds Powell"
+  },
+  "alpha_vantage_status": "NO_DATA — API rate limited, 0 stocks scanned"
+}
