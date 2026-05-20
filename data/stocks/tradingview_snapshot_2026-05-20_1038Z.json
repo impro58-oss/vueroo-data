@@ -1,0 +1,58 @@
+{
+  "snapshot_time": "2026-05-20T10:38:00Z",
+  "source": "TradingView",
+  "most_active": [
+    {"symbol": "MU", "name": "Micron Technology", "price": 698.74, "change_pct": 2.52, "volume": "31.09B", "market_cap": "87.99B", "sector": "Electronic technology", "rating": "Strong buy"},
+    {"symbol": "NVDA", "name": "NVIDIA Corporation", "price": 220.61, "change_pct": -0.77, "volume": "31.09B", "market_cap": "5.34T", "sector": "Electronic technology", "rating": "Strong buy"},
+    {"symbol": "TSLA", "name": "Tesla, Inc.", "price": 404.11, "change_pct": -1.43, "volume": "18.79B", "market_cap": "1.52T", "sector": "Consumer durables", "rating": "Buy"},
+    {"symbol": "SNDK", "name": "Sandisk Corporation", "price": 1383.29, "change_pct": 3.77, "volume": "18.41B", "market_cap": "204.85B", "sector": "Electronic technology", "rating": "Buy"},
+    {"symbol": "INTC", "name": "Intel Corporation", "price": 110.80, "change_pct": 2.43, "volume": "16.65B", "market_cap": "556.88B", "sector": "Electronic technology", "rating": "Neutral"},
+    {"symbol": "AMD", "name": "Advanced Micro Devices", "price": 414.05, "change_pct": -1.65, "volume": "16.05B", "market_cap": "675.15B", "sector": "Electronic technology", "rating": "Buy"},
+    {"symbol": "MSFT", "name": "Microsoft Corporation", "price": 417.42, "change_pct": -1.44, "volume": "13.78B", "market_cap": "3.1T", "sector": "Technology services", "rating": "Strong buy"},
+    {"symbol": "AAPL", "name": "Apple Inc.", "price": 298.97, "change_pct": 0.38, "volume": "12.63B", "market_cap": "4.39T", "sector": "Electronic technology", "rating": "Buy"},
+    {"symbol": "AMZN", "name": "Amazon.com, Inc.", "price": 259.34, "change_pct": -2.08, "volume": "10.46B", "market_cap": "2.79T", "sector": "Retail trade", "rating": "Strong buy"},
+    {"symbol": "GOOG", "name": "Alphabet Inc.", "price": 384.90, "change_pct": -2.09, "volume": "9.84B", "market_cap": "4.68T", "sector": "Technology services", "rating": "Strong buy"},
+    {"symbol": "AVGO", "name": "Broadcom Inc.", "price": 411.07, "change_pct": -2.29, "volume": "8.49B", "market_cap": "1.95T", "sector": "Electronic technology", "rating": "Strong buy"},
+    {"symbol": "META", "name": "Meta Platforms, Inc.", "price": 602.61, "change_pct": -1.41, "volume": "7.08B", "market_cap": "1.53T", "sector": "Technology services", "rating": "Strong buy"},
+    {"symbol": "PLTR", "name": "Palantir Technologies", "price": 135.26, "change_pct": 0.09, "volume": "4.03B", "market_cap": "324.26B", "sector": "Technology services", "rating": "Buy"},
+    {"symbol": "LLY", "name": "Eli Lilly and Company", "price": 1021.41, "change_pct": 3.37, "volume": "3.88B", "market_cap": "961.9B", "sector": "Health technology", "rating": "Strong buy"},
+    {"symbol": "MRVL", "name": "Marvell Technology", "price": 176.27, "change_pct": 4.34, "volume": "4.41B", "market_cap": "154.33B", "sector": "Electronic technology", "rating": "Strong buy"},
+    {"symbol": "QCOM", "name": "QUALCOMM Incorporated", "price": 195.61, "change_pct": -3.94, "volume": "3.83B", "market_cap": "206.17B", "sector": "Electronic technology", "rating": "Neutral"}
+  ],
+  "top_gainers": [
+    {"symbol": "WNW", "name": "Meiwu Technology", "change_pct": 97.10, "price": 4.75, "sector": "Retail trade"},
+    {"symbol": "SVRN", "name": "OceanPal Inc.", "change_pct": 49.64, "price": 8.20, "sector": "Transportation"},
+    {"symbol": "ISPR", "name": "Ispire Technology Inc.", "change_pct": 33.13, "price": 2.15, "sector": "Producer manufacturing"},
+    {"symbol": "EDSA", "name": "Edesa Biotech, Inc.", "change_pct": 32.78, "price": 11.95, "sector": "Health technology"},
+    {"symbol": "SUGP", "name": "SU Group Holdings", "change_pct": 30.39, "price": 5.32, "sector": "Commercial services"},
+    {"symbol": "ADIL", "name": "Adial Pharmaceuticals", "change_pct": 27.95, "price": 2.06, "sector": "Health technology"},
+    {"symbol": "NEOV", "name": "NeoVolta Inc.", "change_pct": 26.25, "price": 2.02, "sector": "Producer manufacturing"},
+    {"symbol": "PHOE", "name": "Phoenix Asia Holdings", "change_pct": 26.08, "price": 15.76, "sector": "Industrial services"},
+    {"symbol": "MOVE", "name": "Corvex, Inc.", "change_pct": 20.39, "price": 22.20, "sector": "Technology services"},
+    {"symbol": "SKLZ", "name": "Skillz Inc.", "change_pct": 18.18, "price": 7.80, "sector": "Technology services"}
+  ],
+  "top_losers": [
+    {"symbol": "BNZI", "name": "Banzai International", "change_pct": -25.00, "price": 3.81, "sector": "Technology services"},
+    {"symbol": "LICN", "name": "Lichen International Limited", "change_pct": -24.93, "price": 2.83, "sector": "Commercial services"},
+    {"symbol": "AIIO", "name": "Robo.ai Inc.", "change_pct": -24.29, "price": 4.24, "sector": "Finance"},
+    {"symbol": "QUCY", "name": "Quantum Cyber N.V.", "change_pct": -23.64, "price": 2.52, "sector": "Health technology"},
+    {"symbol": "IPST", "name": "IP Strategy Holdings", "change_pct": -22.33, "price": 5.81, "sector": "Consumer non-durables"},
+    {"symbol": "CPSH", "name": "CPS Technologies Corp.", "change_pct": -19.63, "price": 4.30, "sector": "Producer manufacturing"},
+    {"symbol": "PLUR", "name": "Pluri Inc.", "change_pct": -19.23, "price": 2.52, "sector": "Health technology"},
+    {"symbol": "CISS", "name": "C3is Inc.", "change_pct": -18.93, "price": 2.57, "sector": "Transportation"},
+    {"symbol": "GLOO", "name": "Gloo Holdings, Inc.", "change_pct": -18.17, "price": 5.00, "sector": "Technology services"},
+    {"symbol": "AKAN", "name": "Akanda Corp.", "change_pct": -16.69, "price": 13.58, "sector": "Process industries"}
+  ],
+  "bonds": {
+    "US_10Y": {"yield": 4.635, "change": 0.26},
+    "US_1Y": {"yield": 3.667, "change": -0.07},
+    "FR_10Y": {"yield": 3.926, "change": 0.60},
+    "IT_10Y": {"yield": 3.904, "change": 0.46}
+  },
+  "crypto_community_trends": [
+    {"symbol": "BNB", "market_cap": "86.89B"},
+    {"symbol": "XRP", "market_cap": "84.92B"}
+  ],
+  "alpha_vantage_status": "NO_DATA_RETURNED",
+  "alpha_vantage_note": "Scanner returned no data for all 10 symbols - likely API rate limit or key issue"
+}
