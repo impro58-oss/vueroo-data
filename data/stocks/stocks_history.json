@@ -416,5 +416,113 @@
         "data_date": "2026-05-19"
       }
     ]
+  },
+  {
+    "scan_timestamp": "2026-05-21T04:38:00Z",
+    "scan_date": "2026-05-21",
+    "scan_time": "04:38:00",
+    "api": "Web Scraping (Alpha Vantage rate-limited)",
+    "api_calls_used": 0,
+    "total_stocks": 28,
+    "signals_found": 8,
+    "long_opportunities": 8,
+    "short_opportunities": 0,
+    "categories_scanned": [
+      "major_indices",
+      "todays_gainers",
+      "monthly_momentum",
+      "sector_rotation"
+    ],
+    "major_indices": {
+      "sp500": {
+        "close": 7432.97,
+        "change_pct": 1.08
+      },
+      "nasdaq": {
+        "close": 26270.36,
+        "change_pct": 1.54
+      },
+      "dow": {
+        "close": 50009.35,
+        "change_pct": 1.31
+      }
+    },
+    "results": [
+      {
+        "symbol": "SPY",
+        "signal": "long",
+        "confidence": 0.75,
+        "reasons": [
+          "S&P 500 at 7433, +1.08% bullish momentum"
+        ]
+      },
+      {
+        "symbol": "QQQ",
+        "signal": "long",
+        "confidence": 0.75,
+        "reasons": [
+          "Nasdaq at 26270, +1.54% tech rally"
+        ]
+      },
+      {
+        "symbol": "CRWD",
+        "signal": "long",
+        "confidence": 0.65,
+        "reasons": [
+          "+42.68% MTD, cybersecurity rotation",
+          "mcap $165B large cap momentum"
+        ]
+      },
+      {
+        "symbol": "DDOG",
+        "signal": "long",
+        "confidence": 0.6,
+        "reasons": [
+          "+51% MTD, observability/AI infra play"
+        ]
+      },
+      {
+        "symbol": "FTNT",
+        "signal": "long",
+        "confidence": 0.6,
+        "reasons": [
+          "+50.65% MTD, cybersecurity momentum"
+        ]
+      },
+      {
+        "symbol": "RKLB",
+        "signal": "long",
+        "confidence": 0.55,
+        "reasons": [
+          "+70.38% MTD, space/defense thematic",
+          "mcap $77B"
+        ]
+      },
+      {
+        "symbol": "ENPH",
+        "signal": "long",
+        "confidence": 0.55,
+        "reasons": [
+          "+57% MTD, solar/energy rebound"
+        ]
+      },
+      {
+        "symbol": "MU",
+        "signal": "long",
+        "confidence": 0.55,
+        "reasons": [
+          "+35% MTD, memory/AI semiconductor cycle",
+          "mcap $825B mega-cap"
+        ]
+      }
+    ],
+    "macro_themes": [
+      "US-Iran deal \u00e2\u2020\u2019 oil $102, dollar crash",
+      "Tech/AI momentum dominant MTD",
+      "Cybersecurity sector rotation: CRWD, PANW, FTNT",
+      "Healthcare microcap explosions: PIII +231%, AGL +174%",
+      "Space/Defense: RKLB +70%, STRL +41%"
+    ],
+    "alpha_vantage_note": "Rate-limited (0/25 calls remaining today). Data sourced from web."
   }
 ]
