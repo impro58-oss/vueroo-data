@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-05-21T10:38:00Z",
+  "source": "TradingView Market Movers",
+  "most_active": [
+    {"symbol": "NVDA", "name": "NVIDIA Corporation", "price": 223.47, "change_pct": 1.30, "volume": "41.16B", "market_cap": "5.41T", "sector": "Electronic technology", "signal": "Strong buy"},
+    {"symbol": "MU", "name": "Micron Technology", "price": 731.99, "change_pct": 4.76, "volume": "35.74B", "market_cap": "825.49B", "sector": "Electronic technology", "signal": "Strong buy"},
+    {"symbol": "INTC", "name": "Intel Corporation", "price": 118.96, "change_pct": 7.36, "volume": "19.64B", "market_cap": "597.89B", "sector": "Electronic technology", "signal": "Neutral"},
+    {"symbol": "TSLA", "name": "Tesla Inc.", "price": 417.26, "change_pct": 3.25, "volume": "18.9B", "market_cap": "1.57T", "sector": "Consumer durables", "signal": "Buy"},
+    {"symbol": "AMD", "name": "Advanced Micro Devices", "price": 447.58, "change_pct": 8.10, "volume": "16.17B", "market_cap": "729.82B", "sector": "Electronic technology", "signal": "Strong buy"},
+    {"symbol": "SNDK", "name": "Sandisk Corporation", "price": 1392.56, "change_pct": 0.67, "volume": "12.73B", "market_cap": "206.22B", "sector": "Electronic technology", "signal": "Buy"},
+    {"symbol": "MSFT", "name": "Microsoft Corporation", "price": 421.06, "change_pct": 0.87, "volume": "11.73B", "market_cap": "3.13T", "sector": "Technology services", "signal": "Strong buy"},
+    {"symbol": "AAPL", "name": "Apple Inc.", "price": 302.25, "change_pct": 1.10, "volume": "11.55B", "market_cap": "4.44T", "sector": "Electronic technology", "signal": "Buy"},
+    {"symbol": "AMZN", "name": "Amazon.com Inc.", "price": 265.01, "change_pct": 2.19, "volume": "9.26B", "market_cap": "2.85T", "sector": "Retail trade", "signal": "Strong buy"},
+    {"symbol": "META", "name": "Meta Platforms Inc.", "price": 605.06, "change_pct": 0.41, "volume": "6.86B", "market_cap": "1.54T", "sector": "Technology services", "signal": "Strong buy"},
+    {"symbol": "AVGO", "name": "Broadcom Inc.", "price": 417.76, "change_pct": 1.63, "volume": "6.81B", "market_cap": "1.98T", "sector": "Electronic technology", "signal": "Strong buy"},
+    {"symbol": "GOOG", "name": "Alphabet Inc.", "price": 384.90, "change_pct": 0.00, "volume": "6.35B", "market_cap": "4.69T", "sector": "Technology services", "signal": "Strong buy"},
+    {"symbol": "MRVL", "name": "Marvell Technology", "price": 186.80, "change_pct": 5.97, "volume": "5.57B", "market_cap": "163.55B", "sector": "Electronic technology", "signal": "Strong buy"},
+    {"symbol": "PLTR", "name": "Palantir Technologies", "price": 137.15, "change_pct": 1.40, "volume": "4.29B", "market_cap": "328.79B", "sector": "Technology services", "signal": "Buy"},
+    {"symbol": "ALAB", "name": "Astera Labs", "price": 287.48, "change_pct": 17.69, "volume": "2.96B", "market_cap": "49.28B", "sector": "Electronic technology", "signal": "Buy"},
+    {"symbol": "BE", "name": "Bloom Energy", "price": 282.31, "change_pct": 8.02, "volume": "2.94B", "market_cap": "80.3B", "sector": "Electronic technology", "signal": "Buy"},
+    {"symbol": "IREN", "name": "IREN Limited", "price": 52.71, "change_pct": 10.41, "volume": "2.34B", "market_cap": "18.81B", "sector": "Technology services", "signal": "Buy"},
+    {"symbol": "RKLB", "name": "Rocket Lab Corp.", "price": 134.28, "change_pct": 5.47, "volume": "3.27B", "market_cap": "77.71B", "sector": "Electronic technology", "signal": "Strong buy"},
+    {"symbol": "GS", "name": "Goldman Sachs", "price": 982.12, "change_pct": 5.75, "volume": "3.05B", "market_cap": "289.73B", "sector": "Finance", "signal": "Neutral"},
+    {"symbol": "LRCX", "name": "Lam Research", "price": 292.09, "change_pct": 6.84, "volume": "2.5B", "market_cap": "365.28B", "sector": "Producer manufacturing", "signal": "Buy"}
+  ],
+  "bonds": {
+    "US_1Y": {"yield": 3.839, "change": "+1.32%"},
+    "US_10Y": {"yield": 4.613, "change": "-0.22%"},
+    "FR_10Y": {"yield": 3.896, "change": "-0.17%"},
+    "IT_10Y": {"yield": 3.872, "change": "-0.44%"}
+  },
+  "crypto_trends": {
+    "BNB": {"market_cap": "87.6B"},
+    "XRP": {"market_cap": "84.59B"}
+  },
+  "top_gainers": [
+    {"symbol": "ALAB", "change_pct": 17.69},
+    {"symbol": "IREN", "change_pct": 10.41},
+    {"symbol": "BE", "change_pct": 8.02},
+    {"symbol": "AMD", "change_pct": 8.10},
+    {"symbol": "INTC", "change_pct": 7.36},
+    {"symbol": "LRCX", "change_pct": 6.84},
+    {"symbol": "MRVL", "change_pct": 5.97},
+    {"symbol": "RKLB", "change_pct": 5.47},
+    {"symbol": "CRWD", "change_pct": 5.39},
+    {"symbol": "GS", "change_pct": 5.75}
+  ],
+  "top_losers": [
+    {"symbol": "ADI", "change_pct": -3.92},
+    {"symbol": "INTU", "change_pct": -3.95},
+    {"symbol": "XOM", "change_pct": -3.86},
+    {"symbol": "TGT", "change_pct": -3.86},
+    {"symbol": "CVX", "change_pct": -3.00},
+    {"symbol": "NBIS", "change_pct": -2.99},
+    {"symbol": "WMT", "change_pct": -2.50},
+    {"symbol": "LITE", "change_pct": -2.47},
+    {"symbol": "COST", "change_pct": -1.86},
+    {"symbol": "NFLX", "change_pct": -1.39}
+  ],
+  "sector_heatmap": {
+    "Electronic technology": "Strong bullish (NVDA, MU, AMD, AVGO lead)",
+    "Technology services": "Bullish (MSFT, AMZN, META, GOOG steady)",
+    "Finance": "Mixed (GS +5.75%, JPM +2.12%, BAC +1.05%)",
+    "Energy minerals": "Bearish (XOM -3.86%, CVX -3.00%)",
+    "Retail trade": "Mixed (TGT -3.86%, WMT -2.50%, COST -1.86%)",
+    "Producer manufacturing": "Bullish (LRCX +6.84%, AMAT +4.90%, GEV strong)"
+  },
+  "key_signals": [
+    "SEMI RALLY: AMD +8.1%, MU +4.76%, MRVL +5.97%, LRCX +6.84%, INTC +7.36%",
+    "AI INFRA BOOM: ALAB +17.69%, NVDA +1.30%, AVGO +1.63%",
+    "ENERGY SELL-OFF: XOM -3.86%, CVX -3.00%",
+    "RETAIL WEAKNESS: TGT -3.86%, WMT -2.50%, COST -1.86%",
+    "BONDS: US 10Y at 4.613%, yields slightly down"
+  ]
+}
