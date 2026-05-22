@@ -1,0 +1,62 @@
+{
+  "snapshot_time": "2026-05-22T07:38:00Z",
+  "source": "TradingView",
+  "market_status": "pre-market",
+  "bonds": {
+    "US_1Y": {"yield": 3.675, "change": "+0.21%", "discount_yield": "3.830%"},
+    "US_10Y": {"price": 98.402, "change": "-0.03%", "yield": "4.576%"},
+    "FR_10Y": {"price": 99.574, "change": "+0.19%", "yield": "3.848%"},
+    "IT_10Y": {"price": 97.374, "change": "+0.34%", "yield": "3.811%"}
+  },
+  "crypto_community_trends": {
+    "BNB": {"market_cap": "88.7B"},
+    "XRP": {"market_cap": "84.45B"}
+  },
+  "most_active": [
+    {"symbol": "NVDA", "name": "NVIDIA", "price": 219.51, "change": "-1.77%", "volume": "203.37M", "mkt_cap": "5.31T", "pe": 33.62, "rating": "Strong buy"},
+    {"symbol": "MU", "name": "Micron Technology", "price": 762.10, "change": "+4.11%", "volume": "42.46M", "mkt_cap": "859.45B", "pe": 35.98, "eps_growth": "+409.12%", "rating": "Strong buy"},
+    {"symbol": "SNDK", "name": "Sandisk", "price": 1542.24, "change": "+10.75%", "volume": "13.75M", "mkt_cap": "228.39B", "pe": 53.61, "rating": "Buy"},
+    {"symbol": "TSLA", "name": "Tesla", "price": 417.85, "change": "+0.14%", "volume": "42.64M", "mkt_cap": "1.57T", "pe": 381.74, "rating": "Neutral"},
+    {"symbol": "MSFT", "name": "Microsoft", "price": 419.09, "change": "-0.47%", "volume": "31.39M", "mkt_cap": "3.11T", "pe": 24.96, "rating": "Strong buy"},
+    {"symbol": "AAPL", "name": "Apple", "price": 304.99, "change": "+0.91%", "volume": "42.96M", "mkt_cap": "4.48T", "pe": 36.89, "rating": "Buy"},
+    {"symbol": "AMD", "name": "AMD", "price": 449.59, "change": "+0.45%", "volume": "27.25M", "mkt_cap": "733.1B", "pe": 147.56, "eps_growth": "+123.35%", "rating": "Strong buy"},
+    {"symbol": "INTC", "name": "Intel", "price": 118.50, "change": "-0.39%", "volume": "102.45M", "mkt_cap": "595.58B", "rating": "Neutral"},
+    {"symbol": "AMZN", "name": "Amazon", "price": 268.46, "change": "+1.30%", "volume": "36.59M", "mkt_cap": "2.89T", "pe": 32.08, "rating": "Strong buy"},
+    {"symbol": "META", "name": "Meta Platforms", "price": 607.38, "change": "+0.38%", "volume": "13.48M", "mkt_cap": "1.54T", "pe": 22.08, "rating": "Strong buy"},
+    {"symbol": "AVGO", "name": "Broadcom", "price": 414.57, "change": "-0.76%", "volume": "16.87M", "mkt_cap": "1.96T", "pe": 80.87, "eps_growth": "+147.26%", "rating": "Strong buy"},
+    {"symbol": "INTU", "name": "Intuit", "price": 307.07, "change": "-20.02%", "volume": "22.35M", "rel_vol": 7.20, "rating": "Strong buy"},
+    {"symbol": "IBM", "name": "IBM", "price": 252.97, "change": "+12.43%", "volume": "25.71M", "rel_vol": 4.23, "rating": "Buy"},
+    {"symbol": "GOOG", "name": "Alphabet", "price": 383.47, "change": "-0.37%", "volume": "16.84M", "mkt_cap": "4.67T", "pe": 29.25, "rating": "Strong buy"},
+    {"symbol": "WMT", "name": "Walmart", "price": 121.34, "change": "-7.27%", "volume": "53.01M", "rel_vol": 2.90, "rating": "Buy"},
+    {"symbol": "QCOM", "name": "Qualcomm", "price": 213.41, "change": "+5.38%", "volume": "28.16M", "mkt_cap": "224.93B", "rating": "Neutral"},
+    {"symbol": "LITE", "name": "Lumentum", "price": 964.50, "change": "+11.11%", "volume": "5.78M", "rating": "Buy"},
+    {"symbol": "NBIS", "name": "Nebius Group", "price": 219.93, "change": "+14.65%", "volume": "23.03M", "rating": "Buy"},
+    {"symbol": "BE", "name": "Bloom Energy", "price": 307.88, "change": "+9.06%", "volume": "13.93M", "rating": "Buy"},
+    {"symbol": "RGTI", "name": "Rigetti Computing", "price": 22.04, "change": "+30.57%", "volume": "148.24M", "rel_vol": 4.86, "rating": "Buy"},
+    {"symbol": "QBTS", "name": "D-Wave Quantum", "price": 25.74, "change": "+33.37%", "volume": "119.13M", "rel_vol": 4.34, "rating": "Strong buy"},
+    {"symbol": "IONQ", "name": "IonQ", "price": 58.89, "change": "+12.24%", "volume": "62.94M", "rel_vol": 1.87, "rating": "Strong buy"},
+    {"symbol": "SPOT", "name": "Spotify", "price": 489.93, "change": "+13.06%", "volume": "7.3M", "rel_vol": 3.92, "rating": "Buy"},
+    {"symbol": "CRWV", "name": "CoreWeave", "price": 107.58, "change": "+6.22%", "volume": "31.9M", "rating": "Buy"},
+    {"symbol": "LLY", "name": "Eli Lilly", "price": 1041.65, "change": "+2.24%", "volume": "2.71M", "mkt_cap": "980.96B", "rating": "Strong buy"}
+  ],
+  "hot_movers": [
+    {"symbol": "QBTS", "change": "+33.37%", "theme": "quantum"},
+    {"symbol": "RGTI", "change": "+30.57%", "theme": "quantum"},
+    {"symbol": "SNDK", "change": "+10.75%", "theme": "storage"},
+    {"symbol": "SPOT", "change": "+13.06%", "theme": "tech"},
+    {"symbol": "IBM", "change": "+12.43%", "theme": "tech"},
+    {"symbol": "LITE", "change": "+11.11%", "theme": "photonics"},
+    {"symbol": "NBIS", "change": "+14.65%", "theme": "AI infra"},
+    {"symbol": "BE", "change": "+9.06%", "theme": "energy"},
+    {"symbol": "IONQ", "change": "+12.24%", "theme": "quantum"}
+  ],
+  "notable_drops": [
+    {"symbol": "INTU", "change": "-20.02%", "note": "Intuit earnings miss"},
+    {"symbol": "WMT", "change": "-7.27%", "note": "Walmart pullback"},
+    {"symbol": "NOW", "change": "-3.49%", "note": "ServiceNow decline"}
+  ],
+  "alpha_vantage": {
+    "status": "no_data",
+    "note": "API rate limit likely hit — 0/10 symbols returned"
+  }
+}
