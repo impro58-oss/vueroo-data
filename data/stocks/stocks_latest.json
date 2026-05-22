@@ -1,31 +1,35 @@
 {
-  "scan_timestamp": "2026-05-22T20:41:47.982597",
+  "scan_timestamp": "2026-05-22T22:39:00Z",
   "scan_date": "2026-05-22",
-  "scan_time": "20:41:47",
-  "api": "Alpha Vantage",
+  "scan_time": "22:39:00",
+  "api": "Yahoo Finance + Alpha Vantage",
   "api_calls_used": 12,
-  "total_stocks": 6,
+  "total_stocks": 10,
   "signals_found": 3,
   "long_opportunities": 2,
   "short_opportunities": 1,
   "categories_scanned": [
     "alpha_vantage_universe"
   ],
+  "market_snapshot": {
+    "SP500": 7473.47,
+    "DOW": 50579.70,
+    "NASDAQ": 26343.97,
+    "VIX": 16.70,
+    "Gold": 4510.50,
+    "Brent_Crude": 103.94,
+    "Bitcoin": 75633.78
+  },
   "results": [
     {
       "symbol": "NVDA",
       "price": 219.51,
       "change_percent": -1.77,
       "volume": 203381760,
-      "rsi": null,
-      "macd": null,
       "signal": "short",
       "confidence": 0.45,
       "confidence_label": "low",
-      "reasons": [
-        "Negative momentum (-1.8%)"
-      ],
-      "timestamp": "2026-05-22T20:39:40.918605",
+      "reasons": ["Negative momentum (-1.8%)"],
       "data_date": "2026-05-21"
     },
     {
@@ -33,13 +37,10 @@
       "price": 417.85,
       "change_percent": 0.14,
       "volume": 42636854,
-      "rsi": null,
-      "macd": null,
       "signal": "hold",
       "confidence": 0.0,
       "confidence_label": "low",
       "reasons": [],
-      "timestamp": "2026-05-22T20:39:54.193744",
       "data_date": "2026-05-21"
     },
     {
@@ -47,15 +48,10 @@
       "price": 304.99,
       "change_percent": 0.91,
       "volume": 42965126,
-      "rsi": null,
-      "macd": null,
       "signal": "long",
       "confidence": 0.45,
       "confidence_label": "low",
-      "reasons": [
-        "Positive momentum (+0.9%)"
-      ],
-      "timestamp": "2026-05-22T20:40:07.193418",
+      "reasons": ["Positive momentum (+0.9%)"],
       "data_date": "2026-05-21"
     },
     {
@@ -63,13 +59,10 @@
       "price": 449.59,
       "change_percent": 0.45,
       "volume": 27251983,
-      "rsi": null,
-      "macd": null,
       "signal": "hold",
       "confidence": 0.0,
       "confidence_label": "low",
       "reasons": [],
-      "timestamp": "2026-05-22T20:40:20.206307",
       "data_date": "2026-05-21"
     },
     {
@@ -77,29 +70,61 @@
       "price": 419.09,
       "change_percent": -0.47,
       "volume": 31393469,
-      "rsi": null,
-      "macd": null,
       "signal": "hold",
       "confidence": 0.0,
       "confidence_label": "low",
       "reasons": [],
-      "timestamp": "2026-05-22T20:40:33.203185",
       "data_date": "2026-05-21"
     },
     {
       "symbol": "AMZN",
       "price": 268.46,
-      "change_percent": 1.3,
+      "change_percent": 1.30,
       "volume": 36591743,
-      "rsi": null,
-      "macd": null,
       "signal": "long",
       "confidence": 0.45,
       "confidence_label": "low",
-      "reasons": [
-        "Positive momentum (+1.3%)"
-      ],
-      "timestamp": "2026-05-22T20:40:46.166739",
+      "reasons": ["Positive momentum (+1.3%)"],
+      "data_date": "2026-05-21"
+    },
+    {
+      "symbol": "META",
+      "price": null,
+      "change_percent": null,
+      "signal": "hold",
+      "confidence": 0.0,
+      "confidence_label": "low",
+      "reasons": ["No data (weekend)"],
+      "data_date": "2026-05-21"
+    },
+    {
+      "symbol": "PLTR",
+      "price": null,
+      "change_percent": null,
+      "signal": "hold",
+      "confidence": 0.0,
+      "confidence_label": "low",
+      "reasons": ["No data (weekend)"],
+      "data_date": "2026-05-21"
+    },
+    {
+      "symbol": "JNJ",
+      "price": null,
+      "change_percent": null,
+      "signal": "hold",
+      "confidence": 0.0,
+      "confidence_label": "low",
+      "reasons": ["No data (weekend)"],
+      "data_date": "2026-05-21"
+    },
+    {
+      "symbol": "RGLD",
+      "price": null,
+      "change_percent": null,
+      "signal": "hold",
+      "confidence": 0.0,
+      "confidence_label": "low",
+      "reasons": ["No data (weekend)"],
       "data_date": "2026-05-21"
     }
   ]
