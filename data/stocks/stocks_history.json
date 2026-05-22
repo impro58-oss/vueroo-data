@@ -1056,5 +1056,317 @@
         "data_date": "2026-05-21"
       }
     ]
+  },
+  {
+    "scan_timestamp": "2026-05-22T17:02:15.144278",
+    "scan_date": "2026-05-22",
+    "scan_time": "17:02:15",
+    "api": "Alpha Vantage",
+    "api_calls_used": 18,
+    "total_stocks": 9,
+    "signals_found": 3,
+    "long_opportunities": 3,
+    "short_opportunities": 0,
+    "categories_scanned": [
+      "alpha_vantage_universe"
+    ],
+    "results": [
+      {
+        "symbol": "TSLA",
+        "price": 417.85,
+        "change_percent": 0.14,
+        "volume": 42636854,
+        "rsi": null,
+        "macd": null,
+        "signal": "hold",
+        "confidence": 0.0,
+        "confidence_label": "low",
+        "reasons": [],
+        "timestamp": "2026-05-22T17:00:18.919317",
+        "data_date": "2026-05-21"
+      },
+      {
+        "symbol": "AAPL",
+        "price": 304.99,
+        "change_percent": 0.91,
+        "volume": 42965126,
+        "rsi": null,
+        "macd": null,
+        "signal": "long",
+        "confidence": 0.45,
+        "confidence_label": "low",
+        "reasons": [
+          "Positive momentum (+0.9%)"
+        ],
+        "timestamp": "2026-05-22T17:00:31.917318",
+        "data_date": "2026-05-21"
+      },
+      {
+        "symbol": "AMD",
+        "price": 449.59,
+        "change_percent": 0.45,
+        "volume": 27251983,
+        "rsi": null,
+        "macd": null,
+        "signal": "hold",
+        "confidence": 0.0,
+        "confidence_label": "low",
+        "reasons": [],
+        "timestamp": "2026-05-22T17:00:44.905746",
+        "data_date": "2026-05-21"
+      },
+      {
+        "symbol": "MSFT",
+        "price": 419.09,
+        "change_percent": -0.47,
+        "volume": 31393469,
+        "rsi": null,
+        "macd": null,
+        "signal": "hold",
+        "confidence": 0.0,
+        "confidence_label": "low",
+        "reasons": [],
+        "timestamp": "2026-05-22T17:00:57.917136",
+        "data_date": "2026-05-21"
+      },
+      {
+        "symbol": "AMZN",
+        "price": 268.46,
+        "change_percent": 1.3,
+        "volume": 36591743,
+        "rsi": null,
+        "macd": null,
+        "signal": "long",
+        "confidence": 0.45,
+        "confidence_label": "low",
+        "reasons": [
+          "Positive momentum (+1.3%)"
+        ],
+        "timestamp": "2026-05-22T17:01:10.949059",
+        "data_date": "2026-05-21"
+      },
+      {
+        "symbol": "META",
+        "price": 607.38,
+        "change_percent": 0.38,
+        "volume": 13476078,
+        "rsi": null,
+        "macd": null,
+        "signal": "hold",
+        "confidence": 0.0,
+        "confidence_label": "low",
+        "reasons": [],
+        "timestamp": "2026-05-22T17:01:24.037340",
+        "data_date": "2026-05-21"
+      },
+      {
+        "symbol": "PLTR",
+        "price": 137.42,
+        "change_percent": 0.19,
+        "volume": 24311882,
+        "rsi": null,
+        "macd": null,
+        "signal": "hold",
+        "confidence": 0.0,
+        "confidence_label": "low",
+        "reasons": [],
+        "timestamp": "2026-05-22T17:01:37.036086",
+        "data_date": "2026-05-21"
+      },
+      {
+        "symbol": "JNJ",
+        "price": 231.73,
+        "change_percent": 1.05,
+        "volume": 5239027,
+        "rsi": null,
+        "macd": null,
+        "signal": "long",
+        "confidence": 0.45,
+        "confidence_label": "low",
+        "reasons": [
+          "Positive momentum (+1.1%)"
+        ],
+        "timestamp": "2026-05-22T17:01:50.025663",
+        "data_date": "2026-05-21"
+      },
+      {
+        "symbol": "RGLD",
+        "price": 222.33,
+        "change_percent": -0.34,
+        "volume": 428005,
+        "rsi": null,
+        "macd": null,
+        "signal": "hold",
+        "confidence": 0.0,
+        "confidence_label": "low",
+        "reasons": [],
+        "timestamp": "2026-05-22T17:02:03.140638",
+        "data_date": "2026-05-21"
+      }
+    ]
+  },
+  {
+    "scan_timestamp": "2026-05-22T17:41:44.072016",
+    "scan_date": "2026-05-22",
+    "scan_time": "17:41:44",
+    "api": "Alpha Vantage",
+    "api_calls_used": 20,
+    "total_stocks": 10,
+    "signals_found": 4,
+    "long_opportunities": 3,
+    "short_opportunities": 1,
+    "categories_scanned": [
+      "alpha_vantage_universe"
+    ],
+    "results": [
+      {
+        "symbol": "NVDA",
+        "price": 219.51,
+        "change_percent": -1.77,
+        "volume": 203381760,
+        "rsi": null,
+        "macd": null,
+        "signal": "short",
+        "confidence": 0.45,
+        "confidence_label": "low",
+        "reasons": [
+          "Negative momentum (-1.8%)"
+        ],
+        "timestamp": "2026-05-22T17:39:34.366680",
+        "data_date": "2026-05-21"
+      },
+      {
+        "symbol": "TSLA",
+        "price": 417.85,
+        "change_percent": 0.14,
+        "volume": 42636854,
+        "rsi": null,
+        "macd": null,
+        "signal": "hold",
+        "confidence": 0.0,
+        "confidence_label": "low",
+        "reasons": [],
+        "timestamp": "2026-05-22T17:39:47.378037",
+        "data_date": "2026-05-21"
+      },
+      {
+        "symbol": "AAPL",
+        "price": 304.99,
+        "change_percent": 0.91,
+        "volume": 42965126,
+        "rsi": null,
+        "macd": null,
+        "signal": "long",
+        "confidence": 0.45,
+        "confidence_label": "low",
+        "reasons": [
+          "Positive momentum (+0.9%)"
+        ],
+        "timestamp": "2026-05-22T17:40:00.805652",
+        "data_date": "2026-05-21"
+      },
+      {
+        "symbol": "AMD",
+        "price": 449.59,
+        "change_percent": 0.45,
+        "volume": 27251983,
+        "rsi": null,
+        "macd": null,
+        "signal": "hold",
+        "confidence": 0.0,
+        "confidence_label": "low",
+        "reasons": [],
+        "timestamp": "2026-05-22T17:40:13.779280",
+        "data_date": "2026-05-21"
+      },
+      {
+        "symbol": "MSFT",
+        "price": 419.09,
+        "change_percent": -0.47,
+        "volume": 31393469,
+        "rsi": null,
+        "macd": null,
+        "signal": "hold",
+        "confidence": 0.0,
+        "confidence_label": "low",
+        "reasons": [],
+        "timestamp": "2026-05-22T17:40:26.804658",
+        "data_date": "2026-05-21"
+      },
+      {
+        "symbol": "AMZN",
+        "price": 268.46,
+        "change_percent": 1.3,
+        "volume": 36591743,
+        "rsi": null,
+        "macd": null,
+        "signal": "long",
+        "confidence": 0.45,
+        "confidence_label": "low",
+        "reasons": [
+          "Positive momentum (+1.3%)"
+        ],
+        "timestamp": "2026-05-22T17:40:39.894304",
+        "data_date": "2026-05-21"
+      },
+      {
+        "symbol": "META",
+        "price": 607.38,
+        "change_percent": 0.38,
+        "volume": 13476078,
+        "rsi": null,
+        "macd": null,
+        "signal": "hold",
+        "confidence": 0.0,
+        "confidence_label": "low",
+        "reasons": [],
+        "timestamp": "2026-05-22T17:40:52.886480",
+        "data_date": "2026-05-21"
+      },
+      {
+        "symbol": "PLTR",
+        "price": 137.42,
+        "change_percent": 0.19,
+        "volume": 24311882,
+        "rsi": null,
+        "macd": null,
+        "signal": "hold",
+        "confidence": 0.0,
+        "confidence_label": "low",
+        "reasons": [],
+        "timestamp": "2026-05-22T17:41:05.873995",
+        "data_date": "2026-05-21"
+      },
+      {
+        "symbol": "JNJ",
+        "price": 231.73,
+        "change_percent": 1.05,
+        "volume": 5239027,
+        "rsi": null,
+        "macd": null,
+        "signal": "long",
+        "confidence": 0.45,
+        "confidence_label": "low",
+        "reasons": [
+          "Positive momentum (+1.1%)"
+        ],
+        "timestamp": "2026-05-22T17:41:19.025303",
+        "data_date": "2026-05-21"
+      },
+      {
+        "symbol": "RGLD",
+        "price": 222.33,
+        "change_percent": -0.34,
+        "volume": 428005,
+        "rsi": null,
+        "macd": null,
+        "signal": "hold",
+        "confidence": 0.0,
+        "confidence_label": "low",
+        "reasons": [],
+        "timestamp": "2026-05-22T17:41:32.068416",
+        "data_date": "2026-05-21"
+      }
+    ]
   }
 ]
