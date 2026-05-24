@@ -224,5 +224,346 @@
       "week52_low": 18.97
     }
   ],
-  "signals": []
+  "signals": [],
+  "tradingview_snapshot": {
+    "timestamp": "2026-05-24T13:44:52.173353Z",
+    "source": "tradingview_scanner",
+    "total_scanned": 12333,
+    "hot_movers": [
+      {
+        "symbol": "AMEX:HYLN",
+        "name": "Hyliion Holdings Corp.",
+        "price": 5.99,
+        "change_pct": 42.61904761904762,
+        "volume": 20171479,
+        "market_cap": 1068180127.0000001
+      }
+    ],
+    "most_active": [
+      {
+        "symbol": "NASDAQ:RGTI",
+        "name": "Rigetti Computing, Inc.",
+        "price": 26.42,
+        "change_pct": 19.87295825771326,
+        "volume": 204232788,
+        "market_cap": 8781976419.000002
+      },
+      {
+        "symbol": "NASDAQ:NVDA",
+        "name": "NVIDIA Corporation",
+        "price": 215.33,
+        "change_pct": -1.9042412646348588,
+        "volume": 169266663,
+        "market_cap": 5210986044312
+      },
+      {
+        "symbol": "NYSE:QBTS",
+        "name": "D-Wave Quantum Inc.",
+        "price": 29.4,
+        "change_pct": 14.219114219114221,
+        "volume": 141702467,
+        "market_cap": 10875461913.999998
+      },
+      {
+        "symbol": "NYSE:F",
+        "name": "Ford Motor Company",
+        "price": 14.93,
+        "change_pct": 9.217264081931235,
+        "volume": 109711911,
+        "market_cap": 59491462513
+      },
+      {
+        "symbol": "NASDAQ:AAL",
+        "name": "American Airlines Group, Inc.",
+        "price": 13.85,
+        "change_pct": 1.9131714495952892,
+        "volume": 99284833,
+        "market_cap": 9160184328
+      },
+      {
+        "symbol": "NASDAQ:INTC",
+        "name": "Intel Corporation",
+        "price": 119.84,
+        "change_pct": 1.130801687763716,
+        "volume": 82656866,
+        "market_cap": 602315821594
+      },
+      {
+        "symbol": "NYSE:ACHR",
+        "name": "Archer Aviation Inc.",
+        "price": 6.36,
+        "change_pct": 3.921568627450984,
+        "volume": 79301258,
+        "market_cap": 4831043523.999999
+      },
+      {
+        "symbol": "NASDAQ:PLUG",
+        "name": "Plug Power, Inc.",
+        "price": 3.78,
+        "change_pct": 0,
+        "volume": 71431978,
+        "market_cap": 5273361127
+      },
+      {
+        "symbol": "NASDAQ:QUBT",
+        "name": "Quantum Computing Inc.",
+        "price": 12.31,
+        "change_pct": 7.887817703768627,
+        "volume": 68053236,
+        "market_cap": 2776335802.0000005
+      },
+      {
+        "symbol": "NYSE:INFQ",
+        "name": "Infleqtion, Inc.",
+        "price": 16.35,
+        "change_pct": 11.224489795918382,
+        "volume": 65621853,
+        "market_cap": 3567519138.9999995
+      },
+      {
+        "symbol": "NYSE:BBAI",
+        "name": "BigBear.ai, Inc.",
+        "price": 4.18,
+        "change_pct": -0.47619047619048716,
+        "volume": 65595697,
+        "market_cap": 2002008544.9999998
+      },
+      {
+        "symbol": "NYSE:TE",
+        "name": "T1 Energy Inc.",
+        "price": 8.08,
+        "change_pct": -7.339449541284409,
+        "volume": 62704707,
+        "market_cap": 2256512586
+      },
+      {
+        "symbol": "NASDAQ:ONDS",
+        "name": "Ondas Inc",
+        "price": 9.06,
+        "change_pct": -1.3071895424836517,
+        "volume": 59346942,
+        "market_cap": 4491609951
+      },
+      {
+        "symbol": "NASDAQ:SOFI",
+        "name": "SoFi Technologies, Inc.",
+        "price": 15.62,
+        "change_pct": -0.19169329073483155,
+        "volume": 58161928,
+        "market_cap": 20036417568.000004
+      },
+      {
+        "symbol": "NYSE:BB",
+        "name": "BlackBerry Limited",
+        "price": 7.91,
+        "change_pct": 18.947368421052627,
+        "volume": 57767554,
+        "market_cap": 4635746216.358456
+      },
+      {
+        "symbol": "NYSE:RDW",
+        "name": "Redwire Corporation",
+        "price": 17.49,
+        "change_pct": 13.94136807817589,
+        "volume": 55447729,
+        "market_cap": 3479088572.0000005
+      },
+      {
+        "symbol": "NYSE:IONQ",
+        "name": "IonQ, Inc.",
+        "price": 63.64,
+        "change_pct": 8.065885549329257,
+        "volume": 52649685,
+        "market_cap": 23754897989
+      },
+      {
+        "symbol": "NASDAQ:NVTS",
+        "name": "Navitas Semiconductor Corporation",
+        "price": 29.25,
+        "change_pct": 19.975389663658742,
+        "volume": 51180241,
+        "market_cap": 6836110085
+      },
+      {
+        "symbol": "NYSE:NU",
+        "name": "Nu Holdings Ltd.",
+        "price": 12.73,
+        "change_pct": -3.267477203647414,
+        "volume": 49641713,
+        "market_cap": 61875426013
+      },
+      {
+        "symbol": "NYSE:HPQ",
+        "name": "HP Inc.",
+        "price": 25.24,
+        "change_pct": 15.251141552511417,
+        "volume": 48674187,
+        "market_cap": 23083246104
+      }
+    ],
+    "top_market_cap": [
+      {
+        "symbol": "NASDAQ:NVDA",
+        "name": "NVIDIA Corporation",
+        "price": 215.33,
+        "change_pct": -1.9042412646348588,
+        "volume": 169266663,
+        "market_cap": 5210986044312
+      },
+      {
+        "symbol": "NASDAQ:GOOGL",
+        "name": "Alphabet Inc.",
+        "price": 382.97,
+        "change_pct": -1.2098230408089556,
+        "volume": 20442112,
+        "market_cap": 4620520527317
+      },
+      {
+        "symbol": "NASDAQ:GOOG",
+        "name": "Alphabet Inc.",
+        "price": 379.38,
+        "change_pct": -1.0665762641145413,
+        "volume": 13382754,
+        "market_cap": 4620520527316.999
+      },
+      {
+        "symbol": "NASDAQ:AAPL",
+        "name": "Apple Inc.",
+        "price": 308.82,
+        "change_pct": 1.2557788779959946,
+        "volume": 43670051,
+        "market_cap": 4535749525015
+      },
+      {
+        "symbol": "NASDAQ:MSFT",
+        "name": "Microsoft Corporation",
+        "price": 418.57,
+        "change_pct": -0.12407836025674242,
+        "volume": 22390244,
+        "market_cap": 3109319912503
+      },
+      {
+        "symbol": "NASDAQ:AMZN",
+        "name": "Amazon.com, Inc.",
+        "price": 266.32,
+        "change_pct": -0.7971392386202736,
+        "volume": 27534593,
+        "market_cap": 2864833447537
+      },
+      {
+        "symbol": "NASDAQ:AVGO",
+        "name": "Broadcom Inc.",
+        "price": 414.14,
+        "change_pct": -0.10372192874544874,
+        "volume": 14086441,
+        "market_cap": 1960815461934
+      },
+      {
+        "symbol": "NASDAQ:TSLA",
+        "name": "Tesla, Inc.",
+        "price": 426.01,
+        "change_pct": 1.9528538949383674,
+        "volume": 46102788,
+        "market_cap": 1599975861491
+      },
+      {
+        "symbol": "NASDAQ:META",
+        "name": "Meta Platforms, Inc.",
+        "price": 610.26,
+        "change_pct": 0.4741677368369053,
+        "volume": 11688608,
+        "market_cap": 1549098121757.0002
+      },
+      {
+        "symbol": "NYSE:BRK.B",
+        "name": "Berkshire Hathaway Inc. New",
+        "price": 486.38,
+        "change_pct": 1.3333888912037954,
+        "volume": 4342154,
+        "market_cap": 1048580917138.0001
+      },
+      {
+        "symbol": "NYSE:BRK.A",
+        "name": "Berkshire Hathaway Inc.",
+        "price": 728641,
+        "change_pct": 1.427364359321647,
+        "volume": 356,
+        "market_cap": 1048580917138
+      },
+      {
+        "symbol": "NYSE:LLY",
+        "name": "Eli Lilly and Company",
+        "price": 1065,
+        "change_pct": 2.24163586617385,
+        "volume": 3472905,
+        "market_cap": 1002954584656
+      },
+      {
+        "symbol": "NASDAQ:WMT",
+        "name": "Walmart Inc.",
+        "price": 120.27,
+        "change_pct": -0.8818196802373557,
+        "volume": 30330571,
+        "market_cap": 958671027456
+      },
+      {
+        "symbol": "NASDAQ:MU",
+        "name": "Micron Technology, Inc.",
+        "price": 751,
+        "change_pct": -1.4565017714210764,
+        "volume": 36001838,
+        "market_cap": 846928240601.0001
+      },
+      {
+        "symbol": "NYSE:JPM",
+        "name": "JP Morgan Chase & Co.",
+        "price": 306.38,
+        "change_pct": 1.115511551155114,
+        "volume": 5978568,
+        "market_cap": 820948738674.0001
+      },
+      {
+        "symbol": "NASDAQ:AMD",
+        "name": "Advanced Micro Devices, Inc.",
+        "price": 467.51,
+        "change_pct": 3.985853777886523,
+        "volume": 34758372,
+        "market_cap": 762322095855
+      },
+      {
+        "symbol": "NYSE:XOM",
+        "name": "Exxon Mobil Corporation",
+        "price": 154.92,
+        "change_pct": -0.23826389336081172,
+        "volume": 12948454,
+        "market_cap": 642135222801
+      },
+      {
+        "symbol": "NYSE:V",
+        "name": "Visa Inc.",
+        "price": 328.88,
+        "change_pct": -0.6764919062575528,
+        "volume": 7464251,
+        "market_cap": 619650994379.0001
+      },
+      {
+        "symbol": "NASDAQ:INTC",
+        "name": "Intel Corporation",
+        "price": 119.84,
+        "change_pct": 1.130801687763716,
+        "volume": 82656866,
+        "market_cap": 602315821594
+      },
+      {
+        "symbol": "NYSE:JNJ",
+        "name": "Johnson & Johnson",
+        "price": 234.34,
+        "change_pct": 1.126310792732928,
+        "volume": 5464729,
+        "market_cap": 564107232576.0001
+      }
+    ],
+    "big_droppers": []
+  },
+  "last_updated": "2026-05-24T13:44:52.173353Z"
 }
