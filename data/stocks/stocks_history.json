@@ -1599,5 +1599,150 @@
         "data_date": "2026-05-22"
       }
     ]
+  },
+  {
+    "timestamp": "20260525_074608",
+    "data": {
+      "AAPL": {
+        "last_price": 308.82,
+        "prev_close": 306.0,
+        "market_cap": 4535749387493.408,
+        "50d_avg": 270.55,
+        "200d_avg": 261.55,
+        "52w_high": 311.4,
+        "52w_low": 195.07,
+        "change_pct": 0.92
+      },
+      "MSFT": {
+        "last_price": 418.57,
+        "prev_close": 420.98,
+        "market_cap": 3109319968460.7607,
+        "50d_avg": 400.44,
+        "200d_avg": 460.4,
+        "52w_high": 555.45,
+        "52w_low": 356.28,
+        "change_pct": -0.57
+      },
+      "GOOGL": {
+        "last_price": 382.97,
+        "prev_close": 389.26,
+        "market_cap": 4639851662446.74,
+        "50d_avg": 341.14,
+        "200d_avg": 296.19,
+        "52w_high": 408.61,
+        "52w_low": 162.0,
+        "change_pct": -1.62
+      },
+      "AMZN": {
+        "last_price": 266.32,
+        "prev_close": 269.05,
+        "market_cap": 2864833463782.9424,
+        "50d_avg": 241.92,
+        "200d_avg": 230.55,
+        "52w_high": 278.56,
+        "52w_low": 196.0,
+        "change_pct": -1.01
+      },
+      "NVDA": {
+        "last_price": 215.33,
+        "prev_close": 220.12,
+        "market_cap": 5215507974349.976,
+        "50d_avg": 196.81,
+        "200d_avg": 187.03,
+        "52w_high": 236.54,
+        "52w_low": 132.92,
+        "change_pct": -2.18
+      },
+      "META": {
+        "last_price": 610.26,
+        "prev_close": 608.53,
+        "market_cap": 1549098230288.33,
+        "50d_avg": 617.81,
+        "200d_avg": 669.43,
+        "52w_high": 796.25,
+        "52w_low": 520.26,
+        "change_pct": 0.28
+      },
+      "TSLA": {
+        "last_price": 426.01,
+        "prev_close": 418.39,
+        "market_cap": 1599975962961.701,
+        "50d_avg": 388.33,
+        "200d_avg": 410.03,
+        "52w_high": 498.83,
+        "52w_low": 273.21,
+        "change_pct": 1.82
+      },
+      "AMD": {
+        "last_price": 467.51,
+        "prev_close": 452.55,
+        "market_cap": 762322120662.7244,
+        "50d_avg": 303.19,
+        "200d_avg": 230.88,
+        "52w_high": 481.41,
+        "52w_low": 108.62,
+        "change_pct": 3.31
+      },
+      "PLTR": {
+        "last_price": 136.88,
+        "prev_close": 137.69,
+        "market_cap": 328144075117.3849,
+        "50d_avg": 142.64,
+        "200d_avg": 162.63,
+        "52w_high": 207.52,
+        "52w_low": 118.93,
+        "change_pct": -0.59
+      },
+      "JNJ": {
+        "last_price": 234.34,
+        "prev_close": 231.68,
+        "market_cap": 564107216168.6482,
+        "50d_avg": 233.36,
+        "200d_avg": 210.74,
+        "52w_high": 251.71,
+        "52w_low": 149.04,
+        "change_pct": 1.15
+      },
+      "RGLD": {
+        "last_price": 220.29,
+        "prev_close": 222.2,
+        "market_cap": 18695263184.796906,
+        "50d_avg": 244.13,
+        "200d_avg": 224.6,
+        "52w_high": 306.25,
+        "52w_low": 150.75,
+        "change_pct": -0.86
+      },
+      "SPY": {
+        "last_price": 745.64,
+        "prev_close": 744.13,
+        "market_cap": null,
+        "50d_avg": 696.68,
+        "200d_avg": 678.85,
+        "52w_high": 749.53,
+        "52w_low": 578.43,
+        "change_pct": 0.2
+      },
+      "QQQ": {
+        "last_price": 717.54,
+        "prev_close": 716.94,
+        "market_cap": null,
+        "50d_avg": 642.1,
+        "200d_avg": 614.66,
+        "52w_high": 722.12,
+        "52w_low": 511.93,
+        "change_pct": 0.08
+      },
+      "DIA": {
+        "last_price": 506.12,
+        "prev_close": 503.87,
+        "market_cap": null,
+        "50d_avg": 482.56,
+        "200d_avg": 476.24,
+        "52w_high": 508.74,
+        "52w_low": 418.58,
+        "change_pct": 0.45
+      }
+    }
   }
 ]
