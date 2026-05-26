@@ -1,0 +1,48 @@
+{
+  "snapshot_timestamp": "2026-05-26T16:58:00Z",
+  "source": "TradingView",
+  "most_active_us": [
+    {"symbol": "MU", "name": "Micron Technology", "price": 882.92, "change_pct": 17.57, "market_cap": "95.7B", "volume": "43.47M", "sector": "Electronic technology", "rating": "Strong buy"},
+    {"symbol": "NVDA", "name": "NVIDIA Corporation", "price": 213.08, "change_pct": -1.04, "market_cap": "5.16T", "volume": "97.58M", "sector": "Electronic technology", "rating": "Strong buy"},
+    {"symbol": "SNDK", "name": "Sandisk Corporation", "price": 1592.60, "change_pct": 7.70, "market_cap": "235.85B", "volume": "7.65M", "sector": "Electronic technology", "rating": "Buy"},
+    {"symbol": "TSLA", "name": "Tesla Inc.", "price": 432.35, "change_pct": 1.49, "market_cap": "1.62T", "volume": "26.33M", "sector": "Consumer durables", "rating": "Neutral"},
+    {"symbol": "AMD", "name": "Advanced Micro Devices", "price": 494.97, "change_pct": 5.87, "market_cap": "807.1B", "volume": "19.73M", "sector": "Electronic technology", "rating": "Buy"},
+    {"symbol": "INTC", "name": "Intel Corporation", "price": 120.92, "change_pct": 0.90, "market_cap": "607.74B", "volume": "67.94M", "sector": "Electronic technology", "rating": "Neutral"},
+    {"symbol": "MSFT", "name": "Microsoft Corporation", "price": 415.33, "change_pct": -0.78, "market_cap": "3.09T", "volume": "15.52M", "sector": "Technology services", "rating": "Strong buy"},
+    {"symbol": "AAPL", "name": "Apple Inc.", "price": 310.12, "change_pct": 0.42, "market_cap": "4.55T", "volume": "17.56M", "sector": "Electronic technology", "rating": "Buy"},
+    {"symbol": "MRVL", "name": "Marvell Technology", "price": 204.63, "change_pct": 4.23, "market_cap": "179.16B", "volume": "25.42M", "sector": "Electronic technology", "rating": "Strong buy"},
+    {"symbol": "AMZN", "name": "Amazon.com Inc.", "price": 263.65, "change_pct": -1.00, "market_cap": "2.84T", "volume": "17.68M", "sector": "Retail trade", "rating": "Strong buy"},
+    {"symbol": "META", "name": "Meta Platforms", "price": 610.12, "change_pct": -0.02, "market_cap": "1.55T", "volume": "6.4M", "sector": "Technology services", "rating": "Strong buy"},
+    {"symbol": "AVGO", "name": "Broadcom Inc.", "price": 421.89, "change_pct": 1.87, "market_cap": "2T", "volume": "9.2M", "sector": "Electronic technology", "rating": "Strong buy"},
+    {"symbol": "GOOG", "name": "Alphabet Inc.", "price": 382.29, "change_pct": 0.77, "market_cap": "4.66T", "volume": "7.83M", "sector": "Technology services", "rating": "Strong buy"},
+    {"symbol": "PLTR", "name": "Palantir Technologies", "price": 137.07, "change_pct": 0.14, "market_cap": "328.6B", "volume": "20.7M", "sector": "Technology services", "rating": "Buy"},
+    {"symbol": "RDW", "name": "Redwire Corporation", "price": 22.17, "change_pct": 26.76, "market_cap": "4.41B", "volume": "71.19M", "sector": "Electronic technology", "rating": "Buy"},
+    {"symbol": "NVTS", "name": "Navitas Semiconductor", "price": 33.06, "change_pct": 13.03, "market_cap": "7.73B", "volume": "36.52M", "sector": "Electronic technology", "rating": "Neutral"},
+    {"symbol": "ASTS", "name": "AST SpaceMobile", "price": 126.10, "change_pct": 19.12, "market_cap": "48.94B", "volume": "28.84M", "sector": "Communications", "rating": "Neutral"},
+    {"symbol": "MNTS", "name": "Momentus Inc.", "price": 13.54, "change_pct": 83.47, "market_cap": "135.3M", "volume": "58.69M", "sector": "Electronic technology", "rating": "No rating"}
+  ],
+  "community_trends_crypto": [
+    {"symbol": "BNB", "market_cap": "88.79B"},
+    {"symbol": "XRP", "market_cap": "82.85B"},
+    {"symbol": "OKB", "change_pct": 8.36}
+  ],
+  "bonds": {
+    "us_1y": {"yield": 3.673, "change": -0.60},
+    "us_10y": {"yield": 4.504, "change": 0.42},
+    "fr_10y": {"yield": 3.661, "change": -0.35},
+    "it_10y": {"yield": 3.696, "change": -0.42}
+  },
+  "top_gainers": [
+    {"symbol": "MNTS", "change_pct": 83.47},
+    {"symbol": "RDW", "change_pct": 26.76},
+    {"symbol": "ASTS", "change_pct": 19.12},
+    {"symbol": "MU", "change_pct": 17.57},
+    {"symbol": "NVTS", "change_pct": 13.03}
+  ],
+  "key_sectors": {
+    "dominant": "Electronic technology / Semiconductors",
+    "hot_theme": "AI chip & data center infrastructure — MU, MRVL, AVGO, AMD all surging",
+    "space_tech": "RDW +26.8%, MNTS +83.5%, ASTS +19.1%",
+    "quantum": "IONQ +0.4%, QBTS -5.1%, RGTI -4.2%"
+  }
+}
