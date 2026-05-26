@@ -1,124 +1,119 @@
-{
-  "scan_timestamp": "2026-05-25T20:45:04.648629",
-  "scan_date": "2026-05-25",
-  "scan_time": "20:45:04",
-  "api": "Alpha Vantage",
-  "api_calls_used": 14,
-  "total_stocks": 7,
-  "signals_found": 5,
-  "long_opportunities": 3,
-  "short_opportunities": 2,
-  "categories_scanned": [
-    "alpha_vantage_universe"
-  ],
-  "results": [
-    {
-      "symbol": "NVDA",
-      "price": 215.33,
-      "change_percent": -1.9,
-      "volume": 169275710,
-      "rsi": null,
-      "macd": null,
-      "signal": "short",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Negative momentum (-1.9%)"
-      ],
-      "timestamp": "2026-05-25T20:42:56.832724",
-      "data_date": "2026-05-22"
-    },
-    {
-      "symbol": "TSLA",
-      "price": 426.01,
-      "change_percent": 1.95,
-      "volume": 46104710,
-      "rsi": null,
-      "macd": null,
-      "signal": "long",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Positive momentum (+2.0%)"
-      ],
-      "timestamp": "2026-05-25T20:43:10.007739",
-      "data_date": "2026-05-22"
-    },
-    {
-      "symbol": "AAPL",
-      "price": 308.82,
-      "change_percent": 1.26,
-      "volume": 43670223,
-      "rsi": null,
-      "macd": null,
-      "signal": "long",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Positive momentum (+1.3%)"
-      ],
-      "timestamp": "2026-05-25T20:43:23.090931",
-      "data_date": "2026-05-22"
-    },
-    {
-      "symbol": "AMD",
-      "price": 467.51,
-      "change_percent": 3.99,
-      "volume": 34758602,
-      "rsi": null,
-      "macd": null,
-      "signal": "long",
-      "confidence": 0.55,
-      "confidence_label": "medium",
-      "reasons": [
-        "Strong positive momentum (+4.0%)"
-      ],
-      "timestamp": "2026-05-25T20:43:36.075859",
-      "data_date": "2026-05-22"
-    },
-    {
-      "symbol": "MSFT",
-      "price": 418.57,
-      "change_percent": -0.12,
-      "volume": 22390344,
-      "rsi": null,
-      "macd": null,
-      "signal": "hold",
-      "confidence": 0.0,
-      "confidence_label": "low",
-      "reasons": [],
-      "timestamp": "2026-05-25T20:43:49.040669",
-      "data_date": "2026-05-22"
-    },
-    {
-      "symbol": "AMZN",
-      "price": 266.32,
-      "change_percent": -0.8,
-      "volume": 27535526,
-      "rsi": null,
-      "macd": null,
-      "signal": "short",
-      "confidence": 0.45,
-      "confidence_label": "low",
-      "reasons": [
-        "Negative momentum (-0.8%)"
-      ],
-      "timestamp": "2026-05-25T20:44:02.098843",
-      "data_date": "2026-05-22"
-    },
-    {
-      "symbol": "META",
-      "price": 610.26,
-      "change_percent": 0.47,
-      "volume": 11688623,
-      "rsi": null,
-      "macd": null,
-      "signal": "hold",
-      "confidence": 0.0,
-      "confidence_label": "low",
-      "reasons": [],
-      "timestamp": "2026-05-25T20:44:15.092953",
-      "data_date": "2026-05-22"
-    }
-  ]
+﻿{
+    "short_opportunities":  1,
+    "api":  "TradingView Scanner",
+    "total_stocks":  18,
+    "scan_timestamp":  "2026-05-26T15:02:03",
+    "long_opportunities":  5,
+    "categories_scanned":  [
+                               "tradingview_hot_movers",
+                               "tradingview_most_active"
+                           ],
+    "scan_date":  "2026-05-26",
+    "signals_found":  6,
+    "scan_time":  "15:02:03",
+    "results":  [
+                    {
+                        "confidence_label":  "high",
+                        "symbol":  "MU",
+                        "price":  854.85,
+                        "confidence":  0.82,
+                        "signal":  "long",
+                        "change_percent":  13.83,
+                        "timestamp":  "2026-05-26T15:02:03",
+                        "data_date":  "2026-05-26",
+                        "rsi":  72.7,
+                        "reasons":  [
+                                        "Strong breakout +13.83%",
+                                        "High volume 13.3M",
+                                        "RSI 72.7 - momentum confirmed"
+                                    ],
+                        "volume":  13305545
+                    },
+                    {
+                        "confidence_label":  "medium",
+                        "symbol":  "ASTS",
+                        "price":  119.915,
+                        "confidence":  0.78,
+                        "signal":  "long",
+                        "change_percent":  13.28,
+                        "timestamp":  "2026-05-26T15:02:03",
+                        "data_date":  "2026-05-26",
+                        "rsi":  73.8,
+                        "reasons":  [
+                                        "Breakout +13.28%",
+                                        "Heavy volume 6.5M",
+                                        "RSI 73.8 strong momentum"
+                                    ],
+                        "volume":  6537654
+                    },
+                    {
+                        "confidence_label":  "medium",
+                        "symbol":  "WULF",
+                        "price":  24.99,
+                        "confidence":  0.72,
+                        "signal":  "long",
+                        "change_percent":  9.51,
+                        "timestamp":  "2026-05-26T15:02:03",
+                        "data_date":  "2026-05-26",
+                        "rsi":  63.4,
+                        "reasons":  [
+                                        "Strong move +9.51%",
+                                        "Very high volume 10.2M",
+                                        "RSI room to run"
+                                    ],
+                        "volume":  10240802
+                    },
+                    {
+                        "confidence_label":  "medium",
+                        "symbol":  "MRVL",
+                        "price":  211.4,
+                        "confidence":  0.75,
+                        "signal":  "long",
+                        "change_percent":  7.68,
+                        "timestamp":  "2026-05-26T15:02:03",
+                        "data_date":  "2026-05-26",
+                        "rsi":  75.9,
+                        "reasons":  [
+                                        "Semi rally +7.68%",
+                                        "High volume 8.6M",
+                                        "RSI 75.9 approaching overbought"
+                                    ],
+                        "volume":  8637914
+                    },
+                    {
+                        "confidence_label":  "medium",
+                        "symbol":  "AMD",
+                        "price":  488.31,
+                        "confidence":  0.7,
+                        "signal":  "long",
+                        "change_percent":  4.45,
+                        "timestamp":  "2026-05-26T15:02:03",
+                        "data_date":  "2026-05-26",
+                        "rsi":  75.3,
+                        "reasons":  [
+                                        "Solid gain +4.45%",
+                                        "Good volume 5.4M",
+                                        "RSI 75.3 watch for pullback"
+                                    ],
+                        "volume":  5408507
+                    },
+                    {
+                        "confidence_label":  "medium",
+                        "symbol":  "QBTS",
+                        "price":  27.2,
+                        "confidence":  0.6,
+                        "signal":  "short",
+                        "change_percent":  -7.48,
+                        "timestamp":  "2026-05-26T15:02:03",
+                        "data_date":  "2026-05-26",
+                        "rsi":  63.3,
+                        "reasons":  [
+                                        "Sharp drop -7.48%",
+                                        "Very high volume 13.2M selloff",
+                                        "RSI 63.3 still declining"
+                                    ],
+                        "volume":  13191268
+                    }
+                ],
+    "api_calls_used":  2
 }
