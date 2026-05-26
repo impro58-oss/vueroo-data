@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-05-26T10:58:00Z",
+  "source": "TradingView",
+  "market_status": "pre-market",
+  "community_trends": {
+    "crypto": [
+      {"symbol": "BNB", "market_cap_usd_b": 89.31},
+      {"symbol": "XRP", "market_cap_usd_b": 83.87},
+      {"symbol": "OKB", "change_pct": 14.25}
+    ],
+    "bonds": {
+      "US01Y": {"yield": 3.824, "change": -0.67},
+      "US10Y": {"yield": 4.489, "change": 0.54},
+      "FR10Y": {"yield": 3.648, "change": -0.23},
+      "IT10Y": {"yield": 3.694, "change": -0.40}
+    }
+  },
+  "top_gainers": [
+    {"symbol": "RYOJ", "name": "rYojbaba Co., Ltd.", "change_pct": 148.76, "price": 5.00, "mkt_cap": "41.28M", "sector": "Health services"},
+    {"symbol": "HYLN", "name": "Hyliion Holdings Corp.", "change_pct": 42.62, "price": 5.99, "mkt_cap": "20.17M", "sector": "Producer manufacturing", "rating": "Buy"},
+    {"symbol": "FJET", "name": "Starfighters Space, Inc.", "change_pct": 39.81, "price": 7.20, "mkt_cap": "12.46M", "sector": "Commercial services"},
+    {"symbol": "CODX", "name": "Co-Diagnostics, Inc.", "change_pct": 36.66, "price": 5.07, "mkt_cap": "10.02M", "sector": "Health technology"},
+    {"symbol": "SVRN", "name": "OceanPal Inc.", "change_pct": 36.45, "price": 12.69, "sector": "Transportation"},
+    {"symbol": "MTVA", "name": "MetaVia Inc.", "change_pct": 34.15, "price": 3.85, "sector": "Health technology", "rating": "Strong buy"},
+    {"symbol": "GOVX", "name": "GeoVax Labs, Inc.", "change_pct": 32.36, "price": 3.64, "sector": "Health technology", "rating": "Strong buy"},
+    {"symbol": "CPSH", "name": "CPS Technology Corp.", "change_pct": 28.48, "price": 6.00, "sector": "Producer manufacturing", "rating": "Strong buy"},
+    {"symbol": "AIB", "name": "BlockchAIn Digital Infrastructure", "change_pct": 27.73, "price": 2.81, "sector": "Technology services"},
+    {"symbol": "WW", "name": "WW International, Inc.", "change_pct": 26.76, "price": 12.79, "mkt_cap": "127.88M", "sector": "Consumer services", "rating": "Buy"}
+  ],
+  "notable_large_cap_movers": [
+    {"symbol": "DELL", "name": "Dell Technologies Inc.", "change_pct": 16.77, "price": 295.19, "mkt_cap": "192.59B", "sector": "Electronic technology", "rating": "Buy"},
+    {"symbol": "HPQ", "name": "HP Inc.", "change_pct": 15.25, "price": 25.24, "mkt_cap": "23.08B", "sector": "Technology services", "rating": "Neutral"},
+    {"symbol": "IMAX", "name": "Imax Corporation", "change_pct": 15.47, "price": 39.12, "mkt_cap": "2.15B", "sector": "Consumer durables", "rating": "Strong buy"},
+    {"symbol": "FLY", "name": "Firefly Aerospace Inc.", "change_pct": 15.49, "price": 49.50, "mkt_cap": "7.93B", "sector": "Electronic technology", "rating": "Buy"},
+    {"symbol": "RGTI", "name": "Rigetti Computing, Inc.", "change_pct": 19.87, "price": 26.42, "mkt_cap": "8.78B", "sector": "Electronic technology", "rating": "Buy"},
+    {"symbol": "QBTS", "name": "D-Wave Quantum Inc.", "change_pct": 14.22, "price": 29.40, "mkt_cap": "10.88B", "sector": "Electronic technology", "rating": "Strong buy"},
+    {"symbol": "NVTS", "name": "Navitas Semiconductor", "change_pct": 19.98, "price": 29.25, "mkt_cap": "6.84B", "sector": "Electronic technology", "rating": "Neutral"},
+    {"symbol": "AXTI", "name": "AXT Inc", "change_pct": 16.37, "price": 140.83, "mkt_cap": "9.21B", "sector": "Electronic technology", "rating": "Buy"}
+  ],
+  "sector_heatmap": {
+    "electronic_technology": "HOT — quantum (RGTI, QBTS), semiconductors (NVTS, AXTI), space (FLY, RDW, FJET)",
+    "health_technology": "ACTIVE — diagnostics/biotech (MTVA, GOVX, CODX, SERA)",
+    "technology_services": "MIXED — HPQ +15%, AI/blockchain plays (AIB, SHAZ)"
+  },
+  "alpha_vantage": {
+    "status": "no_data",
+    "note": "API rate limit hit or key expired — 0/10 symbols returned data"
+  }
+}
