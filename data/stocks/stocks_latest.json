@@ -1,96 +1,93 @@
 {
-  "scan_timestamp": "2026-05-27T21:01:49.560450",
+  "scan_timestamp": "2026-05-27T23:58:00Z",
   "scan_date": "2026-05-27",
-  "scan_time": "21:01:49",
-  "api": "Alpha Vantage",
+  "scan_time": "23:58:00",
+  "api": "Alpha Vantage + StockMarketWatch",
   "api_calls_used": 10,
   "total_stocks": 5,
   "signals_found": 4,
   "long_opportunities": 1,
   "short_opportunities": 3,
-  "categories_scanned": [
-    "alpha_vantage_universe"
-  ],
+  "categories_scanned": ["alpha_vantage_universe"],
+  "market_snapshot": {
+    "sentiment": "Risk-off in software/cybersecurity; speculative micro-caps surging",
+    "key_narrative": "ZS guidance cut dragging cybersecurity sector; mega-cap tech mixed; MU buffering Nasdaq"
+  },
   "results": [
     {
       "symbol": "NVDA",
-      "price": 214.86,
-      "change_percent": -0.22,
-      "volume": 187202576,
+      "price": 213.08,
+      "change_percent": -0.8,
+      "volume": 128784000,
       "rsi": null,
       "macd": null,
       "signal": "hold",
       "confidence": 0.0,
       "confidence_label": "low",
       "reasons": [],
-      "timestamp": "2026-05-27T20:59:21.220086",
-      "data_date": "2026-05-26"
+      "timestamp": "2026-05-27T23:00:00Z",
+      "data_date": "2026-05-27"
     },
     {
       "symbol": "TSLA",
-      "price": 433.59,
-      "change_percent": 1.78,
-      "volume": 45658897,
+      "price": 439.31,
+      "change_percent": 1.3,
+      "volume": 38717000,
       "rsi": 60.86,
       "macd": null,
       "signal": "long",
       "confidence": 0.45,
       "confidence_label": "low",
-      "reasons": [
-        "Positive momentum (+1.8%)",
-        "RSI bullish momentum (60.9)"
-      ],
-      "timestamp": "2026-05-27T20:59:36.664722",
-      "data_date": "2026-05-26"
+      "reasons": ["Positive momentum (+1.3%)", "RSI bullish momentum (60.9)"],
+      "timestamp": "2026-05-27T23:00:00Z",
+      "data_date": "2026-05-27"
     },
     {
       "symbol": "AAPL",
-      "price": 308.33,
-      "change_percent": -0.16,
-      "volume": 48000493,
+      "price": 309.70,
+      "change_percent": 0.5,
+      "volume": 36715000,
       "rsi": 77.64,
       "macd": null,
       "signal": "short",
       "confidence": 0.7,
       "confidence_label": "high",
-      "reasons": [
-        "RSI overbought (77.6)"
-      ],
-      "timestamp": "2026-05-27T20:59:52.373017",
-      "data_date": "2026-05-26"
+      "reasons": ["RSI overbought (77.6)"],
+      "timestamp": "2026-05-27T23:00:00Z",
+      "data_date": "2026-05-27"
     },
     {
       "symbol": "AMD",
-      "price": 503.89,
-      "change_percent": 7.78,
-      "volume": 38473784,
+      "price": 497.39,
+      "change_percent": -1.4,
+      "volume": 23615000,
       "rsi": 77.07,
       "macd": null,
       "signal": "short",
       "confidence": 0.7,
       "confidence_label": "high",
-      "reasons": [
-        "Strong positive momentum (+7.8%)",
-        "RSI overbought (77.1)"
-      ],
-      "timestamp": "2026-05-27T21:00:15.308609",
-      "data_date": "2026-05-26"
+      "reasons": ["RSI overbought (77.1)", "Negative momentum (-1.4%)"],
+      "timestamp": "2026-05-27T23:00:00Z",
+      "data_date": "2026-05-27"
     },
     {
       "symbol": "MSFT",
-      "price": 416.03,
-      "change_percent": -0.61,
-      "volume": 30398049,
+      "price": 413.13,
+      "change_percent": -0.7,
+      "volume": 20210000,
       "rsi": null,
       "macd": null,
       "signal": "short",
       "confidence": 0.45,
       "confidence_label": "low",
-      "reasons": [
-        "Negative momentum (-0.6%)"
-      ],
-      "timestamp": "2026-05-27T21:00:33.207638",
-      "data_date": "2026-05-26"
+      "reasons": ["Negative momentum (-0.7%)"],
+      "timestamp": "2026-05-27T23:00:00Z",
+      "data_date": "2026-05-27"
     }
-  ]
+  ],
+  "hot_movers": {
+    "top_gainer": {"symbol": "ASTC", "change_pct": "+458%", "catalyst": "NASA Artemis lunar initiative"},
+    "top_loser": {"symbol": "VRRM", "change_pct": "-71%", "catalyst": "Operational decline"},
+    "cybersecurity_contagion": {"symbol": "ZS", "change_pct": "-31%", "catalyst": "Soft fiscal guidance despite Q3 beat"}
+  }
 }
