@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-05-28T08:00:00Z",
+  "source": "TradingView+TradingEconomics+Web",
+  "market_overview": {
+    "sp500": {"price": 7512, "change_pct": -0.11, "prev_close": 7520.36, "month_pct": 5.27, "yoy_pct": 27.06},
+    "dow": {"price": 50644, "change_pct": 0.36, "prev_close": 50462},
+    "nasdaq": {"price": 26675, "change_pct": 0.07, "prev_close": 26656}
+  },
+  "premarket": {
+    "sp500_futures": {"price": 7563.50, "change": 26.50, "change_pct": 0.35},
+    "dow_futures": {"price": 50728, "change": 181, "change_pct": 0.36}
+  },
+  "macro": {
+    "fed_funds_rate": 3.75,
+    "unemployment_pct": 4.30,
+    "inflation_cpi_pct": 3.80
+  },
+  "hot_movers": [
+    {"symbol": "SNOW", "name": "Snowflake", "change_pct": 37.5, "note": "After-hours: $6B AWS deal + strong Q1 earnings"},
+    {"symbol": "CAT", "name": "Caterpillar", "change_pct": 3.26, "note": "Top DOW gainer"},
+    {"symbol": "CVX", "name": "Chevron", "change_pct": -3.48, "note": "Top DOW loser"},
+    {"symbol": "UNH", "name": "UnitedHealth", "change_pct": -2.85, "note": "DOW loser"},
+    {"symbol": "MRK", "name": "Merck", "change_pct": -2.20, "note": "DOW loser"},
+    {"symbol": "HON", "name": "Honeywell", "change_pct": 1.61, "note": "DOW gainer"},
+    {"symbol": "MMM", "name": "3M", "change_pct": 1.08, "note": "DOW gainer"}
+  ],
+  "key_events": [
+    "PCE price index report pending (Fed preferred inflation measure)",
+    "Weekly jobless claims, new home sales, personal income data due",
+    "Earnings: DELL, ADSK, DLTR, MDB, GAP",
+    "SNOW after-hours surge on $6B AWS commitment + beat",
+    "Middle East conflict affecting inflation outlook",
+    "Fed Chair Warsh recently sworn in",
+    "Consumer sentiment at all-time low per UMich"
+  ],
+  "tradingview_community": {
+    "crypto_trends": ["BNB", "XRP"],
+    "bonds": {
+      "us_1y": 3.687,
+      "us_10y": 4.504,
+      "fr_10y": 3.614,
+      "it_10y": 3.748
+    }
+  },
+  "alpha_vantage_scanner": {
+    "status": "failed",
+    "reason": "No data returned for any symbol - likely API rate limit or key issue",
+    "symbols_attempted": 10
+  }
+}
