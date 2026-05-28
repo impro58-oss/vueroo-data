@@ -936,5 +936,19 @@
         "data_date": "2026-05-26"
       }
     ]
+  },
+  {
+    "timestamp": "2026-05-28T05:01:59Z",
+    "stocks_count": 36,
+    "top_gainers": [
+      "META",
+      "PG",
+      "AMZN"
+    ],
+    "top_losers": [
+      "JPM",
+      "BAC",
+      "AMD"
+    ]
   }
 ]
