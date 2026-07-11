@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-06-12T09:20:53.504547Z",
+  "static": [
+    "KASUSDT",
+    "ZECUSDT",
+    "USD1USDT"
+  ],
+  "dynamic": [],
+  "total": [
+    "USD1USDT",
+    "KASUSDT",
+    "ZECUSDT"
+  ],
+  "count": 3
+}
